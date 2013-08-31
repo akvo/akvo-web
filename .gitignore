@@ -3,6 +3,34 @@
 
 # Configurable files
 akvo_org/robots.txt
+akvo_org/wp-config*
 
 # Media
 akvo_org/wp-content/uploads
+
+# WP base files
+akvo_org/wp-admin
+akvo_org/wp-content/*.php
+akvo_org/wp-includes
+akvo_org/*.php
+akvo_org/license*
+akvo_org/readme*
+
+# Downloadable WP plug-ins
+akvo_org/wp-content/plugins/advanced-custom-*
+akvo_org/wp-content/plugins/akismet
+akvo_org/wp-content/plugins/disqus*
+akvo_org/wp-content/plugins/global*
+akvo_org/wp-content/plugins/limit-post*
+akvo_org/wp-content/plugins/mail*
+akvo_org/wp-content/plugins/preserved-html*
+akvo_org/wp-content/plugins/types
+akvo_org/wp-content/plugins/wck-*
+akvo_org/wp-content/plugins/wordpress-*
+akvo_org/wp-content/plugins/wp-piwik
+akvo_org/wp-content/plugins/*.php
+
+# Downloadable WP themes
+akvo_org/wp-content/themes/hello*
+akvo_org/wp-content/themes/twenty*
+akvo_org/wp-content/themes/*.php
