@@ -1,0 +1,8 @@
+# Files to ignore globally
+.DS_Store
+
+# Configurable files
+akvo_org/robots.txt
+
+# Media
+akvo_org/wp-content/uploads
