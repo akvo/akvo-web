@@ -95,50 +95,84 @@
         <a href="" class="moreLink darkBg hidden">See more</a> </li>
     </ul>
   </section>
+
+  <li id="updateTemplate" class="rsrUpdate" style="display: none;">
+    <span>RSR Update</span>
+    <div class="imgWrap">
+      <a><img src=""/></a>
+    </div>
+    <h2><a></a></h2>
+    <div class="authorTime floats-in">
+      <time datetime=""></time>
+      <em class="userName">by</em>
+    </div>
+    <div class="orgAndPlace">
+      <span class="org"></span>
+      <span class="place"></span>
+    </div>
+    <p></p>
+    <a href="" class="moreLink">Read more</a>
+  </li>
+
+
   <section id="rsrProjectUpdates">
-    <h2>RSR: Latest Project Updates</h2>
-    <a href="http://akvo.org/seeithappen/all-rsr-project-updates/" class="moreLink">Browse all latest project updates</a>
+
+    <h2>RSR: Latest project updates</h2>
+    <a href="/seeithappen/all-rsr-project-updates/" class="moreLink">Browse all latest project updates</a>
+
+    <ul id="updatesWrapper" class="threeColumns floats-in wrapper" style="display: none;">
+    </ul>
+
+    <h4 id="loadingCaption" class="backLined">
+      Fetching updates...<br/>
+      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
+    </h4>
+
+    <!--
     <ul class="threeColumns wrapper">
-      <li id="update_0" class="rsrUpdate"> <span>RSR Update</span>
+      <li id="update_0" class="rsrUpdate">
+      <span class="updatedTitle">RSR Update</span>
         <div class="imgWrap"> <a> <img src=""/> </a> </div>
         <h2> <a></a> </h2>
         <div class="authorTime floats-in">
           <time datetime=""></time>
-          <em>by</em> <span class="user_name"></span></div>
+               <em class="userName"></em></div>
         <div class="orgAndPlace"> <span class="org"></span> <span class="place"></span> </div>
         <p></p>
         <a href="" class="moreLink">Read more</a> </li>
-      <li id="update_1" class="rsrUpdate"> <span>RSR Update</span>
+      <li id="update_1" class="rsrUpdate"> <span class="updatedTitle">RSR Update</span>
         <div class="imgWrap"> <a> <img src=""/> </a> </div>
         <h2> <a></a> </h2>
         <div class="authorTime floats-in">
           <time datetime=""></time>
-          <em>by</em> <span class="user_name"></span></div>
+                <em class="userName"></em></div>
         <div class="orgAndPlace"> <span class="org"></span> <span class="place"></span> </div>
         <p></p>
         <a href="" class="moreLink">Read more</a> </li>
-      <li id="update_2" class="rsrUpdate"> <span>RSR Update</span>
+      <li id="update_2" class="rsrUpdate"> <span class="updatedTitle">RSR Update</span>
         <div class="imgWrap"> <a> <img src=""/> </a> </div>
         <h2> <a></a> </h2>
         <div class="authorTime floats-in">
           <time datetime=""></time>
-          <em>by</em> <span class="user_name"></span></div>
+                <em class="userName"></em>></div>
         <div class="orgAndPlace"> <span class="org"></span> <span class="place"></span> </div>
         <p></p>
         <a href="" class="moreLink">Read more</a> </li>
     </ul>
+    -->
   </section>
   <script type="text/javascript">
     // populate the dashboard from various Akvo APIs
     // NOTE: extremely hacky/ugly, should be moved to server side ASAP!
     $(function() {
-      var akvo_domain = 'http://www.akvo.org';
+      var akvoDomain = 'http://rsr.akvo.org';
       var akvopedia_domain = 'http://akvopedia.org';
       var oipa_domain = 'http://staging.oipa.openaidsearch.org';
       var piwik_domain = 'http://analytics.akvo.org';
       var error_message = '<span style="font-size: 0.3em;">Data not available</span>';
+
       $.ajax({
-        url: akvo_domain + '/api/v1/right_now_in_akvo/',
+        url: akvoDomain + '/api/v1/right_now_in_akvo/',
         dataType: "jsonp",
         jsonp: 'callback',
         jsonpCallback: 'callback',
@@ -157,8 +191,9 @@
           $("#projects_budget_millions").html(error_message);
         }
       });
+
       $.ajax({
-        url: akvo_domain + '/api/v1/project_update/?limit=1&callback=callback_update_count',
+        url: akvoDomain + '/api/v1/project_update/?limit=1&callback=callback_update_count',
         dataType: "jsonp",
         jsonp: 'callback_update_count',
         jsonpCallback: 'callback_update_count',
@@ -171,60 +206,7 @@
           $("#number_of_updates").html(error_message);
         }
       });
-      $.ajax({
-        url: akvo_domain + '/api/v1/project_update/?limit=10&depth=1&callback=callback_updates',
-        dataType: "jsonp",
-        jsonp: 'callback_updates',
-        jsonpCallback: 'callback_updates',
-        cache: true,
-        success: function(data) {
-          var success_count = 0;
-          // loop over the updates, find the first three with an image
-          for (i=0; i<10; i++) {
-            if (data.objects[i].photo === '') {
-              console.log('no photo, moving on');
-              continue;
-            } else {
-              console.log('pic!');
-              update = data.objects[i];
-              populate_update($("#update_" + success_count), update)
-              success_count++;
-              if (success_count > 2) {
-                break;
-              }
-            }
-          }
-        }
-      });
-/*      $.ajax({
-        url: akvo_domain + '/api/v1/project_update/?limit=30&depth=1&callback=callback_more_updates',
-        dataType: "jsonp",
-        jsonp: 'callback_more_updates',
-        jsonpCallback: 'callback_more_updates',
-        cache: true,
-        success: function(data) {
-          var original = $("#more_update_0")
-          for (i=1; i<15; i++) {
-            clone_update_skel(original, i);
-          }
-          var success_count = 0;
-          // loop over the updates, find the first three with an image
-          for (i=0; i<30; i++) {
-            if (data.objects[i].photo === '') {
-              console.log('no photo, moving on');
-              continue;
-            } else {
-              console.log('pic!');
-              update = data.objects[i];
-              populate_update($("#more_update_" + success_count), update)
-              success_count++;
-              if (success_count > 14) {
-                break;
-              }
-            }
-          }
-        }
-      }); */
+
       $.ajax({
         url: akvopedia_domain + '/wiki/api.php?action=query&meta=siteinfo&siprop=statistics&format=json',
         dataType: "jsonp",
@@ -238,6 +220,7 @@
           $("#number_of_articles").html(error_message);
         }
       });
+
       $.ajax({
         url: piwik_domain + '/index.php?module=API&method=API.get&idSite=9&period=range&date=2013-04-01,today&format=json&token_auth=1d1b520b11bea9a3b525b99531ec171a&jsoncallback=callback',
         dataType: "jsonp",
@@ -245,7 +228,7 @@
         cache: true,
         success: function(data) {
           $("#number_of_page_views").html(Math.round((2792519 + data.nb_pageviews)/1000)/1000 + '<span class="unit">million</span>');
-          $("#number_of_visits").text(data.nb_visits);
+          $("#number_of_visits").text(data.nb_visits + 737347);
         },
         timeout: 30000,
         error: function(data) {
@@ -253,6 +236,7 @@
           $("#number_of_visits").html(error_message);
         }
       });
+
       $.ajax({
         url: oipa_domain + '/api/v2/organisations/?format=jsonp&callback=callback&limit=1',
         dataType: "jsonp",
@@ -266,6 +250,7 @@
           $("#openaid_total_organisations").html(error_message);
         }
       });
+
       $.ajax({
         url: oipa_domain + '/api/v2/activities/?format=jsonp&callback=callback&limit=1',
         dataType: "jsonp",
@@ -280,32 +265,102 @@
         }
       });
 
-      // http://staging.oipa.openaidsearch.org/api/v2/organisations/?format=jsonp&callback=callback
-      var populate_update = function (root, update) {
+      /*
+        NOTE the rest of the code is a(n almost exact) copy of the code in rsrUpdatesPage.php and
+        should be consolidated into one .js file
+       */
+      var original = $("#updateTemplate");
+      // how many updates to display in one go. should be a multiple of 3
+      var updateBatchSize = 3;
+      // how many updates we get from the API
+      var limit = updateBatchSize * 2 + 4;
+      // keep track of how many updates with images found in this batch so far
+      var successCount = 0;
+      // keep track of how many updates we're showing
+      var updatesShown = 0;
+      // keep track of how many updates we've looked at
+      var offset = 0;
+
+      var populateUpdates = function (data) {
+        for (var i = 0; i < limit; i++) {
+          if (data.objects[i].photo === '') {
+            console.log('no photo, moving on');
+            continue;
+          } else {
+            update = data.objects[i];
+            console.log('pic! ' + i + ' ' + update.title);
+            populateUpdate($("#update_" + (updatesShown + successCount)), update);
+            successCount++;
+            if (successCount >= updateBatchSize) {
+              showUpdates();
+              offset = offset + i + 1;
+              updatesShown += successCount;
+              successCount = 0;
+              console.log("Batch done, updatesShown:" + updatesShown + " offset: " + offset)
+              break;
+            }
+          }
+        }
+        $("#updatesWrapper").css('display', 'block');
+        $("#loadMore").css('display', '');
+        $("#loadingCaption").css('display', 'none');
+      }
+
+      var callAPI = function (path) {
+        $("#loadMore").css('display', 'none');
+        $("#loadingCaption").css('display', 'block');
+        $.ajax({
+          url: akvoDomain + path,
+          dataType: "jsonp",
+          jsonp: 'callback',
+          cache: true,
+          success: populateUpdates
+        });
+      }
+
+      var populateUpdate = function (root, update) {
         root.find("h2 a").text(update.title);
-        root.find("a").prop('href', akvo_domain + update.absolute_url);
-        root.find("div img").prop("src", akvo_domain + update.photo);
-        root.find("time").text(update.time);
-        root.find("em").text("by " + update.user.first_name + " " + update.user.last_name);
+    root.find("span.updatedTitle").text(update.project.title);
+        root.find("a").prop('href', akvoDomain + update.absolute_url);
+        root.find("div img").prop("src", akvoDomain + update.photo);
+        root.find("time").text(update.time.split("T")[0]);
+        root.find(".userName").text("by" + " " + update.user.first_name + " " + update.user.last_name);
         root.find("p").text(update.text);
       };
 
-      var clone_update_skel = function(original, index) {
+      var cloneUpdateDOM = function (original, index) {
         console.log('Cloning ' + index);
-        var clone = original.clone();
-        console.log(clone.innerHTML);
-        clone.find("li").prop("id", "more_update_" + index)
-        //console.log(clone.find("li"));
-        //console.log(clone.find("li").prop("id"));
-        clone.appendTo( "#manyUpdatesList" );
+        original
+          .clone()
+          .attr("id", "update_" + index)
+          //.css("display", "block")
+          .appendTo("#updatesWrapper");
       }
+
+      var createUpdates = function () {
+        $("#loadMore").css('display', 'none');
+        for (var i = updatesShown; i < updatesShown + updateBatchSize; i++) {
+          cloneUpdateDOM(original, i);
+        }
+      }
+
+      var showUpdates = function () {
+        for (var i = updatesShown; i < updatesShown + updateBatchSize; i++) {
+          $("#update_" + (i)).css("display", "block");
+        }
+        $("#loadMore").css('display', '');
+      }
+
+      createUpdates();
+      var path = '/api/v1/project_update/?depth=1&limit=' + limit;
+      callAPI(path);
 
     });
   </script>
   <section id="rsrNetworkMap">
     <h2>Akvo Map</h2>
     <div class="wrapper">
-      <p class="fullWidthParag centerED">Due to performance issues we have temporarily disabled the live Akvo RSR project map for the time being. It will be enabled again soon.</p>
+      <p class="fullWidthParag centerED">Due to performance issues we have temporarily disabled the live Akvo RSR project map. It will be enabled again soon.</p>
       <img src="<?php bloginfo('template_directory'); ?>/images/rsr_projectMap.png" class="centerED"/> </div>
     <!--<iframe src="http://www.akvo.org/rsr/widget/project-map/organisation/969/?bgcolor=000000&textcolor=undefined&height=518&width=968&state=dynamic" height="518" width="968" frameborder="0" allowTransparency="true" seamless scrolling="no"> </iframe>--> 
   </section>

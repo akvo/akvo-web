@@ -90,7 +90,7 @@
           <small>Click for more details.</small></li>
         <li class="partnerAsset company" id="philips">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/partners/phillips.png" title="Philips  " alt="Philips  " /> </div>
-          <div class="staffName"><a href="#">Philips</a></div>
+          <div class="staffName"><a href="#">Phillips</a></div>
           <p class="staffTitle">Lighting</p>
           <small>Click for more details.</small></li>
         <li class="partnerAsset company" id="raboBank">

@@ -1,13 +1,14 @@
 
 <aside id="sidebar" role="complementary"  class="">
+
   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
   <div class="widget">
     <h3 class="title">Categories</h3>
     <form action="<?php bloginfo('url'); ?>/" method="get">
       <?php
-			$select = wp_dropdown_categories('show_option_none=Select Category&show_count=1&orderby=name&echo=0');
-			$select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
-			echo $select;
+$select = wp_dropdown_categories('show_option_none=Select Category&show_count=1&orderby=name&echo=0');
+$select = preg_replace("#<select([^>]*)>#", "<select$1 onchange='return this.form.submit()'>", $select);
+echo $select;
 ?>
       <noscript>
       <input type="submit" value="View" />
@@ -31,20 +32,12 @@
       <?php wp_meta(); ?>
     </ul>
   </div>
-  <div class="widget faceBook">
+    <div class="widget faceBook">
     <div class="fb-like-box" data-href="https://www.facebook.com/1Akvo" data-width="292" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
   </div>
-  <div class="widget twitBuck"> <a class="twitter-timeline"  href="https://twitter.com/search?q=+%40akvo+OR+%23akvo+OR+%23akvoflow"  data-widget-id="373127164918378496">Tweets about " @akvo OR #akvo OR #akvoflow"</a> 
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
-  </div>
-  <?php endif; // end sidebar widget area ?>
-<div class="widget">
-<?php if ( ! dynamic_sidebar( 'main' ) ) : ?>
-    <h3 class="title"><?php _e( 'main' ); ?></h3>
-    			<?php dynamic_sidebar( 'main' ); ?>
+
+  <div class="widget twitBuck"> <a class="twitter-timeline"  href="https://twitter.com/search?q=+%40akvo+OR+%23akvo+OR+%23akvoflow"  data-widget-id="373127164918378496">Tweets about " @akvo OR #akvo OR #akvoflow"</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 </div>
-
-
-
-<?php endif; // end sidebar widget area ?>
+  <?php endif; // end sidebar widget area ?>
 </aside>

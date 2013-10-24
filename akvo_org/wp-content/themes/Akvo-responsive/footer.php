@@ -44,13 +44,13 @@
           <h3>Policies</h3>
           <nav>
             <ul>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/">Full list</a></li>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/akvo-terms-of-use/">Terms of use</a></li>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/akvo-privacy-policy/">Privacy</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/">Full list</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-terms-of-use/">Terms of use</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-privacy-policy/">Privacy</a></li>
               <li><a href="http://akvo.org/help/akvo-policies-and-terms/akvo-donation-policy/">Donations</a></li>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/">Partners</a></li>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/">User submitted content</a></li>
-              <li><a href="http://akvo.org/help/akvo-policies-and-terms/akvo-licensing-and-copyrights/">Licensing and copyright</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/">Partners</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/">User submitted content</a></li>
+              <li><a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-licensing-and-copyrights/">Licensing and copyright</a></li>
             </ul>
           </nav>
         </div>
@@ -62,6 +62,7 @@
               <li><a href="http://akvo.org/contact-info/ ">Contact info</a></li>
               <li><a href="http://akvo.org/wp-admin/">Administrator? Login</a></li>
               <li class="problem"><a href="mailto:help@akvo.org">Report a problem</a></li>
+              <li class=""><a href="http://akvo.statuspage.io">Services status</a></li>
             </ul>
           </nav>
         </div>
@@ -69,12 +70,12 @@
           <h1 class="backLinedGrey">Let's be friends</h1>
           <nav class="socialLinks">
             <ul class="floats-in">
-              <li class="twitter"><a href="https://twitter.com/akvo/staff">akvo on twitter</a></li>
-              <li class="github"><a href="https://github.com/akvo">akvo on github</a></li>
-              <li class="youtube"><a href="http://www.youtube.com/user/Akvofoundation">akvo on youtube</a></li>
-              <li class="flickr"><a href="http://www.flickr.com/search/?q=akvo">akvo on flickr</a></li>
-              <li class="facebook"><a href="https://www.facebook.com/1Akvo">akvo on facebook</a></li>
-              <li class="rss"><a href="http://akvo.org/blog/rss" >get latest akvo feed</a></li>
+              <li class="twitter"><a href="https://twitter.com/akvo/staff" title="Akvo staff Twitter feed">akvo on twitter</a></li>
+              <li class="github"><a href="https://github.com/akvo" title="Access Akvo apps code">akvo on github</a></li>
+              <li class="youtube"><a href="http://www.youtube.com/user/Akvofoundation" title="Akvo.tv">akvo on youtube</a></li>
+              <li class="flickr"><a href="http://www.flickr.com/groups/akvo/" title="Akvo is on flickr">akvo on flickr</a></li>
+              <li class="facebook"><a href="https://www.facebook.com/1Akvo" title="Akvo is also on Facebook">akvo on facebook</a></li>
+              <li class="rss"><a href="http://akvo.org/blog/rss" title="Get our latest blogs RSS">get latest akvo feed</a></li>
               <li class="email"><a href="mailto:partners@akvo.org" title="Email us at partners@akvo.org">email akvo</a></li>
               <li class="contactInfo"><a href="http://akvo.org/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
             </ul>
@@ -112,19 +113,21 @@
 <!-- End /footer -->
 </div>
 <!-- end mainbody --> 
-<!-- Piwik --> 
+<!-- Piwik -->
 <script type="text/javascript">
-var pkBaseURL = (("https:" == document.location.protocol) ? "https://analytics.akvo.org/" : "http://analytics.akvo.org/");
-document.write(unescape("%3Cscript src='" + pkBaseURL + "piwik.js' type='text/javascript'%3E%3C/script%3E"));
-</script><script type="text/javascript">
-try {
-var piwikTracker = Piwik.getTracker(pkBaseURL + "piwik.php", 2);
-piwikTracker.trackPageView();
-piwikTracker.enableLinkTracking();
-} catch( err ) {}
+  var _paq = _paq || [];
+  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
+  _paq.push(["setCookieDomain", "*.akvo.org"]);
+  _paq.push(["trackPageView"]);
+  _paq.push(["enableLinkTracking"]);
+
+  (function() {
+    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.akvo.org/";
+    _paq.push(["setTrackerUrl", u+"piwik.php"]);
+    _paq.push(["setSiteId", "1"]);
+    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+  })();
 </script>
-<noscript>
-<p><img src="http://analytics.akvo.org/piwik.php?idsite=2" style="border:0" alt="" /></p>
-</noscript>
-<!-- End Piwik Tracking Code -->
+<!-- End Piwik Code -->
 </body></html>

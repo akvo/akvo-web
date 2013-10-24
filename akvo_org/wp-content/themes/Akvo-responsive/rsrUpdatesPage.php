@@ -14,12 +14,6 @@
 
   <?php endwhile; // end of the loop. ?>
 
-
-  <h4 id="loadingCaption" class="backLined">
-    Loading updates...<br/>
-    <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
-  </h4>
-
   <li id="updateTemplate" class="rsrUpdate" style="display: none;">
     <span>RSR Update</span>
     <div class="imgWrap">
@@ -28,7 +22,7 @@
     <h2><a></a></h2>
     <div class="authorTime floats-in">
       <time datetime=""></time>
-      <em>by</em> <span class="user_name"></span>
+      <em class="userName">by</em>
     </div>
     <div class="orgAndPlace">
       <span class="org"></span>
@@ -42,15 +36,19 @@
     <ul id="updatesWrapper" class="threeColumns floats-in" style="display: none;">
     </ul>
 
-    <a id="loadMore"href="#" class="btn btn-primary loadMore" style="display: none;">Load more</a>
+    <h4 id="loadingCaption" class="backLined">
+      Fetching updates...<br/>
+      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
+    </h4>
+    <a id="loadMore" class="btn btn-primary loadMore" style="display: none;">Fetch more updates</a>
   </section>
 
   <script type="text/javascript">
     $(function() {
-      var akvoDomain = 'http://www.akvo.org';
+      var akvoDomain = 'http://rsr.akvo.org';
       var original = $("#updateTemplate");
       // how many updates to display in one go. should be a multiple of 3
-      var updateBatchSize = 6;
+      var updateBatchSize = 12;
       // keep track of how many updates with images found in this batch so far
       var successCount = 0;
       // keep track of how many updates we're showing
@@ -59,7 +57,7 @@
       var offset = 0;
 
       var populateUpdates = function(data) {
-        for (i=0; i<updateBatchSize*2; i++) {
+        for (var i=0; i<updateBatchSize*2; i++) {
           if (data.objects[i].photo === '') {
             console.log('no photo, moving on');
             continue;
@@ -70,7 +68,9 @@
             successCount++;
             if (successCount >= updateBatchSize) {
               showUpdates();
+              console.log('i: ' + i);
               offset = offset + i + 1;
+              console.log('offset: ' + offset);
               updatesShown += successCount;
               successCount = 0;
               console.log("Batch done, updatesShown:" + updatesShown + " offset: " + offset)
@@ -85,6 +85,7 @@
 
       var callAPI = function(path) {
         $("#loadMore").css('display', 'none');
+        $("#loadingCaption").css('display', 'block');
         $.ajax({
           url: akvoDomain + path,
           dataType: "jsonp",
@@ -92,15 +93,15 @@
           cache: true,
           success: populateUpdates
         });
-        $("#loadMore").css('display', '');
       }
-      // http://staging.oipa.openaidsearch.org/api/v2/organisations/?format=jsonp&callback=callback
+
       var populateUpdate = function (root, update) {
         root.find("h2 a").text(update.title);
+        root.find("> span").text(update.project.title);
         root.find("a").prop('href', akvoDomain + update.absolute_url);
         root.find("div img").prop("src", akvoDomain + update.photo);
         root.find("time").text(update.time.split("T")[0]);
-        root.find("em").text("by " + update.user.first_name + " " + update.user.last_name);
+        root.find(".userName").text("by" + " " + update.user.first_name + " " + update.user.last_name);
         root.find("p").text(update.text);
       };
 
@@ -115,20 +116,20 @@
 
       var createUpdates = function() {
         $("#loadMore").css('display', 'none');
-        for (i=offset; i<offset+updateBatchSize; i++) {
+        for (var i=updatesShown; i<updatesShown+updateBatchSize; i++) {
           cloneUpdateDOM(original, i);
         }
       }
 
       var showUpdates = function() {
-        for (i=offset; i<offset+updateBatchSize; i++) {
+        for (var i=updatesShown; i<updatesShown+updateBatchSize; i++) {
           $("#update_" + (i)).css("display", "block");
         }
         $("#loadMore").css('display', '');
       }
 
       $('#loadMore').click(function() {
-        createUpdates(offset);
+        createUpdates();
         var path = '/api/v1/project_update/?limit=' +
           updateBatchSize * 2 + '&depth=1&callback=callback_even_more_updates&offset=' + offset;
         callAPI(path);
@@ -137,7 +138,7 @@
       createUpdates();
       var path = '/api/v1/project_update/?depth=1&limit=' + updateBatchSize * 2;
       callAPI(path);
-
+      console.log('offset; ' + offset);
 
     });
   </script>

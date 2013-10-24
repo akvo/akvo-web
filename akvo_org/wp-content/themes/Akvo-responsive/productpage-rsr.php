@@ -116,8 +116,9 @@
     <p class="fullWidthParag centerED">
       <?php the_field('rsr_real_world_text'); ?>
     </p>
+    <a href="http://rsr.akvo.org/organisations/">
     <img src="<?php the_field('rsr_who_is_img'); ?>" />
-
+</a>
   </section>
   <section id="rsrTech">
     <h1 class="">Technical Specifications</h1>

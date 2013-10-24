@@ -10,7 +10,7 @@
 <div id="content" class="floats-in contactInfo">
   <h1 class="backLined">Contact Info</h1>  <div class="wrapper fullWidthParag">
 
-  <p class="fullWidthParag centerED">You can reach us by email, telephone or using social networking tools like Twitter and Facebook. We all use Skype but we'd prefer to connect initially with you via other means.</p></div>
+  <p class="fullWidthParag centerED">You can reach us by email, telephone or social networking tools like Twitter and Facebook. We all use Skype but would, initially, prefer to connect with you via other means.</p></div>
   <hr class="delicate" />
   <ul class="threeColumns wrapper floats-in">
   <li id="partnershipContact" class="bgDecoB">

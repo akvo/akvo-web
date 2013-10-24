@@ -33,8 +33,8 @@
     <ul>
       <li><a href="#flowDescr">Description</a></li>
       <li class="hidden"><a href="#flowInAction">See it in action</a></li>
-      <li><a href="#flowInFive">Why use flow</a></li>
-      <li><a href="#flowRealWorld">Who's using flow?</a></li>
+      <li><a href="#flowInFive">Why use FLOW?</a></li>
+      <li><a href="#flowRealWorld">Who's using FLOW?</a></li>
       <li><a href="#flowTech">Technical specifications</a></li>
       <li class="hidden"><a href="#flowPricing">Pricing</a></li>
     </ul>
@@ -157,9 +157,10 @@
         </p>
       </li>
       <li><br/><br/>
-        <h3>
+        <h1>
           <?php the_field('flow_tech_title_Second'); ?>
-        </h3>
+        </h1>
+        <p>&nbsp;</p>
         <p class="fullWidthParag centerED">
           <?php the_field('flow_tech_text_Second'); ?>
         </p>

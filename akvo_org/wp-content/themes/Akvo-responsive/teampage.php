@@ -11,7 +11,8 @@
   <h1 class="backLined">Meet our team</h1>
   <div class="wrapper">
     <p class="centerED fullWidthParag">Akvo is helping today's brightest international development talent guide their organisations into a new era of openness in which co-operation happens much more easily and effectively and information is understood, used and shared.</p>
-    <p class="centerED fullWidthParag">To do this we employ smart people in numerous countries who understand both technology and development. Most of our team works directly on software development and partner support and training. <br /><br/>
+    <p class="centerED fullWidthParag">To do this we employ smart people in numerous countries who understand both technology and development. Most of our team works directly on software development and partner support and training. <br />
+      <br/>
     <p class="centerED fullWidthParag">Follow our team <a href="https://twitter.com/akvo/staff">twitter list</a>. </p>
     </p>
   </div>
@@ -25,9 +26,10 @@
       <li><a href="#akvoJob" class="eStaff">Work for Akvo</a></li>
     </ul>
   </nav>
-  <section class="wrapper">
-<!--    <div id="managementGroup"><b>Key management</b> is marked by a red M icon: <img src="<?php bloginfo('template_directory'); ?>/images/mStaffSmall.png" /></div>
--->   <div id="partnershipGroup">
+  <section class="wrapper"> 
+    <!--    <div id="managementGroup"><b>Key management</b> is marked by a red M icon: <img src="<?php bloginfo('template_directory'); ?>/images/mStaffSmall.png" /></div>
+-->
+    <div id="partnershipGroup">
       <h2 class="pStaffHead">Partnerships</h2>
       <ul class="staff floats-in">
         <li class="staffAsset management partnership" id="peter">
@@ -63,26 +65,19 @@
         <li class="staffAsset partnership" id="amit">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/amit240.jpg" title="Amitangshu Acharya" alt="Amitangshu Acharya, consultant, Asian programmes" /></div>
           <div class="staffName"><a href="#">Amitangshu Acharya</a></div>
-          <p class="staffTitle">Consultant, Asian programmes</p>
+          <p class="staffTitle">Programme manager, Asia hub</p>
+          <p class="staffTitle">&nbsp;</p>
           <small>Click for more details.</small></li>
-          
-          
         <li class="staffAsset partnership" id="isha">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/isha240.jpg" title="Amitangshu Acharya" alt="Amitangshu Acharya, consultant, Asian programmes" /></div>
-          <div class="staffName"><a href="#"> Isha Parihar 
-</a></div>
-          <p class="staffTitle">Programme officer, Asia hub 
-</p>
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/isha240.jpg" title="Isha Parihar" alt="Isha Parihar, Programme officer, Asia hub" /></div>
+          <div class="staffName"><a href="#"> Isha Parihar </a></div>
+          <p class="staffTitle">Programme officer, Asia hub </p>
           <small>Click for more details.</small></li>
-          
-          
         <li class="staffAsset partnership" id="rajashi">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/rajashi240.jpg" title="Rajashi Mukherjee" alt="Rajashi Mukherjee, advisor, Asia hub" /></div>
           <div class="staffName"><a href="#">Rajashi Mukherjee</a></div>
           <p class="staffTitle">Advisor, Asia hub</p>
           <small>Click for more details.</small></li>
-          
-          
         <li class="staffAsset partnership" id="hans">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/hans240.jpg" title="Hans Merton" alt="Hans Merton, project manager " /></div>
           <div class="staffName"><a href="#">Hans Merton</a></div>
@@ -94,18 +89,15 @@
           <p class="staffTitle">Partnerships assistant, East Africa hub</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset partnership" id="laura">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/laura240.jpg" title=" Laura Roverts" alt=" Laura Roverts, project officer " /></div>
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/laura240.jpg" title=" Laura Roverts" alt=" Laura Roverts, Project manager " /></div>
           <div class="staffName"><a href="#"> Laura Roverts</a></div>
-          <p class="staffTitle">Project officer</p>
+          <p class="staffTitle">Project manager</p>
           <small>Click for more details.</small></li>
-          
         <li class="staffAsset partnership" id="winona">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/winona240.jpg" title=" Winona Azure" alt=" Winona Azure, Akvopedia editor " /></div>
           <div class="staffName"><a href="#"> Winona Azure</a></div>
           <p class="staffTitle">Akvopedia editor </p>
           <small>Click for more details.</small></li>
-
-          
         <li class="staffAsset partnership" id="lissy">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/lissy240.jpg" title="Lissy van Noort" alt="Lissy van Noort, project officer" /></div>
           <div class="staffName"><a href="#">Lissy van Noort</a></div>
@@ -117,9 +109,9 @@
           <p class="staffTitle">Partnership assistant, East Africa hub</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset partnership" id="henry">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/henry240.jpg" title="Henry Jewell" alt=" Henry Jewell, programme manager, Akvo FLOW" /></div>
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/henry240.jpg" title="Henry Jewell" alt=" Henry Jewell, Executive director, Akvo Foundation USA and programme manager, Akvo FLOW" /></div>
           <div class="staffName"><a href="#"> Henry Jewell</a></div>
-          <p class="staffTitle">Programme manager, Akvo FLOW</p>
+          <p class="staffTitle">Executive director, Akvo Foundation USA and programme manager, Akvo FLOW</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset partnership" id="joyce">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/joyce240.jpg" title="Joyce Kent" alt="Joyce Kent, office manager " /></div>
@@ -130,31 +122,21 @@
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/josje240.jpg" title="Josje Spierings" alt="Josje Spierings, project coordinator" /></div>
           <div class="staffName"><a href="#">Josje Spierings</a></div>
           <p class="staffTitle">Project coordinator</p>
-          <small>Click for more details.</small></li> 
-          
-           <li class="staffAsset partnership" id="charlotte">
+          <small>Click for more details.</small></li>
+        <li class="staffAsset partnership" id="charlotte">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/charlotte240.jpg" title="Charlotte Soedjak," alt="Charlotte Soedjak, project officer" /></div>
           <div class="staffName"><a href="#">Charlotte Soedjak,</a></div>
           <p class="staffTitle">Project officer</p>
           <small>Click for more details.</small></li>
-          
-          
         <li class="staffAsset partnership" id="annaM">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/Annamarthe240.jpg" title="Anna-Marthe Sessink" alt=" Anna-Marthe Sessink, project coordinator" /></div>
           <div class="staffName"><a href="#"> Anna-Marthe Sessink</a></div>
           <p class="staffTitle">Project coordinator</p>
           <small>Click for more details.</small></li>
-        
         <li class="staffAsset partnership" id="stefan">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/stefan240.jpg" title="Stefan van Heukelum" alt="Stefan van Heukelum, project officer" /></div>
           <div class="staffName"><a href="#">Stefan van Heukelum</a></div>
-          <p class="staffTitle">Project officer</p>
-          <small>Click for more details.</small></li>
-        
-        <li class="staffAsset partnership" id="timdost">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/timdost240.jpg" title="Tim Dost" alt="Tim Dost, programme assistant" /></div>
-          <div class="staffName"><a href="#">Tim Dost</a></div>
-          <p class="staffTitle">Programme assistant </p>
+          <p class="staffTitle">Finance & operations officer</p>
           <small>Click for more details.</small></li>
       </ul>
     </div>
@@ -239,14 +221,14 @@
           <p class="staffTitle">Internal IT manager and assistant to Thomas</p>
           <small>Click for more details.</small></li>
       </ul>
-     <div id="akvoJob">
-      <ul class="staff floats-in">
-        <li class="newStaff">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-          <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
-          <p class="staffTitle">Check Out The Available Jobs.</p>
-          <small>Click for more details.</small></li>
-      </ul>
+      <div id="akvoJob">
+        <ul class="staff floats-in">
+          <li class="newStaff">
+            <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
+            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <p class="staffTitle">Check Out The Available Jobs.</p>
+            <small>Click for more details.</small></li>
+        </ul>
       </div>
     </div>
   </section>

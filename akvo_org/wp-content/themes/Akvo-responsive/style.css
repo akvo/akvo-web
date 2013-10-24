@@ -8,7 +8,7 @@
 
 /*---------------------------------------------------------------------------------
  
-		Title:      Akvo Flow Styles for Desktop, mobile, tablet
+		Title:      Akvo.org Styles for Desktop, mobile, tablet
 		Author:     Loic Sans, loic@akvo.org
 	
 ---------------------------------------------------------------------------------*/
@@ -134,8 +134,8 @@ h2 {
 	font-size: 2em;
 	line-height: 1.2em;
 	color: rgb(44,42,116);
-	margin: 0 auto 1.5em auto;
-	text-align: center;
+/*	margin: 0 auto 1.5em auto;
+*/	text-align: center;
 }
 h3 {
 	font-size: 1.8em;
@@ -212,11 +212,14 @@ p {
 	font-size: 1em;
 	margin: 0.5em 0;
 	padding: 0 0.5em 0 0;
-	line-height:1.6em;
-	/*	-moz-hyphens: auto;
+	line-height: 1.6em;/*	-moz-hyphens: auto;
 	hyphens: auto;
 */
 }
+.indentNbr {
+	font-weight:bold;
+	margin-right:0.5em;
+	}
 /*--------------------------------------------------------------
 							Misc.
 --------------------------------------------------------------*/
@@ -315,14 +318,14 @@ hr.delicateSmall {
 	background: -o-linear-gradient(top, rgba(50,186,244,1) 0%, rgba(0,68,204,1) 100%); /* Opera 11.10+ */
 	background: -ms-linear-gradient(top, rgba(50,186,244,1) 0%, rgba(0,68,204,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom, rgba(50,186,244,1) 0%, rgba(0,68,204,1) 100%); /* W3C */
- filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32baf4', endColorstr='#0044cc', GradientType=0 ); /* IE6-8 */
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#32baf4', endColorstr='#0044cc', GradientType=0 ); /* IE6-8 */
 }
 iframe {
 	max-width: 100%;
 	display: block;
 	margin: 2em auto;
 }
-.contactInfo iframe {margin:0 auto;}
+.contact-info iframe { margin: 0 auto; }
 .floatThumb {
 	float: left;
 	margin: 0 10px 10px 0;
@@ -330,19 +333,19 @@ iframe {
 .fullWidthParag {
 	position: relative;
 	width: 65%;
-	margin:0.5em auto;
+	margin: 0.5em auto;
 }
 .loadMore {
-	position:relative;
-	padding:0.5em 1em;
-	margin:1em auto 2em auto !important;
-	display:table;
-	-moz-border-radius:0.25em;
-	-webkit-border-radius:0.25em;
-	-o-border-radius:0.25em;
-	border-radius:0.25em;
-	}
-.loadMore:hover {color:rgb(255,255,255);}
+	position: relative;
+	padding: 0.5em 1em;
+	margin: 1em auto 2em auto !important;
+	display: table;
+	-moz-border-radius: 0.25em;
+	-webkit-border-radius: 0.25em;
+	-o-border-radius: 0.25em;
+	border-radius: 0.25em;
+}
+.loadMore:hover { color: rgb(255,255,255); }
 /* links 
 ---------------------------------------------------------------*/
 
@@ -371,7 +374,6 @@ a.seeMore, footer a:link, footer a:visited {
 	padding: 3px 28px 3px 0;
 	height: 19px;
 	background: url(images/moreLink.png) right bottom no-repeat;
-	text-transform: uppercase;
 	text-align: center;
 	margin: 0.25em auto;
 }
@@ -432,7 +434,6 @@ small {
 	color: rgb(44,42,116);
 	margin: 0.25em auto 35px auto;
 }
-
 div.centerED > p, .centerED {
 	display: block;
 	text-align: center;
@@ -461,7 +462,7 @@ div.centerED > p, .centerED {
 	/*color:rgb(123,123,123);*/
 	color: rgb(222, 137, 41);
 	text-shadow: 1px 1px 0 rgb(255,255,255);
-	min-height:200px;
+	min-height: 210px;
 }
 .bgDecoB {
 	background: rgb(248,248,248);
@@ -472,7 +473,7 @@ div.centerED > p, .centerED {
 	min-height: 150px;
 	/*color:rgb(123,123,123);*/
 	text-shadow: 1px 1px 0 rgb(255,255,255);
-	min-height:200px;
+	min-height: 210px;
 }
 /*==========================================================================
 								   Forms
@@ -752,7 +753,7 @@ nav li a {
 	position: relative;
 	max-width: 1198px;
 	margin: 0 auto;
-	padding:0 5px;
+	padding: 0 5px;
 }
 .wrapperHead {
 	position: relative;
@@ -804,7 +805,6 @@ nav li a {
 }
 .threeColumns > div:nth-child(3n+1), .threeColumns > li:nth-child(3n+1), .threeColumns > p:nth-child(3n+1) { margin: 0 0 0 1%; }
 .threeColumns > div:nth-child(3n), .threeColumns > li:nth-child(3n), .threeColumns > p:nth-child(3n) { margin: 0 1% 0 0; }
-
 .fourColumns {
 	margin: 0 auto;
 	width: 100%;
@@ -896,7 +896,7 @@ nav li a {
 	float: left;
 	margin: 2.5em 2.5% 0;
 }
-.contact-info .threeColumns li.bgDecoB {min-height:330px;}
+.contact-info .threeColumns li.bgDecoB { min-height: 330px; }
 /* .header
 --------------------------------------------- */
 
@@ -962,14 +962,10 @@ header#top h1:hover a { background: url(images/akvoLogoTop.png) no-repeat center
 	font-size: 0.8em;
 }
 .logInHeader a {
-	font-size:1.1em;
-	color:rgb(222, 137, 41);
+	font-size: 1.1em;
+	color: rgb(222, 137, 41);
 }
-
-.logInHeader a:hover {
-	color:rgb(255,255,255);
-}
-
+.logInHeader a:hover { color: rgb(255,255,255); }
 /* ---------------------------------------------
 			Top navigation styles 
 --------------------------------------------- */
@@ -1172,7 +1168,7 @@ body.home h1.akvoDescr {
 	background: rgb(32,32,36);
 	border-bottom: 1px solid rgb(221, 221, 221);
 	border-top: 1px solid rgb(221, 221, 221);
-	max-height:500px;
+	max-height: 500px;
 }
 #actionHeroBox #actionHeroInfo {
 	position: absolute;
@@ -1180,24 +1176,24 @@ body.home h1.akvoDescr {
 	display: inline-block;
 	overflow: auto;
 	max-width: 45%;
-	min-width:35%;
-	left: 5%;
+	min-width: 35%;
+	left: 13%;
 	padding: auto 0.25em;
 	background: rgb(255,255,245);
 	background: rgba(255,255,245,0.6);
-	-moz-border-radius:0.5em;
-	-webkit-border-radius:0.5em;
-	-o-border-radius:0.5em;
-	border-radius:0.5em;
+	-moz-border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	-o-border-radius: 0.5em;
+	border-radius: 0.5em;
 }
 #actionHeroBox img {
 	display: block;
 	max-width: auto;
 	margin: 0 auto;
 	text-align: center;
-	vertical-align:middle;
+	vertical-align: middle;
 	height: auto;
-	max-height:500px;
+	max-height: 500px;
 }
 .borderTop, .borderBottom {
 	position: absolute;
@@ -1215,7 +1211,10 @@ body.home h1.akvoDescr {
 	background: url(images/actionHeroBottomBorder.png) left bottom repeat-x;
 }
 #actionHeroBox p, #actionHeroBox h1, #actionHeroBox h2, #actionHeroBox a { }
-#actionHeroBox p { color: rgb(40,40,40); display:none;}
+#actionHeroBox p {
+	color: rgb(40,40,40);
+	display: none;
+}
 #actionHeroBox p span { color: rgb(40,40,40); }
 #actionHeroBox p span.akvorsr { color: rgb(66, 76, 43); }
 #actionHeroBox p span.akvoflow { color: s rgb(222, 137, 41); }
@@ -1228,22 +1227,18 @@ body.home h1.akvoDescr {
 	text-align: left;
 	font-size: 1.5em;
 	font-weight: 700;
-/*	color: rgba(80,48,27,1);
+	/*	color: rgba(80,48,27,1);
 	text-shadow: 0.05em 0.05em 0 rgba(255, 155, 99, 1);
-*/	margin:10px 0 0 10px;
+*/	margin: 10px 0 0 10px;
 }
 #actionHeroBox h2 {
 	display: block;
 	font-size: 1.2em;
 	text-align: left;
-	margin:0 0 5px 10px;
+	margin: 0 0 5px 10px;
 }
-.actionHeroBtn {
-	margin:0 0 0 10px;
-}
-.actionHeroBtn:hover {
-}
-
+.actionHeroBtn { margin: 0 0 0 10px; }
+.actionHeroBtn:hover { }
 #productWindow {
 	position: relative;
 	width: 100%;
@@ -1257,19 +1252,26 @@ body.home h1.akvoDescr {
 	padding: 0;
 	border-bottom: none;
 	border-top: none;
-	margin:1em auto 2em;
+	margin: 1em auto 2em;
 }
 #productWindow div.fourColumns div {
 	border-top: thin solid rgb(240,240,240);
 	text-align: center;
 	background: rgb(250,248,245);
 	background: rgba(255,255,255,0.6);
-	/*	min-height: 295px;*/	
+		/*min-height: 295px;*/	
 	-moz-border-radius: 0.25em;
 	-webkit-border-radius: 0.25em;
 	-o-border-radius: 0.25em;
 	border-radius: 0.25em;
 }
+/*#productWindow div.fourColumns div#rsrBucket {background: rgba(87, 193, 232, 0.1);}
+#productWindow div.fourColumns div#flowBucket {background: rgba(226, 124, 0, 0.1);}
+#productWindow div.fourColumns div#openaidBucket {background: rgba(255, 206, 0, 0.1);}
+#productWindow div.fourColumns div#akvopedia {background: rgba(191, 131, 185, 0.1);}
+#productWindow div.fourColumns div {
+	background: rgb(250,248,245);
+	background: rgba(255,255,255,0.6);}*/
 .products #productWindow div.fourColumns div { background: rgb(245,245,245); }
 #productWindow div h1, #productWindow div h2 {
 	text-align: left;
@@ -1361,6 +1363,8 @@ ul.faqMenuList li:hover { background: rgb(218,218,218); }
 ul.faqMenuList li a { display: block; }
 .answers h4 { font-weight: bold; }
 .answers p { margin-bottom: 3em; }
+
+.partnerRules h2 {text-align: left !important;}
 /*************************************************************
 					Looking for more
 *************************************************************/
@@ -1385,15 +1389,35 @@ ul.faqMenuList li a { display: block; }
 #moreStuffHome > div { }
 #moreStuffHome div h3 a {
 	display: block;
-	padding:0.2em 0 0 2em;
+	padding: 0.2em 0 0 2em;
 	min-height: 32px;
 	color: rgb(44,42,116);
 	margin: 0 auto;
 }
-#moreStuffHome .networkIcon h3 a { background: url(images/bucketNetIcn.png) no-repeat left center ; background-size:12%; }
-#moreStuffHome .videoIcon h3 a { background: url(images/bucketVidIcn.png) no-repeat left center ; background-size:12%; }
-#moreStuffHome .blogIcon h3 a { background: url(images/bucketBlogIcn.png) no-repeat left center ; background-size:12%; }
-#moreStuffHome .eventIcon h3 { background: url(images/bucketEventIcn.png) no-repeat left center ; background-size:12%; }
+span.blogIcon a  {
+	padding: 0.2em 0 0 1em; 
+	background: url(images/bucketBlogIcn.png) no-repeat left center;
+	background-size: 31%;
+}
+
+.networkIcon a {
+	background: url(images/bucketNetIcn.png) no-repeat left center;
+	background-size: 12%;
+}
+.videoIcon a {
+	background: url(images/bucketVidIcn.png) no-repeat left center;
+	background-size: 12%;
+}
+.blogIcon a  {
+	background: url(images/bucketBlogIcn.png) no-repeat left center;
+	background-size: 12%;
+}
+.eventIcon a {
+	background: url(images/bucketEventIcn.png) no-repeat left center;
+	background-size: 12%;
+}
+#moreStuffHome figcaption a {background:none;}
+
 /*#moreStuffHome div > div > div {
 	position: relative;
 	margin: 0.5em auto 0.25% auto;
@@ -1417,29 +1441,26 @@ ul.faqMenuList li a { display: block; }
 	width: 98%;
 	text-align: left;
 }
-
 #moreStuffHome figure > div {
-	width:92%;
-	margin:0 auto;
-	position:relative;
-	padding:0.25%;
-	background:rgb(236,236,236);
-	min-height:145px;
-	max-height:150px;
-	overflow:hidden;
-	border-radius:0.15em;
+	width: 92%;
+	margin: 0 auto;
+	position: relative;
+	padding: 0.25%;
+	background: rgb(236,236,236);
+	min-height: 145px;
+	max-height: 150px;
+	overflow: hidden;
+	border-radius: 0.15em;
 }
-#moreStuffHome .videoIcon figure > div {
-	background:rgb(32,32,36);
-}
+#moreStuffHome .videoIcon figure > div { background: rgb(32,32,36); }
 #moreStuffHome figure > figcaption {
-	width:90%;
-	margin:10px auto 5px;
+	width: 90%;
+	margin: 10px auto 5px;
 }
 #moreStuffHome figure > figcaption a {
 	font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-	font-size:1.1em;
-	color:rgb(32,32,36);
+	font-size: 1.1em;
+	color: rgb(32,32,36);
 }
 #moreStuffHome figure img {
 	display: block;
@@ -1452,8 +1473,6 @@ ul.faqMenuList li a { display: block; }
 }
 #moreStuffHome div.blogIcon time { margin: 0 0 0 1%; }
 #moreStuffHome div.fourColumns > div { }
-
-
 /*-----------------------------------
 				BLOG
 ------------------------------------*/
@@ -1468,14 +1487,18 @@ ul.faqMenuList li a { display: block; }
 	width: 100%;
 	height: auto;
 }
-.entry img.lowRes {
-	width: inherit;
-}
+.entry img.lowRes { width: inherit; }
 .entry em {
 	display: block;
 	margin: 0.1em 0 0 0em;
 	font-size: 1.2em;
 }
+.entry ul, .entry ol, .answers ul, .answers ol, .policies ul, .policies ol {
+	margin: 1em 0 1em 1em;
+	padding: 0.25em 0 0.25em 2em;
+	list-style: disc outside none;
+}
+.entry li ,  .akvo-faq .answers li, .policies li { margin: 0.5em 0 0.5em 0.25em; }
 .entry p {
 	margin: 0 0 20px 0%;
 	width: 100%;
@@ -1591,7 +1614,9 @@ blockquote p {
 	padding: 0.25em 1%;
 	border-bottom: 1px solid rgb(242,242,242);
 }
-.archiveshead h2 { color: rgb(222, 137, 41); text-align:left;
+.archiveshead h2 {
+	color: rgb(222, 137, 41);
+	text-align: left;
 }
 #navbelow {
 	display: block;
@@ -1776,7 +1801,7 @@ p#allowed_tags code {
 	margin-bottom: 0;
 	margin-top: 6px;
 }
-#commentform label {  font-size:0.9em;}
+#commentform label { font-size: 0.9em; }
 #commentform label small {
 	display: inline;
 	size: 0.9em;
@@ -1838,9 +1863,7 @@ p#allowed_tags code {
 	display: block;
 	margin-bottom: 20px;
 }
-#sidebar .widget.twitBuck {
-	padding: 0 0 0 2%;
-	}
+#sidebar .widget.twitBuck { padding: 0 0 0 2%; }
 #sidebar .widget h3 {
 	padding: 1.5% 1% 1.5% 4%;
 	width: 95%;
@@ -1851,12 +1874,26 @@ p#allowed_tags code {
 	width: 96%;
 	margin: 0 auto 1px auto;
 }
+#sidebar .widget ul#recentcomments {
+	padding:5px 1%;
+	margin:0 auto;
+	display:block;
+	width:96%;
+}
+
+#sidebar .widget ul li.recentcomments {
+	display: block;
+	width: 90%;
+	margin: 0 auto 30px auto;
+}
+#sidebar .widget ul li.recentcomments:first-child {
+	margin: 10px auto 30px auto;
+}
 #sidebar .widget ul li ul { font-size: 0.9em; }
 #sidebar .widget ul li a {
 	display: block;
 	width: 94%;
 	padding: 3px 3%;
-	font-size: 1em;
 	font-weight: normal;
 	-moz-border-radius: 0.1em;
 	-webkit-border-radius: 0.1em;
@@ -1955,15 +1992,18 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input
 	padding: 0;
 	display: inline;
 	float: left;
-	padding:0.8em;
+	padding: 0.8em;
 }
 p.sml_submit input {
 	float: right;
 	margin-top: 0;
-	width:17.8%;
+	width: 17.8%;
 }
-footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input { width:28%;}
-footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input { width:36.5%; margin:0 0 0 0.5%;}
+footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input { width: 28%; }
+footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input {
+	width: 36.5%;
+	margin: 0 0 0 0.5%;
+}
 footer.bottomPage section#siteMap div.socialAkvo nav.socialLinks {
 	position: relative;
 	margin: 0 auto;
@@ -2036,6 +2076,13 @@ footer.bottomPage small:before {
 footer.bottomPage div#backToTop { }
 footer.bottomPage a[rel="self"] { }
 footer.bottomPage a[rel="self"]:hover { }
+/*
+#directorBoard {float:right;}
+#advisoryGroup {float:left;}
+
+#netherLand #directorBoard {width:33.33%; padding:0; margin:0;}
+#netherLand #advisoryGroup {width:66.67%; padding:0; margin:0;}
+*/
 /*************************************************************
 						Product Pages
 *************************************************************/
@@ -2274,12 +2321,8 @@ nav.anchorNav ul li a:hover {
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0 );
 */ }
 .akvoflow .productPage section.figure { background: url(images/background-banner.jpg) repeat; }
-.figure {
-	background: rgb(32,32,36);
-}
-.akvoopenaid .figure {
-	background: rgb(242,242,246);
-}
+.figure { background: rgb(32,32,36); }
+.akvoopenaid .figure { background: rgb(242,242,246); }
 .working-at-akvo .figure { }
 .figure img {
 	display: block;
@@ -2505,6 +2548,10 @@ ul.staff li div.imgWrapper {
 	transition: opacity 0.2s ease-in;
 */
 }
+.new_staffs .staffBiog, .staffAsset .staffBiog, .new_partners .staffBiog  {display:none;}
+.akvoTeam {display:none;}
+.singleStaffPage .akvoTeam {display:block;}
+
 ul.staff li.partnership:hover div.imgWrapper { background: rgb(250, 162, 27); }
 ul.staff li.communication:hover div.imgWrapper { background: rgb(219, 135, 201); }
 ul.staff li.engineering:hover div.imgWrapper { background: rgb(133, 171, 143); }
@@ -2534,12 +2581,23 @@ ul.staff li.management div.imgWrapper div {
 	-o-transition: opacity 0.2s ease-in;
 	transition: opacity 0.2s ease-in;
 }
+.directors {position:relative;}
+#netherLand .directorsAbs {
+	position:absolute;
+	left:67.2%;
+	top:0;
+	}
+#usa .directorsAbs, #kenya .directorsAbs {
+	position:absolute;
+	left:50.4%;
+	top:0;
+	}
 ul.staff li div.imgWrapper img:hover { opacity: 0.9;/*	-webkit-filter: grayscale(0%);
 	-moz-filter: grayscale(0%);
 	-ms-filter: grayscale(0%);
 	-o-filter: grayscale(0%);
 	filter: grayscale(0%);
-*/}
+*/ }
 ul.staff li:nth-child(6n) { margin-right: 0; }
 ul.staff li.newStaff { margin-right: 0; }
 .teamPage h2, .partnerPage h2 {
@@ -2628,7 +2686,7 @@ ul.staff li.newStaff { margin-right: 0; }
 	max-height: 75%;
 	border: 1px solid rgb(138,138,138);
 	border-radius: 0.5em;
-	overflow-y:scroll;
+	overflow-y: scroll;
 }
 #staffDescr { margin-top: 10px; }
 #staffDescr p { display: block; }
@@ -2655,6 +2713,7 @@ ul.staff li.newStaff { margin-right: 0; }
 .extLoad div.imgWrapper {
 	float: left;
 	margin: 10px 35px 5px 0;
+	border:1px solid rgb(242,242,242);
 }
 .extLoad div.imgWrapper img {
 	margin: 0 auto;
@@ -2839,33 +2898,30 @@ ul.staff li.newStaff { margin-right: 0; }
 	background: rgb(230,230,230);
 	border-top: 1px solid rgb(215,215,215);
 	border-bottom: 2px solid rgb(255,255,255);
-	margin-bottom:1em !important;
-	min-height:424px;
+	margin-bottom: 1em !important;
+	min-height: 424px;
 }
 .authorTime {
-	position:relative;
-	clear:both;
-	}
-.authorTime:after {
-	clear:both;
-	}
-
+	position: relative;
+	clear: both;
+}
+.authorTime:after { clear: both; }
 .rsrUpdate em {
-	display:inline;
-	float:left;
-	width:68%;
+	display: inline;
+	float: left;
+	width: 68%;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
 }
 .rsrUpdate time {
-	display:inline;
-	float:left;
-	width:28%;
-	overflow:hidden;
+	display: inline;
+	float: left;
+	width: 28%;
+	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
-	}
+}
 .rsrUpdate > span {
 	position: absolute;
 	font-size: 0.9em;
@@ -2890,9 +2946,9 @@ ul.staff li.newStaff { margin-right: 0; }
 .rsrUpdate h2 a { color: rgb(44,42,116); }
 .rsrUpdate p {
 	margin: 0.5em 0;
-/*	min-height: 80px;
+	/*	min-height: 80px;
 	max-height:160px;
-*/	overflow:hidden;
+*/	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
@@ -2903,12 +2959,19 @@ ul.staff li.newStaff { margin-right: 0; }
 	padding: 3px 3px 0 3px;
 	background: rgb(196,196,196);
 	margin: 1.5em auto 0.5em;
-	max-width:100%;
-	height:190px;
-	overflow:hidden;
+	max-width: 100%;
+	height: 190px;
+	overflow: hidden;
 }
-.rsrUpdate .imgWrap img { margin: 0 auto; max-with:100%; position:relative;}
-.orgAndPlace { margin: 1em 0 0 0; display:none;}
+.rsrUpdate .imgWrap img {
+	margin: 0 auto;
+	max-with: 100%;
+	position: relative;
+}
+.orgAndPlace {
+	margin: 1em 0 0 0;
+	display: none;
+}
 .orgAndPlace .org {
 	color: rgb(255,255,255);
 	font-size: 0.9em;
@@ -2935,9 +2998,7 @@ ul.staff li.newStaff { margin-right: 0; }
 /***********************************
 						Price table
 ********************************************/
-.pricePage .dialog {
-	padding: 2em 2em 0;
-}
+.pricePage .dialog { padding: 2em 2em 0; }
 .priceDescrFullW {
 	position: relative;
 	padding: 0 0 2.5em 0;
@@ -2952,39 +3013,39 @@ table.pricingTable {
 	border-collapse: collapse;
 	text-align: left;
 	font-size: 1.1em;
-	border:1px solid rgb(218,218,218);
+	border: 1px solid rgb(218,218,218);
 }
 table.pricingTable td {
 	overflow: hidden;
 	vertical-align: top;
 	text-align: left;
 	min-height: 250px;
-	font-size:0.9em;
+	font-size: 0.9em;
 }
 table.pricingTable thead tr {
-	background:rgb(32,32,36);
-	color:rgb(255,255,255);
+	background: rgb(32,32,36);
+	color: rgb(255,255,255);
 }
-
 table.pricingTable td img {
 	display: block;
-	margin:1em auto 0;
+	margin: 1em auto 0;
 }
 table.pricingTable .priceCat {
 	padding: 0.5em 1% 0.5em 1%;
-	width:23%;
-	font-weight:normal;
+	width: 23%;
+	font-weight: normal;
 }
 table.pricingTable .priceDescr {
 	padding: 0.5em 1% 2.5em 1%;
-	width:23%;
+	width: 23%;
 }
 table.pricingTable td:hover { font-weight: normal; }
 table.pricingTable tbody tr { }
 table.pricingTable tbody td:nth-child(2n+1), table.pricingTable tbody td.odd { background: rgb(238,238,238); }
 table.pricingTable tbody tr:nth-child(2n), table.pricingTable tbody tr.even { }
 table.pricingTable tbody tr:hover, table.pricingTable tbody tr:nth-child(2n):hover, table.pricingTable tbody tr.even:hover { }
-	/* background:rgb(66,82,87); */
+
+/* background:rgb(66,82,87); */
 
 
 
@@ -3328,6 +3389,20 @@ nav#n ul li.current_page_parent a {
 }
 .post .meta i { margin-bottom: 4px; }
 #commentform #allowed_tags { display: none; }
+.logInHeader {
+	position: absolute;
+	top: 5px;
+	right: 10px;
+}
+.logInHeader a {
+	font-size: 1.1em;
+	color: rgb(222, 137, 41);
+	background:rgba(255,255,255,0.2);
+	border-radius:0.25em;
+	padding:0.25em 0.5em;
+}
+.logInHeader a:hover { color: rgb(255,255,255); }
+
 /*----------------------------------------------------
 					Home Page
 ----------------------------------------------------*/
@@ -3388,17 +3463,12 @@ body.home h1.akvoDescr {
 .actionHeroBtn {
 	display: block;
 	width: 55%;
-	position: relative;
-	top: inherit;
-	right: inherit;
+	position: absolute;
+	top: 35px;
+	right: -160px;
 	border: 0 none;
 	border-radius: 0.25em;
 	box-shadow: 0 1px 0 rgba(255, 255, 255, 0.1) inset, 0 1px 5px rgba(0, 0, 0, 0.25);
-	color: rgb(255, 255, 255) !important;
-	font-size: 1.8em;
-	padding: 0.5em 0.75em;
-	transition: none 0s ease;
-	margin: 20px auto 15px;
 }
 .borderTop, .borderBottom {
 	position: absolute;
@@ -3466,7 +3536,29 @@ body.home h1.akvoDescr {
 	padding: 3%;
 	min-height: 200px;
 	width: 94%;
+}span.blogIcon a  {
+	padding: 0.2em 0 0 1em; 
+	background: url(images/bucketBlogIcn.png) no-repeat left center;
+	background-size: 31%;
 }
+
+.networkIcon a {
+	background: url(images/bucketNetIcn.png) no-repeat left center;
+	background-size: 8%;
+}
+.videoIcon a {
+	background: url(images/bucketVidIcn.png) no-repeat left center;
+	background-size: 8%;
+}
+.blogIcon a  {
+	background: url(images/bucketBlogIcn.png) no-repeat left center;
+	background-size: 8%;
+}
+.eventIcon a {
+	background: url(images/bucketEventIcn.png) no-repeat left center;
+	background-size: 8%;
+}
+
 /*----------------------------------------------------------------------
 								Footer
 -----------------------------------------------------------------------*/
@@ -3618,7 +3710,6 @@ nav.anchorNav ul li a {
 nav.anchorNav ul li:hover a { color: rgb(55, 146, 179); }
 }
 
-
 /* Tablets ----------- */
 @media only screen and (min-width : 621px) and (max-width :1024px) {
-	}
+}

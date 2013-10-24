@@ -3,8 +3,6 @@
 
 $("document").ready(function () {
 
-
-
 // Fixes the Zooming while scrolling on google map iframe.
 $(document).bind('em_maps_location_hook', function( e, map, infowindow, marker ){
 // Disable scroll zoom on Google Maps
@@ -140,15 +138,16 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 	
 	var newDiv = $("<div></div>");
 	$("li.staffAsset.management div.imgWrapper").append(newDiv);
-	
+
 //  Team Page click effects.
 
     $('li.staffAsset').click(function () {
         var staffID = $(this).attr("id");
         openDialog('#descrDialog');
-        $('#staffDescr p').load('/staffDescr.html #' + staffID);
+        $('#staffDescr p').load('/wp-content/themes/Akvo-responsive/staffDescr.php #' + staffID);
     });
-    $('#descrDialog').find('.ok, .cancel').live('click', function () {
+    $('#descrDialog').find('.ok, .cancel').live('click', function (e) {
+		e.stopPropagation(e);
         closeDialog(this);
     }).end().find('.ok').live('click', function () {
         // Clicked Agree!
@@ -157,6 +156,45 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
         // Clicked close!
         console.log('clicked close!');
     });
+	
+//  Team Page click effects NEW VERSION
+
+    $('li.new_staffs, li.new_partners').click(function () {
+        var staffID = $(this).attr("id");
+		var biog = $(this).find('.staffBiog').html();
+		var staffPic = $(this).find('.imgWrapper').html();
+		var staffName = $(this).find('.staffName').html();
+		var staffTitle = $(this).find('.staffTitle').html();
+        openDialog('#descrDialog');
+        $('#staffDescr h1.staffName').html( staffName );
+        $('#staffDescr p.staffTitle').html( staffTitle );
+        $('#staffDescr p.staffBio').html( biog );
+        $('#staffDescr .imgWrapper').html( staffPic );
+    });
+	$('#descrDialog').find('.ok, .cancel').live('click', function (e) {
+		e.stopPropagation();
+        closeDialog(this);
+    }).end().find('.ok').live('click', function () {
+        // Clicked Agree!
+        console.log('clicked close!');
+    }).end().find('.cancel').live('click', function () {
+        // Clicked close!
+        console.log('clicked close!');
+    });
+	$('#blanket').click(function() {
+			closeDialog('#descrDialog');                        
+	});
+	$('#partnershipGroup ul').append($('li.partnerships'));
+	$('#communicationGroup ul').append($('li.communication-pr'));
+	$('#contractorsGroup ul').append($('li.contractors'));
+	$('#engineeringGroup ul').append($('li.design-engineering'));
+	$('#govGroup ul').append($('li.governments'));
+	$('#compsGroup ul').append($('li.companies'));
+	$('#founGroup ul').append($('li.foundations'));
+	$('#intGovGroup ul').append($('li.inter-governmental'));
+	$('#ngoGroup ul').append($('li.ngos'));
+	$('#knowledgeGroup ul').append($('li.knowledge-institutes'));
+
 
 //  Pricing Page click effects.
 
@@ -179,7 +217,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
     $('li.partnerAsset').click(function () {
         var partnerID = $(this).attr("id");
         openDialog('#descrDialog');
-        $('#partnerDescr p').load('/partnerDescr.html #' + partnerID);
+        $('#partnerDescr p').load('/wp-content/themes/Akvo-responsive/partnerDescr.php #' + partnerID);
     });
     $('#descrDialog').find('.ok, .cancel').live('click', function () {
         closeDialog(this);
@@ -192,6 +230,9 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
     });
 });
 	
+
+
+
 
 // 	close on esc press.
 	
@@ -210,6 +251,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 		$(selector).parents('#overlay').fadeOut('fast', function () {
 			$(this).find('.dialog').remove();
 		});
-		
-	
+
+
+
 }

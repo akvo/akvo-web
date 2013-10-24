@@ -1,21 +1,22 @@
 <?php
 	/*
-		Template Name: New Staff
+		Template Name: New Partner
 	*/
-get_header(); ?>
-
-<div id="content" role="main" class="floats-in singleStaffPage withSubMenu">
-  <section class="wrapper">
+?>
+<?php get_header(); ?>
+<div id="content" role="main" class="floats-in singlePartnerPage withSubMenu">
+  <?php get_sidebar(); ?>
+  <div id="main">
     <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article id="post-<?php the_ID(); ?>" class="post" role="article">
       <header class="posthead">
         <h2 class="bigger staffName">
-      <?php the_title(); ?>
+          <?php the_title(); ?>
         </h2>
          <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
-         <span class="akvoTeam"><?php the_terms( $post->ID, 'new_staffs_team' ,  ' ' ); ?></span>
-      </header>
-        <div class="imgWrapper">
+         <span class="akvoTeam"><?php the_terms( $post->ID, 'new_partners_category' ,  ' ' ); ?></span>
+      </header>        
+       <div class="imgWrapper">
           <?php the_post_thumbnail('thumbnail'); ?>
         </div>
 
@@ -35,23 +36,12 @@ get_header(); ?>
       </section>
     </article>
     <?php endif; ?>
-    </ul> 
-    
-  <div id="overlay">
-    <div id="blanket"></div>
   </div>
-  <!-- the dialog contents -->
-  <div id="descrDialog" class="dialog">
-    <div id="staffDescr">
-    <div class="extLoad" id="">
-      <div class="imgWrapper"></div>
-      <h1 class="staffName"></h1>
-      <p class="staffTitle"></p>
-      <p class="staffBio"><br/><br/> </p></div>
-        </div>
-        <div class="buttons"><a class="cancel">close</a></div>
-      </div>
-  </section>
+  <!-- /#main --> 
+  
 </div>
-<?php wp_reset_query(); ?>
+<!-- /#content --> 
+
+<br style="clear:both;">
+<?php get_sidebar( 'responsive' ); ?>
 <?php get_footer(); ?>

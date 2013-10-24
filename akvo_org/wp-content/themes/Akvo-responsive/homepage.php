@@ -62,7 +62,7 @@
       </div>
       <script type="text/javascript">
         $(function() {
-          var akvo_domain = 'http://www.akvo.org';
+          var akvo_domain = 'http://rsr.akvo.org';
           $.ajax({
             url: akvo_domain + '/api/v1/project_update/?limit=5',
             dataType: "jsonp",
@@ -103,11 +103,11 @@
       </div></div>
 <!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
 -->    <div class="eventIcon">
-      <h3><a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=bd1c9dc16c&e=b8a80d9bf3">Latest newsletter</a></h3>
+      <h3><a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=b1e3d6160d&e=469389aed8">Latest newsletter</a></h3>
       <hr class="delicateSmall">
       <div>
-        <figure><div> <a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=bd1c9dc16c&e=b8a80d9bf3"><img src="<?php bloginfo('template_directory'); ?>/images/newsletter.jpg" alt="" /></a></div>
-          <figcaption><a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=bd1c9dc16c&e=b8a80d9bf3">See the newsletter  &raquo;</a></figcaption>
+        <figure><div> <a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=b1e3d6160d&e=469389aed8"><img src="<?php bloginfo('template_directory'); ?>/images/newsletter.jpg" alt="" /></a></div>
+          <figcaption><a href="http://us2.campaign-archive2.com/?u=a70e9bedf0f2a0a5db70eb18b&id=b1e3d6160d&e=469389aed8">See the newsletter  &raquo;</a></figcaption>
         </figure>
       </div></div>
 <!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
