@@ -2,36 +2,42 @@
 .DS_Store
 
 # Configurable files
-akvo_org/robots.txt
-akvo_org/wp-config*
+wp-config*
+code/nginx.conf
+code/robots.txt
 
 # Media
-akvo_org/wp-content/uploads
+code/wp-content/uploads
 
 # WP base files
-akvo_org/wp-admin
-akvo_org/wp-content/*.php
-akvo_org/wp-includes
-akvo_org/*.php
-akvo_org/license*
-akvo_org/readme*
+code/wp-admin
+code/wp-content/*.php
+code/wp-includes
+code/*.php
+code/license*
+code/readme*
 
 # Downloadable WP plug-ins
-akvo_org/wp-content/plugins/advanced-custom-*
-akvo_org/wp-content/plugins/akismet
-akvo_org/wp-content/plugins/disqus*
-akvo_org/wp-content/plugins/global*
-akvo_org/wp-content/plugins/limit-post*
-akvo_org/wp-content/plugins/mail*
-akvo_org/wp-content/plugins/preserved-html*
-akvo_org/wp-content/plugins/types
-akvo_org/wp-content/plugins/w3-total-cache
-akvo_org/wp-content/plugins/wck-*
-akvo_org/wp-content/plugins/wordpress-*
-akvo_org/wp-content/plugins/wp-piwik
-akvo_org/wp-content/plugins/*.php
+code/wp-content/plugins/advanced-custom-*
+code/wp-content/plugins/akismet
+code/wp-content/plugins/disqus*
+code/wp-content/plugins/global*
+code/wp-content/plugins/limit-post*
+code/wp-content/plugins/mail*
+code/wp-content/plugins/post-*
+code/wp-content/plugins/preserved-html*
+code/wp-content/plugins/types
+code/wp-content/plugins/velvet-*
+code/wp-content/plugins/w3-total-cache
+code/wp-content/plugins/wck-*
+code/wp-content/plugins/wordpress-*
+code/wp-content/plugins/wp-piwik
+code/wp-content/plugins/*.php
 
 # Downloadable WP themes
-akvo_org/wp-content/themes/hello*
-akvo_org/wp-content/themes/twenty*
-akvo_org/wp-content/themes/*.php
+code/wp-content/themes/hello*
+code/wp-content/themes/twenty*
+code/wp-content/themes/*.php
+
+# Cache dir
+code/wp-content/cache
