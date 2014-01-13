@@ -42,39 +42,30 @@
     </div>
   </section>
 
-      <!-- DEVICES TABLE-->
-      <table class="pricingTable wrapper">
-        <!-- TABLE HEADER-->
-        <thead>
-          <tr>
-            <th class="priceCat">Products</th>
-            <th class="priceCat">Partner staff support</th>
-            <th class="priceCat">Communication staff support</th>
-            <th class="priceCat">Operation staff support</th>
-          </tr>
-        </thead>
-        <!-- TABLE BODY: MAIN CONTENT-->
-        <tbody>
-       	   <tr>
-            <td class="priceDescr"><img src="<?php bloginfo('template_directory'); ?>/images/pricing-products.jpg"/></td>
-            <td class="priceDescr"><img src="<?php bloginfo('template_directory'); ?>/images/pricing-partner-staff-support.jpg"/></td>
-            <td class="priceDescr"><img src="<?php bloginfo('template_directory'); ?>/images/pricing-communications-support4.jpg"/></td>
-            <td class="priceDescr"><img src="<?php bloginfo('template_directory'); ?>/images/pricing-operation-staff.jpg"/></td>
-          </tr>
-          <tr>
-            <td class="priceDescr">We set up, run, maintain and improve the Akvo products you choose to use. We ensure the technology is robust, and can work in the often difficult conditions required. Each product has a fixed price. On average this is 30% of total budget.</td>
-            <td class="priceDescr">Our partner team will guide you through the introduction of the tools and will make sure there's someone in place to help you. We help you with data gathering and publishing. We attend the meetings you need us to, and we answer all the questions that come up along the way. Pricing is based on the number of days of support needed, and the staff experience required. On average this is 30% of total budget.</td>
-            <td class="priceDescr">We help your marketing, communication and field staff embrace the potential of Akvo tools so you can profile your organisation and your work better. Pricing is based on the number of days of support needed, and the staff experience required. On average this is 10% of total budget.</td>
-            <td class="priceDescr">We maintain regional teams in developing countries who can provide partner and ongoing operational support, training and workshops. We train local and regional staff in the use of the tools, and can help to build necessary local capacity. Pricing is based on local tariffs, number of days of support needed, and the staff experience required. On average this is 30% of total budget.</td>
-          </tr>
-        </tbody>
-        <!-- TABLE FOOTER-->
-        <tfoot>
-          <tr>
-            <td colspan="2"></td>
-          </tr>
-        </tfoot>
-      </table>
+  <div class="wrapper">
+    <div class="pricingtable2">
+      <div class="pricecat odd">
+        <h4>Products</h4>
+        <img src="<?php bloginfo('template_directory'); ?>/images/pricing-products.jpg" alt="Products" />
+        <p>We set up, run, maintain and improve the Akvo products you choose to use. We ensure the technology is robust, and can work in the often difficult conditions required. Each product has a fixed price. On average this is 30% of total budget.</p>
+      </div>
+      <div class="pricecat even">
+        <h4>Partner staff support</h4>
+        <img src="<?php bloginfo('template_directory'); ?>/images/pricing-partner-staff-support.jpg" alt="Partner staff support" />
+        <p>Our partner team will guide you through the introduction of the tools and will make sure there's someone in place to help you. We help you with data gathering and publishing. We attend the meetings you need us to, and we answer all the questions that come up along the way. Pricing is based on the number of days of support needed, and the staff experience required. On average this is 30% of total budget.</p>
+      </div>
+      <div class="pricecat odd">
+        <h4>Communication staff support</h4>
+        <img src="<?php bloginfo('template_directory'); ?>/images/pricing-communications-support4.jpg" alt="Communication staff support" />
+        <p>We help your marketing, communication and field staff embrace the potential of Akvo tools so you can profile your organisation and your work better. Pricing is based on the number of days of support needed, and the staff experience required. On average this is 10% of total budget.</p>
+      </div>
+      <div class="pricecat even">
+        <h4>Operation staff support</h4>
+        <img src="<?php bloginfo('template_directory'); ?>/images/pricing-operation-staff.jpg" alt="Operation staff support" />
+        <p>We maintain regional teams in developing countries who can provide partner and ongoing operational support, training and workshops. We train local and regional staff in the use of the tools, and can help to necessary local capacity. Pricing is based on local tariffs, number of days of support needed, and the staff experience required. On average this is 30% of total budget.</p>
+      </div>
+    </div>
+  </div>
 
 </div>
 <!-- /#content --> 
