@@ -31,7 +31,8 @@ get_header(); ?>
     <!-- Cycle through all posts -->
     <ul class="staff floats-in">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+        <a href="#inline" class="fancybox">
         <!-- Display featured image in right-aligned floating div -->
         <div class="imgWrapper">
           <?php the_post_thumbnail('thumbnail'); ?>
@@ -42,6 +43,14 @@ get_header(); ?>
         <span class="akvoTeam"><?php the_terms( $post->ID, 'new_staffs_team' ,  ' ' ); ?></span>
         <div class="staffBiog"><?php the_content(); ?></div>
         <small>Click for more details.</small>
+        </a>
+
+        <div id="inline">
+          <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
+          <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?>
+          <?php the_terms( $post->ID, 'new_staffs_team' ,  ' ' ); ?>
+          <?php the_content(); ?>
+        </div>
       </li>
       <?php endwhile; ?>
     </ul> 

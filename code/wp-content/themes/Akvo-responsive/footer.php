@@ -115,7 +115,7 @@
 </div>
 <!-- end mainbody --> 
 <!-- Piwik -->
-<script type="text/javascript">
+<!--<script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
   _paq.push(["setCookieDomain", "*.akvo.org"]);
@@ -129,5 +129,5 @@
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
-</script>
+</script>-->
 <!-- End Piwik Code --></body></html>
