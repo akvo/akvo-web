@@ -3555,7 +3555,7 @@ table.pricingTable tbody tr:hover, table.pricingTable tbody tr:nth-child(2n):hov
 		font-size: 0.95em;
 	}
 }
-#inline {
+div[id^="inline-"] {
 	display: none;
 }
 

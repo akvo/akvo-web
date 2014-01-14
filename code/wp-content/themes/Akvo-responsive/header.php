@@ -56,6 +56,7 @@
       height    : '70%',
       autoSize  : false,
       closeClick  : false,
+      padding     : 30,
       openEffect  : 'none',
       closeEffect : 'none'
     });    

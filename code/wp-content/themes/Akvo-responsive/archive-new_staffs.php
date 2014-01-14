@@ -32,7 +32,7 @@ get_header(); ?>
     <ul class="staff floats-in">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
       <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <a href="#inline" class="fancybox">
+        <a href="#inline-<?php the_ID(); ?>" class="fancybox">
         <!-- Display featured image in right-aligned floating div -->
         <div class="imgWrapper">
           <?php the_post_thumbnail('thumbnail'); ?>
@@ -45,11 +45,15 @@ get_header(); ?>
         <small>Click for more details.</small>
         </a>
 
-        <div id="inline">
-          <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
-          <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?>
-          <?php the_terms( $post->ID, 'new_staffs_team' ,  ' ' ); ?>
-          <?php the_content(); ?>
+        <div id="inline-<?php the_ID(); ?>">
+          <div id="staffDescr">
+            <div class="extLoad" id="">
+              <div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
+              <h1 class="staffName"><?php echo esc_html( get_post_meta( $post->ID, 'staff_name', true ) ); ?></h1>
+              <p class="staffTitle"><?php echo esc_html( get_post_meta( $post->ID, 'staff_title', true ) ); ?></p>
+              <p class="staffBio"><?php the_content(); ?></p>
+            </div>
+          </div>
         </div>
       </li>
       <?php endwhile; ?>
