@@ -41,6 +41,12 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/modernizr.custom.32662.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
+  <script type="text/javascript">
+  jQuery( document ).ready(function() { 
+    jQuery("#content").fitVids();
+  });
+  </script>
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script('comment-reply'); ?>
 <?php wp_head(); ?>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
@@ -48,7 +54,6 @@
   <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 <![endif]-->
 <?php if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-<?php wp_head(); ?>
 <link href='http://fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic' rel='stylesheet' type='text/css'>
 </head>
 
