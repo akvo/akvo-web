@@ -113,6 +113,7 @@
 <!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
 -->  </div>
 </section>
+</div>
 <!-- end content -->
 
 <?php get_footer(); ?>
