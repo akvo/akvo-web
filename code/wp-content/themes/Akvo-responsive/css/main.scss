@@ -3580,8 +3580,14 @@ table.pricingTable tbody tr:hover, table.pricingTable tbody tr:nth-child(2n):hov
 		font-size: 0.95em;
 	}
 }
+/* lightbox related */
 div[id^="inline-"] {
 	display: none;
+}
+
+/* faq */
+.qa-faq {
+	margin-bottom: 30px;
 }
 
 /* Mobile Smartphones ----------- */

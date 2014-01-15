@@ -34,6 +34,7 @@ code/wp-content/plugins/wordpress-*
 code/wp-content/plugins/wp-piwik
 code/wp-content/plugins/*.php
 code/wp-content/plugins/gravity*
+code/wp-content/plugins/q-and-a*
 
 # Downloadable WP themes
 code/wp-content/themes/hello*
