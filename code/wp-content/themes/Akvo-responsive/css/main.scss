@@ -2156,12 +2156,26 @@ p#allowed_tags code {
 								Footer
 -----------------------------------------------------------------------*/
 
-footer .menu {
+.menu-footer-container {
 	float: left;
 	width: 70%;
+	@media screen and (max-width: 768px) {
+		width: inherit;
+		margin-top: 20px;
+	}
+}
+footer .menu {
+	float: left;
+	@media screen and (max-width: 768px) {
+		margin: 0px 15px;
+	}
 	li {
 		float: left;
 		width: 25%;
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			margin: 5px 0px;
+		}
 		ul {
 			margin-bottom: 20px;
 			li {
@@ -2171,6 +2185,11 @@ footer .menu {
 			}
 		}
 	}
+}
+footer.bottomPage section#siteMap .menu h3 {
+	@media screen and (max-width: 768px) {
+		margin-top: 0;
+	}		
 }
 footer.bottomPage {
 	position: relative;
@@ -2254,9 +2273,9 @@ footer.bottomPage section#siteMap div.socialAkvo {
 	min-height: 100px;
 	width: 30%;
 	@media screen and (max-width: 768px) {
-		float: none;
+		float: left;
 		width: 100%;
-		margin: 60px auto 10px;
+		margin: 20px auto 10px;
 	}
 }
 footer.bottomPage section#siteMap div.socialAkvo h1 { color: $primary3; }
@@ -2289,12 +2308,26 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
 	.gform_body {
 		float: left;
 		width: 80%;
+		@media screen and (max-width: 768px) {
+			width: 100%;
+		}
 		ul li {
 			float: left;
 			width: 50%;
+			@media screen and (max-width: 768px) {
+				width: 100%;
+				input {
+					width: 100%;
+				}
+			}
 			&:nth-of-type(odd) {
 				width: 49%;
 				margin-right: 1%;
+				@media screen and (max-width: 768px) {
+					width: 100%;
+					margin-right: 0;
+					margin-bottom: 5px;
+				}
 			}
 		}
 	}
@@ -2302,6 +2335,11 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
 		float: left;
 		width: 18%;
 		margin-left: 2%;
+		@media screen and (max-width: 768px) {
+			width: 100%;
+			margin-left: 0;
+			margin-top: 10px;
+		}
 	}
 }
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
