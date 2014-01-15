@@ -2162,14 +2162,16 @@ footer .menu {
 	li {
 		float: left;
 		width: 25%;
-		ul li {
-			float: none;
-			display: block;
-			width: 100%;
+		ul {
+			margin-bottom: 20px;
+			li {
+				float: none;
+				display: block;
+				width: 100%;
+			}
 		}
 	}
 }
-
 footer.bottomPage {
 	position: relative;
 	padding: 0 0 0 0;
