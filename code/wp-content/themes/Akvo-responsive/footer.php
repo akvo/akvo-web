@@ -82,20 +82,7 @@
             </ul>
           </nav>
           <div class="newsLetter">
-          <p>Receive our amazing news.</p>
-            <?php $args = array(
-				'prepend' => '', 
-				'showname' => true,
-				'nametxt' => '', 
-				'nameholder' => 'Name...', 
-				'emailtxt' => '',
-				'emailholder' => 'Email Address...', 
-				'showsubmit' => true, 
-				'submittxt' => 'Submit', 
-				'jsthanks' => true,
-				'thankyou' => 'Thank you for subscribing to our mailing list'
-				);
-				echo smlsubform($args); ?>
+            <?php gravity_form(1, false, true, false, '', true); ?>
           </div>
         </div>
       </div>

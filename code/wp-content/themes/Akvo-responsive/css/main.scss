@@ -2280,6 +2280,27 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
 			padding: 0;
 		}		
 	}
+	.gform_description {
+		margin-bottom: 10px;
+		display: block;
+	}
+	.gform_body {
+		float: left;
+		width: 80%;
+		ul li {
+			float: left;
+			width: 50%;
+			&:nth-of-type(odd) {
+				width: 49%;
+				margin-right: 1%;
+			}
+		}
+	}
+	.gform_footer {
+		float: left;
+		width: 18%;
+		margin-left: 2%;
+	}
 }
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
 	display: block;
@@ -2298,6 +2319,8 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
 	font-size: 0.8em;
 	padding: 0.75em 0.5em;
 	border: 1px solid rgb(222, 220, 220);
+	width: 100%;
+	@include box-sizing(border-box);
 	@include box-shadow(none);
 	@media screen and (max-width: 768px) {
 		display: block;
