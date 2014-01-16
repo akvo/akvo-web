@@ -3,6 +3,11 @@
 	Custom functions designed specifically for Akvo Responsive theme.
 	Feel free to add your own dynamic functions, or clear out this file entirely.
 */
+
+// Loads advancedcustomfields fields required for FAQ and pricing page
+$includes_path = get_template_directory() . '/inc/';
+require_once($includes_path . 'acf-functions.php');
+
 add_theme_support( 'post-thumbnails' );
 register_nav_menus(array(
     'header-menu' => 'Header Menu',
