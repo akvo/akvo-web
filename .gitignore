@@ -33,7 +33,6 @@ code/wp-content/plugins/wck-*
 code/wp-content/plugins/wordpress-*
 code/wp-content/plugins/wp-piwik
 code/wp-content/plugins/*.php
-code/wp-content/plugins/gravity*
 
 # Downloadable WP themes
 code/wp-content/themes/hello*
