@@ -3599,7 +3599,8 @@ table.pricingTable tbody tr:hover, table.pricingTable tbody tr:nth-child(2n):hov
 		@media screen and (max-width: 768px) {
 			width: 100%;
 		}
-		&.even {
+		&.price-2,
+		&.price-4 {
 			background: rgb(255,255,255);
 		}
 	}
