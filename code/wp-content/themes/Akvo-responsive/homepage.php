@@ -10,9 +10,12 @@
 <h1 class="akvoDescr wrapper">
   <?php the_field('akvo-tagline'); ?>
 </h1>
+
 <section id="actionHeroBox" class="">
+  <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=1'); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <div class="borderTop"></div>
-  <img src="<?php the_field('hero_img'); ?>" class="hero-image" />
+  <img src="<?php the_field('hero_box_image'); ?>" class="hero-image" />
   <div class="wrapper">
   <div id="actionHeroInfo">
     <p>
@@ -20,17 +23,20 @@
     </p>
     <hgroup>
       <h1>
-        <?php the_field('box_title'); ?>
+        <?php the_field('hero_box_title'); ?>
       </h1>
       <h2>
-        <?php the_field('box_subtitle'); ?>
+        <?php the_field('hero_box_subtitle'); ?>
       </h2>
     </hgroup>
-    <a class="actionHeroBtn moreLink" href="<?php the_field('story_link'); ?>">Read More</a> </div>
+    <a class="actionHeroBtn moreLink" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
   <div class="borderBottom"></div>
   </div>
+  <?php endwhile; endif; wp_reset_query(); ?>
 </section>
+
 <?php include('fourProductWindow.php'); ?>
+
 <section id="moreStuffHome" class="floats-in"> 
   <!--    <h2 class="backLined">Looking for more?</h2>-->
   <div class="fourColumns wrapper">

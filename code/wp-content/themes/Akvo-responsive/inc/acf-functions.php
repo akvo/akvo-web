@@ -1,5 +1,7 @@
-<?php if(function_exists("register_field_group"))
+<?php
+if(function_exists("register_field_group"))
 {
+	// Pricing table
 	register_field_group(array (
 		'id' => 'acf_akvo-pricing',
 		'title' => 'Akvo Pricing',
@@ -70,6 +72,8 @@
 		),
 		'menu_order' => 0,
 	));
+
+	// FAQ custom fields
 	register_field_group(array (
 		'id' => 'acf_faq',
 		'title' => 'FAQ',
