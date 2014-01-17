@@ -45,13 +45,13 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.fancybox.css">
   <script type="text/javascript">
-  jQuery( document ).ready(function() {   
+  $( document ).ready(function() {   
     // footer menu headings
-    jQuery('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
+    $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
 
-    jQuery("#content").fitVids();
+    $("#content").fitVids();
 
-    jQuery(".fancybox").fancybox({
+    $(".fancybox").fancybox({
       maxWidth  : 800,
       maxHeight : 600,
       fitToView : false,

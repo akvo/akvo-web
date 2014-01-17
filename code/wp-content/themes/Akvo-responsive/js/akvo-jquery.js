@@ -140,7 +140,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 //    });
 	
 //  Create a div to load star icon for key management.
-	
+ /* 	
 	var newDiv = $("<div></div>");
 	$("li.staffAsset.management div.imgWrapper").append(newDiv);
 
@@ -164,7 +164,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 	
 //  Team Page click effects NEW VERSION
 
- /*   $('li.new_staffs, li.new_partners').click(function () {
+  $('li.new_staffs, li.new_partners').click(function () {
         var staffID = $(this).attr("id");
 		var biog = $(this).find('.staffBiog').html();
 		var staffPic = $(this).find('.imgWrapper').html();
