@@ -98,28 +98,35 @@
       </script>
       <!--  <a href="#" title="" class="seeMore moreLink">See all network activity</a>-->
     </div>
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">
       <h3><a href="http://www.youtube.com/user/Akvofoundation">Akvo.tv</a></h3>
       <hr class="delicateSmall">
       <div>
-        <figure><div> <a href="http://akvo.tv"> 
-			<img src="<?php bloginfo('template_directory'); ?>/images/akvo_tv.jpg" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
+        <figure>
+          <div> <a href="http://akvo.tv"> <img src="<?php the_field('akvo_tv'); ?>" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
           <figcaption><a href="http://akvo.tv">Go to akvo.tv  &raquo;</a></figcaption>
         </figure>
-      </div></div>
-<!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
--->    <div class="eventIcon">
-      <h3><a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c">Latest newsletter</a></h3>
+      </div>
+    </div>
+    
+    <div class="eventIcon">
+      <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
       <hr class="delicateSmall">
+      <a href="<?php the_field('letter_link'); ?>">
       <div>
-        <figure><div> <a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c"><img src="<?php bloginfo('template_directory'); ?>/images/homepage-image1.jpg" alt="" /></a></div>
-          <figcaption><a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c">See the newsletter  &raquo;</a></figcaption>
+        <figure>
+          <div> <a href="<?php the_field('letter_link'); ?>"><img src="<?php the_field('letter_img'); ?>" alt="" /></a></div>
+          <figcaption><a href="<?php the_field('letter_link'); ?>">See the newsletter  &raquo;</a></figcaption>
         </figure>
-      </div></div>
-<!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
--->  </div>
-</section>
-</div>
-<!-- end content -->
+      </div>
+      </a>
+      </div>
+      
+ <?php endwhile; // end of the loop. ?>
+
+ 
+</section></div></div>
+<!-- end content --><!-- end content -->
 
 <?php get_footer(); ?>
