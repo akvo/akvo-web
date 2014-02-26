@@ -2,14 +2,14 @@ LICENSE.md, v1.1, 29 May 2012 [ogl]
 
 Copyright (C) 2007-2012 Stichting Akvo (Akvo Foundation)
 
-This file is part of Akvo RSR.
+This file is part of Akvo.org.
 
-Akvo RSR is free software: you can redistribute it and modify
+Akvo.org is open source: you can redistribute it and modify
 it under the terms of the GNU Affero General Public License (AGPL)
 as published by the Free Software Foundation, either version 3 of the
 License or any later version.
 
-Akvo RSR is distributed in the hope that it will be useful,
+Akvo.org is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Affero General Public License included below for more details.  
