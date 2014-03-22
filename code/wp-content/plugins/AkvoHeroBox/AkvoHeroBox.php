@@ -32,101 +32,99 @@ function create_new_heroBox() {
  
             'public' => true,
             'menu_position' => 15,
-            'supports' => array( 'title', 'editor', 'author','thumbnail', 'custom-fields', 'revisions', 'post-formats'),
+            'supports' => array( 'title', 'revisions'),
             'taxonomies' => array( '' ),
             'menu_icon' => plugins_url( 'images/akvoHeroBox_icn.png', __FILE__ ),
-            'has_archive' => true
+            'has_archive'         => false,
+            'exclude_from_search' => true,
+            'public' => false,
+            'show_ui' => true
         )
     );
 }
-add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size( 240, 135, true );
-add_action( 'admin_init', 'heroBox_admin' );
 
-function heroBox_admin() {
-    add_meta_box( 
-		'new_heroBox_meta_box',
-        'New hero box details',
-        'new_heroBox_img',
-		'New hero box image',
-        'display_new_heroBox_meta_box',
-        'new_heroBox', 'normal', 'high'
-    );
+$plugins_url = dirname(__FILE__) . '/../';
+include_once($plugins_url . 'advanced-custom-fields/acf.php');
+
+// Uses ACF for the necessary custom fields
+if(function_exists("register_field_group"))
+{
+    register_field_group(array (
+        'id' => 'acf_akvo-hero-box',
+        'title' => 'Akvo Hero Box',
+        'fields' => array (
+            array (
+                'key' => 'field_52d7f8511f4f5',
+                'label' => 'Hero Box Active',
+                'name' => 'hero_box_active',
+                'type' => 'true_false',
+                'message' => 'Check to show this hero box on the homepage',
+                'default_value' => 0,
+            ),
+            array (
+                'key' => 'field_52d7f7c88e310',
+                'label' => 'Hero Box Image',
+                'name' => 'hero_box_image',
+                'type' => 'image',
+                'save_format' => 'url',
+                'preview_size' => 'thumbnail',
+                'library' => 'all',
+            ),
+            array (
+                'key' => 'field_52d7f8078e311',
+                'label' => 'Hero Box Title',
+                'name' => 'hero_box_title',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array (
+                'key' => 'field_52d7f8168e312',
+                'label' => 'Hero Box Subtitle',
+                'name' => 'hero_box_subtitle',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+            array (
+                'key' => 'field_52d7f8348e313',
+                'label' => 'Hero Box Link',
+                'name' => 'hero_box_link',
+                'type' => 'text',
+                'default_value' => '',
+                'placeholder' => '',
+                'prepend' => '',
+                'append' => '',
+                'formatting' => 'html',
+                'maxlength' => '',
+            ),
+        ),
+        'location' => array (
+            array (
+                array (
+                    'param' => 'post_type',
+                    'operator' => '==',
+                    'value' => 'new_herobox',
+                    'order_no' => 0,
+                    'group_no' => 0,
+                ),
+            ),
+        ),
+        'options' => array (
+            'position' => 'normal',
+            'layout' => 'no_box',
+            'hide_on_screen' => array (
+            ),
+        ),
+        'menu_order' => 0,
+    ));
 }
-
-function display_new_heroBox_meta_box( $new_heroBox ) {
-    // Retrieve current name of the staff and title based on staff ID
-    $heroBox_img = esc_html( get_post_meta( $new_heroBox->ID, 'heroBox_img', true ) );
-    $heroBox_title = esc_html( get_post_meta( $new_heroBox->ID, 'heroBox_title', true ) );
-    $heroBox_subTitle = esc_html( get_post_meta( $new_heroBox->ID, 'heroBox_subTitle', true ) );
-    $heroBox_descr = esc_html( get_post_meta( $new_heroBox->ID, 'heroBox_descr', true ) );
-    ?>
-    <table>
-    <tr>
-    		<td style="width: 100%">Hero Box Image</td>
-           <td><input type="file" size="80" name="new_heroBox_img" value="<?php echo $heroBox_img; ?>" /></td>
-    </tr>
-        <tr>
-            <td style="width: 100%">HeroBox Title</td>
-            <td><input type="text" size="80" name="new_heroBox_title" value="<?php echo $heroBox_title; ?>" /></td>
-        </tr>
-        <tr>
-            <td style="width: 100%">HeroBox subtitle</td>
-            <td><input type="text" size="80" name="new_heroBox_subTitle" value="<?php echo $heroBox_subTitle; ?>" /></td>
-        </tr>
-      <tr>
-            <td style="width: 100%">HeroBox short description</td>
-            <td><textarea type="text" size="80" name="new_heroBox_descr" value="<?php echo $heroBox_descr; ?>"></textarea></td>
-        </tr>
-    </table>
-    <?php
-}
-
-add_action( 'save_post',
-'add_new_heroBox_fields', 10, 2 );
-
-function add_new_heroBox_fields( $new_heroBox_id, $new_heroBox ) {
-    // Check post type for new heroBox
-    if ( $new_heroBox>post_type == 'new_heroBox' ) {
-        // Store data in post meta table if present in post data
-        if ( isset( $_POST['heroBox_img'] ) && $_POST['heroBox_img'] != '' ) {
-            update_post_meta( $new_heroBox_id, 'heroBox_img', $_POST['heroBox_img'] );
-        }
-        if ( isset( $_POST['heroBox_title'] ) && $_POST['heroBox_title'] != '' ) {
-            update_post_meta( $new_heroBox_id, 'heroBox_title', $_POST['heroBox_title'] );
-        }
-        if ( isset( $_POST['heroBox_subTitle'] ) && $_POST['heroBox_subTitle'] != '' ) {
-            update_post_meta( $new_heroBox_id, 'heroBox_subTitle', $_POST['heroBox_subTitle'] );
-        }
-        if ( isset( $_POST['heroBox_descr'] ) && $_POST['heroBox_descr'] != '' ) {
-            update_post_meta( $new_heroBox_id, 'heroBox_descr', $_POST['heroBox_descr'] );
-        }
-    }
-}
-
-
-add_filter( 'template_include', 'include_heroBoxtemplate_function', 1 );
-
-function include_heroBoxtemplate_function( $template_path ) {
-    if ( get_post_type() == 'new_heroBox' ) {
-        if ( is_single() ) {
-            // checks if the file exists in the theme first,
-            // otherwise serve the file from the plugin
-            if ( $theme_file = locate_template( array ( 'single-new_heroBox.php' ) ) ) {
-                $template_path = $theme_file;
-            } else {
-                $template_path = plugin_dir_path( __FILE__ ) . '/single-new_heroBox.php';
-            }
-        }
-		  elseif ( is_archive() ) {
-            if ( $theme_file = locate_template( array ( 'archive-new_heroBox.php' ) ) ) {
-                $template_path = $theme_file;
-            } else { $template_path = plugin_dir_path( __FILE__ ) . '/archive-new_heroBox.php';
- 
-            }
-    }
-	}
-    return $template_path;
-}
-
 ?>

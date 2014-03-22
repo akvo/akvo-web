@@ -11,8 +11,10 @@
   <?php the_field('akvo-tagline'); ?>
 </h1>
 <section id="actionHeroBox" class="">
+  <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=1'); ?>
+  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <div class="borderTop"></div>
-  <img src="<?php the_field('hero_img'); ?>" class="hero-image" />
+  <img src="<?php the_field('hero_box_image'); ?>" class="hero-image" />
   <div class="wrapper">
   <div id="actionHeroInfo">
     <p>
@@ -20,17 +22,58 @@
     </p>
     <hgroup>
       <h1>
-        <?php the_field('box_title'); ?>
+        <?php the_field('hero_box_title'); ?>
       </h1>
       <h2>
-        <?php the_field('box_subtitle'); ?>
+        <?php the_field('hero_box_subtitle'); ?>
       </h2>
     </hgroup>
-    <a class="actionHeroBtn moreLink" href="<?php the_field('story_link'); ?>">Read More</a> </div>
+    <a class="actionHeroBtn moreLink" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
   <div class="borderBottom"></div>
   </div>
+  <?php endwhile; endif; wp_reset_query(); ?>
 </section>
-<?php include('fourProductWindow.php'); ?>
+
+<section id="productWindow" class="floats-in">
+  <div class="fourColumns wrapper">
+    <div id="rsrBucket"> <a href="http://akvo.org/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="http://akvo.org/products/rsr/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/rsr/">
+        <h1>Akvo RSR</h1>
+        </a>
+        <h2>
+          <?php the_field('rsr_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="flowBucket"> <a href="http://akvo.org/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="http://akvo.org/products/akvoflow/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvoflow/">
+        <h1>Akvo Flow</h1>
+        </a>
+        <h2>
+          <?php the_field('flow_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="openaidBucket"> <a href="http://akvo.org/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="http://akvo.org/products/akvoopenaid/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvoopenaid/">
+        <h1>Akvo OpenAid</h1>
+        </a>
+        <h2>
+          <?php the_field('openaid_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="akvopedia"> <a href="http://akvo.org/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="http://akvo.org/products/akvopedia/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvopedia/">
+        <h1>Akvopedia</h1>
+        </a>
+        <h2>
+          <?php the_field('akvopedia_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+  </div>
+</section>
 <section id="moreStuffHome" class="floats-in"> 
   <!--    <h2 class="backLined">Looking for more?</h2>-->
   <div class="fourColumns wrapper">
@@ -41,22 +84,26 @@
         <?php
             $args = array( 'numberposts' => 1 );
             $lastposts = get_posts( $args );
-            foreach($lastposts as $post) : setup_postdata($post); ?><figure>
- 			 <div> <a href="<?php the_permalink(); ?>"> <?php if ( has_post_thumbnail() ) {
+            foreach($lastposts as $post) : setup_postdata($post); ?>
+        <figure>
+          <div> <a href="<?php the_permalink(); ?>">
+            <?php if ( has_post_thumbnail() ) {
 			the_post_thumbnail();
-			}  ?></a></div>
-           <figcaption> <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>  &raquo;</a></figcaption>
-          </figure>         
-
+			}  ?>
+            </a></div>
+          <figcaption> <a href="<?php the_permalink(); ?>">
+            <?php the_title(); ?>
+            &raquo;</a></figcaption>
+        </figure>
         <?php endforeach; ?>
       </div>
-      <!--<a href="#" title="" class="seeMore moreLink">See all blog posts</a>--> </div>
+</div>
     <div class="networkIcon">
       <h3><a href="http://akvo.org/seeithappen/all-rsr-project-updates/">Latest RSR updates</a></h3>
       <hr class="delicateSmall">
       <div>
-        <figure> <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
+        <figure>
+          <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
           <figcaption><a id="update_title" href=""></a></figcaption>
         </figure>
       </div>
@@ -89,30 +136,36 @@
             }
           });
         });
-      </script>
-      <!--  <a href="#" title="" class="seeMore moreLink">See all network activity</a>-->
+      </script> 
     </div>
+    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">
       <h3><a href="http://www.youtube.com/user/Akvofoundation">Akvo.tv</a></h3>
       <hr class="delicateSmall">
       <div>
-        <figure><div> <a href="http://akvo.tv"> 
-			<img src="<?php bloginfo('template_directory'); ?>/images/akvo_tv.jpg" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
+        <figure>
+          <div> <a href="http://akvo.tv"> <img src="<?php the_field('akvo_tv'); ?>" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
           <figcaption><a href="http://akvo.tv">Go to akvo.tv  &raquo;</a></figcaption>
         </figure>
-      </div></div>
-<!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
--->    <div class="eventIcon">
-      <h3><a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c">Latest newsletter</a></h3>
+      </div>
+    </div>
+
+    <div class="eventIcon">
+      <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
       <hr class="delicateSmall">
+      <a href="<?php the_field('letter_link'); ?>">
       <div>
-        <figure><div> <a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c"><img src="<?php bloginfo('template_directory'); ?>/images/homepage-image1.jpg" alt="" /></a></div>
-          <figcaption><a href="http://us2.campaign-archive1.com/?u=a70e9bedf0f2a0a5db70eb18b&id=114a430db9&e=c8284b680c">See the newsletter  &raquo;</a></figcaption>
+        <figure>
+          <div> <a href="<?php the_field('letter_link'); ?>"><img src="<?php the_field('letter_img'); ?>" alt="" /></a></div>
+          <figcaption><a href="<?php the_field('letter_link'); ?>">See the newsletter  &raquo;</a></figcaption>
         </figure>
-      </div></div>
-<!--      <a href="#" title="" class="seeMore moreLink">Read more</a> 
--->  </div>
-</section>
+      </div>
+      </a>
+      </div>
+
+ <?php endwhile; // end of the loop. ?>
+
+</section></div></div>
 <!-- end content -->
 
 <?php get_footer(); ?>

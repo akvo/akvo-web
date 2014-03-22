@@ -10,7 +10,7 @@
 <p>&nbsp;</p>
 <div id="content" class="floats-in foundation">
   <h1 class="backLined">Our foundations</h1>
-  <p class="wrapper fullWidthParag ">Akvo develops and operates its products under a unified service brand but comprises of a number of distinct organisational entities.<br/>
+  <p class="wrapper fullWidthParag centerED">Akvo develops and operates its products under a unified service brand but comprises of a number of distinct organisational entities.<br/>
     <br/>
     Akvo is an international organisation with not-for-profit status at our headquarters in the Netherlands (ANBI) and in the United States (501(c)(3)). The Netherlands organisation is responsible for strategic direction, global partnerships and operating our online and mobile services. The United States organisation is responsible for direction of local operations and fundraising in the US. </p>
   <hr class="delicate" />

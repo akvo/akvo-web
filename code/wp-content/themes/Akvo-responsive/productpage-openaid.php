@@ -27,7 +27,7 @@
     <h5>Menu</h5>
     <div class="mShownCollapse"><a></a></div>
     <ul>
-      <li><a href="#openaidDescr">Description</a></li>
+      <li  class="hidden"><a href="#openaidDescr">Description</a></li>
       <li class="hidden"><a href="#openaidInAction">See it in action</a></li>
       <li><a href="#openaidInFive">Openaid in four points</a></li>
       <li><a href="#openaidRealWorld">In Action</a></li>

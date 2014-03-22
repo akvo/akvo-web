@@ -10,7 +10,7 @@
  
 		Title:      Akvo.org Styles for Desktop, mobile, tablet
 		Author:     Loic Sans, loic@akvo.org
-	
+
 ---------------------------------------------------------------------------------*/
 /*                                   Colours 
 ---------------------------------------------------------------------------------
@@ -220,6 +220,13 @@ p {
 	font-weight:bold;
 	margin-right:0.5em;
 	}
+
+.strongType {
+	font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	font-weight:normal;
+	font-size:1.8em;
+	line-height:1.2em;
+	}
 /*--------------------------------------------------------------
 							Misc.
 --------------------------------------------------------------*/
@@ -370,16 +377,20 @@ a.seeMore, footer a:link, footer a:visited {
 .moreLink {
 	font-weight: normal;
 	font-size: 0.9em;
-	display: table;
+	display: inline-table;
 	padding: 3px 28px 3px 0;
 	height: 19px;
 	background: url(images/moreLink.png) right bottom no-repeat;
-	text-align: center;
-	margin: 0.25em auto;
-}
+}.moreLink:hover { background: url(images/moreLink.png) right bottom no-repeat; }
+
+.tooltip {
+	background: url(images/helpIcn.png) right bottom no-repeat;
+	}
+.tooltip:hover {
+	background: url(images/helpIcn.png) right bottom no-repeat;
+	}
 .seeMore { margin-top: 2em; }
 p > .moreLink { margin: 0.25em 0 0 0; }
-.moreLink:hover { background: url(images/moreLink.png) right bottom no-repeat; }
 .moreLink.darkBg {
 	font-weight: normal;
 	font-size: 0.9em;
@@ -734,17 +745,16 @@ a.helpIcon:hover { opacity:1; }
 #tooltip {
 	position: absolute;
 	display: none;
-	padding: 1.5em;
-	max-width: 15%;
-	background: rgb(0,255,165);
+	padding: 0.5em;
+	max-width: 25%;
+	background: rgb(255,255,165);
 	-webkit-box-shadow: 0 0 2px rgb(0,0,0);
 	-moz-box-shadow: 0 0 2px rgb(0,0,0);
 	box-shadow: 0 0 2px rgb(0,0,0);
-	font-size: 1.5em;
-	font-family: Georgia, "Times New Roman", Times, serif;
+	font-size: 1.2em;
 	line-height: 1.3em;
 	-o-box-shadow: 0 0 2px rgb(0,0,0);
-	border-radius:0.5em;
+	border-radius:0.25em;
 }
 
 /************************************************************************
@@ -830,7 +840,7 @@ a.helpIcon:hover { opacity:1; }
 	position: relative;
 	margin: 1px auto 0 auto;
 }
-.threeColumns > div, .threeColumns > li, .threeColumns > p {
+.threeColumns > div, .threeColumns > li, .threeColumns > p,  .threeColumns > a {
 	position: relative;
 	float: left;
 	margin: 0 0.5%;
@@ -842,6 +852,13 @@ a.helpIcon:hover { opacity:1; }
 .fourColumns {
 	margin: 0 auto;
 	width: 100%;
+}
+.threeColumnsImg > a {
+	position: relative;
+	float: left;
+	margin: 0 0.5%;
+	padding: 0;
+	width: 31.333%;
 }
 .fourColumns > div, .fourColumns > li {
 	position: relative;
@@ -1205,15 +1222,14 @@ body.home h1.akvoDescr {
 	max-height: 500px;
 }
 #actionHeroBox #actionHeroInfo {
-	text-align: right;
 	position: absolute;
-	bottom: 190px;
+	bottom:80px;
 	display: inline-block;
 	overflow: auto;
-	max-width: 25%;
-	min-width: 20%;
-	right: 11%;
-	padding: auto 0.25em;
+	max-width: 35%;
+	min-width: 22%;
+	right: 5%;
+	padding: 0 2% !important;
 	background: rgb(255,255,245);
 	background: rgba(255,255,245,0.6);
 	-moz-border-radius: 0.5em;
@@ -1259,20 +1275,22 @@ body.home h1.akvoDescr {
 	font-family: 'Raleway', sans-serif;
 	display: block;
 	position: relative;
-	text-align: right;
 	font-size: 1.5em;
 	font-weight: 700;
 	/*	color: rgba(80,48,27,1);
 	text-shadow: 0.05em 0.05em 0 rgba(255, 155, 99, 1);
-*/	margin: 10px 10px 0 0;
+*/	margin: 10px 10px 0 0 ;
 }
 #actionHeroBox h2 {
 	display: block;
 	font-size: 1.2em;
-	text-align: right;
 	margin: 0 10px 5px 0;
 }
-.actionHeroBtn { margin: 0 0 0 50%; }
+
+#actionHeroBox h2, #actionHeroBox h1, #actionHeroBox #actionHeroInfo > a, #actionHeroBox #actionHeroInfo {
+	text-align:right !important;
+	}
+.actionHeroBtn {}
 .actionHeroBtn:hover { }
 #productWindow {
 	position: relative;
@@ -2153,6 +2171,10 @@ nav.anchorNav {
 	background: rgb(248,248,248);
 	background: rgba(255,206,0,0.1);
 }
+.akvopedia nav.anchorNav {
+	background: rgb(248,236,245);
+	background: rgba(190, 73 , 155,0.1);
+}
 /*nav.anchorNav {
 	opacity: 0.9;
 	overflow: hidden;
@@ -2356,6 +2378,10 @@ nav.anchorNav ul li a:hover {
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0 );
 */ }
 .akvoflow .productPage section.figure { background: url(images/background-banner.jpg) repeat; }
+.akvopedia .productPage section.figure { background: url(images/akvopedia_bg.jpg) repeat; }
+
+
+
 .figure { background: rgb(32,32,36); }
 .akvopediaProdPag .figure { background: rgb(232,232,236); }
 .akvoopenaid .figure { background: rgb(242,242,246); }
@@ -2420,13 +2446,13 @@ section.inFivePoints li img {
 	position: relative;
 	width: 50%;
 	bottom: 0;
-}.rsrProdPag section.inFivePoints li.pointOne img {
+}
+.rsrProdPag section.inFivePoints li.pointOne img {
 	margin:2% 0 0 0;	
 }
 .rsrProdPag section.inFivePoints li.pointTwo img {
 	margin:6% 0 0 0;	
 }
-
 .rsrProdPag section.inFivePoints li.pointThree img {
 	margin:5% 0 0 0;	
 }
@@ -2434,23 +2460,15 @@ section.inFivePoints li img {
 	margin:4% 0 0 0;	
 }
 
-.akvopedia #akvopediaInFour li.pointOne img {
+.akvopedia #akvopediaInFour li  img {
 	width:100%;
 	max-width:200px;	
 }
-.akvopedia #akvopediaInFour li.pointTwo img {
-	width:100%;
-	max-width:200px;	
+.akvopedia #akvopediaInFour li > a:hover img {
+	box-shadow:2px 2px 0 rgba(223,49,201,0.8), -2px -2px 0 rgba(223,49,201,0.8);
+	border-radius:1em;
 }
 
-.akvopedia #akvopediaInFour li.pointThree img {
-	width:100%;
-	max-width:200px;	
-}
-.akvopedia #akvopediaInFour li.pointFour img {
-	width:100%;
-	max-width:200px;	
-}
 .pedia4points {margin:2em auto;}
 .pedia4points h3 {font-size:1.7em;}
 section.inFivePoints li div {
@@ -2892,7 +2910,7 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 	text-indent: -99999px;
 	display: block;
 }
-.dashSingle .moreLink { margin: 10px auto; }
+.dashSingle .moreLink { position:absolute; top:0; right:0;}
 .dashSingle#rsrDash h2 { background: url(images/rsrWhiteDash.png) no-repeat center center; }
 .dashSingle#flowDash h2 { background: url(images/flowWhiteDash.png) no-repeat center center; }
 .dashSingle#opendaidDash h2 { background: url(images/openAidWhiteDash.png) no-repeat center center; }

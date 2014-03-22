@@ -74,7 +74,7 @@
     <?php get_search_form(); ?>
     <div id="logIn" class="logInHeader"> <a href="http://akvo.org/akvo-services-login/">login</a> </div>
   </div>
-  <div id="openSource"> <a href="http://akvo.org/blog/open-data-content-and-software-at-akvo/" target="_blank">
+  <div id="openSource"> <a href="http://akvo.org/blog/open-data-content-and-software-at-akvo/">
     <h2>We love Open Source!</h2>
     </a> </div>
 </header>
