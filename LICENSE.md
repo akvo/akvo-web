@@ -1,15 +1,15 @@
-LICENSE.md, v1.1, 29 May 2012 [ogl]
+LICENSE.md, v1.2, 21 March 2014 [ogl]
 
-Copyright (C) 2007-2012 Stichting Akvo (Akvo Foundation)
+Copyright (C) 2007-2014 Stichting Akvo (Akvo Foundation)
 
-This file is part of Akvo.org.
+This file is part of the Akvo.org web content.
 
-Akvo.org is open source: you can redistribute it and modify
+The Akvo.org web content is open source: you can redistribute it and modify
 it under the terms of the GNU Affero General Public License (AGPL)
 as published by the Free Software Foundation, either version 3 of the
 License or any later version.
 
-Akvo.org is distributed in the hope that it will be useful,
+The Akvo.org web content is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU Affero General Public License included below for more details.  
