@@ -43,15 +43,15 @@
           <div class="staffName"><a href="#">Sunita Nadhamuni</a></div>
           <p class="staffTitle">Board member</p>
           <small>Click for more details.</small>
-        <li class="staffAsset management partnership" id="peter">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/peter_240.jpg" title="Peter Van Der Linde" alt="Peter Van Der Linde - Co-founder And Co-director" /></div>
-          <div class="staffName"><a href="#">Peter Van Der Linde</a></div>
-          <p class="staffTitle">Co-founder and co-director</p>
+        <li class="staffAsset management partnership" id="jeroen">
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/jvds_240.jpg" title="Jeroen van der Sommen" alt="Jeroen van der Sommen - Co-founder And Co-director" /></div>
+          <div class="staffName"><a href="#">Jeroen van der Sommen</a></div>
+          <p class="staffTitle">Co-founder and director</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset management engineering" id="thomas">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/thomas_240.jpg" title="Thomas Bjelkeman-Pettersson" alt="Thomas Bjelkeman-Pettersson: co-founder and co-director" /></div>
           <div class="staffName"><a href="#">Thomas Bjelkeman-Pettersson</a></div>
-          <p class="staffTitle">Co-founder and co-director</p>
+          <p class="staffTitle">Co-founder and director</p>
           <small>Click for more details.</small></li>
       </ul>
     </div>
@@ -99,9 +99,9 @@
 
       <ul class="staff floats-in">
         <li class="staffAsset management" id="akvoF">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/akvo240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Peter Van Der Linde" /></div>
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/akvo240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Jeroen van der Sommen" /></div>
           <div class="staffName"><a href="#">Akvo Foundation</a></div>
-          <p class="staffTitle">represented by Peter Van Der Linde</p>
+          <p class="staffTitle">represented by Jeroen van der Sommen</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset advisory" id="sam">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/Sam240.png" title="BSam Gichuru" alt="Sam Gichuru, Board member" /></div>
