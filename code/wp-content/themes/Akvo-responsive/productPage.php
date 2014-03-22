@@ -40,8 +40,8 @@
         </h2>
       </hgroup>
     </div>
-    <div id="akvopedia"> <a href="http://akvopedia.org/" class="tagLine"> <img src="<?php bloginfo('template_directory'); ?>/images/Akvopedia.png" title="akvopediaImg" /> </a> <a href="http://akvopedia.org/" class="moreLink">find out more</a>
-      <hgroup> <a href="http://akvopedia.org/">
+    <div id="akvopedia"> <a href="http://akvo.org/products/akvopedia/" class="tagLine"> <img src="<?php bloginfo('template_directory'); ?>/images/Akvopedia.png" title="akvopediaImg" /> </a> <a href="http://akvo.org/products/akvopedia/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvopedia/">
         <h1>Akvopedia</h1>
         </a>
         <h2>

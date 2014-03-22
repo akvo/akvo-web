@@ -176,7 +176,6 @@
   <section class="wrapper centerED ">
     <a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW Terms of Use</a>  </section>
 </div>
- bg
-<!-- end content -->
+ <!-- end content -->
 
 <?php get_footer(); ?>

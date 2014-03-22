@@ -35,7 +35,46 @@
   <?php endwhile; endif; wp_reset_query(); ?>
 </section>
 
-<?php include('fourProductWindow.php'); ?>
+<section id="productWindow" class="floats-in">
+  <div class="fourColumns wrapper">
+    <div id="rsrBucket"> <a href="http://akvo.org/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="http://akvo.org/products/rsr/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/rsr/">
+        <h1>Akvo RSR</h1>
+        </a>
+        <h2>
+          <?php the_field('rsr_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="flowBucket"> <a href="http://akvo.org/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="http://akvo.org/products/akvoflow/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvoflow/">
+        <h1>Akvo Flow</h1>
+        </a>
+        <h2>
+          <?php the_field('flow_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="openaidBucket"> <a href="http://akvo.org/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="http://akvo.org/products/akvoopenaid/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvoopenaid/">
+        <h1>Akvo OpenAid</h1>
+        </a>
+        <h2>
+          <?php the_field('openaid_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+    <div id="akvopedia"> <a href="http://akvo.org/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="http://akvo.org/products/akvopedia/" class="moreLink">find out more</a>
+      <hgroup> <a href="http://akvo.org/products/akvopedia/">
+        <h1>Akvopedia</h1>
+        </a>
+        <h2>
+          <?php the_field('akvopedia_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>
+  </div>
+</section>
 
 <section id="moreStuffHome" class="floats-in"> 
   <!--    <h2 class="backLined">Looking for more?</h2>-->
@@ -47,22 +86,26 @@
         <?php
             $args = array( 'numberposts' => 1 );
             $lastposts = get_posts( $args );
-            foreach($lastposts as $post) : setup_postdata($post); ?><figure>
- 			 <div> <a href="<?php the_permalink(); ?>"> <?php if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
-			}  ?></a></div>
-           <figcaption> <a href="<?php the_permalink(); ?>">
-          <?php the_title(); ?>  &raquo;</a></figcaption>
-          </figure>         
-
+            foreach($lastposts as $post) : setup_postdata($post); ?>
+        <figure>
+          <div> <a href="<?php the_permalink(); ?>">
+            <?php if ( has_post_thumbnail() ) {
+              			the_post_thumbnail();
+              			} ?>
+            </a></div>
+          <figcaption> <a href="<?php the_permalink(); ?>">
+            <?php the_title(); ?>
+            &raquo;</a></figcaption>
+        </figure>
         <?php endforeach; ?>
       </div>
-      <!--<a href="#" title="" class="seeMore moreLink">See all blog posts</a>--> </div>
+    </div>
     <div class="networkIcon">
       <h3><a href="http://akvo.org/seeithappen/all-rsr-project-updates/">Latest RSR updates</a></h3>
       <hr class="delicateSmall">
       <div>
-        <figure> <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
+        <figure>
+          <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
           <figcaption><a id="update_title" href=""></a></figcaption>
         </figure>
       </div>
@@ -95,8 +138,7 @@
             }
           });
         });
-      </script>
-      <!--  <a href="#" title="" class="seeMore moreLink">See all network activity</a>-->
+      </script> 
     </div>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">
@@ -109,7 +151,6 @@
         </figure>
       </div>
     </div>
-    
     <div class="eventIcon">
       <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
       <hr class="delicateSmall">
@@ -122,11 +163,10 @@
       </div>
       </a>
       </div>
-      
+
  <?php endwhile; // end of the loop. ?>
 
- 
 </section></div></div>
-<!-- end content --><!-- end content -->
+<!-- end content -->
 
 <?php get_footer(); ?>

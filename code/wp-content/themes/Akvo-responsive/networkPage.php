@@ -33,7 +33,9 @@
             <h4>Project Budgets:</h4>
             <span id="projects_budget_millions"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
         </ul>
-        <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+        <a href="#" title="How is this data collected? Automatically from the Akvo RSR database via
+the RSR API (https://github.com/akvo/akvo-rsr/wiki/Akvo-RSR-API)
+How often is this data refreshed? Whenever the page is loaded" class="tooltip moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
       <li class="dashSingle" id="flowDash">
         <h2>Akvo Flow</h2>
         <ul class="flowData dashData">
@@ -56,7 +58,11 @@
             <h4>More Stats soon</h4>
           </li>
         </ul>
-        <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+        <a href="#" title="How is this data collected? Manually, via a script run on the Google App
+Engine
+FLOW
+instances
+How often is this data refreshed? Monthly" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
       <li class="dashSingle" id="opendaidDash">
         <h2>Akvo Openaid</h2>
         <ul class="openAidData dashData">
@@ -75,7 +81,11 @@
             <h4>More Stats soon</h4>
           </li>
         </ul>
-        <a href="" class="moreLink darkBg hidden">See more</a> </li>
+        <a href="#" title="How is this data collected? ‘Total commitments’ is collected manually, the
+rest is automated via the use of the Openaid API
+(https://github.com/openaid-IATI/)
+How often is this data refreshed? ‘Total commitments’ is updated monthly,
+the rest refreshes whenever the page is loaded" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
       <li class="dashSingle" id="akvopediaDash">
         <h2>Akvopedia</h2>
         <ul class="wikiData dashData">
@@ -92,41 +102,40 @@
             <h4>More Stats soon</h4>
           </li>
         </ul>
-        <a href="" class="moreLink darkBg hidden">See more</a> </li>
+        <a href="#" title="How is this data collected? ‘Articles’ is collected automatically using the
+Mediawiki API (
+http://www.mediawiki.org/wiki/API:Main_page
+)
+.
+,
+T
+t
+he rest is
+collected
+automatically
+via the Piwik API
+(
+https://piwikapi.readthedocs.org/en/latest/
+)
+How often is this data refreshed? Whenever the page is loaded" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
     </ul>
   </section>
-
-  <li id="updateTemplate" class="rsrUpdate" style="display: none;">
-    <span>RSR Update</span>
-    <div class="imgWrap">
-      <a><img src=""/></a>
-    </div>
+  <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
+    <div class="imgWrap"> <a><img src=""/></a> </div>
     <h2><a></a></h2>
     <div class="authorTime floats-in">
       <time datetime=""></time>
-      <em class="userName">by</em>
-    </div>
-    <div class="orgAndPlace">
-      <span class="org"></span>
-      <span class="place"></span>
-    </div>
+      <em class="userName">by</em> </div>
+    <div class="orgAndPlace"> <span class="org"></span> <span class="place"></span> </div>
     <p></p>
-    <a href="" class="moreLink">Read more</a>
-  </li>
-
-
+    <a href="" class="moreLink">Read more</a> </li>
   <section id="rsrProjectUpdates">
-
     <h2>RSR: Latest project updates</h2>
     <a href="/seeithappen/all-rsr-project-updates/" class="moreLink">Browse all latest project updates</a>
-
     <ul id="updatesWrapper" class="threeColumns floats-in wrapper" style="display: none;">
     </ul>
-
-    <h4 id="loadingCaption" class="backLined">
-      Fetching updates...<br/>
-      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
-    </h4>
+    <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
+      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" /> </h4>
 
     <!--
     <ul class="threeColumns wrapper">
@@ -167,7 +176,7 @@
     $(function() {
       var akvoDomain = 'http://rsr.akvo.org';
       var akvopedia_domain = 'http://akvopedia.org';
-      var oipa_domain = 'http://oipa.openaidsearch.org';
+      var oipa_domain = 'http://staging.oipa.openaidsearch.org';
       var piwik_domain = 'http://analytics.akvo.org';
       var error_message = '<span style="font-size: 0.3em;">Data not available</span>';
 
@@ -238,28 +247,28 @@
       });
 
       $.ajax({
-        url: oipa_domain + '/api/v2/organisations/?format=jsonp&callback=callback&limit=1',
+        url: oipa_domain + '/api/v3/organisations/?format=jsonp&callback=callback&limit=1',
         dataType: "jsonp",
         jsonp: 'callback',
         cache: true,
         success: function(data) {
           $("#openaid_total_organisations").text(data.meta.total_count);
         },
-        timeout: 10000,
+        timeout: 20000,
         error: function(data) {
           $("#openaid_total_organisations").html(error_message);
         }
       });
 
       $.ajax({
-        url: oipa_domain + '/api/v2/activities/?format=jsonp&callback=callback&limit=1',
+        url: oipa_domain + '/api/v3/activities/?format=jsonp&callback=callback&limit=1',
         dataType: "jsonp",
         jsonp: 'callback',
         cache: true,
         success: function(data) {
           $("#openaid_total_activities").text(data.meta.total_count);
         },
-        timeout: 10000,
+        timeout: 20000,
         error: function(data) {
           $("#openaid_total_activities").html(error_message);
         }
@@ -365,6 +374,11 @@
     <!--<iframe src="http://www.akvo.org/rsr/widget/project-map/organisation/969/?bgcolor=000000&textcolor=undefined&height=518&width=968&state=dynamic" height="518" width="968" frameborder="0" allowTransparency="true" seamless scrolling="no"> </iframe>--> 
   </section>
 </div>
+<script src="<?php bloginfo('template_directory'); ?>/js/tooltip.js"></script>
+<script>
+$(document).ready(function(){
+	tooltip();
+});
+</script>
 <!-- end content -->
-
 <?php get_footer(); ?>
