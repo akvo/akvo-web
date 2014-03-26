@@ -9,13 +9,5 @@ code/robots.txt
 # Media
 code/wp-content/uploads
 
-# WP base files
-code/wp-admin
-code/wp-content/*.php
-code/wp-includes
-code/*.php
-code/license*
-code/readme*
-
 # Cache dir
 code/wp-content/cache
