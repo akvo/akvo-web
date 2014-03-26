@@ -9,5 +9,6 @@ code/robots.txt
 # Media
 code/wp-content/uploads
 
-# Cache dir
+# Temporary directories
 code/wp-content/cache
+code/wp-content/upgrade
