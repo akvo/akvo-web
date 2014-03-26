@@ -1,0 +1,302 @@
+# Copyright (C) 2012 Advanced Custom Fields Migrator
+# This file is distributed under the same license as the Advanced Custom Fields Migrator package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Advanced Custom Fields Migrator 0.0.3\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/advanced-custom-fields-"
+"migrator\n"
+"POT-Creation-Date: 2012-08-03 09:20:42+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2012-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: advanced-custom-fields-migrator.php:54
+msgid "Settings"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:67
+msgid "Migrate"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:77
+#: advanced-custom-fields-migrator.php:117 class.options.php:48
+#: class.options.php:55
+msgid "ACF Migrator"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:83 class.options.php:48
+#: class.options.php:108
+msgid "ACF Migrator Settings"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:143
+msgid "All done. No further postmeta to migrate."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:216
+msgid ""
+"Please be patient while postmeta records are migrated. Do not navigate away "
+"from this page until this script is done or the migrate will not be "
+"completed. You will be notified via this page when the migratation is "
+"completed."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:218
+msgid "Estimated time required to migrate is %1$s minutes."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:220
+msgid "To go back to the previous page, <a href=\"%s\">click here</a>."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:222
+msgid ""
+"All done! %1$s postmeta records were successfully migrated in %2$s seconds "
+"and there were %3$s failure(s). To try migrating the failed records again, "
+"<a href=\"%4$s\">click here</a>. %5$s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:224
+msgid ""
+"All done! %1$s postmeta records were successfully migrated in %2$s seconds "
+"and there were no failures. %3$s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:227
+#: advanced-custom-fields-migrator.php:368
+msgid "You must enable Javascript in order to proceed!"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:233
+msgid "Abort Migrating Postmeta"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:235
+msgid "Debugging Information"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:238
+msgid "Total media records: %s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:239
+msgid "Records Migrated: %s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:240
+msgid "Migration Failures: %s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:271
+msgid "Stopping, please wait a moment."
+msgstr ""
+
+#. #-#-#-#-#  advanced-custom-fields-migrator.pot (Advanced Custom Fields Migrator 0.0.3)  #-#-#-#-#
+#. Description of the plugin/theme
+#: advanced-custom-fields-migrator.php:360
+msgid ""
+"Migrate left over Advanced Custom Fields fields from wp_postmeta to "
+"wp_options."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:362
+msgid "Please review your %s before proceeding."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:364
+msgid "To begin, click the button below."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:366
+msgid "Migrate ACF Fields"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:407
+msgid "Undefined type: %s"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:416
+msgid "wp_options autoload set to 'no' for %s entries"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:418
+msgid "No wp_options autoload settings needed changing"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:426
+#: advanced-custom-fields-migrator.php:428
+msgid "Postmeta ID %1$s was successfully migrated in %2$s seconds."
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:433
+#: advanced-custom-fields-migrator.php:435
+msgid "Something was done"
+msgstr ""
+
+#: advanced-custom-fields-migrator.php:475
+msgid ""
+"&quot;%1$s&quot; Post ID %2$s failed to be migrated. The error message was: "
+"%3$s"
+msgstr ""
+
+#: class.options.php:26
+msgid "Post Selection"
+msgstr ""
+
+#: class.options.php:27
+msgid "Migration Settings"
+msgstr ""
+
+#: class.options.php:28
+msgid "Testing Options"
+msgstr ""
+
+#: class.options.php:29
+msgid "Reset/Restore"
+msgstr ""
+
+#: class.options.php:30
+msgid "About ACF Migrator"
+msgstr ""
+
+#: class.options.php:70
+msgid "Default Field"
+msgstr ""
+
+#: class.options.php:123
+msgid "Save Changes"
+msgstr ""
+
+#: class.options.php:125
+msgid "begin migrating"
+msgstr ""
+
+#: class.options.php:306
+msgid "Reset Autoload?"
+msgstr ""
+
+#: class.options.php:307
+msgid "If set, autoload is set to \"no\". Great for performance."
+msgstr ""
+
+#: class.options.php:316
+msgid "Migration Limit"
+msgstr ""
+
+#: class.options.php:317
+msgid "Number of records allowed to migrate at a time. 0 for all."
+msgstr ""
+
+#: class.options.php:324
+msgid "Debug Mode"
+msgstr ""
+
+#: class.options.php:325
+msgid ""
+"Bypass Ajax controller to handle migration directly for testing purposes"
+msgstr ""
+
+#: class.options.php:330 class.options.php:331
+msgid "This will remove ALL non-migrateable records from wp_postmeta."
+msgstr ""
+
+#: class.options.php:337
+msgid "Delete…"
+msgstr ""
+
+#: class.options.php:341
+msgid "Non-migrateables"
+msgstr ""
+
+#: class.options.php:349
+msgid "Reset plugin"
+msgstr ""
+
+#: class.options.php:353
+msgid ""
+"Check this box and click \"Save Changes\" below to reset plugin options to "
+"their defaults."
+msgstr ""
+
+#: class.options.php:359
+msgid "Posts to Migrate"
+msgstr ""
+
+#: class.options.php:360
+msgid "A CSV list of post ids to migrate, like '1,2,3'. If blank, selects all."
+msgstr ""
+
+#: class.options.php:366
+msgid "Skip Migrating Posts"
+msgstr ""
+
+#: class.options.php:367
+msgid "A CSV list of posts ids not to import, like '1,2,3'."
+msgstr ""
+
+#: class.options.php:375
+msgid "Example Text Input"
+msgstr ""
+
+#: class.options.php:376
+msgid "This is a description for the text input."
+msgstr ""
+
+#: class.options.php:383
+msgid "Example Textarea Input"
+msgstr ""
+
+#: class.options.php:384
+msgid "This is a description for the textarea input."
+msgstr ""
+
+#: class.options.php:392
+msgid "Example Checkbox"
+msgstr ""
+
+#: class.options.php:393
+msgid "This is a description for the checkbox."
+msgstr ""
+
+#: class.options.php:407
+msgid "Example Radio"
+msgstr ""
+
+#: class.options.php:408
+msgid "This is a description for the radio buttons."
+msgstr ""
+
+#: class.options.php:420
+msgid "Example Select"
+msgstr ""
+
+#: class.options.php:421
+msgid "This is a description for the drop-down."
+msgstr ""
+
+#: class.options.php:497
+msgid "Posts to Migrate is required"
+msgstr ""
+
+#: class.options.php:568
+msgid "Successfully removed %s postmeta records"
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "Advanced Custom Fields Migrator"
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://wordpress.org/extend/plugins/advanced-custom-fields-migrator/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Michael Cannon"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://typo3vagabond.com/contact-typo3vagabond/"
+msgstr ""

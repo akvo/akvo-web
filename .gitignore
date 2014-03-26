@@ -18,10 +18,6 @@ code/license*
 code/readme*
 
 # Downloadable WP plug-ins
-code/wp-content/plugins/advanced-custom-*
-code/wp-content/plugins/akismet
-code/wp-content/plugins/disqus*
-code/wp-content/plugins/global*
 code/wp-content/plugins/limit-post*
 code/wp-content/plugins/mail*
 code/wp-content/plugins/post-*
