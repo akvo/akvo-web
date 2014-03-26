@@ -17,19 +17,6 @@ code/*.php
 code/license*
 code/readme*
 
-# Downloadable WP plug-ins
-code/wp-content/plugins/limit-post*
-code/wp-content/plugins/mail*
-code/wp-content/plugins/post-*
-code/wp-content/plugins/preserved-html*
-code/wp-content/plugins/types
-code/wp-content/plugins/velvet-*
-code/wp-content/plugins/w3-total-cache
-code/wp-content/plugins/wck-*
-code/wp-content/plugins/wordpress-*
-code/wp-content/plugins/wp-piwik
-code/wp-content/plugins/*.php
-
 # Downloadable WP themes
 code/wp-content/themes/hello*
 code/wp-content/themes/twenty*
