@@ -17,10 +17,5 @@ code/*.php
 code/license*
 code/readme*
 
-# Downloadable WP themes
-code/wp-content/themes/hello*
-code/wp-content/themes/twenty*
-code/wp-content/themes/*.php
-
 # Cache dir
 code/wp-content/cache
