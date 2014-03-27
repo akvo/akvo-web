@@ -4,40 +4,12 @@
 # Configurable files
 wp-config*
 code/nginx.conf
+code/php5.ini
 code/robots.txt
 
 # Media
 code/wp-content/uploads
 
-# WP base files
-code/wp-admin
-code/wp-content/*.php
-code/wp-includes
-code/*.php
-code/license*
-code/readme*
-
-# Downloadable WP plug-ins
-code/wp-content/plugins/advanced-custom-*
-code/wp-content/plugins/akismet
-code/wp-content/plugins/disqus*
-code/wp-content/plugins/global*
-code/wp-content/plugins/limit-post*
-code/wp-content/plugins/mail*
-code/wp-content/plugins/post-*
-code/wp-content/plugins/preserved-html*
-code/wp-content/plugins/types
-code/wp-content/plugins/velvet-*
-code/wp-content/plugins/w3-total-cache
-code/wp-content/plugins/wck-*
-code/wp-content/plugins/wordpress-*
-code/wp-content/plugins/wp-piwik
-code/wp-content/plugins/*.php
-
-# Downloadable WP themes
-code/wp-content/themes/hello*
-code/wp-content/themes/twenty*
-code/wp-content/themes/*.php
-
-# Cache dir
+# Temporary directories
 code/wp-content/cache
+code/wp-content/upgrade
