@@ -4,6 +4,7 @@
 # Configurable files
 wp-config*
 code/nginx.conf
+code/php5.ini
 code/robots.txt
 
 # Media
