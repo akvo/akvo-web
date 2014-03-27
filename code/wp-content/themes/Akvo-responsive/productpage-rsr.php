@@ -30,7 +30,7 @@
   <h5>Menu</h5>
   <div class="mShownCollapse"><a></a></div>
     <ul>
-      <li class="hidden"><a href="#rsrDescr">Description</a></li>
+      <li><a href="#rsrDescr">Description</a></li>
       <li class="hidden"><a href="#rsrInAction">See it in action</a></li>
       <li><a href="#rsrInFive">RSR in three points</a></li>
       <li><a href="#rsrRealWorld">Real world use</a></li>
