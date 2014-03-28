@@ -16,9 +16,9 @@
               <li class="youtube"><a href="http://www.youtube.com/user/Akvofoundation" title="Akvo.tv">akvo on youtube</a></li>
               <li class="flickr"><a href="http://www.flickr.com/groups/akvo/" title="Akvo is on flickr">akvo on flickr</a></li>
               <li class="facebook"><a href="https://www.facebook.com/1Akvo" title="Akvo is also on Facebook">akvo on facebook</a></li>
-              <li class="rss"><a href="http://akvo.org/blog/rss" title="Get our latest blogs RSS">get latest akvo feed</a></li>
+              <li class="rss"><a href="/blog/rss" title="Get our latest blogs RSS">get latest akvo feed</a></li>
               <li class="email"><a href="mailto:partners@akvo.org" title="Email us at partners@akvo.org">email akvo</a></li>
-              <li class="contactInfo"><a href="http://akvo.org/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
+              <li class="contactInfo"><a href="/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
             </ul>
           </nav>
           <div class="newsLetter">
@@ -32,7 +32,7 @@
         <h1 class="backLinedGrey">A little more about Akvo.org</h1>
         <p>Akvo creates and runs open source internet and mobile services that make it easy to bring international development work online. We focus on project and programme dashboards, reporting, monitoring, evaluation and making data easier to share. Headquartered in Amsterdam, Akvo is a non-profit foundation that works with more than a thousand organisations around the world.</p>
       </div>
-      <!--  <small>Copyright &copy; <?php echo date("Y"); echo " "; bloginfo('name'); ?></small>--> 
+      <!--  <small>Copyright &copy; <?php echo date("Y"); echo " "; bloginfo('name'); ?></small>-->
     </section>
     <p id="back-top"> <a href="#header"><span></span>Back to Top</a> </p>
   </div>
@@ -40,7 +40,7 @@
 </footer>
 <!-- End /footer -->
 </div>
-<!-- end mainbody --> 
+<!-- end mainbody -->
 <!-- Piwik -->
 <!--<script type="text/javascript">
   var _paq = _paq || [];

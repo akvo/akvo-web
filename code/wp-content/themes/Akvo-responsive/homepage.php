@@ -37,8 +37,8 @@
 
 <section id="productWindow" class="floats-in">
   <div class="fourColumns wrapper">
-    <div id="rsrBucket"> <a href="http://akvo.org/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="http://akvo.org/products/rsr/" class="moreLink">find out more</a>
-      <hgroup> <a href="http://akvo.org/products/rsr/">
+    <div id="rsrBucket"> <a href="/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="/products/rsr/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/rsr/">
         <h1>Akvo RSR</h1>
         </a>
         <h2>
@@ -46,8 +46,8 @@
         </h2>
       </hgroup>
     </div>
-    <div id="flowBucket"> <a href="http://akvo.org/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="http://akvo.org/products/akvoflow/" class="moreLink">find out more</a>
-      <hgroup> <a href="http://akvo.org/products/akvoflow/">
+    <div id="flowBucket"> <a href="/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="/products/akvoflow/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvoflow/">
         <h1>Akvo Flow</h1>
         </a>
         <h2>
@@ -55,8 +55,8 @@
         </h2>
       </hgroup>
     </div>
-    <div id="openaidBucket"> <a href="http://akvo.org/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="http://akvo.org/products/akvoopenaid/" class="moreLink">find out more</a>
-      <hgroup> <a href="http://akvo.org/products/akvoopenaid/">
+    <div id="openaidBucket"> <a href="/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvoopenaid/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvoopenaid/">
         <h1>Akvo OpenAid</h1>
         </a>
         <h2>
@@ -64,8 +64,8 @@
         </h2>
       </hgroup>
     </div>
-    <div id="akvopedia"> <a href="http://akvo.org/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="http://akvo.org/products/akvopedia/" class="moreLink">find out more</a>
-      <hgroup> <a href="http://akvo.org/products/akvopedia/">
+    <div id="akvopedia"> <a href="/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="/products/akvopedia/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvopedia/">
         <h1>Akvopedia</h1>
         </a>
         <h2>
@@ -76,11 +76,11 @@
   </div>
 </section>
 
-<section id="moreStuffHome" class="floats-in"> 
+<section id="moreStuffHome" class="floats-in">
   <!--    <h2 class="backLined">Looking for more?</h2>-->
   <div class="fourColumns wrapper">
     <div class="blogIcon">
-      <h3><a href="http://akvo.org/blog/">Latest blog</a></h3>
+      <h3><a href="/blog/">Latest blog</a></h3>
       <hr class="delicateSmall">
       <div>
         <?php
@@ -101,7 +101,7 @@
       </div>
     </div>
     <div class="networkIcon">
-      <h3><a href="http://akvo.org/seeithappen/all-rsr-project-updates/">Latest RSR updates</a></h3>
+      <h3><a href="/seeithappen/all-rsr-project-updates/">Latest RSR updates</a></h3>
       <hr class="delicateSmall">
       <div>
         <figure>
@@ -138,7 +138,7 @@
             }
           });
         });
-      </script> 
+      </script>
     </div>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">

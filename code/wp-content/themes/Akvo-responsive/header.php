@@ -45,7 +45,7 @@
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fancybox.pack.js"></script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.fancybox.css">
   <script type="text/javascript">
-  $( document ).ready(function() {   
+  $( document ).ready(function() {
     // footer menu headings
     $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
 
@@ -95,9 +95,9 @@
       <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container' => false, 'theme_location' => 'header-menu' ) ); ?>
     </nav>
     <?php get_search_form(); ?>
-    <div id="logIn" class="logInHeader"> <a href="http://akvo.org/akvo-services-login/">login</a> </div>
+    <div id="logIn" class="logInHeader"> <a href="/akvo-services-login/">login</a> </div>
   </div>
-  <div id="openSource"> <a href="http://akvo.org/blog/open-data-content-and-software-at-akvo/">
+  <div id="openSource"> <a href="/blog/open-data-content-and-software-at-akvo/">
     <h2>We love Open Source!</h2>
     </a> </div>
 </header>

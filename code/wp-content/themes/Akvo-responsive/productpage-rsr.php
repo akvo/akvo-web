@@ -38,18 +38,18 @@
       <li class="hidden"><a href="#rsrPricing">Pricing</a></li>
     </ul>
   </nav>
-  
+
   <section class="figure">
     <div class="figcaption">
-      <?php the_field('rsr_figcaption'); ?> 
+      <?php the_field('rsr_figcaption'); ?>
     </div>
     <img src="<?php the_field('product_rsr_img'); ?>" title="rsrImg" class="wrapper"/> </section>
-    
+
 
   <section id="rsrInAction" class="hide wrapper">
     <h1 class="">RSR in Action</h1>
   </section>
-  
+
   <section class="inFivePoints" id="rsrInFive">
     <h1 class=""></h1>
     <ul class="wrapper">
@@ -133,14 +133,14 @@
       </li>
     </ul>
   </section>
-  
+
   <section id="rsrPricing" class="hidden">
     <h1 class="">Pricing</h1>
     <p class="wrapper centerED">
       <?php the_field('rsr_pricing_text'); ?>
     </p>
   </section>
-  <section class="wrapper centerED "><a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR Terms of Use </a></section>
+  <section class="wrapper centerED "><a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR Terms of Use </a></section>
 </div>
 <!-- end content -->
 

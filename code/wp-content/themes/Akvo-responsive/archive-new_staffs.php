@@ -24,7 +24,7 @@ get_header(); ?>
     </ul>
   </nav>
 
-  <section class="wrapper"> 
+  <section class="wrapper">
     <div id="partnershipGroup">
       <h2 class="pStaffHead">Partnerships</h2>
       <ul class="staff floats-in">
@@ -53,15 +53,15 @@ get_header(); ?>
                 <p class="staffBio"><?php the_content(); ?></p>
               </div>
             </div>
-          </div>          
+          </div>
         </li>
         <?php endwhile; ?>
         <li class="newStaff">
-            <a href="http://akvo.org/about-us/working-at-akvo/">
+            <a href="/about-us/working-at-akvo/">
               <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
               <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
              </a>
         </li>
         <?php endif; wp_reset_query(); ?>
@@ -97,15 +97,15 @@ get_header(); ?>
                 <p class="staffBio"><?php the_content(); ?></p>
               </div>
             </div>
-          </div>          
+          </div>
         </li>
         <?php endwhile; ?>
         <li class="newStaff">
-            <a href="http://akvo.org/about-us/working-at-akvo/">
+            <a href="/about-us/working-at-akvo/">
               <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
               <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
              </a>
         </li>
         <?php endif; wp_reset_query(); ?>
@@ -141,20 +141,20 @@ get_header(); ?>
                 <p class="staffBio"><?php the_content(); ?></p>
               </div>
             </div>
-          </div>          
+          </div>
         </li>
         <?php endwhile; ?>
         <li class="newStaff">
-            <a href="http://akvo.org/about-us/working-at-akvo/">
+            <a href="/about-us/working-at-akvo/">
               <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
               <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
              </a>
         </li>
         <?php endif; wp_reset_query(); ?>
       </ul>
-    </div> 
+    </div>
     <div id="contractorsGroup">
       <h2 class="eStaffHead">Extended team</h2>
        <ul class="staff floats-in">
@@ -183,12 +183,12 @@ get_header(); ?>
                   <p class="staffBio"><?php the_content(); ?></p>
                 </div>
               </div>
-            </div>          
+            </div>
           </li>
           <?php endwhile; ?>
           <?php endif; wp_reset_query(); ?>
         </ul>
-    </div> 
+    </div>
 
   </section>
 </div>
