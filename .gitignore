@@ -3,10 +3,10 @@
 dwsync.xml
 
 # Configurable files
-wp-config*
 code/nginx.conf
 code/php5.ini
 code/robots.txt
+code/wp-config*
 
 # Media
 code/wp-content/uploads
