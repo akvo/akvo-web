@@ -184,4 +184,5 @@ function post_type_pagesize( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'post_type_pagesize', 1);
+add_filter('show_admin_bar', '__return_false');
 ?>
