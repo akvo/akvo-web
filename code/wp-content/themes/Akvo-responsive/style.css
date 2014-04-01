@@ -343,6 +343,11 @@ iframe {
 	width: 65%;
 	margin: 0.5em auto;
 }
+@media screen and (max-width: 768px) {
+.fullWidthParag {
+	width: 95%;
+}
+}
 .loadMore {
 	position: relative;
 	padding: 0.5em 1em;
@@ -1129,7 +1134,7 @@ header#top h1:hover a { background: url(images/akvoLogoTop.png) no-repeat center
 
 @media screen and (max-width: 768px) {
 header#top h1:hover a {
-	background: url(../images/akvoLogoTop-phone.png) no-repeat center bottom;
+	background: url(images/akvoLogoTop-phone.png) no-repeat center bottom;
 	opacity: 1
 }
 }
@@ -1145,7 +1150,7 @@ header#top h1 a {
 header#top h1 a {
 	width: 250px;
 	height: 52px;
-	background: url(../images/akvoLogoTop-phone.png) no-repeat center top;
+	background: url(images/akvoLogoTop-phone.png) no-repeat center top;
 	opacity: 1
 }
 }
@@ -2382,7 +2387,7 @@ p#allowed_tags code {
 	border-radius: 0.1em;
 	-webkit-transition: color .2s linear, background .2s linear;
 	-moz-transition: color .2s linear, background .2s linear;
-= -o-transition: color .2s linear, background .2s linear;
+ 	-o-transition: color .2s linear, background .2s linear;
 	transition: color .2s linear, background .2s linear;
 }
 #sidebar .widget ul li a:hover {
@@ -2721,14 +2726,14 @@ footer.bottomPage section#siteMap nav.socialLinks li a {
 	transition: opacity 0.2s linear
 }
 footer.bottomPage section#siteMap nav.socialLinks li a:hover { opacity: 0.5 }
-footer.bottomPage section#siteMap nav.socialLinks li.twitter a { background: url(../images/socialTwitter.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.github a { background: url(../images/socialGithub.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.facebook a { background: url(../images/socialFacebook.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.flickr a { background: url(../images/socialFlickr.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.youtube a { background: url(../images/socialYoutube.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.rss a { background: url(../images/socialRss.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.email a { background: url(../images/socialEmail.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a { background: url(../images/socialContact.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.twitter a { background: url(images/socialTwitter.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.github a { background: url(images/socialGithub.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.facebook a { background: url(images/socialFacebook.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.flickr a { background: url(images/socialFlickr.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.youtube a { background: url(images/socialYoutube.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.rss a { background: url(images/socialRss.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.email a { background: url(images/socialEmail.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a { background: url(images/socialContact.png) center center no-repeat }
 footer.bottomPage section#aboutAkvo {
 	position: relative;
 	width: 100%;

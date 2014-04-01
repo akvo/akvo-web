@@ -48,7 +48,7 @@
   $( document ).ready(function() {
     // footer menu headings
     $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
-
+	
     $("#content").fitVids();
 
     $(".fancybox").fancybox({
