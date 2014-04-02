@@ -50,19 +50,17 @@
     $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
 	
     $("#content").fitVids();
+	function adjustImage() {
+    $(".hero-image").css('margin-top', ($("#actionHeroBox").height() - $(".hero-image").height()) / 2);
+}
 
-    $(".fancybox").fancybox({
-      maxWidth  : 800,
-      maxHeight : 600,
-      fitToView : false,
-      width   : '70%',
-      height    : '70%',
-      autoSize  : false,
-      closeClick  : false,
-      padding     : 30,
-      openEffect  : 'none',
-      closeEffect : 'none'
+$(window).load(function() {
+    adjustImage();
+
+    $(window).resize(function() {
+        adjustImage();
     });
+});
   });
   </script>
 <?php if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script('comment-reply'); ?>

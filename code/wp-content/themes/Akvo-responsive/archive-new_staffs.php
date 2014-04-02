@@ -25,172 +25,89 @@ get_header(); ?>
   </nav>
 
   <section class="wrapper">
+    <?php query_posts(array('post_type'=>'new_staffs')); ?>
+    <?php $mypost = array( 'post_type' => 'new_staffs' );
+	$loop = new WP_Query( $mypost ); ?>
+    <!-- Cycle through all posts -->
+    <ul class="staff floats-in">
+      <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+        <!-- Display featured image in right-aligned floating div -->
+        <div class="imgWrapper">
+          <?php the_post_thumbnail('thumbnail'); ?>
+        </div>
+        <!-- Display Title and Name -->
+        <div class="staffName"> <a href="#"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?></a> </div>
+        <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
+        <span class="akvoTeam"><?php the_terms( $post->ID, 'new_staffs_team' ,  ' ' ); ?></span>
+        <div class="staffBiog"><?php the_content(); ?></div>
+        <small>Click for more details.</small>
+      </li>
+      <?php endwhile; ?>
+    </ul> 
     <div id="partnershipGroup">
       <h2 class="pStaffHead">Partnerships</h2>
-      <ul class="staff floats-in">
-        <?php query_posts('post_type=new_staffs&new_staffs_team=partnerships'); ?>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <li class="newStaff">
-          <a href="#inline-<?php the_ID(); ?>" class="fancybox">
-            <!-- Display featured image in right-aligned floating div -->
-            <div class="imgWrapper">
-              <?php the_post_thumbnail('thumbnail'); ?>
-            </div>
-            <!-- Display Title and Name -->
-            <div class="staffName">
-              <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
-            </div>
-            <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
-            <small>Click for more details.</small>
-          </a>
-
-          <div id="inline-<?php the_ID(); ?>">
-            <div id="staffDescr">
-              <div class="extLoad" id="">
-                <div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
-                <h1 class="staffName"><?php echo esc_html( get_post_meta( $post->ID, 'staff_name', true ) ); ?></h1>
-                <p class="staffTitle"><?php echo esc_html( get_post_meta( $post->ID, 'staff_title', true ) ); ?></p>
-                <p class="staffBio"><?php the_content(); ?></p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <?php endwhile; ?>
-        <li class="newStaff">
-            <a href="/about-us/working-at-akvo/">
-              <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
-              <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
-             </a>
-        </li>
-        <?php endif; wp_reset_query(); ?>
-      </ul>
-    </div>
-    <hr class="delicate" />
+    <ul class="staff floats-in"><li class="newStaff">
+          <a href="http://akvo.org/about-us/working-at-akvo/">
+            <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
+            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <p class="staffTitle">Check Out The Available Jobs.</p>
+            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+           </a>
+           </li></ul>
+    </div>    <hr class="delicate" />
 
     <div id="communicationGroup">
       <h2 class="cStaffHead">Communication and PR</h2>
-      <ul class="staff floats-in">
-        <?php query_posts('post_type=new_staffs&new_staffs_team=communication-pr'); ?>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <li class="newStaff">
-          <a href="#inline-<?php the_ID(); ?>" class="fancybox">
-            <!-- Display featured image in right-aligned floating div -->
-            <div class="imgWrapper">
-              <?php the_post_thumbnail('thumbnail'); ?>
-            </div>
-            <!-- Display Title and Name -->
-            <div class="staffName">
-              <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
-            </div>
-            <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
-            <small>Click for more details.</small>
-          </a>
-
-          <div id="inline-<?php the_ID(); ?>">
-            <div id="staffDescr">
-              <div class="extLoad" id="">
-                <div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
-                <h1 class="staffName"><?php echo esc_html( get_post_meta( $post->ID, 'staff_name', true ) ); ?></h1>
-                <p class="staffTitle"><?php echo esc_html( get_post_meta( $post->ID, 'staff_title', true ) ); ?></p>
-                <p class="staffBio"><?php the_content(); ?></p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <?php endwhile; ?>
-        <li class="newStaff">
-            <a href="/about-us/working-at-akvo/">
-              <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
-              <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
-             </a>
-        </li>
-        <?php endif; wp_reset_query(); ?>
-      </ul>
-    </div>
-    <hr class="delicate" />
+    <ul class="staff floats-in"><li class="newStaff">
+          <a href="http://akvo.org/about-us/working-at-akvo/">
+            <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
+            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <p class="staffTitle">Check Out The Available Jobs.</p>
+            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+           </a>
+           </li></ul>
+    </div>    <hr class="delicate" />
 
     <div id="engineeringGroup">
       <h2 class="eStaffHead">Engineering &amp; design</h2>
-      <ul class="staff floats-in">
-        <?php query_posts('post_type=new_staffs&new_staffs_team=design-engineering'); ?>
-        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-        <li class="newStaff">
-          <a href="#inline-<?php the_ID(); ?>" class="fancybox">
-            <!-- Display featured image in right-aligned floating div -->
-            <div class="imgWrapper">
-              <?php the_post_thumbnail('thumbnail'); ?>
-            </div>
-            <!-- Display Title and Name -->
-            <div class="staffName">
-              <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
-            </div>
-            <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
-            <small>Click for more details.</small>
-          </a>
-
-          <div id="inline-<?php the_ID(); ?>">
-            <div id="staffDescr">
-              <div class="extLoad" id="">
-                <div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
-                <h1 class="staffName"><?php echo esc_html( get_post_meta( $post->ID, 'staff_name', true ) ); ?></h1>
-                <p class="staffTitle"><?php echo esc_html( get_post_meta( $post->ID, 'staff_title', true ) ); ?></p>
-                <p class="staffBio"><?php the_content(); ?></p>
-              </div>
-            </div>
-          </div>
-        </li>
-        <?php endwhile; ?>
-        <li class="newStaff">
-            <a href="/about-us/working-at-akvo/">
-              <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-              <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
-              <p class="staffTitle">Check Out The Available Jobs.</p>
-              <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
-             </a>
-        </li>
-        <?php endif; wp_reset_query(); ?>
-      </ul>
-    </div>
+    <ul class="staff floats-in"><li class="newStaff">
+          <a href="http://akvo.org/about-us/working-at-akvo/">
+            <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
+            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <p class="staffTitle">Check Out The Available Jobs.</p>
+            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+           </a>
+           </li></ul>
+    </div> 
     <div id="contractorsGroup">
       <h2 class="eStaffHead">Extended team</h2>
-       <ul class="staff floats-in">
-          <?php query_posts('post_type=new_staffs&new_staffs_team=contractors'); ?>
-          <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-          <li class="newStaff">
-            <a href="#inline-<?php the_ID(); ?>" class="fancybox">
-              <!-- Display featured image in right-aligned floating div -->
-              <div class="imgWrapper">
-                <?php the_post_thumbnail('thumbnail'); ?>
-              </div>
-              <!-- Display Title and Name -->
-              <div class="staffName">
-                <?php echo esc_html( get_post_meta( get_the_ID(), 'staff_name', true ) ); ?>
-              </div>
-              <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'staff_title', true ) ); ?></p>
-              <small>Click for more details.</small>
-            </a>
+    <ul class="staff floats-in"></ul>
+    </div> 
 
-            <div id="inline-<?php the_ID(); ?>">
-              <div id="staffDescr">
-                <div class="extLoad" id="">
-                  <div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
-                  <h1 class="staffName"><?php echo esc_html( get_post_meta( $post->ID, 'staff_name', true ) ); ?></h1>
-                  <p class="staffTitle"><?php echo esc_html( get_post_meta( $post->ID, 'staff_title', true ) ); ?></p>
-                  <p class="staffBio"><?php the_content(); ?></p>
-                </div>
-              </div>
-            </div>
-          </li>
-          <?php endwhile; ?>
-          <?php endif; wp_reset_query(); ?>
-        </ul>
-    </div>
-
+  <div id="overlay">
+    <div id="blanket"></div>
+  </div>
+  <!-- the dialog contents -->
+  <div id="descrDialog" class="dialog">
+    <div id="staffDescr">
+    <div class="extLoad" id="">
+      <div class="imgWrapper"></div>
+      <h1 class="staffName"></h1>
+      <p class="staffTitle"></p>
+      <p class="staffBio"><br/><br/> </p></div>
+        </div>
+        <div class="buttons"><a class="cancel">close</a></div>
+      </div>
   </section>
 </div>
+<script>
+$("document").ready(function () {
 
+$("#partnershipGroup ul.staff").find('li.newStaff').appendTo("#partnershipGroup .staff");
+$("#communicationGroup ul.staff").find('li.newStaff').appendTo("#communicationGroup .staff");
+$("#engineeringGroup .staff").find('li.newStaff').appendTo("#engineeringGroup .staff");
+})
+</script>
+<?php wp_reset_query(); ?>
 <?php get_footer(); ?>

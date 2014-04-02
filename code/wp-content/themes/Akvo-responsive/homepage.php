@@ -16,7 +16,7 @@
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <div class="borderTop"></div>
   <img src="<?php the_field('hero_box_image'); ?>" class="hero-image" />
-  <div class="wrapper">
+  <div>
   <div id="actionHeroInfo">
     <p>
       <?php the_field('product_featured'); ?>
