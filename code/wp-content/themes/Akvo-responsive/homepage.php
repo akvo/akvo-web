@@ -81,8 +81,8 @@
   <div class="fourColumns wrapper">
     <div class="blogIcon">
       <h3><a href="/blog/">Latest blog</a></h3>
-      <hr class="delicateSmall">
-      <div>
+<!--      <hr class="delicateSmall"> -->      
+<div>
         <?php
             $args = array( 'numberposts' => 1 );
             $lastposts = get_posts( $args );
@@ -102,7 +102,7 @@
     </div>
     <div class="networkIcon">
       <h3><a href="/seeithappen/all-rsr-project-updates/">Latest RSR updates</a></h3>
-      <hr class="delicateSmall">
+<!--      <hr class="delicateSmall"> -->      
       <div>
         <figure>
           <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
@@ -143,7 +143,7 @@
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">
       <h3><a href="http://www.youtube.com/user/Akvofoundation">Akvo.tv</a></h3>
-      <hr class="delicateSmall">
+<!--      <hr class="delicateSmall"> -->      
       <div>
         <figure>
           <div> <a href="http://akvo.tv"> <img src="<?php the_field('akvo_tv'); ?>" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
@@ -153,7 +153,7 @@
     </div>
     <div class="eventIcon">
       <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
-      <hr class="delicateSmall">
+<!--      <hr class="delicateSmall"> -->      
       <a href="<?php the_field('letter_link'); ?>">
       <div>
         <figure>
