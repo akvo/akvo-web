@@ -3729,7 +3729,18 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 	display:block;
 	padding:0.5em 1em;
 	}
-	
+@media screen and (max-width:768px){
+.pricingList img {
+	margin:1em 1em 0.5em 0.5em;
+	display:inline-block;
+	float:left;
+	}
+.pricingList p {
+	margin:1em auto;
+	display:block;
+	padding:0.5em 1em;
+	}
+	}
 .pricingList.fourColumns li {
    border-radius: 0.25em;
     float: left;
