@@ -35,7 +35,7 @@
         </ul>
         <a href="#" title="How is this data collected? Automatically from the Akvo RSR database via
 the RSR API (https://github.com/akvo/akvo-rsr/wiki/Akvo-RSR-API)
-How often is this data refreshed? Whenever the page is loaded" class="tooltip moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+How often is this data refreshed? Whenever the page is loaded" class="tooltips moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
       <li class="dashSingle" id="flowDash">
         <h2>Akvo Flow</h2>
         <ul class="flowData dashData">
@@ -62,7 +62,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltip mo
 Engine
 FLOW
 instances
-How often is this data refreshed? Monthly" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+How often is this data refreshed? Monthly" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
       <li class="dashSingle" id="opendaidDash">
         <h2>Akvo Openaid</h2>
         <ul class="openAidData dashData">
@@ -85,7 +85,7 @@ How often is this data refreshed? Monthly" class="tooltip moreLink">info</a> <a 
 rest is automated via the use of the Openaid API
 (https://github.com/openaid-IATI/)
 How often is this data refreshed? ‘Total commitments’ is updated monthly,
-the rest refreshes whenever the page is loaded" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
+the rest refreshes whenever the page is loaded" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
       <li class="dashSingle" id="akvopediaDash">
         <h2>Akvopedia</h2>
         <ul class="wikiData dashData">
@@ -117,7 +117,7 @@ via the Piwik API
 (
 https://piwikapi.readthedocs.org/en/latest/
 )
-How often is this data refreshed? Whenever the page is loaded" class="tooltip moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
+How often is this data refreshed? Whenever the page is loaded" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
     </ul>
   </section>
   <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
@@ -374,11 +374,5 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltip mo
     <!--<iframe src="http://www.akvo.org/rsr/widget/project-map/organisation/969/?bgcolor=000000&textcolor=undefined&height=518&width=968&state=dynamic" height="518" width="968" frameborder="0" allowTransparency="true" seamless scrolling="no"> </iframe>--> 
   </section>
 </div>
-<script src="<?php bloginfo('template_directory'); ?>/js/tooltip.js"></script>
-<script>
-$(document).ready(function(){
-	tooltip();
-});
-</script>
 <!-- end content -->
 <?php get_footer(); ?>
