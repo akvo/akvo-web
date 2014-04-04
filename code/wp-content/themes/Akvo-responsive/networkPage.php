@@ -136,7 +136,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
     </ul>
     <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
       <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" /> </h4>
-
+    
     <!--
     <ul class="threeColumns wrapper">
       <li id="update_0" class="rsrUpdate">
@@ -168,7 +168,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
         <p></p>
         <a href="" class="moreLink">Read more</a> </li>
     </ul>
-    -->
+    --> 
   </section>
   <script type="text/javascript">
     // populate the dashboard from various Akvo APIs

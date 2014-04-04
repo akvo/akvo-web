@@ -391,14 +391,20 @@ a.seeMore, footer a:link, footer a:visited {
 .moreLink {
 	font-weight: normal;
 	font-size: 0.9em;
-	display: inline-table;
+	display: table;
 	padding: 3px 28px 3px 0;
 	height: 19px;
 	background: url(images/moreLink.png) right bottom no-repeat;
 }
 .moreLink:hover { background: url(images/moreLink.png) right bottom no-repeat; }
-.tooltip { background: url(images/helpIcn.png) right bottom no-repeat; }
-.tooltip:hover { background: url(images/helpIcn.png) right bottom no-repeat; }
+.tooltips { background: url(images/helpIcn.png) right bottom no-repeat; }
+.tooltips:hover { background: url(images/helpIcn.png) right bottom no-repeat; }
+
+@media screen and (max-width: 768px) {
+.tooltips { display:none; }
+}
+
+
 .seeMore { margin-top: 2em; }
 p > .moreLink { margin: 0.25em 0 0 0; }
 .moreLink.darkBg {
@@ -3344,21 +3350,20 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 
 @media screen and (max-width: 768px) {
 .dialog {
-	position: absolute;
-	z-index: 9999;
+	position: relative;
 	display: none;
-	margin: 10px auto;
-	padding: 1em 1.5% 1em 1.5%;
-	width: 90%;
-	border-radius: 0;
-	-o-border-radius: 0;
-	-moz-border-radius: 0;
-	-webkit-border-radius: 0;
-	background: #fff;
-	height: 100%;
-	min-height: 50%;
-	border: 1px solid #8a8a8a;
-	overflow-y: scroll
+	margin: 0 auto;
+	padding: 2em 5% 3em 5%;
+	width:90%;
+	height:100%;
+	-webkit-border-radius:0;
+	-moz-border-radius:0;
+	-o-border-radius:0;
+	border-radius:0;
+	background: rgb(255,255,255);
+	max-height: 100%;
+	border:none;
+	overflow-y: scroll;
 }
 }
 #staffDescr { margin-top: 10px; }
@@ -3703,79 +3708,52 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 /***********************************
 						Price table
 ********************************************/
-.pricePage .dialog { padding: 2em 2em 0; }
-.priceDescrFullW {
-	position: relative;
-	padding: 0 0 2.5em 0;
-}
-.priceFourFullW {
-	position: relative;
-	padding: 0 0 2.5em 0;
-}
-table.pricingTable {
-	margin: 40px auto 0 auto;
-	width: 99%;
-	border-collapse: collapse;
-	text-align: left;
-	font-size: 1.1em;
-	border: 1px solid rgb(218,218,218);
-}
-table.pricingTable td {
-	overflow: hidden;
-	vertical-align: top;
-	text-align: left;
-	min-height: 250px;
-	font-size: 0.9em;
-}
-table.pricingTable thead tr {
-	background: rgb(32,32,36);
-	color: rgb(255,255,255);
-}
-table.pricingTable td img {
-	display: block;
-	margin: 1em auto 0;
-}
-table.pricingTable .priceCat {
-	padding: 0.5em 1% 0.5em 1%;
-	width: 23%;
-	font-weight: normal;
-}
-table.pricingTable .priceDescr {
-	padding: 0.5em 1% 2.5em 1%;
-	width: 23%;
-}
-table.pricingTable td:hover { font-weight: normal; }
-table.pricingTable tbody tr { }
-table.pricingTable tbody td:nth-child(2n+1), table.pricingTable tbody td.odd { background: rgb(238,238,238); }
-table.pricingTable tbody tr:nth-child(2n), table.pricingTable tbody tr.even { }
-table.pricingTable tbody tr:hover, table.pricingTable tbody tr:nth-child(2n):hover, table.pricingTable tbody tr.even:hover { }
+.pricingList {
+	margin:3em auto;
+	}
+.pricingList h5 {
+	padding:0.5em;
+	background:rgb(32,32,36);
+	color:rgb(255,255,255);
+	}
+.pricingList img {
+	margin:1em auto;
+	display:table;
+	}
+.pricingList p {
+	margin:1em auto;
+	display:block;
+	padding:0.5em 1em;
+	}
+	
+.pricingList.fourColumns li {
+   border-radius: 0.25em;
+    float: left;
+    margin: 0;
+    min-height: 200px;
+    padding: 0.2em 0 0.25em;
+    position: relative;
+    width: 25%;	
+	}
+.pricingList.fourColumns li:nth-child(2n) {
+	background:none repeat scroll 0 0 rgb(238, 238, 238);
+	}
 
+	
 @media screen and (max-width: 768px) {
-.pricingtable2 { border: 0 }
-}
-.pricingtable2 .pricecat {
-	width: 25%;
-	float: left
+.pricingList.fourColumns > li {
+	float: none;
+	margin: 30px auto;
+	padding: 5%;
+	width: 90%;
+	}
+
+.pricingList.fourColumns li:nth-child(2n) {
+	background:none;
+	}
 }
 
-@media screen and (max-width: 768px) {
-.pricingtable2 .pricecat { width: 100% }
-}
-.pricingtable2 .pricecat.price-2, .pricingtable2 .pricecat.price-4 { background: #fff }
-.pricingtable2 h4 {
-	background: #202024;
-	color: #fff;
-	padding: 8px;
-	margin: 0
-}
-.pricingtable2 img {
-	display: block;
-	margin: 20px auto
-}
-.pricingtable2 p {
-	margin: 0px 10px 30px;
-	font-size: 0.95em
-}
+
 div[id^="inline-"] { display: none }
 .qa-faq { margin-bottom: 30px }
 
