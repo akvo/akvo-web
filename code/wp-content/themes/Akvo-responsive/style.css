@@ -1555,7 +1555,7 @@ body.home h1.akvoDescr {
 #actionHeroBox h1 {
 	text-align: center;
 	display: block;
-	font-size: 1.4em
+	font-size: 1.8em
 }
 }
 #actionHeroBox h2 {
@@ -1568,7 +1568,7 @@ body.home h1.akvoDescr {
 #actionHeroBox h2 {
 	text-align: center;
 	display: block;
-	font-size: 1em
+	font-size: 1.4em
 }
 }
 #actionHeroBox h2, #actionHeroBox h1, #actionHeroBox #actionHeroInfo > a, #actionHeroBox #actionHeroInfo { text-align: right; }
@@ -1579,11 +1579,11 @@ body.home h1.akvoDescr {
 
 @media screen and (max-width: 768px) {
 .actionHeroBtn {
-	background: blue;
+	background: rgb(32,32,36);
 	color:white;
-	font-size:2em;
+	font-size:1.6em;
 	position: relative;
-	display: inline-block;
+	display: table;
 	width: auto;
 	padding: 10px 30px;
 	height: auto;
@@ -1591,16 +1591,17 @@ body.home h1.akvoDescr {
 	top: 0px;
 	right: 0px;
 	border: 0 none;
-	margin: 0 auto;
+	margin: 1em auto;
 	border-radius: 0.25em;
 	-o-border-radius: 0.25em;
 	-moz-border-radius: 0.25em;
 	-webkit-border-radius: 0.25em;
-	-webkit-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 5px rgba(0,0,0,0.25);
-	-moz-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 5px rgba(0,0,0,0.25);
-	-o-box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 5px rgba(0,0,0,0.25);
-	box-shadow: 0 1px 0 rgba(255,255,255,0.1) inset, 0 1px 5px rgba(0,0,0,0.25)
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-o-box-shadow: none;
+	box-shadow: none;
 }
+
 }
 #productWindow {
 	position: relative;
@@ -1730,6 +1731,8 @@ body.home h1.akvoDescr {
 	border-bottom:none;
 	content: "with";
 	text-transform:lower-case;
+	color:rgb(212,212,212);
+	text-transform:lowercase;
 }
 }
 #productWindow div h2 {
@@ -3731,9 +3734,8 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 	}
 @media screen and (max-width:768px){
 .pricingList img {
-	margin:1em 1em 0.5em 0.5em;
-	display:inline-block;
-	float:left;
+	margin:0 auto;
+	display:table;
 	}
 .pricingList p {
 	margin:1em auto;
@@ -3759,8 +3761,8 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 .pricingList.fourColumns > li {
 	float: none;
 	margin: 30px auto;
-	padding: 5%;
-	width: 90%;
+	padding: 2%;
+	width: 96%;
 	}
 
 .pricingList.fourColumns li:nth-child(2n) {

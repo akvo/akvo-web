@@ -29,7 +29,7 @@
         <?php the_field('hero_box_subtitle'); ?>
       </h2>
     </hgroup>
-    <a class="actionHeroBtn moreLink" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
+    <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
   <div class="borderBottom"></div>
   </div>
   <?php endwhile; endif; wp_reset_query(); ?>
