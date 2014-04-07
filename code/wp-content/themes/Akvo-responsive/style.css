@@ -508,6 +508,7 @@ div.centerED > p, .centerED {
 
 @media screen and (max-width: 768px) {
 .bgDeco { min-height: 0 }
+.bgDeco p { padding-left:0.5em; }
 }
 .bgDecoB {
 	background: rgb(248,248,248);
@@ -991,6 +992,7 @@ a.helpIcon:hover { opacity: 1; }
 	width: 98%
 }
 }
+
 .splitImg {
 	position: relative;
 	margin: 2.5em auto;
@@ -1196,7 +1198,7 @@ div.headerWrap {
 .logInHeader {
 	position: absolute;
 	top: 20px;
-	right: 10px
+	right: 15px
 }
 }
 .logInHeader a {
@@ -1206,6 +1208,7 @@ div.headerWrap {
 
 @media screen and (max-width: 768px) {
 .logInHeader a {
+	font-size:130%;
 	background: rgba(255,255,255,0.2);
 	border-radius: 0.25em;
 	-o-border-radius: 0.25em;
@@ -1252,6 +1255,10 @@ nav#n ul li.current_page_item a, nav#n ul li.current_page_parent a, header.top l
 	background: url(images/currentMenuMarker.png) center 30px no-repeat;
 	color: rgb(222,137,41);
 }
+
+.current-menu-item a {	color: rgb(222,137,41) !important; cursor:crosshair;
+}
+
 nav#n ul li.current_page_item ul.sub-menu a, nav#n ul li.current_page_parent ul.sub-menu a, header.top li.current_page_item ul.sub-menu a {
 	background: none;
 	color: rgb(255,255,255);
@@ -1373,11 +1380,12 @@ div.breadCrumb {
 	-o-box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 	box-shadow: 0 1px 1px rgba(0,0,0,0.1);
 }
-
 @media screen and (max-width: 768px) {
 div.breadCrumb { margin: 0 auto }
 }
+
 div.breadCrumbs { position: relative; }
+
 .projectGateWay {
 	position: absolute;
 	right: 105px;
@@ -1534,7 +1542,7 @@ body.home h1.akvoDescr {
 }
 #actionHeroBox p span { color: rgb(40,40,40); }
 #actionHeroBox p span.akvorsr { color: rgb(66, 76, 43); }
-#actionHeroBox p span.akvoflow { color: s rgb(222, 137, 41); }
+#actionHeroBox p span.akvoflow { color: rgb(222, 137, 41); }
 #actionHeroBox p span.akvoopenaid { color: rgb(227, 27, 35); }
 
 @media screen and (max-width: 768px) {
@@ -1776,12 +1784,31 @@ a.faqMenuHead {
 	padding: 5px 0 5px 35px;
 	background: url(images/menuCollapseShow.png) left top no-repeat;
 }
+@media screen and (max-width:768px) {
+a.faqMenuHead {
+	display:block;
+	width:95%;
+	font-size: 120%;
+	padding: 15px 0 15px 5%;
+	background-image:none;
+	background-color:rgb(212,212,212);
+}
+}
 a.faqMenuHead.openED { background: url(images/menuCollapseShow.png) left bottom no-repeat; }
 ul.faqMenuList { margin: 5px 0 5px 30px; }
 ul.faqMenuList li {
 	padding: 5px 0 5px 10px;
 	margin: 0 0 2px 0px;
 	background: rgb(248,248,248);
+}
+@media screen and (max-width:768px) {
+a.faqMenuHead.openED { background-image:none;color:rgb(222, 137, 41);  }
+
+ul.faqMenuList li {
+	padding: 15px 0 15px 5%;
+	margin: 0 0 2px 0px;
+	background: rgb(248,248,248);
+}
 }
 ul.faqMenuList li:first-child { margin: 5px 0 2px 0px; }
 ul.faqMenuList li:hover { background: rgb(218,218,218); }
@@ -2437,9 +2464,11 @@ footer .menu { margin: 0px 15px }
 }
 footer .menu > li {
 	float: left;
-	padding: 0 0 0 0.5%;
+	padding:0 0 0 1.5%;
 }
-
+footer .menu > li:first-child {
+	padding: 0 0 0 0%;
+}
 @media screen and (max-width: 768px) {
 footer .menu > li {
 	width: 100%;
@@ -2452,7 +2481,20 @@ footer .menu > li ul li {
 	display: block;
 	width: 100%
 }
-
+@media screen and (max-width: 768px) {
+footer .menu > li ul li {
+	font-size:130%;
+	width:90%;
+  	background: none repeat scroll 0 0 rgb(245, 245, 245);
+    margin: 0 0 5px;
+    padding:10px 5%;
+	}
+	
+footer .menu > li ul li:hover {
+    color: rgb(222, 137, 41);
+	background:rgb(32,32,36);
+	}
+	}
 @media screen and (max-width: 768px) {
 footer.bottomPage section#siteMap .menu h3 { margin-top: 0 }
 }
@@ -3722,6 +3764,9 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 	padding:0.5em;
 	background:rgb(32,32,36);
 	color:rgb(255,255,255);
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
 	}
 .pricingList img {
 	margin:1em auto;
@@ -3734,8 +3779,9 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 	}
 @media screen and (max-width:768px){
 .pricingList img {
-	margin:0 auto;
-	display:table;
+	margin:0.5em 1em;
+	max-width:30%;
+	float:left;
 	}
 .pricingList p {
 	margin:1em auto;

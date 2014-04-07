@@ -48,11 +48,11 @@ get_header(); ?>
     <div id="partnershipGroup">
       <h2 class="pStaffHead">Partnerships</h2>
     <ul class="staff floats-in"><li class="newStaff">
-          <a href="http://akvo.org/about-us/working-at-akvo/">
+          <a href="/about-us/working-at-akvo/">
             <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
             <p class="staffTitle">Check Out The Available Jobs.</p>
-            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+            <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
            </a>
            </li></ul>
     </div>    <hr class="delicate" />
@@ -60,11 +60,11 @@ get_header(); ?>
     <div id="communicationGroup">
       <h2 class="cStaffHead">Communication and PR</h2>
     <ul class="staff floats-in"><li class="newStaff">
-          <a href="http://akvo.org/about-us/working-at-akvo/">
+          <a href="/about-us/working-at-akvo/">
             <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
             <p class="staffTitle">Check Out The Available Jobs.</p>
-            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+            <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
            </a>
            </li></ul>
     </div>    <hr class="delicate" />
@@ -72,11 +72,11 @@ get_header(); ?>
     <div id="engineeringGroup">
       <h2 class="eStaffHead">Engineering &amp; design</h2>
     <ul class="staff floats-in"><li class="newStaff">
-          <a href="http://akvo.org/about-us/working-at-akvo/">
+          <a href="/about-us/working-at-akvo/">
             <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/you.png" title="Tell us more about you" alt="Tell us more about you" /></div>
-            <div class="staffName"><a href="http://akvo.org/about-us/working-at-akvo/">You?</a></div>
+            <div class="staffName"><a href="/about-us/working-at-akvo/">You?</a></div>
             <p class="staffTitle">Check Out The Available Jobs.</p>
-            <a href="http://akvo.org/about-us/working-at-akvo/"><small>Click for more details.</small></a>
+            <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
            </a>
            </li></ul>
     </div> 
