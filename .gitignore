@@ -15,5 +15,6 @@ code/wp-content/uploads
 code/wp-content/cache
 code/wp-content/plugins/json-data/cache
 code/wp-content/upgrade
+code/wp-snapshots
 
 code/.htaccess
