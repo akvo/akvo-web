@@ -13,27 +13,26 @@
   <div class="fullWidthParag wrapper"><?php the_content(); ?></div>
 
   <?php endwhile; // end of the loop. ?>
-
-  <li id="updateTemplate" class="rsrUpdate" style="display: none;">
-    <span>RSR Update</span>
-    <div class="imgWrap">
-      <a><img src=""/></a>
-    </div>
+  <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
     <h2><a></a></h2>
-    <div class="authorTime floats-in">
-      <time datetime=""></time>
-      <em class="userName">by</em>
-    </div>
-    <div class="orgAndPlace">
-      <span class="org"></span>
-      <span class="place"></span>
-    </div>
-    <p></p>
-    <a href="" class="moreLink">Read more</a>
+    <ul class="floats-in">
+      <li class="upImag">
+        <div class="imgWrap"><a><img src=""/></a></div>
+      </li>
+      <li class="upInfo">
+        <div class="authorTime floats-in">
+          <time datetime="" class=""></time>
+          <em>by</em><span class="userName"> </span></div>
+        <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
+      </li>
+      <li class="upTxt">
+        <p></p>
+      </li>
+      <li class="upMore"><a href="" class=""></a><span>Read more</span></li>
+    </ul>
   </li>
-
   <section class="wrapper">
-    <ul id="updatesWrapper" class="threeColumns floats-in" style="display: none;">
+    <ul id="updatesWrapper" class="floats-in" style="display: none;">
     </ul>
 
     <h4 id="loadingCaption" class="backLined">

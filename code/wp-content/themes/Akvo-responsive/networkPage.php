@@ -18,7 +18,7 @@
     <h2>Data collected with Akvo tools</h2>
     <ul class="wrapper">
       <li class="dashSingle" id="rsrDash">
-        <h2>Akvo RSR</h2>
+        <h2>Akvo RSR</h2> 
         <ul class="rsrData dashData">
           <li>
             <h4>Projects:</h4>
@@ -121,24 +121,32 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
     </ul>
   </section>
   <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
-    <div class="imgWrap"> <a><img src=""/></a> </div>
     <h2><a></a></h2>
-    <div class="authorTime floats-in">
-      <time datetime=""></time>
-      <em class="userName">by</em> </div>
-    <div class="orgAndPlace"> <span class="org"></span> <span class="place"></span> </div>
-    <p></p>
-    <a href="" class="moreLink">Read more</a> </li>
+    <ul class="floats-in">
+      <li class="upImag">
+        <div class="imgWrap"><a><img src=""/></a></div>
+      </li>
+      <li class="upInfo">
+        <div class="authorTime floats-in">
+          <time datetime="" class=""></time>
+          <em>by</em><span class="userName"> </span></div>
+        <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
+      </li>
+      <li class="upTxt">
+        <p></p>
+      </li>
+      <li class="upMore"><a href="" class=""></a><span>Read more</span></li>
+    </ul>
+  </li>
   <section id="rsrProjectUpdates">
     <h2>RSR: Latest project updates</h2>
     <a href="/seeithappen/all-rsr-project-updates/" class="moreLink">Browse all latest project updates</a>
-    <ul id="updatesWrapper" class="threeColumns floats-in wrapper" style="display: none;">
+    <ul id="updatesWrapper" class="floats-in wrapper">
     </ul>
     <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
       <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" /> </h4>
     
-    <!--
-    <ul class="threeColumns wrapper">
+ <!-- <ul class="threeColumns wrapper">
       <li id="update_0" class="rsrUpdate">
       <span class="updatedTitle">RSR Update</span>
         <div class="imgWrap"> <a> <img src=""/> </a> </div>
@@ -333,7 +341,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
         root.find("a").prop('href', akvoDomain + update.absolute_url);
         root.find("div img").prop("src", akvoDomain + update.photo);
         root.find("time").text(update.time.split("T")[0]);
-        root.find(".userName").text("by" + " " + update.user.first_name + " " + update.user.last_name);
+        root.find(".userName").text(" " + update.user.first_name + " " + update.user.last_name);
         root.find("p").text(update.text);
       };
 
