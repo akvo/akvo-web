@@ -18,3 +18,5 @@ code/wp-content/upgrade
 code/wp-snapshots
 
 code/.htaccess
+
+*.scssc

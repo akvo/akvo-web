@@ -114,7 +114,7 @@ body {
 	font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	line-height: 1.4em;
 }
-body.network { background: url(images/debut_light.png) repeat; }
+body.network { background: url(../images/debut_light.png) repeat; }
 @media screen and (max-width: 768px) {
 body { font-size: 1em; }
 }
@@ -393,11 +393,11 @@ a.seeMore, footer a:link, footer a:visited {
 	display: table;
 	padding: 3px 28px 3px 0;
 	height: 19px;
-	background: url(images/moreLink.png) right bottom no-repeat;
+	background: url(../images/moreLink.png) right bottom no-repeat;
 }
-.moreLink:hover { background: url(images/moreLink.png) right bottom no-repeat; }
-.tooltips { background: url(images/helpIcn.png) right bottom no-repeat; }
-.tooltips:hover { background: url(images/helpIcn.png) right bottom no-repeat; }
+.moreLink:hover { background: url(../images/moreLink.png) right bottom no-repeat; }
+.tooltips { background: url(../images/helpIcn.png) right bottom no-repeat; }
+.tooltips:hover { background: url(../images/helpIcn.png) right bottom no-repeat; }
 
 @media screen and (max-width: 768px) {
 .tooltips { display: none; }
@@ -425,12 +425,12 @@ p > .moreLink { margin: 0.25em 0 0 0; }
 	display: table;
 	padding: 3px 28px 3px 0;
 	height: 22px;
-	background: url(images/moreLink.png) right top no-repeat;
+	background: url(../images/moreLink.png) right top no-repeat;
 	text-transform: uppercase;
 }
 .moreLink.darkBg:hover {
 	color: rgb(0,123,182);
-	background: url(images/moreLink.png) right bottom no-repeat;
+	background: url(../images/moreLink.png) right bottom no-repeat;
 }
 
 ::-moz-selection {
@@ -487,7 +487,7 @@ div.centerED > p, .centerED {
 	background: rgb(240,240,240);
 	margin-bottom: 1px !important;
 }
-.address:first-child { background: rgb(240,240,240) url(images/addressBg.png) center right no-repeat; }
+.address:first-child { background: rgb(240,240,240) url(../images/addressBg.png) center right no-repeat; }
 .contactName { }
 .topLine { font-weight: bold; }
 .bgDeco {
@@ -630,7 +630,7 @@ input[type="search"] {
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
 	padding: 2px 25px 2px 6px;
-	background: rgb(230,230,230) url(images/search-icon.png) no-repeat center right;
+	background: rgb(230,230,230) url(../images/search-icon.png) no-repeat center right;
 	-webkit-box-shadow: inset 0 1px 2px rgb(230,230,230), inset 0px -1px 2px rgb(230,230,230);
 	-moz-box-shadow: inset 0 1px 2px rgb(230,230,230), inset 0px -1px 2px rgb(230,230,230);
 	-o-box-shadow: inset 0 1px 2px rgb(230,230,230), inset 0px -1px 2px rgb(230,230,230);
@@ -642,7 +642,7 @@ input[type="search"]::-webkit-search-decoration, input[type="search"]::-webkit-s
 }
 input[type="search"]:hover {
 	border: 1px solid rgb(114,  205, 255);
-	background: rgb(244,244,244) url(images/search-icon.png) no-repeat center right;
+	background: rgb(244,244,244) url(../images/search-icon.png) no-repeat center right;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	-o-box-shadow: none;
@@ -650,7 +650,7 @@ input[type="search"]:hover {
 }
 input[type="search"]:focus {
 	border: 1px solid rgb(234,234,241);
-	background: rgb(244,244,244) url(images/search-icon.png) no-repeat center right;
+	background: rgb(244,244,244) url(../images/search-icon.png) no-repeat center right;
 	-webkit-box-shadow: none;
 	-moz-box-shadow: none;
 	-o-box-shadow: none;
@@ -749,7 +749,7 @@ input[type="submit"] {
 	-moz-border-radius: 0.2em;
 	-o-border-radius: 0.2em;
 	border-radius: 0.2em;
-	background: rgb(32,32,36) url(images/up-arrow.png) no-repeat center center;
+	background: rgb(32,32,36) url(../images/up-arrow.png) no-repeat center center;
 	-webkit-transition: 1s;
 	-moz-transition: 1s;
 	-o-transition: 1s;
@@ -776,7 +776,7 @@ a.helpIcon {
 	display: inline-block;
 	width: 26px;
 	height: 26px;
-	background: url(images/helpIcon.png) center top no-repeat;
+	background: url(../images/helpIcon.png) center top no-repeat;
 	text-indent: -9999px;
 	right: 5px;
 	top: 5px;
@@ -845,7 +845,7 @@ a.helpIcon:hover { opacity: 1; }
 	padding: 0.25em 0.5% 5px 0;
 	height: 100%;
 	margin: 25px 0 0 0.5%;
-	background: url(images/light-grain-trans.png) left top repeat;
+	background: url(../images/light-grain-trans.png) left top repeat;
 }
 
 @media screen and (max-width: 768px) {
@@ -1141,11 +1141,11 @@ header#top h1 {
 	left: 0px
 }
 }
-header#top h1:hover a { background: url(images/akvoLogoTop.png) no-repeat center bottom; }
+header#top h1:hover a { background: url(../images/akvoLogoTop.png) no-repeat center bottom; }
 
 @media screen and (max-width: 768px) {
 header#top h1:hover a {
-	background: url(images/akvoLogoTop-phone.png) no-repeat center bottom;
+	background: url(../images/akvoLogoTop-phone.png) no-repeat center bottom;
 	opacity: 1
 }
 }
@@ -1153,7 +1153,7 @@ header#top h1 a {
 	display: block;
 	width: 169px;
 	height: 35px;
-	background: url(images/akvoLogoTop.png) no-repeat center top;
+	background: url(../images/akvoLogoTop.png) no-repeat center top;
 	text-indent: -9999px;
 }
 
@@ -1161,7 +1161,7 @@ header#top h1 a {
 header#top h1 a {
 	width: 250px;
 	height: 52px;
-	background: url(images/akvoLogoTop-phone.png) no-repeat center top;
+	background: url(../images/akvoLogoTop-phone.png) no-repeat center top;
 	opacity: 1
 }
 }
@@ -1186,7 +1186,7 @@ div.headerWrap {
 #openSource h2 {
 	width: 100px;
 	height: 100px;
-	background: url(images/openSource.png) no-repeat center -1px;
+	background: url(../images/openSource.png) no-repeat center -1px;
 	text-indent: -9999px;
 }
 
@@ -1236,7 +1236,7 @@ nav#n { margin: 0 0 0 180px; }
 	position: relative;
 	font-size: 1.2em;
 	margin-right: -3px;
-	background: url("images/navSeparator.png") no-repeat scroll right center transparent;
+	background: url("../images/navSeparator.png") no-repeat scroll right center transparent;
 }
 #n ul li a {
 	padding: 0px 12px;
@@ -1258,7 +1258,7 @@ nav#n { margin: 0 0 0 180px; }
 nav#n ul li.current_page_item a, nav#n ul li.current_page_parent a, header.top li.current_page_item a {
 	z-index: 9998;
 	margin-top: 1px;
-	background: url(images/currentMenuMarker.png) center 30px no-repeat;
+	background: url(../images/currentMenuMarker.png) center 30px no-repeat;
 	color: rgb(222,137,41);
 }
 .current-menu-item a {
@@ -1274,7 +1274,7 @@ nav#n ul li.current_page_item ul.children li.page_item a:hover { color: rgb(222,
 nav#n ul li.current_page_parent a {
 	z-index: 9998;
 	margin-top: 1px;
-	background: url(images/currentMenuMarker.png) center 30px no-repeat;
+	background: url(../images/currentMenuMarker.png) center 30px no-repeat;
 }
 #n ul li ul.sub-menu {
 	display: none;
@@ -1549,11 +1549,11 @@ body.home h1.akvoDescr {
 }
 .borderTop {
 	top: 0;
-	background: url(images/actionHeroTopBorder.png) left top repeat-x;
+	background: url(../images/actionHeroTopBorder.png) left top repeat-x;
 }
 .borderBottom {
 	bottom: 0;
-	background: url(images/actionHeroBottomBorder.png) left bottom repeat-x;
+	background: url(../images/actionHeroBottomBorder.png) left bottom repeat-x;
 }
 #actionHeroBox p, #actionHeroBox h1, #actionHeroBox h2, #actionHeroBox a { }
 #actionHeroBox p {
@@ -1776,19 +1776,19 @@ body.home h1.akvoDescr {
 #openaidBucket h1, #openaidBucket h2 { color: rgb(255, 206, 0); }
 #akvopedia h1, #akvopedia h2 { color: rgb(191, 131, 185); }
 #rsrBucket h1 {
-	background: url(images/rsr-logo-40px.png) center top no-repeat;
+	background: url(../images/rsr-logo-40px.png) center top no-repeat;
 	background-size: 85%;
 }
 #flowBucket h1 {
-	background: url(images/flow-logo-40px.png) center top no-repeat;
+	background: url(../images/flow-logo-40px.png) center top no-repeat;
 	background-size: 85%;
 }
 #openaidBucket h1 {
-	background: url(images/openaid-logo-40px.png) center top no-repeat;
+	background: url(../images/openaid-logo-40px.png) center top no-repeat;
 	background-size: 85%;
 }
 #akvopedia h1 {
-	background: url(images/akvopedia-logo-40px.png) center top no-repeat;
+	background: url(../images/akvopedia-logo-40px.png) center top no-repeat;
 	background-size: 85%;
 }
 /*************************************************************
@@ -1798,7 +1798,7 @@ body.home h1.akvoDescr {
 a.faqMenuHead {
 	font-size: 1.1em;
 	padding: 5px 0 5px 35px;
-	background: url(images/menuCollapseShow.png) left top no-repeat;
+	background: url(../images/menuCollapseShow.png) left top no-repeat;
 }
 
 @media screen and (max-width:768px) {
@@ -1811,7 +1811,7 @@ a.faqMenuHead {
 	background-color: rgb(212,212,212);
 }
 }
-a.faqMenuHead.openED { background: url(images/menuCollapseShow.png) left bottom no-repeat; }
+a.faqMenuHead.openED { background: url(../images/menuCollapseShow.png) left bottom no-repeat; }
 ul.faqMenuList { margin: 5px 0 5px 30px; }
 ul.faqMenuList li {
 	padding: 5px 0 5px 10px;
@@ -2087,7 +2087,7 @@ div.meta {
 }
 div.meta time {
 	padding-left: 18px;
-	background: url(images/post-time-icon.png) left top no-repeat;
+	background: url(../images/post-time-icon.png) left top no-repeat;
 	overflow: hidden;
 	text-overflow: ellipsis;
 	white-space: nowrap;
@@ -2508,7 +2508,7 @@ footer .menu > li ul li {
 	width: 90%;
 	background: none repeat scroll 0 0 rgb(245, 245, 245);
 	margin: 0 0 5px;
-	padding: 10px 5%;
+	padding: 20px 5%;
 }
 footer .menu > li ul li:hover {
 	color: rgb(222, 137, 41);
@@ -2759,14 +2759,14 @@ footer.bottomPage section#siteMap nav.socialLinks li a {
 	transition: opacity 0.2s linear
 }
 footer.bottomPage section#siteMap nav.socialLinks li a:hover { opacity: 0.5 }
-footer.bottomPage section#siteMap nav.socialLinks li.twitter a { background: url(images/socialTwitter.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.github a { background: url(images/socialGithub.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.facebook a { background: url(images/socialFacebook.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.flickr a { background: url(images/socialFlickr.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.youtube a { background: url(images/socialYoutube.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.rss a { background: url(images/socialRss.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.email a { background: url(images/socialEmail.png) center center no-repeat }
-footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a { background: url(images/socialContact.png) center center no-repeat }
+footer.bottomPage section#siteMap nav.socialLinks li.twitter a { background: url(../images/socialTwitter.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.github a { background: url(../images/socialGithub.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.facebook a { background: url(../images/socialFacebook.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.flickr a { background: url(../images/socialFlickr.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.youtube a { background: url(../images/socialYoutube.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.rss a { background: url(../images/socialRss.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.email a { background: url(../images/socialEmail.png) center center no-repeat  }
+footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a { background: url(../images/socialContact.png) center center no-repeat  }
 footer.bottomPage section#aboutAkvo {
 	position: relative;
 	width: 100%;
@@ -2882,7 +2882,7 @@ nav.anchorNav ul li {
 	display: inline;
 	padding: 0 0.5em;
 	margin: 0 0 0 0;
-	background: url(images/productNavSep.png) left center no-repeat;
+	background: url(../images/productNavSep.png) left center no-repeat;
 }
 
 @media screen and (max-width: 768px) {
@@ -3036,7 +3036,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 .productPage section.figure { display: none }
 .productPage section.figure img { display: none }
 }
-.rsr .productPage section.figure { background: url(images/chruch.png) repeat;/*	background: rgb(255,255,255); 
+.rsr .productPage section.figure { background: url(../images/chruch.png) repeat;/*	background: rgb(255,255,255); 
 
 	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNlNmU2ZTYiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
 	background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%); 
@@ -3047,8 +3047,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dbdbdb', end
 	background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(230,230,230,1) 100%); 
  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e6e6e6', GradientType=0 );
 */ }
-.akvoflow .productPage section.figure { background: url(images/background-banner.jpg) repeat; }
-.akvopedia .productPage section.figure { background: url(images/akvopedia_bg.jpg) repeat; }
+.akvoflow .productPage section.figure { background: url(../images/background-banner.jpg) repeat; }
+.akvopedia .productPage section.figure { background: url(../images/akvopedia_bg.jpg) repeat; }
 .figure { background: rgb(32,32,36); }
 .akvopediaProdPag .figure { background: rgb(232,232,236); }
 .akvoopenaid .figure { background: rgb(242,242,246); }
@@ -3198,10 +3198,10 @@ section.inFivePoints li:nth-child(2n) div { float: left; }
 	height: 45px;
 	text-indent: -99999px;
 }
-.rsrProdPag hgroup h1 { background: url(images/rsr60px.png) center center no-repeat; }
-.flowProdPag hgroup h1 { background: url(images/flow60px.png) center center no-repeat; }
-.openaidProdPag hgroup h1 { background: url(images/openaid60px.png) center center no-repeat; }
-.akvopediaProdPag hgroup h1 { background: url(images/akvopedia60px.png) center center no-repeat; }
+.rsrProdPag hgroup h1 { background: url(../images/rsr60px.png) center center no-repeat; }
+.flowProdPag hgroup h1 { background: url(../images/flow60px.png) center center no-repeat; }
+.openaidProdPag hgroup h1 { background: url(../images/openaid60px.png) center center no-repeat; }
+.akvopediaProdPag hgroup h1 { background: url(../images/akvopedia60px.png) center center no-repeat; }
 .productPage hgroup h2 {
 	font-size: 1.4em;
 	text-align: center;
@@ -3453,7 +3453,7 @@ ul.staff li:nth-child(6n) { margin-right: 0; }
 }
 .buttons .cancel {
 	padding: 6px 5px 8px 40px;
-	background: url(images/closePopup.png) left center no-repeat;
+	background: url(../images/closePopup.png) left center no-repeat;
 	cursor: pointer;
 }
 .buttons .cancel:hover {
@@ -3567,10 +3567,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', end
 	top: 0;
 	right: 0;
 }
-.dashSingle#rsrDash h2 { background: url(images/rsrWhiteDash.png) no-repeat center center; }
-.dashSingle#flowDash h2 { background: url(images/flowWhiteDash.png) no-repeat center center; }
-.dashSingle#opendaidDash h2 { background: url(images/openAidWhiteDash.png) no-repeat center center; }
-.dashSingle#akvopediaDash h2 { background: url(images/wikiWhiteDash.png) no-repeat center center; }
+.dashSingle#rsrDash h2 { background: url(../images/rsrWhiteDash.png) no-repeat center center; }
+.dashSingle#flowDash h2 { background: url(../images/flowWhiteDash.png) no-repeat center center; }
+.dashSingle#opendaidDash h2 { background: url(../images/openAidWhiteDash.png) no-repeat center center; }
+.dashSingle#akvopediaDash h2 { background: url(../images/wikiWhiteDash.png) no-repeat center center; }
 .dashData li {
 	-moz-box-sizing: border-box;
 	-wekit-box-sizing: border-box;
@@ -3678,7 +3678,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', end
 	display: block;
 	width: 62px;
 	height: 62px;
-	background: url(images/readMoreBig.svg) center center no-repeat;
+	background: url(../images/readMoreBig.svg) center center no-repeat;
 	background-size: 112px 112px;
 	transition: all 0.4s ease-in;
 }
@@ -3780,7 +3780,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#404040', end
 	display: block;
 	color:  rgb(116,116,116);
 	padding: 0.25em 0 0.25em 14px;
-	background: url(images/pinPoint.png) left center no-repeat;
+	background: url(../images/pinPoint.png) left center no-repeat;
 	margin-left: 1.75em;
 	text-overflow: ellipsis;
 	white-space: nowrap;
