@@ -4,7 +4,6 @@ dwsync.xml
 *.scssc
 
 # Configurable files
-code/.htaccess
 code/nginx.conf
 code/php5.ini
 code/robots.txt
