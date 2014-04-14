@@ -6,7 +6,7 @@ Description: Easily add a global option to hide/remove the new Admin bar in WP 3
 Author: Don Fischer
 Author URI: http://www.fischercreativemedia.com/
 Donate link: http://www.fischercreativemedia.com/wordpress-plugins/donate/
-Version: 1.5
+Version: 1.6
 Text Domain: global-hide-remove-toolbar-plugin
 
 Version info:

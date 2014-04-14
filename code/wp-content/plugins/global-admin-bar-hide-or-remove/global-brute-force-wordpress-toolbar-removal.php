@@ -3,14 +3,80 @@
 Plugin Name: Global Hide/Remove ToolBar: 2. BRUTE FORCE Remover
 Plugin URI: http://fischercreativemedia.com/wordpress-plugins/global-hide-admin-bar-plugin/
 Description: Use this plugin to remove <strong>ALL</strong> toolbars, including Admin. Recommended you use the <strong>Global Hide/Remove ToolBar: 1. Front End Toolbar Remover</strong> unless you REALLY need the Admin toolbar removed - DO NOT USE BOTH.
-Version: 1.5
-Author: Don Fischer
+Version: 1.6
+Author: Don Fischer, sLa NGjI's
 Author URI: http://www.fischercreativemedia.com/
 Donate link: http://www.fischercreativemedia.com/wordpress-plugins/donate/
 Requires at least: 3.1
-Tested up to: 3.8
+Tested up to: 3.8.2
 License: GPLv2 or later
-*/
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the [GNU General Public License](http://wordpress.org/about/gpl/)
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * on an "AS IS", but WITHOUT ANY WARRANTY; without even the implied
+ * warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+ * See the GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see [GNU General Public Licenses](http://www.gnu.org/licenses/),
+ * or write to the Free Software Foundation, Inc., 51 Franklin Street,
+ * Fifth Floor, Boston, MA 02110-1301, USA.
+ *
+ * DISCLAIMER
+ *
+ * The license under which the WordPress software is released is the GPLv2 (or later) from the
+ * Free Software Foundation. A copy of the license is included with every copy of WordPress.
+ *
+ * Part of this license outlines requirements for derivative works, such as plugins or themes.
+ * Derivatives of WordPress code inherit the GPL license.
+ *
+ * There is some legal grey area regarding what is considered a derivative work, but we feel
+ * strongly that plugins and themes are derivative work and thus inherit the GPL license.
+ *
+ * The license for this software can be found on [Free Software Foundation](http://www.gnu.org/licenses/gpl-2.0.html) and as license.txt into this plugin package.
+ *
+ * The author of this plugin is available at any time, to make all changes, or corrections, to respect these specifications.
+ *
+ * THERMS
+ *
+ * This global-brute-force-wordpress-toolbar-removal.php uses (or it parts) code derived from:
+ *
+ * wp-admin-bar-removal.php by slangjis <slangjis [at] googlemail [dot] com>
+ * Copyright (C) 2010-2014 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ *
+ * wp-admin-bar-removal-node-addon.php by slangjis <slangjis [at] googlemail [dot] com>
+ * Copyright (C) 2010-2013 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ *
+ * one-click-logout-barless.php by olyma <olyma [at] rack of power [dot] com>)
+ * Copyright (C) 2011-2012 [olyma](http://rackofpower.com/) (email: <olyma [at] rack of power [dot] com>)
+ *
+ * toolbar-removal-completely-disable.php by slangjis <slangjis [at] googlemail [dot] com>
+ * Copyright (C) 2011-2013 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ *
+ * wp-toolbar-removal.php by slangjis <slangjis [at] googlemail [dot] com>
+ * Copyright (C) 2012-2014 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ *
+ * wp-toolbar-removal-node-addon.php by slangjis <slangjis [at] googlemail [dot] com>
+ * Copyright (C) 2012-2013 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ *
+ * according to the terms of the GNU General Public License version 2 (or later) this uses or it parts code was derived.
+ *
+ * According to the Terms of the GNU General Public License version 2 (or later) part of Copyright belongs to your own author and part belongs to their respective others authors:
+ *
+ * Copyright (C) 2008-2014 [slangjis](http://slangji.wordpress.com/) (email: <slangjis [at] googlemail [dot] com>)
+ * Copyright (C) 2011-2012 [olyma](http://rackofpower.com/) (email: <olyma [at] rack of power [dot] com>)
+ *
+ * VIOLATIONS
+ *
+ * [Violations of the GNU Licenses](http://www.gnu.org/licenses/gpl-violation.en.html)
+ * The author of this plugin is available at any time, to make all changes, or corrections, to respect these specifications.
+ */
+
 	global $wp_version;
 	if ( !defined('ABSPATH')){die(__('not allowed'));}
 	if ( $wp_version < 3.1 ){wp_die( __( 'This Plugin Requires WordPress 3.1 or higher: Could Not Install!' ) );}
