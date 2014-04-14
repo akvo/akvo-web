@@ -1,8 +1,10 @@
 # Files to ignore globally
 .DS_Store
 dwsync.xml
+*.scssc
 
 # Configurable files
+code/.htaccess
 code/nginx.conf
 code/php5.ini
 code/robots.txt
@@ -17,6 +19,5 @@ code/wp-content/plugins/json-data/cache
 code/wp-content/upgrade
 code/wp-snapshots
 
-code/.htaccess
-
-*.scssc
+# Development related plug-ins
+code/wp-content/plugins/duplicator
