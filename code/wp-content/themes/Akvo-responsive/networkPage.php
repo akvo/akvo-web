@@ -18,7 +18,7 @@
     <h2>Data collected with Akvo tools</h2>
     <ul class="wrapper">
       <li class="dashSingle" id="rsrDash">
-        <h2>Akvo RSR</h2> 
+        <h2>Akvo RSR</h2>
         <ul class="rsrData dashData">
           <li>
             <h4>Projects:</h4>
@@ -129,13 +129,13 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
       <li class="upInfo">
         <div class="authorTime floats-in">
           <time datetime="" class=""></time>
-          <em>by</em><span class="userName"> </span></div>
+          <em class="">by</em><span class="userName"> </span></div>
         <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
       </li>
       <li class="upTxt">
         <p></p>
       </li>
-      <li class="upMore"><a href="" class=""></a><span>Read more</span></li>
+      <li class="upMore"><a href="" class=""></a><span>Read more ></span></li>
     </ul>
   </li>
   <section id="rsrProjectUpdates">
@@ -146,7 +146,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
     <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
       <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" /> </h4>
     
- <!-- <ul class="threeColumns wrapper">
+    <!-- <ul class="threeColumns wrapper">
       <li id="update_0" class="rsrUpdate">
       <span class="updatedTitle">RSR Update</span>
         <div class="imgWrap"> <a> <img src=""/> </a> </div>
