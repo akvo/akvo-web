@@ -19,13 +19,13 @@
       <li><a href="#annualreport2009">Annual report 2009</a></li>
       <li><a href="#annualreport2008">Annual report 2008</a></li>
     </ul>
-  </nav>  
+  </nav>
   <hr class="delicate"/>
 
   <div class="aReport fullWidthParag" id="annualreport2012">
     <h2>Akvo 2012 Annual Report.</h2>
-    <a href="http://akvo.org/wp-content/uploads/2013/08/Akvo_annual_report_2012-lo-res-final.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2012-(300x424).jpg" /> </a>
-    <p><i>Download the <a href="http://akvo.org/wp-content/uploads/2013/08/Akvo_annual_report_2012-lo-res-final.pdf">Akvo Annual Report 2012</a></i> (PDF 3.6 Mbyte)</p>
+    <a href="/wp-content/uploads/2013/08/Akvo_annual_report_2012-lo-res-final.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2012-(300x424).jpg" /> </a>
+    <p><i>Download the <a href="/wp-content/uploads/2013/08/Akvo_annual_report_2012-lo-res-final.pdf">Akvo Annual Report 2012</a></i> (PDF 3.6 Mbyte)</p>
     <p><b>Introduction</b></p>
     <p>I became chairman of Akvo late in 2012, at a time when the organisation began to enter an altogether new phase of its development. Akvo was launched in summer 2007, but its roots run deeper. It represents a fusion between those who have long sought a much brighter, dynamic future for international development cooperation, and those who are committed to open information technology.</p>
     <p><strong>A solid foundation of service revenues</strong><br />
@@ -48,26 +48,26 @@
   <hr class="delicate"/>
   <div class="aReport fullWidthParag" id="annualreport2011">
     <h2>Akvo 2011 Annual Report.</h2>
-    <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2011.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2011-(300x424).jpg" /> </a>
-    <p><i>Download the <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2011.pdf">Akvo Annual Report 2011</a></i> (PDF 1.8 Mbyte)</p>
+    <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2011.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2011-(300x424).jpg" /> </a>
+    <p><i>Download the <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2011.pdf">Akvo Annual Report 2011</a></i> (PDF 1.8 Mbyte)</p>
   </div>  <hr class="delicate"/>
 
   <div class="aReport fullWidthParag" id="annualreport2010">
     <h2>Akvo 2010 Annual Report.</h2>
-    <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2010_LR.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2010-(300x424).jpg" /> </a>
-    <p>Download the <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2010_LR.pdf">Akvo annual report for 2010</a> (PDF 1.5 Mbyte)</p>
+    <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2010_LR.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2010-(300x424).jpg" /> </a>
+    <p>Download the <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2010_LR.pdf">Akvo annual report for 2010</a> (PDF 1.5 Mbyte)</p>
   </div>  <hr class="delicate"/>
 
   <div class="aReport fullWidthParag" id="annualreport2009">
     <h2>Akvo 2009 Annual Report.</h2>
-    <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2009.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2009-(300x424).jpg" /> </a>
-    <p>Download the <a href="http://akvo.org/wp-content/uploads/2013/11/Akvo_annual_report_2009.pdf">Akvo annual report for 2009</a> (PDF 1.4 Mbyte)</p>
+    <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2009.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2009-(300x424).jpg" /> </a>
+    <p>Download the <a href="/wp-content/uploads/2013/11/Akvo_annual_report_2009.pdf">Akvo annual report for 2009</a> (PDF 1.4 Mbyte)</p>
   </div>  <hr class="delicate"/>
 
   <div class="aReport fullWidthParag" id="annualreport2008">
     <h2>Akvo 2008 Annual Report.</h2>
-    <a href="http://akvo.org/wp-content/uploads/2013/11/akvo_annual_report_08.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2008-(300x424).jpg" /> </a>
-    <p>Download the <a href="http://akvo.org/wp-content/uploads/2013/11/akvo_annual_report_08.pdf">Akvo annual report for 2008</a> (PDF 1.4 Mbyte)</p>
+    <a href="/wp-content/uploads/2013/11/akvo_annual_report_08.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2008-(300x424).jpg" /> </a>
+    <p>Download the <a href="/wp-content/uploads/2013/11/akvo_annual_report_08.pdf">Akvo annual report for 2008</a> (PDF 1.4 Mbyte)</p>
   </div>
 </div>
 <!-- end content -->

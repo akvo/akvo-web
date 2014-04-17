@@ -56,7 +56,7 @@
       <?php the_field('why_flow'); ?>
     </p>
   </section>
-  
+
 <!--  <section id="flow3Points">
     <h1 class="">Smart phones. Dashboards. Online maps</h1>
     <p>Akvo FLOW collects, manages, analyses and displays geographically referenced monitoring and evaluation data by using:</p>
@@ -72,7 +72,7 @@
       </li>
     </ol>
   </section>
--->  
+-->
 
 <section id="flowInAction" class="wrapper hidden">
     <h1 class="">flow in action</h1>
@@ -174,7 +174,7 @@
     </p>
   </section>
   <section class="wrapper centerED ">
-    <a href="http://akvo.org/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW Terms of Use</a>  </section>
+    <a href="/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW Terms of Use</a>  </section>
 </div>
  <!-- end content -->
 

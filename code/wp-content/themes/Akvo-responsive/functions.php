@@ -1,14 +1,17 @@
 <?php
 /*
 	Custom functions designed specifically for Akvo Responsive theme.
-	Feel free to add your own dynamic functions, or clear out this file entirely.
 */
+
+// Loads advancedcustomfields fields required for FAQ and pricing page
+$includes_path = get_template_directory() . '/inc/';
+require_once($includes_path . 'acf-functions.php');
+
 add_theme_support( 'post-thumbnails' );
 register_nav_menus(array(
     'header-menu' => 'Header Menu',
 	'footer-menu' => 'Footer Menu'
 ));
-
 /**
  * Setting up custom sidebars
  *
@@ -116,7 +119,6 @@ function remove_more_jump($link)
 }
 add_filter('the_content_more_link', 'remove_more_jump');
 
-
 //ADD PAGES NAME AS A BODY CLASS
 
 function my_bodyclass() // add pagename as class to <body> tag
@@ -135,8 +137,6 @@ function my_bodyclass() // add pagename as class to <body> tag
         echo ' class= "' . $page, ' ' . '"';
     }
 }
-
-
 
 //LIMITS NUMBER OF WORDS WHEN USING THE EXcerpt FUNCTION
 
@@ -184,4 +184,5 @@ function post_type_pagesize( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'post_type_pagesize', 1);
+add_filter('show_admin_bar', '__return_false');
 ?>

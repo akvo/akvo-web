@@ -26,7 +26,7 @@
     <iframe width="800" height="450" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="http://player.vimeo.com/video/56645801?title=0&byline=0&portrait=0"></iframe>
     <p class="darkCenter"> Peter Van Der Linde - Co-founder And Co-director </p>
   </div>
-  <a href="http://akvo.org/blog/the-akvo-platform-why-what-and-how/" class="seeMore moreLink">Learn more about how Akvo.org works</a> </div>
+  <a href="/blog/the-akvo-platform-why-what-and-how/" class="seeMore moreLink">Learn more about how Akvo.org works</a> </div>
 <!-- end content -->
 
 <?php get_footer(); ?>

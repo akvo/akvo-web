@@ -6,16 +6,9 @@ get_header(); ?>
 
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
   <h1 class="backLined">Our partners</h1>
-     <div class="wrapper">
-     
-
-
-
- <p class="centerED fullWidthParag">Akvo works with more than a thousand organisations around the world to help them report, monitor, evaluate and share their work online. 
-</p>
-
-    <p class="centerED fullWidthParag">Following are our core partners with whom we work closely and some of the main programmes we support.
-    </p>
+  <div class="wrapper">
+    <p class="centerED fullWidthParag">Akvo works with more than a thousand organisations around the world to help them report, monitor, evaluate and share their work online. </p>
+    <p class="centerED fullWidthParag">Following are our core partners with whom we work closely and some of the main programmes we support. </p>
   </div>
   <nav class="anchorNav wrapper">
     <h5>menu</h5>
@@ -29,7 +22,6 @@ get_header(); ?>
       <li><a href="#knowledgeGroup" class="eStaff">Knowledge institutes</a></li>
     </ul>
   </nav>
-
   <section class="wrapper">
     <?php query_posts(array('post_type'=>'new_partners')); ?>
     <?php $mypost = array( 'post_type' => 'new_partners' );
@@ -45,57 +37,68 @@ get_header(); ?>
         <!-- Display Title and Name -->
         <div class="staffName"> <a href="#"><?php echo esc_html( get_post_meta( get_the_ID(), 'partner_name', true ) ); ?></a> </div>
         <p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'partner_tagline', true ) ); ?></p>
-        <span class="akvoTeam"><?php the_terms( $post->ID, 'new_partners_team' ,  ' ' ); ?></span>
-        <div class="staffBiog"><?php the_content(); ?></div>
-        <small>Click for more details.</small>
-      </li>
+        <span class="akvoTeam">
+        <?php the_terms( $post->ID, 'new_partners_team' ,  ' ' ); ?>
+        </span>
+        <div class="staffBiog">
+          <?php the_content(); ?>
+        </div>
+        <small>Click for more details.</small> </li>
       <?php endwhile; ?>
-    </ul> 
+    </ul>
     <div id="govGroup">
       <h2 class="pStaffHead">Governments</h2>
       <ul class="staff floats-in">
-    </ul>
-    </div>    <hr class="delicate" />
-
+      </ul>
+    </div>
+    <hr class="delicate" />
     <div id="compsGroup">
       <h2 class="cStaffHead">Companies</h2>
       <ul class="staff floats-in">
-</ul>
-    </div>    <hr class="delicate" />
-
+      </ul>
+    </div>
+    <hr class="delicate" />
     <div id="founGroup">
       <h2 class="eStaffHead">Foundations</h2>
-      <ul class="staff floats-in"></ul>
-    </div>    <hr class="delicate" />
-
-   <div id="intGovGroup">
+      <ul class="staff floats-in">
+      </ul>
+    </div>
+    <hr class="delicate" />
+    <div id="intGovGroup">
       <h2 class="eStaffHead">Inter-governmental</h2>
-      <ul class="staff floats-in"></ul>
-    </div>    <hr class="delicate" />
-
+      <ul class="staff floats-in">
+      </ul>
+    </div>
+    <hr class="delicate" />
     <div id="ngoGroup">
       <h2 class="eStaffHead">NGOs</h2>
-      <ul class="staff floats-in"></ul>
-    </div>    <hr class="delicate" />
+      <ul class="staff floats-in">
+      </ul>
+    </div>
+    <hr class="delicate" />
     <div id="knowledgeGroup">
       <h2 class="eStaffHead">Knowledge Institutes</h2>
-      <ul class="staff floats-in"></ul>
-    </div>    <hr class="delicate" />
-
-  <div id="overlay">
-    <div id="blanket"></div>
-  </div>
-  <!-- the dialog contents -->
-  <div id="descrDialog" class="dialog">
-    <div id="staffDescr">
-    <div class="extLoad" id="">
-      <div class="imgWrapper"></div>
-      <h1 class="staffName"></h1>
-      <p class="staffTitle"></p>
-      <p class="staffBio"><br/><br/> </p></div>
+      <ul class="staff floats-in">
+      </ul>
+    </div>
+    <hr class="delicate" />
+    <div id="overlay">
+      <div id="blanket"></div>
+    </div>
+    <!-- the dialog contents -->
+    <div id="descrDialog" class="dialog">
+      <div id="staffDescr">
+        <div class="extLoad" id="">
+          <div class="imgWrapper"></div>
+          <h1 class="staffName"></h1>
+          <p class="staffTitle"></p>
+          <p class="staffBio"><br/>
+            <br/>
+          </p>
         </div>
-        <div class="buttons"><a class="cancel">close</a></div>
       </div>
+      <div class="buttons"><a class="cancel">close</a></div>
+    </div>
   </section>
 </div>
 <?php wp_reset_query(); ?>

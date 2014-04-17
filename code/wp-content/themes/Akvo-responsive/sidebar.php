@@ -1,7 +1,9 @@
 
 <aside id="sidebar" role="complementary"  class="">
   <?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
-  <div class="widget">
+  
+<div class="widget">
+  
     <h3 class="title">Categories</h3>
     <form action="<?php bloginfo('url'); ?>/" method="get">
       <?php
@@ -14,6 +16,7 @@
       </noscript>
     </form>
   </div>
+  
   <div class="widget">
     <h3 class="title">Archives</h3>
     <select name="archive-dropdown" onChange='document.location.href=this.options[this.selectedIndex].value;'>
@@ -21,6 +24,12 @@
       <?php wp_get_archives( array( 'type' => 'monthly', 'format' => 'option', 'show_post_count' => 1 ) ); ?>
     </select>
   </div>
+  <div class="widget">
+<?php if ( ! dynamic_sidebar( 'main' ) ) : ?>
+    <h3 class="title"><?php _e( 'main' ); ?></h3>
+    			<?php dynamic_sidebar( 'main' ); ?>
+</div>
+<?php endif; // end sidebar widget area ?>
   <div class="widget">
     <h3 class="title">Meta</h3>
     <ul>
@@ -38,13 +47,4 @@
     <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
   </div>
   <?php endif; // end sidebar widget area ?>
-<div class="widget">
-<?php if ( ! dynamic_sidebar( 'main' ) ) : ?>
-    <h3 class="title"><?php _e( 'main' ); ?></h3>
-    			<?php dynamic_sidebar( 'main' ); ?>
-</div>
-
-
-
-<?php endif; // end sidebar widget area ?>
 </aside>

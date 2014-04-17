@@ -1,0 +1,73 @@
+<?php
+
+$sWrapperId = '';
+$sTemporaryWrapperId = $this->element->getParameter('wrapper_id');
+
+if (is_null($sTemporaryWrapperId)) {
+	$sFormId = $this->element->getAttrib('id');
+	if ($sFormId != '') {
+		$sWrapperId = 'iDivWrapperFor' . $sFormId;
+	}
+} else {
+	$sWrapperId = $sTemporaryWrapperId;
+}
+
+$sWrapperAttributes = '';
+$sWrapperAttributes .= ' id="' . $sWrapperId . '"';
+$sWrapperAttributes .= ' class="cDivZendFormWrapper"';
+
+?>
+<div<?php echo $sWrapperAttributes; ?>>
+	<div id="iDivFormResponseContainer"></div>
+
+	<form class=""<?php include 'partials/form_attributes.phtml'; ?>>
+
+		<div class="row-fluid">
+
+			<div class="span12">
+
+				<fieldset>
+					<legend>Cronjob Settings</legend>
+
+					<div class="span4">
+
+                            
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->radioServerCron->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->radioServerCron->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textGoogleMapsApiKey"><?php echo $this->element->radioServerCron->getLabel(); ?></label>
+						<div class="controls">
+                            <label class="radio">
+							<?php echo $this->element->radioServerCron; ?>
+                            </label>
+						</div>
+					</div>
+
+
+
+				</fieldset>
+                When you have selected the "Server" option, ask your server administrator to add a server cronjob, with the following parameters:
+                            <code>
+                                0 * * * * /usr/bin/curl --silent <?php echo get_bloginfo('url'); ?>?update_jsondata=1
+                            </code>
+			</div>
+
+		</div>
+
+		<div class="row-fluid">
+			<div class="form-actions">
+				<?php echo $this->element->submitSubmit; ?>
+			</div>
+		</div>
+
+	</form>
+</div>

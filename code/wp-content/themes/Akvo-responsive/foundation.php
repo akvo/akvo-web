@@ -43,12 +43,12 @@
           <div class="staffName"><a href="#">Sunita Nadhamuni</a></div>
           <p class="staffTitle">Board member</p>
           <small>Click for more details.</small>
-        <li class="staffAsset management partnership" id="jeroen">
+        <li class="staffAsset" id="jeroen">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/jvds_240.jpg" title="Jeroen van der Sommen" alt="Jeroen van der Sommen - Co-founder And Co-director" /></div>
           <div class="staffName"><a href="#">Jeroen van der Sommen</a></div>
           <p class="staffTitle">Co-founder and director</p>
           <small>Click for more details.</small></li>
-        <li class="staffAsset management engineering" id="thomas">
+        <li class="staffAsset" id="thomas">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/thomas_240.jpg" title="Thomas Bjelkeman-Pettersson" alt="Thomas Bjelkeman-Pettersson: co-founder and co-director" /></div>
           <div class="staffName"><a href="#">Thomas Bjelkeman-Pettersson</a></div>
           <p class="staffTitle">Co-founder and director</p>
@@ -82,7 +82,7 @@
           <div class="staffName"><a href="#">Paul Ciandrini</a></div>
           <p class="staffTitle">Board member</p>
 
-        <li class="staffAsset partnership" id="henry">
+        <li class="staffAsset" id="henry">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/henry240.jpg" title="Henry Jewell" alt=" Henry Jewell, programme manager, Akvo FLOW" /></div>
           <div class="staffName"><a href="#"> Henry Jewell</a></div>
           <p class="staffTitle">Executive director</p>
@@ -98,7 +98,7 @@
       <p>Trustees:</p>      <p class="directorsAbs">Management:</p>
 
       <ul class="staff floats-in">
-        <li class="staffAsset management" id="akvoF">
+        <li class="staffAsset" id="akvoF">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/akvo240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Jeroen van der Sommen" /></div>
           <div class="staffName"><a href="#">Akvo Foundation</a></div>
           <p class="staffTitle">represented by Jeroen van der Sommen</p>
@@ -114,7 +114,7 @@
           <p class="staffTitle">Board member</p>
           <small>Click for more details.</small>
  
-        <li class="staffAsset partnership" id="luuk">
+        <li class="staffAsset" id="luuk">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/Luukv2.jpg" title="Luuk Diphoorn" alt="Luuk Diphoorn, manager, East Africa hub " /></div>
           <div class="staffName"><a href="#">Luuk Diphoorn</a></div>
           <p class="staffTitle">Manager, East Africa hub</p>
