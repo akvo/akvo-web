@@ -135,7 +135,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
       <li class="upTxt">
         <p></p>
       </li>
-      <li class="upMore"><a href="" class=""></a><span>Read more ></span></li>
+      <li class="upMore"><a href="" class=""><span>Read more ></span></a></li>
     </ul>
   </li>
   <section id="rsrProjectUpdates">
