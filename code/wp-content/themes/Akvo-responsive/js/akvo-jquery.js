@@ -149,7 +149,8 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
     $('li.staffAsset').click(function () {
         var staffID = $(this).attr("id");
         openDialog('#descrDialog');
-        $('#staffDescr p').load('/wp-content/themes/Akvo-responsive/staffDescr.php #' + staffID);
+      //  $('#staffDescr p').load('../../wp-content/themes/Akvo-responsive/staffDescr.php #' + staffID);
+       $('#staffDescr p').load('/wp-content/themes/Akvo-responsive/staffDescr.php #' + staffID);
     });
     $('#descrDialog').find('.ok, .cancel').live('click', function (e) {
 		e.stopPropagation(e);
