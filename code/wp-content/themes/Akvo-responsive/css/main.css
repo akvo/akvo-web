@@ -6,18 +6,18 @@
 ---------------------------------------------------------------------------------*/
 /* Colours 
 ---------------------------------------------------------------------------------*/
-/*Akvo Primary Colours:    */
+/* Akvo Primary Colours:    */
 /* Akvo Purplish Blue */
 /* Akvo very light blue */
 /* Akvo Orange / light Brown */
 /* Akvo Yellow */
-/*Akvo Pink*/
-/*Akvo Red*/
+/* Akvo Pink*/
+/* Akvo Red*/
 /* Akvo Mid grey */
 /* Akvo Darker shade Blue from light blue */
 /* Akvo link blue */
 /* Akvo black */
-/*Akvo Secondary Colours:    */
+/* Akvo Secondary Colours:    */
 /* Akvo very Light green */
 /* Akvo red */
 /* Akvo Pink */
@@ -355,7 +355,7 @@ h6 img {
 /* line 337, main.scss */
 em {
   color: #de8929;
-  font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
+  font-family: "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 1.2em;
   font-style: italic;
   margin: 0.1em 2% 0em 0em;
@@ -2238,23 +2238,25 @@ div.breadCrumb {
   background: #f0f0f0;
   display: relative;
   margin: 50px auto 0em auto;
-  padding: 10px 0em 15px;
+  padding: 10px 0em 15px 1%;
   position: relative;
-  width: 100%;
+  width: 99%;
 }
 
 @media screen and (max-width: 768px) {
   /* line 1787, main.scss */
   div.breadCrumb {
     margin: 0em auto;
+    width: 98%;
+    padding: 10px 0em 15px 2%;
   }
 }
-/* line 1791, main.scss */
+/* line 1793, main.scss */
 div.breadCrumbs {
   position: relative;
 }
 
-/* line 1794, main.scss */
+/* line 1796, main.scss */
 .projectGateWay {
   display: inline-block;
   position: absolute;
@@ -2264,23 +2266,23 @@ div.breadCrumbs {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1802, main.scss */
+  /* line 1804, main.scss */
   .projectGateWay {
     display: none;
   }
 }
-/* line 1806, main.scss */
+/* line 1808, main.scss */
 .projectGateWay > * {
   display: inline;
 }
 
-/* line 1809, main.scss */
+/* line 1811, main.scss */
 .projectGateWay > p {
   color: #2c2a74;
   margin: 5px 20px 0em 0em;
 }
 
-/* line 1813, main.scss */
+/* line 1815, main.scss */
 .projectGateWay > a {
   background: #a4b357;
   color: white;
@@ -2294,7 +2296,7 @@ div.breadCrumbs {
   transition: all 0.2s linear;
 }
 
-/* line 1825, main.scss */
+/* line 1827, main.scss */
 .projectGateWay > a:hover {
   background-color: rgba(44, 42, 116, 0.1);
   color: #2c2a74;
@@ -2303,7 +2305,7 @@ div.breadCrumbs {
 /*---------------------------------------------------------------------------------------
 											Home Page
 ---------------------------------------------------------------------------------------*/
-/* line 1832, main.scss */
+/* line 1834, main.scss */
 body.home h1.akvoDescr {
   font-size: 2em;
   font-weight: normal;
@@ -2316,13 +2318,13 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1843, main.scss */
+  /* line 1845, main.scss */
   body.home h1.akvoDescr {
     margin: 30px auto;
     width: 90%;
   }
 }
-/* line 1848, main.scss */
+/* line 1850, main.scss */
 #actionHeroBox {
   background: #202024;
   border-bottom: 1px solid #dddddd;
@@ -2334,13 +2336,13 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1858, main.scss */
+  /* line 1860, main.scss */
   #actionHeroBox {
     background: #f2f2f2;
     max-height: inherit;
   }
 }
-/* line 1863, main.scss */
+/* line 1865, main.scss */
 #actionHeroBox img {
   display: inline-block;
   margin: 0em auto !important;
@@ -2352,12 +2354,12 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1873, main.scss */
+  /* line 1875, main.scss */
   #actionHeroBox img {
     margin-top: 0em !important;
   }
 }
-/* line 1877, main.scss */
+/* line 1879, main.scss */
 #actionHeroBox #actionHeroInfo {
   -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
@@ -2375,7 +2377,7 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1893, main.scss */
+  /* line 1895, main.scss */
   #actionHeroBox #actionHeroInfo {
     -moz-border-radius: 0.5em;
     -moz-box-shadow: none;
@@ -2398,7 +2400,7 @@ body.home h1.akvoDescr {
     width: 94%;
   }
 }
-/* line 1916, main.scss */
+/* line 1918, main.scss */
 .borderTop,
 .borderBottom {
   display: none;
@@ -2408,51 +2410,51 @@ body.home h1.akvoDescr {
   z-index: 9999;
 }
 
-/* line 1923, main.scss */
+/* line 1925, main.scss */
 .borderTop {
   background: url("../images/actionHeroTopBorder.png") left top repeat-x;
   top: 0em;
 }
 
-/* line 1927, main.scss */
+/* line 1929, main.scss */
 .borderBottom {
   background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
   bottom: 0em;
 }
 
-/* line 1935, main.scss */
+/* line 1937, main.scss */
 #actionHeroBox p {
   color: #282828;
   display: none;
 }
 
-/* line 1939, main.scss */
+/* line 1941, main.scss */
 #actionHeroBox p span {
   color: #282828;
 }
 
-/* line 1942, main.scss */
+/* line 1944, main.scss */
 #actionHeroBox p span.akvorsr {
   color: #424c2b;
 }
 
-/* line 1945, main.scss */
+/* line 1947, main.scss */
 #actionHeroBox p span.akvoflow {
   color: #de8929;
 }
 
-/* line 1948, main.scss */
+/* line 1950, main.scss */
 #actionHeroBox p span.akvoopenaid {
   color: #e31b23;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1952, main.scss */
+  /* line 1954, main.scss */
   #actionHeroBox hgroup {
     width: 100%;
   }
 }
-/* line 1956, main.scss */
+/* line 1958, main.scss */
 #actionHeroBox h1 {
   display: block;
   font-family: 'Raleway', sans-serif;
@@ -2466,14 +2468,14 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1968, main.scss */
+  /* line 1970, main.scss */
   #actionHeroBox h1 {
     display: block;
     font-size: 1.8em;
     text-align: center;
   }
 }
-/* line 1974, main.scss */
+/* line 1976, main.scss */
 #actionHeroBox h2 {
   display: block;
   font-size: 1.2em;
@@ -2481,14 +2483,14 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1980, main.scss */
+  /* line 1982, main.scss */
   #actionHeroBox h2 {
     display: block;
     font-size: 1.4em;
     text-align: center;
   }
 }
-/* line 1989, main.scss */
+/* line 1991, main.scss */
 #actionHeroBox h2,
 #actionHeroBox h1,
 #actionHeroBox #actionHeroInfo > a,
@@ -2497,7 +2499,7 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 1996, main.scss */
+  /* line 1998, main.scss */
   #actionHeroBox h2,
   #actionHeroBox h1,
   #actionHeroBox #actionHeroInfo > a,
@@ -2505,13 +2507,13 @@ body.home h1.akvoDescr {
     text-align: center;
   }
 }
-/* line 2000, main.scss */
+/* line 2002, main.scss */
 .actionHeroBtn {
   margin: 0em 0em 0em 50%;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2004, main.scss */
+  /* line 2006, main.scss */
   .actionHeroBtn {
     -moz-border-radius: 0.25em;
     -moz-box-shadow: none;
@@ -2535,7 +2537,7 @@ body.home h1.akvoDescr {
     width: auto;
   }
 }
-/* line 2027, main.scss */
+/* line 2029, main.scss */
 #productWindow {
   background-color: whitesmoke;
   border-bottom: 1px solid #dddddd;
@@ -2546,14 +2548,14 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2036, main.scss */
+  /* line 2038, main.scss */
   #productWindow {
     background-color: #e6e6e6;
     padding: 0em;
     text-align: center;
   }
 }
-/* line 2042, main.scss */
+/* line 2044, main.scss */
 .products #productWindow {
   background-color: white;
   border-bottom: none;
@@ -2562,7 +2564,7 @@ body.home h1.akvoDescr {
   padding: 0em;
 }
 
-/* line 2049, main.scss */
+/* line 2051, main.scss */
 #productWindow div.fourColumns div {
   text-align: center;
   /*background:     rgb(250,248,245);
@@ -2575,19 +2577,19 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2060, main.scss */
+  /* line 2062, main.scss */
   #productWindow div.fourColumns div {
     background: rgba(255, 255, 255, 0.5);
     border-top: none;
     text-align: center;
   }
 }
-/* line 2066, main.scss */
+/* line 2068, main.scss */
 .products #productWindow div.fourColumns div {
-  background: whitesmoke;
+  background: white;
 }
 
-/* line 2070, main.scss */
+/* line 2072, main.scss */
 #productWindow div h1,
 #productWindow div h2 {
   padding-left: 0.5em;
@@ -2595,19 +2597,19 @@ body.home h1.akvoDescr {
   text-align: left;
 }
 
-/* line 2075, main.scss */
+/* line 2077, main.scss */
 #productWindow div p {
   margin: 12px auto;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2079, main.scss */
+  /* line 2081, main.scss */
   #productWindow div p {
     font-size: 1.2em;
     margin: 12px 0em;
   }
 }
-/* line 2084, main.scss */
+/* line 2086, main.scss */
 #productWindow div a {
   bottom: -0.75em;
   font-size: 0.9em;
@@ -2618,7 +2620,7 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2093, main.scss */
+  /* line 2095, main.scss */
   #productWindow div a {
     bottom: inherit;
     font-size: 1em;
@@ -2626,7 +2628,7 @@ body.home h1.akvoDescr {
     margin: 5px auto;
   }
 }
-/* line 2100, main.scss */
+/* line 2102, main.scss */
 #productWindow div.fourColumns div a.moreLink {
   bottom: 5px;
   display: none;
@@ -2638,7 +2640,7 @@ body.home h1.akvoDescr {
   white-space: nowrap;
 }
 
-/* line 2110, main.scss */
+/* line 2112, main.scss */
 #productWindow div h1 {
   display: block;
   margin: 20px auto 0em auto;
@@ -2646,7 +2648,7 @@ body.home h1.akvoDescr {
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2116, main.scss */
+  /* line 2118, main.scss */
   #productWindow div h1 {
     display: block;
     height: 45px;
@@ -2655,7 +2657,7 @@ body.home h1.akvoDescr {
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 2124, main.scss */
+  /* line 2126, main.scss */
   #productWindow div h1:after {
     content: "";
     display: block;
@@ -2663,13 +2665,11 @@ body.home h1.akvoDescr {
     width: 90%;
   }
 }
-/* line 2131, main.scss */
+/* line 2133, main.scss */
 #productWindow a.tagLine:after {
-  border-bottom: 1px solid white;
-  border-top: 1px solid #e4e4e4;
   content: "";
   display: block;
-  margin: 10px auto 5px auto;
+  margin: 50px auto 15px;
   width: 100%;
 }
 
@@ -3173,7 +3173,7 @@ div.meta {
 div.meta time {
   background: url("../images/post-time-icon.png") left top no-repeat;
   overflow: hidden;
-  padding-left: 18px;
+  padding: 2px 0 2px 18px;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -3734,60 +3734,59 @@ footer .menu > li {
   width: 23.5%;
 }
 
-/* line 2930, main.scss */
-footer .menu > li:nth-child(4) {
-  float: right;
-  padding: 0em 0em 0em 1.5%;
-}
-
-/* line 2935, main.scss */
+/* line 2931, main.scss */
 footer .menu > li:first-child {
   padding: 0em;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2939, main.scss */
+  /* line 2935, main.scss */
   footer .menu > li {
     margin: 5px 0px;
     width: 100%;
     padding: 0em 0em 0em 0;
   }
 }
-/* line 2945, main.scss */
+/* line 2941, main.scss */
 footer .menu > li ul.sub-menu {
   margin-bottom: 20px;
 }
 
-/* line 2948, main.scss */
+/* line 2944, main.scss */
 footer .menu > li ul li {
   display: block;
   float: none;
-  width: 100%;
+  width: 97%;
+  padding-left: 3%;
+  -moz-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2954, main.scss */
+  /* line 2952, main.scss */
   footer .menu > li ul li {
     background: none repeat scroll 0em 0em whitesmoke;
     font-size: 130%;
     margin: 0em 0em 5px;
-    padding: 20px 5% 20px 1%;
-    width: 94%;
+    padding: 20px 0 20px 3%;
+    width: 97%;
   }
 
-  /* line 2961, main.scss */
+  /* line 2959, main.scss */
   footer .menu > li ul li:hover {
     background: #202024;
     color: #de8929;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 2967, main.scss */
+  /* line 2965, main.scss */
   footer.bottomPage section#siteMap .menu h3 {
     margin-top: 0em;
   }
 }
-/* line 2971, main.scss */
+/* line 2969, main.scss */
 footer.bottomPage {
   background: #fcfcfc;
   border-top: 1px solid #ebebeb;
@@ -3797,38 +3796,41 @@ footer.bottomPage {
   width: 100%;
 }
 
-/* line 2979, main.scss */
+/* line 2977, main.scss */
 footer.bottomPage h1 {
   font-size: 2em;
 }
 
-/* line 2982, main.scss */
+/* line 2980, main.scss */
 footer.bottomPage section#siteMap {
   padding: 50px 0em 3em;
   position: relative;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 2987, main.scss */
+  /* line 2985, main.scss */
   footer.bottomPage section#siteMap {
     padding: 0px 0px 30px;
   }
 }
 @media screen and (max-width: 768px) {
-  /* line 2992, main.scss */
+  /* line 2990, main.scss */
   footer.bottomPage section#siteMap h1 {
     font-size: 2em;
   }
 }
-/* line 2996, main.scss */
+/* line 2994, main.scss */
 footer.bottomPage section#siteMap h3 {
   color: #202024;
   margin: 0em 0em 0.5em;
   text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 @media screen and (max-width: 768px) {
-  /* line 3002, main.scss */
+  /* line 3001, main.scss */
   footer.bottomPage section#siteMap h3 {
     font-size: 2em;
     margin: 25px auto 10px auto;
