@@ -2141,7 +2141,7 @@ body.home h1.akvoDescr {
     }
 }
 .products #productWindow div.fourColumns div {
-    background: rgb(245, 245, 245);
+    background: rgb(255,255,255);
 }
 #productWindow div h1,
 #productWindow div h2 {
@@ -2206,11 +2206,9 @@ body.home h1.akvoDescr {
     }
 }
 #productWindow a.tagLine:after {
-    border-bottom: 1px solid rgb(255, 255, 255);
-    border-top: 1px solid rgb(228, 228, 228);
     content: "";
     display: block;
-    margin: 10px auto 5px auto;
+    margin: 10px auto 50px auto;
     width: 100%;
 }
 @media screen and (max-width:768px) {
@@ -2256,19 +2254,19 @@ body.home h1.akvoDescr {
     color: rgb(191, 131, 185);
 }
 #rsrBucket h1 {
-    background-size: 85%;
+    background-size: 75% auto;
     background: url("../images/rsr-logo-40px.png") center top no-repeat;
 }
 #flowBucket h1 {
-    background-size: 85%;
+    background-size: 75% auto;
     background: url("../images/flow-logo-40px.png") center top no-repeat;
 }
 #openaidBucket h1 {
-    background-size: 85%;
+    background-size: 75% auto;
     background: url("../images/openaid-logo-40px.png") center top no-repeat;
 }
 #akvopedia h1 {
-    background-size: 85%;
+    background-size: 75% auto;
     background: url("../images/akvopedia-logo-40px.png") center top no-repeat;
 }
 /*************************************************************
