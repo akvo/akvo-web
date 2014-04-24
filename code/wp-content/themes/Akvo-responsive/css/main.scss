@@ -62,6 +62,7 @@ $secondary9: rgb(74, 177, 207);
     -webkit-box-shadow: $boxshadow;
     box-shadow: $boxshadow;
 }
+
 @mixin noWrapTxt {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -3234,6 +3235,10 @@ footer.bottomPage section#siteMap nav.socialLinks li.youtube a {
 footer.bottomPage section#siteMap nav.socialLinks li.rss a {
     background: url("../images/socialRss.png") center center no-repeat;
 }
+
+li.rss a {
+    background: url("../images/socialRss.png") center center no-repeat;
+}
 footer.bottomPage section#siteMap nav.socialLinks li.email a {
     background: url("../images/socialEmail.png") center center no-repeat;
 }
@@ -3320,6 +3325,15 @@ nav.anchorNav {
         position: relative;
     }
 }
+.networkPage nav.anchorNav {
+    background:none;
+    border-bottom: none;
+    border-top: none;
+    margin: 30px auto;
+    padding: 15px 1%;
+    width: 98%;
+}
+
 .rsr nav.anchorNav {
     background: rgba(87, 193, 232, 0.1);
 }
@@ -3389,27 +3403,27 @@ nav.anchorNav ul li:first-child {
     }
 }
 nav.anchorNav ul li a {
-    -moz-border-radius: 0.1em;
+    @include border-radius(0.1em);
     -moz-transition: background 0.2s linear;
-    -o-border-radius: 0.1em;
     -o-transition: background 0.2s linear;
-    -webkit-border-radius: 0.1em;
     -webkit-transition: background 0.2s linear;
     background: transparent;
-    border-radius: 0.1em;
     color: $akvoPurple;
     font-size: 1em;
     font-weight: bold;
     padding: 0.25em 0.5em;
     transition: background 0.2s linear;
 }
+.networkPage nav.anchorNav ul li a {
+    background: transparent;
+    font-weight: normal;
+}
+
+
 @media screen and (max-width:768px) {
     nav.anchorNav ul li a {
-        -moz-border-radius: 0.2em;
-        -o-border-radius: 0.2em;
-        -webkit-border-radius: 0.2em;
+    	@include border-radius(0.2em);
         background: transparent;
-        border-radius: 0.2em;
         color: #fff;
         display: block;
         font-size: 1.5em;
@@ -4471,34 +4485,36 @@ ul.staff li:nth-child(6n) {
         width: 100%;
     }
 }
+
 .rsrUpdate {
     ul li.upMore a {
-        background-size: 112px 112px;
+        background-size: 72%;
         background: url("../images/readMoreBig.svg") center center no-repeat;
         display: block;
-        height: 62px;
-        margin: 14px 0em 0em 29px;
-        opacity: 0.2;
+        height: 112px;
+        margin: 14px auto 0;
+        opacity: 0.6;
         position: relative;
         transition: all 0.4s ease-in;
-        width: 62px;
+        width: 112px;
         @media screen and (min-width:960px) {
             background: none;
             display: inline-block;
-            height: 30px;
+			width:100%;
+			margin:14px auto 0;
+			height:30px;
         }
     }
     &:hover ul li.upMore a {
-        opacity: 0.6;
+        opacity: 1;
     }
     ul li.upMore span {
-        color: rgba(226, 124, 0, 0);
         display: block;
         font-size: 0.8em;
         text-align: center;
         transition: color 0.4s ease-in;
         @media screen and (max-width:960px) {
-            color: rgba(226, 124, 0, 0.8);
+			text-align:center;
         }
     }
     &:hover ul li.upMore span {
