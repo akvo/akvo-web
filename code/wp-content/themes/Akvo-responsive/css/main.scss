@@ -1023,7 +1023,6 @@ a.helpIcon:hover {
     padding: 0.25em;
 }
 #sidebar {
-    background: url("../images/light-grain-trans.png") left top repeat;
     display: block;
     float: right;
     height: 100%;
@@ -2037,7 +2036,7 @@ body.home h1.akvoDescr {
 }
 @media screen and (max-width:768px) {
     #productWindow {
-        background-color: #e6e6e6;
+        background-color: rgb(245, 245, 245);
         padding: 0em;
         text-align: center;
     }
@@ -2051,13 +2050,7 @@ body.home h1.akvoDescr {
 }
 #productWindow div.fourColumns div {
     text-align: center;
-    /*background:     rgb(250,248,245);
-                	background:     rgba(255,255,255,0.6);
-                	min-height:     295px;*/
-    -moz-border-radius: 0.25em;
-    -o-border-radius: 0.25em;
-    -webkit-border-radius: 0.25em;
-    border-radius: 0.25em;
+	@include border-radius(0.25em);
 }
 @media screen and (max-width:768px) {
     #productWindow div.fourColumns div {
@@ -2908,6 +2901,19 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
 								Footer
 -----------------------------------------------------------------------*/
+li.problem { margin: 1em 0 0 0;
+			a {
+				color: rgb(227, 27, 35);
+				opacity: 1;
+				-webkit-transition: opacity 0.2s linear;
+				-moz-transition: opacity 0.2s linear;
+				-o-transition: opacity 0.2s linear;
+				transition: opacity 0.2s linear;
+				&:hover {
+					opacity: 0.7;
+					}
+				}
+			 }
 #menu-footer-menu {
     float: left;
     width: 70%;
@@ -2915,7 +2921,7 @@ p#allowed_tags code {
 @media screen and (max-width:768px) {
     #menu-footer-menu {
         margin-top: 20px;
-        width: inherit;
+        width: 96%;
     }
 }
 @media screen and (max-width:768px) {
@@ -2929,9 +2935,7 @@ footer .menu > li {
 	width:23.5%;
 }
 
-footer .menu > li:first-child {
-    padding: 0em;
-}
+
 @media screen and (max-width:768px) {
     footer .menu > li {
         margin: 5px 0px;
@@ -4108,6 +4112,9 @@ ul.staff li:nth-child(6n) {
 .akvo-policies-and-terms h4 {
     margin: 2em 0em 0.25em;
 }
+@media screen and (max-width:768px) {
+.helpSupport nav ul li, .helpSupport nav ul li:first-child {margin-bottom:20px !important;}
+}
 .helpSupport nav ul li a {
     display: block;
     height: 100px;
@@ -4116,16 +4123,25 @@ ul.staff li:nth-child(6n) {
         background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
         background-size: 50% auto;
         text-indent: -9999px;
+		@media screen and (max-width:768px) {
+                margin:20px 0 0 0;
+            }
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);        
 		background-size: 56% auto;
         text-indent: -9999px;
+		@media screen and (max-width:768px) {
+                margin:20px 0 0 0;
+            }
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);       
 		 background-size: 65% auto;
         text-indent: -9999px;
+		@media screen and (max-width:768px) {
+                margin:20px 0 0 0;
+            }
     }
     &.moreHelp {
         background: url("../images/readMoreBig.svg") center center no-repeat;
@@ -4139,6 +4155,9 @@ ul.staff li:nth-child(6n) {
         text-align: center;
         text-indent: none !important;
         width: 120px;
+		@media screen and (max-width:768px) {
+                opacity:1;
+            }
     }
 }
 .helpSupport nav ul li:hover a {
@@ -4594,6 +4613,7 @@ ul.staff li:nth-child(6n) {
 }
 .rsrUpdate ul li.upInfo .authorTime {
     margin-left: 1.75em;
+    @include noWrapTxt;
     @media screen and (min-width:960px) {
         margin-left: 0.25em;
     }

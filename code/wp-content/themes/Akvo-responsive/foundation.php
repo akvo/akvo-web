@@ -104,8 +104,8 @@
     <div id="advisoryGroup" class="directors">
       <p>Trustees:</p>
       <ul class="staff floats-in">
-        <li class="staffAsset" id="akvoF">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/akvo240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Jeroen van der Sommen" /></div>
+        <li class="staffAsset" id="peter">
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/peter_240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Peter van der Linde" /></div>
           <div class="staffName"><a href="#">Akvo Foundation</a></div>
           <p class="staffTitle">represented by Peter van der Linde</p>
           <small>Click for more details.</small></li>
