@@ -50,10 +50,9 @@
     $("#content").fitVids();
 	function adjustImage() {
     $(".hero-image").css('margin-top', ($("#actionHeroBox").height() - $(".hero-image").height()) / 2);
-	
-	
+    // Target your .container, .wrapper, .post, etc.
+    $(".post-content").fitVids();
 	}
-
 $(window).load(function() {
     adjustImage();
 

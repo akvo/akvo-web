@@ -135,12 +135,13 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
       <li class="upTxt">
         <p></p>
       </li>
-      <li class="upMore"><a href="" class=""></a><span>Read more ></span></li>
+      <li class="upMore"><a href="" class=""><span>Read more ></span></a></li>
     </ul>
   </li>
   <section id="rsrProjectUpdates">
     <h2>RSR: Latest project updates</h2>
-    <a href="/seeithappen/all-rsr-project-updates/" class="moreLink">Browse all latest project updates</a>
+    <nav class="anchorNav2 wrapper"><ul class><li><a href="/seeithappen/all-rsr-project-updates/">Browse all latest project updates</a>
+</li><li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates" rel="alternate" type="application/rss+xml">RSS Link for All RSR Updates</a></li></ul></nav>
     <ul id="updatesWrapper" class="floats-in wrapper">
     </ul>
     <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
