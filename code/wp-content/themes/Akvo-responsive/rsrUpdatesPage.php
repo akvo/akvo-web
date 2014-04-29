@@ -23,13 +23,13 @@
       <li class="upInfo">
         <div class="authorTime floats-in">
           <time datetime="" class=""></time>
-          <em>by</em><span class="userName"> </span></div>
+          <em class="">by</em><span class="userName"> </span></div>
         <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
       </li>
       <li class="upTxt">
         <p></p>
       </li>
-      <li class="upMore"><a href="" class=""></a><span>Read more</span></li>
+      <li class="upMore"><a href="" class=""><span>Read more ></span></a></li>
     </ul>
   </li>
   <section class="wrapper">
