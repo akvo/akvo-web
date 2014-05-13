@@ -22,3 +22,5 @@ code/wp-snapshots
 
 # Development related plug-ins
 code/wp-content/plugins/duplicator
+
+*.codekit

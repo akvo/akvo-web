@@ -68,6 +68,13 @@ $secondary9: rgb(74, 177, 207);
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
+@mixin transition ($transition-property, $transition-duration, $transition-timing-function) {
+	-moz-transition:$transition-property $transition-duration $transition-timing-function;
+	-webkit-transition:$transition-property $transition-duration $transition-timing-function;
+	-o-transition:$transition-property $transition-duration $transition-timing-function;
+	transition:$transition-property $transition-duration $transition-timing-function;
+	}
 html,
 body,
 div,
@@ -305,11 +312,6 @@ h6 img {
     padding: 0em 0em 0px 0px;
     position: relative;
     text-shadow: none;
-    /* text-overflow:     ellipsis;
-                	
-                	white-space:     nowrap;
-                	overflow:     hidden;
-                */
 }
 .backLined {
     margin: 0.75em auto;
@@ -353,9 +355,6 @@ p {
     line-height: 1.6em;
     margin: 0.5em 0em;
     text-align: left;
-    /* -moz-hyphens:     auto;
-                	hyphens:     auto;
-                */
 }
 @media screen and (max-width:768px) {
     p {
@@ -575,6 +574,7 @@ nav {
         }
     }
 }
+
 .seeMore {
     margin-top: 2em;
 }
@@ -837,18 +837,11 @@ input[type="search"]:focus {
     border: 1px solid rgb(234, 234, 241);
     box-shadow: none;
 }
-/* * Remove inner padding and border in FF3/4:     h5bp.com/l
- */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0em;
     padding: 0em;
 }
-/* * 1. Remove default vertical scrollbar in IE6/7/8/9
- * 2. Allow only vertical resizing
- */
-
-/* all */
 -webkit-input-placeholder {
     color: rgb(149, 148, 185);
     font-size: 1em;
@@ -996,7 +989,6 @@ a.helpIcon:hover {
 		padding:0 1%;
 		width: 98%;
 	}
-
     .home #content {
         margin: 0px auto 0em;
     }
@@ -1214,30 +1206,29 @@ a.helpIcon:hover {
         width: 98%;
     }
 }
+
 .splitImg {
     margin: 2.5em auto;
     position: relative;
-}
-.splitImg:nth-child(2n) {
-    background: rgb(245, 245, 245);
-}
-.splitImg img {
-    display: inline-block;
-    margin: 3.5em 0em 0em;
-    vertical-align: middle;
-    width: 25%;
-}
-.splitImg .paragraphesRight {
-    float: right;
-    margin: 2.5em 2.5% 0em;
-    position: relative;
-    width: 70%;
-}
-.splitImg .paragraphesLeft {
-    float: left;
-    margin: 2.5em 2.5% 0em;
-    position: relative;
-    width: 70%;
+		&:nth-child(2n) {
+			background: rgb(245, 245, 245);
+		}
+		img {
+			display: inline-block;
+			margin: 3.5em 0em 0em;
+			vertical-align: middle;
+			width: 25%;
+			}
+		.paragraphesRight {
+			float: right;
+			margin: 2.5em 2.5% 0em;
+			position: relative;
+			width: 70%;
+		}
+		.paragraphesLeft {
+			@extend .paragraphesRight;
+			float: left;
+		}
 }
 .splitImgSmall {
     border-bottom: 1px solid rgb(225, 225, 225);
@@ -1245,28 +1236,27 @@ a.helpIcon:hover {
     padding: 0.5em 2.5%;
     position: relative;
     width: 85%;
+	&:nth-child(2n) {
+ 	   background: rgb(245, 245, 245);
+	}
+	img {
+		display: inline-block;
+		margin: 3.5em 0em 0em;
+		vertical-align: middle;
+		width: 30%;
+	}
+	.paragraphesRight {
+		float: right;
+		margin: 2.5em 2.5% 0em;
+		position: relative;
+		width: 65%;
+	}
+	.paragraphesLeft {
+		@extend .paragraphesRight;
+		float: left;
+	}
 }
-.splitImgSmall:nth-child(2n) {
-    background: rgb(245, 245, 245);
-}
-.splitImgSmall img {
-    display: inline-block;
-    margin: 3.5em 0em 0em;
-    vertical-align: middle;
-    width: 30%;
-}
-.splitImgSmall .paragraphesRight {
-    float: right;
-    margin: 2.5em 2.5% 0em;
-    position: relative;
-    width: 65%;
-}
-.splitImgSmall .paragraphesLeft {
-    float: left;
-    margin: 2.5em 2.5% 0em;
-    position: relative;
-    width: 65%;
-}
+
 .splitImgMid {
     margin: 2.5em auto;
     padding: 0.15em 1% 0.15em 1%;
@@ -1348,9 +1338,6 @@ header#top h1 {
         width: 250px;
     }
 }
-header#top h1:hover a {
-    background: url("../images/akvoLogoTop.png") no-repeat center bottom;
-}
 header#top h1 a {
     background: url("../images/akvoLogoTop.png") no-repeat center top;
     display: block;
@@ -1358,6 +1345,10 @@ header#top h1 a {
     text-indent: -9999px;
     width: 169px;
 }
+header#top h1:hover a {
+    background: url("../images/akvoLogoTop.png") no-repeat center bottom;
+}
+
 @media screen and (max-width:768px) {
     header#top h1 a {
         background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
@@ -1467,17 +1458,21 @@ nav#n {
     color: rgb(222, 137, 41);
     text-decoration: none;
 }
-nav#n ul li.current_page_item a,
-nav#n ul li.current_page_parent a,
-header.top li.current_page_item a {
+nav#n ul li.current_page_item > a,
+nav#n ul li.current_page_parent > a,
+header.top li.current_page_item > a {
     background: url("../images/currentMenuMarker.png") center 30px no-repeat;
     color: rgb(222, 137, 41);
     margin-top: 1px;
     z-index: 9998;
 }
-.current-menu-item a {
-    color: rgb(222, 137, 41) !important;
-}
+li.menu-item > a {
+	color:white;
+	}
+.current-menu-parent > a, .current-menu-item > a {
+  color: #de8929 !important; }
+
+
 nav#n ul li.current_page_item ul.sub-menu a,
 nav#n ul li.current_page_parent ul.sub-menu a,
 header.top li.current_page_item ul.sub-menu a {
@@ -1496,15 +1491,9 @@ nav#n ul li.current_page_parent a {
     z-index: 9998;
 }
 #n ul li ul.sub-menu {
-    -moz-border-radius: 0em 0em 0.25em 0.25em;
-    -moz-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
-    -o-border-radius: 0em 0em 0.25em 0.25em;
-    -o-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
-    -webkit-border-radius: 0em 0em 0.25em 0.25em;
-    -webkit-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
+    @include border-radius(0em 0em 0.25em 0.25em);
+    @include box-shadow(0em 0em 5px rgba(32, 32, 36, 0.8));
     background: rgba(32, 32, 36, 0.8);
-    border-radius: 0em 0em 0.25em 0.25em;
-    box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
     display: none;
     margin: 0em;
     position: absolute;
@@ -1597,7 +1586,6 @@ nav#n ul li:last-child {
         line-height: 44px;
         padding: 0em 0px;
         text-align: center;
-        text-transform: uppercase;
     }
     #navbar a:hover {
         color: #bbd2eb;
@@ -1629,7 +1617,6 @@ nav#n ul li:last-child {
         font-weight: normal;
         line-height: inherit;
         padding: 10px 0em 10px 25px;
-        text-transform: uppercase;
         transition: background-color 0.4s linear;
     }
     #n ul li ul.sub-menu li a:hover {
@@ -1877,11 +1864,8 @@ body.home h1.akvoDescr {
     }
 }
 #actionHeroBox #actionHeroInfo {
-    -moz-border-radius: 0.5em;
-    -o-border-radius: 0.5em;
-    -webkit-border-radius: 0.5em;
+    @include border-radius(0.5em);
     background: rgba(255, 255, 245, 0.6);
-    border-radius: 0.5em;
     bottom: 80px;
     display: inline-block;
     max-width: 35%;
@@ -2880,13 +2864,10 @@ p#allowed_tags code {
     font-size: 0.9em;
 }
 #sidebar .widget ul li a {
-    -moz-border-radius: 0.1em;
+    @include border-radius(0.1em);
     -moz-transition: color 0.2s linear, background .2s linear;
-    -o-border-radius: 0.1em;
     -o-transition: color 0.2s linear, background .2s linear;
-    -webkit-border-radius: 0.1em;
     -webkit-transition: color 0.2s linear, background .2s linear;
-    border-radius: 0.1em;
     display: block;
     font-weight: normal;
     padding: 3px 3%;
@@ -3433,7 +3414,6 @@ nav.anchorNav2 ul li a {
         font-size: 1.5em;
         line-height: 1.1em;
         padding: 0.35em 0.5em;
-        text-transform: uppercase;
     }
 }
 nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
@@ -3721,6 +3701,10 @@ section.inFivePoints li h3 {
 .rsrProdPag hgroup h1 {
     background: url("../images/rsr60px.png") center center no-repeat;
 }
+.rsrUpProdPag hgroup h1 {
+    height: 55px;
+    background: url("../images/rsrUp60px.png") center center no-repeat;
+}
 .flowProdPag hgroup h1 {
     background: url("../images/flow60px.png") center center no-repeat;
 }
@@ -3734,6 +3718,15 @@ section.inFivePoints li h3 {
     font-size: 1.4em;
     text-align: center;
 }
+.rsrUpProdPag hgroup h2 {
+    font-size: 1.4em;
+    text-align: center;
+	margin:1em auto 2em auto;
+}
+.rsrUpDescr p {margin:3em auto;}
+#rsrUpTech ul li {
+	margin:0.5em 0 1em 25px;
+	}
 #rsrTech ul li {
     margin: 0em 0em 2em;
 }
@@ -4650,9 +4643,6 @@ ul.staff li:nth-child(6n) {
         display: inline;
         margin: 0em 0em 3px 0.25em;
     }
-}
-.orgAndPlace {
-    display: none;
 }
 .orgAndPlace .org {
     @include noWrapTxt;
