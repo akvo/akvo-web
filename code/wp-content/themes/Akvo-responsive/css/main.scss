@@ -837,18 +837,11 @@ input[type="search"]:focus {
     border: 1px solid rgb(234, 234, 241);
     box-shadow: none;
 }
-/* * Remove inner padding and border in FF3/4:     h5bp.com/l
- */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0em;
     padding: 0em;
 }
-/* * 1. Remove default vertical scrollbar in IE6/7/8/9
- * 2. Allow only vertical resizing
- */
-
-/* all */
 -webkit-input-placeholder {
     color: rgb(149, 148, 185);
     font-size: 1em;
@@ -1217,36 +1210,26 @@ a.helpIcon:hover {
 .splitImg {
     margin: 2.5em auto;
     position: relative;
-	&:nth-child(2n) {
-		background: rgb(245, 245, 245);
-	}
-	img {
-		display: inline-block;
-		margin: 3.5em 0em 0em;
-		vertical-align: middle;
-		width: 25%;
+		&:nth-child(2n) {
+			background: rgb(245, 245, 245);
 		}
-	.paragraphesRight {
-		float: right;
-		margin: 2.5em 2.5% 0em;
-		position: relative;
-		width: 70%;
-<<<<<<< HEAD
+		img {
+			display: inline-block;
+			margin: 3.5em 0em 0em;
+			vertical-align: middle;
+			width: 25%;
+			}
+		.paragraphesRight {
+			float: right;
+			margin: 2.5em 2.5% 0em;
+			position: relative;
+			width: 70%;
+		}
+		.paragraphesLeft {
+			@extend .paragraphesRight;
+			float: left;
+		}
 }
-.paragraphesLeft {
-	@extend .paragraphesRight;
-    float: left;
-}
-}
-=======
-	}
-	.paragraphesLeft {
-		@extend .paragraphesRight;
-		float: left;
-	}
-}
-
->>>>>>> FETCH_HEAD
 .splitImgSmall {
     border-bottom: 1px solid rgb(225, 225, 225);
     margin: 2.5em auto;
