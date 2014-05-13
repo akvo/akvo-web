@@ -27,7 +27,7 @@
       <p class="fullWidthParag centerED">Never lose an update. Akvo RSR Up handles weak and intermittent mobile and wifi networks like a breeze, so your story always finds its way online, once you're back in signal.</p>
     </div>
     <div class="wrapper">
-      <p class="fullWidthParag centerED">Download Akvo RSr Up today from the <a href="#">Google Play Store.</a></p>
+      <p class="fullWidthParag centerED">Download Akvo RSr Up today from the <a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up" title"Link to RSR Up on google play store">Google Play Store</a>.</p>
     </div>
   </section>
   <section id="rsrUpTech">
