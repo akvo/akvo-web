@@ -15,7 +15,7 @@
   <section class="figure"> <img src="<?php bloginfo('template_directory'); ?>/images/rsrUp1600x900.jpg" title="rsrImg"/> </section>
   <section class="rsrUpDescr" style="background:rgb(248,248,248);">
     <div class="wrapper">
-      <p class="fullWidthParag centerED">Akvo RSR Up is a free to download app that makes it easy for users of Akvo Really simple Reporting to post project updates from anywhere, using their android smartphone or tablet.</p>
+      <p class="fullWidthParag centerED">Akvo RSR Up is a free to download app that makes it easy for users of Akvo Really Simple Reporting to post project updates from anywhere, using their android smartphone or tablet.</p>
     </div>
     <ul class="wrapper fourColumns floats-in">
       <li class=""> <img src="<?php bloginfo('template_directory'); ?>/images/rsrUpscreengrab-2.jpg" title="rsrImg"/>
@@ -27,7 +27,7 @@
       <p class="fullWidthParag centerED">Never lose an update. Akvo RSR Up handles weak and intermittent mobile and wifi networks like a breeze, so your story always finds its way online, once you're back in signal.</p>
     </div>
     <div class="wrapper">
-      <p class="fullWidthParag centerED">Download Akvo RSr Up today from the <a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up" title"Link to RSR Up on google play store">Google Play Store</a>.</p>
+      <p class="fullWidthParag centerED">Download Akvo RSR Up today from the <a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up" title"Link to RSR Up on google play store">Google Play Store</a>.</p>
     </div>
   </section>
   <section id="rsrUpTech">
