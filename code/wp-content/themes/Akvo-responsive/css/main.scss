@@ -4656,10 +4656,7 @@ ul.staff li:nth-child(6n) {
         margin: 0em 0em 3px 0.25em;
     }
 }
-.orgAndPlace {
-}
-.orgAndPlace 
-.org {
+.orgAndPlace .org {
     @include noWrapTxt;
     background: #3492b9;
     border-radius: 0.25em 1em 1em 0.25em;

@@ -65,31 +65,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/css\/main.css": {
-		"fileType": 16,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/main.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/css\/main.scss": {
-		"createSourceMap": 1,
-		"debugStyle": 1,
-		"decimalPrecision": 5,
-		"fileType": 4,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/main.scss",
-		"outputAbbreviatedPath": "\/css\/main.css",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 0,
-		"shouldRunAutoprefixer": 1,
-		"shouldRunBless": 0,
-		"useLibsass": 0
-		},
 	"\/css\/style_back.css": {
 		"fileType": 16,
 		"ignore": 0,
@@ -2846,6 +2821,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/rsrUp1600x900.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.51738e+06,
+		"inputAbbreviatedPath": "\/images\/rsrUp1600x900.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUp1600x900.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUp60px.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5657,
+		"inputAbbreviatedPath": "\/images\/rsrUp60px.png",
+		"outputAbbreviatedPath": "\/images\/rsrUp60px.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/rsrUpManual.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2853,6 +2850,50 @@
 		"initialSize": 171849,
 		"inputAbbreviatedPath": "\/images\/rsrUpManual.png",
 		"outputAbbreviatedPath": "\/images\/rsrUpManual.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29130,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27150,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27463,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23659,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3966,6 +4007,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/productpage-rsr.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/productpage-rsrUp.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/productpage-rsrUp.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
