@@ -55,8 +55,10 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
             <?php the_field('flow_devices'); ?>
             </span></li>
           <li><!--<h4>People Helped:</h4><span>2,013,237</span>-->
-            <h4>More Stats soon</h4>
-          </li>
+            <h4>Organisations using FLOW</h4>
+            <span>
+            <?php the_field('organisations_using_flow'); ?>
+            </span> </li>
         </ul>
         <a href="#" title="How is this data collected? Manually, via a script run on the Google App
 Engine
@@ -140,8 +142,12 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
   </li>
   <section id="rsrProjectUpdates">
     <h2>RSR: Latest project updates</h2>
-    <nav class="anchorNav2 wrapper"><ul class><li><a href="/seeithappen/all-rsr-project-updates/">Browse all latest project updates</a>
-</li><li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates" rel="alternate" type="application/rss+xml">RSS Link for All RSR Updates</a></li></ul></nav>
+    <nav class="anchorNav2 wrapper">
+      <ul class>
+        <li><a href="/seeithappen/all-rsr-project-updates/">Browse all latest project updates</a> </li>
+        <li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates" rel="alternate" type="application/rss+xml">RSS Link for All RSR Updates</a></li>
+      </ul>
+    </nav>
     <ul id="updatesWrapper" class="floats-in wrapper">
     </ul>
     <h4 id="loadingCaption" class="backLined"> Fetching updates...<br/>
