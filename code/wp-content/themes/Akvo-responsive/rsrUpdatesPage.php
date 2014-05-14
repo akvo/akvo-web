@@ -33,7 +33,8 @@
     </ul>
   </li>
   <section class="wrapper">
-    <ul id="updatesWrapper" class="floats-in" style="display: none;">
+    <ul id="updatesWrapperJS" class="floats-in">
+      <?php do_shortcode('[jsondata_feed slug="rsr-many-updates" limit="60"]'); ?>
     </ul>
 
     <h4 id="loadingCaption" class="backLined">
