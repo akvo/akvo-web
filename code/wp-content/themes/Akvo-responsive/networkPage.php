@@ -19,23 +19,16 @@
   <ul class="wrapper">
     <li class="dashSingle" id="rsrDash">
       <h2>Akvo RSR</h2>
-      <ul class="rsrData dashData">
-        <li>
-          <h4>Projects:</h4>
-          <span id="number_of_projects"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>Number of updates:</h4>
-          <span id="number_of_updates"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>Organisations Using RSR:</h4>
-          <span id="number_of_organisations"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>Project Budgets:</h4>
-          <span id="projects_budget_millions"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-      </ul>
-      <a href="#" title="How is this data collected? Automatically from the Akvo RSR database via
-the RSR API (https://github.com/akvo/akvo-rsr/wiki/Akvo-RSR-API)
-How often is this data refreshed? Whenever the page is loaded" class="tooltips moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+
+      <?php do_shortcode('[jsondata_feed slug="right-now-in-akvo"]'); ?>
+
+      <a href="#"
+         title="<p>How is this data collected? Automatically from the Akvo RSR database via the RSR API
+            (https://github.com/akvo/akvo-rsr/wili/Akvo-RSR-API)</p>
+            <p>How often is this data refreshed? Every four hours.</p>"
+         class="tooltips moreLink ">info</a>
+      <a href="" class="moreLink darkBg  hidden">See more</a>
+    </li>
     <li class="dashSingle" id="flowDash">
       <h2>Akvo Flow</h2>
       <ul class="flowData dashData">
@@ -60,66 +53,50 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
             <?php the_field('organisations_using_flow'); ?>
             </span> </li>
       </ul>
-      <a href="#" title="How is this data collected? Manually, via a script run on the Google App
-Engine
-FLOW
-instances
-How often is this data refreshed? Monthly" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+      <a href="#"
+         title="<p>How is this data collected? Manually, via a script run on the Google App Enging FLOW instances.</p>
+            <p>How often is this data refreshed? Monthly.</p>"
+         class="tooltips moreLink">info</a>
+      <a href="" class="moreLink darkBg  hidden">See more</a>
+    </li>
     <li class="dashSingle" id="opendaidDash">
       <h2>Akvo Openaid</h2>
       <ul class="openAidData dashData">
         <li>
           <h4>Total activities:</h4>
-          <span id="openaid_total_activities"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
+          <span id=""><?php do_shortcode('[jsondata_feed slug="openaid-activities" format="json" limit="1"]'); ?></span>
+        </li>
         <li>
           <h4>Total organisations:</h4>
-          <span id="openaid_total_organisations"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
+          <span id=""><?php do_shortcode('[jsondata_feed slug="openaid-orgs" format="json" limit="1"]'); ?></span>
+        </li>
         <li>
           <h4>Total commitments:</h4>
-            <span id="openaid_total_commitments">
+            <span id="">
             <?php the_field('openaid_commit'); ?>
-              <span class="unit">billion</span> </span> </li>
+              <span class="unit">billion</span> </span>
+        </li>
         <li>
           <h4>More Stats soon</h4>
         </li>
       </ul>
-      <a href="#" title="How is this data collected? ‘Total commitments’ is collected manually, the
-rest is automated via the use of the Openaid API
-(https://github.com/openaid-IATI/)
-How often is this data refreshed? ‘Total commitments’ is updated monthly,
-the rest refreshes whenever the page is loaded" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
+      <a href="#"
+         title="<p>How is this data collected? 'Total commitments' is collected manually,
+            the other values are collected via the OpenAid API (https://github.com/openaid-IATI/)</p>
+            <p>How often is this data refreshed? 'Total commitments' is updated monthly,
+            the rest is refreshed every four hours.</p>"
+         class="tooltips moreLink">info</a>
+      <a href="" class="moreLink darkBg hidden">See more</a>
+    </li>
     <li class="dashSingle" id="akvopediaDash">
       <h2>Akvopedia</h2>
-      <ul class="wikiData dashData">
-        <li>
-          <h4>Articles:</h4>
-          <span id="number_of_articles"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>Page Views:</h4>
-          <span id="number_of_page_views"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>Visits:</h4>
-          <span id="number_of_visits"><span style="font-size: 0.2em;">Fetching data...</span></span> </li>
-        <li>
-          <h4>More Stats soon</h4>
-        </li>
-      </ul>
-      <a href="#" title="How is this data collected? ‘Articles’ is collected automatically using the
-Mediawiki API (
-http://www.mediawiki.org/wiki/API:Main_page
-)
-.
-,
-T
-t
-he rest is
-collected
-automatically
-via the Piwik API
-(
-https://piwikapi.readthedocs.org/en/latest/
-)
-How often is this data refreshed? Whenever the page is loaded" class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
+      <?php do_shortcode('[jsondata_feed slug="akvopedia-analytics"]'); ?>
+      <a href="#"
+         title="<p>How is this data collected? 'Articles' is collected automatically using the Mediawiki API ()
+            The rest is collected automatically from the Piwik API ()</p>
+            <p>How often is this data refreshed? Every four hours.</p>"
+         class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a>
+    </li>
   </ul>
 </section>
 <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
