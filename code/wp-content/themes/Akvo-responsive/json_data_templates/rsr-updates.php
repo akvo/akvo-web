@@ -1,11 +1,13 @@
 <?php
-  /*
-   * Template for the "RSR updates" plugin currently used on networkPage.php
-   * Feed name: RSR updates
-   * Slug: rsr-updates
-   * JSON feed URL: http://rsr.akvo.org/api/v1/project_update_extra/?format=json
-   * Resulting shortcode: [jsondata_feed slug="rsr-updates" format="json"]
-   */
+/*
+ * Template for the "RSR updates" plugin currently used on networkPage.php
+ * Feed name: RSR updates
+ * Slug: rsr-updates
+ * JSON feed URL: http://rsr.akvo.org/api/v1/project_update_extra/?format=json
+ * Resulting shortcode: [jsondata_feed slug="rsr-updates" format="json"]
+ * json_data_render_update() is defined in Akvo-responsive/functions.php
+ * TODO: fix country, add city and add filtering of updates with images. This needs an update of the RSR API resource
+ */
 
   $updates = $aData['objects'];
   $renderCount = 0;
