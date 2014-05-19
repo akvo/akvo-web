@@ -36,12 +36,6 @@
     <ul id="updatesWrapperJS" class="floats-in">
       <?php do_shortcode('[jsondata_feed slug="rsr-many-updates" limit="60"]'); ?>
     </ul>
-
-    <h4 id="loadingCaption" class="backLined">
-      Fetching updates...<br/>
-      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
-    </h4>
-    <a id="loadMore" class="btn btn-primary loadMore" style="display: none;">Fetch more updates</a>
   </section>
 
   <script type="text/javascript">
