@@ -153,10 +153,10 @@
         var map = new google.maps.Map(this.canvas, this.options);
         var bounds = new google.maps.LatLngBounds();
         var i;
-        this.projects.concat(this.projects2);
+        var all_projects = this.projects.concat(this.projects2);
 
-        for (i = 0; i < this.projects.length; i++) {
-          var project = this.projects[i];
+        for (i = 0; i < all_projects.length; i++) {
+          var project = all_projects[i];
           var position = new google.maps.LatLng(project.latitude, project.longitude);
 
           var marker = new google.maps.Marker({
