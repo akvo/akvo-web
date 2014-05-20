@@ -12,12 +12,11 @@
  */
 
 $objects = $aData['objects'];
-
-$map_data = [];
+$map_data = array();
 $akvo_domain = 'http://rsr.akvo.org';
 
 foreach ($objects as $project) {
-  $data_from_project = [];
+  $data_from_project = array();
   $data_from_project['latitude'] = $project['primary_location']['latitude'];
   $data_from_project['longitude'] = $project['primary_location']['longitude'];
   $map_thumb = $project['current_image']['thumbnails']['map_thumb'];
