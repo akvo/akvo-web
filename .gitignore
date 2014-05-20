@@ -7,6 +7,7 @@ dwsync.xml
 code/nginx.conf
 code/php5.ini
 code/robots.txt
+code/sitemap.xml
 code/wp-config*
 
 # Media
