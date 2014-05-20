@@ -20,8 +20,7 @@
     <br/>
     <br/>
     <div id="advisoryGroup" class="directors">
-     <p class="">Akvo has a four-person supervisory board that oversees our work:</p>
-     <p class="directorsAbs">Board of directors:</p>
+      <p>Akvo has a four-person supervisory board that oversees our work:</p>
       <ul class="staff floats-in">
         <li class="staffAsset advisory" id="aalt">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/aalt240.jpg" title="Aalt Leusink" alt="Aalt Leusink - chairman of the board " /></div>
@@ -42,7 +41,10 @@
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/sunita240.jpg" title="Sunita Nadhamuni" alt="Sunita Nadhamuni, Board member" /></div>
           <div class="staffName"><a href="#">Sunita Nadhamuni</a></div>
           <p class="staffTitle">Board member</p>
-          <small>Click for more details.</small>
+          <small>Click for more details.</small></li>
+      </ul>
+      <p>Board of directors:</p>
+      <ul class="floats-in staff">
         <li class="staffAsset" id="jeroen">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/jvds_240.jpg" title="Jeroen van der Sommen" alt="Jeroen van der Sommen - Co-founder And Co-director" /></div>
           <div class="staffName"><a href="#">Jeroen van der Sommen</a></div>
@@ -53,6 +55,11 @@
           <div class="staffName"><a href="#">Thomas Bjelkeman-Pettersson</a></div>
           <p class="staffTitle">Co-founder and director</p>
           <small>Click for more details.</small></li>
+        <li class="staffAsset" id="kathelyne">
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/kathelyne240x135.png" title="Kathelyne van den Berg, Chief financial officer" alt="Kathelyne van den Berg, Chief financial officer" /></div>
+          <div class="staffName"><a href="#">Kathelyne van den Berg</a></div>
+          <p class="staffTitle">Chief financial officer</p>
+          <small>Click for more details.</small></li>          
       </ul>
     </div>
   </section>
@@ -64,8 +71,6 @@
     <br/>
     <div id="advisoryGroup" class="directors">
       <p>Board of directors:</p>
-            <p class="directorsAbs">Management:</p>
-
       <ul class="staff floats-in">
         <li class="staffAsset advisory" id="markN">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/MarkN240.jpg" title="Mark Nitzberg" alt="Mark Nitzberg, Board member" /></div>
@@ -80,7 +85,9 @@
         <li class="staffAsset advisory" id="paulC">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/paulC240.png" title="Paul Ciandrini" alt="Paul Ciandrini, Board member" /></div>
           <div class="staffName"><a href="#">Paul Ciandrini</a></div>
-          <p class="staffTitle">Board member</p>
+          <p class="staffTitle">Board member</p></ul>          <p>Management:</p>
+  
+          <ul class="staff floats-in">
 
         <li class="staffAsset" id="henry">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/henry240.jpg" title="Henry Jewell" alt=" Henry Jewell, programme manager, Akvo FLOW" /></div>
@@ -95,13 +102,12 @@
     <h2>Akvo Kenya Ltd</h2>
     <p>Akvo has established a limited company in Nairobi to support operations while the formal process of establishing a non-profit foundation in Kenya is underway.</p>
     <div id="advisoryGroup" class="directors">
-      <p>Trustees:</p>      <p class="directorsAbs">Management:</p>
-
+      <p>Trustees:</p>
       <ul class="staff floats-in">
-        <li class="staffAsset" id="akvoF">
-          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/akvo240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Jeroen van der Sommen" /></div>
+        <li class="staffAsset" id="peter">
+          <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/peter_240.jpg" title="Akvo foundation" alt="Akvo foundation represented by Peter van der Linde" /></div>
           <div class="staffName"><a href="#">Akvo Foundation</a></div>
-          <p class="staffTitle">represented by Jeroen van der Sommen</p>
+          <p class="staffTitle">represented by Peter van der Linde</p>
           <small>Click for more details.</small></li>
         <li class="staffAsset advisory" id="sam">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/Sam240.png" title="BSam Gichuru" alt="Sam Gichuru, Board member" /></div>
@@ -112,8 +118,9 @@
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/bertil240.jpg" title="Bertil van Vugt" alt="Bertil van Vugt, Board member" /></div>
           <div class="staffName"><a href="#">Bertil van Vugt</a></div>
           <p class="staffTitle">Board member</p>
-          <small>Click for more details.</small>
- 
+          <small>Click for more details.</small></li></ul>  <p>Management:</p>
+      <ul class="staff floats-in">
+
         <li class="staffAsset" id="luuk">
           <div class="imgWrapper"><img src="<?php bloginfo('template_directory'); ?>/images/staff/Luukv2.jpg" title="Luuk Diphoorn" alt="Luuk Diphoorn, manager, East Africa hub " /></div>
           <div class="staffName"><a href="#">Luuk Diphoorn</a></div>
@@ -134,5 +141,10 @@
     <div class="buttons"><a class="cancel">close</a></div>
   </div>
 </div>
+  <script type="text/javascript">
+  $( document ).ready(function() {
+	});
+  </script>
+
 <!-- end content -->
 <?php get_footer(); ?>
