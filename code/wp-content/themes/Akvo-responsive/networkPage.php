@@ -134,10 +134,11 @@
 </section>
 
 <section id="rsrNetworkMap">
-  <h1>
+  <h2>
     Map of all projects
-  </h1>
-  <div class= "akvo_map" id="akvo_map" style="width:975px;height:600px;"></div>
+  </h2>
+  <div class="wrapper">
+  <div class= "akvo_map centerED" id="akvo_map" style="width:975px;height:600px;"></div></div>
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
   <script type="text/javascript">
     var googleMap = {
