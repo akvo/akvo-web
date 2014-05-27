@@ -2224,7 +2224,7 @@ ul.faqMenuList {
 ul.faqMenuList li {
     background: rgb(248, 248, 248);
     margin: 0em 0em 2px 0px;
-    padding: 5px 0em 5px 10px;
+    padding: 25px 0em 25px 10px;
 }
 @media screen and (max-width:768px) {
     ul.faqMenuList {
@@ -4143,17 +4143,17 @@ ul.staff li:nth-child(6n) {
 h1 {
 	&.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-        background-size: 13% auto;
+        background-size: 10% auto;
         text-indent: -9999px;
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);        
-		background-size: 14% auto;
+		background-size: 10% auto;
         text-indent: -9999px;
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);       
-		 background-size: 15% auto;
+		 background-size: 11% auto;
         text-indent: -9999px;
     }
 	}
