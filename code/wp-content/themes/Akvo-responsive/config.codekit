@@ -20,6 +20,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/akvopediahelpPage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/akvopediahelpPage.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/annualReports.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -99,6 +108,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/flowhelpPage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/flowhelpPage.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -113,6 +131,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/foundation.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/functions.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/functions.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -353,6 +380,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/akvo-flow_RGB_logo_help.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7111,
+		"inputAbbreviatedPath": "\/images\/akvo-flow_RGB_logo_help.png",
+		"outputAbbreviatedPath": "\/images\/akvo-flow_RGB_logo_help.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/akvo-openaid_RGB-GREYSCALE-REVERSE_logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -529,6 +567,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/akvo-pedia_RGB_logo_help.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8030,
+		"inputAbbreviatedPath": "\/images\/akvo-pedia_RGB_logo_help.png",
+		"outputAbbreviatedPath": "\/images\/akvo-pedia_RGB_logo_help.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/akvo-rsr_RGB-GREYSCALE-REVERSE_logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -613,6 +662,17 @@
 		"initialSize": 6168,
 		"inputAbbreviatedPath": "\/images\/akvo-rsr_RGB_logo_170W.png",
 		"outputAbbreviatedPath": "\/images\/akvo-rsr_RGB_logo_170W.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/akvo-rsr_RGB_logo_help.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6649,
+		"inputAbbreviatedPath": "\/images\/akvo-rsr_RGB_logo_help.png",
+		"outputAbbreviatedPath": "\/images\/akvo-rsr_RGB_logo_help.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -1517,6 +1577,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/flowFAQ.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 61145,
+		"inputAbbreviatedPath": "\/images\/flowFAQ.png",
+		"outputAbbreviatedPath": "\/images\/flowFAQ.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/FLOWlink.fw.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -1634,6 +1705,39 @@
 		"initialSize": 1205,
 		"inputAbbreviatedPath": "\/images\/H-bg.png",
 		"outputAbbreviatedPath": "\/images\/H-bg.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/help_FLOW_icn.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15031,
+		"inputAbbreviatedPath": "\/images\/help_FLOW_icn.png",
+		"outputAbbreviatedPath": "\/images\/help_FLOW_icn.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/help_pedia_icn.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8483,
+		"inputAbbreviatedPath": "\/images\/help_pedia_icn.png",
+		"outputAbbreviatedPath": "\/images\/help_pedia_icn.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/help_RSR_icn.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 21515,
+		"inputAbbreviatedPath": "\/images\/help_RSR_icn.png",
+		"outputAbbreviatedPath": "\/images\/help_RSR_icn.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -2874,7 +2978,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 29130,
+		"initialSize": 55493,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -2885,7 +2989,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 27150,
+		"initialSize": 66718,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -2896,7 +3000,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 27463,
+		"initialSize": 58231,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -2907,7 +3011,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 23659,
+		"initialSize": 49703,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -3964,6 +4068,96 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/json_data_templates\/akvopedia-analytics.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/akvopedia-analytics.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/akvopedia-articles.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/akvopedia-articles.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/openaid-activities.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/openaid-activities.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/openaid-org.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/openaid-org.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/right-now-in-akvo.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/right-now-in-akvo.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-many-updates.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-many-updates.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-project-global-map.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-project-global-map.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-update-count.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-update-count.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-updates.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-updates.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/networkPage.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/networkPage.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/page.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4014,6 +4208,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/productpage-rsr.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/productpage-rsrUp.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/productpage-rsrUp.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

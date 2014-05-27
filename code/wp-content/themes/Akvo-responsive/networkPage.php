@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: akvoNetwork
+  Template Name: akvoNetwork
 */
 ?>
 <?php get_header(); ?>

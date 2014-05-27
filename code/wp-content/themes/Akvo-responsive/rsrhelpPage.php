@@ -7,7 +7,7 @@
 <!--Start of Akvo.org helpPage-->
 
 <div id="content" class="floats-in rsrHelpSupport">
-<h1 class="backLined">RSR Help page</h1>
+<h1 class="backLined rsrHelp">RSR Help</h1>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 <div class="fullWidthParag centerED wrapper">
   <?php the_content(); ?>
@@ -15,7 +15,7 @@
 <?php endwhile; // end of the loop. ?>
 <section class="wrapper">
 <h2>Most commonly asked questions</h2>
-<p>Answers to questions other Akvo RSR users have asked in the past, can be found on <a href="http://rsrhelp.akvo.org/discussions/">Akvo RSR tender website</a>.</p>
+<p>Answers to questions other Akvo RSR users have asked in the past, can be found on <a href="http://rsrhelp.akvo.org/discussions/">Akvo RSR support</a>.</p>
 <ul class="vertMargin">
 <li class="faqMenu"><a href="#" class="faqMenuHead">I’m having login problems. How can I register? I’ve forgotten my username and/or password.</a>
   <ul class="faqMenuList">
