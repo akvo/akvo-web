@@ -91,6 +91,7 @@
     <li>Open the Field Survey app and tap on Settings-→Check SD Card State. This will show the amount of free space available on your phone to conduct surveys (in MB). If the value displayed is less than 100 MB, then please contact your manager to clean up your phones. Do remember that conducting surveys without sufficient memory will lead to loss of survey data which is NOT recoverable.</li>
   </ul>
 </li>
+</ul>
 </section>
 <hr class="delicate" />
 <section class="wrapper">

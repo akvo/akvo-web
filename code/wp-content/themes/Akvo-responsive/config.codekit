@@ -99,15 +99,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/flowhelpPage.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/flowhelpPage.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/footer.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -1656,39 +1647,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/help_FLOW_icn.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 15031,
-		"inputAbbreviatedPath": "\/images\/help_FLOW_icn.png",
-		"outputAbbreviatedPath": "\/images\/help_FLOW_icn.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/help_pedia_icn.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 8483,
-		"inputAbbreviatedPath": "\/images\/help_pedia_icn.png",
-		"outputAbbreviatedPath": "\/images\/help_pedia_icn.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/help_RSR_icn.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 21515,
-		"inputAbbreviatedPath": "\/images\/help_RSR_icn.png",
-		"outputAbbreviatedPath": "\/images\/help_RSR_icn.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/helpIcn.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2833,39 +2791,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/rsrEnglishManual.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 60906,
-		"inputAbbreviatedPath": "\/images\/rsrEnglishManual.png",
-		"outputAbbreviatedPath": "\/images\/rsrEnglishManual.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/rsrFrenchManual.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 81590,
-		"inputAbbreviatedPath": "\/images\/rsrFrenchManual.png",
-		"outputAbbreviatedPath": "\/images\/rsrFrenchManual.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/images\/rsrSpanishManual.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 68803,
-		"inputAbbreviatedPath": "\/images\/rsrSpanishManual.png",
-		"outputAbbreviatedPath": "\/images\/rsrSpanishManual.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/images\/rsrTopImg.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2888,6 +2813,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/images\/rsrUp1600x900.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.51738e+06,
+		"inputAbbreviatedPath": "\/images\/rsrUp1600x900.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUp1600x900.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUp60px.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5657,
+		"inputAbbreviatedPath": "\/images\/rsrUp60px.png",
+		"outputAbbreviatedPath": "\/images\/rsrUp60px.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/rsrUpManual.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -2895,6 +2842,50 @@
 		"initialSize": 171849,
 		"inputAbbreviatedPath": "\/images\/rsrUpManual.png",
 		"outputAbbreviatedPath": "\/images\/rsrUpManual.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-2.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 29130,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-3.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27150,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-4.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 27463,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/rsrUpscreengrab-5.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 23659,
+		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
+		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -3949,6 +3940,87 @@
 		"outputStyle": 1,
 		"syntaxCheckerStyle": 1
 		},
+	"\/json_data_templates\/akvopedia-analytics.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/akvopedia-analytics.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/akvopedia-articles.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/akvopedia-articles.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/openaid-activities.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/openaid-activities.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/openaid-org.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/openaid-org.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/right-now-in-akvo.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/right-now-in-akvo.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-many-updates.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-many-updates.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-project-global-map.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-project-global-map.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-update-count.template.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-update-count.template.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/json_data_templates\/rsr-updates.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/json_data_templates\/rsr-updates.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/networkPage.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -4008,6 +4080,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/productpage-rsr.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/productpage-rsrUp.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/productpage-rsrUp.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
