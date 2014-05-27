@@ -16,7 +16,7 @@
 <?php endwhile; // end of the loop. ?>
 <section class="wrapper">
 <h2>Most commonly asked questions</h2>
-<p>Answers to questions other Akvo FLOW users have asked in the past, can be found on <a href="http://flow.readthedocs.org/en/latest/docs/topic/dashboard.html">Akvo FLOW dashboard (Read the docs)</a> and <a href="http://flow.readthedocs.org/en/latest/docs/topic/field_survey_app.html">Akvo FLOW android app (Read the docs)</a>.</p>
+<p class="fullWidthParag centerED">Answers to questions other Akvo FLOW users have asked in the past, can be found on <a href="http://flow.readthedocs.org/en/latest/docs/topic/dashboard.html">Akvo FLOW dashboard (Read the docs)</a> and <a href="http://flow.readthedocs.org/en/latest/docs/topic/field_survey_app.html">Akvo FLOW android app (Read the docs)</a>.</p>
 <ul class="vertMargin">
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I open the Field Survey app ?</a>
   <ul class="faqMenuList">

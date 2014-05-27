@@ -2182,7 +2182,7 @@ ul.faqMenuList {
 ul.faqMenuList li {
   background: #f8f8f8;
   margin: 0em 0em 2px 0px;
-  padding: 5px 0em 5px 10px; }
+  padding: 25px 0em 25px 10px; }
 
 @media screen and (max-width: 768px) {
   ul.faqMenuList {
@@ -4151,22 +4151,19 @@ ul.staff li:nth-child(6n) {
 
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 13% auto;
-  background-size: 13% auto;
-  text-indent: -9999px;
-}
+  -webkit-background-size: 10% auto;
+  background-size: 10% auto;
+  text-indent: -9999px; }
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 14% auto;
-  background-size: 14% auto;
-  text-indent: -9999px;
-}
+  -webkit-background-size: 10% auto;
+  background-size: 10% auto;
+  text-indent: -9999px; }
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 15% auto;
-  background-size: 15% auto;
-  text-indent: -9999px;
-}
+  -webkit-background-size: 11% auto;
+  background-size: 11% auto;
+  text-indent: -9999px; }
 
 .helpSupport nav ul li:hover a.rsrHelp {
   -webkit-background-size: 52% auto;
@@ -4914,5 +4911,3 @@ div[id^="inline-"] {
 
 .qa-faq {
   margin-bottom: 30px; }
-
-/*# sourceMappingURL=main.css.map */
