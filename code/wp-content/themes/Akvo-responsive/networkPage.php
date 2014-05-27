@@ -375,7 +375,7 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
     });
   </script>
   <section id="rsrNetworkMap">
-    <h2>Akvo Map</h2>
+    <h2>Akvo map</h2>
     <div class="wrapper">
       <p class="fullWidthParag centerED">Due to performance issues we have temporarily disabled the live Akvo RSR project map. It will be enabled again soon.</p>
       <img src="<?php bloginfo('template_directory'); ?>/images/rsr_projectMap.png" class="centerED"/> </div>

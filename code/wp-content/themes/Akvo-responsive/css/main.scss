@@ -1955,35 +1955,32 @@ body.home h1.akvoDescr {
         width: 100%;
     }
 }
-#actionHeroBox h1 {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
-    position: relative;
-    /* color:     rgba(80,48,27,1);
-                	text-shadow:     0.05em 0.05em 0 rgba(255, 155, 99, 1);
-                */
-    margin: 10px 10px 0em 0em;
+#actionHeroBox {
+		h1 {
+			display: block;
+			font-family: 'Raleway', sans-serif;
+			font-size: 1.5em;
+			font-weight: 700;
+			position: relative;
+			margin: 10px 10px 0em 0em;
+		}
+		h2 {
+			display: block;
+			font-size: 1.2em;
+			margin: 0em 10px 5px 0em;
+		}
 }
 @media screen and (max-width:768px) {
-    #actionHeroBox h1 {
-        display: block;
-        font-size: 1.8em;
-        text-align: center;
-    }
-}
-#actionHeroBox h2 {
-    display: block;
-    font-size: 1.2em;
-    margin: 0em 10px 5px 0em;
-}
-@media screen and (max-width:768px) {
-    #actionHeroBox h2 {
-        display: block;
-        font-size: 1.4em;
-        text-align: center;
-    }
+    #actionHeroBox {
+		 h1 {
+			font-size: 1.8em;
+			text-align: center;
+		}
+    	h2 {
+			font-size: 1.4em;
+			text-align: center;
+    	}
+	}
 }
 #actionHeroBox h2,
 #actionHeroBox h1,
@@ -4094,9 +4091,15 @@ ul.staff li:nth-child(6n) {
 .akvo-policies-and-terms h4 {
     margin: 2em 0em 0.25em;
 }
+.helpSupport nav ul li.bgDeco {
+	min-height:320px;
+}
+.helpSupport nav ul li p {
+	color:$akvoPurple;
+}
 .helpSupport nav ul li a {
     display: block;
-    height: 100px;
+    height: 70px;
     transition: all 0.2s ease-in;
     &.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
@@ -4114,19 +4117,46 @@ ul.staff li:nth-child(6n) {
         text-indent: -9999px;
     }
     &.moreHelp {
-        background: url("../images/readMoreBig.svg") center center no-repeat;
         color: $flowOrange;
-        background-size: 120px 120px;
-        display: block;
+        display: block;   
+        width: 120px;
         height: 120px;
         margin: 20px auto;
-        opacity: 0.1;
+		opacity:0.5;
         position: relative;
         text-align: center;
-        text-indent: none !important;
-        width: 120px;
-    }
+        text-indent:-9999px;
+		&.rsrH {
+					background:url("../images/help_RSR_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+		&.flowH {
+					background: url("../images/help_FLOW_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+		&.pediaH {
+					background: url("../images/help_pedia_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+	}
 }
+h1 {
+	&.rsrHelp {
+        background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: 13% auto;
+        text-indent: -9999px;
+    }
+    &.flowHelp {
+        background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);        
+		background-size: 14% auto;
+        text-indent: -9999px;
+    }
+    &.akvopediaHelp {
+        background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);       
+		 background-size: 15% auto;
+        text-indent: -9999px;
+    }
+	}
 .helpSupport nav ul li:hover a {
     &.rsrHelp {
         background-size: 52% auto;
