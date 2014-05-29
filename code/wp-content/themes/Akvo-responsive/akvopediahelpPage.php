@@ -14,8 +14,7 @@
 </div>
 <?php endwhile; // end of the loop. ?>
 <section class="wrapper">
-<h2>Most commonly asked questions</h2>
-<p>For more help: <a href="http://akvopedia.org/wiki/Help:Contents">Akvopedia Help Page</a>.</p>
+<h2>Common questions</h2>
 <ul class="vertMargin">
 <li class="faqMenu"><a href="#" class="faqMenuHead">Is Akvopedia a social forum or place to chat?</a>
   <ul class="faqMenuList">
@@ -33,16 +32,17 @@ However, links to more academic articles are okay, if they are not too jargon he
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">How much editorial support do you offer?</a>
   <ul class="faqMenuList">
-    <li>We are continually uploading new material to Akvopedia each week, and we extend a warm welcome to adding content for free that you may have that takes less than a half day to upload. For larger projects or merging of WASH information between partners, we would need to secure funding and arrange a plan to proceed. Our project manager Hans Merton, hansAt symbol.jpgakvo.org, could help you set up a partner exchange. We have had the good fortune to work with many WASH partners like UNICEF, Care, IRC, WASTE, SuSanA and Practica. We also welcome appropriate commercial water and sanitation product promotions from sellers, if their product is a good fit for Akvopedia. For more questions about the free editorial services contact Winona Azure, winonaAt symbol.jpgakvo.org. </li>
+    <li>We are continually uploading new material to Akvopedia each week, and we extend a warm welcome to adding content for free that you may have that takes less than a half day to upload. For larger projects or merging of WASH information between partners, we would need to secure funding and arrange a plan to proceed. Our project manager Hans Merton, hans[at]akvo.org, could help you set up a partner exchange. We have had the good fortune to work with many WASH partners like UNICEF, Care, IRC, WASTE, SuSanA and Practica. We also welcome appropriate commercial water and sanitation product promotions from sellers, if their product is a good fit for Akvopedia. For more questions about the free editorial services contact Winona Azure, winona[at]akvo.org. </li>
   </ul>
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">What if I disagree with the content on Akvopedia?</a>
   <ul class="faqMenuList">
-    <li>If you feel the material posted on Akvopedia is outdated or conflicting with information you have, you can always post your views in the “Discussion” tab of each Akvopedia page. Although our discussion tabs are not used often, that is a good place to start as it will make your information seen by the public without you having to know anything about editing an Akvopedia page. You may also contact Winona Azure, the editor at winonaAt symbol.jpgakvo.org, to offer new content or updated materials to any page, if it takes less than a half day to post. We get this request sometimes, and appreciate the efforts people take to keep information accurate and current! We find that costs for WASH projects or services, especially, change over time and we welcome new updates for this. </li>
+    <li>If you feel the material posted on Akvopedia is outdated or conflicting with information you have, you can always post your views in the “Discussion” tab of each Akvopedia page. Although our discussion tabs are not used often, that is a good place to start as it will make your information seen by the public without you having to know anything about editing an Akvopedia page. You may also contact Winona Azure, the editor at winona[at]akvo.org, to offer new content or updated materials to any page, if it takes less than a half day to post. We get this request sometimes, and appreciate the efforts people take to keep information accurate and current! We find that costs for WASH projects or services, especially, change over time and we welcome new updates for this. </li>
   </ul>
 </li>
 
 </ul>
+<p><a href="http://akvopedia.org/wiki/Help:Contents">Search for more Akvopedia support solutions</a>.</p>
 </section>
 <hr class="delicate" />
 <!--<section class="wrapper">

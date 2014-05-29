@@ -2179,7 +2179,7 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
   margin: 5px 0em 5px 30px; }
 
-ul.faqMenuList li {
+ul.faqMenuList > li {
   background: #f8f8f8;
   margin: 0em 0em 2px 0px;
   padding: 25px 0em 25px 10px; }
@@ -4151,18 +4151,18 @@ ul.staff li:nth-child(6n) {
 
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 10% auto;
-  background-size: 10% auto;
+  -webkit-background-size: 175px auto;
+  background-size: 175px auto;
   text-indent: -9999px; }
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 10% auto;
-  background-size: 10% auto;
+  -webkit-background-size: 185px auto;
+  background-size: 185px auto;
   text-indent: -9999px; }
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 11% auto;
-  background-size: 11% auto;
+  -webkit-background-size: 195px auto;
+  background-size: 195px auto;
   text-indent: -9999px; }
 
 .helpSupport nav ul li:hover a.rsrHelp {
@@ -4181,7 +4181,7 @@ h1.akvopediaHelp {
   opacity: 1; }
 
 .helpSupport h2,
-.rsrHelpSupport h2 {
+.rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
   text-align: left !important; }
 
 .englishManual {
@@ -4344,6 +4344,181 @@ h1.akvopediaHelp {
   }
 }
 
+.playStore {
+  min-height: 220px; }
+  .playStore a {
+    background: url("../images/Google_Play_Store_96.png") left top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .playStore a {
+        background-position: center top; } }
+    .playStore a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .playStore a span {
+          text-align: center !important; } }
+
+.englishEnumManual {
+  min-height: 220px; }
+  .englishEnumManual a {
+    background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .englishEnumManual a {
+        background-position: center top; } }
+    .englishEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .englishEnumManual a span {
+          text-align: center; } }
+
+.frenchEnumManual {
+  min-height: 220px; }
+  .frenchEnumManual a {
+    background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .frenchEnumManual a {
+        background-position: center top; } }
+    .frenchEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .frenchEnumManual a span {
+          text-align: center; } }
+
+.spanishEnumManual {
+  min-height: 220px; }
+  .spanishEnumManual a {
+    background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .spanishEnumManual a {
+        background-position: center top; } }
+    .spanishEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .spanishEnumManual a span {
+          text-align: center; } }
+
+.englishStartManual {
+  min-height: 240px; }
+  .englishStartManual a {
+    background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .englishStartManual a {
+        background-position: center top; } }
+    .englishStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .englishStartManual a span {
+          text-align: center; } }
+
+.frenchStartManual {
+  min-height: 240px; }
+  .frenchStartManual a {
+    background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .frenchStartManual a {
+        background-position: center top; } }
+    .frenchStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .frenchStartManual a span {
+          text-align: center; } }
+
+.spanishStartManual {
+  min-height: 240px; }
+  .spanishStartManual a {
+    background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      .spanishStartManual a {
+        background-position: center top; } }
+    .spanishStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        .spanishStartManual a span {
+          text-align: center; } }
+
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
@@ -4384,9 +4559,7 @@ h1.akvopediaHelp {
 
 @media screen and (max-width: 768px) {
   #akvoDashboard ul li.dashSingle {
-    width: 100%;
-  }
-}
+    width: 100%; } }
 #akvoDashboard ul li.dashSingle:nth-child(2n) {
   margin: 0em 0em 0.5em 0.5%; }
 
@@ -4424,9 +4597,7 @@ h1.akvopediaHelp {
 
 @media screen and (max-width: 768px) {
   .dashData li {
-    min-height: 100px;
-  }
-}
+    min-height: 100px; } }
 .dashData li.killFloatMerge {
   clear: both;
   display: block;
@@ -4465,9 +4636,7 @@ h1.akvopediaHelp {
 
 @media screen and (max-width: 768px) {
   .dashData li span.unit {
-    display: block;
-  }
-}
+    display: block; } }
 .dashData li:nth-child(2n+1) {
   margin: 0em 0.75% 0.35em 1.75%; }
 
@@ -4514,45 +4683,37 @@ h1.akvopediaHelp {
   text-align: left;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
-  width: 98%;
-}
-.rsrUpdate:hover {
-  background: rgba(192, 192, 196, 0.3);
-  pointer: cursor;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate {
-    -moz-border-radius: 0.15em;
-    -o-border-radius: 0.15em;
-    -webkit-border-radius: 0.15em;
-    border-radius: 0.15em;
-    display: inline-block;
-    float: left;
-    margin: 0em 0.5% 10px 0em;
-    min-height: 310px;
-    padding: 0em 0.5%;
-    width: 31.8%;
-  }
-  .rsrUpdate:last-child {
-    margin: 0em;
-  }
-}
+  width: 98%; }
+  .rsrUpdate:hover {
+    background: rgba(192, 192, 196, 0.3);
+    pointer: cursor; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate {
+      -moz-border-radius: 0.15em;
+      -o-border-radius: 0.15em;
+      -webkit-border-radius: 0.15em;
+      border-radius: 0.15em;
+      display: inline-block;
+      float: left;
+      margin: 0em 0.5% 10px 0em;
+      min-height: 310px;
+      padding: 0em 0.5%;
+      width: 31.8%; }
+      .rsrUpdate:last-child {
+        margin: 0em; } }
 
 .rsrUpdate ul li.upMore {
   float: right;
   height: 120px;
   margin-top: -10px;
-  width: 120px;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate ul li.upMore {
-    display: block;
-    float: inherit;
-    height: inherit;
-    margin-bottom: 5px;
-    width: 100%;
-  }
-}
+  width: 120px; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate ul li.upMore {
+      display: block;
+      float: inherit;
+      height: inherit;
+      margin-bottom: 5px;
+      width: 100%; } }
 
 .rsrUpdate ul li.upMore a {
   background-size: 72%;
@@ -4564,77 +4725,53 @@ h1.akvopediaHelp {
   position: relative;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
-  width: 112px;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate ul li.upMore a {
-    background: none;
-    display: inline-block;
-    width: 100%;
-    margin: 14px auto 0;
-    height: 30px;
-  }
-}
+  width: 62px; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate ul li.upMore a {
+      background: none;
+      display: inline-block;
+      height: 30px; } }
+      width: 100%;
+      margin: 14px auto 0;
 .rsrUpdate:hover ul li.upMore a {
-  opacity: 1;
-}
+  opacity: 0.6; }
 .rsrUpdate ul li.upMore span {
   display: block;
   font-size: 0.8em;
   text-align: center;
   -webkit-transition: color 0.4s ease-in;
-  transition: color 0.4s ease-in;
-}
-@media screen and (max-width: 960px) {
-  .rsrUpdate ul li.upMore span {
-    text-align: center;
-  }
-}
+  transition: color 0.4s ease-in; }
+  @media screen and (max-width: 960px) {
+    .rsrUpdate ul li.upMore span {
+      color: rgba(226, 124, 0, 0.8); } }
 .rsrUpdate:hover ul li.upMore span {
   color: rgba(226, 124, 0, 0.8); }
 
 .rsrUpdate ul {
   margin-top: 10px;
   padding: 0em;
-  width: 100%;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate ul {
-    margin-top: 15px;
-  }
-}
-.rsrUpdate ul li {
-  float: left;
-  margin: 0em;
-  padding: 0em;
-}
-.rsrUpdate ul li.upImag {
-  margin-left: 0.5em;
-  width: -webkit-calc(150px - 0.5em);
-  width: calc(150px - 0.5em);
-}
-@media screen and (min-width: 960px) {
+  width: 100%; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate ul {
+      margin-top: 15px; } }
+  .rsrUpdate ul li {
+    float: left;
+    margin: 0em;
+    padding: 0em; }
   .rsrUpdate ul li.upImag {
-    width: 50%;
-  }
-}
-.rsrUpdate ul li.upInfo {
-  display: table-cell;
-  width: 30%;
-}
-@media screen and (min-width: 960px) {
+    margin-left: 0.5em;
+    width: -webkit-calc(150px - 0.5em);
+    width: calc(150px - 0.5em); }
+    @media screen and (min-width: 960px) {
+      .rsrUpdate ul li.upImag {
+        width: 50%; } }
   .rsrUpdate ul li.upInfo {
-    width: -webkit-calc(50% - 0.5em);
-    width: calc(50% - 0.5em);
-  }
-}
-.rsrUpdate ul li.upTxt {
-  max-height: 100px;
-  overflow: hidden;
-  position: relative;
-  width: calc(100% - 30% - 150px - 120px - 0.5em);
-}
-@media screen and (min-width: 960px) {
+    display: table-cell;
+    width: 30%; }
+    @media screen and (min-width: 960px) {
+      .rsrUpdate ul li.upInfo {
+        width: -webkit-calc(50% - 0.5em);
+        width: calc(50% - 0.5em); } }
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
@@ -4651,17 +4788,15 @@ h1.akvopediaHelp {
 .rsrUpdate h2 {
   display: inline;
   font-size: 1.2em;
-  text-align: left;
-}
-.rsrUpdate h2 a {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  display: block;
-  padding: 1em 0em 0.25em 0.5em;
-  width: -webkit-calc(100%- 0.5em);
-  width: calc(100%- 0.5em);
-}
+  text-align: left; }
+  .rsrUpdate h2 a {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: block;
+    padding: 1em 0em 0.25em 0.5em;
+    width: -webkit-calc(100%- 0.5em);
+    width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
   .rsrUpdate ul li.upTxt {
@@ -4679,48 +4814,34 @@ h1.akvopediaHelp {
 
   .rsrUpdate ul li.upInfo {
     width: -webkit-calc(100% - 120px);
-    width: calc(100% - 120px);
-  }
-}
+    width: calc(100% - 120px); } }
 .rsrUpdate ul li.upInfo .authorTime {
-  margin-left: 1.75em;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate ul li.upInfo .authorTime {
-    margin-left: 0.25em;
-  }
-}
+  margin-left: 1.75em; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate ul li.upInfo .authorTime {
+      margin-left: 0.25em; } }
 
 .authorTime em {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
-  padding: 0em;
-}
-@media screen and (min-width: 960px) {
-  .authorTime em {
-    display: none;
-  }
-}
+  padding: 0em; }
+  @media screen and (min-width: 960px) {
+    .authorTime em {
+      display: none; } }
 
 .authorTime time {
   color: #747474;
   display: inline;
   float: left;
   margin: 0em;
-  padding: 0em;
-}
-@media screen and (min-width: 960px) {
-  .authorTime time {
-    display: block;
-    margin: 0em 0em 0em 0.25em;
-    width: -webkit-calc(100% - 0.25em);
-    width: calc(100% - 0.25em);
-  }
-}
+  padding: 0em; }
+  @media screen and (min-width: 960px) {
+    .authorTime time {
+      display: block;
+      margin: 0em 0em 0em 0.25em;
+      width: -webkit-calc(100% - 0.25em);
+      width: calc(100% - 0.25em); } }
 
 .authorTime span.userName {
   overflow: hidden;
@@ -4730,14 +4851,11 @@ h1.akvopediaHelp {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
-  padding: 0em;
-}
-@media screen and (min-width: 960px) {
-  .authorTime span.userName {
-    display: inline;
-    margin: 0em 0em 3px 0.25em;
-  }
-}
+  padding: 0em; }
+  @media screen and (min-width: 960px) {
+    .authorTime span.userName {
+      display: inline;
+      margin: 0em 0em 3px 0.25em; } }
 
 .orgAndPlace {
   display: none; }
@@ -4752,14 +4870,11 @@ h1.akvopediaHelp {
   display: inline-block;
   font-size: 0.8em;
   margin: 0.75em 0em 0.75em 1.75em;
-  padding: 0.15em 1em 0.35em;
-}
-@media screen and (min-width: 960px) {
-  .orgAndPlace .org {
-    display: inline-block;
-    margin: 0em 0em 0em 0.5em;
-  }
-}
+  padding: 0.15em 1em 0.35em; }
+  @media screen and (min-width: 960px) {
+    .orgAndPlace .org {
+      display: inline-block;
+      margin: 0em 0em 0em 0.5em; } }
 
 .orgAndPlace .place {
   overflow: hidden;
@@ -4770,23 +4885,18 @@ h1.akvopediaHelp {
   display: block;
   margin-left: 1.75em;
   padding: 0.25em 0em 0.25em 14px;
-  width: 100%;
-}
-@media screen and (min-width: 960px) {
-  .orgAndPlace .place {
-    display: block;
-    margin: 0em 0em 0em 0.35em;
-  }
-}
+  width: 100%; }
+  @media screen and (min-width: 960px) {
+    .orgAndPlace .place {
+      display: block;
+      margin: 0em 0em 0em 0.35em; } }
 
 @media screen and (max-width: 768px) {
   .authorTime span.userName {
     margin: 0em; }
 
   .orgAndPlace .org {
-    margin: 0.25em 0em 0em 1.75em;
-  }
-}
+    margin: 0.25em 0em 0em 1.75em; } }
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
@@ -4814,19 +4924,15 @@ h1.akvopediaHelp {
   text-shadow: none;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
-  width: 96%;
-}
-.rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
-  color: #202024;
-}
-@media screen and (min-width: 960px) {
-  .rsrUpdate ul li.upTxt p {
-    color: #202024;
-    font-size: 0.9em;
-    padding: 0.5em 2% 0em 2%;
-    text-shadow: none;
-  }
-}
+  width: 96%; }
+  .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
+    color: #202024; }
+  @media screen and (min-width: 960px) {
+    .rsrUpdate ul li.upTxt p {
+      color: #202024;
+      font-size: 0.9em;
+      padding: 0.5em 2% 0em 2%;
+      text-shadow: none; } }
 
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
@@ -4839,9 +4945,7 @@ h1.akvopediaHelp {
 
 @media screen and (max-width: 768px) {
   .rsrUpdate .imgWrap {
-    padding: 0em;
-  }
-}
+    padding: 0em; } }
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
@@ -4880,9 +4984,7 @@ h1.akvopediaHelp {
 
   .pricingList p {
     display: block;
-    margin: 1em auto;
-  }
-}
+    margin: 1em auto; } }
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -4903,9 +5005,7 @@ h1.akvopediaHelp {
     width: 96%; }
 
   .pricingList.fourColumns li:nth-child(2n) {
-    background: none;
-  }
-}
+    background: none; } }
 div[id^="inline-"] {
   display: none; }
 
