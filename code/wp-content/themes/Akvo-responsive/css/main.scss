@@ -2221,7 +2221,7 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
     margin: 5px 0em 5px 30px;
 }
-ul.faqMenuList li {
+ul.faqMenuList > li {
     background: rgb(248, 248, 248);
     margin: 0em 0em 2px 0px;
     padding: 25px 0em 25px 10px;
@@ -4143,17 +4143,17 @@ ul.staff li:nth-child(6n) {
 h1 {
 	&.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-        background-size: 10% auto;
+        background-size: 175px auto;
         text-indent: -9999px;
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);        
-		background-size: 10% auto;
+		background-size: 185px auto;
         text-indent: -9999px;
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);       
-		 background-size: 11% auto;
+		 background-size: 195px auto;
         text-indent: -9999px;
     }
 	}
@@ -4172,7 +4172,7 @@ h1 {
     }
 }
 .helpSupport h2,
-.rsrHelpSupport h2 {
+.rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
     text-align: left !important;
 }
 .englishManual {
@@ -4305,6 +4305,191 @@ h1 {
         }
     }
 }
+.playStore {
+    min-height: 220px;
+    a {
+        background: url("../images/Google_Play_Store_96.png") left top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+.englishEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.frenchEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.spanishEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.englishStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.frenchStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.spanishStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/

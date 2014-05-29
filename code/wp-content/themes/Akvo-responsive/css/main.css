@@ -2407,7 +2407,7 @@ ul.faqMenuList {
   margin: 5px 0em 5px 30px; }
 
 /* line 2224, main.scss */
-ul.faqMenuList li {
+ul.faqMenuList > li {
   background: #f8f8f8;
   margin: 0em 0em 2px 0px;
   padding: 25px 0em 25px 10px; }
@@ -4572,20 +4572,20 @@ ul.staff li:nth-child(6n) {
 /* line 4144, main.scss */
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 10% auto;
-  background-size: 10% auto;
+  -webkit-background-size: 175px auto;
+  background-size: 175px auto;
   text-indent: -9999px; }
 /* line 4149, main.scss */
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 10% auto;
-  background-size: 10% auto;
+  -webkit-background-size: 185px auto;
+  background-size: 185px auto;
   text-indent: -9999px; }
 /* line 4154, main.scss */
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 11% auto;
-  background-size: 11% auto;
+  -webkit-background-size: 195px auto;
+  background-size: 195px auto;
   text-indent: -9999px; }
 
 /* line 4161, main.scss */
@@ -4606,7 +4606,7 @@ h1.akvopediaHelp {
 
 /* line 4174, main.scss */
 .helpSupport h2,
-.rsrHelpSupport h2 {
+.rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
   text-align: left !important; }
 
 /* line 4178, main.scss */
@@ -4759,10 +4759,220 @@ h1.akvopediaHelp {
         .videoAndroid a span {
           text-align: center; } }
 
+/* line 4308, main.scss */
+.playStore {
+  min-height: 220px; }
+  /* line 4310, main.scss */
+  .playStore a {
+    background: url("../images/Google_Play_Store_96.png") left top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4310, main.scss */
+      .playStore a {
+        background-position: center top; } }
+    /* line 4321, main.scss */
+    .playStore a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4321, main.scss */
+        .playStore a span {
+          text-align: center !important; } }
+
+/* line 4335, main.scss */
+.englishEnumManual {
+  min-height: 220px; }
+  /* line 4337, main.scss */
+  .englishEnumManual a {
+    background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4337, main.scss */
+      .englishEnumManual a {
+        background-position: center top; } }
+    /* line 4348, main.scss */
+    .englishEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4348, main.scss */
+        .englishEnumManual a span {
+          text-align: center; } }
+
+/* line 4361, main.scss */
+.frenchEnumManual {
+  min-height: 220px; }
+  /* line 4363, main.scss */
+  .frenchEnumManual a {
+    background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4363, main.scss */
+      .frenchEnumManual a {
+        background-position: center top; } }
+    /* line 4374, main.scss */
+    .frenchEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4374, main.scss */
+        .frenchEnumManual a span {
+          text-align: center; } }
+
+/* line 4387, main.scss */
+.spanishEnumManual {
+  min-height: 220px; }
+  /* line 4389, main.scss */
+  .spanishEnumManual a {
+    background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 220px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4389, main.scss */
+      .spanishEnumManual a {
+        background-position: center top; } }
+    /* line 4400, main.scss */
+    .spanishEnumManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4400, main.scss */
+        .spanishEnumManual a span {
+          text-align: center; } }
+
+/* line 4414, main.scss */
+.englishStartManual {
+  min-height: 240px; }
+  /* line 4416, main.scss */
+  .englishStartManual a {
+    background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4416, main.scss */
+      .englishStartManual a {
+        background-position: center top; } }
+    /* line 4427, main.scss */
+    .englishStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4427, main.scss */
+        .englishStartManual a span {
+          text-align: center; } }
+
+/* line 4440, main.scss */
+.frenchStartManual {
+  min-height: 240px; }
+  /* line 4442, main.scss */
+  .frenchStartManual a {
+    background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4442, main.scss */
+      .frenchStartManual a {
+        background-position: center top; } }
+    /* line 4453, main.scss */
+    .frenchStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4453, main.scss */
+        .frenchStartManual a span {
+          text-align: center; } }
+
+/* line 4466, main.scss */
+.spanishStartManual {
+  min-height: 240px; }
+  /* line 4468, main.scss */
+  .spanishStartManual a {
+    background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
+    -webkit-background-size: 141px auto;
+    background-size: 141px auto;
+    display: block;
+    height: 240px;
+    padding: 0em;
+    position: relative;
+    width: 100%; }
+    @media screen and (max-width: 768px) {
+      /* line 4468, main.scss */
+      .spanishStartManual a {
+        background-position: center top; } }
+    /* line 4479, main.scss */
+    .spanishStartManual a span {
+      bottom: 0em;
+      display: block;
+      margin: 20px 0em 0em 10px;
+      position: absolute;
+      text-align: left;
+      width: 100%; }
+      @media screen and (max-width: 768px) {
+        /* line 4479, main.scss */
+        .spanishStartManual a span {
+          text-align: center; } }
+
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
-/* line 4311, main.scss */
+/* line 4496, main.scss */
 #akvoDashboard {
   background: #202024;
   margin: 50px auto 0em;
@@ -4771,17 +4981,17 @@ h1.akvopediaHelp {
   position: relative;
   width: 100%; }
 
-/* line 4319, main.scss */
+/* line 4504, main.scss */
 #akvoDashboard h2 {
   color: white;
   margin: 0.5em auto 0.75em;
   text-align: center; }
 
-/* line 4324, main.scss */
+/* line 4509, main.scss */
 #akvoDashboard ul {
   margin: 0em auto 0.5em auto; }
 
-/* line 4327, main.scss */
+/* line 4512, main.scss */
 #akvoDashboard ul li.dashSingle {
   -moz-border-radius: 0.25em;
   -moz-box-sizing: border-box;
@@ -4802,41 +5012,41 @@ h1.akvopediaHelp {
   width: 49.5%; }
 
 @media screen and (max-width: 768px) {
-  /* line 4345, main.scss */
+  /* line 4530, main.scss */
   #akvoDashboard ul li.dashSingle {
     width: 100%; } }
-/* line 4349, main.scss */
+/* line 4534, main.scss */
 #akvoDashboard ul li.dashSingle:nth-child(2n) {
   margin: 0em 0em 0.5em 0.5%; }
 
-/* line 4352, main.scss */
+/* line 4537, main.scss */
 .dashSingle h2 {
   display: block;
   text-indent: -99999px; }
 
-/* line 4356, main.scss */
+/* line 4541, main.scss */
 .dashSingle .moreLink {
   position: absolute;
   right: 0em;
   top: 0em; }
 
-/* line 4361, main.scss */
+/* line 4546, main.scss */
 .dashSingle#rsrDash h2 {
   background: url("../images/rsrWhiteDash.png") no-repeat center center; }
 
-/* line 4364, main.scss */
+/* line 4549, main.scss */
 .dashSingle#flowDash h2 {
   background: url("../images/flowWhiteDash.png") no-repeat center center; }
 
-/* line 4367, main.scss */
+/* line 4552, main.scss */
 .dashSingle#opendaidDash h2 {
   background: url("../images/openAidWhiteDash.png") no-repeat center center; }
 
-/* line 4370, main.scss */
+/* line 4555, main.scss */
 .dashSingle#akvopediaDash h2 {
   background: url("../images/wikiWhiteDash.png") no-repeat center center; }
 
-/* line 4373, main.scss */
+/* line 4558, main.scss */
 .dashData li {
   -moz-box-sizing: border-box;
   -wekit-box-sizing: border-box;
@@ -4849,10 +5059,10 @@ h1.akvopediaHelp {
   width: 47.5%; }
 
 @media screen and (max-width: 768px) {
-  /* line 4384, main.scss */
+  /* line 4569, main.scss */
   .dashData li {
     min-height: 100px; } }
-/* line 4388, main.scss */
+/* line 4573, main.scss */
 .dashData li.killFloatMerge {
   clear: both;
   display: block;
@@ -4860,18 +5070,18 @@ h1.akvopediaHelp {
   text-align: center;
   width: 96.5%; }
 
-/* line 4395, main.scss */
+/* line 4580, main.scss */
 .dashData li img {
   display: table;
   margin: 0em auto; }
 
-/* line 4399, main.scss */
+/* line 4584, main.scss */
 .dashData li p {
   display: table;
   font-size: 0.8em;
   margin: 0em auto; }
 
-/* line 4404, main.scss */
+/* line 4589, main.scss */
 .dashData li h4 {
   color: inherit;
   font-size: 0.8em;
@@ -4879,7 +5089,7 @@ h1.akvopediaHelp {
   margin: 0.5em 0em 1em 0.5em;
   text-transform: uppercase; }
 
-/* line 4411, main.scss */
+/* line 4596, main.scss */
 .dashData li span {
   font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-size: 2.5em;
@@ -4887,7 +5097,7 @@ h1.akvopediaHelp {
   text-shadow: 0em 0em 3px black;
   text-transform: uppercase; }
 
-/* line 4418, main.scss */
+/* line 4603, main.scss */
 .dashData li span.unit {
   font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
   font-size: 0.9em;
@@ -4895,53 +5105,53 @@ h1.akvopediaHelp {
   text-transform: lowercase; }
 
 @media screen and (max-width: 768px) {
-  /* line 4425, main.scss */
+  /* line 4610, main.scss */
   .dashData li span.unit {
     display: block; } }
-/* line 4429, main.scss */
+/* line 4614, main.scss */
 .dashData li:nth-child(2n+1) {
   margin: 0em 0.75% 0.35em 1.75%; }
 
-/* line 4432, main.scss */
+/* line 4617, main.scss */
 .dashData li:nth-child(2n) {
   margin: 0em 1.75% 0.35em 0.75%; }
 
-/* line 4435, main.scss */
+/* line 4620, main.scss */
 .dashData.rsrData li {
   background: rgba(87, 193, 232, 0.05);
   color: #57c1e8; }
 
-/* line 4439, main.scss */
+/* line 4624, main.scss */
 .dashData.flowData li {
   background: rgba(226, 124, 0, 0.05);
   color: #e27c00; }
 
-/* line 4443, main.scss */
+/* line 4628, main.scss */
 .dashData.openAidData li {
   background: rgba(255, 206, 0, 0.05);
   color: #ffce00; }
 
-/* line 4447, main.scss */
+/* line 4632, main.scss */
 .dashData.wikiData li {
   background: rgba(191, 131, 185, 0.05);
   color: #bf83b9; }
 
-/* line 4451, main.scss */
+/* line 4636, main.scss */
 #rsrProjectUpdates {
   background: #f2f2f2;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4457, main.scss */
+/* line 4642, main.scss */
 #rsrProjectUpdates > h2 {
   text-align: center; }
 
-/* line 4460, main.scss */
+/* line 4645, main.scss */
 #rsrProjectUpdates > a.moreLink {
   margin: 0em auto 2em; }
 
-/* line 4463, main.scss */
+/* line 4648, main.scss */
 .rsrUpdate {
   -o-border-radius: 0.5em;
   border-radius: 0.5em;
@@ -4955,12 +5165,12 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 98%; }
-  /* line 4474, main.scss */
+  /* line 4659, main.scss */
   .rsrUpdate:hover {
     background: rgba(192, 192, 196, 0.3);
     pointer: cursor; }
   @media screen and (min-width: 960px) {
-    /* line 4463, main.scss */
+    /* line 4648, main.scss */
     .rsrUpdate {
       -o-border-radius: 0.15em;
       border-radius: 0.15em;
@@ -4970,18 +5180,18 @@ h1.akvopediaHelp {
       min-height: 310px;
       padding: 0em 0.5%;
       width: 31.8%; }
-      /* line 4486, main.scss */
+      /* line 4671, main.scss */
       .rsrUpdate:last-child {
         margin: 0em; } }
 
-/* line 4491, main.scss */
+/* line 4676, main.scss */
 .rsrUpdate ul li.upMore {
   float: right;
   height: 120px;
   margin-top: -10px;
   width: 120px; }
   @media screen and (min-width: 960px) {
-    /* line 4491, main.scss */
+    /* line 4676, main.scss */
     .rsrUpdate ul li.upMore {
       display: block;
       float: inherit;
@@ -4989,7 +5199,7 @@ h1.akvopediaHelp {
       margin-bottom: 5px;
       width: 100%; } }
 
-/* line 4505, main.scss */
+/* line 4690, main.scss */
 .rsrUpdate ul li.upMore a {
   -webkit-background-size: 112px 112px;
   background-size: 112px 112px;
@@ -5003,15 +5213,15 @@ h1.akvopediaHelp {
   transition: all 0.4s ease-in;
   width: 62px; }
   @media screen and (min-width: 960px) {
-    /* line 4505, main.scss */
+    /* line 4690, main.scss */
     .rsrUpdate ul li.upMore a {
       background: none;
       display: inline-block;
       height: 30px; } }
-/* line 4521, main.scss */
+/* line 4706, main.scss */
 .rsrUpdate:hover ul li.upMore a {
   opacity: 0.6; }
-/* line 4524, main.scss */
+/* line 4709, main.scss */
 .rsrUpdate ul li.upMore span {
   color: rgba(226, 124, 0, 0);
   display: block;
@@ -5020,46 +5230,46 @@ h1.akvopediaHelp {
   -webkit-transition: color 0.4s ease-in;
   transition: color 0.4s ease-in; }
   @media screen and (max-width: 960px) {
-    /* line 4524, main.scss */
+    /* line 4709, main.scss */
     .rsrUpdate ul li.upMore span {
       color: rgba(226, 124, 0, 0.8); } }
-/* line 4534, main.scss */
+/* line 4719, main.scss */
 .rsrUpdate:hover ul li.upMore span {
   color: rgba(226, 124, 0, 0.8); }
 
-/* line 4539, main.scss */
+/* line 4724, main.scss */
 .rsrUpdate ul {
   margin-top: 10px;
   padding: 0em;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4539, main.scss */
+    /* line 4724, main.scss */
     .rsrUpdate ul {
       margin-top: 15px; } }
-  /* line 4546, main.scss */
+  /* line 4731, main.scss */
   .rsrUpdate ul li {
     float: left;
     margin: 0em;
     padding: 0em; }
-  /* line 4551, main.scss */
+  /* line 4736, main.scss */
   .rsrUpdate ul li.upImag {
     margin-left: 0.5em;
     width: -webkit-calc(150px - 0.5em);
     width: calc(150px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4551, main.scss */
+      /* line 4736, main.scss */
       .rsrUpdate ul li.upImag {
         width: 50%; } }
-  /* line 4558, main.scss */
+  /* line 4743, main.scss */
   .rsrUpdate ul li.upInfo {
     display: table-cell;
     width: 30%; }
     @media screen and (min-width: 960px) {
-      /* line 4558, main.scss */
+      /* line 4743, main.scss */
       .rsrUpdate ul li.upInfo {
         width: -webkit-calc(50% - 0.5em);
         width: calc(50% - 0.5em); } }
-  /* line 4565, main.scss */
+  /* line 4750, main.scss */
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
@@ -5067,19 +5277,19 @@ h1.akvopediaHelp {
     width: -webkit-calc(100% - 30% - 150px - 120px - 0.5em);
     width: calc(100% - 30% - 150px - 120px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4565, main.scss */
+      /* line 4750, main.scss */
       .rsrUpdate ul li.upTxt {
         display: block;
         margin: 0.2em auto;
         min-height: 100px;
         width: 100%; } }
 
-/* line 4579, main.scss */
+/* line 4764, main.scss */
 .rsrUpdate h2 {
   display: inline;
   font-size: 1.2em;
   text-align: left; }
-  /* line 4583, main.scss */
+  /* line 4768, main.scss */
   .rsrUpdate h2 a {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5090,47 +5300,47 @@ h1.akvopediaHelp {
     width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
-  /* line 4591, main.scss */
+  /* line 4776, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4594, main.scss */
+  /* line 4779, main.scss */
   .rsrUpdate ul li.upInfo {
     width: -webkit-calc(100% - 120px - 150px);
     width: calc(100% - 120px - 150px); } }
 @media screen and (max-width: 395px) {
-  /* line 4599, main.scss */
+  /* line 4784, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4602, main.scss */
+  /* line 4787, main.scss */
   .rsrUpdate ul li.upImag {
     display: none; }
 
-  /* line 4605, main.scss */
+  /* line 4790, main.scss */
   .rsrUpdate ul li.upInfo {
     width: -webkit-calc(100% - 120px);
     width: calc(100% - 120px); } }
-/* line 4609, main.scss */
+/* line 4794, main.scss */
 .rsrUpdate ul li.upInfo .authorTime {
   margin-left: 1.75em; }
   @media screen and (min-width: 960px) {
-    /* line 4609, main.scss */
+    /* line 4794, main.scss */
     .rsrUpdate ul li.upInfo .authorTime {
       margin-left: 0.25em; } }
 
-/* line 4615, main.scss */
+/* line 4800, main.scss */
 .authorTime em {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4615, main.scss */
+    /* line 4800, main.scss */
     .authorTime em {
       display: none; } }
 
-/* line 4624, main.scss */
+/* line 4809, main.scss */
 .authorTime time {
   color: #747474;
   display: inline;
@@ -5138,14 +5348,14 @@ h1.akvopediaHelp {
   margin: 0em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4624, main.scss */
+    /* line 4809, main.scss */
     .authorTime time {
       display: block;
       margin: 0em 0em 0em 0.25em;
       width: -webkit-calc(100% - 0.25em);
       width: calc(100% - 0.25em); } }
 
-/* line 4636, main.scss */
+/* line 4821, main.scss */
 .authorTime span.userName {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5156,16 +5366,16 @@ h1.akvopediaHelp {
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4636, main.scss */
+    /* line 4821, main.scss */
     .authorTime span.userName {
       display: inline;
       margin: 0em 0em 3px 0.25em; } }
 
-/* line 4648, main.scss */
+/* line 4833, main.scss */
 .orgAndPlace {
   display: none; }
 
-/* line 4651, main.scss */
+/* line 4836, main.scss */
 .orgAndPlace .org {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5178,12 +5388,12 @@ h1.akvopediaHelp {
   margin: 0.75em 0em 0.75em 1.75em;
   padding: 0.15em 1em 0.35em; }
   @media screen and (min-width: 960px) {
-    /* line 4651, main.scss */
+    /* line 4836, main.scss */
     .orgAndPlace .org {
       display: inline-block;
       margin: 0em 0em 0em 0.5em; } }
 
-/* line 4665, main.scss */
+/* line 4850, main.scss */
 .orgAndPlace .place {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5195,27 +5405,27 @@ h1.akvopediaHelp {
   padding: 0.25em 0em 0.25em 14px;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4665, main.scss */
+    /* line 4850, main.scss */
     .orgAndPlace .place {
       display: block;
       margin: 0em 0em 0em 0.35em; } }
 
 @media screen and (max-width: 768px) {
-  /* line 4679, main.scss */
+  /* line 4864, main.scss */
   .authorTime span.userName {
     margin: 0em; }
 
-  /* line 4682, main.scss */
+  /* line 4867, main.scss */
   .orgAndPlace .org {
     margin: 0.25em 0em 0em 1.75em; } }
-/* line 4686, main.scss */
+/* line 4871, main.scss */
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4692, main.scss */
+/* line 4877, main.scss */
 .rsrUpdate > span {
   -moz-border-radius: 0em 0em 0.5em;
   -o-border-radius: 0em 0em 0.5em;
@@ -5229,7 +5439,7 @@ h1.akvopediaHelp {
   padding: 0.15em 0.25em;
   top: 0px; }
 
-/* line 4705, main.scss */
+/* line 4890, main.scss */
 .rsrUpdate ul li.upTxt p {
   color: #202024;
   margin: 0em;
@@ -5239,18 +5449,18 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
-  /* line 4713, main.scss */
+  /* line 4898, main.scss */
   .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
     color: #202024; }
   @media screen and (min-width: 960px) {
-    /* line 4705, main.scss */
+    /* line 4890, main.scss */
     .rsrUpdate ul li.upTxt p {
       color: #202024;
       font-size: 0.9em;
       padding: 0.5em 2% 0em 2%;
       text-shadow: none; } }
 
-/* line 4723, main.scss */
+/* line 4908, main.scss */
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
   border: 2px solid #0c0c13;
@@ -5261,27 +5471,27 @@ h1.akvopediaHelp {
   position: relative; }
 
 @media screen and (max-width: 768px) {
-  /* line 4733, main.scss */
+  /* line 4918, main.scss */
   .rsrUpdate .imgWrap {
     padding: 0em; } }
-/* line 4737, main.scss */
+/* line 4922, main.scss */
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
   position: relative; }
 
-/* line 4742, main.scss */
+/* line 4927, main.scss */
 #rsrNetworkMap > h2 {
   text-align: center; }
 
 /***********************************
 						Price table
 ********************************************/
-/* line 4749, main.scss */
+/* line 4934, main.scss */
 .pricingList {
   margin: 3em auto; }
 
-/* line 4752, main.scss */
+/* line 4937, main.scss */
 .pricingList h5 {
   background: #202024;
   color: white;
@@ -5290,28 +5500,28 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/* line 4760, main.scss */
+/* line 4945, main.scss */
 .pricingList img {
   display: table;
   margin: 1em auto; }
 
-/* line 4764, main.scss */
+/* line 4949, main.scss */
 .pricingList p {
   display: block;
   margin: 1em auto; }
 
 @media screen and (max-width: 768px) {
-  /* line 4769, main.scss */
+  /* line 4954, main.scss */
   .pricingList img {
     float: left;
     margin: 0.5em 1em;
     max-width: 30%; }
 
-  /* line 4774, main.scss */
+  /* line 4959, main.scss */
   .pricingList p {
     display: block;
     margin: 1em auto; } }
-/* line 4779, main.scss */
+/* line 4964, main.scss */
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -5321,26 +5531,27 @@ h1.akvopediaHelp {
   position: relative;
   width: 25%; }
 
-/* line 4788, main.scss */
+/* line 4973, main.scss */
 .pricingList.fourColumns li:nth-child(2n) {
   background: none repeat scroll 0em 0em #eeeeee; }
 
 @media screen and (max-width: 768px) {
-  /* line 4792, main.scss */
+  /* line 4977, main.scss */
   .pricingList.fourColumns > li {
     float: none;
     margin: 30px auto;
     padding: 2%;
     width: 96%; }
 
-  /* line 4798, main.scss */
+  /* line 4983, main.scss */
   .pricingList.fourColumns li:nth-child(2n) {
     background: none; } }
-/* line 4802, main.scss */
+/* line 4987, main.scss */
 div[id^="inline-"] {
   display: none; }
 
-/* line 4805, main.scss */
+/* line 4990, main.scss */
 .qa-faq {
   margin-bottom: 30px; }
+
 /*# sourceMappingURL=main.css.map */

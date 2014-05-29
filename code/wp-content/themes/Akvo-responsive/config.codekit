@@ -29,15 +29,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/annualReports.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/annualReports.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/archive-new_partners.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -113,15 +104,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/flowhelpPage.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/footer.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/footer.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -2890,7 +2872,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 102738,
+		"initialSize": 60906,
 		"inputAbbreviatedPath": "\/images\/rsrEnglishManual.png",
 		"outputAbbreviatedPath": "\/images\/rsrEnglishManual.png",
 		"outputPathIsOutsideProject": 0,
@@ -2901,7 +2883,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 94794,
+		"initialSize": 81590,
 		"inputAbbreviatedPath": "\/images\/rsrFrenchManual.png",
 		"outputAbbreviatedPath": "\/images\/rsrFrenchManual.png",
 		"outputPathIsOutsideProject": 0,
@@ -2912,7 +2894,7 @@
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 95673,
+		"initialSize": 68803,
 		"inputAbbreviatedPath": "\/images\/rsrSpanishManual.png",
 		"outputAbbreviatedPath": "\/images\/rsrSpanishManual.png",
 		"outputPathIsOutsideProject": 0,
