@@ -203,7 +203,7 @@
     };
     window.onload = function (){googleMap.load()};
   </script>
-</section>
+  </section>
 </div>
 <!-- end content -->
 <?php get_footer(); ?>
