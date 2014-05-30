@@ -1,5 +1,6 @@
 # Files to ignore globally
 .DS_Store
+.sass-cache
 dwsync.xml
 *.codekit
 *.css.map
@@ -21,9 +22,7 @@ code/wp-content/plugins/global-admin-bar-hide-or-remove/error_log.txt
 code/wp-content/plugins/json-data/cache/*/data*
 code/wp-content/plugins/wp-piwik/update
 code/wp-content/upgrade
-code/wp-snapshots
 
 # Development related plug-ins
 code/wp-content/plugins/duplicator
-
-*.codekit
+code/wp-snapshots
