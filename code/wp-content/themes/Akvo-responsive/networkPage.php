@@ -110,7 +110,7 @@
     <li class="upInfo">
       <div class="authorTime floats-in">
         <time datetime="" class=""></time>
-        <em class="">by</em><span class="userName"> </span></div>
+        <em class="">by</em><span class="userName"></span></div>
       <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
     </li>
     <li class="upTxt">
