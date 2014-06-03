@@ -4870,11 +4870,13 @@ h1 {
     @include noWrapTxt;
     background: #3492b9;
     border-radius: 0.25em 1em 1em 0.25em;
-    color: rgb(255, 255, 255);
     display: inline-block;
     font-size: 0.8em;
     margin: 0.75em 0em 0.75em 1.75em;
     padding: 0.15em 1em 0.35em;
+	a{  
+	  color: rgb(255, 255, 255);
+		}
     @media screen and (min-width:960px) {
         display: inline-block;
         margin: 0em 0em 0em 0.5em;
@@ -4891,6 +4893,7 @@ h1 {
     @media screen and (min-width:960px) {
         display: block;
         margin: 0em 0em 0em 0.35em;
+    	width: 80%;
     }
 }
 @media screen and (max-width:768px) {

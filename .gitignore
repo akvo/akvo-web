@@ -26,3 +26,5 @@ code/wp-content/upgrade
 # Development related plug-ins
 code/wp-content/plugins/duplicator
 code/wp-snapshots
+
+*.codekit
