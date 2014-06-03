@@ -5410,18 +5410,20 @@ h1.akvopediaHelp {
   white-space: nowrap;
   background: #3492b9;
   border-radius: 0.25em 1em 1em 0.25em;
-  color: white;
   display: inline-block;
   font-size: 0.8em;
   margin: 0.75em 0em 0.75em 1.75em;
   padding: 0.15em 1em 0.35em; }
+  /* line 4877, main.scss */
+  .orgAndPlace .org a {
+    color: white; }
   @media screen and (min-width: 960px) {
     /* line 4869, main.scss */
     .orgAndPlace .org {
       display: inline-block;
       margin: 0em 0em 0em 0.5em; } }
 
-/* line 4883, main.scss */
+/* line 4885, main.scss */
 .orgAndPlace .place {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5433,27 +5435,28 @@ h1.akvopediaHelp {
   padding: 0.25em 0em 0.25em 14px;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4883, main.scss */
+    /* line 4885, main.scss */
     .orgAndPlace .place {
       display: block;
-      margin: 0em 0em 0em 0.35em; } }
+      margin: 0em 0em 0em 0.35em;
+      width: 80%; } }
 
 @media screen and (max-width: 768px) {
-  /* line 4897, main.scss */
+  /* line 4900, main.scss */
   .authorTime span.userName {
     margin: 0em; }
 
-  /* line 4900, main.scss */
+  /* line 4903, main.scss */
   .orgAndPlace .org {
     margin: 0.25em 0em 0em 1.75em; } }
-/* line 4904, main.scss */
+/* line 4907, main.scss */
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4910, main.scss */
+/* line 4913, main.scss */
 .rsrUpdate > span {
   -moz-border-radius: 0em 0em 0.5em;
   -o-border-radius: 0em 0em 0.5em;
@@ -5467,7 +5470,7 @@ h1.akvopediaHelp {
   padding: 0.15em 0.25em;
   top: 0px; }
 
-/* line 4923, main.scss */
+/* line 4926, main.scss */
 .rsrUpdate ul li.upTxt p {
   color: #202024;
   margin: 0em;
@@ -5477,18 +5480,18 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
-  /* line 4931, main.scss */
+  /* line 4934, main.scss */
   .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
     color: #202024; }
   @media screen and (min-width: 960px) {
-    /* line 4923, main.scss */
+    /* line 4926, main.scss */
     .rsrUpdate ul li.upTxt p {
       color: #202024;
       font-size: 0.9em;
       padding: 0.5em 2% 0em 2%;
       text-shadow: none; } }
 
-/* line 4941, main.scss */
+/* line 4944, main.scss */
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
   border: 2px solid #0c0c13;
@@ -5499,27 +5502,27 @@ h1.akvopediaHelp {
   position: relative; }
 
 @media screen and (max-width: 768px) {
-  /* line 4951, main.scss */
+  /* line 4954, main.scss */
   .rsrUpdate .imgWrap {
     padding: 0em; } }
-/* line 4955, main.scss */
+/* line 4958, main.scss */
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
   position: relative; }
 
-/* line 4960, main.scss */
+/* line 4963, main.scss */
 #rsrNetworkMap > h2 {
   text-align: center; }
 
 /***********************************
 						Price table
 ********************************************/
-/* line 4967, main.scss */
+/* line 4970, main.scss */
 .pricingList {
   margin: 3em auto; }
 
-/* line 4970, main.scss */
+/* line 4973, main.scss */
 .pricingList h5 {
   background: #202024;
   color: white;
@@ -5528,28 +5531,28 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/* line 4978, main.scss */
+/* line 4981, main.scss */
 .pricingList img {
   display: table;
   margin: 1em auto; }
 
-/* line 4982, main.scss */
+/* line 4985, main.scss */
 .pricingList p {
   display: block;
   margin: 1em auto; }
 
 @media screen and (max-width: 768px) {
-  /* line 4987, main.scss */
+  /* line 4990, main.scss */
   .pricingList img {
     float: left;
     margin: 0.5em 1em;
     max-width: 30%; }
 
-  /* line 4992, main.scss */
+  /* line 4995, main.scss */
   .pricingList p {
     display: block;
     margin: 1em auto; } }
-/* line 4997, main.scss */
+/* line 5000, main.scss */
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -5559,27 +5562,25 @@ h1.akvopediaHelp {
   position: relative;
   width: 25%; }
 
-/* line 5006, main.scss */
+/* line 5009, main.scss */
 .pricingList.fourColumns li:nth-child(2n) {
   background: none repeat scroll 0em 0em #eeeeee; }
 
 @media screen and (max-width: 768px) {
-  /* line 5010, main.scss */
+  /* line 5013, main.scss */
   .pricingList.fourColumns > li {
     float: none;
     margin: 30px auto;
     padding: 2%;
     width: 96%; }
 
-  /* line 5016, main.scss */
+  /* line 5019, main.scss */
   .pricingList.fourColumns li:nth-child(2n) {
     background: none; } }
-/* line 5020, main.scss */
+/* line 5023, main.scss */
 div[id^="inline-"] {
   display: none; }
 
-/* line 5023, main.scss */
+/* line 5026, main.scss */
 .qa-faq {
   margin-bottom: 30px; }
-
-/*# sourceMappingURL=main.css.map */
