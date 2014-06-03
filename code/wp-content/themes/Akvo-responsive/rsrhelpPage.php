@@ -19,9 +19,9 @@
       <li class="faqMenu"><a href="#" class="faqMenuHead">I’m having login problems. How can I register? I’ve forgotten my username and/or password.</a>
         <ul class="faqMenuList">
           <li>
-            <ul>
-              <li>Have you registered for a user account? If you haven't, you can register here.</li>
-              <li>If you forgot your username/password, you can reset your username and password. Tip: your username is not your email address.</li>
+            <ul style="list-style-type:disc; margin-left:10px;">
+              <li>Have you registered for a user account? If you haven't, you can <a href="http://rsr.akvo.org/accounts/register1/" style="display:inline;">register here</a></li>
+              <li>If you forgot your username/password, you can <a href="http://rsr.akvo.org/accounts/password/reset/" style="display:inline;">reset your username and password</a>. Tip: your username is not your email address.</li>
               <li>If you don't remember which email address you registered with, please contact support@akvo.org. Please don't register for a new user account.</li>
             </ul>
           </li>
@@ -31,8 +31,8 @@
         <ul class="faqMenuList">
           <li>
             <p> You have limited time to edit your update (around 15 minutes from the moment you submitted your update).</p>
-            <p> If you discover you made a typing mistake, or want to make changes in your update, click Edit update at the top of your screen to fix your mistake. The available time for editing your update is visible in yellow. </p>
-            <p> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to <a href="mailto://support@akvo.org" style="display:inline;">support@akvo.org</a></p>
+            <p> If you discover you made a typo, or want to make changes in your update, click Edit Update at the top of your screen to fix your mistake. The available time for editing your update is visible in yellow. </p>
+            <p> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to  <a href="mailto://support@akvo.org" style="display:inline;">support@akvo.org</a></p>
           </li>
         </ul>
       </li>
@@ -69,6 +69,7 @@
               subtitle (max. 75 characters). These fields are the newspaper
               headline for your project: use them to attract attention to what
               you are doing. Enter the status of your project.</p>
+              <a href="http://rsrhelp.akvo.org/kb/projects/add-a-project-online-via-rsr-admin">Read more ></a>
             <h3>Description</h3>
             <p>This section should contain in-depth information about your
               project that tell people more about the project. Enter a brief <em>project summary</em> (max. 400 characters). The summary should

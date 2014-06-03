@@ -19,12 +19,12 @@
 <ul class="vertMargin">
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I open the Field Survey app?</a>
   <ul class="faqMenuList">
-    <li>Click on Application. This will show all the apps installed on the phone in alphabetic order. Click on the Field Survey app to open it.<img src="<?php bloginfo('template_directory');?>/images/flowFAQ.png"/></li>
+    <li>Click on Application. This will show all the apps installed on the phone in alphabetical order. Click on the Field Survey app to open it.<img src="<?php bloginfo('template_directory');?>/images/flowFAQ.png" style='margin:1em auto; display:block;'/></li>
   </ul>
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I set the  device identifier?</a>
   <ul class="faqMenuList">
-    <li>Open the Field Survey app. Tap on Settings → Preferences → Devive Identifier. Fill in the Authorization passcode (provided by your Administrator) and then set the Device Identifier as directed.</li>
+    <li>Open the Field Survey app. Tap on Settings → Preferences → Device Identifier. Fill in the Authorization passcode (provided by your Administrator) and then set the Device Identifier as directed.</li>
   </ul>
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I add a user?</a>
@@ -40,7 +40,7 @@
 <li class="faqMenu"><a href="#" class="faqMenuHead">What do I do if the survey is not downloaded?</a>
   <ul class="faqMenuList">
     <li>
-      <ul style="">
+      <ul style="list-style-type:disc; margin-left:10px;">
         <li>Check that you are connected to an internet network</li>
         <li>Check that you are entering the correct Survey ID</li>
         <li>Check for a notification that the survey is unpublished</li>
@@ -51,7 +51,7 @@
 <li class="faqMenu"><a href="#" class="faqMenuHead">I’m not getting a GPS fix. What should i do?</a>
   <ul class="faqMenuList">
     <li>
-      <ul style="">
+      <ul style="list-style-type:disc; margin-left:10px;">
         <li>Ensure that the GPS is turned on</li>
         <li>Ensure that you are in an open area and NOT inside a building</li>
         <li>Open the GPS Status app</li>
@@ -64,7 +64,7 @@
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I turn on translations for the survey (when available)?</a>
   <ul class="faqMenuList">
-    <li>Tap on the survey and then tap on the Menu button. Tap on Languages in the bottom panel, which will open up the Survey Languages popup. Select the checkbox next to the language that you want the survey to be displayed in. Tap OK.</li>
+    <li>Tap on the survey and then tap on the Menu button. Tap on Languages in the bottom panel, which will open up the Survey Languages popup. Select the checkbox next to the required survey language you want the survey to be displayed in. Tap OK.</li>
   </ul>
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">How do I ensure that my surveys have been properly submitted to the dashboard?</a>
@@ -96,17 +96,18 @@
 <hr class="delicate" />
 <section class="wrapper">
   <h2>Manuals</h2>
-  The Akvo FLOW documentation - <a href="http://flow.readthedocs.org/en/latest/index.html#">Akvo FLOW doc</a> gives you online access to information on how product features work. You can read about the FLOW phone field app - <a href="http://flow.readthedocs.org/en/latest/docs/topic/field_survey_app.html">Akvo FLOW android app (Read the docs)</a> or learn how to work with the Dashboard - <a href="http://flow.readthedocs.org/en/latest/docs/topic/dashboard.html">Akvo FLOW dashboard (Read the docs)</a>.
+  <p style="margin-top:2em;">The Akvo FLOW documentation - <a href="http://flow.readthedocs.org/en/latest/index.html#">Akvo FLOW doc</a> gives you online access to information on how product features work. You can read about the FLOW phone field app - <a href="http://flow.readthedocs.org/en/latest/docs/topic/field_survey_app.html">Akvo FLOW android app (Read the docs)</a> or learn how to work with the Dashboard - <a href="http://flow.readthedocs.org/en/latest/docs/topic/dashboard.html">Akvo FLOW dashboard (Read the docs)</a>.</p>
   
     <ul class="threeColumns vertMargin floats-in">
-      <li class="englishEnumManual"><a href="https://www.dropbox.com/s/4ha28qwn79aw08z/Quick%20start%20guide%20-%20Enumerators-Aug2013.pdf"><span>Quick start guide - Enumerators</span></a></li>
-      <li class="frenchEnumManual"><a href="https://www.dropbox.com/s/4djs7m2t8kqbev5/Quick%20start%20guide%20-%20Enumerators-kvdb_FR.pdf"><span>Guide de prise en main – Recenseurs</span></a></li>
-      <li class="spanishEnumManual"><a href="https://www.dropbox.com/s/kcn1e00gzpsbxab/Quick%20start%20guide%20-%20Enumerators-kvdb-spanish.pdf"><span>Guía de inicio rápido – Encuestadores</span></a></li>
-      <li class="englishStartManual"><a href="https://www.dropbox.com/s/48cuyjw8o5vc9gk/Quick%20start%20guide%20Setup%20Akvo%20FLOW-Aug2013.pdf"><span>Quick start guide to setting up surveys in Akvo FLOW</span></a></li>
-      <li class="frenchStartManual"><a href="https://www.dropbox.com/s/xd1tlczu4e0g5t2/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb_FR.pdf"><span>Guide de prise en main – configuration d’Akvo FLOW</span></a></li>
-      <li class="spanishStartManual"><a href="https://www.dropbox.com/s/5tq2eu3okmxou9x/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb-spanish.pdf"><span>Guía de inicio rápido – configuración de Akvo FLOW</span></a></li>
+      <li class="englishEnumManual"><a href="https://www.dropbox.com/s/4ha28qwn79aw08z/Quick%20start%20guide%20-%20Enumerators-Aug2013.pdf"></a></li>
+      <li class="frenchEnumManual"><a href="https://www.dropbox.com/s/4djs7m2t8kqbev5/Quick%20start%20guide%20-%20Enumerators-kvdb_FR.pdf"></a></li>
+      <li class="spanishEnumManual"><a href="https://www.dropbox.com/s/kcn1e00gzpsbxab/Quick%20start%20guide%20-%20Enumerators-kvdb-spanish.pdf"></a></li>
+      <li class="englishStartManual"><a href="https://www.dropbox.com/s/48cuyjw8o5vc9gk/Quick%20start%20guide%20Setup%20Akvo%20FLOW-Aug2013.pdf"></a></li>
+      <li class="frenchStartManual"><a href="https://www.dropbox.com/s/xd1tlczu4e0g5t2/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb_FR.pdf"></a></li>
+      <li class="spanishStartManual"><a href="https://www.dropbox.com/s/5tq2eu3okmxou9x/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb-spanish.pdf"></a></li>
     </ul>
   <hr class="delicate" />
+  <p>If you need further help contact us at <a href="mailto:support@akvoflow.org">support@akvoflow.org</a></p>
 </section>
 </div>
 
