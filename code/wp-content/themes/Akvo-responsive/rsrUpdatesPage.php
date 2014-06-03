@@ -14,7 +14,7 @@
   <div class="fullWidthParag wrapper"><?php the_content(); ?></div>
 
   <?php endwhile; // end of the loop. ?>
-  <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
+  <li id="updateTemplate" class="rsrUpdate" style="display: none;"><span>RSR Update</span>
     <h2><a></a></h2>
     <ul class="floats-in">
       <li class="upImag">
@@ -23,7 +23,7 @@
       <li class="upInfo">
         <div class="authorTime floats-in">
           <time datetime="" class=""></time>
-          <em class="">by</em><span class="userName"> </span></div>
+          <em class="">by</em><span class="userName"></span></div>
         <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
       </li>
       <li class="upTxt">
