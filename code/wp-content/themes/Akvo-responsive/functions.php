@@ -188,7 +188,7 @@ add_filter('show_admin_bar', '__return_false');
 
 // JSON plugin support
 
-function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country, $text)
+function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country_and_city, $text)
 { ?>
   <li id="updateTemplate" class="rsrUpdate">
     <span>RSR Update</span>
@@ -209,7 +209,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
         </div>
         <div class="orgAndPlace">
           <span class="org"><a href="<?= $rsr_domain ?><?= $organisationUrl ?>"><?= $organisation ?></a></span>
-          <span class="place"><?= $country ?></span>
+          <span class="place"><?= $country_and_city ?></span>
         </div>
       </li>
       <li class="upTxt">

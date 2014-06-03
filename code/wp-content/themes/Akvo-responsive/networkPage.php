@@ -129,7 +129,7 @@
     </ul>
   </nav>
   <ul id="updatesWrapperJS" class="floats-in wrapper">
-    <?php do_shortcode('[jsondata_feed slug="rsr-updates" format="json"]'); ?>
+    <?php do_shortcode('[jsondata_feed slug="rsr-updates" limit="3" photo__gte="a"]'); ?>
   </ul>
 </section>
 
