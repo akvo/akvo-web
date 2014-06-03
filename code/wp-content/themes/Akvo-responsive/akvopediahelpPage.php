@@ -37,7 +37,7 @@ However, links to more academic articles are okay, if they are not too jargon he
 </li>
 <li class="faqMenu"><a href="#" class="faqMenuHead">What if I disagree with the content on Akvopedia?</a>
   <ul class="faqMenuList">
-    <li>If you feel the material posted on Akvopedia is outdated or conflicting with information you have, you can always post your views in the “Discussion” tab of each Akvopedia page. Although our discussion tabs are not used often, that is a good place to start as it will make your information seen by the public without you having to know anything about editing an Akvopedia page. You may also contact Winona Azure, the editor at winona[at]akvo.org, to offer new content or updated materials to any page, if it takes less than a half day to post. We get this request sometimes, and appreciate the efforts people take to keep information accurate and current! We find that costs for WASH projects or services, especially, change over time and we welcome new updates for this. </li>
+    <li>If you think the material posted on Akvopedia is outdated or conflicting with information you have, just like Wikipedia you have the power to make edits yourself. If you're less comfortable doing so, a good place to start is to post your views in the "Discussion" tab on the relevant Akvopedia page. If you aren't comfortable editing the wiki or adding discussion points, you can also contact Winona Azure, the editor at winona[at]akvo.org, to offer new content or updated materials to any page. We get this request sometimes, and appreciate the efforts people take to keep information accurate and current! We find that costs for WASH projects or services, especially, change over time and we welcome new updates on these.</li>
   </ul>
 </li>
 
