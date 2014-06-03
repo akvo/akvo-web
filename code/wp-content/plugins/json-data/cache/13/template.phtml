@@ -1,0 +1,14 @@
+<ul class="rsrData dashData">
+  <li>
+    <h4>Projects:</h4>
+    <span ><?= $aData['number_of_projects']?></span> </li>
+  <li>
+    <h4>Number of updates:</h4>
+    <span ><?php do_shortcode('[jsondata_feed slug="rsr-update-count"]'); ?></span> </li>
+  <li>
+    <h4>Organisations Using RSR:</h4>
+    <span id=""><?= $aData['number_of_organisations']?></span> </li>
+  <li>
+    <h4>Project Budgets:</h4>
+    <span id="">€ <?= $aData['projects_budget_millions']?><span class="unit">million</span></span></li>
+</ul>

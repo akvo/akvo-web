@@ -1,7 +1,7 @@
 
 <?php
 /*
-* Template for the "OpenAid orgs" plugin used on networkPage.php
+* Template for the "Akvopedia analytics" plugin used on networkPage.php
 * Feed name: Akvopedia analytics
 * Slug: akvopedia-analytics
 * JSON feed URL: http://analytics.akvo.org/index.php?module=API&method=API.get&idSite=9&period=range&date=2013-04-01,today&format=json&token_auth=1d1b520b11bea9a3b525b99531ec171a
