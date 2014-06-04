@@ -118,7 +118,7 @@
           </li>
         </ul>
       </li>
-      <li class="faqMenu"><a href="#" class="faqMenuHead">How do i check that enough memory is available on my phone to do surveys?</a>
+      <li class="faqMenu"><a href="#" class="faqMenuHead">How do I check that enough memory is available on my phone to do surveys?</a>
         <ul class="faqMenuList">
         
         

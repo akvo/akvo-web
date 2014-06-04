@@ -4585,6 +4585,8 @@ h1.akvopediaHelp {
   padding: 0.15em 1em 0.35em; }
   .orgAndPlace .org a {
     color: white; }
+    .orgAndPlace .org a:hover {
+      color: #de8929; }
   @media screen and (min-width: 960px) {
     .orgAndPlace .org {
       display: inline-block;
