@@ -19,6 +19,7 @@ code/wp-content/uploads
 # Temporary files & directories
 code/wp-content/cache
 code/wp-content/plugins/global-admin-bar-hide-or-remove/error_log.txt
+code/wp-content/plugins/json-data/cache/data*
 code/wp-content/plugins/json-data/cache/*/data*
 code/wp-content/plugins/json-data/cache/*/style*
 code/wp-content/plugins/wp-piwik/update
