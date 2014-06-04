@@ -185,4 +185,43 @@ function post_type_pagesize( $query ) {
 }
 add_action( 'pre_get_posts', 'post_type_pagesize', 1);
 add_filter('show_admin_bar', '__return_false');
+
+// JSON plugin support
+
+function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country_and_city, $text)
+{ ?>
+  <li id="updateTemplate" class="rsrUpdate">
+    <span>RSR Update</span>
+    <h2>
+      <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><?= $title ?></a>
+    </h2>
+    <ul class="floats-in">
+      <li class="upImag">
+        <div class="imgWrap">
+          <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= $rsr_domain ?><?= $imgSrc ?>"/></a>
+        </div>
+      </li>
+      <li class="upInfo">
+        <div class="authorTime floats-in">
+          <time datetime="" class=""><?= $createdAt ?></time>
+          <em class="">by</em>
+          <span class="userName">&nbsp;<?= $userName ?></span>
+        </div>
+        <div class="orgAndPlace">
+          <span class="org"><a href="<?= $rsr_domain ?><?= $organisationUrl ?>"><?= $organisation ?></a></span>
+          <span class="place"><?= $country_and_city ?></span>
+        </div>
+      </li>
+      <li class="upTxt">
+        <p><?= $text ?></p>
+      </li>
+      <li class="upMore">
+        <a href="<?= $rsr_domain ?><?= $updateUrl ?>" class="">
+          <span>Read more ></span>
+        </a>
+      </li>
+    </ul>
+  </li>
+<?php
+}
 ?>

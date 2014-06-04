@@ -1,12 +1,15 @@
 # Files to ignore globally
 .DS_Store
+.sass-cache
 dwsync.xml
+*.css.map
 *.scssc
 
 # Configurable files
 code/nginx.conf
 code/php5.ini
 code/robots.txt
+code/sitemap.xml
 code/wp-config*
 
 # Media
@@ -15,12 +18,12 @@ code/wp-content/uploads
 # Temporary files & directories
 code/wp-content/cache
 code/wp-content/plugins/global-admin-bar-hide-or-remove/error_log.txt
-code/wp-content/plugins/json-data/cache
+code/wp-content/plugins/json-data/cache/data*
+code/wp-content/plugins/json-data/cache/*/data*
+code/wp-content/plugins/json-data/cache/*/style*
 code/wp-content/plugins/wp-piwik/update
 code/wp-content/upgrade
-code/wp-snapshots
 
 # Development related plug-ins
 code/wp-content/plugins/duplicator
-
-*.codekit
+code/wp-snapshots

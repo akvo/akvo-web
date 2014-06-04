@@ -1,11 +1,11 @@
 /*---------------------------------------------------------------------------------
- 
+
 		Title:          Akvo.org Styles for Desktop, mobile, tablet
 		Author:         Loic Sans, loic@akvo.org
-	
+
 ---------------------------------------------------------------------------------*/
 
-/* Colours 
+/* Colours
 ---------------------------------------------------------------------------------*/
 
 /* Akvo Primary Colours:    */
@@ -312,6 +312,11 @@ h6 img {
     padding: 0em 0em 0px 0px;
     position: relative;
     text-shadow: none;
+    /* text-overflow:     ellipsis;
+
+                	white-space:     nowrap;
+                	overflow:     hidden;
+                */
 }
 .backLined {
     margin: 0.75em auto;
@@ -400,7 +405,7 @@ p {
 a img {
     border: none;
 }
-/* self-clear floats 
+/* self-clear floats
 	I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
 */
 .floats-in:after {
@@ -509,7 +514,7 @@ iframe {
 .loadMore:hover {
     color: rgb(255, 255, 255);
 }
-/* links 
+/* links
 ---------------------------------------------------------------*/
 a:link,
 a:visited {
@@ -1421,7 +1426,7 @@ div.headerWrap {
     color: rgb(255, 255, 255);
 }
 /* ---------------------------------------------
-			Top navigation styles 
+			Top navigation styles
 --------------------------------------------- */
 #navbar {
     display: none;
@@ -1691,7 +1696,7 @@ nav#n ul li:last-child {
         text-decoration: none;
     }
 }
-/*-----------------------------------	
+/*-----------------------------------
 	Top Header Search input
 ------------------------------------*/
 input[type="search"] {
@@ -1940,35 +1945,32 @@ body.home h1.akvoDescr {
         width: 100%;
     }
 }
-#actionHeroBox h1 {
-    display: block;
-    font-family: 'Raleway', sans-serif;
-    font-size: 1.5em;
-    font-weight: 700;
-    position: relative;
-    /* color:     rgba(80,48,27,1);
-                	text-shadow:     0.05em 0.05em 0 rgba(255, 155, 99, 1);
-                */
-    margin: 10px 10px 0em 0em;
+#actionHeroBox {
+		h1 {
+			display: block;
+			font-family: 'Raleway', sans-serif;
+			font-size: 1.5em;
+			font-weight: 700;
+			position: relative;
+			margin: 10px 10px 0em 0em;
+		}
+		h2 {
+			display: block;
+			font-size: 1.2em;
+			margin: 0em 10px 5px 0em;
+		}
 }
 @media screen and (max-width:768px) {
-    #actionHeroBox h1 {
-        display: block;
-        font-size: 1.8em;
-        text-align: center;
-    }
-}
-#actionHeroBox h2 {
-    display: block;
-    font-size: 1.2em;
-    margin: 0em 10px 5px 0em;
-}
-@media screen and (max-width:768px) {
-    #actionHeroBox h2 {
-        display: block;
-        font-size: 1.4em;
-        text-align: center;
-    }
+    #actionHeroBox {
+		 h1 {
+			font-size: 1.8em;
+			text-align: center;
+		}
+    	h2 {
+			font-size: 1.4em;
+			text-align: center;
+    	}
+	}
 }
 #actionHeroBox h2,
 #actionHeroBox h1,
@@ -2158,19 +2160,19 @@ body.home h1.akvoDescr {
     color: rgb(191, 131, 185);
 }
 #rsrBucket h1 {
-    background: url("../images/rsr-logo-40px.png") center top no-repeat;    
+    background: url("../images/rsr-logo-40px.png") center top no-repeat;
 	background-size: 85%;
 }
 #flowBucket h1 {
-    background: url("../images/flow-logo-40px.png") center top no-repeat;    
+    background: url("../images/flow-logo-40px.png") center top no-repeat;
 	background-size: 85%;
 }
 #openaidBucket h1 {
-    background: url("../images/openaid-logo-40px.png") center top no-repeat;   
+    background: url("../images/openaid-logo-40px.png") center top no-repeat;
 	background-size: 85%;
 }
 #akvopedia h1 {
-    background: url("../images/akvopedia-logo-40px.png") center top no-repeat;    
+    background: url("../images/akvopedia-logo-40px.png") center top no-repeat;
 	background-size: 85%;
 }
 /*************************************************************
@@ -2203,10 +2205,10 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
     margin: 5px 0em 5px 30px;
 }
-ul.faqMenuList li {
+ul.faqMenuList > li {
     background: rgb(248, 248, 248);
     margin: 0em 0em 2px 0px;
-    padding: 5px 0em 5px 10px;
+    padding: 25px 0em 25px 10px;
 }
 @media screen and (max-width:768px) {
     ul.faqMenuList {
@@ -2220,7 +2222,7 @@ ul.faqMenuList li {
         background: rgb(248, 248, 248);
         margin: 0em 0em 2px 0px;
 		padding: 20px 5%;
-		width: 90%;    
+		width: 90%;
 		}
 }
 ul.faqMenuList li:first-child {
@@ -2232,6 +2234,10 @@ ul.faqMenuList li:hover {
 ul.faqMenuList li a {
     display: block;
 }
+ul.faqMenuList h3 {
+	margin-top:1em;
+}
+
 .answers h4 {
     font-weight: bold;
 }
@@ -2988,7 +2994,7 @@ footer.bottomPage section#siteMap h3 {
     footer.bottomPage section#siteMap h3 {
         font-size: 2em;
         margin: 25px auto 10px auto;
-		
+
     }
 }
 footer.bottomPage section#siteMap h3:nth-of-type(2n) {
@@ -4109,9 +4115,15 @@ ul.staff li:nth-child(6n) {
 @media screen and (max-width:768px) {
 .helpSupport nav ul li, .helpSupport nav ul li:first-child {margin-bottom:20px !important;}
 }
+.helpSupport nav ul li.bgDeco {
+    min-height:320px;
+}
+.helpSupport nav ul li p {
+    color:$akvoPurple;
+}
 .helpSupport nav ul li a {
     display: block;
-    height: 100px;
+    height: 70px;
     transition: all 0.2s ease-in;
     &.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
@@ -4122,7 +4134,7 @@ ul.staff li:nth-child(6n) {
             }
     }
     &.flowHelp {
-        background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);        
+        background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
 		background-size: 56% auto;
         text-indent: -9999px;
 		@media screen and (max-width:768px) {
@@ -4130,7 +4142,7 @@ ul.staff li:nth-child(6n) {
             }
     }
     &.akvopediaHelp {
-        background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);       
+        background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
 		 background-size: 65% auto;
         text-indent: -9999px;
 		@media screen and (max-width:768px) {
@@ -4138,20 +4150,44 @@ ul.staff li:nth-child(6n) {
             }
     }
     &.moreHelp {
-        background: url("../images/readMoreBig.svg") center center no-repeat;
         color: $flowOrange;
-        background-size: 120px 120px;
         display: block;
+        width: 120px;
         height: 120px;
         margin: 20px auto;
-        opacity: 0.1;
+		opacity:0.5;
         position: relative;
         text-align: center;
-        text-indent: none !important;
-        width: 120px;
-		@media screen and (max-width:768px) {
-                opacity:1;
-            }
+        text-indent:-9999px;
+		&.rsrH {
+					background:url("../images/help_RSR_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+		&.flowH {
+					background: url("../images/help_FLOW_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+		&.pediaH {
+					background: url("../images/help_pedia_icn.png") center center no-repeat;
+					background-size:80% 80%;
+					}
+	}
+}
+h1 {
+	&.rsrHelp {
+        background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: 175px auto;
+        text-indent: -9999px;
+    }
+    &.flowHelp {
+        background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+		background-size: 185px auto;
+        text-indent: -9999px;
+    }
+    &.akvopediaHelp {
+        background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+		 background-size: 195px auto;
+        text-indent: -9999px;
     }
 }
 .helpSupport nav ul li:hover a {
@@ -4169,7 +4205,7 @@ ul.staff li:nth-child(6n) {
     }
 }
 .helpSupport h2,
-.rsrHelpSupport h2 {
+.rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
     text-align: left !important;
 }
 .englishManual {
@@ -4302,6 +4338,191 @@ ul.staff li:nth-child(6n) {
         }
     }
 }
+.playStore {
+    min-height: 220px;
+    a {
+        background: url("../images/Google_Play_Store_96.png") left top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center !important;
+            }
+        }
+    }
+}
+
+.englishEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.frenchEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.spanishEnumManual {
+    min-height: 220px;
+    a {
+        background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 220px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+
+.englishStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.frenchStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+.spanishStartManual {
+    min-height: 240px;
+    a {
+        background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
+        background-size: 141px auto;
+        display: block;
+        height: 240px;
+        padding: 0em;
+        position: relative;
+        width: 100%;
+        @media screen and (max-width:768px) {
+            background-position: center top;
+        }
+        span {
+            bottom: 0em;
+            display: block;
+            margin: 20px 0em 0em 10px;
+            position: absolute;
+            text-align: left;
+            width: 100%;
+            @media screen and (max-width:768px) {
+                text-align: center;
+            }
+        }
+    }
+}
+
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
@@ -4645,18 +4866,20 @@ ul.staff li:nth-child(6n) {
         margin: 0em 0em 3px 0.25em;
     }
 }
-.orgAndPlace {
-	display:none;
-	}
 .orgAndPlace .org {
     @include noWrapTxt;
     background: #3492b9;
     border-radius: 0.25em 1em 1em 0.25em;
-    color: rgb(255, 255, 255);
     display: inline-block;
     font-size: 0.8em;
     margin: 0.75em 0em 0.75em 1.75em;
     padding: 0.15em 1em 0.35em;
+	a {  
+	   color: rgb(255, 255, 255);
+	   &:hover {
+		   color: $flowOrange;
+	  }
+	} 
     @media screen and (min-width:960px) {
         display: inline-block;
         margin: 0em 0em 0em 0.5em;
@@ -4673,6 +4896,7 @@ ul.staff li:nth-child(6n) {
     @media screen and (min-width:960px) {
         display: block;
         margin: 0em 0em 0em 0.35em;
+    	width: 80%;
     }
 }
 @media screen and (max-width:768px) {
