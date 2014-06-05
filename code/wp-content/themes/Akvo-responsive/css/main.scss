@@ -699,6 +699,26 @@ div.centerED > p,
 /*==========================================================================
 								   Forms
 ========================================================================== */
+
+@mixin placeholder-color($color){
+  &.placeholder{
+    color: $color;
+  }
+
+  &:-moz-placeholder{
+    color: $color;
+  }
+    
+  &::-webkit-input-placeholder{
+    color: $color;
+  }
+
+  &:-ms-input-placeholder{
+    color: $color;
+  }
+}
+
+
 form {
     margin: 0em;
     padding: 0em;
@@ -709,6 +729,7 @@ button,
 select {
     color: rgb(142, 142, 142);
     font-weight: normal;
+	@include placeholder-color(rgb(149, 148, 185));
 }
 input,
 textarea {
@@ -816,6 +837,9 @@ input::-moz-focus-inner {
     border: 0em;
     padding: 0em;
 }
+
+/* Placeholder
+  ========================================================================== */
 -webkit-input-placeholder {
     color: rgb(149, 148, 185);
     font-size: 1em;
