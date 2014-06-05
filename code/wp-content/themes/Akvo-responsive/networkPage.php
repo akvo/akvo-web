@@ -91,24 +91,6 @@
          class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
     </ul>
   </section>
-  <li id="updateTemplate" class="rsrUpdate" style="display: none;"> <span>RSR Update</span>
-    <h2><a></a></h2>
-    <ul class="floats-in">
-      <li class="upImag">
-        <div class="imgWrap"><a><img src=""/></a></div>
-      </li>
-      <li class="upInfo">
-        <div class="authorTime floats-in">
-          <time datetime="" class=""></time>
-          <em class="">by</em><span class="userName"></span></div>
-        <div class="orgAndPlace"><span class="org">Organisation</span><span class="place">Town, Country</span></div>
-      </li>
-      <li class="upTxt">
-        <p></p>
-      </li>
-      <li class="upMore"><a href="" class=""><span>Read more ></span></a></li>
-    </ul>
-  </li>
   <section id="rsrProjectUpdates">
     <h2>RSR: Latest project updates</h2>
     <nav class="anchorNav2 wrapper">
