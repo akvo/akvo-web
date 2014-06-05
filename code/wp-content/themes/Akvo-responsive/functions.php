@@ -204,8 +204,8 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
       <li class="upInfo">
         <div class="authorTime floats-in">
           <time datetime="" class=""><?= $createdAt ?></time>
-          <em class="">by</em>
-          <span class="userName">&nbsp;<?= $userName ?></span>
+          <em class="">by&nbsp;</em>
+          <span class="userName"><?= $userName ?></span>
         </div>
         <div class="orgAndPlace">
           <span class="org"><a href="<?= $rsr_domain ?><?= $organisationUrl ?>"><?= $organisation ?></a></span>

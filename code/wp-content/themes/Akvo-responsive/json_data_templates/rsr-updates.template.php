@@ -12,7 +12,8 @@
   $rsr_domain = "http://rsr.akvo.org";
   foreach($updates AS $count => $u) {
     if ($u['photo'] != '') {
-      $date = explode('T', $u['time_last_updated'])[0];
+      $date = explode('T', $u['time_last_updated']);
+      $date = $date[0];
       $full_name = $u['user']['first_name'] . " " . $u['user']['last_name'];
       $country_and_city = $u['project']['primary_location']['country']['name'];
       if ($u['project']['primary_location']['city'])
