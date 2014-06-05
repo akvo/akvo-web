@@ -4,7 +4,7 @@
 		Author:         Loic Sans, loic@akvo.org
 
 ---------------------------------------------------------------------------------*/
-/* Colours
+						/* Colours
 ---------------------------------------------------------------------------------*/
 /* Akvo Primary Colours:    */
 /* Akvo Purplish Blue */
@@ -158,10 +158,10 @@ img {
   max-width: 100%; }
 
 a {
-  -moz-transition: color 0.2s linear;
-  -webkit-transition: color 0.2s linear;
   color: #5d9de5;
   text-decoration: none;
+  -moz-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
   -webkit-transition: color 0.2s linear;
   transition: color 0.2s linear; }
 
@@ -372,9 +372,10 @@ hr.delicate {
   /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* IE10+ */
-  background: -webkit-radial-gradient(center, ellipse, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* W3C */
   border: 0em none;
@@ -390,9 +391,10 @@ hr.delicateSmall {
   /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* IE10+ */
-  background: -webkit-radial-gradient(center, ellipse, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* W3C */
   border: 0em none;
@@ -413,6 +415,7 @@ hr.delicateSmall {
 
 .editlink a,
 .gatewayLink {
+  -moz-box-shadow: 0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25);
   -o-box-shadow: 0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25);
   box-shadow: 0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25);
@@ -420,7 +423,9 @@ hr.delicateSmall {
   display: table;
   margin: 1em 0em 0em;
   padding: 0.25em 0.5em;
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em; }
 
 .editlink a:hover,
@@ -453,7 +458,9 @@ iframe {
   margin: 1em auto 2em auto !important;
   padding: 0.5em 1em;
   position: relative;
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em; }
 
 .loadMore:hover {
@@ -466,12 +473,11 @@ a:visited {
   -moz-transition: color 0.2s linear;
   -o-transition: color 0.2s linear;
   -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
   color: #3792b3;
   font-weight: normal;
   outline: none;
-  text-decoration: none;
-  -webkit-transition: color 0.2s linear;
-  transition: color 0.2s linear; }
+  text-decoration: none; }
 
 a:hover {
   color: #de8929; }
@@ -510,9 +516,13 @@ footer a:visited {
 /* nav toggle
 --------------------------------------------- */
 nav li {
+  -moz-transition: background-color 0.4s linear;
+  -o-transition: background-color 0.4s linear;
   -webkit-transition: background-color 0.4s linear;
   transition: background-color 0.4s linear; }
   nav li a {
+    -moz-transition: background-color 0.4s linear;
+    -o-transition: background-color 0.4s linear;
     -webkit-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear; }
 
@@ -608,7 +618,9 @@ div.centerED > p,
   font-weight: bold; }
 
 .bgDeco {
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
   background: #f8f8f8;
   min-height: 150px;
@@ -630,7 +642,9 @@ div.centerED > p,
   .bgDeco {
     min-height: 240px; } }
 .bgDecoB {
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
   background: #f8f8f8;
   min-height: 210px;
@@ -655,11 +669,12 @@ textarea {
   -moz-box-shadow: 0em 1px 2px #f2f0e6 inset;
   -o-box-shadow: 0em 1px 2px #f2f0e6 inset;
   -webkit-box-shadow: 0em 1px 2px #f2f0e6 inset;
+  box-shadow: 0em 1px 2px #f2f0e6 inset;
   background: #f2f0e6;
   border: 1px solid #f2f0e6;
-  -webkit-box-shadow: 0em 1px 2px #f2f0e6 inset;
-  box-shadow: 0em 1px 2px #f2f0e6 inset;
+  -moz-border-radius: 0.15em;
   -o-border-radius: 0.15em;
+  -webkit-border-radius: 0.15em;
   border-radius: 0.15em; }
 
 textarea {
@@ -672,20 +687,18 @@ textarea:hover {
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
   background: #e0e0e0;
-  border: 1px solid #2c2a74;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border: 1px solid #2c2a74; }
 
 input:focus,
 textarea:focus {
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
   background: #f5ffd8;
-  border: 1px solid #f5ffd8;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border: 1px solid #f5ffd8; }
 
 fieldset {
   border: 0em;
@@ -739,8 +752,8 @@ input[disabled] {
  */
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -wekit-box-sizing: border-box;
   box-sizing: border-box;
   height: 13px;
   padding: 0em;
@@ -748,37 +761,32 @@ input[type="radio"] {
 
 input[type="search"] {
   -moz-box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
-  -moz-box-sizing: content-box;
   -o-box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
-  -webkit-appearance: textfield;
-  -webkit-box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
-  -webkit-box-sizing: content-box;
-  background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
-  border: 1px solid black;
   -webkit-box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
   box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  -wekit-box-sizing: content-box;
   box-sizing: content-box;
+  -webkit-appearance: textfield;
+  background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
+  border: 1px solid black;
   padding: 2px 25px 2px 6px; }
 
 input[type="search"]:hover {
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
   background: #f4f4f4 url("../images/search-icon.png") no-repeat center right;
-  border: 1px solid #72cdff;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border: 1px solid #72cdff; }
 
 input[type="search"]:focus {
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
   background: #f4f4f4 url("../images/search-icon.png") no-repeat center right;
-  border: 1px solid #eaeaf1;
-  -webkit-box-shadow: none;
-  box-shadow: none; }
+  border: 1px solid #eaeaf1; }
 
 button::-moz-focus-inner,
 input::-moz-focus-inner {
@@ -797,14 +805,15 @@ input[type="submit"] {
   -moz-box-shadow: none;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
+  box-shadow: none;
   background: #0067a7;
   border: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
   color: white;
   padding: 7px 10px;
   text-transform: uppercase;
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em; }
 
 /*---------------------------------------------
@@ -824,11 +833,12 @@ input[type="submit"] {
     right: inherit;
     width: 98%; } }
 #back-top a {
-  -moz-text-shadow: 0em 1px whitesmoke;
+  -moz-box-shadow: 0em 1px whitesmoke;
+  -o-box-shadow: 0em 1px whitesmoke;
+  -webkit-box-shadow: 0em 1px whitesmoke;
+  box-shadow: 0em 1px whitesmoke;
   -moz-transition: 1s;
-  -o-text-shadow: 0em 1px whitesmoke;
   -o-transition: 1s;
-  -webkit-text-shadow: 0em 1px whitesmoke;
   -webkit-transition: 1s;
   color: #202024;
   display: block;
@@ -836,9 +846,7 @@ input[type="submit"] {
   font-size: 0.71em;
   text-align: center;
   text-decoration: none;
-  text-shadow: 0em 1px whitesmoke;
   text-transform: uppercase;
-  -webkit-transition: 1s;
   transition: 1s;
   width: 80px; }
 
@@ -854,36 +862,38 @@ input[type="submit"] {
 
 #back-top span {
   -moz-box-shadow: 1px 1px 0em white;
-  -moz-transition: 1s;
   -o-box-shadow: 1px 1px 0em white;
-  -o-transition: 1s;
-  -webkit-box-shadow: 1px 1px 0em white;
-  -webkit-transition: 1s;
-  background: #202024 url("../images/up-arrow.png") no-repeat center center;
   -webkit-box-shadow: 1px 1px 0em white;
   box-shadow: 1px 1px 0em white;
+  -moz-transition: 1s;
+  -o-transition: 1s;
+  -webkit-transition: 1s;
+  background: #202024 url("../images/up-arrow.png") no-repeat center center;
   display: block;
   height: 28px;
   margin: 0em auto;
-  -webkit-transition: 1s;
   transition: 1s;
   width: 28px;
+  -moz-border-radius: 0.2em;
   -o-border-radius: 0.2em;
+  -webkit-border-radius: 0.2em;
   border-radius: 0.2em; }
 
 @media screen and (max-width: 768px) {
   #back-top span {
+    -moz-border-radius: 0.5em;
     -o-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
     border-radius: 0.5em;
     height: 80px;
     margin: 0em auto 4px auto;
     width: 80px;
-    -webkit-background-size: 50%;
     background-size: 50%; } }
 a.helpIcon {
   -moz-transition: opacity 0.4s ease-in;
   -o-transition: opacity 0.4s ease-in;
   -webkit-transition: opacity 0.4s ease-in;
+  transition: opacity 0.4s ease-in;
   background: url("../images/helpIcon.png") center top no-repeat;
   display: inline-block;
   height: 26px;
@@ -892,8 +902,6 @@ a.helpIcon {
   right: 5px;
   text-indent: -9999px;
   top: 5px;
-  -webkit-transition: opacity 0.4s ease-in;
-  transition: opacity 0.4s ease-in;
   width: 26px; }
 
 @media screen and (max-width: 768px) {
@@ -906,11 +914,12 @@ a.helpIcon:hover {
   -moz-box-shadow: 0em 0em 2px black;
   -o-box-shadow: 0em 0em 2px black;
   -webkit-box-shadow: 0em 0em 2px black;
-  background: #ffffa5;
-  -o-border-radius: 0.25em;
-  border-radius: 0.25em;
-  -webkit-box-shadow: 0em 0em 2px black;
   box-shadow: 0em 0em 2px black;
+  background: #ffffa5;
+  -moz-border-radius: 0.25em;
+  -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
+  border-radius: 0.25em;
   display: none;
   font-size: 1.2em;
   line-height: 1.3em;
@@ -938,7 +947,7 @@ a.helpIcon:hover {
     margin: 0px auto 0em; } }
 #main {
   -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
+  -wekit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   float: left;
@@ -1051,7 +1060,7 @@ a.helpIcon:hover {
 @media screen and (max-width: 768px) {
   .threeColumns > li {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -wekit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
@@ -1102,7 +1111,9 @@ a.helpIcon:hover {
     padding: 0em; } }
 .fourColumns > div,
 .fourColumns > li {
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
   float: left;
   margin: 0em 0.15%;
@@ -1254,7 +1265,6 @@ header#top h1:hover a {
 @media screen and (max-width: 768px) {
   header#top h1 a {
     background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
-    -webkit-background-size: 211px 50px;
     background-size: 211px 50px;
     height: 50px;
     opacity: 1;
@@ -1306,7 +1316,9 @@ div.headerWrap {
 
 @media screen and (max-width: 768px) {
   .logInHeader a {
+    -moz-border-radius: 0.25em;
     -o-border-radius: 0.25em;
+    -webkit-border-radius: 0.25em;
     border-radius: 0.25em;
     background: rgba(255, 255, 255, 0.2);
     font-size: 130%;
@@ -1346,7 +1358,6 @@ nav#n {
   font-size: 0.9em;
   line-height: 50px;
   padding: 0px 12px;
-  -webkit-transition: color 0.4s linear;
   transition: color 0.4s linear; }
 
 #n ul li a:hover {
@@ -1385,8 +1396,11 @@ nav#n ul li.current_page_parent a {
   z-index: 9998; }
 
 #n ul li ul.sub-menu {
+  -moz-border-radius: 0em 0em 0.25em 0.25em;
   -o-border-radius: 0em 0em 0.25em 0.25em;
+  -webkit-border-radius: 0em 0em 0.25em 0.25em;
   border-radius: 0em 0em 0.25em 0.25em;
+  -moz-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
   -o-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
   -webkit-box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
   box-shadow: 0em 0em 5px rgba(32, 32, 36, 0.8);
@@ -1414,6 +1428,7 @@ nav#n ul li:last-child {
   -moz-transition: background-color 0.4s linear;
   -o-transition: background-color 0.4s linear;
   -webkit-transition: background-color 0.4s linear;
+  transition: background-color 0.4s linear;
   background: none;
   color: rgba(255, 255, 255, 0.8);
   display: block;
@@ -1422,8 +1437,6 @@ nav#n ul li:last-child {
   font-weight: normal;
   line-height: inherit;
   padding: 7px 10px;
-  -webkit-transition: background-color 0.4s linear;
-  transition: background-color 0.4s linear;
   white-space: nowrap; }
 
 #n ul li ul.sub-menu li a:hover {
@@ -1466,8 +1479,8 @@ nav#n ul li:last-child {
     -moz-border-radius: 0.25em;
     -o-border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
-    background: linear, to bottom, #242424 0em, #2a2a2a 100%;
     border-radius: 0.25em;
+    background: linear, to bottom, #242424 0em, #2a2a2a 100%;
     display: block;
     margin: 0px auto;
     padding: 0px 0em;
@@ -1512,7 +1525,6 @@ nav#n ul li:last-child {
     font-weight: normal;
     line-height: inherit;
     padding: 10px 0em 10px 25px;
-    -webkit-transition: background-color 0.4s linear;
     transition: background-color 0.4s linear; }
 
   #n ul li ul.sub-menu li a:hover {
@@ -1562,7 +1574,9 @@ nav#n ul li:last-child {
 
   #n ul li a,
   #n ul li ul li a {
+    -moz-border-radius: 4px;
     -o-border-radius: 4px;
+    -webkit-border-radius: 4px;
     border-radius: 4px;
     display: block;
     font-size: 1.2em;
@@ -1596,7 +1610,6 @@ input[type="search"] {
   padding: 0.5em;
   position: absolute;
   right: 140px;
-  -webkit-transition: width 0.2s linear;
   transition: width 0.2s linear;
   vertical-align: middle;
   width: 10%;
@@ -1686,10 +1699,12 @@ div.breadCrumbs {
   display: inline-block;
   font-size: 0.8em;
   padding: 2px 5px;
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
   -moz-transition: all 0.2s linear;
   -o-transition: all 0.2s linear;
-  -webkit-transition: all 0.2s linear;
-  border-radius: 5px;
   -webkit-transition: all 0.2s linear;
   transition: all 0.2s linear; }
 
@@ -1740,7 +1755,9 @@ body.home h1.akvoDescr {
   #actionHeroBox img {
     margin-top: 0em !important; } }
 #actionHeroBox #actionHeroInfo {
+  -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
   background: rgba(255, 255, 245, 0.6);
   bottom: 80px;
@@ -1755,16 +1772,15 @@ body.home h1.akvoDescr {
 @media screen and (max-width: 768px) {
   #actionHeroBox #actionHeroInfo {
     -moz-border-radius: 0.5em;
-    -moz-box-shadow: none;
     -o-border-radius: 0.5em;
-    -o-box-shadow: none;
     -webkit-border-radius: 0.5em;
-    -webkit-box-shadow: none;
-    background: none;
     border-radius: 0.5em;
-    bottom: inherit;
+    -moz-box-shadow: none;
+    -o-box-shadow: none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background: none;
+    bottom: inherit;
     left: inherit;
     max-width: 100%;
     min-height: 5em;
@@ -1845,17 +1861,16 @@ body.home h1.akvoDescr {
 
 @media screen and (max-width: 768px) {
   .actionHeroBtn {
-    -moz-border-radius: 0.25em;
+    -moz-border-radius: 0.5em;
+    -o-border-radius: 0.5em;
+    -webkit-border-radius: 0.5em;
+    border-radius: 0.5em;
     -moz-box-shadow: none;
-    -o-border-radius: 0.25em;
     -o-box-shadow: none;
-    -webkit-border-radius: 0.25em;
-    -webkit-box-shadow: none;
-    background: #202024;
-    border-radius: 0.25em;
-    border: 0em none;
     -webkit-box-shadow: none;
     box-shadow: none;
+    background: #202024;
+    border: 0em none;
     color: white !important;
     display: table;
     font-size: 1.6em;
@@ -1888,7 +1903,9 @@ body.home h1.akvoDescr {
 
 #productWindow div.fourColumns div {
   text-align: center;
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em; }
 
 @media screen and (max-width: 768px) {
@@ -1999,22 +2016,18 @@ body.home h1.akvoDescr {
 
 #rsrBucket h1 {
   background: url("../images/rsr-logo-40px.png") center top no-repeat;
-  -webkit-background-size: 85%;
   background-size: 85%; }
 
 #flowBucket h1 {
   background: url("../images/flow-logo-40px.png") center top no-repeat;
-  -webkit-background-size: 85%;
   background-size: 85%; }
 
 #openaidBucket h1 {
   background: url("../images/openaid-logo-40px.png") center top no-repeat;
-  -webkit-background-size: 85%;
   background-size: 85%; }
 
 #akvopedia h1 {
   background: url("../images/akvopedia-logo-40px.png") center top no-repeat;
-  -webkit-background-size: 85%;
   background-size: 85%; }
 
 /*************************************************************
@@ -2145,6 +2158,9 @@ moreStuffHome figcaption a {
 
 #moreStuffHome figure > div {
   background: #ececec;
+  -moz-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  -webkit-border-radius: 0.35em;
   border-radius: 0.35em;
   border: 1px solid #d4d4d4;
   margin: 0em auto;
@@ -2325,14 +2341,13 @@ div.meta a {
 
 blockquote {
   -moz-border-radius: 0.3em;
-  -moz-box-sizing: border-box;
   -o-border-radius: 0.3em;
   -webkit-border-radius: 0.3em;
-  background: #fbf0de;
   border-radius: 0.3em;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -wekit-box-sizing: border-box;
   box-sizing: border-box;
+  background: #fbf0de;
   color: #999999;
   display: block;
   font-style: italic;
@@ -2389,8 +2404,8 @@ blockquote p {
   -moz-border-radius: 0.2em;
   -o-border-radius: 0.2em;
   -webkit-border-radius: 0.2em;
-  background: #a7c7dc;
   border-radius: 0.2em;
+  background: #a7c7dc;
   color: white;
   display: block;
   padding: 4px 7px; }
@@ -2460,7 +2475,9 @@ p#allowed_tags code {
   top: 0.5em; }
 
 #cancel-comment-reply-link {
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
   display: block;
   font-size: 0.8em;
@@ -2520,7 +2537,9 @@ p#allowed_tags code {
   color: white;
   display: inline-block;
   padding: 0.25em 1em;
+  -moz-border-radius: 0.25em 0.25em 0em 0em;
   -o-border-radius: 0.25em 0.25em 0em 0em;
+  -webkit-border-radius: 0.25em 0.25em 0em 0em;
   border-radius: 0.25em 0.25em 0em 0em;
   text-shadow: 0em -1px 0em rgba(0, 0, 0, 0.25); }
 
@@ -2612,7 +2631,7 @@ p#allowed_tags code {
 @media screen and (max-width: 768px) {
   #sidebar-responsive {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -wekit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     margin-bottom: 15px;
@@ -2635,16 +2654,17 @@ p#allowed_tags code {
 
   #sidebar-responsive ul li a {
     -moz-border-radius: 4px;
-    -moz-transition: none;
     -o-border-radius: 4px;
     -webkit-border-radius: 4px;
-    -webkit-transition: none;
     border-radius: 4px;
+    -moz-transition: none;
+    -o-transition: none;
+    -webkit-transition: none;
+    transition: none;
     display: block;
     font-size: 1.6em;
     font-weight: bold;
     padding: 10px 20px;
-    -webkit-transition: none;
     transition: none; }
 
   #sidebar-responsive ul li a:hover {
@@ -2688,16 +2708,21 @@ p#allowed_tags code {
   font-size: 0.9em; }
 
 #sidebar .widget ul li a {
+  -moz-border-radius: 0.1em;
   -o-border-radius: 0.1em;
+  -webkit-border-radius: 0.1em;
   border-radius: 0.1em;
-  -moz-transition: color 0.2s linear, background .2s linear;
-  -o-transition: color 0.2s linear, background .2s linear;
-  -webkit-transition: color 0.2s linear, background .2s linear;
+  -moz-transition: color 0.2s linear;
+  -o-transition: color 0.2s linear;
+  -webkit-transition: color 0.2s linear;
+  transition: color 0.2s linear;
+  -moz-transition: background 0.2s linear;
+  -o-transition: background 0.2s linear;
+  -webkit-transition: background 0.2s linear;
+  transition: background 0.2s linear;
   display: block;
   font-weight: normal;
   padding: 3px 3%;
-  -webkit-transition: color 0.2s linear, background .2s linear;
-  transition: color 0.2s linear, background .2s linear;
   width: 94%; }
 
 #sidebar .widget ul li a:hover {
@@ -2713,6 +2738,8 @@ li.problem {
   li.problem a {
     color: #e31b23;
     opacity: 1;
+    -moz-transition: opacity 0.2s linear;
+    -o-transition: opacity 0.2s linear;
     -webkit-transition: opacity 0.2s linear;
     transition: opacity 0.2s linear; }
     li.problem a:hover {
@@ -2747,7 +2774,9 @@ footer .menu > li ul li {
   float: none;
   width: 97%;
   padding-left: 3%;
+  -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
+  -webkit-border-radius: 0.25em;
   border-radius: 0.25em; }
 
 @media screen and (max-width: 768px) {
@@ -2834,7 +2863,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
 @media screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo div.newsLetter form {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -wekit-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
     margin: 0px;
@@ -2898,16 +2927,13 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
     text-align: center; } }
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
   -moz-box-shadow: none;
-  -moz-box-sizing: border-box;
   -o-box-shadow: none;
   -webkit-box-shadow: none;
-  -webkit-box-sizing: border-box;
-  border: 1px solid #dedcdc;
-  -webkit-box-shadow: none;
   box-shadow: none;
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -wekit-box-sizing: border-box;
   box-sizing: border-box;
+  border: 1px solid #dedcdc;
   display: inline-block;
   font-size: 0.8em;
   padding: 0.75em 0.5em;
@@ -2916,7 +2942,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
 @media screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -wekit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     font-size: 1.2em;
@@ -2972,14 +2998,14 @@ footer.bottomPage section#siteMap nav.socialLinks li {
 
 footer.bottomPage section#siteMap nav.socialLinks li a {
   -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
   -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
   display: block;
   float: left;
   height: 100%;
   opacity: 1;
   text-indent: -9999px;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear;
   width: 100%; }
 
 footer.bottomPage section#siteMap nav.socialLinks li a:hover {
@@ -3142,6 +3168,9 @@ nav.anchorNav ul li, nav.anchorNav2 ul li {
     display: block;
     margin: 0em auto 5px auto;
     padding: 10px 5px; } }
+.all-rsr-project-updates nav.anchorNav2 ul li {
+  background: none; }
+
 @media screen and (max-width: 768px) {
   nav.anchorNav ul li:hover a, nav.anchorNav2 ul li:hover a {
     background: none;
@@ -3153,7 +3182,9 @@ nav.anchorNav ul li:first-child {
   nav.anchorNav ul li:first-child {
     background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+"); } }
 nav.anchorNav ul li a, nav.anchorNav2 ul li a {
+  -moz-border-radius: 0.1em;
   -o-border-radius: 0.1em;
+  -webkit-border-radius: 0.1em;
   border-radius: 0.1em;
   -moz-transition: background 0.2s linear;
   -o-transition: background 0.2s linear;
@@ -3163,7 +3194,6 @@ nav.anchorNav ul li a, nav.anchorNav2 ul li a {
   font-size: 1em;
   font-weight: bold;
   padding: 0.25em 0.5em;
-  -webkit-transition: background 0.2s linear;
   transition: background 0.2s linear; }
 
 nav.anchorNav2 ul li a {
@@ -3172,7 +3202,9 @@ nav.anchorNav2 ul li a {
 
 @media screen and (max-width: 768px) {
   nav.anchorNav ul li a, nav.anchorNav2 ul li a {
+    -moz-border-radius: 0.2em;
     -o-border-radius: 0.2em;
+    -webkit-border-radius: 0.2em;
     border-radius: 0.2em;
     background: transparent;
     color: #fff;
@@ -3182,7 +3214,6 @@ nav.anchorNav2 ul li a {
     padding: 0.35em 0.5em; } }
 nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   background-color: rgba(44, 42, 116, 0.6);
-  -webkit-box-shadow: 1px 2px 0em #dfdfdf;
   box-shadow: 1px 2px 0em #dfdfdf;
   color: white; }
 
@@ -3220,9 +3251,10 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* IE10+ */
-  background: -webkit-radial-gradient(center, ellipse, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* W3C */
   border: 0em none;
@@ -3233,26 +3265,23 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   -moz-transition: background 0.5s ease-in;
   -o-transition: background 0.5s ease-in;
   -webkit-transition: background 0.5s ease-in;
-  background: #f2f2f2;
-  -webkit-transition: background 0.5s ease-in;
-  transition: background 0.5s ease-in; }
+  transition: background 0.5s ease-in;
+  background: #f2f2f2; }
 
 .productPage section:target h1 {
   -moz-transition: color 0.5s ease-in;
   -o-transition: color 0.5s ease-in;
   -webkit-transition: color 0.5s ease-in;
-  color: #de8929;
-  -webkit-transition: color 0.5s ease-in;
-  transition: color 0.5s ease-in; }
+  transition: color 0.5s ease-in;
+  color: #de8929; }
 
 .productPage section:target .backLined span {
   -moz-transition: background 0.5s ease-in;
   -o-transition: background 0.5s ease-in;
   -webkit-transition: background 0.5s ease-in;
+  transition: background 0.5s ease-in;
   background: #f2f2f2;
-  padding: 5px 10px;
-  -webkit-transition: background 0.5s ease-in;
-  transition: background 0.5s ease-in; }
+  padding: 5px 10px; }
 
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
@@ -3370,7 +3399,6 @@ section.inFivePoints li img {
 
 .akvopedia #akvopediaInFour li > a:hover img {
   border-radius: 1em;
-  -webkit-box-shadow: 2px 2px 0em rgba(223, 49, 201, 0.8), -2px -2px 0em rgba(223, 49, 201, 0.8);
   box-shadow: 2px 2px 0em rgba(223, 49, 201, 0.8), -2px -2px 0em rgba(223, 49, 201, 0.8); }
 
 .pedia4points {
@@ -3387,7 +3415,7 @@ section.inFivePoints li div {
 @media screen and (max-width: 768px) {
   section.inFivePoints li div {
     -moz-box-sizing: border-box;
-    -webkit-box-sizing: border-box;
+    -wekit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
@@ -3574,7 +3602,6 @@ ul.staff li small {
   color: #faa21b;
   font-size: 0.8em;
   opacity: 0;
-  -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in; }
 
 ul.staff li:hover small {
@@ -3625,10 +3652,9 @@ ul.staff li div.imgWrapper img {
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
   -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
   margin: 0em auto;
   opacity: 1;
-  -webkit-transition: opacity 0.2s ease-in;
-  transition: opacity 0.2s ease-in;
   vertical-align: middle;
   width: 100%; }
 
@@ -3672,8 +3698,8 @@ ul.staff li:nth-child(6n) {
   -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
   -webkit-border-radius: 0.25em;
-  background: whitesmoke;
   border-radius: 0.25em;
+  background: whitesmoke;
   color: #c0c0c4;
   display: inline-block;
   font-size: 0.8em;
@@ -3714,8 +3740,8 @@ ul.staff li:nth-child(6n) {
   -moz-border-radius: 0em 0em 5px 5px;
   -o-border-radius: 0em 0em 5px 5px;
   -webkit-border-radius: 0em 0em 5px 5px;
+  border-radius: 0em 0em 5px 5px;
   background: white;
-  border-radius: 0.5em;
   border: 1px solid #8a8a8a;
   display: none;
   margin: 5% auto 15% auto;
@@ -3730,8 +3756,8 @@ ul.staff li:nth-child(6n) {
     -moz-border-radius: 0em;
     -o-border-radius: 0em;
     -webkit-border-radius: 0em;
-    background: white;
     border-radius: 0em;
+    background: white;
     border: none;
     display: none;
     height: 100%;
@@ -3817,9 +3843,10 @@ ul.staff li:nth-child(6n) {
   /* Chrome,Safari4+ */
   background: -webkit-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Chrome10+,Safari5.1+ */
+  background: -o-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* Opera 12+ */
+  background: -ms-radial-gradient(center, ellipse cover, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* IE10+ */
-  background: -webkit-radial-gradient(center, ellipse, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   background: radial-gradient(ellipse at center, #dbdbdb 0em, rgba(255, 255, 255, 0) 100%);
   /* W3C */
   border: 0em none;
@@ -3852,11 +3879,9 @@ ul.staff li:nth-child(6n) {
 .helpSupport nav ul li a {
   display: block;
   height: 70px;
-  -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in; }
   .helpSupport nav ul li a.rsrHelp {
     background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top transparent;
-    -webkit-background-size: 50% auto;
     background-size: 50% auto;
     text-indent: -9999px; }
     @media screen and (max-width: 768px) {
@@ -3864,7 +3889,6 @@ ul.staff li:nth-child(6n) {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.flowHelp {
     background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top transparent;
-    -webkit-background-size: 56% auto;
     background-size: 56% auto;
     text-indent: -9999px; }
     @media screen and (max-width: 768px) {
@@ -3872,7 +3896,6 @@ ul.staff li:nth-child(6n) {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.akvopediaHelp {
     background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top transparent;
-    -webkit-background-size: 65% auto;
     background-size: 65% auto;
     text-indent: -9999px; }
     @media screen and (max-width: 768px) {
@@ -3890,41 +3913,32 @@ ul.staff li:nth-child(6n) {
     text-indent: -9999px; }
     .helpSupport nav ul li a.moreHelp.rsrH {
       background: url("../images/help_RSR_icn.png") center center no-repeat;
-      -webkit-background-size: 80% 80%;
       background-size: 80% 80%; }
     .helpSupport nav ul li a.moreHelp.flowH {
       background: url("../images/help_FLOW_icn.png") center center no-repeat;
-      -webkit-background-size: 80% 80%;
       background-size: 80% 80%; }
     .helpSupport nav ul li a.moreHelp.pediaH {
       background: url("../images/help_pedia_icn.png") center center no-repeat;
-      -webkit-background-size: 80% 80%;
       background-size: 80% 80%; }
 
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 175px auto;
   background-size: 175px auto;
   text-indent: -9999px; }
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 185px auto;
   background-size: 185px auto;
   text-indent: -9999px; }
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
-  -webkit-background-size: 195px auto;
   background-size: 195px auto;
   text-indent: -9999px; }
 
 .helpSupport nav ul li:hover a.rsrHelp {
-  -webkit-background-size: 52% auto;
   background-size: 52% auto; }
 .helpSupport nav ul li:hover a.flowHelp {
-  -webkit-background-size: 58% auto;
   background-size: 58% auto; }
 .helpSupport nav ul li:hover a.akvopediaHelp {
-  -webkit-background-size: 67% auto;
   background-size: 67% auto; }
 .helpSupport nav ul li:hover a.moreHelp {
   opacity: 1; }
@@ -3937,7 +3951,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .englishManual a {
     background: url("../images/rsrEnglishManual.png") left top no-repeat;
-    -webkit-background-size: 151px 200px;
     background-size: 151px 200px;
     display: block;
     height: 220px;
@@ -3962,7 +3975,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .frenchManual a {
     background: url("../images/rsrFrenchManual.png") left top no-repeat;
-    -webkit-background-size: 151px 200px;
     background-size: 151px 200px;
     display: block;
     height: 220px;
@@ -3987,7 +3999,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .spanishManual a {
     background: url("../images/rsrSpanishManual.png") left top no-repeat;
-    -webkit-background-size: 151px 200px;
     background-size: 151px 200px;
     display: block;
     height: 220px;
@@ -4012,7 +4023,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .androidManual a {
     background: url("../images/rsrUpManual.png") left top no-repeat;
-    -webkit-background-size: 151px 200px;
     background-size: 151px 200px;
     display: block;
     height: 220px;
@@ -4037,7 +4047,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .videoAndroid a {
     background: url("../images/rsrUpVideo.png") left top no-repeat;
-    -webkit-background-size: 151px 200px;
     background-size: 151px 200px;
     display: block;
     height: 220px;
@@ -4062,7 +4071,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .playStore a {
     background: url("../images/Google_Play_Store_96.png") left top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 220px;
@@ -4087,7 +4095,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .englishEnumManual a {
     background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 220px;
@@ -4112,7 +4119,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .frenchEnumManual a {
     background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 220px;
@@ -4137,7 +4143,6 @@ h1.akvopediaHelp {
   min-height: 220px; }
   .spanishEnumManual a {
     background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 220px;
@@ -4162,7 +4167,6 @@ h1.akvopediaHelp {
   min-height: 240px; }
   .englishStartManual a {
     background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 240px;
@@ -4187,7 +4191,6 @@ h1.akvopediaHelp {
   min-height: 240px; }
   .frenchStartManual a {
     background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 240px;
@@ -4212,7 +4215,6 @@ h1.akvopediaHelp {
   min-height: 240px; }
   .spanishStartManual a {
     background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
-    -webkit-background-size: 141px auto;
     background-size: 141px auto;
     display: block;
     height: 240px;
@@ -4254,16 +4256,14 @@ h1.akvopediaHelp {
 
 #akvoDashboard ul li.dashSingle {
   -moz-border-radius: 0.25em;
-  -moz-box-sizing: border-box;
   -o-border-radius: 0.25em;
   -webkit-border-radius: 0.25em;
-  -wekit-box-sizing: border-box;
-  background: rgba(0, 0, 0, 0.2);
   border-radius: 0.25em;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -wekit-box-sizing: border-box;
   box-sizing: border-box;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   display: inline;
   float: left;
   margin: 0em 0.5% 0.5em 0em;
@@ -4301,7 +4301,6 @@ h1.akvopediaHelp {
 .dashData li {
   -moz-box-sizing: border-box;
   -wekit-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline;
   float: left;
@@ -4386,7 +4385,9 @@ h1.akvopediaHelp {
   margin: 0em auto 2em; }
 
 .rsrUpdate {
+  -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
+  -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
   background: rgba(192, 192, 196, 0.15);
   display: block;
@@ -4395,7 +4396,6 @@ h1.akvopediaHelp {
   padding: 0em 0.5%;
   position: relative;
   text-align: left;
-  -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 98%; }
   .rsrUpdate:hover {
@@ -4403,12 +4403,14 @@ h1.akvopediaHelp {
     pointer: cursor; }
   @media screen and (min-width: 960px) {
     .rsrUpdate {
+      -moz-border-radius: 0.15em;
       -o-border-radius: 0.15em;
+      -webkit-border-radius: 0.15em;
       border-radius: 0.15em;
       display: inline-block;
       float: left;
       margin: 0em 0.5% 10px 0em;
-      min-height: 310px;
+      min-height: 315px;
       padding: 0em 0.5%;
       width: 31.8%; }
       .rsrUpdate:last-child {
@@ -4428,7 +4430,6 @@ h1.akvopediaHelp {
       width: 100%; } }
 
 .rsrUpdate ul li.upMore a {
-  -webkit-background-size: 72%;
   background-size: 72%;
   background: url("../images/readMoreBig.svg") center center no-repeat;
   display: block;
@@ -4436,7 +4437,6 @@ h1.akvopediaHelp {
   margin: 14px auto 0;
   opacity: 0.6;
   position: relative;
-  -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 112px; }
   @media screen and (min-width: 960px) {
@@ -4452,7 +4452,6 @@ h1.akvopediaHelp {
   display: block;
   font-size: 0.8em;
   text-align: center;
-  -webkit-transition: color 0.4s ease-in;
   transition: color 0.4s ease-in; }
   @media screen and (max-width: 960px) {
     .rsrUpdate ul li.upMore span {
@@ -4473,7 +4472,6 @@ h1.akvopediaHelp {
     padding: 0em; }
   .rsrUpdate ul li.upImag {
     margin-left: 0.5em;
-    width: -webkit-calc(150px - 0.5em);
     width: calc(150px - 0.5em); }
     @media screen and (min-width: 960px) {
       .rsrUpdate ul li.upImag {
@@ -4483,13 +4481,11 @@ h1.akvopediaHelp {
     width: 30%; }
     @media screen and (min-width: 960px) {
       .rsrUpdate ul li.upInfo {
-        width: -webkit-calc(50% - 0.5em);
         width: calc(50% - 0.5em); } }
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
     position: relative;
-    width: -webkit-calc(100% - 30% - 150px - 120px - 0.5em);
     width: calc(100% - 30% - 150px - 120px - 0.5em); }
     @media screen and (min-width: 960px) {
       .rsrUpdate ul li.upTxt {
@@ -4508,7 +4504,6 @@ h1.akvopediaHelp {
     white-space: nowrap;
     display: block;
     padding: 1em 0em 0.25em 0.5em;
-    width: -webkit-calc(100%- 0.5em);
     width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
@@ -4516,7 +4511,6 @@ h1.akvopediaHelp {
     display: none; }
 
   .rsrUpdate ul li.upInfo {
-    width: -webkit-calc(100% - 120px - 150px);
     width: calc(100% - 120px - 150px); } }
 @media screen and (max-width: 395px) {
   .rsrUpdate ul li.upTxt {
@@ -4526,7 +4520,6 @@ h1.akvopediaHelp {
     display: none; }
 
   .rsrUpdate ul li.upInfo {
-    width: -webkit-calc(100% - 120px);
     width: calc(100% - 120px); } }
 .rsrUpdate ul li.upInfo .authorTime {
   margin-left: 1.75em;
@@ -4556,7 +4549,6 @@ h1.akvopediaHelp {
     .authorTime time {
       display: block;
       margin: 0em 0em 0em 0.25em;
-      width: -webkit-calc(100% - 0.25em);
       width: calc(100% - 0.25em); } }
 
 .authorTime span.userName {
@@ -4578,6 +4570,9 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap;
   background: #3492b9;
+  -moz-border-radius: 0.25em 1em 1em 0.25em;
+  -o-border-radius: 0.25em 1em 1em 0.25em;
+  -webkit-border-radius: 0.25em 1em 1em 0.25em;
   border-radius: 0.25em 1em 1em 0.25em;
   display: inline-block;
   font-size: 0.8em;
@@ -4624,8 +4619,8 @@ h1.akvopediaHelp {
   -moz-border-radius: 0em 0em 0.5em;
   -o-border-radius: 0em 0em 0.5em;
   -webkit-border-radius: 0em 0em 0.5em;
-  background: rgba(87, 193, 232, 0.6);
   border-radius: 0em 0em 0.5em;
+  background: rgba(87, 193, 232, 0.6);
   color: white;
   display: none;
   font-size: 0.9em;
@@ -4639,6 +4634,8 @@ h1.akvopediaHelp {
   padding: 0em 2%;
   position: relative;
   text-shadow: none;
+  -moz-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
@@ -4653,7 +4650,7 @@ h1.akvopediaHelp {
 
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
-  border: 2px solid #0c0c13;
+  border: 2px solid #e8e8e8;
   display: inline-block;
   height: 100px;
   max-width: 100%;
@@ -4691,7 +4688,8 @@ h1.akvopediaHelp {
 
 .pricingList p {
   display: block;
-  margin: 1em auto; }
+  margin: 1em auto;
+  padding: 25px; }
 
 @media screen and (max-width: 768px) {
   .pricingList img {

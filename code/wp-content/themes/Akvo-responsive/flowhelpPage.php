@@ -69,7 +69,7 @@
           </li>
         </ul>
       </li>
-      <li class="faqMenu"><a href="#" class="faqMenuHead">I’m not getting a GPS fix. What should i do?</a>
+      <li class="faqMenu"><a href="#" class="faqMenuHead">I’m not getting a GPS fix. What should I do?</a>
         <ul class="faqMenuList">
           <li>
             <ul style="list-style-type:disc; margin-left:10px;">
