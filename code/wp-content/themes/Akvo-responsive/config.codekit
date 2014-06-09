@@ -74,6 +74,31 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/css\/library.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/library.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/css\/library.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 0,
+		"decimalPrecision": 5,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/css\/library.scss",
+		"outputAbbreviatedPath": "\/css\/library.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/css\/main.css": {
 		"fileType": 16,
 		"ignore": 1,
@@ -85,7 +110,7 @@
 		},
 	"\/css\/main.scss": {
 		"createSourceMap": 0,
-		"debugStyle": 0,
+		"debugStyle": 1,
 		"decimalPrecision": 5,
 		"fileType": 4,
 		"ignore": 0,
@@ -95,18 +120,9 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
-		"shouldRunAutoprefixer": 1,
+		"shouldRunAutoprefixer": 0,
 		"shouldRunBless": 0,
 		"useLibsass": 0
-		},
-	"\/css\/style_back.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/css\/style_back.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
 		},
 	"\/flowhelpPage.php": {
 		"fileType": 8192,
@@ -3077,7 +3093,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 55493,
+		"initialSize": 29130,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-2.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -3088,7 +3104,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 66718,
+		"initialSize": 27150,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-3.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -3099,7 +3115,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 58231,
+		"initialSize": 27463,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-4.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -3110,7 +3126,7 @@
 		"fileType": 16384,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"initialSize": 49703,
+		"initialSize": 23659,
 		"inputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputAbbreviatedPath": "\/images\/rsrUpscreengrab-5.jpg",
 		"outputPathIsOutsideProject": 0,
@@ -4475,7 +4491,7 @@
 "projectAttributes": {
 	"bowerAbbreviatedPath": "",
 	"displayValue": "Akvo-responsive",
-	"displayValueWasSetByUser": 0,
+	"displayValueWasSetByUser": 1,
 	"iconImageName": "compass_brown"
 	},
 "projectSettings": {
