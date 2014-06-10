@@ -140,7 +140,7 @@
       <?php the_field('rsr_pricing_text'); ?>
     </p>
   </section>
-  <section class="wrapper centerED "><a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR Terms of Use </a></section>
+  <section class="wrapper centerED "><a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR terms of use </a></section>
 </div>
 <!-- end content -->
 
