@@ -46,10 +46,10 @@
     </p>
   </section>
   <section id="openaidInAction wrapper" class="hide">
-    <h1 class="">openaid in Action</h1>
+    <h1 class="">openaid in action</h1>
   </section>
   <section class="inFivePoints wrapper" id="openaidInFive">
-    <h1 class="">Akvo Openaid Features</h1>
+    <h1 class="">Akvo Openaid features</h1>
     <ul>
       <li class="pointOne floats-in">
         <h3> <span>01</span>
@@ -115,7 +115,7 @@
     </p>
     <img src="<?php the_field('openaid_who_is_img'); ?>" class="hidden"/> </section>
   <section id="openaidTech" class="wrapper">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul>
       <li>
         <h3>
