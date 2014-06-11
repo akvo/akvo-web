@@ -49,10 +49,9 @@ $secondary8: rgb(242, 240, 230);
 $secondary9: rgb(74, 177, 207);
 /* Akvo darkish blue / Water Point */
 
-$bodyFont: "futura-pt", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$navFont: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
-$scriptFont: 'Dancing Script', "sorts-mill-goudy", "lobster", cursive;
-$titleFont: Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif;
+$bodyFont: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$scriptFont:  "Palatino", "Book Antiqua", Georgia, serif;
+$titleFont: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
 @mixin border-radius($property) {
     -moz-border-radius: $property;
@@ -116,16 +115,15 @@ $width-large:  1200px;
     @media only screen and (min-width: $width-small) { @content; }
   }
   @else if $width == wide-max-screens {
-    @media only screen and (max-width: $width-small) { @content; }
+    @media only screen and (max-width: $width-large) { @content; }
   }
   @else if $width == medium-max-screens {
-    @media only screen and (max-width: $width-small) { @content; }
+    @media only screen and (max-width: $width-medium) { @content; }
   }
   @else if $width == small-max-screens {
     @media only screen and (max-width: $width-small) { @content; }
   }
 }
-
 
 /* Placeholder
   ========================================================================== */

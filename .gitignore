@@ -27,3 +27,11 @@ code/wp-content/plugins/duplicator
 code/wp-snapshots
 
 code/.htaccess
+
+*.orig
+
+code/.htaccess
+
+code/.htaccess
+
+code/.htaccess
