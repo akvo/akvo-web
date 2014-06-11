@@ -113,7 +113,7 @@
 </a>
   </section>
   <section id="rsrTech">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul class="floats-in wrapper">
       <li>
         <h3>

@@ -33,7 +33,7 @@
             <ul style="list-style-type:disc; margin-left:10px;">
                 <li>You have limited time to edit your update (around 15 minutes from the moment you submitted it).</li>
                 <li> If you discover you made a typo, or want to make changes in your update, click Edit Update at the top of your screen to fix your mistake. The available time for editing your update is visible in yellow. </li>
-                <li> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to  <a href="mailto://support@akvo.org" style="display:inline;">support[at]akvo.org</a>.</li>
+                <li> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to support[at]akvo.org.</li>
             </ul>
           </li>
         </ul>
@@ -61,7 +61,7 @@
            <ol style="list-style-type:decimal; margin-left:20px;">
               <li>Log into <a href="http://www.akvo.org/rsr/admin/" style="display:inline;">Akvo RSR
               login</a> to complete an online project form.</li><p>Or</p>
-            <li> Complete a project form in pdf. Email <a href="mailto:support@akvo.org" style="display:inline;">support[at]akvo.org</a> for a project form
+            <li> Complete a project form in pdf. Email support[at]akvo.org for a project form
               in pdf.</li></ol>
               
               
@@ -158,7 +158,7 @@
       <li class="playStore"><a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up"><span>Akvo RSR Up - App</span></a></li>
     </ul>
     <hr class="delicate" />
-    <p>If you need further help contact us at <a href="mailto:support@akvo.org" style="display:inline;">support[at]akvo.org</a>.</p>
+    <p>If you need further help contact us at support[at]akvo.org.</p>
   </section>
 </div>
 
