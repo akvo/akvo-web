@@ -161,7 +161,7 @@ html {
 }
 body {
     color: rgb(32, 32, 36);
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $bodyFont;
     font-size: 1em;
     line-height: 1.4em;
     text-rendering: optimizeLegibility;
@@ -169,7 +169,8 @@ body {
 body.network {
     background: url("../images/debut_light.png") repeat;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     body {
         font-size: 1em;
     }
@@ -183,7 +184,7 @@ h3,
 h4,
 h5,
 h6 {
-    font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $titleFont;
     font-weight: normal;
     text-transform: none;
 }
@@ -272,14 +273,14 @@ h6 img {
 }
 em {
     color: rgb(222, 137, 41);
-    font-family: "Palatino", "Book Antiqua", Georgia, serif;
+    font-family:$scriptFont;
     font-size: 1.2em;
     font-style: italic;
     margin: 0.1em 2% 0em 0em;
     padding-bottom: 1em;
 }
 time {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $bodyFont;
     font-size: 0.9em;
     margin: 0.2em 2% 0em 0em;
 }
@@ -289,7 +290,8 @@ p {
     margin: 0.5em 0em;
     text-align: left;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     p {
         font-size: 1em;
     }
@@ -299,7 +301,7 @@ p {
     margin-right: 0.5em;
 }
 .strongType {
-    font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:$titleFont;
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1.2em;
@@ -424,7 +426,8 @@ iframe {
     position: relative;
     width: 65%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .fullWidthParag {
         width: 90%;
     }
@@ -480,7 +483,8 @@ footer a:visited {
 .tooltips:hover {
     background: url("../images/helpIcn.png") right bottom no-repeat;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .tooltips {
         display: none;
     }
@@ -597,7 +601,8 @@ div.centerED > p,
     min-height: 210px;
     text-shadow: 1px 1px 0em rgb(255, 255, 255);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .bgDeco {
         min-height: 0em;
     }
@@ -792,7 +797,8 @@ input[type="submit"] {
     position: fixed;
     right: 5px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #back-top {
         bottom: inherit;
         height: 20px;
@@ -809,7 +815,7 @@ input[type="submit"] {
     -webkit-transition: 1s;
     color: rgb(32, 32, 36);
     display: block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $bodyFont;
     font-size: 0.71em;
     text-align: center;
     text-decoration: none;
@@ -817,7 +823,8 @@ input[type="submit"] {
     transition: 1s;
     width: 80px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #back-top a {
         font-size: 1.5em;
         width: 100%;
@@ -843,7 +850,8 @@ input[type="submit"] {
 	@include border-radius(0.2em);
 }
 
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #back-top span {
 		@include border-radius(0.5em);
         height: 80px;
@@ -864,7 +872,8 @@ a.helpIcon {
     top: 5px;
     width: 26px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     a.helpIcon {
         display: none;
     }
@@ -894,7 +903,8 @@ a.helpIcon:hover {
 .home #content {
     margin: 75px auto 0em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
 	#content {
 		padding:0 1%;
 		width: 98%;
@@ -910,7 +920,8 @@ a.helpIcon:hover {
     margin: 25px 2% 0em 0em;
     width: 73%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #main {
         display: block;
         float: none;
@@ -931,7 +942,8 @@ a.helpIcon:hover {
     padding: 0.25em 0.5% 5px 0em;
     width: 24%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #sidebar {
         display: none;
         float: none;
@@ -964,7 +976,8 @@ a.helpIcon:hover {
     position: relative;
     width: 44%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .twoColumns > div {
         float: none;
         margin: 0em auto;
@@ -980,12 +993,14 @@ a.helpIcon:hover {
 .twoColumns > li:last-child {
     margin: 0em 1% 0em 0em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .twoColumns > div:first-child {
         margin: inherit;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .twoColumns > div:last-child {
         margin: inherit;
     }
@@ -1023,14 +1038,16 @@ a.helpIcon:hover {
     position: relative;
     width: 28.333333333333333%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .threeColumns > li {
    		 @include box-sizing(border-box);
         padding: 0px 10px;
         width: 100%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .threeColumns > div {
         background: rgba(255, 255, 255, 0.5);
         border-top: thin solid #f0f0f0;
@@ -1058,7 +1075,8 @@ a.helpIcon:hover {
     position: relative;
     width: 31.333%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .threeColumns > div:first-child,
     .threeColumns > div:last-child {
         margin: inherit;
@@ -1076,7 +1094,8 @@ a.helpIcon:hover {
     margin: 0em auto;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .fourColumns.wrapper {
         padding: 0em;
     }
@@ -1091,7 +1110,8 @@ a.helpIcon:hover {
     position: relative;
     width: 24.20%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .fourColumns div,
     .fourColumns > li {
         float: left;
@@ -1178,7 +1198,8 @@ a.helpIcon:hover {
     vertical-align: middle;
     width: 39.5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .splitImgMid img {
         margin: 0em;
         width: 100%;
@@ -1196,7 +1217,8 @@ a.helpIcon:hover {
     position: relative;
     width: 54.5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .splitImgMid .paragraphesLeft {
         margin-top: 15px;
         width: 100%;
@@ -1222,7 +1244,8 @@ div.headerWrap {
     position: relative;
     width: 80%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     header#top {
         margin: 0em;
         position: relative;
@@ -1235,7 +1258,8 @@ header#top h1 {
     top: 8px;
     width: 169px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     header#top h1 {
         display: block;
         height: 52px;
@@ -1256,7 +1280,8 @@ header#top h1:hover a {
     background: url("../images/akvoLogoTop.png") no-repeat center bottom;
 }
 
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     header#top h1 a {
         background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
         background-size: 211px 50px;
@@ -1269,7 +1294,8 @@ header#top h1:hover a {
         opacity: 1;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     header#top > div.wrapper {
         padding-bottom: 5px;
     }
@@ -1294,7 +1320,8 @@ div.headerWrap {
     text-indent: -9999px;
     width: 100px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #openSource {
         display: none;
     }
@@ -1305,7 +1332,8 @@ div.headerWrap {
     right: 100px;
     top: 14px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .logInHeader {
         position: absolute;
         right: 15px;
@@ -1316,7 +1344,8 @@ div.headerWrap {
     color: rgb(222, 137, 41);
     font-size: 1.1em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .logInHeader a {
 		@include border-radius(0.25em);
         background: rgba(255, 255, 255, 0.2);
@@ -1355,7 +1384,7 @@ nav#n {
     -webkit-transition: color 0.4s linear;
     color: rgba(255, 255, 255, 0.8);
     display: block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $bodyFont;
     font-size: 0.9em;
     line-height: 50px;
     padding: 0px 12px;
@@ -1427,7 +1456,7 @@ nav#n ul li:last-child {
     background: none;
     color: rgba(255, 255, 255, 0.8);
     display: block;
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $bodyFont;
     font-size: 0.7em;
     font-weight: normal;
     line-height: inherit;
@@ -1514,7 +1543,7 @@ nav#n ul li:last-child {
         background: none;
         color: rgba(255, 255, 255, 0.8);
         display: block;
-        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-family: $bodyFont;
         font-size: 1em;
         font-weight: normal;
         line-height: inherit;
@@ -1613,7 +1642,8 @@ input[type="search"] {
                 	opacity:    0.8;
                 */
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     input[type="search"] {
         display: block;
         font-size: 1.5em;
@@ -1642,7 +1672,8 @@ input[type="search"] {
 header#top input[type="search"]:focus {
     width: 14%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     header#top input[type="search"]:focus {
         width: 90%;
     }
@@ -1672,7 +1703,8 @@ div.breadCrumb {
     position: relative;
     width: 99%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     div.breadCrumb {
         margin: 0em auto;
 		width: 98%;
@@ -1689,7 +1721,8 @@ div.breadCrumbs {
     text-align: right;
     z-index: 1;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .projectGateWay {
         display: none;
     }
@@ -1727,7 +1760,8 @@ body.home h1.akvoDescr {
     text-shadow: none;
     text-transform: none;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     body.home h1.akvoDescr {
         margin: 30px auto;
         width: 90%;
@@ -1742,7 +1776,8 @@ body.home h1.akvoDescr {
     position: relative;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox {
         background: #f2f2f2;
         max-height: inherit;
@@ -1757,7 +1792,8 @@ body.home h1.akvoDescr {
     /* max-height:     500px;
                 */
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox img {
         margin-top: 0em !important;
     }
@@ -1774,7 +1810,8 @@ body.home h1.akvoDescr {
     position: absolute;
     right: 5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox #actionHeroInfo {
 		@include border-radius(0.5em);
         @include box-shadow(none);
@@ -1827,7 +1864,8 @@ body.home h1.akvoDescr {
 #actionHeroBox p span.akvoopenaid {
     color: rgb(227, 27, 35);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox hgroup {
         width: 100%;
     }
@@ -1847,7 +1885,8 @@ body.home h1.akvoDescr {
 			margin: 0em 10px 5px 0em;
 		}
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox {
 		 h1 {
 			font-size: 1.8em;
@@ -1865,7 +1904,8 @@ body.home h1.akvoDescr {
 #actionHeroBox #actionHeroInfo {
     text-align: right;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #actionHeroBox h2,
     #actionHeroBox h1,
     #actionHeroBox #actionHeroInfo > a,
@@ -1876,7 +1916,8 @@ body.home h1.akvoDescr {
 .actionHeroBtn {
     margin: 0em 0em 0em 50%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .actionHeroBtn {
 		@include border-radius(0.5em);
         @include box-shadow(none);
@@ -1902,7 +1943,8 @@ body.home h1.akvoDescr {
     position: relative;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow {
         background-color: rgb(245, 245, 245);
         padding: 0em;
@@ -1920,7 +1962,8 @@ body.home h1.akvoDescr {
     text-align: center;
 	@include border-radius(0.25em);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div.fourColumns div {
         background: rgba(255, 255, 255, 0.5);
         border-top: none;
@@ -1939,7 +1982,8 @@ body.home h1.akvoDescr {
 #productWindow div p {
     margin: 12px auto;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div p {
         font-size: 1.2em;
         margin: 12px 0em;
@@ -1953,7 +1997,8 @@ body.home h1.akvoDescr {
     text-align: center;
     text-transform: uppercase;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div a {
         bottom: inherit;
         font-size: 1em;
@@ -1976,7 +2021,8 @@ body.home h1.akvoDescr {
     margin: 20px auto 0em auto;
     text-indent: -99999px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div h1 {
         display: block;
         height: 45px;
@@ -1984,7 +2030,8 @@ body.home h1.akvoDescr {
         padding: 10px 0em;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div h1:after {
         content: "";
         display: block;
@@ -1998,7 +2045,8 @@ body.home h1.akvoDescr {
     margin: 50px auto 15px;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow a.tagLine:after {
         border-bottom: none;
         border-top: none;
@@ -2014,7 +2062,8 @@ body.home h1.akvoDescr {
     display: none;
     font-size: 1.2em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #productWindow div h2 {
         padding: 0em 0em 0em 2.5%;
     }
@@ -2068,7 +2117,8 @@ a.faqMenuHead {
     font-size: 1.1em;
     padding: 5px 0em 5px 35px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     a.faqMenuHead {
         background-color: rgb(232, 232, 232);
         background-image: none;
@@ -2091,7 +2141,8 @@ ul.faqMenuList > li {
     margin: 0em 0em 2px 0px;
     padding: 25px 0em 25px 10px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     ul.faqMenuList {
         margin: 5px 0em;
     }
@@ -2135,13 +2186,15 @@ ul.faqMenuList h3 {
     padding: 3.5em 0em;
     position: relative;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #moreStuffHome {
         margin: 0px auto;
         padding: 0.5em 0em;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #moreStuffHome div > div > div {
         margin: 0.5em auto 0.25% auto;
         min-height: 200px;
@@ -2215,7 +2268,7 @@ moreStuffHome figcaption a {
     width: 85%;
 }
 #moreStuffHome figure > figcaption a {
-    font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $titleFont;
     font-size: 1.1em;
 }
 #moreStuffHome figure img {
@@ -2285,7 +2338,8 @@ article.post h2 {
 article.post:first-child h2 {
     margin: 0px 0em 5px 5px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     article.post:first-child h2 {
         margin: 20px 0em 5px;
     }
@@ -2311,7 +2365,8 @@ article.post h2 a:hover {
 .post header h2 {
     margin-bottom: 4px !important;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .post header h2 {
         font-size: 2.75em;
     }
@@ -2364,7 +2419,8 @@ div.meta {
     margin: 5px 0em 10px 5px;
     padding: 5px 0em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     div.meta {
         font-size: 1.1em;
         line-height: 1.6em;
@@ -2492,7 +2548,7 @@ p#allowed_tags {
     padding: 1.25%;
     width: 97%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     p#allowed_tags {
         display: none;
     }
@@ -2659,7 +2715,7 @@ p#allowed_tags code {
 #sidebar-responsive {
     display: none;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     #sidebar-responsive {
    		 @include box-sizing(border-box);
         display: block;
@@ -2763,13 +2819,13 @@ li.problem { margin: 1em 0 0 0;
     float: left;
     width: 70%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     #menu-footer-menu {
         margin-top: 20px;
         width: 96%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer .menu {
         margin: 0px 15px;
     }
@@ -2781,7 +2837,7 @@ footer .menu > li {
 }
 
 
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer .menu > li {
         margin: 5px 0px;
         width: 100%;
@@ -2798,7 +2854,7 @@ footer .menu > li ul li {
 	padding-left:3%;
 	@include border-radius(0.25em);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer .menu > li ul li {
         background: none repeat scroll 0em 0em rgb(245, 245, 245);
         font-size: 130%;
@@ -2811,7 +2867,7 @@ footer .menu > li ul li {
         color: rgb(222, 137, 41);
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap .menu h3 {
         margin-top: 0em;
     }
@@ -2831,12 +2887,12 @@ footer.bottomPage section#siteMap {
     padding: 50px 0em 3em;
     position: relative;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap {
         padding: 0px 0px 30px;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap h1 {
         font-size: 2em;
     }
@@ -2847,7 +2903,7 @@ footer.bottomPage section#siteMap h3 {
     text-align: left;
 	@include noWrapTxt;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap h3 {
         font-size: 2em;
         margin: 25px auto 10px auto;
@@ -2871,7 +2927,7 @@ footer.bottomPage section#siteMap div.socialAkvo {
     position: relative;
     width: 30%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo {
         float: left;
         margin: 20px auto 10px;
@@ -2887,12 +2943,12 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
     position: relative;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
         width: 100%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter form {
 		@include box-sizing(border-box);
         float: left;
@@ -2901,7 +2957,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
         width: 100%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.intro {
         padding: 0em;
         text-align: center;
@@ -2916,7 +2972,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body {
     float: left;
     width: 80%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body {
         width: 100%;
     }
@@ -2925,7 +2981,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul l
     float: left;
     width: 50%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li {
         width: 100%;
     }
@@ -2937,7 +2993,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul l
     margin-right: 1%;
     width: 49%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li:nth-of-type(odd) {
         margin-bottom: 5px;
         margin-right: 0em;
@@ -2949,7 +3005,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_footer {
     margin-left: 2%;
     width: 18%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_footer {
         margin-left: 0em;
         margin-top: 10px;
@@ -2962,7 +3018,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
     font-size: 0.9em;
     letter-spacing: 0.01em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
         font-size: 1.2em;
         margin-top: 10px;
@@ -2978,7 +3034,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
     padding: 0.75em 0.5em;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
 		@include box-sizing(border-box);
         display: block;
@@ -2988,7 +3044,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
         width: 100%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input:focus {
         width: 92%;
     }
@@ -3006,7 +3062,7 @@ p.sml_submit input {
     margin-top: 0em;
     width: 17.8%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     p.sml_submit input {
         float: left;
         width: 100% !important;
@@ -3015,7 +3071,7 @@ p.sml_submit input {
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input {
     width: 28%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input {
         margin-bottom: 10px;
         width: 100%;
@@ -3025,7 +3081,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email inpu
     margin: 0em 0em 0em 0.5%;
     width: 36.5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input {
         margin-bottom: 10px;
         width: 100%;
@@ -3091,12 +3147,12 @@ footer.bottomPage section#aboutAkvo {
     position: relative;
     width: 100%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#aboutAkvo {
         margin-bottom: 20px;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#aboutAkvo p {
         font-size: 1em;
         line-height: 1.4em;
@@ -3110,7 +3166,7 @@ footer.bottomPage section#aboutAkvo div p {
     font-weight: normal;
     margin: 0.25em 0em 0em 5px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     footer.bottomPage section#aboutAkvo div p {
         font-size: 1.1em;
         margin: 10px 0em 15px;
@@ -3157,7 +3213,7 @@ nav.anchorNav, nav.anchorNav2 {
     padding: 15px 1%;
     width: 98%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav, nav.anchorNav2 {
         background: #f8f8f8;
         position: relative;
@@ -3207,7 +3263,7 @@ nav.anchorNav ul, nav.anchorNav2 ul {
     position: relative;
     text-align: center;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav ul, nav.anchorNav2 ul {
         width: 100%;
     }
@@ -3219,7 +3275,7 @@ nav.anchorNav ul li, nav.anchorNav2 ul li {
     margin: 0em;
     padding: 0em 0.5em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav ul li, nav.anchorNav2 ul li  {
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
         display: block;
@@ -3228,7 +3284,7 @@ nav.anchorNav ul li, nav.anchorNav2 ul li {
     }
 }
 .all-rsr-project-updates nav.anchorNav2 ul li { background:none;}
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav ul li:hover a, nav.anchorNav2 ul li:hover a  {
         background: none;
         color: #3792b3;
@@ -3237,7 +3293,7 @@ nav.anchorNav ul li, nav.anchorNav2 ul li {
 nav.anchorNav ul li:first-child {
     background: none;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav ul li:first-child {
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
     }
@@ -3260,7 +3316,7 @@ nav.anchorNav2 ul li a {
 }
 
 
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
     nav.anchorNav ul li a, nav.anchorNav2 ul li a {
     	@include border-radius(0.2em);
         background: transparent;
@@ -3292,7 +3348,8 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     margin: 0em auto;
     padding: 0.5em 1em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .productPage section {
         padding: 0em;
     }
@@ -3341,7 +3398,8 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     border-top: 1px solid rgb(235, 235, 235);
     padding: 1px 0em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .productPage section.figure {
         display: none;
     }
@@ -3373,14 +3431,15 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     margin: 0em auto;
     max-width: 1208px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .figure img {
         height: auto;
         max-width: 100%;
     }
 }
 .figure .figcaption {
-    font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $titleFont;
     font-size: 1.2em;
     font-weight: normal;
     line-height: 1em;
@@ -3411,7 +3470,8 @@ section.inFivePoints li {
     position: relative;
     width: 96%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     section.inFivePoints li {
         padding: 1em 2% 0em;
     }
@@ -3437,7 +3497,8 @@ section.inFivePoints li img {
     position: relative;
     width: 50%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     section.inFivePoints li img {
         width: 100%;
     }
@@ -3473,7 +3534,8 @@ section.inFivePoints li div {
     position: relative;
     width: 48%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     section.inFivePoints li div {
 		@include box-sizing(border-box);
         padding: 0px 10px;
@@ -3500,7 +3562,8 @@ section.inFivePoints li:nth-child(2n) div {
     text-align: center;
     text-shadow: 0em 1px rgb(255, 255, 255);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .productPage h3 {
         margin: 0em auto;
         padding: 0em;
@@ -3527,7 +3590,8 @@ section.inFivePoints li h3 {
     position: relative;
     text-align: center;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     section.inFivePoints li h3 {
         padding-bottom: 10px;
     }
@@ -3624,7 +3688,8 @@ ol.threeFlowPoints li p {
     text-align: center;
     width: 85%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .teamPage > p {
         margin: 0.25em auto;
         width: 98%;
@@ -3637,7 +3702,8 @@ ul.staff {
     position: relative;
     width: 99%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     ul.staff {
         margin: 1em auto 2em auto;
     }
@@ -3653,14 +3719,16 @@ ul.staff li {
     position: relative;
     width: 16%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     ul.staff li {
         font-size: 1.2em;
         margin: 0em 2% 0px 1%;
         width: 48%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     ul.staff li:nth-child(2n) {
         margin: 0em 1% 0px 0em;
     }
@@ -3681,7 +3749,8 @@ ul.staff li small {
 ul.staff li:hover small {
     opacity: 1;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     ul.staff li:hover small {
         font-size: 1em;
     }
@@ -3818,7 +3887,8 @@ ul.staff li:nth-child(6n) {
     position: relative;
     width: 50%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .dialog {
         @include border-radius(0em);
         background: rgb(255, 255, 255);
@@ -3836,7 +3906,8 @@ ul.staff li:nth-child(6n) {
 #staffDescr {
     margin-top: 10px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #staffDescr h1 {
         font-size: 2em;
     }
@@ -3844,7 +3915,8 @@ ul.staff li:nth-child(6n) {
 #staffDescr p {
     display: block;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #staffDescr p {
         width: 95%;
     }
@@ -3937,7 +4009,8 @@ ul.staff li:nth-child(6n) {
 .akvo-policies-and-terms h4 {
     margin: 2em 0em 0.25em;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
 .helpSupport nav ul li, .helpSupport nav ul li:first-child {margin-bottom:20px !important;}
 }
 .helpSupport nav ul li.bgDeco {
@@ -3954,7 +4027,8 @@ ul.staff li:nth-child(6n) {
         background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
         background-size: 50% auto;
         text-indent: -9999px;
-		@media screen and (max-width:768px) {
+		@include responsive (small-max-screens) {
+
                 margin:20px 0 0 0;
             }
     }
@@ -3962,7 +4036,8 @@ ul.staff li:nth-child(6n) {
         background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
 		background-size: 56% auto;
         text-indent: -9999px;
-		@media screen and (max-width:768px) {
+		@include responsive (small-max-screens) {
+
                 margin:20px 0 0 0;
             }
     }
@@ -3970,7 +4045,8 @@ ul.staff li:nth-child(6n) {
         background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
 		 background-size: 65% auto;
         text-indent: -9999px;
-		@media screen and (max-width:768px) {
+		@include responsive (small-max-screens) {
+
                 margin:20px 0 0 0;
             }
     }
@@ -4043,7 +4119,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4053,7 +4130,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4069,7 +4147,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4079,7 +4158,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4095,7 +4175,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4105,7 +4186,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4121,7 +4203,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4131,7 +4214,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4147,7 +4231,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4157,7 +4242,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4173,7 +4259,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4183,7 +4270,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center !important;
             }
         }
@@ -4200,7 +4288,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4210,7 +4299,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4226,7 +4316,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4236,7 +4327,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4252,7 +4344,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4262,7 +4355,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4279,7 +4373,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4289,7 +4384,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4305,7 +4401,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4315,7 +4412,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4331,7 +4429,8 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @media screen and (max-width:768px) {
+        @include responsive (small-max-screens) {
+
             background-position: center top;
         }
         span {
@@ -4341,7 +4440,8 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @media screen and (max-width:768px) {
+            @include responsive (small-max-screens) {
+
                 text-align: center;
             }
         }
@@ -4379,7 +4479,8 @@ h1 {
     position: relative;
     width: 49.5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     #akvoDashboard ul li.dashSingle {
         width: 100%;
     }
@@ -4416,7 +4517,8 @@ h1 {
     overflow: hidden;
     width: 47.5%;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .dashData li {
         min-height: 100px;
     }
@@ -4445,19 +4547,20 @@ h1 {
     text-transform: uppercase;
 }
 .dashData li span {
-    font-family: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family: $titleFont;
     font-size: 2.5em;
     margin: 0.1em 0em 0em 0.25em;
     text-shadow: 0em 0em 3px rgb(0, 0, 0);
     text-transform: uppercase;
 }
 .dashData li span.unit {
-    font-family: Baskerville, "Palatino Linotype", Palatino, "Century Schoolbook L", "Times New Roman", serif;
+    font-family: $scriptFont;
     font-size: 0.9em;
     font-style: italic;
     text-transform: lowercase;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .dashData li span.unit {
         display: block;
     }
@@ -4717,7 +4820,8 @@ h1 {
     	width: 80%;
     }
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .authorTime span.userName {
         margin: 0em;
     }
@@ -4768,7 +4872,8 @@ h1 {
     overflow: hidden;
     position: relative;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .rsrUpdate .imgWrap {
         padding: 0em;
     }
@@ -4805,7 +4910,8 @@ h1 {
     margin: 1em auto;
 	padding:25px;
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .pricingList img {
         float: left;
         margin: 0.5em 1em;
@@ -4828,7 +4934,8 @@ h1 {
 .pricingList.fourColumns li:nth-child(2n) {
     background: none repeat scroll 0em 0em rgb(238, 238, 238);
 }
-@media screen and (max-width:768px) {
+@include responsive (small-max-screens) {
+
     .pricingList.fourColumns > li {
         float: none;
         margin: 30px auto;

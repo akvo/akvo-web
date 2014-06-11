@@ -77,7 +77,7 @@ get_header(); ?>
     </div>
     <hr class="delicate" />
     <div id="knowledgeGroup">
-      <h2 class="eStaffHead">Knowledge Institutes</h2>
+      <h2 class="eStaffHead">Knowledge institutes</h2>
       <ul class="staff floats-in">
       </ul>
     </div>

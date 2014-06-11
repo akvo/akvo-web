@@ -113,7 +113,7 @@
     <p class="fullWidthParag centerED">
       <?php the_field('openaid_real_world_text'); ?>
     </p>
-    <img src="<?php the_field('openaid_who_is_img'); ?>" class="hidden"/> </section>
+  </section>
   <section id="openaidTech" class="wrapper">
     <h1 class="">Technical specifications</h1>
     <ul>
@@ -134,12 +134,6 @@
         </p>
       </li>
     </ul>
-  </section>
-  <section id="openaidPricing" class="hidden">
-    <h1 class="">Pricing</h1>
-    <p class="fullWidthParag centerED">
-      <?php the_field('openaid_pricing_text'); ?>
-    </p>
   </section>
 </div>
 <!-- end content -->

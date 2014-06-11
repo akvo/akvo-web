@@ -167,12 +167,6 @@
       </li>
     </ul>
   </section>
-  <section id="flowPricing" class="wrapper hidden">
-    <h1 class="">Pricing</h1>
-    <p>
-      <?php the_field('flow_pricing_text'); ?>
-    </p>
-  </section>
   <section class="wrapper centerED ">
     <a href="/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW terms of use</a>  </section>
 </div>
