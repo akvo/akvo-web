@@ -146,7 +146,7 @@
       <li class="spanishStartManual"><a href="https://www.dropbox.com/s/5tq2eu3okmxou9x/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb-spanish.pdf"></a></li>
     </ul>
     <hr class="delicate" />
-    <p>If you need further help contact us at <a href="mailto:support@akvoflow.org">support[at]akvoflow.org</a>.</p>
+    <p>If you need further help contact us at support[at]akvoflow.org.</p>
   </section>
 </div>
 
