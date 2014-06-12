@@ -20,9 +20,9 @@
         <ul class="faqMenuList">
           <li>
             <ul style="list-style-type:disc; margin-left:10px;">
-              <li>Have you registered for a user account? If you haven't, you can <a href="http://rsr.akvo.org/accounts/register1/" style="display:inline;">register here</a></li>
-              <li>If you forgot your username/password, you can <a href="http://rsr.akvo.org/accounts/password/reset/" style="display:inline;">reset your username and password</a>. Tip: your username is not your email address.</li>
-              <li>If you don't remember which email address you registered with, please contact support@akvo.org. Please don't register for a new user account.</li>
+              <li>Have you registered for a user account? If you haven't, you can <a href="http://rsr.akvo.org/accounts/register1/" style="display:inline;">register here</a>.</li>
+              <li>If you forgot your login details, you can <a href="http://rsr.akvo.org/accounts/password/reset/" style="display:inline;">reset your username and password</a>. Tip: your username is not your email address.</li>
+              <li>If you don't remember which email address you registered with, please contact support[at]akvo.org. Please don't register for a new user account.</li>
             </ul>
           </li>
         </ul>
@@ -31,9 +31,9 @@
         <ul class="faqMenuList">
           <li>
             <ul style="list-style-type:disc; margin-left:10px;">
-                <li>You have limited time to edit your update (around 15 minutes from the moment you submitted your update).</li>
+                <li>You have limited time to edit your update (around 15 minutes from the moment you submitted it).</li>
                 <li> If you discover you made a typo, or want to make changes in your update, click Edit Update at the top of your screen to fix your mistake. The available time for editing your update is visible in yellow. </li>
-                <li> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to  <a href="mailto://support@akvo.org" style="display:inline;">support@akvo.org</a></li>
+                <li> If your editing time has expired and you notice a mistake, you can no longer edit the update yourself. Please send an email to support[at]akvo.org.</li>
             </ul>
           </li>
         </ul>
@@ -60,21 +60,21 @@
               ways for the administrator to do this:</h4>
            <ol style="list-style-type:decimal; margin-left:20px;">
               <li>Log into <a href="http://www.akvo.org/rsr/admin/" style="display:inline;">Akvo RSR
-              login</a> to complete an online project form or;</li>
-             <li> Complete a project form in pdf. Email <a href="mailto:support@akvo.org" style="display:inline;">support@akvo.org</a> for a project form
+              login</a> to complete an online project form.</li><p>Or</p>
+            <li> Complete a project form in pdf. Email support[at]akvo.org for a project form
               in pdf.</li></ol>
               
               
             <h4>To add a project via Akvo RSR Admin:</h4>
            <ol style="list-style-type:decimal; margin-left:20px;">
-              <li>Go to <a href="http://www.akvo.org" style="display:inline;">www.akvo.org</a>, click login in the upper right corner. In the Akvo RSR
+              <li>Go to your organisation's Akvo RSR page and login at the bottom of the page, or go to <a href="http://www.akvo.org" style="display:inline;">www.akvo.org</a>, click login in the upper right corner. In the Akvo RSR
               box click RSR administrator login page. Login with
               your username and password.</li>
             <li>After you've been logged in, click Projects and
               your organisation's project listing will appear. Then click Add project to add a new project via the online
               project form. Make sure to click Save and continue
               editing at the bottom of the page every now and then.</li></ol>
-            <h3>General Information</h3>
+            <h3>General information</h3>
             <p>Give your project a short title (max. 45 characters) and
               subtitle (max. 75 characters). These fields are the newspaper
               headline for your project: use them to attract attention to what
@@ -154,11 +154,11 @@
     <h4>RSR Up Android app</h4>
     <ul class="threeColumns vertMargin floats-in">
       <li class="androidManual"><a href="https://github.com/akvo/akvo-rsr-up/wiki/User-guide"><span>RSR Up manual</span></a></li>
-      <li class="videoAndroid"><a href="http://youtu.be/NMuE2OI_trE"><span>Showcase Video</span></a></li>
-      <li class="playStore"><a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up"><span>Akvo RSR Up - Download</span></a></li>
+      <li class="videoAndroid"><a href="https://www.youtube.com/playlist?list=PL4yy3UmocEym7MW4-nqNgNxZt4Pg2dgQC"><span>Demo videos</span></a></li>
+      <li class="playStore"><a href="https://play.google.com/store/apps/details?id=org.akvo.rsr.up"><span>Akvo RSR Up - App</span></a></li>
     </ul>
     <hr class="delicate" />
-    <p>If you need further help contact us at <a href="mailto:support@akvo.org" style="display:inline;">support@akvo.org</a></p>
+    <p>If you need further help contact us at support[at]akvo.org.</p>
   </section>
 </div>
 

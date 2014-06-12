@@ -74,12 +74,6 @@
     <?php the_field('akvopedia_project_text'); ?>
   </p>
   <img src="<?php the_field('akvopedia_project_img'); ?>" /> </section>
-<section id="akvopediaRealWorld" class="wrapper hidden">
-  <h1 class="">Who is using Akvo akvopedia?</h1>
-  <p class="fullWidthParag centerED">
-    <?php the_field('akvopedia_who_is_text'); ?>
-  </p>
-  <a href="#"> <img src="<?php the_field('akvopedia_who_is_img'); ?>" /> </a> </section>
 <section id="akvopediaContribute">
   <h1 class="">Contribute</h1>
   <p class="fullWidthParag centerED">

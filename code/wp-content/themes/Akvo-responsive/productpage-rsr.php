@@ -101,7 +101,6 @@
     <p class="fullWidthParag centerED">
       <?php the_field('rsr_support_text'); ?>
     </p>
-    <img src="<?php the_field('rsr_support_img'); ?>" />
   </section>
   <section id="rsrRealWorld" class="wrapper">
     <h1 class="">Who is using Akvo RSR?</h1>
@@ -113,7 +112,7 @@
 </a>
   </section>
   <section id="rsrTech">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul class="floats-in wrapper">
       <li>
         <h3>
@@ -134,13 +133,7 @@
     </ul>
   </section>
 
-  <section id="rsrPricing" class="hidden">
-    <h1 class="">Pricing</h1>
-    <p class="wrapper centerED">
-      <?php the_field('rsr_pricing_text'); ?>
-    </p>
-  </section>
-  <section class="wrapper centerED "><a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR Terms of Use </a></section>
+  <section class="wrapper centerED "><a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR terms of use </a></section>
 </div>
 <!-- end content -->
 

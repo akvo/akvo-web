@@ -146,7 +146,7 @@
     </p>
     <img src="<?php the_field('flow_who_is_img'); ?>" /> </section>
   <section id="flowTech" class="wrapper">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul>
       <li>
         <h3>
@@ -167,14 +167,8 @@
       </li>
     </ul>
   </section>
-  <section id="flowPricing" class="wrapper hidden">
-    <h1 class="">Pricing</h1>
-    <p>
-      <?php the_field('flow_pricing_text'); ?>
-    </p>
-  </section>
   <section class="wrapper centerED ">
-    <a href="/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW Terms of Use</a>  </section>
+    <a href="/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW terms of use</a>  </section>
 </div>
  <!-- end content -->
 

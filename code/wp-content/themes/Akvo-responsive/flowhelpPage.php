@@ -32,7 +32,7 @@
             <ol style="list-style-type:decimal; margin-left:20px;">
               <li>Open the Field Survey app.</li>
               <li>Tap on Settings → Preferences → Device Identifier.</li>
-              <li>Fill in the Authorization passcode (provided by your Administrator) and then set the Device Identifier as directed.</li>
+              <li>Fill in the Authorisation passcode (provided by your Administrator) and then set the Device Identifier as directed.</li>
             </ol>
           </li>
         </ul>
@@ -42,6 +42,7 @@
           <li>
             <ol style="list-style-type:decimal; margin-left:20px;">
               <li>Open Field Survey app.</li>
+              <li>Enter the Authorisation passcode.</li>
               <li>Tap on Manage Users.</li>
               <li>Now press the Menu button and then tap on Add User in the bottom panel.</li>
               <li>Fill in the user details and then tap Save.</li>
@@ -62,23 +63,23 @@
         <ul class="faqMenuList">
           <li>
             <ul style="list-style-type:disc; margin-left:10px;">
-              <li>Check that you are connected to an internet network</li>
-              <li>Check that you are entering the correct Survey ID</li>
-              <li>Check for a notification that the survey is unpublished</li>
+              <li>Check that you are connected to an internet network.</li>
+              <li>Check that you are entering the correct Survey ID.</li>
+              <li>Check for a notification that the survey is unpublished.</li>
             </ul>
           </li>
         </ul>
       </li>
-      <li class="faqMenu"><a href="#" class="faqMenuHead">I’m not getting a GPS fix. What should i do?</a>
+      <li class="faqMenu"><a href="#" class="faqMenuHead">I’m not getting a GPS fix. What should I do?</a>
         <ul class="faqMenuList">
           <li>
             <ul style="list-style-type:disc; margin-left:10px;">
-              <li>Ensure that the GPS is turned on</li>
-              <li>Ensure that you are in an open area and NOT inside a building</li>
-              <li>Open the GPS Status app</li>
+              <li>Ensure that the GPS is turned on, in the phone settings.</li>
+              <li>Ensure that you are in an open area and NOT inside a building.</li>
+              <li>Open the GPS Status app.</li>
               <li>Keep the device static and DO NOT move around with it. If possible keep it away from any reflecting surfaces such as walls.</li>
               <li>Monitor the status of the GPS data being received by the device in the GPS status app.</li>
-              <li>If you still do not get a fix after 15-20 mins, relocate to a different spot a few meters away and try again</li>
+              <li>If you still do not get a fix after 15-20 mins, relocate to a different spot a few meters away and try again.</li>
             </ul>
           </li>
         </ul>
@@ -87,7 +88,7 @@
         <ul class="faqMenuList">
           <li>
   <ol style="list-style-type:decimal; margin-left:20px;">
-              <li>Tap on the survey and then tap on the Menu button.</li><li>Tap on Languages in the bottom panel, which will open up the Survey Languages popup.</li><li>Select the checkbox next to the required survey language you want the survey to be displayed in. Tap OK.</li></ol></li>
+              <li>Tap on the survey and then tap on the Menu button.</li><li>Tap on Languages in the bottom panel, which will open up the Survey Languages popup.</li><li>Select the checkbox next to the required survey language. Tap OK.</li></ol></li>
         
         
         </ul>
@@ -109,10 +110,10 @@
         <ul class="faqMenuList">
           <li>
             <ol style="list-style-type:decimal; margin-left:20px;">
-              <li>Open the Field Survey app and tap on Survey Status</li>
-              <li>Review Submitted Surveys. </li>
-              <li>Press the survey that that you want to resend for 2-3 secs. </li>
-              <li>A popup will be displayed. Tap Resend Survey. </li>
+              <li>Open the Field Survey app and tap on Survey Status.</li>
+              <li>Review Submitted Surveys.</li>
+              <li>Press the survey that that you want to resend for 2-3 secs.</li>
+              <li>A popup will be displayed. Tap Resend Survey.</li>
               <li>If you want to resend surveys in bulk then press the Menu button and tap Resend all Surveys.</li>
             </ol>
           </li>
@@ -145,7 +146,7 @@
       <li class="spanishStartManual"><a href="https://www.dropbox.com/s/5tq2eu3okmxou9x/Quick%20start%20guide%20Setup%20Akvo%20FLOWkvdb-spanish.pdf"></a></li>
     </ul>
     <hr class="delicate" />
-    <p>If you need further help contact us at <a href="mailto:support@akvoflow.org">support@akvoflow.org</a></p>
+    <p>If you need further help contact us at support[at]akvoflow.org.</p>
   </section>
 </div>
 

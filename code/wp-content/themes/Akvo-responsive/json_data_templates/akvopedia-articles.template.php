@@ -1,6 +1,6 @@
 <?php
 /*
-* Template for the "OpenAid orgs" plugin used on networkPage.php
+* Template for the "Akvopedia articles" plugin used on networkPage.php
 * Feed name: Akvopedia articles
 * Slug: akvopedia-articles
 * JSON feed URL: http://akvopedia.org/wiki/api.php?action=query&meta=siteinfo&siprop=statistics&format=json

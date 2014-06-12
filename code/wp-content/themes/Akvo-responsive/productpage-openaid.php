@@ -46,10 +46,10 @@
     </p>
   </section>
   <section id="openaidInAction wrapper" class="hide">
-    <h1 class="">openaid in Action</h1>
+    <h1 class="">openaid in action</h1>
   </section>
   <section class="inFivePoints wrapper" id="openaidInFive">
-    <h1 class="">Akvo Openaid Features</h1>
+    <h1 class="">Akvo Openaid features</h1>
     <ul>
       <li class="pointOne floats-in">
         <h3> <span>01</span>
@@ -113,9 +113,9 @@
     <p class="fullWidthParag centerED">
       <?php the_field('openaid_real_world_text'); ?>
     </p>
-    <img src="<?php the_field('openaid_who_is_img'); ?>" /> </section>
+  </section>
   <section id="openaidTech" class="wrapper">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul>
       <li>
         <h3>
@@ -134,12 +134,6 @@
         </p>
       </li>
     </ul>
-  </section>
-  <section id="openaidPricing" class="hidden">
-    <h1 class="">Pricing</h1>
-    <p class="fullWidthParag centerED">
-      <?php the_field('openaid_pricing_text'); ?>
-    </p>
   </section>
 </div>
 <!-- end content -->
