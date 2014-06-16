@@ -33,9 +33,64 @@
     </ul>
   </li>
   <section class="wrapper">
-    <ul class="floats-in">
-      <?php do_shortcode('[jsondata_feed slug="rsr-many-updates" limit="60" photo__gte="a"]'); ?>
+    <ul id="updates" class="floats-in">
+      <?php
+        $shortcode = '[jsondata_feed slug="rsr-many-updates" limit="' . the_field('starting_number_of_updates') . '" offset="0" photo__gte="a"]';
+        do_shortcode($shortcode);
+      ?>
     </ul>
+
+    <h4 id="loadingCaption" class="backLined" style="display: none;">
+      Fetching updates...<br/>
+      <img src="<?php bloginfo('template_directory'); ?>/images/loading.gif" title="" alt="" />
+    </h4>
+    <a id="loadMore" class="btn btn-primary loadMore"">Fetch more updates</a>
+
+    <script type="text/javascript">
+      $(function() {
+        var server_name = '<?=$_SERVER["SERVER_NAME"];?>';
+        var offset = <?php the_field('starting_number_of_updates'); ?>;
+        var limit = <?php the_field('number_of_updates_to_add'); ?>;
+        selectors = {};
+
+        var populateUpdates = function(data) {
+          $("#loadMore").css('display', 'table');
+          $("#loadingCaption").css('display', 'none');
+          $('#updates').append(data);
+        }
+
+        var fetchFailed = function(result) {
+          alert(result.status + ' - ' + result.statusText);
+          $("#loadMore").css('display', 'table');
+          $("#loadingCaption").css('display', 'none');
+        }
+
+        var callAPI = function(path) {
+          $("#loadMore").css('display', 'none');
+          $("#loadingCaption").css('display', 'block');
+          $.ajax({
+            url: server_name + path,
+            dataType: "html",
+            success: populateUpdates,
+            error: fetchFailed
+          });
+        }
+
+        var moreUpdates = function() {
+          path = "/?page_id=16940&limit=" + limit + "&offset=" + offset;
+          callAPI(path);
+          offset = offset + limit;
+          console.log('offset; ' + offset);
+        }
+
+        $('#loadMore').click(function() {
+          moreUpdates();
+        });
+
+        console.log('offset; ' + offset);
+      });
+    </script>
+
   </section>
 
 </div>
