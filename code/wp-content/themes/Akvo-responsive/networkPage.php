@@ -130,7 +130,7 @@
           var position = new google.maps.LatLng(project.latitude, project.longitude);
 
           var marker = new google.maps.Marker({
-            icon: 'http://rsr.akvo.org/media/core/img/blueMarker.png',
+            icon: '<?php bloginfo('template_directory'); ?>/images/blueMarker.png',
             position: position,
             map: map
           });
