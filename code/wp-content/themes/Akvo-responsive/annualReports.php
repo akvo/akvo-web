@@ -26,6 +26,7 @@
     <h2>Akvo 2013 Annual Report.</h2>
     <a href="/wp-content/uploads/2013/08/Akvo_annual_report_2012-lo-res-final.pdf"> <img src="<?php echo get_stylesheet_directory_uri(); ?>/images/AR2013.png" /> </a>
     <p><i>Download the <a href="<?php echo get_stylesheet_directory_uri(); ?>/images/Akvo_annual_report_2013_web.pdf">Akvo Annual Report 2013</a></i> (PDF 3.6 Mbyte)</p>
+    <p><i>Download the <a href="https://www.dropbox.com/s/i0nzap0om80r7xh/Akvo_annual_accounts_2013.pdf">Akvo Annual Accounts 2013</a></i> (PDF 1.3 Mbyte)</p>
   </div>
   <hr class="delicate"/>
   <div class="aReport fullWidthParag" id="annualreport2012">
