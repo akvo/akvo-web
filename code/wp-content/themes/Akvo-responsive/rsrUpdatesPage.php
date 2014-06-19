@@ -11,7 +11,8 @@
   <h1 class="backLined">All latest project updates</h1>
   <nav class="anchorNav2 wrapper">
     <ul>
-      <li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates/">RSS Link for All RSR Updates ></a></li>
+      <li  class="rss"><a href="../seeithappen/">&lsaquo; Go back</a></li>
+      <li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates/">RSS Link for All RSR Updates &rsaquo;</a></li>
     </ul>
   </nav>
 <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
