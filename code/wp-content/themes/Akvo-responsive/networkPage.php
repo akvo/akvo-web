@@ -116,8 +116,8 @@
         mapTypeId: google.maps.MapTypeId.ROADMAP,
         streetViewControl: false
       },
-      projects: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" offset="0" limit="1000" format="json"]'); ?>,
-      projects2: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" offset="1000" limit="1000" format="json"]'); ?>,
+      projects: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="0"]'); ?>,
+      projects2: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="1000"]'); ?>,
 
       load: function() {
         var map = new google.maps.Map(this.canvas, this.options);
