@@ -31,7 +31,7 @@
     </div>
   </section>
   <section id="rsrUpTech">
-    <h1 class="">Technical Specifications</h1>
+    <h1 class="">Technical specifications</h1>
     <ul class="floats-in wrapper fullWidthParag" style="list-style-type:disc;">
       <li>Runs on smart phones running Android 2.1 or higher</li>
       <li>Requires 1.5MB of free storage to install</li>

@@ -3677,6 +3677,9 @@ ol.threeFlowPoints li p {
 .aReport h2 {
     margin: 0.5em auto 1em auto;
 }
+.annual-reports img {
+    box-shadow:1px 1px 3px rgba(32,32,36,0.1), -1px -1px 3px rgba(32,32,36,0.1);
+}
 /*-----------------------------------
 				Team Page
 ------------------------------------*/
@@ -4077,17 +4080,17 @@ ul.staff li:nth-child(6n) {
 h1 {
 	&.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-        background-size: 175px auto;
+        background-size: auto 56px;
         text-indent: -9999px;
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		background-size: 185px auto;
+		background-size: auto 56px;
         text-indent: -9999px;
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		 background-size: 195px auto;
+		 background-size: auto 56px;
         text-indent: -9999px;
     }
 }

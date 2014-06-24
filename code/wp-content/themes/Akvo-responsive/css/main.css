@@ -4205,25 +4205,29 @@ ol.threeFlowPoints li p {
 .aReport h2 {
   margin: 0.5em auto 1em auto; }
 
+/* line 3680, main.scss */
+.annual-reports img {
+  box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1); }
+
 /*-----------------------------------
 				Team Page
 ------------------------------------*/
-/* line 3683, main.scss */
+/* line 3686, main.scss */
 .teamPage {
   margin: 0em auto; }
 
-/* line 3686, main.scss */
+/* line 3689, main.scss */
 .teamPage > p {
   margin: 0.25em auto 1.75em auto;
   text-align: center;
   width: 85%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3693, main.scss */
+  /* line 3696, main.scss */
   .teamPage > p {
     margin: 0.25em auto;
     width: 98%; } }
-/* line 3698, main.scss */
+/* line 3701, main.scss */
 ul.staff {
   display: block;
   margin: 0em auto;
@@ -4232,14 +4236,14 @@ ul.staff {
   width: 99%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3707, main.scss */
+  /* line 3710, main.scss */
   ul.staff {
     margin: 1em auto 2em auto; } }
-/* line 3711, main.scss */
+/* line 3714, main.scss */
 ul.staff:target {
   background: #f2f2f2; }
 
-/* line 3714, main.scss */
+/* line 3717, main.scss */
 ul.staff li {
   display: inline;
   float: left;
@@ -4249,21 +4253,21 @@ ul.staff li {
   width: 16%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3724, main.scss */
+  /* line 3727, main.scss */
   ul.staff li {
     font-size: 1.2em;
     margin: 0em 2% 0px 1%;
     width: 48%; } }
 @media only screen and (max-width: 768px) {
-  /* line 3732, main.scss */
+  /* line 3735, main.scss */
   ul.staff li:nth-child(2n) {
     margin: 0em 1% 0px 0em; } }
-/* line 3736, main.scss */
+/* line 3739, main.scss */
 ul.staff li:hover {
   background: #fafafa;
   cursor: pointer; }
 
-/* line 3740, main.scss */
+/* line 3743, main.scss */
 ul.staff li small {
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
@@ -4273,19 +4277,19 @@ ul.staff li small {
   opacity: 0;
   transition: opacity 0.2s ease-in; }
 
-/* line 3749, main.scss */
+/* line 3752, main.scss */
 ul.staff li:hover small {
   opacity: 1; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3754, main.scss */
+  /* line 3757, main.scss */
   ul.staff li:hover small {
     font-size: 1em; } }
-/* line 3758, main.scss */
+/* line 3761, main.scss */
 ul.staff li div.staffName {
   margin: 3px 0em; }
 
-/* line 3761, main.scss */
+/* line 3764, main.scss */
 ul.staff li p.staffTitle {
   color: #7c7c7c;
   font-size: 0.9em;
@@ -4293,7 +4297,7 @@ ul.staff li p.staffTitle {
   margin: 0em;
   padding: 0em; }
 
-/* line 3768, main.scss */
+/* line 3771, main.scss */
 ul.staff li div.imgWrapper {
   background: #e0e0e0;
   display: block;
@@ -4302,33 +4306,33 @@ ul.staff li div.imgWrapper {
   position: relative;
   width: 96%; }
 
-/* line 3776, main.scss */
+/* line 3779, main.scss */
 .new_staffs .staffBiog,
 .staffAsset .staffBiog,
 .new_partners .staffBiog {
   display: none; }
 
-/* line 3781, main.scss */
+/* line 3784, main.scss */
 .akvoTeam {
   display: none; }
 
-/* line 3784, main.scss */
+/* line 3787, main.scss */
 .singleStaffPage .akvoTeam {
   display: block; }
 
-/* line 3787, main.scss */
+/* line 3790, main.scss */
 ul.staff li.partnership:hover div.imgWrapper {
   background: #faa21b; }
 
-/* line 3790, main.scss */
+/* line 3793, main.scss */
 ul.staff li.communication:hover div.imgWrapper {
   background: #db87c9; }
 
-/* line 3793, main.scss */
+/* line 3796, main.scss */
 ul.staff li.engineering:hover div.imgWrapper {
   background: #85ab8f; }
 
-/* line 3796, main.scss */
+/* line 3799, main.scss */
 ul.staff li div.imgWrapper img {
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
@@ -4339,38 +4343,38 @@ ul.staff li div.imgWrapper img {
   vertical-align: middle;
   width: 100%; }
 
-/* line 3803, main.scss */
+/* line 3806, main.scss */
 .directors {
   position: relative; }
 
-/* line 3806, main.scss */
+/* line 3809, main.scss */
 #netherLand .directorsAbs {
   left: 67.2%;
   position: absolute;
   top: 0em; }
 
-/* line 3811, main.scss */
+/* line 3814, main.scss */
 #usa .directorsAbs,
 #kenya .directorsAbs {
   left: 50.4%;
   position: absolute;
   top: 0em; }
 
-/* line 3817, main.scss */
+/* line 3820, main.scss */
 ul.staff li div.imgWrapper img:hover {
   opacity: 0.9; }
 
-/* line 3820, main.scss */
+/* line 3823, main.scss */
 ul.staff li:nth-child(6n) {
   margin-right: 0em; }
 
-/* line 3823, main.scss */
+/* line 3826, main.scss */
 .teamPage h2,
 .partnerPage h2 {
   margin: 0em auto 1.5em auto;
   text-align: center; }
 
-/* line 3828, main.scss */
+/* line 3831, main.scss */
 #managementGroup,
 #partnershipGroup,
 #communicationGroup,
@@ -4382,7 +4386,7 @@ ul.staff li:nth-child(6n) {
   padding: 0.5em 0em;
   position: relative; }
 
-/* line 3839, main.scss */
+/* line 3842, main.scss */
 #managementGroup legend {
   -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
@@ -4396,16 +4400,16 @@ ul.staff li:nth-child(6n) {
   padding: 0.25em 0.5em;
   position: relative; }
 
-/* line 3849, main.scss */
+/* line 3852, main.scss */
 #managementGroup legend img {
   vertical-align: text-bottom; }
 
-/* line 3852, main.scss */
+/* line 3855, main.scss */
 #managementGroup b {
   color: #a81f2d; }
 
 /*--------------------------*/
-/* line 3856, main.scss */
+/* line 3859, main.scss */
 #overlay {
   bottom: 0em;
   display: none;
@@ -4418,7 +4422,7 @@ ul.staff li:nth-child(6n) {
   width: 100%;
   z-index: 1000001; }
 
-/* line 3868, main.scss */
+/* line 3871, main.scss */
 #blanket {
   background-color: #000;
   bottom: 0em;
@@ -4429,7 +4433,7 @@ ul.staff li:nth-child(6n) {
   top: 0em;
   width: 100%; }
 
-/* line 3878, main.scss */
+/* line 3881, main.scss */
 .dialog {
   -moz-border-radius: 0em 0em 5px 5px;
   -o-border-radius: 0em 0em 5px 5px;
@@ -4446,7 +4450,7 @@ ul.staff li:nth-child(6n) {
   width: 50%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3892, main.scss */
+  /* line 3895, main.scss */
   .dialog {
     -moz-border-radius: 0em;
     -o-border-radius: 0em;
@@ -4462,53 +4466,53 @@ ul.staff li:nth-child(6n) {
     padding: 2em 5% 3em 5%;
     position: relative;
     width: 90%; } }
-/* line 3906, main.scss */
+/* line 3909, main.scss */
 #staffDescr {
   margin-top: 10px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3911, main.scss */
+  /* line 3914, main.scss */
   #staffDescr h1 {
     font-size: 2em; } }
-/* line 3915, main.scss */
+/* line 3918, main.scss */
 #staffDescr p {
   display: block; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3920, main.scss */
+  /* line 3923, main.scss */
   #staffDescr p {
     width: 95%; } }
-/* line 3924, main.scss */
+/* line 3927, main.scss */
 .dialog .staffTitle {
   color: #faa21b;
   font-size: 1.1em;
   margin: 2px 0em 10px; }
 
-/* line 3929, main.scss */
+/* line 3932, main.scss */
 .buttons {
   margin: 10px auto 5px auto;
   position: absolute;
   right: 5px;
   top: 5px; }
 
-/* line 3935, main.scss */
+/* line 3938, main.scss */
 .buttons .cancel {
   background: url("../images/closePopup.png") left center no-repeat;
   cursor: pointer;
   padding: 6px 5px 8px 40px; }
 
-/* line 3940, main.scss */
+/* line 3943, main.scss */
 .buttons .cancel:hover {
   cursor: pointer;
   opacity: 0.8; }
 
-/* line 3944, main.scss */
+/* line 3947, main.scss */
 .extLoad div.imgWrapper {
   border: 1px solid #f2f2f2;
   float: left;
   margin: 10px 35px 5px 0em; }
 
-/* line 3949, main.scss */
+/* line 3952, main.scss */
 .extLoad div.imgWrapper img {
   margin: 0em auto;
   vertical-align: middle;
@@ -4517,11 +4521,11 @@ ul.staff li:nth-child(6n) {
 /*----------------------------------------------------------------------------------------------------------------------------------------
 																         Media section
 ----------------------------------------------------------------------------------------------------------------------------------------*/
-/* line 3957, main.scss */
+/* line 3960, main.scss */
 .media h2 {
   margin: 1.5em 0em 0.5em; }
 
-/* line 3960, main.scss */
+/* line 3963, main.scss */
 .media h4 {
   border-bottom: thin solid #de8929;
   color: #de8929;
@@ -4529,20 +4533,20 @@ ul.staff li:nth-child(6n) {
   padding: 0em 0em 0.5em;
   width: 100%; }
 
-/* line 3967, main.scss */
+/* line 3970, main.scss */
 .media ul.twoColumns li {
   padding: 3em 0em; }
 
-/* line 3970, main.scss */
+/* line 3973, main.scss */
 #tvLogo {
   margin-bottom: 5em; }
 
-/* line 3973, main.scss */
+/* line 3976, main.scss */
 .media section > h1 {
   margin-bottom: 1em;
   text-align: center; }
 
-/* line 3977, main.scss */
+/* line 3980, main.scss */
 .media section > h1:before {
   content: "";
   display: block;
@@ -4567,65 +4571,65 @@ ul.staff li:nth-child(6n) {
 /*--------------------------------------------------------------------
 							Help section
 --------------------------------------------------------------------*/
-/* line 4001, main.scss */
+/* line 4004, main.scss */
 .akvo-policies-and-terms ul {
   margin: 0em 0em 0em 10px; }
 
-/* line 4004, main.scss */
+/* line 4007, main.scss */
 .akvo-terms-of-use p,
 .akvo-privacy-policy p {
   margin: 10px 0em; }
 
-/* line 4008, main.scss */
+/* line 4011, main.scss */
 .akvo-policies-and-terms h3,
 .akvo-policies-and-terms h4 {
   margin: 2em 0em 0.25em; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4014, main.scss */
+  /* line 4017, main.scss */
   .helpSupport nav ul li, .helpSupport nav ul li:first-child {
     margin-bottom: 20px !important; } }
-/* line 4016, main.scss */
+/* line 4019, main.scss */
 .helpSupport nav ul li.bgDeco {
   min-height: 320px; }
 
-/* line 4019, main.scss */
+/* line 4022, main.scss */
 .helpSupport nav ul li p {
   color: #2c2a74; }
 
-/* line 4022, main.scss */
+/* line 4025, main.scss */
 .helpSupport nav ul li a {
   display: block;
   height: 70px;
   transition: all 0.2s ease-in; }
-  /* line 4026, main.scss */
+  /* line 4029, main.scss */
   .helpSupport nav ul li a.rsrHelp {
     background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 50% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4026, main.scss */
+      /* line 4029, main.scss */
       .helpSupport nav ul li a.rsrHelp {
         margin: 20px 0 0 0; } }
-  /* line 4035, main.scss */
+  /* line 4038, main.scss */
   .helpSupport nav ul li a.flowHelp {
     background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 56% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4035, main.scss */
+      /* line 4038, main.scss */
       .helpSupport nav ul li a.flowHelp {
         margin: 20px 0 0 0; } }
-  /* line 4044, main.scss */
+  /* line 4047, main.scss */
   .helpSupport nav ul li a.akvopediaHelp {
     background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 65% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4044, main.scss */
+      /* line 4047, main.scss */
       .helpSupport nav ul li a.akvopediaHelp {
         margin: 20px 0 0 0; } }
-  /* line 4053, main.scss */
+  /* line 4056, main.scss */
   .helpSupport nav ul li a.moreHelp {
     color: #de8929;
     display: block;
@@ -4636,57 +4640,57 @@ ul.staff li:nth-child(6n) {
     position: relative;
     text-align: center;
     text-indent: -9999px; }
-    /* line 4063, main.scss */
+    /* line 4066, main.scss */
     .helpSupport nav ul li a.moreHelp.rsrH {
       background: url("../images/help_RSR_icn.png") center center no-repeat;
       background-size: 80% 80%; }
-    /* line 4067, main.scss */
+    /* line 4070, main.scss */
     .helpSupport nav ul li a.moreHelp.flowH {
       background: url("../images/help_FLOW_icn.png") center center no-repeat;
       background-size: 80% 80%; }
-    /* line 4071, main.scss */
+    /* line 4074, main.scss */
     .helpSupport nav ul li a.moreHelp.pediaH {
       background: url("../images/help_pedia_icn.png") center center no-repeat;
       background-size: 80% 80%; }
 
-/* line 4078, main.scss */
+/* line 4081, main.scss */
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
-  background-size: 175px auto;
+  background-size: auto 56px;
   text-indent: -9999px; }
-/* line 4083, main.scss */
+/* line 4086, main.scss */
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
-  background-size: 185px auto;
+  background-size: auto 56px;
   text-indent: -9999px; }
-/* line 4088, main.scss */
+/* line 4091, main.scss */
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
-  background-size: 195px auto;
+  background-size: auto 56px;
   text-indent: -9999px; }
 
-/* line 4095, main.scss */
+/* line 4098, main.scss */
 .helpSupport nav ul li:hover a.rsrHelp {
   background-size: 52% auto; }
-/* line 4098, main.scss */
+/* line 4101, main.scss */
 .helpSupport nav ul li:hover a.flowHelp {
   background-size: 58% auto; }
-/* line 4101, main.scss */
+/* line 4104, main.scss */
 .helpSupport nav ul li:hover a.akvopediaHelp {
   background-size: 67% auto; }
-/* line 4104, main.scss */
+/* line 4107, main.scss */
 .helpSupport nav ul li:hover a.moreHelp {
   opacity: 1; }
 
-/* line 4108, main.scss */
+/* line 4111, main.scss */
 .helpSupport h2,
 .rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
   text-align: left !important; }
 
-/* line 4112, main.scss */
+/* line 4115, main.scss */
 .englishManual {
   min-height: 220px; }
-  /* line 4114, main.scss */
+  /* line 4117, main.scss */
   .englishManual a {
     background: url("../images/rsrEnglishManual.png") left top no-repeat;
     background-size: 151px 200px;
@@ -4696,10 +4700,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4114, main.scss */
+      /* line 4117, main.scss */
       .englishManual a {
         background-position: center top; } }
-    /* line 4126, main.scss */
+    /* line 4129, main.scss */
     .englishManual a span {
       bottom: 0em;
       display: block;
@@ -4708,14 +4712,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4126, main.scss */
+        /* line 4129, main.scss */
         .englishManual a span {
           text-align: center; } }
 
-/* line 4140, main.scss */
+/* line 4143, main.scss */
 .frenchManual {
   min-height: 220px; }
-  /* line 4142, main.scss */
+  /* line 4145, main.scss */
   .frenchManual a {
     background: url("../images/rsrFrenchManual.png") left top no-repeat;
     background-size: 151px 200px;
@@ -4725,10 +4729,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4142, main.scss */
+      /* line 4145, main.scss */
       .frenchManual a {
         background-position: center top; } }
-    /* line 4154, main.scss */
+    /* line 4157, main.scss */
     .frenchManual a span {
       bottom: 0em;
       display: block;
@@ -4737,14 +4741,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4154, main.scss */
+        /* line 4157, main.scss */
         .frenchManual a span {
           text-align: center; } }
 
-/* line 4168, main.scss */
+/* line 4171, main.scss */
 .spanishManual {
   min-height: 220px; }
-  /* line 4170, main.scss */
+  /* line 4173, main.scss */
   .spanishManual a {
     background: url("../images/rsrSpanishManual.png") left top no-repeat;
     background-size: 151px 200px;
@@ -4754,10 +4758,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4170, main.scss */
+      /* line 4173, main.scss */
       .spanishManual a {
         background-position: center top; } }
-    /* line 4182, main.scss */
+    /* line 4185, main.scss */
     .spanishManual a span {
       bottom: 0em;
       display: block;
@@ -4766,14 +4770,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4182, main.scss */
+        /* line 4185, main.scss */
         .spanishManual a span {
           text-align: center; } }
 
-/* line 4196, main.scss */
+/* line 4199, main.scss */
 .androidManual {
   min-height: 220px; }
-  /* line 4198, main.scss */
+  /* line 4201, main.scss */
   .androidManual a {
     background: url("../images/rsrUpManual.png") left top no-repeat;
     background-size: 151px 200px;
@@ -4783,10 +4787,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4198, main.scss */
+      /* line 4201, main.scss */
       .androidManual a {
         background-position: center top; } }
-    /* line 4210, main.scss */
+    /* line 4213, main.scss */
     .androidManual a span {
       bottom: 0em;
       display: block;
@@ -4795,14 +4799,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4210, main.scss */
+        /* line 4213, main.scss */
         .androidManual a span {
           text-align: center; } }
 
-/* line 4224, main.scss */
+/* line 4227, main.scss */
 .videoAndroid {
   min-height: 220px; }
-  /* line 4226, main.scss */
+  /* line 4229, main.scss */
   .videoAndroid a {
     background: url("../images/rsrUpVideo.png") left top no-repeat;
     background-size: 151px 200px;
@@ -4812,10 +4816,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4226, main.scss */
+      /* line 4229, main.scss */
       .videoAndroid a {
         background-position: center top; } }
-    /* line 4238, main.scss */
+    /* line 4241, main.scss */
     .videoAndroid a span {
       bottom: 0em;
       display: block;
@@ -4824,14 +4828,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4238, main.scss */
+        /* line 4241, main.scss */
         .videoAndroid a span {
           text-align: center; } }
 
-/* line 4252, main.scss */
+/* line 4255, main.scss */
 .playStore {
   min-height: 220px; }
-  /* line 4254, main.scss */
+  /* line 4257, main.scss */
   .playStore a {
     background: url("../images/Google_Play_Store_96.png") left top no-repeat;
     background-size: 141px auto;
@@ -4841,10 +4845,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4254, main.scss */
+      /* line 4257, main.scss */
       .playStore a {
         background-position: center top; } }
-    /* line 4266, main.scss */
+    /* line 4269, main.scss */
     .playStore a span {
       bottom: 0em;
       display: block;
@@ -4853,14 +4857,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4266, main.scss */
+        /* line 4269, main.scss */
         .playStore a span {
           text-align: center !important; } }
 
-/* line 4281, main.scss */
+/* line 4284, main.scss */
 .englishEnumManual {
   min-height: 220px; }
-  /* line 4283, main.scss */
+  /* line 4286, main.scss */
   .englishEnumManual a {
     background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -4870,10 +4874,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4283, main.scss */
+      /* line 4286, main.scss */
       .englishEnumManual a {
         background-position: center top; } }
-    /* line 4295, main.scss */
+    /* line 4298, main.scss */
     .englishEnumManual a span {
       bottom: 0em;
       display: block;
@@ -4882,14 +4886,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4295, main.scss */
+        /* line 4298, main.scss */
         .englishEnumManual a span {
           text-align: center; } }
 
-/* line 4309, main.scss */
+/* line 4312, main.scss */
 .frenchEnumManual {
   min-height: 220px; }
-  /* line 4311, main.scss */
+  /* line 4314, main.scss */
   .frenchEnumManual a {
     background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -4899,10 +4903,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4311, main.scss */
+      /* line 4314, main.scss */
       .frenchEnumManual a {
         background-position: center top; } }
-    /* line 4323, main.scss */
+    /* line 4326, main.scss */
     .frenchEnumManual a span {
       bottom: 0em;
       display: block;
@@ -4911,14 +4915,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4323, main.scss */
+        /* line 4326, main.scss */
         .frenchEnumManual a span {
           text-align: center; } }
 
-/* line 4337, main.scss */
+/* line 4340, main.scss */
 .spanishEnumManual {
   min-height: 220px; }
-  /* line 4339, main.scss */
+  /* line 4342, main.scss */
   .spanishEnumManual a {
     background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -4928,10 +4932,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4339, main.scss */
+      /* line 4342, main.scss */
       .spanishEnumManual a {
         background-position: center top; } }
-    /* line 4351, main.scss */
+    /* line 4354, main.scss */
     .spanishEnumManual a span {
       bottom: 0em;
       display: block;
@@ -4940,14 +4944,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4351, main.scss */
+        /* line 4354, main.scss */
         .spanishEnumManual a span {
           text-align: center; } }
 
-/* line 4366, main.scss */
+/* line 4369, main.scss */
 .englishStartManual {
   min-height: 240px; }
-  /* line 4368, main.scss */
+  /* line 4371, main.scss */
   .englishStartManual a {
     background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -4957,10 +4961,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4368, main.scss */
+      /* line 4371, main.scss */
       .englishStartManual a {
         background-position: center top; } }
-    /* line 4380, main.scss */
+    /* line 4383, main.scss */
     .englishStartManual a span {
       bottom: 0em;
       display: block;
@@ -4969,14 +4973,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4380, main.scss */
+        /* line 4383, main.scss */
         .englishStartManual a span {
           text-align: center; } }
 
-/* line 4394, main.scss */
+/* line 4397, main.scss */
 .frenchStartManual {
   min-height: 240px; }
-  /* line 4396, main.scss */
+  /* line 4399, main.scss */
   .frenchStartManual a {
     background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -4986,10 +4990,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4396, main.scss */
+      /* line 4399, main.scss */
       .frenchStartManual a {
         background-position: center top; } }
-    /* line 4408, main.scss */
+    /* line 4411, main.scss */
     .frenchStartManual a span {
       bottom: 0em;
       display: block;
@@ -4998,14 +5002,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4408, main.scss */
+        /* line 4411, main.scss */
         .frenchStartManual a span {
           text-align: center; } }
 
-/* line 4422, main.scss */
+/* line 4425, main.scss */
 .spanishStartManual {
   min-height: 240px; }
-  /* line 4424, main.scss */
+  /* line 4427, main.scss */
   .spanishStartManual a {
     background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
     background-size: 141px auto;
@@ -5015,10 +5019,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4424, main.scss */
+      /* line 4427, main.scss */
       .spanishStartManual a {
         background-position: center top; } }
-    /* line 4436, main.scss */
+    /* line 4439, main.scss */
     .spanishStartManual a span {
       bottom: 0em;
       display: block;
@@ -5027,14 +5031,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4436, main.scss */
+        /* line 4439, main.scss */
         .spanishStartManual a span {
           text-align: center; } }
 
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
-/* line 4454, main.scss */
+/* line 4457, main.scss */
 #akvoDashboard {
   background: #202024;
   margin: 50px auto 0em;
@@ -5043,17 +5047,17 @@ h1.akvopediaHelp {
   position: relative;
   width: 100%; }
 
-/* line 4462, main.scss */
+/* line 4465, main.scss */
 #akvoDashboard h2 {
   color: white;
   margin: 0.5em auto 0.75em;
   text-align: center; }
 
-/* line 4467, main.scss */
+/* line 4470, main.scss */
 #akvoDashboard ul {
   margin: 0em auto 0.5em auto; }
 
-/* line 4470, main.scss */
+/* line 4473, main.scss */
 #akvoDashboard ul li.dashSingle {
   -moz-border-radius: 0.25em;
   -o-border-radius: 0.25em;
@@ -5072,41 +5076,41 @@ h1.akvopediaHelp {
   width: 49.5%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4484, main.scss */
+  /* line 4487, main.scss */
   #akvoDashboard ul li.dashSingle {
     width: 100%; } }
-/* line 4488, main.scss */
+/* line 4491, main.scss */
 #akvoDashboard ul li.dashSingle:nth-child(2n) {
   margin: 0em 0em 0.5em 0.5%; }
 
-/* line 4491, main.scss */
+/* line 4494, main.scss */
 .dashSingle h2 {
   display: block;
   text-indent: -99999px; }
 
-/* line 4495, main.scss */
+/* line 4498, main.scss */
 .dashSingle .moreLink {
   position: absolute;
   right: 0em;
   top: 0em; }
 
-/* line 4500, main.scss */
+/* line 4503, main.scss */
 .dashSingle#rsrDash h2 {
   background: url("../images/rsrWhiteDash.png") no-repeat center center; }
 
-/* line 4503, main.scss */
+/* line 4506, main.scss */
 .dashSingle#flowDash h2 {
   background: url("../images/flowWhiteDash.png") no-repeat center center; }
 
-/* line 4506, main.scss */
+/* line 4509, main.scss */
 .dashSingle#opendaidDash h2 {
   background: url("../images/openAidWhiteDash.png") no-repeat center center; }
 
-/* line 4509, main.scss */
+/* line 4512, main.scss */
 .dashSingle#akvopediaDash h2 {
   background: url("../images/wikiWhiteDash.png") no-repeat center center; }
 
-/* line 4512, main.scss */
+/* line 4515, main.scss */
 .dashData li {
   -moz-box-sizing: border-box;
   -wekit-box-sizing: border-box;
@@ -5118,10 +5122,10 @@ h1.akvopediaHelp {
   width: 47.5%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4522, main.scss */
+  /* line 4525, main.scss */
   .dashData li {
     min-height: 100px; } }
-/* line 4526, main.scss */
+/* line 4529, main.scss */
 .dashData li.killFloatMerge {
   clear: both;
   display: block;
@@ -5129,18 +5133,18 @@ h1.akvopediaHelp {
   text-align: center;
   width: 96.5%; }
 
-/* line 4533, main.scss */
+/* line 4536, main.scss */
 .dashData li img {
   display: table;
   margin: 0em auto; }
 
-/* line 4537, main.scss */
+/* line 4540, main.scss */
 .dashData li p {
   display: table;
   font-size: 0.8em;
   margin: 0em auto; }
 
-/* line 4542, main.scss */
+/* line 4545, main.scss */
 .dashData li h4 {
   color: inherit;
   font-size: 0.8em;
@@ -5148,7 +5152,7 @@ h1.akvopediaHelp {
   margin: 0.5em 0em 1em 0.5em;
   text-transform: uppercase; }
 
-/* line 4549, main.scss */
+/* line 4552, main.scss */
 .dashData li span {
   font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5em;
@@ -5156,7 +5160,7 @@ h1.akvopediaHelp {
   text-shadow: 0em 0em 3px black;
   text-transform: uppercase; }
 
-/* line 4556, main.scss */
+/* line 4559, main.scss */
 .dashData li span.unit {
   font-family: "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 0.9em;
@@ -5164,53 +5168,53 @@ h1.akvopediaHelp {
   text-transform: lowercase; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4564, main.scss */
+  /* line 4567, main.scss */
   .dashData li span.unit {
     display: block; } }
-/* line 4568, main.scss */
+/* line 4571, main.scss */
 .dashData li:nth-child(2n+1) {
   margin: 0em 0.75% 0.35em 1.75%; }
 
-/* line 4571, main.scss */
+/* line 4574, main.scss */
 .dashData li:nth-child(2n) {
   margin: 0em 1.75% 0.35em 0.75%; }
 
-/* line 4574, main.scss */
+/* line 4577, main.scss */
 .dashData.rsrData li {
   background: rgba(87, 193, 232, 0.05);
   color: #57c1e8; }
 
-/* line 4578, main.scss */
+/* line 4581, main.scss */
 .dashData.flowData li {
   background: rgba(226, 124, 0, 0.05);
   color: #e27c00; }
 
-/* line 4582, main.scss */
+/* line 4585, main.scss */
 .dashData.openAidData li {
   background: rgba(255, 206, 0, 0.05);
   color: #ffce00; }
 
-/* line 4586, main.scss */
+/* line 4589, main.scss */
 .dashData.wikiData li {
   background: rgba(191, 131, 185, 0.05);
   color: #bf83b9; }
 
-/* line 4590, main.scss */
+/* line 4593, main.scss */
 #rsrProjectUpdates {
   background: #f2f2f2;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4596, main.scss */
+/* line 4599, main.scss */
 #rsrProjectUpdates > h2 {
   text-align: center; }
 
-/* line 4599, main.scss */
+/* line 4602, main.scss */
 #rsrProjectUpdates > a.moreLink {
   margin: 0em auto 2em; }
 
-/* line 4602, main.scss */
+/* line 4605, main.scss */
 .rsrUpdate {
   -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
@@ -5225,12 +5229,12 @@ h1.akvopediaHelp {
   text-align: left;
   transition: all 0.4s ease-in;
   width: 98%; }
-  /* line 4613, main.scss */
+  /* line 4616, main.scss */
   .rsrUpdate:hover {
     background: rgba(192, 192, 196, 0.3);
     pointer: cursor; }
   @media screen and (min-width: 960px) {
-    /* line 4602, main.scss */
+    /* line 4605, main.scss */
     .rsrUpdate {
       -moz-border-radius: 0.15em;
       -o-border-radius: 0.15em;
@@ -5242,18 +5246,18 @@ h1.akvopediaHelp {
       min-height: 315px;
       padding: 0em 0.5%;
       width: 31.8%; }
-      /* line 4625, main.scss */
+      /* line 4628, main.scss */
       .rsrUpdate:last-child {
         margin: 0em; } }
 
-/* line 4630, main.scss */
+/* line 4633, main.scss */
 .rsrUpdate ul li.upMore {
   float: right;
   height: 120px;
   margin-top: -10px;
   width: 120px; }
   @media screen and (min-width: 960px) {
-    /* line 4630, main.scss */
+    /* line 4633, main.scss */
     .rsrUpdate ul li.upMore {
       display: block;
       float: inherit;
@@ -5261,7 +5265,7 @@ h1.akvopediaHelp {
       margin-bottom: 5px;
       width: 100%; } }
 
-/* line 4645, main.scss */
+/* line 4648, main.scss */
 .rsrUpdate ul li.upMore a {
   background-size: 72%;
   background: url("../images/readMoreBig.svg") center center no-repeat;
@@ -5273,80 +5277,80 @@ h1.akvopediaHelp {
   transition: all 0.4s ease-in;
   width: 112px; }
   @media screen and (min-width: 960px) {
-    /* line 4645, main.scss */
+    /* line 4648, main.scss */
     .rsrUpdate ul li.upMore a {
       background: none;
       display: inline-block;
       width: 100%;
       margin: 14px auto 0;
       height: 30px; } }
-/* line 4663, main.scss */
+/* line 4666, main.scss */
 .rsrUpdate:hover ul li.upMore a {
   opacity: 1; }
-/* line 4666, main.scss */
+/* line 4669, main.scss */
 .rsrUpdate ul li.upMore span {
   display: block;
   font-size: 0.8em;
   text-align: center;
   transition: color 0.4s ease-in; }
   @media screen and (max-width: 960px) {
-    /* line 4666, main.scss */
+    /* line 4669, main.scss */
     .rsrUpdate ul li.upMore span {
       text-align: center; } }
-/* line 4675, main.scss */
+/* line 4678, main.scss */
 .rsrUpdate:hover ul li.upMore span {
   color: rgba(226, 124, 0, 0.8); }
 
-/* line 4680, main.scss */
+/* line 4683, main.scss */
 .rsrUpdate ul {
   margin-top: 10px;
   padding: 0em;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4680, main.scss */
+    /* line 4683, main.scss */
     .rsrUpdate ul {
       margin-top: 15px; } }
-  /* line 4687, main.scss */
+  /* line 4690, main.scss */
   .rsrUpdate ul li {
     float: left;
     margin: 0em;
     padding: 0em; }
-  /* line 4692, main.scss */
+  /* line 4695, main.scss */
   .rsrUpdate ul li.upImag {
     margin-left: 0.5em;
     width: calc(150px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4692, main.scss */
+      /* line 4695, main.scss */
       .rsrUpdate ul li.upImag {
         width: 50%; } }
-  /* line 4699, main.scss */
+  /* line 4702, main.scss */
   .rsrUpdate ul li.upInfo {
     display: table-cell;
     width: 30%; }
     @media screen and (min-width: 960px) {
-      /* line 4699, main.scss */
+      /* line 4702, main.scss */
       .rsrUpdate ul li.upInfo {
         width: calc(50% - 0.5em); } }
-  /* line 4706, main.scss */
+  /* line 4709, main.scss */
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
     position: relative;
     width: calc(100% - 30% - 150px - 120px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4706, main.scss */
+      /* line 4709, main.scss */
       .rsrUpdate ul li.upTxt {
         display: block;
         margin: 0.2em auto;
         min-height: 100px;
         width: 100%; } }
 
-/* line 4720, main.scss */
+/* line 4723, main.scss */
 .rsrUpdate h2 {
   display: inline;
   font-size: 1.2em;
   text-align: left; }
-  /* line 4724, main.scss */
+  /* line 4727, main.scss */
   .rsrUpdate h2 a {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5356,48 +5360,48 @@ h1.akvopediaHelp {
     width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
-  /* line 4732, main.scss */
+  /* line 4735, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4735, main.scss */
+  /* line 4738, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px - 150px); } }
 @media screen and (max-width: 395px) {
-  /* line 4740, main.scss */
+  /* line 4743, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4743, main.scss */
+  /* line 4746, main.scss */
   .rsrUpdate ul li.upImag {
     display: none; }
 
-  /* line 4746, main.scss */
+  /* line 4749, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px); } }
-/* line 4750, main.scss */
+/* line 4753, main.scss */
 .rsrUpdate ul li.upInfo .authorTime {
   margin-left: 1.75em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
   @media screen and (min-width: 960px) {
-    /* line 4750, main.scss */
+    /* line 4753, main.scss */
     .rsrUpdate ul li.upInfo .authorTime {
       margin-left: 0.25em; } }
 
-/* line 4757, main.scss */
+/* line 4760, main.scss */
 .authorTime em {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4757, main.scss */
+    /* line 4760, main.scss */
     .authorTime em {
       display: none; } }
 
-/* line 4766, main.scss */
+/* line 4769, main.scss */
 .authorTime time {
   color: #747474;
   display: inline;
@@ -5405,13 +5409,13 @@ h1.akvopediaHelp {
   margin: 0em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4766, main.scss */
+    /* line 4769, main.scss */
     .authorTime time {
       display: block;
       margin: 0em 0em 0em 0.25em;
       width: calc(100% - 0.25em); } }
 
-/* line 4778, main.scss */
+/* line 4781, main.scss */
 .authorTime span.userName {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5422,12 +5426,12 @@ h1.akvopediaHelp {
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4778, main.scss */
+    /* line 4781, main.scss */
     .authorTime span.userName {
       display: inline;
       margin: 0em 0em 3px 0.25em; } }
 
-/* line 4790, main.scss */
+/* line 4793, main.scss */
 .orgAndPlace .org {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5441,19 +5445,19 @@ h1.akvopediaHelp {
   font-size: 0.8em;
   margin: 0.75em 0em 0.75em 1.75em;
   padding: 0.15em 1em 0.35em; }
-  /* line 4798, main.scss */
+  /* line 4801, main.scss */
   .orgAndPlace .org a {
     color: white; }
-    /* line 4800, main.scss */
+    /* line 4803, main.scss */
     .orgAndPlace .org a:hover {
       color: #de8929; }
   @media screen and (min-width: 960px) {
-    /* line 4790, main.scss */
+    /* line 4793, main.scss */
     .orgAndPlace .org {
       display: inline-block;
       margin: 0em 0em 0em 0.5em; } }
 
-/* line 4809, main.scss */
+/* line 4812, main.scss */
 .orgAndPlace .place {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5465,28 +5469,28 @@ h1.akvopediaHelp {
   padding: 0.25em 0em 0.25em 14px;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4809, main.scss */
+    /* line 4812, main.scss */
     .orgAndPlace .place {
       display: block;
       margin: 0em 0em 0em 0.35em;
       width: 80%; } }
 
 @media only screen and (max-width: 768px) {
-  /* line 4825, main.scss */
+  /* line 4828, main.scss */
   .authorTime span.userName {
     margin: 0em; }
 
-  /* line 4828, main.scss */
+  /* line 4831, main.scss */
   .orgAndPlace .org {
     margin: 0.25em 0em 0em 1.75em; } }
-/* line 4832, main.scss */
+/* line 4835, main.scss */
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4838, main.scss */
+/* line 4841, main.scss */
 .rsrUpdate > span {
   -moz-border-radius: 0em 0em 0.5em;
   -o-border-radius: 0em 0em 0.5em;
@@ -5500,7 +5504,7 @@ h1.akvopediaHelp {
   padding: 0.15em 0.25em;
   top: 0px; }
 
-/* line 4848, main.scss */
+/* line 4851, main.scss */
 .rsrUpdate ul li.upTxt p {
   color: #202024;
   margin: 0em;
@@ -5512,18 +5516,18 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
-  /* line 4856, main.scss */
+  /* line 4859, main.scss */
   .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
     color: #202024; }
   @media screen and (min-width: 960px) {
-    /* line 4848, main.scss */
+    /* line 4851, main.scss */
     .rsrUpdate ul li.upTxt p {
       color: #202024;
       font-size: 0.9em;
       padding: 0.5em 2% 0em 2%;
       text-shadow: none; } }
 
-/* line 4866, main.scss */
+/* line 4869, main.scss */
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
   border: 2px solid #e8e8e8;
@@ -5534,27 +5538,27 @@ h1.akvopediaHelp {
   position: relative; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4877, main.scss */
+  /* line 4880, main.scss */
   .rsrUpdate .imgWrap {
     padding: 0em; } }
-/* line 4881, main.scss */
+/* line 4884, main.scss */
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
   position: relative; }
 
-/* line 4886, main.scss */
+/* line 4889, main.scss */
 #rsrNetworkMap > h2 {
   text-align: center; }
 
 /***********************************
 						Price table
 ********************************************/
-/* line 4893, main.scss */
+/* line 4896, main.scss */
 .pricingList {
   margin: 3em auto; }
 
-/* line 4896, main.scss */
+/* line 4899, main.scss */
 .pricingList h5 {
   background: #202024;
   color: white;
@@ -5563,29 +5567,29 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/* line 4904, main.scss */
+/* line 4907, main.scss */
 .pricingList img {
   display: table;
   margin: 1em auto; }
 
-/* line 4908, main.scss */
+/* line 4911, main.scss */
 .pricingList p {
   display: block;
   margin: 1em auto;
   padding: 25px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4915, main.scss */
+  /* line 4918, main.scss */
   .pricingList img {
     float: left;
     margin: 0.5em 1em;
     max-width: 30%; }
 
-  /* line 4920, main.scss */
+  /* line 4923, main.scss */
   .pricingList p {
     display: block;
     margin: 1em auto; } }
-/* line 4925, main.scss */
+/* line 4928, main.scss */
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -5595,25 +5599,25 @@ h1.akvopediaHelp {
   position: relative;
   width: 25%; }
 
-/* line 4934, main.scss */
+/* line 4937, main.scss */
 .pricingList.fourColumns li:nth-child(2n) {
   background: none repeat scroll 0em 0em #eeeeee; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4939, main.scss */
+  /* line 4942, main.scss */
   .pricingList.fourColumns > li {
     float: none;
     margin: 30px auto;
     padding: 2%;
     width: 96%; }
 
-  /* line 4945, main.scss */
+  /* line 4948, main.scss */
   .pricingList.fourColumns li:nth-child(2n) {
     background: none; } }
-/* line 4949, main.scss */
+/* line 4952, main.scss */
 div[id^="inline-"] {
   display: none; }
 
-/* line 4952, main.scss */
+/* line 4955, main.scss */
 .qa-faq {
   margin-bottom: 30px; }
