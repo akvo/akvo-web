@@ -22,6 +22,7 @@
             </ul>
           </nav>
           <div class="newsLetter">
+            <p class="subscribe">Subscribe to our monthly newsletter</p>
             <?php gravity_form(1, false, true, false, '', true); ?>
           </div>
         </div>
