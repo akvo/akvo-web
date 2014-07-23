@@ -20,7 +20,6 @@ get_header(); ?>
       <li><a href="#communicationGroup" class="cStaff">Communication &amp; PR</a></li>
       <li><a href="#engineeringGroup" class="eStaff">Engineering &amp; design</a></li>
       <li><a href="#contractorsGroup" class="oStaff">Extended Team</a></li>
-      <li><a href="#akvoJob" class="eStaff">Work for Akvo</a></li>
     </ul>
   </nav>
 
