@@ -3,8 +3,8 @@
 Plugin Name: Akvo Hero Box admin
 Plugin URI: http://akvo.org/
 Description: Add new Akvo Hero Box and manage them all easily.
-Version: 1.0
-Author: Loic Sans
+Version: 1.1
+Author: Loic Sans, Dan Rowden
 Author URL: http://akvo.org/
 */
 
@@ -105,6 +105,22 @@ if(function_exists("register_field_group"))
                 'append' => '',
                 'formatting' => 'html',
                 'maxlength' => '',
+            ),
+            array (
+                'key' => 'field_5093aa24a4641',
+                'label' => 'Hero Box Text Position',
+                'name' => 'hero_box_text_position',
+                'type' => 'select',
+                'required' => 1,
+                'choices' => array (
+                    'bottom_right' => 'Bottom right (default)',
+                    'top_left' => 'Top left',
+                    'top_right' => 'Top right',
+                    'bottom_left' => 'Bottom left',
+                ),
+                'default_value' => 'bottom_right',
+                'allow_null' => 0,
+                'multiple' => 0,
             ),
         ),
         'location' => array (

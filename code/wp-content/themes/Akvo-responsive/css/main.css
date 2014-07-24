@@ -654,7 +654,7 @@ button[disabled], input[disabled] {
  */
 input[type="checkbox"], input[type="radio"] {
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   height: 13px;
   padding: 0em;
@@ -666,7 +666,7 @@ input[type="search"] {
   -webkit-box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
   box-shadow: inset 0em 1px 2px #e6e6e6, inset 0px -1px 2px #e6e6e6;
   -moz-box-sizing: content-box;
-  -wekit-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   -webkit-appearance: textfield;
   background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
@@ -854,7 +854,7 @@ a.helpIcon:hover {
 
 #main {
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: block;
   float: left;
@@ -966,7 +966,7 @@ a.helpIcon:hover {
 @media only screen and (max-width: 768px) {
   .threeColumns > li {
     -moz-box-sizing: border-box;
-    -wekit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
@@ -1654,7 +1654,7 @@ body.home h1.akvoDescr {
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
   background: rgba(255, 255, 245, 0.6);
-  bottom: 80px;
+  bottom: 70px;
   display: inline-block;
   max-width: 35%;
   min-width: 22%;
@@ -1684,6 +1684,20 @@ body.home h1.akvoDescr {
     right: 0em;
     text-align: center;
     width: 94%; } }
+
+#actionHeroBox #actionHeroInfo.top_left {
+  bottom: auto;
+  right: auto;
+  left: 5%;
+  top: 70px; }
+
+#actionHeroBox #actionHeroInfo.top_right {
+  bottom: auto;
+  top: 70px; }
+
+#actionHeroBox #actionHeroInfo.bottom_left {
+  right: auto;
+  left: 5%; }
 
 .borderTop, .borderBottom {
   display: none;
@@ -2240,7 +2254,7 @@ blockquote {
   -webkit-border-radius: 0.3em;
   border-radius: 0.3em;
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: #fbf0de;
   color: #999999;
@@ -2524,7 +2538,7 @@ p#allowed_tags code {
 @media only screen and (max-width: 768px) {
   #sidebar-responsive {
     -moz-box-sizing: border-box;
-    -wekit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     margin-bottom: 15px;
@@ -2768,7 +2782,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo div.newsLetter form {
     -moz-box-sizing: border-box;
-    -wekit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     float: left;
     margin: 0px;
@@ -2843,7 +2857,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
   -webkit-box-shadow: none;
   box-shadow: none;
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   border: 1px solid #dedcdc;
   display: inline-block;
@@ -2854,7 +2868,7 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
     -moz-box-sizing: border-box;
-    -wekit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     display: block;
     font-size: 1.2em;
@@ -3341,7 +3355,7 @@ section.inFivePoints li div {
 @media only screen and (max-width: 768px) {
   section.inFivePoints li div {
     -moz-box-sizing: border-box;
-    -wekit-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
@@ -4192,7 +4206,7 @@ h1.akvopediaHelp {
   -webkit-border-radius: 0.25em;
   border-radius: 0.25em;
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   background: rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -4233,7 +4247,7 @@ h1.akvopediaHelp {
 
 .dashData li {
   -moz-box-sizing: border-box;
-  -wekit-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   display: inline;
   float: left;

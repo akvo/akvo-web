@@ -15,10 +15,9 @@
   <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=1'); ?>
   <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
   <div class="borderTop"></div>
-<!--  <img src="<?php the_field('hero_box_image'); ?>" class="hero-image" />-->
-    <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+  <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
   <div>
-  <div id="actionHeroInfo">
+  <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
     <p>
       <?php the_field('product_featured'); ?>
     </p>
