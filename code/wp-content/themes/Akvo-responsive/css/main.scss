@@ -1771,8 +1771,6 @@ body.home h1.akvoDescr {
     background: rgb(32, 32, 36);
     border-bottom: 1px solid rgb(221, 221, 221);
     border-top: 1px solid rgb(221, 221, 221);
-    max-height: 500px;
-    overflow: hidden;
     position: relative;
     width: 100%;
 }
@@ -1797,6 +1795,14 @@ body.home h1.akvoDescr {
     #actionHeroBox img {
         margin-top: 0em !important;
     }
+}
+#actionHeroBox #image {
+    padding-top: 38%;
+    max-height: 500px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-position: center center;
+    background-size: cover;
 }
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
