@@ -23,8 +23,8 @@ class Feed {
      * Write template files
      * @param int $iFeedId
      */
-	public function updateCreateCache($iFeedId,$sMarkup,$sStyle){
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
+	public function updateCreateCache($sFeedSlug,$sMarkup,$sStyle){
+        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$sFeedSlug;
         $sFeedMarkupFilename = $sDirName . DIRECTORY_SEPARATOR . 'template.phtml';
         $sFeedStylesheetFilename = $sDirName . DIRECTORY_SEPARATOR . 'style.css';
 
@@ -76,7 +76,10 @@ class Feed {
                 $oDaoJsonData->updateFeed(array('date_updated'=>date('Y-m-d H:i:s')), $aFeed['id']);
             }
         }
-        mail( 'eveline@kominski.net', 'Automatic email', 'Automatic scheduled email from WordPress.');
+        $sEmail = get_option(JD\Config::OPTION_NAME_DEBUG_EMAIL);
+        if($sEmail && $sEmail!==''){
+            mail( $sEmail, 'update json data feeds', 'running');
+        }
 
     }
 
@@ -131,7 +134,7 @@ class Feed {
      */
     private function _updateFeedQueueData($aFeed){
         $oDaoJsonData = new JsonDataDao();
-        $iFeedId = $aFeed['id'];
+        $iFeedId = $aFeed['feed_slug'];
         $aFeedQueues = $oDaoJsonData->fetchFeedQueue($iFeedId);
         $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
 
@@ -158,7 +161,7 @@ class Feed {
         }else{
             $aFeedQueue = $mQueue;
         }
-        $iFeedId = $aFeed['id'];
+        $iFeedId = $aFeed['feed_slug'];
         $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
 
         //build url for queue
