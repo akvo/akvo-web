@@ -1797,13 +1797,24 @@ body.home h1.akvoDescr {
     }
 }
 #actionHeroBox #image {
-    padding-top: 38%;
-    max-height: 500px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+    padding-bottom: 46%;
     background-position: center center;
     background-size: cover;
 }
+@include responsive (small-screens) {
+
+    #actionHeroBox #image {
+        padding-bottom: 38%;
+    }
+}
+@include responsive (huge-screens) {
+
+    #actionHeroBox #image {
+        padding-bottom: 0;
+        height: 532px;
+    }
+}
+
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
     background: rgba(255, 255, 245, 0.6);

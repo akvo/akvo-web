@@ -1635,12 +1635,18 @@ body.home h1.akvoDescr {
     margin-top: 0em !important; } }
 
 #actionHeroBox #image {
-  padding-top: 38%;
-  max-height: 500px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
+  padding-bottom: 46%;
   background-position: center center;
   background-size: cover; }
+
+@media only screen and (min-width: 768px) {
+  #actionHeroBox #image {
+    padding-bottom: 38%; } }
+
+@media only screen and (min-width: 1400px) {
+  #actionHeroBox #image {
+    padding-bottom: 0;
+    height: 532px; } }
 
 #actionHeroBox #actionHeroInfo {
   -moz-border-radius: 0.5em;
