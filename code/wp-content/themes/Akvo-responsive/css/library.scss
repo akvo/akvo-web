@@ -95,7 +95,7 @@ $titleFont: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @mixin box-sizing($boxSizingProperties) {
 	-moz-box-sizing: $boxSizingProperties;
-    -wekit-box-sizing: $boxSizingProperties;
+    -webkit-box-sizing: $boxSizingProperties;
     box-sizing: $boxSizingProperties;
 }
 /* Media Queries
