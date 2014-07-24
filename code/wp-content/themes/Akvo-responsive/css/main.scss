@@ -1818,7 +1818,7 @@ body.home h1.akvoDescr {
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
     background: rgba(255, 255, 245, 0.6);
-    bottom: 80px;
+    bottom: 70px;
     display: inline-block;
     max-width: 35%;
     min-width: 22%;
@@ -1845,6 +1845,22 @@ body.home h1.akvoDescr {
         width: 94%;
     }
 }
+#actionHeroBox #actionHeroInfo.top_left {
+    bottom: auto;
+    right: auto;
+    left: 5%;
+    top: 70px;
+}
+#actionHeroBox #actionHeroInfo.top_right {
+    bottom: auto;
+    top: 70px;
+}
+#actionHeroBox #actionHeroInfo.bottom_left {
+    right: auto;
+    left: 5%;
+}
+
+
 .borderTop,
 .borderBottom {
     display: none;
