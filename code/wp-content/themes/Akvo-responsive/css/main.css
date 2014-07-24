@@ -1613,8 +1613,6 @@ body.home h1.akvoDescr {
   background: #202024;
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
-  max-height: 500px;
-  overflow: hidden;
   position: relative;
   width: 100%; }
 
@@ -1635,6 +1633,20 @@ body.home h1.akvoDescr {
 @media only screen and (max-width: 768px) {
   #actionHeroBox img {
     margin-top: 0em !important; } }
+
+#actionHeroBox #image {
+  padding-bottom: 46%;
+  background-position: center center;
+  background-size: cover; }
+
+@media only screen and (min-width: 768px) {
+  #actionHeroBox #image {
+    padding-bottom: 38%; } }
+
+@media only screen and (min-width: 1400px) {
+  #actionHeroBox #image {
+    padding-bottom: 0;
+    height: 532px; } }
 
 #actionHeroBox #actionHeroInfo {
   -moz-border-radius: 0.5em;
