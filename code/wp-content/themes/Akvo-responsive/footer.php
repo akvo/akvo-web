@@ -48,6 +48,7 @@
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
   _paq.push(["setCookieDomain", "*.akvodev.org"]);
   _paq.push(["setDomains", ["*.akvodev.org"]]);
+  _paq.push(["setDocumentTitle",  '404/URL = ' +  encodeURIComponent(document.location.pathname+document.location.search) + '/From = ' + encodeURIComponent(document.referrer)]);
   _paq.push(["trackPageView"]);
   _paq.push(["enableLinkTracking"]);
 
