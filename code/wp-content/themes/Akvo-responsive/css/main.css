@@ -1685,19 +1685,18 @@ body.home h1.akvoDescr {
     text-align: center;
     width: 94%; } }
 
-#actionHeroBox #actionHeroInfo.top_left {
-  bottom: auto;
-  right: auto;
-  left: 5%;
-  top: 70px; }
-
-#actionHeroBox #actionHeroInfo.top_right {
-  bottom: auto;
-  top: 70px; }
-
-#actionHeroBox #actionHeroInfo.bottom_left {
-  right: auto;
-  left: 5%; }
+@media only screen and (min-width: 768px) {
+  #actionHeroBox #actionHeroInfo.top_left {
+    bottom: auto;
+    right: auto;
+    left: 5%;
+    top: 70px; }
+  #actionHeroBox #actionHeroInfo.top_right {
+    bottom: auto;
+    top: 70px; }
+  #actionHeroBox #actionHeroInfo.bottom_left {
+    right: auto;
+    left: 5%; } }
 
 .borderTop, .borderBottom {
   display: none;

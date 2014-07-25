@@ -1845,19 +1845,21 @@ body.home h1.akvoDescr {
         width: 94%;
     }
 }
-#actionHeroBox #actionHeroInfo.top_left {
-    bottom: auto;
-    right: auto;
-    left: 5%;
-    top: 70px;
-}
-#actionHeroBox #actionHeroInfo.top_right {
-    bottom: auto;
-    top: 70px;
-}
-#actionHeroBox #actionHeroInfo.bottom_left {
-    right: auto;
-    left: 5%;
+@include responsive (small-screens) {
+    #actionHeroBox #actionHeroInfo.top_left {
+        bottom: auto;
+        right: auto;
+        left: 5%;
+        top: 70px;
+    }
+    #actionHeroBox #actionHeroInfo.top_right {
+        bottom: auto;
+        top: 70px;
+    }
+    #actionHeroBox #actionHeroInfo.bottom_left {
+        right: auto;
+        left: 5%;
+    }
 }
 
 
