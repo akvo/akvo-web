@@ -162,7 +162,7 @@ function the_category_unlinked($separator = ' ') {
 add_filter( 'post_class', 'custom_taxonomy_post_class', 10, 3 );
     if( !function_exists( 'custom_taxonomy_post_class' ) ) {
         function custom_taxonomy_post_class( $classes, $class, $ID ) {
-            $taxonomy = array('new_staffs_team','new_partners_category');
+            $taxonomy = array('new_staffs_team','new_partners_category','staff_hub');
             $terms = get_the_terms( (int) $ID, $taxonomy);
             if( !empty( $terms ) ) {
                 foreach( (array) $terms as $order => $term ) {
