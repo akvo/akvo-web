@@ -2041,11 +2041,9 @@ ul.faqMenuList h3 {
   #moreStuffHome .fourColumns.wrapper {
     font-size: 0; }
   #moreStuffHome .fourColumns.wrapper > div {
-    font-size: 100%;
     vertical-align: top;
     font-size: 16px;
     display: inline-block;
-    *display: inline;
     float: none;
     margin: 0 0 2em 0;
     padding: 0;
