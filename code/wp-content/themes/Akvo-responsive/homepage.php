@@ -88,11 +88,9 @@
             $lastposts = get_posts( $args );
             foreach($lastposts as $post) : setup_postdata($post); ?>
         <figure>
-          <div> <a href="<?php the_permalink(); ?>">
-            <?php if ( has_post_thumbnail() ) {
-              			the_post_thumbnail();
-              			} ?>
-            </a></div>
+          <div>
+              <?php if ( has_post_thumbnail() ) { $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); } ?>
+              <a href="<?php the_permalink(); ?>" style="background-image: url(<?php echo $feat_image; ?>)"></a></div>
           <figcaption> <a href="<?php the_permalink(); ?>">
             <?php the_title(); ?>
             &raquo;</a></figcaption>
@@ -105,7 +103,7 @@
 <!--      <hr class="delicateSmall"> -->      
       <div>
         <figure>
-          <div><a href="" id="updateUrl"><img id="update_image" src="" alt="" title=""/></a></div>
+          <div><a href="" id="update_url"></a></div>
           <figcaption><a id="update_title" href=""></a></figcaption>
         </figure>
       </div>
@@ -127,10 +125,11 @@
                   console.log('pic!');
                   var title, src, absolute_url;
                   src = data.objects[i].photo;
+                  console.log(src);
                   title = data.objects[i].title;
                   absolute_url = data.objects[i].absolute_url;
-                  $("#update_image").prop("src", akvo_domain + src);
-                  $("#update_title, #updateUrl").prop("href", akvo_domain + absolute_url);
+                  $("#update_url").attr("style", "background-image: url("+akvo_domain + src+")");
+                  $("#update_title, #update_url").prop("href", akvo_domain + absolute_url);
                   $("#update_title").text(title);
                   break;
                 }
@@ -146,7 +145,7 @@
 <!--      <hr class="delicateSmall"> -->      
       <div>
         <figure>
-          <div> <a href="http://akvo.tv"> <img src="<?php the_field('akvo_tv'); ?>" alt="akvo.tv on youtube" title="akvo.tv on youtube"/></a></div>
+          <div> <a href="http://akvo.tv" style="background-image: url(<?php the_field('akvo_tv'); ?>)" alt="akvo.tv on youtube"></a></div>
           <figcaption><a href="http://akvo.tv">Go to akvo.tv  &raquo;</a></figcaption>
         </figure>
       </div>
@@ -154,15 +153,13 @@
     <div class="eventIcon">
       <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
 <!--      <hr class="delicateSmall"> -->      
-      <a href="<?php the_field('letter_link'); ?>">
       <div>
         <figure>
-          <div> <a href="<?php the_field('letter_link'); ?>"><img src="<?php the_field('letter_img'); ?>" alt="" /></a></div>
+          <div> <a href="<?php the_field('letter_link'); ?>" style="background-image: url(<?php the_field('letter_img'); ?>)"></a></div>
           <figcaption><a href="<?php the_field('letter_link'); ?>">See the newsletter  &raquo;</a></figcaption>
         </figure>
       </div>
-      </a>
-      </div>
+    </div>
 
  <?php endwhile; // end of the loop. ?>
 
