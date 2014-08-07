@@ -4176,10 +4176,10 @@ h1 {
 .rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
     text-align: left !important;
 }
-.englishManual {
+#manuals li {
     min-height: 220px;
     a {
-        background: url("../images/rsrEnglishManual.png") left top no-repeat;
+        background: left top no-repeat;
         background-size: 151px 200px;
         display: block;
         height: 220px;
@@ -4204,10 +4204,10 @@ h1 {
         }
     }
 }
-.frenchManual {
+#android li {
     min-height: 220px;
     a {
-        background: url("../images/rsrFrenchManual.png") left top no-repeat;
+        background: left top no-repeat;
         background-size: 151px 200px;
         display: block;
         height: 220px;
@@ -4228,118 +4228,6 @@ h1 {
             @include responsive (small-max-screens) {
 
                 text-align: center;
-            }
-        }
-    }
-}
-.spanishManual {
-    min-height: 220px;
-    a {
-        background: url("../images/rsrSpanishManual.png") left top no-repeat;
-        background-size: 151px 200px;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.androidManual {
-    min-height: 220px;
-    a {
-        background: url("../images/rsrUpManual.png") left top no-repeat;
-        background-size: 151px 200px;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.videoAndroid {
-    min-height: 220px;
-    a {
-        background: url("../images/rsrUpVideo.png") left top no-repeat;
-        background-size: 151px 200px;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.playStore {
-    min-height: 220px;
-    a {
-        background: url("../images/Google_Play_Store_96.png") left top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center !important;
             }
         }
     }

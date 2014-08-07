@@ -138,9 +138,8 @@ function qahome_shortcode( $atts ) {
 		$qaplus_shortcode_output .= '">
 		';
 
-		$qaplus_shortcode_output .=  '<div class="qa-category">
-			<h2 class="faq-catname">' . $category->name . '</h2>
-			';	
+		$qaplus_shortcode_output .=  '<div class="qa-category">';
+//			<h2 class="faq-catname">' . $category->name . '</h2>
 
 		$args = array(
 			'order'         => 'ASC',
