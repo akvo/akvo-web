@@ -10,7 +10,6 @@
   <h1 class="backLined rsrHelp">RSR Help</h1>
   <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
   <section class="wrapper">
-    <h2><?php the_field('faq_title'); ?></h2>
     <?php the_content(); ?>
   </section>
   <?php endwhile; // end of the loop. ?>

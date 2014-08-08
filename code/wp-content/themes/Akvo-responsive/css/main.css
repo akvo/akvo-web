@@ -1945,7 +1945,7 @@ body.home h1.akvoDescr {
 .faqMenu {
   margin: 0em 0em 10px; }
 
-a.faqMenuHead {
+a.faqMenuHead, .qa-faq-title {
   background: url("../images/menuCollapseShow.png") left top no-repeat;
   color: #202024;
   font-size: 1.1em;
@@ -1968,7 +1968,7 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
   margin: 5px 0em 5px 30px; }
 
-ul.faqMenuList > li {
+ul.faqMenuList > li, .qa-faq-answer {
   background: #f8f8f8;
   margin: 0em 0em 2px 0px;
   padding: 25px 0em 25px 10px; }
@@ -1994,8 +1994,17 @@ ul.faqMenuList li:hover {
 ul.faqMenuList li a {
   display: block; }
 
-ul.faqMenuList h3 {
+ul.faqMenuList h3, .qa-faq-answer h3 {
   margin-top: 1em; }
+
+.qa-faq {
+  margin-bottom: 0; }
+
+.qa-faq-answer {
+  padding: 15px;
+  margin-right: 10px;
+  margin-bottom: 20px;
+  margin-left: 30px; }
 
 .answers h4 {
   font-weight: bold; }
@@ -3956,150 +3965,6 @@ h1.akvopediaHelp {
         #android li a span {
           text-align: center; } }
 
-.englishEnumManual {
-  min-height: 220px; }
-  .englishEnumManual a {
-    background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 220px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .englishEnumManual a {
-        background-position: center top; } }
-    .englishEnumManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .englishEnumManual a span {
-          text-align: center; } }
-
-.frenchEnumManual {
-  min-height: 220px; }
-  .frenchEnumManual a {
-    background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 220px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .frenchEnumManual a {
-        background-position: center top; } }
-    .frenchEnumManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .frenchEnumManual a span {
-          text-align: center; } }
-
-.spanishEnumManual {
-  min-height: 220px; }
-  .spanishEnumManual a {
-    background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 220px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .spanishEnumManual a {
-        background-position: center top; } }
-    .spanishEnumManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .spanishEnumManual a span {
-          text-align: center; } }
-
-.englishStartManual {
-  min-height: 240px; }
-  .englishStartManual a {
-    background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 240px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .englishStartManual a {
-        background-position: center top; } }
-    .englishStartManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .englishStartManual a span {
-          text-align: center; } }
-
-.frenchStartManual {
-  min-height: 240px; }
-  .frenchStartManual a {
-    background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 240px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .frenchStartManual a {
-        background-position: center top; } }
-    .frenchStartManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .frenchStartManual a span {
-          text-align: center; } }
-
-.spanishStartManual {
-  min-height: 240px; }
-  .spanishStartManual a {
-    background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
-    background-size: 141px auto;
-    display: block;
-    height: 240px;
-    padding: 0em;
-    position: relative;
-    width: 100%; }
-    @media only screen and (max-width: 768px) {
-      .spanishStartManual a {
-        background-position: center top; } }
-    .spanishStartManual a span {
-      bottom: 0em;
-      display: block;
-      margin: 20px 0em 0em 10px;
-      position: absolute;
-      text-align: left;
-      width: 100%; }
-      @media only screen and (max-width: 768px) {
-        .spanishStartManual a span {
-          text-align: center; } }
-
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
@@ -4592,8 +4457,5 @@ h1.akvopediaHelp {
 
 div[id^="inline-"] {
   display: none; }
-
-.qa-faq {
-  margin-bottom: 30px; }
 
 /*# sourceMappingURL=main.css.map */

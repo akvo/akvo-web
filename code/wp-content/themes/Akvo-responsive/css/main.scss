@@ -2146,7 +2146,8 @@ body.home h1.akvoDescr {
 .faqMenu {
     margin: 0em 0em 10px;
 }
-a.faqMenuHead {
+a.faqMenuHead,
+.qa-faq-title {
     background: url("../images/menuCollapseShow.png") left top no-repeat;
     color: $akvoBlack;
     font-size: 1.1em;
@@ -2171,7 +2172,8 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
     margin: 5px 0em 5px 30px;
 }
-ul.faqMenuList > li {
+ul.faqMenuList > li,
+.qa-faq-answer {
     background: rgb(248, 248, 248);
     margin: 0em 0em 2px 0px;
     padding: 25px 0em 25px 10px;
@@ -2201,8 +2203,19 @@ ul.faqMenuList li:hover {
 ul.faqMenuList li a {
     display: block;
 }
-ul.faqMenuList h3 {
+ul.faqMenuList h3,
+.qa-faq-answer h3 {
 	margin-top:1em;
+}
+
+.qa-faq {
+    margin-bottom: 0;
+}
+.qa-faq-answer {
+    padding: 15px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
 }
 
 .answers h4 {
@@ -4233,175 +4246,7 @@ h1 {
     }
 }
 
-.englishEnumManual {
-    min-height: 220px;
-    a {
-        background: url("../images/EN-ENUM-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
 
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.frenchEnumManual {
-    min-height: 220px;
-    a {
-        background: url("../images/FR-ENUM-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.spanishEnumManual {
-    min-height: 220px;
-    a {
-        background: url("../images/ES-ENUM-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 220px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-
-.englishStartManual {
-    min-height: 240px;
-    a {
-        background: url("../images/EN-SETUP-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 240px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.frenchStartManual {
-    min-height: 240px;
-    a {
-        background: url("../images/FR-SETUP-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 240px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
-.spanishStartManual {
-    min-height: 240px;
-    a {
-        background: url("../images/ES-SETUP-ICON.png") 40px top no-repeat;
-        background-size: 141px auto;
-        display: block;
-        height: 240px;
-        padding: 0em;
-        position: relative;
-        width: 100%;
-        @include responsive (small-max-screens) {
-
-            background-position: center top;
-        }
-        span {
-            bottom: 0em;
-            display: block;
-            margin: 20px 0em 0em 10px;
-            position: absolute;
-            text-align: left;
-            width: 100%;
-            @include responsive (small-max-screens) {
-
-                text-align: center;
-            }
-        }
-    }
-}
 
 /*--------------------------------------------------------------------
 							Network Page
@@ -4903,7 +4748,4 @@ h1 {
 }
 div[id^="inline-"] {
     display: none;
-}
-.qa-faq {
-    margin-bottom: 30px;
 }
