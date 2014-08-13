@@ -16,8 +16,7 @@ class Settings extends KwgP\Form {
 		$oServerCron = new \Zend_Form_Element_Radio('radioServerCron');
 		$oServerCron->setLabel('Select cronjob handler');
         $oServerCron->setMultiOptions(array('true'=>'Server','false'=>'WP cron'));
-        $oEmail = new \Zend_Form_Element_Text('textEmail');
-		$oEmail->setLabel('Debug email');
+
 		
 		$oSubmit = new \Zend_Form_Element_Button('submitSubmit');
 		$oSubmit->setLabel('Submit')
@@ -35,7 +34,6 @@ class Settings extends KwgP\Form {
 
 				$aCreateElements = array(
 					$oServerCron,
-					$oEmail,
 					$oSubmit,
 				);
 				$this->addElements($aCreateElements);

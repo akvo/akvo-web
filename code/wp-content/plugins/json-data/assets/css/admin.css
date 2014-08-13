@@ -1,10 +1,4 @@
 /* Fixes for WordPress Styles that interfere with Twitter Bootstrap Styles */
-#adminmenuback {
-z-index: 0;
-}
-ul,ol{
-    margin-left:0px;
-}
 .cAWPRContentWrapper input[type="text"]{
 	-moz-box-sizing: inherit;
 }
@@ -99,12 +93,3 @@ background: #f9f9f9;
 outline: 0;
 height:400px;
 }
-/*.jsonOutput span{
-    padding-left:20px;
-}*/
-pre {outline: 1px solid #ccc; padding: 5px; margin: 5px; }
-.jsonOutput .string { color: green; }
-.jsonOutput .number { color: darkorange; }
-.jsonOutput .boolean { color: blue; }
-.jsonOutput .null { color: magenta; }
-.jsonOutput .key { color: red; }
