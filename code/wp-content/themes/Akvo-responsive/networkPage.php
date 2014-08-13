@@ -84,8 +84,8 @@
         <h2>Akvopedia</h2>
         <?php do_shortcode('[jsondata_feed slug="akvopedia-analytics" module="API" method="API.get" idSite="9" period="range" date="2013-04-01,today" format="json" token_auth="1d1b520b11bea9a3b525b99531ec171a"]'); ?>
         <a href="#"
-         title="<p><em style='display:block;color:rgb(114, 205, 255);'>How is this data collected?</em> 'Articles' is collected automatically using the Mediawiki API()
-            The rest is collected automatically from the Piwik API()</p>
+         title="<p><em style='display:block;color:rgb(114, 205, 255);'>How is this data collected?</em> 'Articles' is collected automatically using the Mediawiki API.
+            The rest is collected automatically from the Piwik API</p>
             <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> Every four hours.</p>"
          class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> </li>
     </ul>
