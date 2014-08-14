@@ -66,7 +66,7 @@ function display_new_staff_meta_box( $new_staff ) {
             <td style="width: 100%">Job title</td>
             <td><input type="text" size="80" name="new_staff_title" value="<?php echo $staff_title; ?>" /></td>
         </tr>
-      <tr>
+        <tr>
             <td style="width: 100%">Biography</td>
             <td><textarea type="text" size="80" name="new_staff_descr" value="<?php echo $staff_descr; ?>"></textarea></td>
         </tr>
@@ -138,6 +138,23 @@ function create_my_taxonomies() {
             'hierarchical' => true,
 			 'query_var' => true,
 			'rewrite' => array('slug' => 'new_staffs_team' )
+        )
+    );
+    
+    register_taxonomy(
+        'staff_hub',
+        'new_staffs',
+        array(
+            'labels' => array(
+                'name' => 'Staff hub',
+                'add_new_item' => 'Add new staff hub',
+                'new_item_name' => "New staff hub"
+            ),
+            'show_ui' => true,
+            'show_tagcloud' => false,
+            'hierarchical' => true,
+			 'query_var' => true,
+			'rewrite' => array('slug' => 'staff_hub' )
         )
     );
 }

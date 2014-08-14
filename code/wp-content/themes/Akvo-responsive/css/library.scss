@@ -95,7 +95,7 @@ $titleFont: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 @mixin box-sizing($boxSizingProperties) {
 	-moz-box-sizing: $boxSizingProperties;
-    -wekit-box-sizing: $boxSizingProperties;
+    -webkit-box-sizing: $boxSizingProperties;
     box-sizing: $boxSizingProperties;
 }
 /* Media Queries
@@ -103,9 +103,13 @@ $titleFont: 'Questrial', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 $width-small:  768px;
 $width-medium: 992px;
 $width-large:  1200px;
+$width-huge: 1400px;
  
 @mixin responsive($width) {
-  @if $width == wide-screens {
+  @if $width == huge-screens {
+    @media only screen and (min-width: $width-huge) { @content; }
+  }
+  @else if $width == wide-screens {
     @media only screen and (min-width: $width-large) { @content; }
   }
   @else if $width == medium-screens {

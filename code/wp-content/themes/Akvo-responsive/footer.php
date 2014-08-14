@@ -22,6 +22,7 @@
             </ul>
           </nav>
           <div class="newsLetter">
+            <p class="subscribe">Subscribe to our monthly newsletter</p>
             <?php gravity_form(1, false, true, false, '', true); ?>
           </div>
         </div>
@@ -47,6 +48,7 @@
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
   _paq.push(["setCookieDomain", "*.akvodev.org"]);
   _paq.push(["setDomains", ["*.akvodev.org"]]);
+  _paq.push(["setDocumentTitle",  '404/URL = ' +  encodeURIComponent(document.location.pathname+document.location.search) + '/From = ' + encodeURIComponent(document.referrer)]);
   _paq.push(["trackPageView"]);
   _paq.push(["enableLinkTracking"]);
 
