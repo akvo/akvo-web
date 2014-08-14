@@ -13,7 +13,6 @@ class Config {
 	const CAPABILITY_GENERAL_NAME = 'jsondata_cap_general';
 	const CAPABILITY_RESTRICTED_NAME = 'jsondata_cap_restricted';
     const OPTION_NAME_CRON_SETTINGS = 'jsondata_cron_setting';
-    const OPTION_NAME_DEBUG_EMAIL = 'jsondata_debug_email';
 
 	public static function getFormViewScriptBasePaths () {
 		return array(

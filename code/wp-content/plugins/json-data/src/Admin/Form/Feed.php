@@ -47,19 +47,14 @@ class Feed extends KwgP\Form {
 		
 
 		$oSubmit = new \Zend_Form_Element_Button('submitSubmit');
-		$oSubmit->setLabel('Save')
+		$oSubmit->setLabel('Submit')
 				->setAttrib('type', 'submit')
 				->setAttrib('class', 'btn')
 				->setDecorators(array('ViewHelper'));
-		$oSubmitSave = new \Zend_Form_Element_Button('submitSubmitSave');
-		$oSubmitSave->setLabel('Save & Close')
-				->setAttrib('type', 'submit')
-				->setAttrib('class', 'btn btn-primary')
-				->setDecorators(array('ViewHelper'));
 		$oPreview = new \Zend_Form_Element_Button('previewData');
 		$oPreview->setLabel('Preview')
-				->setAttrib('type', 'submit')
-				->setAttrib('class', 'btn btn-success pull-right btnPreview')
+				->setAttrib('type', 'button')
+				->setAttrib('class', 'btn btnPreview')
 				->setDecorators(array('ViewHelper'));
 
 		switch ($this->_sContext) {
@@ -79,7 +74,7 @@ class Feed extends KwgP\Form {
 
 				
 
-				$oSubmit->setLabel('Save');
+				$oSubmit->setLabel('Submit');
 
 				$aCreateElements = array(
 					$oName,
@@ -91,12 +86,10 @@ class Feed extends KwgP\Form {
 					$oStylesheet,
 					
 
-					//$oPreview,
-					$oSubmitSave,
 					$oSubmit,
 				);
                 if($this->_sContext==self::CONTEXT_UPDATE){
-                    $aCreateElements[]=$oPreview;
+                    //$aCreateElements[]=$oPreview;
                 }
 				$this->addElements($aCreateElements);
 

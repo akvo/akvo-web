@@ -78,11 +78,10 @@ class Ajax {
 			if (isset($_POST['name'])) {
 
 				$title = $_POST['name'];
-                $sPreferredSlug = sanitize_title_with_dashes( $title );
-                $oFeedDao = new \JsonData\Common\Model\Dao\JsonData();
-                $sFinalSlug = $oFeedDao->checkSlug($sPreferredSlug);
+
+
 				$aResponse['status'] = 'successful';
-				$aResponse['message'] = $sFinalSlug;
+				$aResponse['message'] = sanitize_title_with_dashes( $title );
 
 
 			} else {
