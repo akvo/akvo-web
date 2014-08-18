@@ -18,8 +18,10 @@ class Settings {
 		if (empty($_POST)) {
 
 			$bServerCron = get_option(JDConfig::OPTION_NAME_CRON_SETTINGS);
+			$sEmail = get_option(JDConfig::OPTION_NAME_DEBUG_EMAIL);
 			$aPopulateData = array(
 				'radioServerCron' => $bServerCron,
+				'textEmail' => $sEmail,
 			);
 			$oForm->populate($aPopulateData);
 
@@ -30,7 +32,9 @@ class Settings {
 				$aFormValues = $oForm->getValues();
 
 				$sCron = $aFormValues['radioServerCron'];
+				$sEmail = $aFormValues['textEmail'];
 				update_option(JDConfig::OPTION_NAME_CRON_SETTINGS, $sCron);
+				update_option(JDConfig::OPTION_NAME_DEBUG_EMAIL, $sEmail);
                 $oFeed = new JDFeed();
                 $oFeed->scheduleCron();
 			}
