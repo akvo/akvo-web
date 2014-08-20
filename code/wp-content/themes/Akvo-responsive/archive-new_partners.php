@@ -6,9 +6,12 @@ get_header(); ?>
 
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
   <h1 class="backLined">Our partners</h1>
-  <div class="wrapper">
-    <p class="centerED fullWidthParag">Akvo works with more than a thousand organisations around the world to help them report, monitor, evaluate and share their work online. </p>
-    <p class="centerED fullWidthParag">Following are our core partners with whom we work closely and some of the main programmes we support. </p>
+  <div class="wrapper centerED fullWidthParag">
+    <?php 
+    $post = get_post(12776);
+    setup_postdata($post);
+    the_content();
+    ?>
   </div>
   <nav class="anchorNav wrapper">
     <h5>menu</h5>
