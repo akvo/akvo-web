@@ -41,6 +41,7 @@
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script>
   <script type="text/javascript">
   $( document ).ready(function() {
     // footer menu headings
