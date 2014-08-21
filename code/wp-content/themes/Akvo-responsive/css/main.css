@@ -1610,7 +1610,7 @@ body.home h1.akvoDescr {
     width: 90%; } }
 
 #actionHeroBox {
-  background: #202024;
+/*  background: #202024;*/
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
   position: relative;

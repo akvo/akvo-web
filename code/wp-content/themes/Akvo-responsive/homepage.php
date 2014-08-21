@@ -12,27 +12,33 @@
 </h1>
 
 <section id="actionHeroBox" class="">
-  <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=1'); ?>
-  <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-  <div class="borderTop"></div>
-  <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
-  <div>
-  <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
-    <p>
-      <?php the_field('product_featured'); ?>
-    </p>
-    <hgroup>
-      <h1>
-        <?php the_field('hero_box_title'); ?>
-      </h1>
-      <h2>
-        <?php the_field('hero_box_subtitle'); ?>
-      </h2>
-    </hgroup>
-    <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
-  <div class="borderBottom"></div>
-  </div>
-  <?php endwhile; endif; wp_reset_query(); ?>
+  <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=4'); ?>
+  <?php if (have_posts()) : ?>
+    <ul class="bxslider">
+    <?php while (have_posts()) : the_post(); ?>
+        <li>
+          <div class="borderTop"></div>
+          <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+          <div>
+          <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
+            <p>
+              <?php the_field('product_featured'); ?>
+            </p>
+            <hgroup>
+              <h1>
+                <?php the_field('hero_box_title'); ?>
+              </h1>
+              <h2>
+                <?php the_field('hero_box_subtitle'); ?>
+              </h2>
+            </hgroup>
+            <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
+          <div class="borderBottom"></div>
+          </div>
+        </li>
+  <?php endwhile; ?>
+        </ul>
+        <?php endif; wp_reset_query(); ?>
 </section>
 
 <section id="productWindow" class="floats-in">
@@ -107,37 +113,7 @@
           <figcaption><a id="update_title" href=""></a></figcaption>
         </figure>
       </div>
-      <script type="text/javascript">
-        $(function() {
-          var akvo_domain = 'http://rsr.akvo.org';
-          $.ajax({
-            url: akvo_domain + '/api/v1/project_update/?limit=5',
-            dataType: "jsonp",
-            jsonp: 'callback',
-            jsonpCallback: 'callback',
-            cache: true,
-            success: function(data) {
-              for (i=0; i<5; i++) {
-                if (data.objects[i].photo === '') {
-                  console.log('no photo, moving on');
-                  continue;
-                } else {
-                  console.log('pic!');
-                  var title, src, absolute_url;
-                  src = data.objects[i].photo;
-                  console.log(src);
-                  title = data.objects[i].title;
-                  absolute_url = data.objects[i].absolute_url;
-                  $("#update_url").attr("style", "background-image: url("+akvo_domain + src+")");
-                  $("#update_title, #update_url").prop("href", akvo_domain + absolute_url);
-                  $("#update_title").text(title);
-                  break;
-                }
-              }
-            }
-          });
-        });
-      </script>
+      
     </div>
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
     <div class="videoIcon">
@@ -165,6 +141,44 @@
 
 </section></div></div>
 <!-- end content -->
+
+<script type="text/javascript">
+$(function() {
+  var akvo_domain = 'http://rsr.akvo.org';
+  $.ajax({
+    url: akvo_domain + '/api/v1/project_update/?limit=5',
+    dataType: "jsonp",
+    jsonp: 'callback',
+    jsonpCallback: 'callback',
+    cache: true,
+    success: function(data) {
+      for (i=0; i<5; i++) {
+        if (data.objects[i].photo === '') {
+          console.log('no photo, moving on');
+          continue;
+        } else {
+          console.log('pic!');
+          var title, src, absolute_url;
+          src = data.objects[i].photo;
+          console.log(src);
+          title = data.objects[i].title;
+          absolute_url = data.objects[i].absolute_url;
+          $("#update_url").attr("style", "background-image: url("+akvo_domain + src+")");
+          $("#update_title, #update_url").prop("href", akvo_domain + absolute_url);
+          $("#update_title").text(title);
+          break;
+        }
+      }
+    }
+  });
+});
+    
+$(document).ready(function() {
+    $('.bxslider').bxSlider();
+});
+</script>
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
 
 <?php get_footer(); ?>
     
