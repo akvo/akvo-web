@@ -162,7 +162,7 @@ function the_category_unlinked($separator = ' ') {
 add_filter( 'post_class', 'custom_taxonomy_post_class', 10, 3 );
     if( !function_exists( 'custom_taxonomy_post_class' ) ) {
         function custom_taxonomy_post_class( $classes, $class, $ID ) {
-            $taxonomy = array('new_staffs_team','new_partners_category','staff_hub');
+            $taxonomy = array('new_staffs_team','new_partners_category','staff_hub','new_foundation_team');
             $terms = get_the_terms( (int) $ID, $taxonomy);
             if( !empty( $terms ) ) {
                 foreach( (array) $terms as $order => $term ) {
@@ -176,7 +176,7 @@ add_filter( 'post_class', 'custom_taxonomy_post_class', 10, 3 );
     }
 	
 function post_type_pagesize( $query ) {
-	$postTypes = array('new_staffs', 'new_partners');
+	$postTypes = array('new_staffs', 'new_partners','foundation_member');
     if ( is_post_type_archive( $postTypes ) ) {
         // Display 120 posts per page (archive page) for a custom post type called 'new_staffs' & 'new_partners'
         $query->set( 'posts_per_page', 120 );
