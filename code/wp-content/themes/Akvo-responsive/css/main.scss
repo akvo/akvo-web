@@ -3745,6 +3745,60 @@ ol.threeFlowPoints li p {
 .contactInfo section:last-child {
     margin: 2em auto 2em auto;
 }
+.hubmap {
+    position: relative;
+    padding-bottom: 49%;
+    background: #ffd300 url(../images/map.gif) center no-repeat;
+    background-size: 91%;
+    
+    .marker {
+        position: absolute;
+        width: 4%;
+        max-width: 46px;
+        height: 12%;
+        max-height: 94px;
+        background: url(../images/marker.png) no-repeat;
+        background-size: 100%;
+        text-align: center;
+        @include responsive (small-max-screens) {
+            display: none;
+        }
+    }
+}
+.hubs {
+    li {
+        margin: 50px auto 0;
+        max-width: 800px;
+        clear: left;
+        
+        @include responsive (small-max-screens) {
+            h4 {
+                margin-top: 0;
+            }
+            img {
+                display: none;
+            }
+        }
+        
+        @include responsive (small-screens) {
+            .text {
+                margin-left: 280px;
+            }
+            h3, h4 {
+                margin: 0;
+            }
+            h4 {
+                margin-top: 2px;
+                margin-bottom: 20px;
+            }
+            img {
+                float: left;
+                margin-bottom: 50px;
+            }
+        }
+    }
+}
+
 /*-----------------------------------
 				Annual Report Page
 ------------------------------------*/
