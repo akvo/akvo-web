@@ -147,9 +147,9 @@
     <h4>RSR desktop</h4>
     <p>Our manuals contain all you need to know to create a project update:</p>
     <ul class="threeColumns vertMargin floats-in">
-      <li class="englishManual"><a href="https://www.dropbox.com/s/ixu18npgqzyzo9f/RSR.PFM.EN.V04-13%20final.pdf"><span>RSR manual</span></a></li>
-      <li class="frenchManual"><a href="https://www.dropbox.com/s/yuizhaebqgpeb6y/RSR.PFM.FR.V04-13%20final.pdf"><span>Manuel de RSR</span></a></li>
-      <li class="spanishManual"><a href="https://www.dropbox.com/s/ki0s24rczhk2wuj/RSR.PFM.ES.V04-13%20final.pdf"><span>Manual de RSR</span></a></li>
+      <li class="englishManual"><a href="https://www.dropbox.com/s/segig2t3rymc9k5/RSR.PFM.EN.V04-13%20final.pdf?dl=0"><span>RSR manual</span></a></li>
+      <li class="frenchManual"><a href="https://www.dropbox.com/s/jr7ukok71e3fbdo/RSR.PFM.FR.V04-13%20final.pdf?dl=0"><span>Manuel de RSR</span></a></li>
+      <li class="spanishManual"><a href="https://www.dropbox.com/s/einz9ilc5pfs9kl/RSR.PFM.ES.V04-13%20final.pdf?dl=0"><span>Manual de RSR</span></a></li>
     </ul>
     <h4>RSR Up Android app</h4>
     <ul class="threeColumns vertMargin floats-in">
