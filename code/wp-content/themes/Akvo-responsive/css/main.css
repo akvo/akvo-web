@@ -514,7 +514,6 @@ div.centerED > p, .centerED {
 .address:first-child {
   background: #f0f0f0 url("../images/addressBg.png") center right no-repeat; }
 
-
 .topLine {
   font-weight: bold; }
 
@@ -672,7 +671,6 @@ input[type="search"] {
   background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
   border: 1px solid black;
   padding: 2px 25px 2px 6px; }
-
 
 input[type="search"]:hover {
   -moz-box-shadow: none;
@@ -1321,7 +1319,6 @@ nav#n ul li.current_page_parent a {
   position: relative;
   z-index: 9999; }
 
-
 nav#n ul li:last-child {
   background: none; }
 
@@ -1344,8 +1341,6 @@ nav#n ul li:last-child {
   background: #020206;
   color: #de8929;
   text-decoration: none; }
-
-
 
 #n ul li:hover > ul {
   display: block; }
@@ -1610,7 +1605,6 @@ body.home h1.akvoDescr {
     width: 90%; } }
 
 #actionHeroBox {
-/*  background: #202024;*/
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
   position: relative;
@@ -1698,6 +1692,10 @@ body.home h1.akvoDescr {
     right: auto;
     left: 5%; } }
 
+@media only screen and (min-width: 768px) {
+  #actionHeroBox .bx-wrapper .bx-viewport {
+    padding-bottom: 30px; } }
+
 .borderTop, .borderBottom {
   display: none;
   height: 40px;
@@ -1712,7 +1710,6 @@ body.home h1.akvoDescr {
 .borderBottom {
   background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
   bottom: 0em; }
-
 
 #actionHeroBox p {
   color: #282828;
@@ -2048,7 +2045,6 @@ ul.faqMenuList h3 {
     padding: 0;
     width: 50%; } }
 
-
 #moreStuffHome div h3 a {
   color: #2c2a74;
   display: block;
@@ -2071,7 +2067,6 @@ moreStuffHome figcaption a {
   position: relative;
   text-align: center;
   width: 99%; }
-
 
 #moreStuffHome div.blogIcon h2 {
   font-size: 1em;
@@ -2124,7 +2119,6 @@ moreStuffHome figcaption a {
 
 #moreStuffHome div.blogIcon time {
   margin: 0em 0em 0em 1%; }
-
 
 /*-----------------------------------
 				BLOG
@@ -2209,7 +2203,6 @@ article.post h2 a:hover {
   font-size: 2.2em;
   line-height: 1.4em;
   margin-bottom: 15px; }
-
 
 .post h4 {
   border-left: 3px solid #56b972;
@@ -2534,7 +2527,6 @@ p#allowed_tags code {
   line-height: 1.5em;
   margin-bottom: 8px;
   padding: 4px 7px; }
-
 
 #commentform #submit:hover, .button:hover {
   background-color: #4197ee;
@@ -3265,7 +3257,6 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .akvoopenaid .figure {
   background: #f2f2f6; }
 
-
 .figure img {
   display: block;
   margin: 0em auto;
@@ -3379,7 +3370,6 @@ section.inFivePoints li p {
   padding: 1.5em 0em 0em;
   text-shadow: 0em 1px white; }
 
-
 section.inFivePoints li:nth-child(2n) img {
   float: right; }
 
@@ -3408,8 +3398,6 @@ section.inFivePoints li:nth-child(2n) div {
 
 .productPage p {
   margin-bottom: 15px; }
-
-
 
 .splitImg ol.threeFlowPoints {
   width: 45%; }
@@ -3476,7 +3464,6 @@ ol.threeFlowPoints {
 ol.threeFlowPoints li {
   margin: 0em auto 1em auto;
   padding: 0em 1em; }
-
 
 ol.threeFlowPoints li p {
   font-weight: 500; }
@@ -4631,7 +4618,6 @@ h1.akvopediaHelp {
 
 #rsrNetworkMap > h2 {
   text-align: center; }
-
 
 /***********************************
 						Price table

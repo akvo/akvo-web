@@ -1862,6 +1862,12 @@ body.home h1.akvoDescr {
     }
 }
 
+@include responsive (small-screens) {
+    #actionHeroBox .bx-wrapper .bx-viewport {
+        padding-bottom: 30px;
+    }
+}
+
 
 .borderTop,
 .borderBottom {
