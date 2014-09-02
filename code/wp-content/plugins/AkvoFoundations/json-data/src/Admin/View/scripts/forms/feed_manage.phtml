@@ -1,0 +1,202 @@
+<?php
+
+$sWrapperId = '';
+$aParams = $this->element->getParameters();
+$aFeedParams = (isset($aParams['params'])) ? unserialize($aParams['params']) : array();
+$sTemporaryWrapperId = $this->element->getParameter('wrapper_id');
+
+if (is_null($sTemporaryWrapperId)) {
+	$sFormId = $this->element->getAttrib('id');
+	if ($sFormId != '') {
+		$sWrapperId = 'iDivWrapperFor' . $sFormId;
+	}
+} else {
+	$sWrapperId = $sTemporaryWrapperId;
+}
+
+$sWrapperAttributes = '';
+$sWrapperAttributes .= ' id="' . $sWrapperId . '"';
+$sWrapperAttributes .= ' class="cDivZendFormWrapper"';
+
+?>
+<div<?php echo $sWrapperAttributes; ?>>
+	<div id="iDivFormResponseContainer"></div>
+
+	<form class=""<?php include 'partials/form_attributes.phtml'; ?>>
+
+		<div class="row-fluid">
+
+			<div class="span6">
+
+				<fieldset>
+					<legend>Feed</legend>
+                    <p><small>The name and slug are used for your and other users' reference.</small></p>
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->textName->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->textName->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textName"><?php echo $this->element->textName->getLabel(); ?></label>
+						<div class="controls">
+							<?php echo $this->element->textName; ?>
+						</div>
+					</div>
+
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->textSlug->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->textSlug->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textSlug"><?php echo $this->element->textSlug->getLabel(); ?></label>
+						<div class="controls">
+							<?php echo $this->element->hiddenSlug; ?>
+							<?php echo $this->element->textSlug; ?>
+						</div>
+					</div>
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->textUrl->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->textUrl->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textUrl"><?php echo $this->element->textUrl->getLabel(); ?></label>
+                        <p><small>Enter the full feed URL here. Include all necessary GET parameters.</small></p>
+						<div class="controls">
+							<?php echo $this->element->textUrl; ?>
+                           <br style="clear:both;" /> <a href="#myModal" role="button" class="btn btnPreview hide" data-toggle="modal">Preview JSON data</a>
+						</div>
+					</div>
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->selectUpdateInterval->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->selectUpdateInterval->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="selectUpdateInterval"><?php echo $this->element->selectUpdateInterval->getLabel(); ?></label>
+						<p><small>The update interval determines how often the feed data should be refreshed.</small></p>
+						<div class="controls">
+							<?php echo $this->element->selectUpdateInterval; ?>
+						</div>
+					</div>
+
+
+				</fieldset>
+
+			</div>
+            <div class="span6" id="iDivParameters">
+                <fieldset>
+					<legend>Default Parameters</legend>
+                    <p><small>Once the URL has been entered, you may define the default values for the GET parameters here.</small></p>
+						
+                    <div id="iDivAjaxReturn">
+                        <?php foreach($aFeedParams AS $sParamName=>$sParamValue){?>
+                            <div class="control-group " id="element-<?php echo $sParamName; ?>">
+                                <label class="control-label" for="textParam-<?php echo $sParamName; ?>"><?php echo $sParamName; ?></label>
+                                <div class="controls">
+                                    <input type="text" name="textParam[<?php echo $sParamName; ?>]" id="textParam-<?php echo $sParamName; ?>" value="<?php echo $sParamValue; ?>" class="input-xxlarge paramInput">
+                                </div>
+                            </div>
+                        <?php } ?>
+                    </div>
+                    <div id="iDivShortcodeExample">
+                        
+                    </div>
+                </fieldset>
+            </div>
+
+		</div>
+
+		
+
+		
+
+		<div class="row-fluid">
+            <fieldset>
+					<legend>Template</legend>
+                    
+					
+            <?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->textTemplateMarkup->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->textTemplateMarkup->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textTemplateMarkup"><?php echo $this->element->textTemplateMarkup->getLabel(); ?></label>
+						<p><small>Feed data is contained in php array $aData. Define the HTML markup for the feed here.</small></p>
+                        <div class="controls">
+							<?php echo $this->element->textTemplateMarkup; ?>
+						</div>
+					</div>
+<?php
+$sErrorClass = '';
+$sErrorPopup = '';
+$aNameErrors = $this->element->textTemplateStylesheet->getErrors();
+if (!empty($aNameErrors)) {
+	$aErrorMessages = $this->element->textTemplateStylesheet->getMessages();
+	$sErrorClass = 'error cFormErrorPopover';
+	$sErrors = include 'partials/form_element_error_list.phtml';
+	$sErrorPopup = ' data-content="' . $sErrors . '"';
+}
+?>
+					<div class="control-group <?php echo $sErrorClass; ?>"<?php echo $sErrorPopup; ?>>
+						<label class="control-label" for="textTemplateStylesheet"><?php echo $this->element->textTemplateStylesheet->getLabel(); ?></label>
+						<p><small>If necessary, define the CSS styles for the template here.</small></p>
+                        <div class="controls">
+							<?php echo $this->element->textTemplateStylesheet; ?>
+						</div>
+					</div>
+			<div class="form-actions">
+				<?php echo $this->element->submitSubmit; ?>
+				<?php echo $this->element->submitSubmitSave; ?>
+				<?php echo $this->element->previewData; ?>
+			</div>
+            </fieldset>
+		</div>
+
+	</form>
+</div>
+<!-- Modal -->
+<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <h3 id="myModalLabel">JSON preview</h3>
+  </div>
+  <div class="modal-body">
+      <pre class="jsonOutput">loading...</pre>
+  </div>
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+  </div>
+</div>
