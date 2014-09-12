@@ -3,7 +3,7 @@
 
 Vagrant.configure("2") do |config|
     config.vm.box = "homepage-20140912"
-    config.vm.box_url = "file:///Users/carlcrowder/akvo/code/package.box" # http://files.support.akvo-ops.org/rsr-dev-django-upgrade-20140603.box"
+    config.vm.box_url = "http://files.support.akvo-ops.org/homepage-20140912.box"
     config.vm.synced_folder "../", "/vagrant/homepage/checkout/", id: "code-root",
       :owner => "homepage",
       :group => "www-data",
