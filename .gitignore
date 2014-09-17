@@ -11,6 +11,7 @@ code/php5.ini
 code/robots.txt
 code/sitemap.xml
 code/wp-config*
+code/.htaccess
 
 # Media
 code/wp-content/uploads
@@ -26,12 +27,7 @@ code/wp-content/upgrade
 code/wp-content/plugins/duplicator
 code/wp-snapshots
 
-code/.htaccess
+# Vagrant
+vagrant/.vagrant
 
 *.orig
-
-code/.htaccess
-
-code/.htaccess
-
-code/.htaccess
