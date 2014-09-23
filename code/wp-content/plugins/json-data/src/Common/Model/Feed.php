@@ -230,5 +230,46 @@ class Feed {
 		return $bStatus;
 
 	}
+    
+    public function makePreview($slug){
+        $oDaoJsonData = new \JsonData\Common\Model\Dao\JsonData();
+        $aDetail = $oDaoJsonData->fetchFeedBySlug($slug);
+        if($aDetail){
+            $aParams = unserialize($aDetail['feed_parameters']);
+            $sParams= '';
+            foreach($aParams AS $k=>$v)$sParams.= ' '.$k.'="'.$v.'"';
+            $sShortcode = '[jsondata_feed slug="'.$slug.'"'.$sParams.']';
+            $args=array(
+                'post_type' => 'jdata',
+                'post_status' => 'draft',
+                'name'=>'jsondata-'.$slug
+            );
+            $the_query = new \WP_Query( $args );
+            $aPosts = $the_query->get_posts();
+            // Post object
+            $my_post = array(
+              'post_title'    => 'JSON data preview '.$slug,
+              'post_name'    => 'jsondata-'.$slug,
+              'post_content'  => $sShortcode,
+              'post_status'   => 'draft',
+              'post_type'   => 'jdata',
+              'post_author'   => 1
+            );
+            if($the_query->post_count===0){
+                // Insert the post into the database
+                $id = wp_insert_post( $my_post );
+            }else{
+                $id = $aPosts[0]->ID;
+                $my_post['ID'] = $id;
+                wp_update_post( $my_post );
+            }
+            
+            wp_reset_postdata();
+            
+            
+            //header('Location: '.  get_permalink($id));
+//            die();
+        }
+    }
 
 }

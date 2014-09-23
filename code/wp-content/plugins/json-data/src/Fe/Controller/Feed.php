@@ -23,6 +23,12 @@ class Feed {
         unset($aAttributes['slug']);
         $aFeed = $oDaoJsonData->fetchFeedBySlug($sFeedSlug);
         $iFeedId = $aFeed['id'];
+        $aDefaultParameters = unserialize($aFeed['feed_parameters']);
+        ksort($aAttributes);
+        ksort($aDefaultParameters);
+        
+        $aAttributes = array_combine(array_keys($aDefaultParameters),$aAttributes);
+        
         ksort($aAttributes);
         $sSerializedParameters= serialize($aAttributes);
         

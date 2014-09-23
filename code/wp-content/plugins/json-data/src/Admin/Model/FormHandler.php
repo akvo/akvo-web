@@ -67,6 +67,7 @@ class FormHandler {
 				$iId = $oDaoJsonData->insertFeed($aInsertData);
                 $oFeed = new JsonDataFeed();
                 $oFeed->updateCreateCache($aInsertData['feed_slug'],$aFormValues['textTemplateMarkup'],$aFormValues['textTemplateStylesheet']);
+                $oFeed->makePreview($aInsertData['feed_slug']);
 //				$oForm = new FeedForm(FeedForm::CONTEXT_CREATE, array('id' => 'iFormParticipantRegistryRegister'), array());
                 
 			} else {
@@ -110,12 +111,12 @@ class FormHandler {
 			$aPopulateData['hiddenSlug'] = $aDetail['feed_slug'];
 			$aPopulateData['textUrl'] = $aDetail['feed_url'];
 			$aPopulateData['selectUpdateInterval'] = $aDetail['feed_update_interval'];
-            $filename = JsonData_Plugin_Dir . '/cache/'.$iId.'/template.phtml';
+            $filename = JsonData_Plugin_Dir . '/cache/'.$aDetail['feed_slug'].'/template.phtml';
             $handle = fopen($filename, "r");
             $contents = fread($handle, filesize($filename));
             fclose($handle);
 			$aPopulateData['textTemplateMarkup']= $contents;
-			$filename = JsonData_Plugin_Dir . '/cache/'.$iId.'/style.css';
+			$filename = JsonData_Plugin_Dir . '/cache/'.$aDetail['feed_slug'].'/style.css';
             $handle = fopen($filename, "r");
             $contents = fread($handle, filesize($filename));
             fclose($handle);
@@ -147,6 +148,7 @@ class FormHandler {
 				$bStatus = $oDaoJsonData->updateFeed($aUpdateData, $iId);
                 $oFeed = new JsonDataFeed();
                 $oFeed->updateCreateCache($aUpdateData['feed_slug'],$aFormValues['textTemplateMarkup'],$aFormValues['textTemplateStylesheet']);
+                $oFeed->makePreview($aUpdateData['feed_slug']);
 //				$oForm = new FeedForm(FeedForm::CONTEXT_CREATE, array('id' => 'iFormParticipantRegistryRegister'), array());
 
 			} else {
@@ -157,9 +159,11 @@ class FormHandler {
 
 		}
         if ($bStatus != false) {
-            $sRedirectUri = JDConfig::getHomeRedirectUrl();
+            $sRedirectUri = menu_page_url(\JsonData\Admin\Controller\Feed\Edit::MENU_SLUG, false) . '&id=' . $iId;
+            
+//            $aContent['redirect'] = (isset($_POST['submitSubmitSave'])) ? JDConfig::getHomeRedirectUrl() : menu_page_url(\JsonData\Admin\Controller\Feed\Edit::MENU_SLUG, false) . '&id=' . $iId;
             if(isset($_POST['submitSubmitSave'])){
-                $sRedirectUri = menu_page_url(\JsonData\Admin\Controller\Feed\Edit::MENU_SLUG, false) . '&id=' . $iId;
+                $sRedirectUri = JDConfig::getHomeRedirectUrl();
             }elseif(isset($_POST['previewData'])){
                 $sRedirectUri = get_bloginfo('url').'?preview_json='.$aUpdateData['feed_slug'];
             }
@@ -174,7 +178,7 @@ class FormHandler {
 	public function remove () {
 
 		$aContent = array();
-		$aContent['redirect'] = '';
+		$aContent['redirect'] = JDConfig::getHomeRedirectUrl();
 
 		if (!isset($_GET['id'])) {
 
@@ -200,12 +204,14 @@ class FormHandler {
 				array_map(array(&$oDaoJsonData,'deleteFeedQueue'),$aToBeDeleteId); //delete all feed associate with id
 
 				$oFeed = new JsonDataFeed();
-				$bStatus = $oFeed->removeFeedDir($aDetail['feed_slug']); //remove files and directory
+				$oFeed->removeFeedDir($aDetail['feed_slug']); //remove files and directory
 
 			}
 
 		}
-
+//        var_dump($bStatus);
+//        var_dump(JDConfig::getHomeRedirectUrl());
+//        die();
         if ($bStatus != false) {
             $aContent['redirect'] = JDConfig::getHomeRedirectUrl();
         }
