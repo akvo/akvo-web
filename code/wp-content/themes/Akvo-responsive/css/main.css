@@ -391,6 +391,9 @@ hr.delicate {
   height: 1px;
   margin: 50px auto 20px auto; }
 
+.foundations.Page hr.delicate {
+  margin: 20px auto 50px; }
+
 hr.delicateSmall {
   width: 70%;
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -623,7 +626,6 @@ div.centerED > p,
 .address:first-child {
   background: #f0f0f0 url("../images/addressBg.png") center right no-repeat; }
 
-
 .topLine {
   font-weight: bold; }
 
@@ -801,7 +803,6 @@ input[type="search"] {
   background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
   border: 1px solid black;
   padding: 2px 25px 2px 6px; }
-
 
 input[type="search"]:hover {
   -moz-box-shadow: none;
@@ -1454,7 +1455,6 @@ nav#n ul li.current_page_parent a {
   position: relative;
   z-index: 9999; }
 
-
 nav#n ul li:last-child {
   background: none; }
 
@@ -1477,8 +1477,6 @@ nav#n ul li:last-child {
   background: #020206;
   color: #de8929;
   text-decoration: none; }
-
-
 
 #n ul li:hover > ul {
   display: block; }
@@ -1766,7 +1764,6 @@ body.home h1.akvoDescr {
     margin: 30px auto;
     width: 90%; } }
 #actionHeroBox {
-/*  background: #202024;*/
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
   position: relative;
@@ -1865,7 +1862,6 @@ body.home h1.akvoDescr {
 .borderBottom {
   background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
   bottom: 0em; }
-
 
 #actionHeroBox p {
   color: #282828;
@@ -2203,7 +2199,6 @@ ul.faqMenuList h3 {
     margin: 0 0 2em 0;
     padding: 0;
     width: 50%; } }
-
 #moreStuffHome div h3 a {
   color: #2c2a74;
   display: block;
@@ -2215,7 +2210,7 @@ ul.faqMenuList h3 {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-#moreStuffHome figcaption a {
+moreStuffHome figcaption a {
   background: none; }
 
 #moreStuffHome div.read-more {
@@ -2226,7 +2221,6 @@ ul.faqMenuList h3 {
   position: relative;
   text-align: center;
   width: 99%; }
-
 
 #moreStuffHome div.blogIcon h2 {
   font-size: 1em;
@@ -2279,7 +2273,6 @@ ul.faqMenuList h3 {
 
 #moreStuffHome div.blogIcon time {
   margin: 0em 0em 0em 1%; }
-
 
 /*-----------------------------------
 				BLOG
@@ -2369,7 +2362,6 @@ article.post h2 a:hover {
   font-size: 2.2em;
   line-height: 1.4em;
   margin-bottom: 15px; }
-
 
 .post h4 {
   border-left: 3px solid #56b972;
@@ -2698,7 +2690,8 @@ p#allowed_tags code {
   margin-bottom: 8px;
   padding: 4px 7px; }
 
-#commentform #submit:hover, .button:hover {
+#commentform #submit:hover,
+.button:hover {
   background-color: #4197ee;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff)); }
 
@@ -3273,7 +3266,7 @@ nav.anchorNav ul li:first-child {
 @media only screen and (max-width: 768px) {
   nav.anchorNav ul li:first-child {
     background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+"); } }
-nav.anchorNav ul li a, nav.anchorNav2 ul li a {
+nav.anchorNav ul li a, nav.anchorNav2 ul li a, .board a {
   -moz-border-radius: 0.1em;
   -o-border-radius: 0.1em;
   -webkit-border-radius: 0.1em;
@@ -3304,7 +3297,7 @@ nav.anchorNav2 ul li a {
     font-size: 1.5em;
     line-height: 1.1em;
     padding: 0.35em 0.5em; } }
-nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
+nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover, .board a:hover {
   background-color: rgba(44, 42, 116, 0.6);
   box-shadow: 1px 2px 0em #dfdfdf;
   color: white; }
@@ -3320,6 +3313,9 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .openaidProdPag nav.anchorNav ul li a:hover {
   background: rgba(255, 206, 0, 0.5);
   color: #202024; }
+
+.board {
+  text-align: center; }
 
 .productPage section {
   margin: 0em auto;
@@ -3404,7 +3400,6 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .akvoopenaid .figure {
   background: #f2f2f6; }
-
 
 .figure img {
   display: block;
@@ -3516,6 +3511,9 @@ section.inFivePoints li p {
   padding: 1.5em 0em 0em;
   text-shadow: 0em 1px white; }
 
+section.inFivePoints li:nth-child(2n+1) {
+  /* background:     rgb(182,182,182); */ }
+
 section.inFivePoints li:nth-child(2n) img {
   float: right; }
 
@@ -3543,8 +3541,6 @@ section.inFivePoints li:nth-child(2n) div {
 
 .productPage p {
   margin-bottom: 15px; }
-
-
 
 .splitImg ol.threeFlowPoints {
   width: 45%; }
@@ -3611,7 +3607,6 @@ ol.threeFlowPoints li {
   margin: 0em auto 1em auto;
   padding: 0em 1em; }
 
-
 ol.threeFlowPoints li p {
   font-weight: 500; }
 
@@ -3675,6 +3670,7 @@ ul.staff li {
   display: inline;
   float: left;
   margin: 0em 0.8% 0px 0em;
+  min-height: 200px;
   position: relative;
   width: 16%; }
 
@@ -3725,7 +3721,9 @@ ul.staff li div.imgWrapper {
   position: relative;
   width: 96%; }
 
-.new_staffs .staffBiog, .staffAsset .staffBiog, .new_partners .staffBiog {
+.new_staffs .staffBiog,
+.staffAsset .staffBiog,
+.new_partners .staffBiog {
   display: none; }
 
 .akvoTeam {
@@ -4762,7 +4760,6 @@ h1.akvopediaHelp {
 
 #rsrNetworkMap > h2 {
   text-align: center; }
-
 
 /***********************************
 						Price table
