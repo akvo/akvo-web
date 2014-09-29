@@ -364,6 +364,9 @@ hr.delicate {
     height: 1px;
     margin: 50px auto 20px auto;
 }
+.foundations.Page hr.delicate {
+    margin: 20px auto 50px;
+}
 hr.delicateSmall {
     width: 70%;
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -3782,7 +3785,6 @@ ul.staff li {
     display: inline;
     float: left;
     margin: 0em 0.8% 0px 0em;
-    min-height: 231px;
     position: relative;
     width: 16%;
 }
@@ -3808,10 +3810,12 @@ ul.staff li small {
     -moz-transition: opacity 0.2s ease-in;
     -o-transition: opacity 0.2s ease-in;
     -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
     color: rgb(250, 162, 27);
     font-size: 0.8em;
     opacity: 0;
-    transition: opacity 0.2s ease-in;
+    line-height: 1.2em;
+    margin-top: 6px;
 }
 ul.staff li:hover small {
     opacity: 1;
