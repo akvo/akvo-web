@@ -2097,12 +2097,7 @@ body.home h1.akvoDescr {
 .faqMenu {
   margin: 0em 0em 10px; }
 
-<<<<<<< HEAD
 a.faqMenuHead {
-=======
-a.faqMenuHead,
-.qa-faq-title {
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
   background: url("../images/menuCollapseShow.png") left top no-repeat;
   color: #202024;
   font-size: 1.1em;
@@ -2124,12 +2119,7 @@ a.faqMenuHead.openED {
 ul.faqMenuList {
   margin: 5px 0em 5px 30px; }
 
-<<<<<<< HEAD
 ul.faqMenuList > li {
-=======
-ul.faqMenuList > li,
-.qa-faq-answer {
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
   background: #f8f8f8;
   margin: 0em 0em 2px 0px;
   padding: 25px 0em 25px 10px; }
@@ -2156,12 +2146,7 @@ ul.faqMenuList li:hover {
 ul.faqMenuList li a {
   display: block; }
 
-<<<<<<< HEAD
 ul.faqMenuList h3 {
-=======
-ul.faqMenuList h3,
-.qa-faq-answer h3 {
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
   margin-top: 1em; }
 
 .answers h4 {
@@ -2218,11 +2203,7 @@ ul.faqMenuList h3,
     margin: 0 0 2em 0;
     padding: 0;
     width: 50%; } }
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
 #moreStuffHome div h3 a {
   color: #2c2a74;
   display: block;
@@ -2234,7 +2215,7 @@ ul.faqMenuList h3,
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-moreStuffHome figcaption a {
+#moreStuffHome figcaption a {
   background: none; }
 
 #moreStuffHome div.read-more {
@@ -2717,13 +2698,7 @@ p#allowed_tags code {
   margin-bottom: 8px;
   padding: 4px 7px; }
 
-<<<<<<< HEAD
-
 #commentform #submit:hover, .button:hover {
-=======
-#commentform #submit:hover,
-.button:hover {
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
   background-color: #4197ee;
   background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff)); }
 
@@ -3541,12 +3516,6 @@ section.inFivePoints li p {
   padding: 1.5em 0em 0em;
   text-shadow: 0em 1px white; }
 
-<<<<<<< HEAD
-=======
-section.inFivePoints li:nth-child(2n+1) {
-  /* background:     rgb(182,182,182); */ }
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
-
 section.inFivePoints li:nth-child(2n) img {
   float: right; }
 
@@ -3756,14 +3725,7 @@ ul.staff li div.imgWrapper {
   position: relative;
   width: 96%; }
 
-<<<<<<< HEAD
 .new_staffs .staffBiog, .staffAsset .staffBiog, .new_partners .staffBiog {
-=======
-.new_staffs .staffBiog,
-.staffAsset .staffBiog,
-.new_partners .staffBiog,
-.foundation_member .staffBiog {
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
   display: none; }
 
 .akvoTeam {
@@ -4858,11 +4820,7 @@ h1.akvopediaHelp {
 div[id^="inline-"] {
   display: none; }
 
-<<<<<<< HEAD
 .qa-faq {
   margin-bottom: 30px; }
 
 /*# sourceMappingURL=main.css.map */
-=======
-/*# sourceMappingURL=main.css.map */
->>>>>>> 6749c36... #367 Spacing CSS edits for Our Foundations page
