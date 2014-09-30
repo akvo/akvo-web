@@ -288,6 +288,9 @@ hr.delicate {
   height: 1px;
   margin: 50px auto 20px auto; }
 
+.foundations.Page hr.delicate {
+  margin: 20px auto 50px; }
+
 hr.delicateSmall {
   width: 70%;
   /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -514,7 +517,6 @@ div.centerED > p, .centerED {
 .address:first-child {
   background: #f0f0f0 url("../images/addressBg.png") center right no-repeat; }
 
-
 .topLine {
   font-weight: bold; }
 
@@ -672,7 +674,6 @@ input[type="search"] {
   background: #e6e6e6 url("../images/search-icon.png") no-repeat center right;
   border: 1px solid black;
   padding: 2px 25px 2px 6px; }
-
 
 input[type="search"]:hover {
   -moz-box-shadow: none;
@@ -1321,7 +1322,6 @@ nav#n ul li.current_page_parent a {
   position: relative;
   z-index: 9999; }
 
-
 nav#n ul li:last-child {
   background: none; }
 
@@ -1344,8 +1344,6 @@ nav#n ul li:last-child {
   background: #020206;
   color: #de8929;
   text-decoration: none; }
-
-
 
 #n ul li:hover > ul {
   display: block; }
@@ -1610,7 +1608,6 @@ body.home h1.akvoDescr {
     width: 90%; } }
 
 #actionHeroBox {
-/*  background: #202024;*/
   border-bottom: 1px solid #dddddd;
   border-top: 1px solid #dddddd;
   position: relative;
@@ -1712,7 +1709,6 @@ body.home h1.akvoDescr {
 .borderBottom {
   background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
   bottom: 0em; }
-
 
 #actionHeroBox p {
   color: #282828;
@@ -2048,7 +2044,6 @@ ul.faqMenuList h3 {
     padding: 0;
     width: 50%; } }
 
-
 #moreStuffHome div h3 a {
   color: #2c2a74;
   display: block;
@@ -2071,7 +2066,6 @@ moreStuffHome figcaption a {
   position: relative;
   text-align: center;
   width: 99%; }
-
 
 #moreStuffHome div.blogIcon h2 {
   font-size: 1em;
@@ -2124,7 +2118,6 @@ moreStuffHome figcaption a {
 
 #moreStuffHome div.blogIcon time {
   margin: 0em 0em 0em 1%; }
-
 
 /*-----------------------------------
 				BLOG
@@ -2209,7 +2202,6 @@ article.post h2 a:hover {
   font-size: 2.2em;
   line-height: 1.4em;
   margin-bottom: 15px; }
-
 
 .post h4 {
   border-left: 3px solid #56b972;
@@ -2534,7 +2526,6 @@ p#allowed_tags code {
   line-height: 1.5em;
   margin-bottom: 8px;
   padding: 4px 7px; }
-
 
 #commentform #submit:hover, .button:hover {
   background-color: #4197ee;
@@ -3076,6 +3067,9 @@ nav.anchorNav2 {
 .akvopedia nav.anchorNav {
   background: rgba(190, 73, 155, 0.1); }
 
+.team nav.anchorNav {
+  margin-bottom: 10px; }
+
 .mShownCollapse {
   display: none; }
 
@@ -3180,6 +3174,9 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   background: rgba(255, 206, 0, 0.5);
   color: #202024; }
 
+.board {
+  text-align: center; }
+
 .productPage section {
   margin: 0em auto;
   padding: 0.5em 1em; }
@@ -3264,7 +3261,6 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .akvoopenaid .figure {
   background: #f2f2f6; }
-
 
 .figure img {
   display: block;
@@ -3379,7 +3375,6 @@ section.inFivePoints li p {
   padding: 1.5em 0em 0em;
   text-shadow: 0em 1px white; }
 
-
 section.inFivePoints li:nth-child(2n) img {
   float: right; }
 
@@ -3408,8 +3403,6 @@ section.inFivePoints li:nth-child(2n) div {
 
 .productPage p {
   margin-bottom: 15px; }
-
-
 
 .splitImg ol.threeFlowPoints {
   width: 45%; }
@@ -3477,7 +3470,6 @@ ol.threeFlowPoints li {
   margin: 0em auto 1em auto;
   padding: 0em 1em; }
 
-
 ol.threeFlowPoints li p {
   font-weight: 500; }
 
@@ -3543,7 +3535,7 @@ ul.staff li {
   display: inline;
   float: left;
   margin: 0em 0.8% 0px 0em;
-  min-height: 231px;
+  min-height: 200px;
   position: relative;
   width: 16%; }
 
@@ -3565,10 +3557,12 @@ ul.staff li small {
   -moz-transition: opacity 0.2s ease-in;
   -o-transition: opacity 0.2s ease-in;
   -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
   color: #faa21b;
   font-size: 0.8em;
   opacity: 0;
-  transition: opacity 0.2s ease-in; }
+  line-height: 1.2em;
+  margin-top: 6px; }
 
 ul.staff li:hover small {
   opacity: 1; }
@@ -4631,7 +4625,6 @@ h1.akvopediaHelp {
 
 #rsrNetworkMap > h2 {
   text-align: center; }
-
 
 /***********************************
 						Price table

@@ -22,6 +22,7 @@ get_header(); ?>
       <li><a href="#contractorsGroup" class="oStaff">Extended Team</a></li>
     </ul>
   </nav>
+  <p>Are you looking for our <a href="../foundations/" class="board">Board Members</a>?</p>
 
   <section class="wrapper">
     <?php query_posts(array('post_type'=>'new_staffs')); ?>
