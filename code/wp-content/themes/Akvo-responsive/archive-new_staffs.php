@@ -21,8 +21,8 @@ get_header(); ?>
       <li><a href="#engineeringGroup" class="eStaff">Engineering &amp; design</a></li>
       <li><a href="#contractorsGroup" class="oStaff">Extended Team</a></li>
     </ul>
-    <p class="board"><a href="../foundations/">Board</a></p>
   </nav>
+  <p>Are you looking for our <a href="../foundations/" class="board">Board Members</a>?</p>
 
   <section class="wrapper">
     <?php query_posts(array('post_type'=>'new_staffs')); ?>
