@@ -3502,15 +3502,36 @@ ol.threeFlowPoints li p {
     max-height: 94px;
     background: url(../images/marker.png) no-repeat;
     background-size: 100%;
-    text-align: center; }
+    text-align: center;
+    font-family: Impact, Charcoal, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    padding-top: 1%;
+    box-sizing: border-box; }
     @media only screen and (max-width: 768px) {
       .hubmap .marker {
         display: none; } }
+  .hubmap .marker.LON {
+    background-image: url(../images/marker-left.png);
+    width: 5.8%;
+    max-width: 70px;
+    height: 7.8%;
+    max-height: 46px;
+    padding-right: 1.8%;
+    padding-top: 0.9%; }
+
+@-webkit-keyframes highlight {
+  0% {
+    background: #fff3cc; }
+
+  100% {
+    background: none; } }
 
 .hubs li {
-  margin: 50px auto 0;
+  margin: 70px auto 0;
   max-width: 800px;
-  clear: left; }
+  clear: left;
+  overflow: hidden; }
   @media only screen and (max-width: 768px) {
     .hubs li h4 {
       margin-top: 0; }
@@ -3525,8 +3546,10 @@ ol.threeFlowPoints li p {
       margin-top: 2px;
       margin-bottom: 20px; }
     .hubs li img {
-      float: left;
-      margin-bottom: 50px; } }
+      float: left; } }
+
+.hubs li:target {
+  -webkit-animation: highlight 2s; }
 
 /*-----------------------------------
 				Annual Report Page

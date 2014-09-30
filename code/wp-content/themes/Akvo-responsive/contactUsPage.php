@@ -20,27 +20,11 @@
       <div class="hubmap">
     <?php if( have_rows('hubs') ): ?>
     <?php while( have_rows('hubs') ): the_row(); ?>
-        <a href="#<?php the_sub_field('marker_text'); ?>" class="marker" style="left: <?php the_sub_field('marker_x'); ?>%; top: <?php the_sub_field('marker_y'); ?>%;"><?php the_sub_field('marker_text'); ?></a>
+        <a href="#<?php the_sub_field('marker_text'); ?>" class="marker <?php the_sub_field('marker_text'); ?>" data-hub="<?php the_sub_field('marker_text'); ?>" style="left: <?php the_sub_field('marker_x'); ?>%; top: <?php the_sub_field('marker_y'); ?>%;"><?php the_sub_field('marker_text'); ?></a>
     <?php endwhile; ?>
     <?php endif; ?>
       </div>
-      
-    <?php if( have_rows('hubs') ): ?>
-      <ul class="hubs">
-    <?php while( have_rows('hubs') ): the_row(); ?>
-      <li>
-          <img src="<?php the_sub_field('image'); ?>">
-          <div class="text">
-              <a name="<?php the_sub_field('marker_text'); ?>"></a>
-              <h3><?php the_sub_field('title'); ?></h3>
-              <h4><?php the_sub_field('location'); ?></h4>
-              <p><?php the_sub_field('info'); ?></p>
-          </div>
-      </li>
-    <?php endwhile; ?>
-      </ul>
-    <?php endif; ?>
-    <hr class="delicate" />
+      <hr class="delicate" />
     <?php if( have_rows('contact_group') ): ?>
       <ul class="threeColumns wrapper floats-in">
     <?php while( have_rows('contact_group') ): the_row(); ?>
@@ -53,8 +37,36 @@
     <?php endwhile; ?>
       </ul>
     <?php endif; ?>
+      
+    <?php if( have_rows('hubs') ): ?>
+      <ul class="hubs">
+    <?php while( have_rows('hubs') ): the_row(); ?>
+      <li id="<?php the_sub_field('marker_text'); ?>">
+          <a name="<?php the_sub_field('marker_text'); ?>"></a>
+          <img src="<?php the_sub_field('image'); ?>">
+          <div class="text">
+              <h3><?php the_sub_field('title'); ?></h3>
+              <h4><?php the_sub_field('location'); ?></h4>
+              <p><?php the_sub_field('info'); ?></p>
+          </div>
+      </li>
+    <?php endwhile; ?>
+      </ul>
+    <?php endif; ?>
   </section>
     
 </div>
 
+<script>
+
+    $(document).ready(function() {
+    
+        $('.marker').click(function() {
+            var id = $(this).data('hub');
+            $('html, body').animate({scrollTop: $('#'+id).offset().top-60}, 1000);
+        });
+    
+    });
+
+</script>
 <?php get_footer();?>
