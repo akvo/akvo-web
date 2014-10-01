@@ -27,7 +27,7 @@
         <li><a href="<?php the_sub_field('pdf_file'); ?>" style="background-image: url(<?php the_sub_field('icon'); ?>)"><span><?php the_sub_field('title'); ?></span></a></li>
         
     <?php endwhile; ?>
- 
+
     </ul>
     <?php endif; ?>
       
