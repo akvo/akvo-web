@@ -254,5 +254,25 @@ class JsonData {
 		return $bStatus;
 
 	}
+    
+    public function checkSlug($sSlug){
+        $bExists = $this->fetchFeedBySlug($sSlug);
+        if($bExists){
+            $sReturnSlug=false;
+            $i=1;
+            while($sReturnSlug===false){
+                $sNewSlug = $sSlug.'-'.$i;
+                $bNewSlugExists = $this->fetchFeedBySlug($sNewSlug);
+                if($bNewSlugExists){
+                    $i++;
+                }else{
+                   $sReturnSlug = $sNewSlug; 
+                }
+            }
+            return $sReturnSlug;
+        }else{
+            return $sSlug;
+        }
+    }
 
 }

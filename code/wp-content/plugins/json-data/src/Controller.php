@@ -37,6 +37,7 @@ class Controller {
 		register_deactivation_hook(JsonData_Plugin_File, array('JsonData\Controller', 'doDeactivation'));
 		register_uninstall_hook(JsonData_Plugin_File, array('JsonData\Controller', 'doUninstall'));
 		add_action('activated_plugin', array('JsonData\Controller', 'setToLoadLast'));
+        add_action( 'init', array('JsonData\Controller', 'registerPostType') );
         $this->_syncTable();
 		if ($this->_isCoreActive()) {
 
@@ -146,5 +147,14 @@ class Controller {
 		}
 
 	}
+    public static function registerPostType() {
+        $args = array(
+            'public' => true,
+            'label'  => 'jdata',
+            'show_ui'            => false,
+            'show_in_menu'       => false,
+        );
+        register_post_type( 'jdata', $args );
+    }
 
 }
