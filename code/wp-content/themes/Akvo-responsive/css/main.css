@@ -4513,4 +4513,12 @@ h1.akvopediaHelp {
 div[id^="inline-"] {
   display: none; }
 
+/*-----------------------------------
+				Work with us
+------------------------------------*/
+.working-at-akvo ul {
+  margin-left: 2em;
+  line-height: 1.6em;
+  list-style: disc; }
+
 /*# sourceMappingURL=main.css.map */
