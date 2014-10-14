@@ -643,7 +643,7 @@ div.centerED > p,
   &:-moz-placeholder{
     color: $color;
   }
-    
+
   &::-webkit-input-placeholder{
     color: $color;
   }
@@ -3719,7 +3719,7 @@ section.inFivePoints li h3 {
 	margin:1em auto 2em auto;
 }
 .rsrUpDescr p {margin:3em auto;}
-#rsrUpTech ul li {
+#rsrUpTech ul li, .techSpecs ul li {
 	margin:0.5em 0 1em 25px;
 	}
 #rsrTech ul li {
@@ -3745,7 +3745,23 @@ ol.threeFlowPoints li p {
 #flowFeatures img {
     display: block;
     margin: 1em auto;
+    color: ;
 }
+
+
+section.productImage {
+    padding: 2em 0;
+    text-align: center;
+}
+.productImage div {
+    position: relative;
+}
+.productImage img {
+    max-width: 1600px;
+    width: 100%;
+}
+
+
 /*-----------------------------------
 			Contact Info Page
 ------------------------------------*/
@@ -3760,7 +3776,7 @@ ol.threeFlowPoints li p {
     padding-bottom: 49%;
     background: #ffd300 url(../images/map.gif) center no-repeat;
     background-size: 91%;
-    
+
     .marker {
         position: absolute;
         width: 4%;
@@ -3803,7 +3819,7 @@ ol.threeFlowPoints li p {
         max-width: 800px;
         clear: left;
         overflow: hidden;
-        
+
         @include responsive (small-max-screens) {
             h4 {
                 margin-top: 0;
@@ -3812,7 +3828,7 @@ ol.threeFlowPoints li p {
                 display: none;
             }
         }
-        
+
         @include responsive (small-screens) {
             .text {
                 margin-left: 280px;
@@ -4689,12 +4705,12 @@ h1 {
     font-size: 0.8em;
     margin: 0.75em 0em 0.75em 1.75em;
     padding: 0.15em 1em 0.35em;
-	a {  
+	a {
 	   color: rgb(255, 255, 255);
 	   &:hover {
 		   color: $flowOrange;
 	  }
-	} 
+	}
     @media screen and (min-width:960px) {
         display: inline-block;
         margin: 0em 0em 0em 0.5em;
