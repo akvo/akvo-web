@@ -3481,9 +3481,7 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 }
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
-    border-bottom: 1px solid rgb(215, 215, 215);
-    border-top: 1px solid rgb(235, 235, 235);
-    padding: 1px 0em;
+    padding: 0;
 }
 @include responsive (small-max-screens) {
 
@@ -3516,7 +3514,11 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .figure img {
     display: block;
     margin: 0em auto;
+    width: 100%;
     max-width: 1208px;
+}
+.figure.fullWidthImg img {
+    max-width: none;
 }
 @include responsive (small-max-screens) {
 
@@ -3700,7 +3702,8 @@ section.inFivePoints li h3 {
     height: 55px;
     background: url("../images/rsrUp60px.png") center center no-repeat;
 }
-.flowProdPag hgroup h1 {
+.flowProdPag hgroup h1,
+.flowMonProdPag hgroup h1 {
     background: url("../images/flow60px.png") center center no-repeat;
 }
 .openaidProdPag hgroup h1 {
@@ -3713,7 +3716,8 @@ section.inFivePoints li h3 {
     font-size: 1.4em;
     text-align: center;
 }
-.rsrUpProdPag hgroup h2 {
+.rsrUpProdPag hgroup h2,
+.flowMonProdPag hgroup h2 {
     font-size: 1.4em;
     text-align: center;
 	margin:1em auto 2em auto;
@@ -3745,20 +3749,61 @@ ol.threeFlowPoints li p {
 #flowFeatures img {
     display: block;
     margin: 1em auto;
-    color: ;
 }
 
+section.flowMonDescr {
+    padding: 3em 0;
+}
 
-section.productImage {
+.flowMonProdPag section.productImage {
     padding: 2em 0;
     text-align: center;
-}
-.productImage div {
     position: relative;
 }
-.productImage img {
+.flowMonProdPag .productImage img {
     max-width: 1600px;
     width: 100%;
+}
+
+.flowMonProdPag .productImage h3 {
+
+}
+
+@include responsive (small-max-screens) {
+    .flowMonProdPag .productImage h3 {
+        margin-bottom: 0.5em;
+    }
+}
+.flowMonProdPag section.productImage.grey {
+    background-color: #f8f8f8;
+}
+@include responsive (small-screens) {
+    .flowMonProdPag section.productImage.textInside {
+        padding: 0;
+        h3 {
+            margin-bottom: -46px;
+            padding-top: 10px;
+            color: #fff;
+            text-shadow: none;
+        }
+        img {
+            position: relative;
+            z-index: -1;
+        }
+    }
+    .flowMonProdPag section.productImage.download {
+        img {
+            right: 0;
+            width: 60%;
+        }
+        h3 {
+            position: absolute;
+            left: 19%;
+            width: 25%;
+            top: 143px;
+            text-align: left;
+        }
+    }
 }
 
 

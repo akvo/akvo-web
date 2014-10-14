@@ -12,15 +12,17 @@
     <h1 class="flowLogo"> Akvo Flow Monitoring</h1>
     <h2><?php the_field('subtitle'); ?></h2>
   </hgroup>
-  <section class="figure"> <img src="<?php the_field('hero_image'); ?>"/> </section>
+  <section class="figure fullWidthImg"> <img src="<?php the_field('hero_image'); ?>"/> </section>
   <section class="flowMonDescr" style="background:rgb(248,248,248);">
     <div class="wrapper">
       <p class="fullWidthParag centerED"><?php the_field('text'); ?></p>
     </div>
   </section>
   <?php while( have_rows('image_items') ): the_row(); ?>
-    <section class="productImage">
-        <div class="<?php the_sub_field('css_class'); ?>"><?php the_sub_field('text'); ?></div>
+    <section class="productImage <?php the_sub_field('css_class'); ?>">
+        <div class="wrapper">
+            <h3><?php the_sub_field('text'); ?></h3>
+        </div>
         <img src="<?php the_sub_field('image'); ?>" style="max-width:<?php the_sub_field('max_width'); ?>px;"/>
     </section>
   <?php endwhile; ?>
