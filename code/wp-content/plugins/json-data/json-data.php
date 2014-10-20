@@ -3,7 +3,7 @@
 Plugin Name: JSON data
 Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: Allows for the management and proper display of JSON data feeds in your WP website
-Version: 1.1.1
+Version: 1.2.1
 Author: Kominski
 Author URI: http://kominski.net
 License: GPL2
