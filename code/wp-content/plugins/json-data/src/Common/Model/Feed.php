@@ -8,15 +8,12 @@ use JsonData as JD;
  * @author Eveline Sparreboom
  */
 class Feed {
-    private $_sCacheDirName = null;
 
     public function __construct() {
-        $this->_sCacheDirName = JsonData_Plugin_Dir . DIRECTORY_SEPARATOR . 'cache';
-        if(!is_dir($this->_sCacheDirName)){
-            mkdir($this->_sCacheDirName,0777);
+        if(!is_dir(JsonData_Cache_Dir)){
+            mkdir(JsonData_Cache_Dir,0775);
         }
-        chmod($this->_sCacheDirName, 0777);
-
+        chmod(JsonData_Cache_Dir, 0775);
     }
 
     /**
@@ -24,15 +21,14 @@ class Feed {
      * @param int $iFeedId
      */
 	public function updateCreateCache($sFeedSlug,$sMarkup,$sStyle){
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$sFeedSlug;
-        $sFeedMarkupFilename = $sDirName . DIRECTORY_SEPARATOR . 'template.phtml';
-        $sFeedStylesheetFilename = $sDirName . DIRECTORY_SEPARATOR . 'style.css';
-
+        $sDirName = JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR ;
+        $sFeedMarkupFilename = $sDirName . 'template.phtml';
+        $sFeedStylesheetFilename = $sDirName . 'style.css';
 
         if(!is_dir($sDirName)){
-            mkdir($sDirName,0777);
+            $foo = mkdir($sDirName,0775, true);
         }
-        chmod($sDirName, 0777);
+        chmod($sDirName, 0775);
 
         $fTemplate=fopen($sFeedMarkupFilename,'w+');
         fwrite($fTemplate, stripslashes($sMarkup));
@@ -42,8 +38,8 @@ class Feed {
         fwrite($fStylesheet, stripslashes($sStyle));
         fclose($fStylesheet);
 
-        chmod($sFeedMarkupFilename, 0777);
-        chmod($sFeedStylesheetFilename, 0777);
+        chmod($sFeedMarkupFilename, 0664);
+        chmod($sFeedStylesheetFilename, 0664);
 
     }
     /**
@@ -136,7 +132,6 @@ class Feed {
         $oDaoJsonData = new JsonDataDao();
         $iFeedId = $aFeed['feed_slug'];
         $aFeedQueues = $oDaoJsonData->fetchFeedQueue($iFeedId);
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
 
         //build url for queue
         $aUrl = explode('?',$aFeed['feed_url']);
@@ -162,7 +157,7 @@ class Feed {
             $aFeedQueue = $mQueue;
         }
         $iFeedId = $aFeed['feed_slug'];
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
+        $sDirName = JsonData_Cache_Dir . $iFeedId;
 
         //build url for queue
         $aUrl = explode('?',$aFeed['feed_url']);
@@ -194,16 +189,16 @@ class Feed {
     private function _removeQueueFiles($iFeedQueueId){
         $oDaoJsonData = new JsonDataDao();
         $aFeedQueue = $oDaoJsonData->fetchSingleFeedQueue($iFeedQueueId);
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$aFeedQueue['json_data_id'];
+        $sDirName = JsonData_Cache_Dir . $aFeedQueue['json_data_id'] . DIRECTORY_SEPARATOR;
 
-        unlink($sDirName . DIRECTORY_SEPARATOR . 'data-' . $iFeedQueueId . '.json');
+        unlink($sDirName . 'data-' . $iFeedQueueId . '.json');
         $oDaoJsonData->deleteFeedQueue($iFeedQueueId);
     }
 
 	public function removeFeedDir ($iFeedId) {
 		$bStatus = false;
 
-		$sDirName = $this->_sCacheDirName . DIRECTORY_SEPARATOR . $iFeedId;
+		$sDirName = JsonData_Cache_Dir . DIRECTORY_SEPARATOR . $iFeedId . DIRECTORY_SEPARATOR;
 
 		if (is_dir($sDirName)) {
 			$oDirHandle = opendir($sDirName);
@@ -213,10 +208,10 @@ class Feed {
 
 					if ($oFile != "." && $oFile != "..") {
 
-						if (!is_dir($sDirName . DIRECTORY_SEPARATOR . $oFile)) {
-							unlink($sDirName . DIRECTORY_SEPARATOR . $oFile);
+						if (!is_dir($sDirName . $oFile)) {
+							unlink($sDirName . $oFile);
 						} else {
-							removeFeedDir($sDirName . DIRECTORY_SEPARATOR . $oFile);
+							removeFeedDir($sDirName . $oFile);
 						}
 					}
 				}

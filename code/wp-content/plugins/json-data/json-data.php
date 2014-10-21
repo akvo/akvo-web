@@ -29,6 +29,7 @@ define('JsonData_Plugin_Dir', dirname(__FILE__));
 define('JsonData_Plugin_Url', plugins_url('', __FILE__));
 define('JsonData_Plugin_File', __FILE__);
 define('JsonData_Plugin_DirFile', basename(dirname(__FILE__)) . '/' . basename(__FILE__));
+define('JsonData_Cache_Dir', DATA_DIR . 'json-data/cache/');
 
 require_once 'autoloader.php';
 JsonData\Controller::getInstance()->initialise();

@@ -57,9 +57,11 @@ class Feed {
             $iFeedQueueId = $aFeedDetail['id'];
             $oDaoJsonData->updateDisplayTime($iFeedQueueId);
             $this->enqueueFrontEndCss($iFeedId, $sFeedSlug);
-            $sData = file_get_contents(JsonData_Plugin_Dir . '/cache/'.$sFeedSlug.'/data-'.$iFeedQueueId.'.json');
+            $sData = file_get_contents(
+              JsonData_Cache_Dir . DIRECTORY_SEPARATOR . $sFeedSlug . DIRECTORY_SEPARATOR . 'data-'.$iFeedQueueId.'.json'
+            );
             $aData = json_decode($sData, true);
-            require JsonData_Plugin_Dir . '/cache/'.$sFeedSlug.'/template.phtml';
+            require JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR . 'template.phtml';
         }
 	}
 
@@ -69,7 +71,7 @@ class Feed {
 
 		$sHandle = AkvoWvwParticipantRegistry_Plugin_Slug . '-feed-'.$iFeedId.'-css';
 		if (!wp_style_is($sHandle, 'registered')) {
-			wp_register_style($sHandle, JsonData_Plugin_Url . '/cache/'.$sFeedSlug.'/style.css');
+			wp_register_style($sHandle, JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR . 'style.css');
 		}
 		if (!wp_style_is($sHandle, 'enqueued')) {
 			wp_enqueue_style($sHandle);
