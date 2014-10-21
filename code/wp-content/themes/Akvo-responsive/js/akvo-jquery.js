@@ -165,7 +165,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 	
 //  Team Page click effects NEW VERSION
 
-    $('li.new_staffs, li.new_partners').click(function () {
+    $('li.new_staffs, li.new_partners, li.foundation_member').click(function () {
         var staffID = $(this).attr("id");
 		var biog = $(this).find('.staffBiog').html();
 		var staffPic = $(this).find('.imgWrapper').html();
@@ -176,6 +176,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
         $('#staffDescr p.staffTitle').html( staffTitle );
         $('#staffDescr p.staffBio').html( biog );
         $('#staffDescr .imgWrapper').html( staffPic );
+        return false;
     });
 	$('#descrDialog').find('.ok, .cancel').live('click', function (e) {
 		e.stopPropagation();
@@ -200,7 +201,7 @@ $("div.breadcrumbs").append($("div.projectGateWay"));
 	$('#intGovGroup ul').append($('li.inter-governmental'));
 	$('#ngoGroup ul').append($('li.ngos'));
 	$('#knowledgeGroup ul').append($('li.knowledge-institutes'));
-
+    
 
 //  Pricing Page click effects.
 

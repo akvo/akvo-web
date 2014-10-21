@@ -11,12 +11,15 @@ use JsonData as JD;
 class Controller {
 
 	public function initialise () {
-
+        
 		$this->registerShortCodes();
         $this->doCronjob();
-        add_filter( 'the_title', array($this,'doPreviewTitle') );
-        add_filter( 'the_content', array($this,'doPreviewContent') );
+//        add_filter( 'the_title', array($this,'doPreviewTitle') );
+//        add_filter( 'the_content', array($this,'doPreviewContent') );
         $this->_initialiseJsonDataWidget();
+        if(isset($_GET['preview_json'])){
+            $this->doPreview($_GET['preview_json']);
+        }
 	}
 
 	public function registerShortCodes () {
@@ -40,7 +43,28 @@ class Controller {
             $oFeed->cronRemove();
         }
     }
+    public function doPreview($slug){
+        global $wpdb;
+        $sQuery = "SELECT * FROM `" . $wpdb->prefix. "posts` WHERE `post_type`='jdata' AND `post_status`='draft' AND `post_name` = %s";
+		$sQuery = $wpdb->prepare($sQuery , 'jsondata-'.$slug);
 
+		$aResults = $wpdb->get_row($sQuery, ARRAY_A);
+        
+        
+
+        if($aResults){
+            $id = $aResults['ID'];
+
+            
+            $url = get_permalink($id);
+//            var_dump($aResults);
+        ?>
+
+        <?php
+          header('Location: '.  get_permalink($id));
+          die();
+        }
+    }
     public function doPreviewContent($content){
         
         if(isset($_GET['preview_json'])){ 

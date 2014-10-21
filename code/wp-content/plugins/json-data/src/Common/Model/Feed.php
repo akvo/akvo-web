@@ -8,31 +8,27 @@ use JsonData as JD;
  * @author Eveline Sparreboom
  */
 class Feed {
-    private $_sCacheDirName = null;
 
     public function __construct() {
-        $this->_sCacheDirName = JsonData_Plugin_Dir . DIRECTORY_SEPARATOR . 'cache';
-        if(!is_dir($this->_sCacheDirName)){
-            mkdir($this->_sCacheDirName,0777);
+        if(!is_dir(JsonData_Cache_Dir)){
+            mkdir(JsonData_Cache_Dir,0775);
         }
-        chmod($this->_sCacheDirName, 0777);
-
+        chmod(JsonData_Cache_Dir, 0775);
     }
 
     /**
      * Write template files
      * @param int $iFeedId
      */
-	public function updateCreateCache($iFeedId,$sMarkup,$sStyle){
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
-        $sFeedMarkupFilename = $sDirName . DIRECTORY_SEPARATOR . 'template.phtml';
-        $sFeedStylesheetFilename = $sDirName . DIRECTORY_SEPARATOR . 'style.css';
-
+	public function updateCreateCache($sFeedSlug,$sMarkup,$sStyle){
+        $sDirName = JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR ;
+        $sFeedMarkupFilename = $sDirName . 'template.phtml';
+        $sFeedStylesheetFilename = $sDirName . 'style.css';
 
         if(!is_dir($sDirName)){
-            mkdir($sDirName,0777);
+            $foo = mkdir($sDirName,0775, true);
         }
-        chmod($sDirName, 0777);
+        chmod($sDirName, 0775);
 
         $fTemplate=fopen($sFeedMarkupFilename,'w+');
         fwrite($fTemplate, stripslashes($sMarkup));
@@ -42,8 +38,8 @@ class Feed {
         fwrite($fStylesheet, stripslashes($sStyle));
         fclose($fStylesheet);
 
-        chmod($sFeedMarkupFilename, 0777);
-        chmod($sFeedStylesheetFilename, 0777);
+        chmod($sFeedMarkupFilename, 0664);
+        chmod($sFeedStylesheetFilename, 0664);
 
     }
     /**
@@ -76,7 +72,10 @@ class Feed {
                 $oDaoJsonData->updateFeed(array('date_updated'=>date('Y-m-d H:i:s')), $aFeed['id']);
             }
         }
-        mail( 'eveline@kominski.net', 'Automatic email', 'Automatic scheduled email from WordPress.');
+        $sEmail = get_option(JD\Config::OPTION_NAME_DEBUG_EMAIL);
+        if($sEmail && $sEmail!==''){
+            mail( $sEmail, 'update json data feeds', 'running');
+        }
 
     }
 
@@ -131,9 +130,8 @@ class Feed {
      */
     private function _updateFeedQueueData($aFeed){
         $oDaoJsonData = new JsonDataDao();
-        $iFeedId = $aFeed['id'];
+        $iFeedId = $aFeed['feed_slug'];
         $aFeedQueues = $oDaoJsonData->fetchFeedQueue($iFeedId);
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
 
         //build url for queue
         $aUrl = explode('?',$aFeed['feed_url']);
@@ -158,8 +156,8 @@ class Feed {
         }else{
             $aFeedQueue = $mQueue;
         }
-        $iFeedId = $aFeed['id'];
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$iFeedId;
+        $iFeedId = $aFeed['feed_slug'];
+        $sDirName = JsonData_Cache_Dir . $iFeedId;
 
         //build url for queue
         $aUrl = explode('?',$aFeed['feed_url']);
@@ -191,16 +189,16 @@ class Feed {
     private function _removeQueueFiles($iFeedQueueId){
         $oDaoJsonData = new JsonDataDao();
         $aFeedQueue = $oDaoJsonData->fetchSingleFeedQueue($iFeedQueueId);
-        $sDirName = $this->_sCacheDirName. DIRECTORY_SEPARATOR .$aFeedQueue['json_data_id'];
+        $sDirName = JsonData_Cache_Dir . $aFeedQueue['json_data_id'] . DIRECTORY_SEPARATOR;
 
-        unlink($sDirName . DIRECTORY_SEPARATOR . 'data-' . $iFeedQueueId . '.json');
+        unlink($sDirName . 'data-' . $iFeedQueueId . '.json');
         $oDaoJsonData->deleteFeedQueue($iFeedQueueId);
     }
 
 	public function removeFeedDir ($iFeedId) {
 		$bStatus = false;
 
-		$sDirName = $this->_sCacheDirName . DIRECTORY_SEPARATOR . $iFeedId;
+		$sDirName = JsonData_Cache_Dir . DIRECTORY_SEPARATOR . $iFeedId . DIRECTORY_SEPARATOR;
 
 		if (is_dir($sDirName)) {
 			$oDirHandle = opendir($sDirName);
@@ -210,10 +208,10 @@ class Feed {
 
 					if ($oFile != "." && $oFile != "..") {
 
-						if (!is_dir($sDirName . DIRECTORY_SEPARATOR . $oFile)) {
-							unlink($sDirName . DIRECTORY_SEPARATOR . $oFile);
+						if (!is_dir($sDirName . $oFile)) {
+							unlink($sDirName . $oFile);
 						} else {
-							removeFeedDir($sDirName . DIRECTORY_SEPARATOR . $oFile);
+							removeFeedDir($sDirName . $oFile);
 						}
 					}
 				}
@@ -227,5 +225,46 @@ class Feed {
 		return $bStatus;
 
 	}
+    
+    public function makePreview($slug){
+        $oDaoJsonData = new \JsonData\Common\Model\Dao\JsonData();
+        $aDetail = $oDaoJsonData->fetchFeedBySlug($slug);
+        if($aDetail){
+            $aParams = unserialize($aDetail['feed_parameters']);
+            $sParams= '';
+            foreach($aParams AS $k=>$v)$sParams.= ' '.$k.'="'.$v.'"';
+            $sShortcode = '[jsondata_feed slug="'.$slug.'"'.$sParams.']';
+            $args=array(
+                'post_type' => 'jdata',
+                'post_status' => 'draft',
+                'name'=>'jsondata-'.$slug
+            );
+            $the_query = new \WP_Query( $args );
+            $aPosts = $the_query->get_posts();
+            // Post object
+            $my_post = array(
+              'post_title'    => 'JSON data preview '.$slug,
+              'post_name'    => 'jsondata-'.$slug,
+              'post_content'  => $sShortcode,
+              'post_status'   => 'draft',
+              'post_type'   => 'jdata',
+              'post_author'   => 1
+            );
+            if($the_query->post_count===0){
+                // Insert the post into the database
+                $id = wp_insert_post( $my_post );
+            }else{
+                $id = $aPosts[0]->ID;
+                $my_post['ID'] = $id;
+                wp_update_post( $my_post );
+            }
+            
+            wp_reset_postdata();
+            
+            
+            //header('Location: '.  get_permalink($id));
+//            die();
+        }
+    }
 
 }

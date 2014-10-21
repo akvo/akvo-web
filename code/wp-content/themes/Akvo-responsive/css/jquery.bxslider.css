@@ -30,7 +30,7 @@
 ===================================*/
 
 .bx-wrapper .bx-viewport {
-	
+
 	/*fix other elements on the page moving (on Chrome)*/
 	-webkit-transform: translatez(0);
 	-moz-transform: translatez(0);
@@ -43,6 +43,14 @@
 .bx-wrapper .bx-controls-auto {
 	position: absolute;
 	bottom: -30px;
+	width: 100%;
+}
+
+/* CONTROLS */
+.bx-controls {
+	position: absolute;
+	top: 0;
+	height: 100%;
 	width: 100%;
 }
 
@@ -61,10 +69,6 @@
 
 /* PAGER */
 
-.bx-controls {
-    top: -37px;
-    position: relative;
-}
 .bx-wrapper .bx-pager {
 	text-align: center;
 	font-size: .85em;
@@ -72,6 +76,8 @@
 	font-weight: bold;
 	color: #666;
 	padding-top: 20px;
+	position: absolute;
+	bottom: 10px;
 }
 
 .bx-wrapper .bx-pager .bx-pager-item,
@@ -104,12 +110,12 @@
 
 .bx-wrapper .bx-prev {
 	left: 10px;
-	background: url(images/controls.png) no-repeat 0 -32px;
+	background: url(../images/bx-slider-controls.png) no-repeat 0 -32px;
 }
 
 .bx-wrapper .bx-next {
 	right: 10px;
-	background: url(images/controls.png) no-repeat -43px -32px;
+	background: url(../images/bx-slider-controls.png) no-repeat -43px -32px;
 }
 
 .bx-wrapper .bx-prev:hover {
@@ -133,6 +139,26 @@
 
 .bx-wrapper .bx-controls-direction a.disabled {
 	display: none;
+}
+
+
+@media only screen and (max-width: 768px) {
+	.bx-wrapper .bx-controls-direction a {
+		top: 31%;
+	}
+	.bx-wrapper .bx-pager {
+		bottom: -18px;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a {
+		border-color: #555;
+		background: #ccc;
+	}
+	.bx-wrapper .bx-pager.bx-default-pager a:hover, .bx-wrapper .bx-pager.bx-default-pager a.active {
+		background: #555;
+	}
+	#actionHeroBox {
+		padding-bottom: 30px;
+	}
 }
 
 /* AUTO CONTROLS (START / STOP) */
