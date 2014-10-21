@@ -2157,6 +2157,14 @@ ul.faqMenuList h3,
   margin-bottom: 20px;
   margin-left: 30px; }
 
+.qa-faq ol,
+.qa-faq ul {
+  margin-left: 20px;
+  list-style: initial; }
+
+.qa-faq ol {
+  list-style: decimal; }
+
 .answers h4 {
   font-weight: bold; }
 
