@@ -25,7 +25,7 @@ Github issue: [#406](https://github.com/akvo/akvo-web/issues/406)
 
 Addition of a FLOW Monitoring feature page. 
 
-Github issue: [#338](https://github.com/akvo/akvo-web/issues/338) [405](https://github.com/akvo/akvo-web/issues/405)
+Github issue: [#338](https://github.com/akvo/akvo-web/issues/338) & [#405](https://github.com/akvo/akvo-web/issues/405)
 
 ### Meet out Team
 
