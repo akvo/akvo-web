@@ -1,7 +1,7 @@
 <?php
 /*
  * Template for the "RSR projects global map" plugin used on networkPage.php
- * Feed name: RSR projects map
+ * Feed name: RSR projects global map
  * Slug: rsr-projects-global-map
  * JSON feed URL: http://rsr.akvo.org/api/v1/map_for_project/?offset=0&limit=1000&status__in=N,H,A,C
  * Resulting shortcode: [jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="0"] and

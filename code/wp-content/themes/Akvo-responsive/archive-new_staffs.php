@@ -9,7 +9,7 @@ get_header(); ?>
      <div class="wrapper">
  <p class="centerED fullWidthParag">Akvo is helping today's brightest international development talent guide their organisations into a new era of openness in which co-operation happens much more easily and effectively and information is understood, used and shared.</p>
     <p class="centerED fullWidthParag">To do this we employ smart people in numerous countries who understand both technology and development. Most of our team works directly on software development and partner support and training. <br />
-    <p class="centerED fullWidthParag">Follow our team <a href="https://twitter.com/akvo/staff">twitter list</a>. </p>
+    <p class="centerED fullWidthParag">Follow our team <a href="https://twitter.com/akvo/lists/staff">twitter list</a>. </p>
     </p>
   </div>
   <nav class="anchorNav wrapper">
@@ -31,7 +31,7 @@ get_header(); ?>
     <!-- Cycle through all posts -->
     <ul class="staff floats-in">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <!-- Display featured image in right-aligned floating div -->
         <div class="imgWrapper">
           <?php the_post_thumbnail('thumbnail'); ?>
@@ -45,7 +45,7 @@ get_header(); ?>
         <small>Click for more details.</small>
       </li>
       <?php endwhile; ?>
-    </ul> 
+    </ul>
     <div id="partnershipGroup">
       <h2 class="pStaffHead">Partnerships</h2>
     <ul class="staff floats-in"><li class="newStaff">
@@ -80,11 +80,11 @@ get_header(); ?>
             <a href="/about-us/working-at-akvo/"><small>Click for more details.</small></a>
            </a>
            </li></ul>
-    </div> 
+    </div>
     <div id="contractorsGroup">
       <h2 class="eStaffHead">Extended team</h2>
     <ul class="staff floats-in"></ul>
-    </div> 
+    </div>
 
   <div id="overlay">
     <div id="blanket"></div>

@@ -3,7 +3,7 @@
 Plugin Name: JSON data
 Plugin URI: http://URI_Of_Page_Describing_Plugin_and_Updates
 Description: Allows for the management and proper display of JSON data feeds in your WP website
-Version: 1.1.1
+Version: 1.2.1
 Author: Kominski
 Author URI: http://kominski.net
 License: GPL2
@@ -29,6 +29,7 @@ define('JsonData_Plugin_Dir', dirname(__FILE__));
 define('JsonData_Plugin_Url', plugins_url('', __FILE__));
 define('JsonData_Plugin_File', __FILE__);
 define('JsonData_Plugin_DirFile', basename(dirname(__FILE__)) . '/' . basename(__FILE__));
+define('JsonData_Cache_Dir', DATA_DIR . 'json-data/cache/');
 
 require_once 'autoloader.php';
 JsonData\Controller::getInstance()->initialise();
