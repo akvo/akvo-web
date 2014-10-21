@@ -35,7 +35,7 @@ Github issue:  [#403] (https://github.com/akvo/akvo-web/issues/403)
 
 Layout issue which appeared on Firefox only, corrected.
 
-Github issue:  [400](https://github.com/akvo/akvo-web/issues/400)
+Github issue:  [#400](https://github.com/akvo/akvo-web/issues/400)
 
 ### Akvo JSON data plugin
 
@@ -53,29 +53,29 @@ Github issue:  [#393](https://github.com/akvo/akvo-web/issues/393)
 
 Changes to WP-config.php has been updated to set the javascript tracking code 'SiteID' for akvo.org, so that this is not overwritten with the incorrect one with every deployment.
 
-[#387](https://github.com/akvo/akvo-web/issues/387)
+Github issue [#387](https://github.com/akvo/akvo-web/issues/387)
 
 ### Contact page
 
 Http://akvo.org/contact-info has been updated with a map & new content.
 
-[#345](https://github.com/akvo/akvo-web/issues/345)
+Github issue [#345](https://github.com/akvo/akvo-web/issues/345)
 
 ###  Help and support pages
 
 http://akvo.org/help/help-support/ & the supporting pages have been made customisable to allow the Communications team to update this as/when required.
 
-[#286](https://github.com/akvo/akvo-web/issues/286)
+Github issue [#286](https://github.com/akvo/akvo-web/issues/286)
 
 http://akvodev.org/help/help-support/rsr-help/ has been updated with a link to the Akvo RSR Widget manual.
 
-[#398](https://github.com/akvo/akvo-web/issues/398)
+Github issue [#398](https://github.com/akvo/akvo-web/issues/398)
 
 ### Other customisable pages
 
 The Akvo RSR UP product page, the Foundations page and the Annual reports page are now customisable by the Communications team.
 
-[#339](https://github.com/akvo/akvo-web/issues/339)
+Github issue [#339](https://github.com/akvo/akvo-web/issues/339)
 
 
 
