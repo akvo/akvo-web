@@ -46,8 +46,8 @@
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(["setCookieDomain", "*.akvodev.org"]);
-  _paq.push(["setDomains", ["*.akvodev.org"]]);
+  _paq.push(["setCookieDomain", "*.<?=PIWIK_DOMAIN?>"]);
+  _paq.push(["setDomains", ["*.<?=PIWIK_DOMAIN?>"]]);
   _paq.push(["setDocumentTitle",  '404/URL = ' +  encodeURIComponent(document.location.pathname+document.location.search) + '/From = ' + encodeURIComponent(document.referrer)]);
   _paq.push(["trackPageView"]);
   _paq.push(["enableLinkTracking"]);
@@ -55,7 +55,7 @@
   (function() {
     var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.akvo.org/";
     _paq.push(["setTrackerUrl", u+"piwik.php"]);
-    _paq.push(["setSiteId", "2"]);
+    _paq.push(["setSiteId", "<?=PIWIK_ID?>"]);
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
