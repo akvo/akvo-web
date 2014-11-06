@@ -137,7 +137,8 @@
       <p class="fullWidthParag centerED">
       <?php the_field('flow_real_world_text'); ?>
       </p>
-    <img src="<?php the_field('flow_who_is_img'); ?>" /> </section>
+    <a href="http://akvoflow.akvoapp.org">
+    <img src="<?php the_field('flow_who_is_img'); ?>" /></a> </section>
     <section id="flowTech" class="wrapper">
       <h1 class="">Technical specifications</h1>
       <ul>
