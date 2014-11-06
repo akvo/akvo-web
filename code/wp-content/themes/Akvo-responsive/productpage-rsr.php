@@ -132,8 +132,9 @@
         <li><?php the_field('region_title_left'); ?></li>
         <li><?php the_field('region_title_right'); ?></li>
       </ul>
-      <?php while( have_rows('download_brochures') ): the_row(); ?>
+      
       <ul class="wrapper twoColumns floats-in centerED">
+      <?php while( have_rows('download_brochures') ): the_row(); ?>
         <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title="akvosites"/></a></li>
         <?php endwhile; ?>
       </ul></div>
