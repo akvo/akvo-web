@@ -5496,3 +5496,7 @@ div[id^="inline-"] {
   margin-left: 2em;
   line-height: 1.6em;
   list-style: disc; }
+
+/* line 4937, main.scss */
+.twoPagerContainer {
+  width: 500px; }
