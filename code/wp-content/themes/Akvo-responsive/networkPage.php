@@ -125,8 +125,7 @@ Template Name: akvoNetwork
                 canvas: document.getElementById('akvo_map'),
                 options: {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                streetViewControl: false,
-                zoom:3
+                streetViewControl: false
                 },
                 projects: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="0"]'); ?>,
                 projects2: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="1000"]'); ?>,
