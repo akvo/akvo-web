@@ -4862,6 +4862,9 @@ h1 {
 #rsrNetworkMap > h2 {
     text-align: center;
 }
+#rsrNetworkMap .wrapper {
+  max-width:none;
+}
 #rsrNetworkMap iframe {}
 /***********************************
 						Price table
