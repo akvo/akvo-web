@@ -117,7 +117,7 @@ Template Name: akvoNetwork
               <section id="rsrNetworkMap">
                 <h2>Akvo RSR map of all projects</h2>
                 <div class="wrapper">
-                  <div class= "akvo_map centerED" id="akvo_map" style="height:600px;"></div>
+                  <div class= "akvo_map centerED" id="akvo_map" style="width:975px;height:600px;"></div>
                 </div>
                 <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
                 <script type="text/javascript">
@@ -125,7 +125,8 @@ Template Name: akvoNetwork
                 canvas: document.getElementById('akvo_map'),
                 options: {
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
-                streetViewControl: false
+                streetViewControl: false,
+                zoom:3
                 },
                 projects: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="0"]'); ?>,
                 projects2: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="1000"]'); ?>,
