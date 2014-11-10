@@ -4267,22 +4267,22 @@ section.flowMonDescr {
 /*-----------------------------------
 			Contact Info Page
 ------------------------------------*/
-/* line 3832, main.scss */
+/* line 3830, main.scss */
 .contactInfo section {
   margin: 2em auto 0em auto; }
 
-/* line 3835, main.scss */
+/* line 3833, main.scss */
 .contactInfo section:last-child {
   margin: 2em auto 2em auto; }
 
-/* line 3838, main.scss */
+/* line 3836, main.scss */
 .hubmap {
   position: relative;
   padding-bottom: 49%;
-  background: #ffd300 url(../images/map.jpg) center no-repeat;
+  background: #ffd300 url(../images/map.gif) center no-repeat;
   -webkit-background-size: 91% 91%;
           background-size: 91%; }
-  /* line 3844, main.scss */
+  /* line 3842, main.scss */
   .hubmap .marker {
     position: absolute;
     width: 4%;
@@ -4301,10 +4301,10 @@ section.flowMonDescr {
        -moz-box-sizing: border-box;
             box-sizing: border-box; }
     @media only screen and (max-width: 768px) {
-      /* line 3844, main.scss */
+      /* line 3842, main.scss */
       .hubmap .marker {
         display: none; } }
-  /* line 3862, main.scss */
+  /* line 3860, main.scss */
   .hubmap .marker.LON {
     background-image: url(../images/marker-left.png);
     width: 5.8%;
@@ -4315,57 +4315,57 @@ section.flowMonDescr {
     padding-top: 0.9%; }
 
 @-webkit-keyframes highlight {
-  /* line 3873, main.scss */
+  /* line 3871, main.scss */
   0% {
     background: #fff3cc; }
 
-  /* line 3876, main.scss */
+  /* line 3874, main.scss */
   100% {
     background: none; } }
-/* line 3881, main.scss */
+/* line 3879, main.scss */
 .hubs li {
   margin: 70px auto 0;
   max-width: 800px;
   clear: left;
   overflow: hidden; }
   @media only screen and (max-width: 768px) {
-    /* line 3888, main.scss */
+    /* line 3886, main.scss */
     .hubs li h4 {
       margin-top: 0; }
-    /* line 3891, main.scss */
+    /* line 3889, main.scss */
     .hubs li img {
       display: none; } }
   @media only screen and (min-width: 768px) {
-    /* line 3897, main.scss */
+    /* line 3895, main.scss */
     .hubs li .text {
       margin-left: 280px; }
-    /* line 3900, main.scss */
+    /* line 3898, main.scss */
     .hubs li h3, .hubs li h4 {
       margin: 0; }
-    /* line 3903, main.scss */
+    /* line 3901, main.scss */
     .hubs li h4 {
       margin-top: 2px;
       margin-bottom: 20px; }
-    /* line 3907, main.scss */
+    /* line 3905, main.scss */
     .hubs li img {
       float: left; } }
 
-/* line 3915, main.scss */
+/* line 3913, main.scss */
 .hubs li:target {
   -webkit-animation: highlight 2s; }
 
 /*-----------------------------------
 				Annual Report Page
 ------------------------------------*/
-/* line 3922, main.scss */
+/* line 3920, main.scss */
 .aReport {
   margin: 2em auto; }
 
-/* line 3925, main.scss */
+/* line 3923, main.scss */
 .aReport h2 {
   margin: 0.5em auto 1em auto; }
 
-/* line 3928, main.scss */
+/* line 3926, main.scss */
 .annual-reports img {
   -webkit-box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1);
           box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1); }
@@ -4373,22 +4373,22 @@ section.flowMonDescr {
 /*-----------------------------------
 				Team Page
 ------------------------------------*/
-/* line 3934, main.scss */
+/* line 3932, main.scss */
 .teamPage {
   margin: 0em auto; }
 
-/* line 3937, main.scss */
+/* line 3935, main.scss */
 .teamPage > p {
   margin: 0.25em auto 1.75em auto;
   text-align: center;
   width: 85%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3944, main.scss */
+  /* line 3942, main.scss */
   .teamPage > p {
     margin: 0.25em auto;
     width: 98%; } }
-/* line 3949, main.scss */
+/* line 3947, main.scss */
 ul.staff {
   display: block;
   margin: 0em auto;
@@ -4397,14 +4397,14 @@ ul.staff {
   width: 99%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3958, main.scss */
+  /* line 3956, main.scss */
   ul.staff {
     margin: 1em auto 2em auto; } }
-/* line 3962, main.scss */
+/* line 3960, main.scss */
 ul.staff:target {
   background: #f2f2f2; }
 
-/* line 3965, main.scss */
+/* line 3963, main.scss */
 ul.staff li {
   display: inline;
   float: left;
@@ -4414,21 +4414,21 @@ ul.staff li {
   width: 16%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 3975, main.scss */
+  /* line 3973, main.scss */
   ul.staff li {
     font-size: 1.2em;
     margin: 0em 2% 0px 1%;
     width: 48%; } }
 @media only screen and (max-width: 768px) {
-  /* line 3983, main.scss */
+  /* line 3981, main.scss */
   ul.staff li:nth-child(2n) {
     margin: 0em 1% 0px 0em; } }
-/* line 3987, main.scss */
+/* line 3985, main.scss */
 ul.staff li:hover {
   background: #fafafa;
   cursor: pointer; }
 
-/* line 3991, main.scss */
+/* line 3989, main.scss */
 ul.staff li small {
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
@@ -4438,19 +4438,19 @@ ul.staff li small {
   line-height: 1.2em;
   margin-top: 6px; }
 
-/* line 4002, main.scss */
+/* line 4000, main.scss */
 ul.staff li:hover small {
   opacity: 1; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4007, main.scss */
+  /* line 4005, main.scss */
   ul.staff li:hover small {
     font-size: 1em; } }
-/* line 4011, main.scss */
+/* line 4009, main.scss */
 ul.staff li div.staffName {
   margin: 3px 0em; }
 
-/* line 4014, main.scss */
+/* line 4012, main.scss */
 ul.staff li p.staffTitle {
   color: #7c7c7c;
   font-size: 0.9em;
@@ -4458,7 +4458,7 @@ ul.staff li p.staffTitle {
   margin: 0em;
   padding: 0em; }
 
-/* line 4021, main.scss */
+/* line 4019, main.scss */
 ul.staff li div.imgWrapper {
   background: #e0e0e0;
   display: block;
@@ -4467,34 +4467,34 @@ ul.staff li div.imgWrapper {
   position: relative;
   width: 96%; }
 
-/* line 4029, main.scss */
+/* line 4027, main.scss */
 .new_staffs .staffBiog,
 .staffAsset .staffBiog,
 .new_partners .staffBiog,
 .foundation_member .staffBiog {
   display: none; }
 
-/* line 4035, main.scss */
+/* line 4033, main.scss */
 .akvoTeam {
   display: none; }
 
-/* line 4038, main.scss */
+/* line 4036, main.scss */
 .singleStaffPage .akvoTeam {
   display: block; }
 
-/* line 4041, main.scss */
+/* line 4039, main.scss */
 ul.staff li.partnership:hover div.imgWrapper {
   background: #faa21b; }
 
-/* line 4044, main.scss */
+/* line 4042, main.scss */
 ul.staff li.communication:hover div.imgWrapper {
   background: #db87c9; }
 
-/* line 4047, main.scss */
+/* line 4045, main.scss */
 ul.staff li.engineering:hover div.imgWrapper {
   background: #85ab8f; }
 
-/* line 4050, main.scss */
+/* line 4048, main.scss */
 ul.staff li div.imgWrapper img {
   -webkit-transition: opacity 0.2s ease-in;
   transition: opacity 0.2s ease-in;
@@ -4503,38 +4503,38 @@ ul.staff li div.imgWrapper img {
   vertical-align: middle;
   width: 100%; }
 
-/* line 4057, main.scss */
+/* line 4055, main.scss */
 .directors {
   position: relative; }
 
-/* line 4060, main.scss */
+/* line 4058, main.scss */
 #netherLand .directorsAbs {
   left: 67.2%;
   position: absolute;
   top: 0em; }
 
-/* line 4065, main.scss */
+/* line 4063, main.scss */
 #usa .directorsAbs,
 #kenya .directorsAbs {
   left: 50.4%;
   position: absolute;
   top: 0em; }
 
-/* line 4071, main.scss */
+/* line 4069, main.scss */
 ul.staff li div.imgWrapper img:hover {
   opacity: 0.9; }
 
-/* line 4074, main.scss */
+/* line 4072, main.scss */
 ul.staff li:nth-child(6n) {
   margin-right: 0em; }
 
-/* line 4077, main.scss */
+/* line 4075, main.scss */
 .teamPage h2,
 .partnerPage h2 {
   margin: 0em auto 1.5em auto;
   text-align: center; }
 
-/* line 4082, main.scss */
+/* line 4080, main.scss */
 #managementGroup,
 #partnershipGroup,
 #communicationGroup,
@@ -4546,7 +4546,7 @@ ul.staff li:nth-child(6n) {
   padding: 0.5em 0em;
   position: relative; }
 
-/* line 4093, main.scss */
+/* line 4091, main.scss */
 #managementGroup legend {
   -o-border-radius: 0.25em;
   border-radius: 0.25em;
@@ -4558,16 +4558,16 @@ ul.staff li:nth-child(6n) {
   padding: 0.25em 0.5em;
   position: relative; }
 
-/* line 4103, main.scss */
+/* line 4101, main.scss */
 #managementGroup legend img {
   vertical-align: text-bottom; }
 
-/* line 4106, main.scss */
+/* line 4104, main.scss */
 #managementGroup b {
   color: #a81f2d; }
 
 /*--------------------------*/
-/* line 4110, main.scss */
+/* line 4108, main.scss */
 #overlay {
   bottom: 0em;
   display: none;
@@ -4580,7 +4580,7 @@ ul.staff li:nth-child(6n) {
   width: 100%;
   z-index: 1000001; }
 
-/* line 4122, main.scss */
+/* line 4120, main.scss */
 #blanket {
   background-color: #000;
   bottom: 0em;
@@ -4591,7 +4591,7 @@ ul.staff li:nth-child(6n) {
   top: 0em;
   width: 100%; }
 
-/* line 4132, main.scss */
+/* line 4130, main.scss */
 .dialog {
   -o-border-radius: 0em 0em 5px 5px;
   border-radius: 0em 0em 5px 5px;
@@ -4606,7 +4606,7 @@ ul.staff li:nth-child(6n) {
   width: 50%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4146, main.scss */
+  /* line 4144, main.scss */
   .dialog {
     -o-border-radius: 0em;
     border-radius: 0em;
@@ -4620,53 +4620,53 @@ ul.staff li:nth-child(6n) {
     padding: 2em 5% 3em 5%;
     position: relative;
     width: 90%; } }
-/* line 4160, main.scss */
+/* line 4158, main.scss */
 #staffDescr {
   margin-top: 10px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4165, main.scss */
+  /* line 4163, main.scss */
   #staffDescr h1 {
     font-size: 2em; } }
-/* line 4169, main.scss */
+/* line 4167, main.scss */
 #staffDescr p {
   display: block; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4174, main.scss */
+  /* line 4172, main.scss */
   #staffDescr p {
     width: 95%; } }
-/* line 4178, main.scss */
+/* line 4176, main.scss */
 .dialog .staffTitle {
   color: #faa21b;
   font-size: 1.1em;
   margin: 2px 0em 10px; }
 
-/* line 4183, main.scss */
+/* line 4181, main.scss */
 .buttons {
   margin: 10px auto 5px auto;
   position: absolute;
   right: 5px;
   top: 5px; }
 
-/* line 4189, main.scss */
+/* line 4187, main.scss */
 .buttons .cancel {
   background: url("../images/closePopup.png") left center no-repeat;
   cursor: pointer;
   padding: 6px 5px 8px 40px; }
 
-/* line 4194, main.scss */
+/* line 4192, main.scss */
 .buttons .cancel:hover {
   cursor: pointer;
   opacity: 0.8; }
 
-/* line 4198, main.scss */
+/* line 4196, main.scss */
 .extLoad div.imgWrapper {
   border: 1px solid #f2f2f2;
   float: left;
   margin: 10px 35px 5px 0em; }
 
-/* line 4203, main.scss */
+/* line 4201, main.scss */
 .extLoad div.imgWrapper img {
   margin: 0em auto;
   vertical-align: middle;
@@ -4675,11 +4675,11 @@ ul.staff li:nth-child(6n) {
 /*----------------------------------------------------------------------------------------------------------------------------------------
 																         Media section
 ----------------------------------------------------------------------------------------------------------------------------------------*/
-/* line 4211, main.scss */
+/* line 4209, main.scss */
 .media h2 {
   margin: 1.5em 0em 0.5em; }
 
-/* line 4214, main.scss */
+/* line 4212, main.scss */
 .media h4 {
   border-bottom: thin solid #de8929;
   color: #de8929;
@@ -4687,20 +4687,20 @@ ul.staff li:nth-child(6n) {
   padding: 0em 0em 0.5em;
   width: 100%; }
 
-/* line 4221, main.scss */
+/* line 4219, main.scss */
 .media ul.twoColumns li {
   padding: 3em 0em; }
 
-/* line 4224, main.scss */
+/* line 4222, main.scss */
 #tvLogo {
   margin-bottom: 5em; }
 
-/* line 4227, main.scss */
+/* line 4225, main.scss */
 .media section > h1 {
   margin-bottom: 1em;
   text-align: center; }
 
-/* line 4231, main.scss */
+/* line 4229, main.scss */
 .media section > h1:before {
   content: "";
   display: block;
@@ -4724,69 +4724,69 @@ ul.staff li:nth-child(6n) {
 /*--------------------------------------------------------------------
 							Help section
 --------------------------------------------------------------------*/
-/* line 4255, main.scss */
+/* line 4253, main.scss */
 .akvo-policies-and-terms ul {
   margin: 0em 0em 0em 10px; }
 
-/* line 4258, main.scss */
+/* line 4256, main.scss */
 .akvo-terms-of-use p,
 .akvo-privacy-policy p {
   margin: 10px 0em; }
 
-/* line 4262, main.scss */
+/* line 4260, main.scss */
 .akvo-policies-and-terms h3,
 .akvo-policies-and-terms h4 {
   margin: 2em 0em 0.25em; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4268, main.scss */
+  /* line 4266, main.scss */
   .helpSupport nav ul li, .helpSupport nav ul li:first-child {
     margin-bottom: 20px !important; } }
-/* line 4270, main.scss */
+/* line 4268, main.scss */
 .helpSupport nav ul li.bgDeco {
   min-height: 320px; }
 
-/* line 4273, main.scss */
+/* line 4271, main.scss */
 .helpSupport nav ul li p {
   color: #2c2a74; }
 
-/* line 4276, main.scss */
+/* line 4274, main.scss */
 .helpSupport nav ul li a {
   display: block;
   height: 70px;
   -webkit-transition: all 0.2s ease-in;
           transition: all 0.2s ease-in; }
-  /* line 4280, main.scss */
+  /* line 4278, main.scss */
   .helpSupport nav ul li a.rsrHelp {
     background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top transparent;
     -webkit-background-size: 50% auto;
             background-size: 50% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4280, main.scss */
+      /* line 4278, main.scss */
       .helpSupport nav ul li a.rsrHelp {
         margin: 20px 0 0 0; } }
-  /* line 4289, main.scss */
+  /* line 4287, main.scss */
   .helpSupport nav ul li a.flowHelp {
     background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top transparent;
     -webkit-background-size: 56% auto;
             background-size: 56% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4289, main.scss */
+      /* line 4287, main.scss */
       .helpSupport nav ul li a.flowHelp {
         margin: 20px 0 0 0; } }
-  /* line 4298, main.scss */
+  /* line 4296, main.scss */
   .helpSupport nav ul li a.akvopediaHelp {
     background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top transparent;
     -webkit-background-size: 65% auto;
             background-size: 65% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
-      /* line 4298, main.scss */
+      /* line 4296, main.scss */
       .helpSupport nav ul li a.akvopediaHelp {
         margin: 20px 0 0 0; } }
-  /* line 4307, main.scss */
+  /* line 4305, main.scss */
   .helpSupport nav ul li a.moreHelp {
     color: #de8929;
     display: block;
@@ -4797,66 +4797,66 @@ ul.staff li:nth-child(6n) {
     position: relative;
     text-align: center;
     text-indent: -9999px; }
-    /* line 4317, main.scss */
+    /* line 4315, main.scss */
     .helpSupport nav ul li a.moreHelp.rsrH {
       background: url("../images/help_RSR_icn.png") center center no-repeat;
       -webkit-background-size: 80% 80%;
               background-size: 80% 80%; }
-    /* line 4321, main.scss */
+    /* line 4319, main.scss */
     .helpSupport nav ul li a.moreHelp.flowH {
       background: url("../images/help_FLOW_icn.png") center center no-repeat;
       -webkit-background-size: 80% 80%;
               background-size: 80% 80%; }
-    /* line 4325, main.scss */
+    /* line 4323, main.scss */
     .helpSupport nav ul li a.moreHelp.pediaH {
       background: url("../images/help_pedia_icn.png") center center no-repeat;
       -webkit-background-size: 80% 80%;
               background-size: 80% 80%; }
 
-/* line 4332, main.scss */
+/* line 4330, main.scss */
 h1.rsrHelp {
   background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
   -webkit-background-size: auto 56px;
           background-size: auto 56px;
   text-indent: -9999px; }
-/* line 4337, main.scss */
+/* line 4335, main.scss */
 h1.flowHelp {
   background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
   -webkit-background-size: auto 56px;
           background-size: auto 56px;
   text-indent: -9999px; }
-/* line 4342, main.scss */
+/* line 4340, main.scss */
 h1.akvopediaHelp {
   background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
   -webkit-background-size: auto 56px;
           background-size: auto 56px;
   text-indent: -9999px; }
 
-/* line 4349, main.scss */
+/* line 4347, main.scss */
 .helpSupport nav ul li:hover a.rsrHelp {
   -webkit-background-size: 52% auto;
           background-size: 52% auto; }
-/* line 4352, main.scss */
+/* line 4350, main.scss */
 .helpSupport nav ul li:hover a.flowHelp {
   -webkit-background-size: 58% auto;
           background-size: 58% auto; }
-/* line 4355, main.scss */
+/* line 4353, main.scss */
 .helpSupport nav ul li:hover a.akvopediaHelp {
   -webkit-background-size: 67% auto;
           background-size: 67% auto; }
-/* line 4358, main.scss */
+/* line 4356, main.scss */
 .helpSupport nav ul li:hover a.moreHelp {
   opacity: 1; }
 
-/* line 4362, main.scss */
+/* line 4360, main.scss */
 .helpSupport h2,
 .rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
   text-align: left !important; }
 
-/* line 4366, main.scss */
+/* line 4364, main.scss */
 #manuals li {
   min-height: 220px; }
-  /* line 4368, main.scss */
+  /* line 4366, main.scss */
   #manuals li a {
     background: left top no-repeat;
     -webkit-background-size: 151px 200px;
@@ -4867,10 +4867,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4368, main.scss */
+      /* line 4366, main.scss */
       #manuals li a {
         background-position: center top; } }
-    /* line 4380, main.scss */
+    /* line 4378, main.scss */
     #manuals li a span {
       bottom: 0em;
       display: block;
@@ -4879,14 +4879,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4380, main.scss */
+        /* line 4378, main.scss */
         #manuals li a span {
           text-align: center; } }
 
-/* line 4394, main.scss */
+/* line 4392, main.scss */
 #android li {
   min-height: 220px; }
-  /* line 4396, main.scss */
+  /* line 4394, main.scss */
   #android li a {
     background: left top no-repeat;
     -webkit-background-size: 151px 200px;
@@ -4897,10 +4897,10 @@ h1.akvopediaHelp {
     position: relative;
     width: 100%; }
     @media only screen and (max-width: 768px) {
-      /* line 4396, main.scss */
+      /* line 4394, main.scss */
       #android li a {
         background-position: center top; } }
-    /* line 4408, main.scss */
+    /* line 4406, main.scss */
     #android li a span {
       bottom: 0em;
       display: block;
@@ -4909,14 +4909,14 @@ h1.akvopediaHelp {
       text-align: left;
       width: 100%; }
       @media only screen and (max-width: 768px) {
-        /* line 4408, main.scss */
+        /* line 4406, main.scss */
         #android li a span {
           text-align: center; } }
 
 /*--------------------------------------------------------------------
 							Network Page
 --------------------------------------------------------------------*/
-/* line 4428, main.scss */
+/* line 4426, main.scss */
 #akvoDashboard {
   background: #202024;
   margin: 50px auto 0em;
@@ -4925,17 +4925,17 @@ h1.akvopediaHelp {
   position: relative;
   width: 100%; }
 
-/* line 4436, main.scss */
+/* line 4434, main.scss */
 #akvoDashboard h2 {
   color: white;
   margin: 0.5em auto 0.75em;
   text-align: center; }
 
-/* line 4441, main.scss */
+/* line 4439, main.scss */
 #akvoDashboard ul {
   margin: 0em auto 0.5em auto; }
 
-/* line 4444, main.scss */
+/* line 4442, main.scss */
 #akvoDashboard ul li.dashSingle {
   -o-border-radius: 0.25em;
   border-radius: 0.25em;
@@ -4952,41 +4952,41 @@ h1.akvopediaHelp {
   width: 49.5%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4458, main.scss */
+  /* line 4456, main.scss */
   #akvoDashboard ul li.dashSingle {
     width: 100%; } }
-/* line 4462, main.scss */
+/* line 4460, main.scss */
 #akvoDashboard ul li.dashSingle:nth-child(2n) {
   margin: 0em 0em 0.5em 0.5%; }
 
-/* line 4465, main.scss */
+/* line 4463, main.scss */
 .dashSingle h2 {
   display: block;
   text-indent: -99999px; }
 
-/* line 4469, main.scss */
+/* line 4467, main.scss */
 .dashSingle .moreLink {
   position: absolute;
   right: 0em;
   top: 0em; }
 
-/* line 4474, main.scss */
+/* line 4472, main.scss */
 .dashSingle#rsrDash h2 {
   background: url("../images/rsrWhiteDash.png") no-repeat center center; }
 
-/* line 4477, main.scss */
+/* line 4475, main.scss */
 .dashSingle#flowDash h2 {
   background: url("../images/flowWhiteDash.png") no-repeat center center; }
 
-/* line 4480, main.scss */
+/* line 4478, main.scss */
 .dashSingle#opendaidDash h2 {
   background: url("../images/openAidWhiteDash.png") no-repeat center center; }
 
-/* line 4483, main.scss */
+/* line 4481, main.scss */
 .dashSingle#akvopediaDash h2 {
   background: url("../images/wikiWhiteDash.png") no-repeat center center; }
 
-/* line 4486, main.scss */
+/* line 4484, main.scss */
 .dashData li {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
@@ -4998,10 +4998,10 @@ h1.akvopediaHelp {
   width: 47.5%; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4496, main.scss */
+  /* line 4494, main.scss */
   .dashData li {
     min-height: 100px; } }
-/* line 4500, main.scss */
+/* line 4498, main.scss */
 .dashData li.killFloatMerge {
   clear: both;
   display: block;
@@ -5009,18 +5009,18 @@ h1.akvopediaHelp {
   text-align: center;
   width: 96.5%; }
 
-/* line 4507, main.scss */
+/* line 4505, main.scss */
 .dashData li img {
   display: table;
   margin: 0em auto; }
 
-/* line 4511, main.scss */
+/* line 4509, main.scss */
 .dashData li p {
   display: table;
   font-size: 0.8em;
   margin: 0em auto; }
 
-/* line 4516, main.scss */
+/* line 4514, main.scss */
 .dashData li h4 {
   color: inherit;
   font-size: 0.8em;
@@ -5028,7 +5028,7 @@ h1.akvopediaHelp {
   margin: 0.5em 0em 1em 0.5em;
   text-transform: uppercase; }
 
-/* line 4523, main.scss */
+/* line 4521, main.scss */
 .dashData li span {
   font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5em;
@@ -5036,7 +5036,7 @@ h1.akvopediaHelp {
   text-shadow: 0em 0em 3px black;
   text-transform: uppercase; }
 
-/* line 4530, main.scss */
+/* line 4528, main.scss */
 .dashData li span.unit {
   font-family: "Palatino", "Book Antiqua", Georgia, serif;
   font-size: 0.9em;
@@ -5044,57 +5044,57 @@ h1.akvopediaHelp {
   text-transform: lowercase; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4538, main.scss */
+  /* line 4536, main.scss */
   .dashData li span.unit {
     display: block; } }
-/* line 4542, main.scss */
+/* line 4540, main.scss */
 .dashData li:nth-child(2n+1) {
   margin: 0em 0.75% 0.35em 1.75%; }
 
-/* line 4545, main.scss */
+/* line 4543, main.scss */
 .dashData li:nth-child(2n) {
   margin: 0em 1.75% 0.35em 0.75%; }
 
-/* line 4548, main.scss */
+/* line 4546, main.scss */
 .dashData.rsrData li {
   background: rgba(87, 193, 232, 0.05);
   color: #57c1e8; }
 
-/* line 4552, main.scss */
+/* line 4550, main.scss */
 .dashData.flowData li {
   background: rgba(226, 124, 0, 0.05);
   color: #e27c00; }
 
-/* line 4556, main.scss */
+/* line 4554, main.scss */
 .dashData.openAidData li {
   background: rgba(255, 206, 0, 0.05);
   color: #ffce00; }
 
-/* line 4560, main.scss */
+/* line 4558, main.scss */
 .dashData.wikiData li {
   background: rgba(191, 131, 185, 0.05);
   color: #bf83b9; }
-  /* line 4563, main.scss */
+  /* line 4561, main.scss */
   .dashData.wikiData li span {
     background: rgba(191, 131, 185, 0.05);
     color: #bf83b9; }
 
-/* line 4568, main.scss */
+/* line 4566, main.scss */
 #rsrProjectUpdates {
   background: #f2f2f2;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4574, main.scss */
+/* line 4572, main.scss */
 #rsrProjectUpdates > h2 {
   text-align: center; }
 
-/* line 4577, main.scss */
+/* line 4575, main.scss */
 #rsrProjectUpdates > a.moreLink {
   margin: 0em auto 2em; }
 
-/* line 4580, main.scss */
+/* line 4578, main.scss */
 .rsrUpdate {
   -o-border-radius: 0.5em;
   border-radius: 0.5em;
@@ -5108,12 +5108,12 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
           transition: all 0.4s ease-in;
   width: 98%; }
-  /* line 4591, main.scss */
+  /* line 4589, main.scss */
   .rsrUpdate:hover {
     background: rgba(192, 192, 196, 0.3);
     pointer: cursor; }
   @media screen and (min-width: 960px) {
-    /* line 4580, main.scss */
+    /* line 4578, main.scss */
     .rsrUpdate {
       -o-border-radius: 0.15em;
       border-radius: 0.15em;
@@ -5123,18 +5123,18 @@ h1.akvopediaHelp {
       min-height: 315px;
       padding: 0em 0.5%;
       width: 31.8%; }
-      /* line 4603, main.scss */
+      /* line 4601, main.scss */
       .rsrUpdate:last-child {
         margin: 0em; } }
 
-/* line 4608, main.scss */
+/* line 4606, main.scss */
 .rsrUpdate ul li.upMore {
   float: right;
   height: 120px;
   margin-top: -10px;
   width: 120px; }
   @media screen and (min-width: 960px) {
-    /* line 4608, main.scss */
+    /* line 4606, main.scss */
     .rsrUpdate ul li.upMore {
       display: block;
       float: inherit;
@@ -5142,7 +5142,7 @@ h1.akvopediaHelp {
       margin-bottom: 5px;
       width: 100%; } }
 
-/* line 4623, main.scss */
+/* line 4621, main.scss */
 .rsrUpdate ul li.upMore a {
   -webkit-background-size: 72% 72%;
           background-size: 72%;
@@ -5156,17 +5156,17 @@ h1.akvopediaHelp {
           transition: all 0.4s ease-in;
   width: 112px; }
   @media screen and (min-width: 960px) {
-    /* line 4623, main.scss */
+    /* line 4621, main.scss */
     .rsrUpdate ul li.upMore a {
       background: none;
       display: inline-block;
       width: 100%;
       margin: 14px auto 0;
       height: 30px; } }
-/* line 4641, main.scss */
+/* line 4639, main.scss */
 .rsrUpdate:hover ul li.upMore a {
   opacity: 1; }
-/* line 4644, main.scss */
+/* line 4642, main.scss */
 .rsrUpdate ul li.upMore span {
   display: block;
   font-size: 0.8em;
@@ -5174,63 +5174,63 @@ h1.akvopediaHelp {
   -webkit-transition: color 0.4s ease-in;
           transition: color 0.4s ease-in; }
   @media screen and (max-width: 960px) {
-    /* line 4644, main.scss */
+    /* line 4642, main.scss */
     .rsrUpdate ul li.upMore span {
       text-align: center; } }
-/* line 4653, main.scss */
+/* line 4651, main.scss */
 .rsrUpdate:hover ul li.upMore span {
   color: rgba(226, 124, 0, 0.8); }
 
-/* line 4658, main.scss */
+/* line 4656, main.scss */
 .rsrUpdate ul {
   margin-top: 10px;
   padding: 0em;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4658, main.scss */
+    /* line 4656, main.scss */
     .rsrUpdate ul {
       margin-top: 15px; } }
-  /* line 4665, main.scss */
+  /* line 4663, main.scss */
   .rsrUpdate ul li {
     float: left;
     margin: 0em;
     padding: 0em; }
-  /* line 4670, main.scss */
+  /* line 4668, main.scss */
   .rsrUpdate ul li.upImag {
     margin-left: 0.5em;
     width: calc(150px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4670, main.scss */
+      /* line 4668, main.scss */
       .rsrUpdate ul li.upImag {
         width: 50%; } }
-  /* line 4677, main.scss */
+  /* line 4675, main.scss */
   .rsrUpdate ul li.upInfo {
     display: table-cell;
     width: 30%; }
     @media screen and (min-width: 960px) {
-      /* line 4677, main.scss */
+      /* line 4675, main.scss */
       .rsrUpdate ul li.upInfo {
         width: calc(50% - 0.5em); } }
-  /* line 4684, main.scss */
+  /* line 4682, main.scss */
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
     position: relative;
     width: calc(100% - 30% - 150px - 120px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4684, main.scss */
+      /* line 4682, main.scss */
       .rsrUpdate ul li.upTxt {
         display: block;
         margin: 0.2em auto;
         min-height: 100px;
         width: 100%; } }
 
-/* line 4698, main.scss */
+/* line 4696, main.scss */
 .rsrUpdate h2 {
   display: inline;
   font-size: 1.2em;
   text-align: left; }
-  /* line 4702, main.scss */
+  /* line 4700, main.scss */
   .rsrUpdate h2 a {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5240,48 +5240,48 @@ h1.akvopediaHelp {
     width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
-  /* line 4710, main.scss */
+  /* line 4708, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4713, main.scss */
+  /* line 4711, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px - 150px); } }
 @media screen and (max-width: 395px) {
-  /* line 4718, main.scss */
+  /* line 4716, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4721, main.scss */
+  /* line 4719, main.scss */
   .rsrUpdate ul li.upImag {
     display: none; }
 
-  /* line 4724, main.scss */
+  /* line 4722, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px); } }
-/* line 4728, main.scss */
+/* line 4726, main.scss */
 .rsrUpdate ul li.upInfo .authorTime {
   margin-left: 1.75em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
   @media screen and (min-width: 960px) {
-    /* line 4728, main.scss */
+    /* line 4726, main.scss */
     .rsrUpdate ul li.upInfo .authorTime {
       margin-left: 0.25em; } }
 
-/* line 4735, main.scss */
+/* line 4733, main.scss */
 .authorTime em {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4735, main.scss */
+    /* line 4733, main.scss */
     .authorTime em {
       display: none; } }
 
-/* line 4744, main.scss */
+/* line 4742, main.scss */
 .authorTime time {
   color: #747474;
   display: inline;
@@ -5289,13 +5289,13 @@ h1.akvopediaHelp {
   margin: 0em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4744, main.scss */
+    /* line 4742, main.scss */
     .authorTime time {
       display: block;
       margin: 0em 0em 0em 0.25em;
       width: calc(100% - 0.25em); } }
 
-/* line 4756, main.scss */
+/* line 4754, main.scss */
 .authorTime span.userName {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5306,12 +5306,12 @@ h1.akvopediaHelp {
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4756, main.scss */
+    /* line 4754, main.scss */
     .authorTime span.userName {
       display: inline;
       margin: 0em 0em 3px 0.25em; } }
 
-/* line 4768, main.scss */
+/* line 4766, main.scss */
 .orgAndPlace .org {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5323,19 +5323,19 @@ h1.akvopediaHelp {
   font-size: 0.8em;
   margin: 0.75em 0em 0.75em 1.75em;
   padding: 0.15em 1em 0.35em; }
-  /* line 4776, main.scss */
+  /* line 4774, main.scss */
   .orgAndPlace .org a {
     color: white; }
-    /* line 4778, main.scss */
+    /* line 4776, main.scss */
     .orgAndPlace .org a:hover {
       color: #de8929; }
   @media screen and (min-width: 960px) {
-    /* line 4768, main.scss */
+    /* line 4766, main.scss */
     .orgAndPlace .org {
       display: inline-block;
       margin: 0em 0em 0em 0.5em; } }
 
-/* line 4787, main.scss */
+/* line 4785, main.scss */
 .orgAndPlace .place {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5347,28 +5347,28 @@ h1.akvopediaHelp {
   padding: 0.25em 0em 0.25em 14px;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4787, main.scss */
+    /* line 4785, main.scss */
     .orgAndPlace .place {
       display: block;
       margin: 0em 0em 0em 0.35em;
       width: 80%; } }
 
 @media only screen and (max-width: 768px) {
-  /* line 4803, main.scss */
+  /* line 4801, main.scss */
   .authorTime span.userName {
     margin: 0em; }
 
-  /* line 4806, main.scss */
+  /* line 4804, main.scss */
   .orgAndPlace .org {
     margin: 0.25em 0em 0em 1.75em; } }
-/* line 4810, main.scss */
+/* line 4808, main.scss */
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4816, main.scss */
+/* line 4814, main.scss */
 .rsrUpdate > span {
   -o-border-radius: 0em 0em 0.5em;
   border-radius: 0em 0em 0.5em;
@@ -5380,7 +5380,7 @@ h1.akvopediaHelp {
   padding: 0.15em 0.25em;
   top: 0px; }
 
-/* line 4826, main.scss */
+/* line 4824, main.scss */
 .rsrUpdate ul li.upTxt p {
   color: #202024;
   margin: 0em;
@@ -5390,18 +5390,18 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
-  /* line 4834, main.scss */
+  /* line 4832, main.scss */
   .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
     color: #202024; }
   @media screen and (min-width: 960px) {
-    /* line 4826, main.scss */
+    /* line 4824, main.scss */
     .rsrUpdate ul li.upTxt p {
       color: #202024;
       font-size: 0.9em;
       padding: 0.5em 2% 0em 2%;
       text-shadow: none; } }
 
-/* line 4844, main.scss */
+/* line 4842, main.scss */
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
   border: 2px solid #e8e8e8;
@@ -5412,27 +5412,27 @@ h1.akvopediaHelp {
   position: relative; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4855, main.scss */
+  /* line 4853, main.scss */
   .rsrUpdate .imgWrap {
     padding: 0em; } }
-/* line 4859, main.scss */
+/* line 4857, main.scss */
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
   position: relative; }
 
-/* line 4864, main.scss */
+/* line 4862, main.scss */
 #rsrNetworkMap > h2 {
   text-align: center; }
 
 /***********************************
 						Price table
 ********************************************/
-/* line 4871, main.scss */
+/* line 4869, main.scss */
 .pricingList {
   margin: 3em auto; }
 
-/* line 4874, main.scss */
+/* line 4872, main.scss */
 .pricingList h5 {
   background: #202024;
   color: white;
@@ -5441,29 +5441,29 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/* line 4882, main.scss */
+/* line 4880, main.scss */
 .pricingList img {
   display: table;
   margin: 1em auto; }
 
-/* line 4886, main.scss */
+/* line 4884, main.scss */
 .pricingList p {
   display: block;
   margin: 1em auto;
   padding: 25px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4893, main.scss */
+  /* line 4891, main.scss */
   .pricingList img {
     float: left;
     margin: 0.5em 1em;
     max-width: 30%; }
 
-  /* line 4898, main.scss */
+  /* line 4896, main.scss */
   .pricingList p {
     display: block;
     margin: 1em auto; } }
-/* line 4903, main.scss */
+/* line 4901, main.scss */
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -5473,34 +5473,34 @@ h1.akvopediaHelp {
   position: relative;
   width: 25%; }
 
-/* line 4912, main.scss */
+/* line 4910, main.scss */
 .pricingList.fourColumns li:nth-child(2n) {
   background: none repeat scroll 0em 0em #eeeeee; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4917, main.scss */
+  /* line 4915, main.scss */
   .pricingList.fourColumns > li {
     float: none;
     margin: 30px auto;
     padding: 2%;
     width: 96%; }
 
-  /* line 4923, main.scss */
+  /* line 4921, main.scss */
   .pricingList.fourColumns li:nth-child(2n) {
     background: none; } }
-/* line 4927, main.scss */
+/* line 4925, main.scss */
 div[id^="inline-"] {
   display: none; }
 
 /*-----------------------------------
 				Work with us
 ------------------------------------*/
-/* line 4936, main.scss */
+/* line 4934, main.scss */
 .working-at-akvo ul {
   margin-left: 2em;
   line-height: 1.6em;
   list-style: disc; }
 
-/* line 4942, main.scss */
+/* line 4940, main.scss */
 .twoPagerContainer {
   width: 500px; }
