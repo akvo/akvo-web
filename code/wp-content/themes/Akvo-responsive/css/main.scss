@@ -3838,7 +3838,7 @@ section.flowMonDescr {
 .hubmap {
     position: relative;
     padding-bottom: 49%;
-    background: #ffd300 url(../images/map.gif) center no-repeat;
+    background: #ffd300 url(../images/map.jpg) center no-repeat;
     background-size: 91%;
 
     .marker {
@@ -4560,6 +4560,10 @@ h1 {
 .dashData.wikiData li {
     background: rgba(191, 131, 185, 0.05);
     color: rgb(191, 131, 185);
+    span {
+    background: rgba(191, 131, 185, 0.05);
+    color: rgb(191, 131, 185);
+        }
 }
 #rsrProjectUpdates {
     background: rgb(242, 242, 242);
