@@ -30,7 +30,7 @@
       <li><a href="#rsrDescr">Description</a></li>
       <li class="hidden"><a href="#rsrInAction">See it in action</a></li>
       <li><a href="#rsrInFive">RSR in three points</a></li>
-      <li><a href="#rsrRealWorld">Real world use</a></li>
+      <li><a href="#rsrRealWorld">Who's using RSR?</a></li>
       <li><a href="#rsrTech">Technical specifications</a></li>
       <li><a href="#download">Downloads</a></li>
     </ul>
