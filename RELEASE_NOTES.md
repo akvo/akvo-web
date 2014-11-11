@@ -9,7 +9,7 @@ Tuesday 11 October 2014, @lynngre
 ## New & noteworthy
 
 
-Akvo Sites now has it’s own product page!  Follow the link to find out how Akvo can help you bring your story together http://www.akvo.org/products/akvosites/ 
+Akvo Sites now has it’s own product page!  Follow the link to find out how Akvo can help you bring your story together http://www.akvo.org/products/akvo-sites/ 
 
 Our Akvo RSR and Akvo FLOW product pages now link through to proof that we dogfood!  By visiting the ‘Who is using’ area you can click through to Akvo’s programmes.
 
