@@ -559,6 +559,7 @@ mark {
 .nonVisible {
     visibility: visible;
 }
+
 small {
     display: block;
     font-size: 0.8em;
@@ -630,6 +631,10 @@ div.centerED > p,
     background: rgb(248, 248, 248);
     min-height: 210px;
     text-shadow: 1px 1px 0em rgb(255, 255, 255);
+}
+.marginVertical {
+    margin-top:2em !important;
+
 }
 /*==========================================================================
 								   Forms
@@ -3711,6 +3716,11 @@ section.inFivePoints li h3 {
     height: 55px;
     background: url("../images/rsrUp60px.png") center center no-repeat;
 }
+.akvoSitesProdPag hgroup h1 {
+    height:55px;
+    background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
+    background-size:auto 50px;
+}
 .flowProdPag hgroup h1,
 .flowMonProdPag hgroup h1 {
     background: url("../images/flow60px.png") center center no-repeat;
@@ -3814,8 +3824,6 @@ section.flowMonDescr {
         }
     }
 }
-
-
 /*-----------------------------------
 			Contact Info Page
 ------------------------------------*/
@@ -4550,6 +4558,12 @@ h1 {
 .dashData.wikiData li {
     background: rgba(191, 131, 185, 0.05);
     color: rgb(191, 131, 185);
+    span {
+    color: rgb(191, 131, 185);
+        a {
+        color: rgb(191, 131, 185);
+        }
+    }
 }
 #rsrProjectUpdates {
     background: rgb(242, 242, 242);
@@ -4850,6 +4864,9 @@ h1 {
 #rsrNetworkMap > h2 {
     text-align: center;
 }
+#rsrNetworkMap .wrapper img {
+  max-width:none;
+}
 #rsrNetworkMap iframe {}
 /***********************************
 						Price table
@@ -4923,4 +4940,9 @@ div[id^="inline-"] {
     margin-left: 2em;
     line-height: 1.6em;
     list-style: disc;
+}
+
+.twoPagerContainer {
+    width:500px;
+
 }

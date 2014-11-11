@@ -9,7 +9,7 @@
 
 <div id="content" class="floats-in productPage withSubMenu rsrUpProdPag">
   <hgroup>
-    <h1 class="rsrUpLogo"> Akov RSR Up </h1>
+    <h1 class="rsrUpLogo"> Akvo RSR Up </h1>
     <h2><?php the_field('subtitle'); ?></h2>
   </hgroup>
   <section class="figure"> <img src="<?php the_field('hero_image'); ?>" title="rsrImg"/> </section>

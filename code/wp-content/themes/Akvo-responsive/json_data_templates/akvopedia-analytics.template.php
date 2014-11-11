@@ -20,10 +20,10 @@
   </li>
   <li>
     <h4>Page Views:</h4>
-    <span id=""><?= round((3201618 + $aData['nb_pageviews'])/1000)/1000 ?><span class="unit">million</span></span> </li>
+    <span id=""><?= round((2792519 + $aData['nb_pageviews'])/1000)/1000 ?><span class="unit">million</span></span> </li>
   <li>
     <h4>Visits:</h4>
-    <span id="number_of_visits"><?= $aData['nb_visits'] + 972014 ?></span> </li>
+    <span id="number_of_visits"><?= $aData['nb_visits'] + 737347 ?></span> </li>
   <li>
     <h4>More Stats soon</h4>
   </li>
