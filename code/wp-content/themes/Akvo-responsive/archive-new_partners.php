@@ -1,15 +1,15 @@
 <?php
-	/*
-		Template Name: All Partners
-	*/
+  /*
+    Template Name: All Partners
+  */
 get_header(); ?>
-
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
   <h1 class="backLined">Our partners</h1>
-  <div class="wrapper">
-    <p class="centerED fullWidthParag">Akvo works with more than a thousand organisations around the world to help them report, monitor, evaluate and share their work online. </p>
-    <p class="centerED fullWidthParag">Following are our core partners with whom we work closely and some of the <a href="http://programmes.akvoapp.org" title="Akvo programmes overview">main programmes</a> we support. </p>
+  <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+  <div class="fullWidthParag wrapper centerED">
+    <?php the_content(); ?>
   </div>
+  <?php endwhile; // end of the loop. ?>
   <nav class="anchorNav wrapper">
     <h5>menu</h5>
     <div class="mShownCollapse"><a></a></div>
@@ -25,11 +25,11 @@ get_header(); ?>
   <section class="wrapper">
     <?php query_posts(array('post_type'=>'new_partners')); ?>
     <?php $mypost = array( 'post_type' => 'new_partners' );
-	$loop = new WP_Query( $mypost ); ?>
+    $loop = new WP_Query( $mypost ); ?>
     <!-- Cycle through all posts -->
     <ul class="staff floats-in">
       <?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>> 
+      <li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <!-- Display featured image in right-aligned floating div -->
         <div class="imgWrapper">
           <?php the_post_thumbnail('thumbnail'); ?>
@@ -43,7 +43,7 @@ get_header(); ?>
         <div class="staffBiog">
           <?php the_content(); ?>
         </div>
-        <small>Click for more details.</small> </li>
+      <small>Click for more details.</small> </li>
       <?php endwhile; ?>
     </ul>
     <div id="govGroup">
@@ -93,7 +93,7 @@ get_header(); ?>
           <h1 class="staffName"></h1>
           <p class="staffTitle"></p>
           <p class="staffBio"><br/>
-            <br/>
+          <br/>
           </p>
         </div>
       </div>
