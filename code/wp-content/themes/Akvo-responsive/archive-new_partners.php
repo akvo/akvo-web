@@ -5,12 +5,11 @@
 get_header(); ?>
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
   <h1 class="backLined">Our partners</h1>
-  <div class="wrapper">
-    <p class="centerED fullWidthParag">Akvo works with hundreds of organisations around the world to help them report, monitor, evaluate and share their work online.</p>
-    <p class="centerED fullWidthParag">Following are our core partners with whom we work closely and some of the main programmes we support.</p>
-    <p class="centerED fullWidthParag">For a full list of the programmes we're involved in, <a href="http://programmes.akvoapp.org/en/">click here</a>.</p>
-    
+  <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+  <div class="fullWidthParag wrapper">
+    <?php the_content(); ?>
   </div>
+  <?php endwhile; // end of the loop. ?>
   <nav class="anchorNav wrapper">
     <h5>menu</h5>
     <div class="mShownCollapse"><a></a></div>
