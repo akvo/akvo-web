@@ -6,7 +6,7 @@ get_header(); ?>
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
   <h1 class="backLined">Our partners</h1>
   <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-  <div class="fullWidthParag wrapper">
+  <div class="fullWidthParag wrapper centerED">
     <?php the_content(); ?>
   </div>
   <?php endwhile; // end of the loop. ?>
