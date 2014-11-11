@@ -164,6 +164,7 @@
     <section class="twoPager">
       <h1 class="" id="download">Downloads</h1>
       <div class="twoPagerContainer centerED">
+      <h2><?php the_field('two_pager_subtitle'); ?></h2>
         <ul class="wrapper twoColumns floats-in centerED">
           <li><?php the_field('region_title_left'); ?></li>
           <li><?php the_field('region_title_right'); ?></li>
