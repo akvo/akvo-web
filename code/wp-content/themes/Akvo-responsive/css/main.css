@@ -5148,28 +5148,27 @@ h1.akvopediaHelp {
   color: #bf83b9; }
   /* line 4561, main.scss */
   .dashData.wikiData li span {
-    background: rgba(191, 131, 185, 0.05);
     color: #bf83b9; }
-    /* line 4564, main.scss */
+    /* line 4563, main.scss */
     .dashData.wikiData li span a {
       color: #bf83b9; }
 
-/* line 4569, main.scss */
+/* line 4568, main.scss */
 #rsrProjectUpdates {
   background: #f2f2f2;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4575, main.scss */
+/* line 4574, main.scss */
 #rsrProjectUpdates > h2 {
   text-align: center; }
 
-/* line 4578, main.scss */
+/* line 4577, main.scss */
 #rsrProjectUpdates > a.moreLink {
   margin: 0em auto 2em; }
 
-/* line 4581, main.scss */
+/* line 4580, main.scss */
 .rsrUpdate {
   -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
@@ -5184,12 +5183,12 @@ h1.akvopediaHelp {
   text-align: left;
   transition: all 0.4s ease-in;
   width: 98%; }
-  /* line 4592, main.scss */
+  /* line 4591, main.scss */
   .rsrUpdate:hover {
     background: rgba(192, 192, 196, 0.3);
     pointer: cursor; }
   @media screen and (min-width: 960px) {
-    /* line 4581, main.scss */
+    /* line 4580, main.scss */
     .rsrUpdate {
       -moz-border-radius: 0.15em;
       -o-border-radius: 0.15em;
@@ -5201,18 +5200,18 @@ h1.akvopediaHelp {
       min-height: 315px;
       padding: 0em 0.5%;
       width: 31.8%; }
-      /* line 4604, main.scss */
+      /* line 4603, main.scss */
       .rsrUpdate:last-child {
         margin: 0em; } }
 
-/* line 4609, main.scss */
+/* line 4608, main.scss */
 .rsrUpdate ul li.upMore {
   float: right;
   height: 120px;
   margin-top: -10px;
   width: 120px; }
   @media screen and (min-width: 960px) {
-    /* line 4609, main.scss */
+    /* line 4608, main.scss */
     .rsrUpdate ul li.upMore {
       display: block;
       float: inherit;
@@ -5220,7 +5219,7 @@ h1.akvopediaHelp {
       margin-bottom: 5px;
       width: 100%; } }
 
-/* line 4624, main.scss */
+/* line 4623, main.scss */
 .rsrUpdate ul li.upMore a {
   background-size: 72%;
   background: url("../images/readMoreBig.svg") center center no-repeat;
@@ -5232,80 +5231,80 @@ h1.akvopediaHelp {
   transition: all 0.4s ease-in;
   width: 112px; }
   @media screen and (min-width: 960px) {
-    /* line 4624, main.scss */
+    /* line 4623, main.scss */
     .rsrUpdate ul li.upMore a {
       background: none;
       display: inline-block;
       width: 100%;
       margin: 14px auto 0;
       height: 30px; } }
-/* line 4642, main.scss */
+/* line 4641, main.scss */
 .rsrUpdate:hover ul li.upMore a {
   opacity: 1; }
-/* line 4645, main.scss */
+/* line 4644, main.scss */
 .rsrUpdate ul li.upMore span {
   display: block;
   font-size: 0.8em;
   text-align: center;
   transition: color 0.4s ease-in; }
   @media screen and (max-width: 960px) {
-    /* line 4645, main.scss */
+    /* line 4644, main.scss */
     .rsrUpdate ul li.upMore span {
       text-align: center; } }
-/* line 4654, main.scss */
+/* line 4653, main.scss */
 .rsrUpdate:hover ul li.upMore span {
   color: rgba(226, 124, 0, 0.8); }
 
-/* line 4659, main.scss */
+/* line 4658, main.scss */
 .rsrUpdate ul {
   margin-top: 10px;
   padding: 0em;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4659, main.scss */
+    /* line 4658, main.scss */
     .rsrUpdate ul {
       margin-top: 15px; } }
-  /* line 4666, main.scss */
+  /* line 4665, main.scss */
   .rsrUpdate ul li {
     float: left;
     margin: 0em;
     padding: 0em; }
-  /* line 4671, main.scss */
+  /* line 4670, main.scss */
   .rsrUpdate ul li.upImag {
     margin-left: 0.5em;
     width: calc(150px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4671, main.scss */
+      /* line 4670, main.scss */
       .rsrUpdate ul li.upImag {
         width: 50%; } }
-  /* line 4678, main.scss */
+  /* line 4677, main.scss */
   .rsrUpdate ul li.upInfo {
     display: table-cell;
     width: 30%; }
     @media screen and (min-width: 960px) {
-      /* line 4678, main.scss */
+      /* line 4677, main.scss */
       .rsrUpdate ul li.upInfo {
         width: calc(50% - 0.5em); } }
-  /* line 4685, main.scss */
+  /* line 4684, main.scss */
   .rsrUpdate ul li.upTxt {
     max-height: 100px;
     overflow: hidden;
     position: relative;
     width: calc(100% - 30% - 150px - 120px - 0.5em); }
     @media screen and (min-width: 960px) {
-      /* line 4685, main.scss */
+      /* line 4684, main.scss */
       .rsrUpdate ul li.upTxt {
         display: block;
         margin: 0.2em auto;
         min-height: 100px;
         width: 100%; } }
 
-/* line 4699, main.scss */
+/* line 4698, main.scss */
 .rsrUpdate h2 {
   display: inline;
   font-size: 1.2em;
   text-align: left; }
-  /* line 4703, main.scss */
+  /* line 4702, main.scss */
   .rsrUpdate h2 a {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -5315,48 +5314,48 @@ h1.akvopediaHelp {
     width: calc(100%- 0.5em); }
 
 @media screen and (max-width: 498px) {
-  /* line 4711, main.scss */
+  /* line 4710, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4714, main.scss */
+  /* line 4713, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px - 150px); } }
 @media screen and (max-width: 395px) {
-  /* line 4719, main.scss */
+  /* line 4718, main.scss */
   .rsrUpdate ul li.upTxt {
     display: none; }
 
-  /* line 4722, main.scss */
+  /* line 4721, main.scss */
   .rsrUpdate ul li.upImag {
     display: none; }
 
-  /* line 4725, main.scss */
+  /* line 4724, main.scss */
   .rsrUpdate ul li.upInfo {
     width: calc(100% - 120px); } }
-/* line 4729, main.scss */
+/* line 4728, main.scss */
 .rsrUpdate ul li.upInfo .authorTime {
   margin-left: 1.75em;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
   @media screen and (min-width: 960px) {
-    /* line 4729, main.scss */
+    /* line 4728, main.scss */
     .rsrUpdate ul li.upInfo .authorTime {
       margin-left: 0.25em; } }
 
-/* line 4736, main.scss */
+/* line 4735, main.scss */
 .authorTime em {
   display: inline;
   float: left;
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4736, main.scss */
+    /* line 4735, main.scss */
     .authorTime em {
       display: none; } }
 
-/* line 4745, main.scss */
+/* line 4744, main.scss */
 .authorTime time {
   color: #747474;
   display: inline;
@@ -5364,13 +5363,13 @@ h1.akvopediaHelp {
   margin: 0em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4745, main.scss */
+    /* line 4744, main.scss */
     .authorTime time {
       display: block;
       margin: 0em 0em 0em 0.25em;
       width: calc(100% - 0.25em); } }
 
-/* line 4757, main.scss */
+/* line 4756, main.scss */
 .authorTime span.userName {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5381,12 +5380,12 @@ h1.akvopediaHelp {
   margin: 0em 0em 0em 0.25em;
   padding: 0em; }
   @media screen and (min-width: 960px) {
-    /* line 4757, main.scss */
+    /* line 4756, main.scss */
     .authorTime span.userName {
       display: inline;
       margin: 0em 0em 3px 0.25em; } }
 
-/* line 4769, main.scss */
+/* line 4768, main.scss */
 .orgAndPlace .org {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5400,19 +5399,19 @@ h1.akvopediaHelp {
   font-size: 0.8em;
   margin: 0.75em 0em 0.75em 1.75em;
   padding: 0.15em 1em 0.35em; }
-  /* line 4777, main.scss */
+  /* line 4776, main.scss */
   .orgAndPlace .org a {
     color: white; }
-    /* line 4779, main.scss */
+    /* line 4778, main.scss */
     .orgAndPlace .org a:hover {
       color: #de8929; }
   @media screen and (min-width: 960px) {
-    /* line 4769, main.scss */
+    /* line 4768, main.scss */
     .orgAndPlace .org {
       display: inline-block;
       margin: 0em 0em 0em 0.5em; } }
 
-/* line 4788, main.scss */
+/* line 4787, main.scss */
 .orgAndPlace .place {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -5424,28 +5423,28 @@ h1.akvopediaHelp {
   padding: 0.25em 0em 0.25em 14px;
   width: 100%; }
   @media screen and (min-width: 960px) {
-    /* line 4788, main.scss */
+    /* line 4787, main.scss */
     .orgAndPlace .place {
       display: block;
       margin: 0em 0em 0em 0.35em;
       width: 80%; } }
 
 @media only screen and (max-width: 768px) {
-  /* line 4804, main.scss */
+  /* line 4803, main.scss */
   .authorTime span.userName {
     margin: 0em; }
 
-  /* line 4807, main.scss */
+  /* line 4806, main.scss */
   .orgAndPlace .org {
     margin: 0.25em 0em 0em 1.75em; } }
-/* line 4811, main.scss */
+/* line 4810, main.scss */
 #rsrNetworkMap {
   background: #fff8f5;
   overflow: auto;
   padding: 2em 0em;
   position: relative; }
 
-/* line 4817, main.scss */
+/* line 4816, main.scss */
 .rsrUpdate > span {
   -moz-border-radius: 0em 0em 0.5em;
   -o-border-radius: 0em 0em 0.5em;
@@ -5459,7 +5458,7 @@ h1.akvopediaHelp {
   padding: 0.15em 0.25em;
   top: 0px; }
 
-/* line 4827, main.scss */
+/* line 4826, main.scss */
 .rsrUpdate ul li.upTxt p {
   color: #202024;
   margin: 0em;
@@ -5471,18 +5470,18 @@ h1.akvopediaHelp {
   -webkit-transition: all 0.4s ease-in;
   transition: all 0.4s ease-in;
   width: 96%; }
-  /* line 4835, main.scss */
+  /* line 4834, main.scss */
   .rsrUpdate ul li.upTxt p:hover ul li.upTxt p {
     color: #202024; }
   @media screen and (min-width: 960px) {
-    /* line 4827, main.scss */
+    /* line 4826, main.scss */
     .rsrUpdate ul li.upTxt p {
       color: #202024;
       font-size: 0.9em;
       padding: 0.5em 2% 0em 2%;
       text-shadow: none; } }
 
-/* line 4845, main.scss */
+/* line 4844, main.scss */
 .rsrUpdate .imgWrap {
   background: #c4c4c4;
   border: 2px solid #e8e8e8;
@@ -5493,31 +5492,31 @@ h1.akvopediaHelp {
   position: relative; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4856, main.scss */
+  /* line 4855, main.scss */
   .rsrUpdate .imgWrap {
     padding: 0em; } }
-/* line 4860, main.scss */
+/* line 4859, main.scss */
 .rsrUpdate .imgWrap img {
   margin: 0em auto;
   max-with: 100%;
   position: relative; }
 
-/* line 4865, main.scss */
+/* line 4864, main.scss */
 #rsrNetworkMap > h2 {
   text-align: center; }
 
-/* line 4868, main.scss */
+/* line 4867, main.scss */
 #rsrNetworkMap .wrapper img {
   max-width: none; }
 
 /***********************************
 						Price table
 ********************************************/
-/* line 4875, main.scss */
+/* line 4874, main.scss */
 .pricingList {
   margin: 3em auto; }
 
-/* line 4878, main.scss */
+/* line 4877, main.scss */
 .pricingList h5 {
   background: #202024;
   color: white;
@@ -5526,29 +5525,29 @@ h1.akvopediaHelp {
   text-overflow: ellipsis;
   white-space: nowrap; }
 
-/* line 4886, main.scss */
+/* line 4885, main.scss */
 .pricingList img {
   display: table;
   margin: 1em auto; }
 
-/* line 4890, main.scss */
+/* line 4889, main.scss */
 .pricingList p {
   display: block;
   margin: 1em auto;
   padding: 25px; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4897, main.scss */
+  /* line 4896, main.scss */
   .pricingList img {
     float: left;
     margin: 0.5em 1em;
     max-width: 30%; }
 
-  /* line 4902, main.scss */
+  /* line 4901, main.scss */
   .pricingList p {
     display: block;
     margin: 1em auto; } }
-/* line 4907, main.scss */
+/* line 4906, main.scss */
 .pricingList.fourColumns li {
   border-radius: 0.25em;
   float: left;
@@ -5558,35 +5557,35 @@ h1.akvopediaHelp {
   position: relative;
   width: 25%; }
 
-/* line 4916, main.scss */
+/* line 4915, main.scss */
 .pricingList.fourColumns li:nth-child(2n) {
   background: none repeat scroll 0em 0em #eeeeee; }
 
 @media only screen and (max-width: 768px) {
-  /* line 4921, main.scss */
+  /* line 4920, main.scss */
   .pricingList.fourColumns > li {
     float: none;
     margin: 30px auto;
     padding: 2%;
     width: 96%; }
 
-  /* line 4927, main.scss */
+  /* line 4926, main.scss */
   .pricingList.fourColumns li:nth-child(2n) {
     background: none; } }
-/* line 4931, main.scss */
+/* line 4930, main.scss */
 div[id^="inline-"] {
   display: none; }
 
 /*-----------------------------------
 				Work with us
 ------------------------------------*/
-/* line 4940, main.scss */
+/* line 4939, main.scss */
 .working-at-akvo ul {
   margin-left: 2em;
   line-height: 1.6em;
   list-style: disc; }
 
-/* line 4946, main.scss */
+/* line 4945, main.scss */
 .twoPagerContainer {
   width: 500px; }
 
