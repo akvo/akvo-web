@@ -5,14 +5,10 @@ jQuery(document).ready(function($) {
         var instance = $(this).data('input');
         
         uploadID = $('input#'+instance);
-        console.log(instance);
-        console.log(uploadID);
         
         window.send_to_editor = function(html) {
             var imgurl = jQuery('img',html).attr('src');
-            console.log(imgurl);
             var inputText = uploadID;
-            console.log(inputText);
             if(inputText != undefined && inputText != '')
             {
                 
