@@ -50,7 +50,7 @@ class AkvoHomepageWidget extends WP_Widget {
     <!--      <hr class="delicateSmall"> -->      
           <div>
             <figure>
-              <div> <a href="<?php echo $instance['link'];?>" style="background-image: url(<?php echo $instance['background_image'];?>)" alt="<?php echo $instance['title'];?>"></a></div>
+                <div> <a href="<?php echo $instance['link'];?>" style="background-image: url(<?php echo get_template_directory_uri().'/inc/imgcompress/thumb.php/?zc=1&w=261&h=150&src='.$instance['background_image'];?>)" alt="<?php echo $instance['title'];?>"></a></div>
               <figcaption><a href="<?php echo $instance['link'];?>"><?php echo $instance['link_title'];?>  &raquo;</a></figcaption>
             </figure>
           </div>
