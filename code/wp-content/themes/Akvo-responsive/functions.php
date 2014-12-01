@@ -34,6 +34,15 @@ if (function_exists('register_sidebar')) {
         'before_title' => '<h3 class="wtitle">',
         'after_title' => '</h3>'
     ));
+    register_sidebar(array(
+        'name' => 'Homepage box Sidebar',
+        'id' => 'sidebar-homepagebox-1',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="wtitle">',
+        'after_title' => '</h3>'
+    ));
+    
 }
 function new_excerpt_more($more)
 {

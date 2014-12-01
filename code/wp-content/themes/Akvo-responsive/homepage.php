@@ -115,30 +115,16 @@
       </div>
       
     </div>
+      <?php if ( is_active_sidebar( 'sidebar-homepagebox-1' ) ) : ?>
+                <?php dynamic_sidebar( 'sidebar-homepagebox-1' ); ?>
+        <?php endif; ?>
+      
+      
     <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-    <div class="videoIcon">
-      <h3><a href="http://www.youtube.com/user/Akvofoundation">Akvo.tv</a></h3>
-<!--      <hr class="delicateSmall"> -->      
-      <div>
-        <figure>
-          <div> <a href="http://akvo.tv" style="background-image: url(<?php the_field('akvo_tv'); ?>)" alt="akvo.tv on youtube"></a></div>
-          <figcaption><a href="http://akvo.tv">Go to akvo.tv  &raquo;</a></figcaption>
-        </figure>
-      </div>
-    </div>
-    <div class="eventIcon">
-      <h3><a href="<?php the_field('letter_link'); ?>">Latest newsletter</a></h3>
-<!--      <hr class="delicateSmall"> -->      
-      <div>
-        <figure>
-          <div> <a href="<?php the_field('letter_link'); ?>" style="background-image: url(<?php the_field('letter_img'); ?>)"></a></div>
-          <figcaption><a href="<?php the_field('letter_link'); ?>">See the newsletter  &raquo;</a></figcaption>
-        </figure>
-      </div>
-    </div>
+    
 
  <?php endwhile; // end of the loop. ?>
-
+      
 </section></div></div>
 <!-- end content -->
 
