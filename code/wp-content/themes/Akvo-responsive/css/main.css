@@ -4722,23 +4722,5 @@ div[id^="inline-"] {
 /*-----------------------------------
 				Work with us
 ------------------------------------*/
-.working-at-akvo ul.jobList {
-  list-style: none; }
-  .working-at-akvo ul.jobList ul {
-    margin-left: 2em;
-    line-height: 1.6em;
-    list-style: disc; }
-.working-at-akvo footer ul {
-  list-style: none;
-  margin-left: 0; }
-  .working-at-akvo footer ul li {
-    list-style: none;
-    margin-left: 0; }
-
-.working-at-akvo ul {
-  margin-left: 2em;
-  line-height: 1.6em;
-  list-style: disc; }
-
 .twoPagerContainer {
   width: 500px; }
