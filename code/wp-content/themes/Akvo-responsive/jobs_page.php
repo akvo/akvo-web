@@ -8,6 +8,13 @@ Template Name: jobs-page
 <!-- #main -->
 <div id="content" class="floats-in">
   <!-- /#main -->
+
+    <header>
+      <h1 class="backLined">
+        <?php the_title(); ?>
+      </h1>
+    </header>
+
   <section class="figure">
     <img src="<?php the_field('jobs_img_url'); ?>" class="alignnone size-full" />
   </section>
