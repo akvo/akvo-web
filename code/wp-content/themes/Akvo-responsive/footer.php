@@ -43,6 +43,8 @@
 </div>
 <!-- end mainbody -->
 <!-- Piwik -->
+
+
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -60,4 +62,16 @@
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
 </script>
-<!-- End Piwik Code --></body></html>
+
+
+<!-- End Piwik Code -->
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='/js/jquery-1.8.3.min.js'>\x3C/script>")</script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"></script>
+<script>window.jQuery || document.write("<script src='/js/jquery-ui-1.8.24.custom.min'>\x3C/script>")</script>
+<script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script>
+</body></html>
