@@ -3524,7 +3524,7 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .akvoopenaid .figure {
     background: rgb(242, 242, 246);
 }
-.working-at-akvo .figure {}
+
 .figure img {
     display: block;
     margin: 0em auto;
@@ -4936,6 +4936,24 @@ div[id^="inline-"] {
 /*-----------------------------------
 				Work with us
 ------------------------------------*/
+.working-at-akvo {
+    ul.jobList {
+            list-style: none;
+        ul {
+            margin-left: 2em;
+            line-height: 1.6em;
+            list-style: disc;
+        }
+    }
+    footer ul {
+       list-style:none; 
+       margin-left:0; 
+       li {
+        list-style:none; 
+        margin-left:0;
+        }
+    }
+}
 .working-at-akvo ul {
     margin-left: 2em;
     line-height: 1.6em;
