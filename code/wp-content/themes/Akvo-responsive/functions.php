@@ -207,7 +207,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
     <ul class="floats-in">
       <li class="upImag">
         <div class="imgWrap">
-            <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= get_template_directory_uri().'/inc/imgcompress/thumb.php?zc=1&w=186&h=140&src='.$rsr_domain ?><?= $imgSrc ?>"/></a>
+            <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="/wp-content/imgcompress/thumb.php?zc=1&w=186&h=140&src=<?= $rsr_domain.$imgSrc ?>"/></a>
         </div>
       </li>
       <li class="upInfo">
