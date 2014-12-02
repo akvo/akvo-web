@@ -1,0 +1,7 @@
+[01-Dec-2014 15:33:40 UTC] TimThumb Debug line 1149 [0.000044 : 0.000000]: Starting new request from 127.0.0.1 to /wp-content/themes/Akvo-responsive/inc/imgcompress/thumb.php/?zc=1&w=261&h=150&src=http://akvodev.local/wp-content/uploads/2014/12/adrianandjoyce_akvotw2014_850-359x338.jpg
+[01-Dec-2014 15:33:40 UTC] TimThumb Debug line 1149 [0.015989 : 0.015947]: File tracking last clean doesn't exist. Creating ./cache/timthumb_cacheLastCleanTime.touch
+[01-Dec-2014 15:33:40 UTC] TimThumb Debug line 1149 [0.060117 : 0.044134]: Local image path is /Users/eveline/Sites/akvo-web/code/wp-content/uploads/2014/12/adrianandjoyce_akvotw2014_850-359x338.jpg
+[01-Dec-2014 15:36:28 UTC] TimThumb Debug line 1149 [0.000058 : 0.000000]: Starting new request from 127.0.0.1 to /wp-content/themes/Akvo-responsive/inc/imgcompress/thumb.php/?zc=1&w=261&h=150&src=http://akvodev.local/wp-content/uploads/2014/12/adrianandjoyce_akvotw2014_8501.jpg
+[01-Dec-2014 15:36:29 UTC] TimThumb Debug line 1149 [0.215964 : 0.215907]: Local image path is /Users/eveline/Sites/akvo-web/code/wp-content/uploads/2014/12/adrianandjoyce_akvotw2014_8501.jpg
+[01-Dec-2014 15:36:35 UTC] TimThumb Debug line 1149 [0.000024 : 0.000000]: Starting new request from 127.0.0.1 to /wp-content/themes/Akvo-responsive/inc/imgcompress/thumb.php/?zc=1&w=261&h=150&src=http://akvodev.local/wp-content/uploads/2014/12/akvoTV1.png
+[01-Dec-2014 15:36:35 UTC] TimThumb Debug line 1149 [0.114816 : 0.114800]: Local image path is /Users/eveline/Sites/akvo-web/code/wp-content/uploads/2014/12/akvoTV1.png
