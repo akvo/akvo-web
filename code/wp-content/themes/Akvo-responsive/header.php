@@ -34,10 +34,8 @@
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quando">
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-1.8.3.min.js'>\x3C/script>")</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-ui-1.8.24.custom.min'>\x3C/script>")</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
