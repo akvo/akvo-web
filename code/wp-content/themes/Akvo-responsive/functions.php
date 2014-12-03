@@ -34,6 +34,15 @@ if (function_exists('register_sidebar')) {
         'before_title' => '<h3 class="wtitle">',
         'after_title' => '</h3>'
     ));
+    register_sidebar(array(
+        'name' => 'Homepage box Sidebar',
+        'id' => 'sidebar-homepagebox-1',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h3 class="wtitle">',
+        'after_title' => '</h3>'
+    ));
+    
 }
 function new_excerpt_more($more)
 {
@@ -198,7 +207,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
     <ul class="floats-in">
       <li class="upImag">
         <div class="imgWrap">
-          <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= $rsr_domain ?><?= $imgSrc ?>"/></a>
+            <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= $rsr_domain.$imgSrc ?>"/></a>
         </div>
       </li>
       <li class="upInfo">

@@ -5579,13 +5579,7 @@ div[id^="inline-"] {
 /*-----------------------------------
 				Work with us
 ------------------------------------*/
-/* line 4939, main.scss */
-.working-at-akvo ul {
-  margin-left: 2em;
-  line-height: 1.6em;
-  list-style: disc; }
-
-/* line 4945, main.scss */
+/* line 4940, main.scss */
 .twoPagerContainer {
   width: 500px; }
 
