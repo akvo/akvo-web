@@ -65,13 +65,34 @@
 
 
 <!-- End Piwik Code -->
-<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-1.8.3.min.js'>\x3C/script>")</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-ui-1.8.24.custom.min'>\x3C/script>")</script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script>
+<script type="text/javascript">
+  $( document ).ready(function() {
+    // footer menu headings
+  
+    $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
+  
+    $("#content").fitVids();
+      function adjustImage() {
+        $(".hero-image").css('margin-top', ($("#actionHeroBox").height() - $(".hero-image").height()) / 2);
+    // Target your .container, .wrapper, .post, etc.
+    $(".post-content").fitVids();
+  }
+$(window).load(function() {
+    adjustImage();
+
+    $(window).resize(function() {
+        adjustImage();
+    });
+});
+
+});
+</script>
 </body></html>
