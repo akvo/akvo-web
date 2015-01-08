@@ -1,5 +1,49 @@
 --------
+Akvo.org ver 1.1.10 Kinetic kiwi
+---
 
+Wednesday 3 December 2014, @lynngre
+
+
+## New & noteworthy
+
+The boxes in the 'Currently happening' area of the homepage, currently displaying Akvo.tv & the Akvo Newsletter, are now widgetized.  This allows swopping out of these boxes to allow a new focus area - such as the upcoming RSR v3 release or the FLOW monitoring feature.
+
+## New features
+
+
+### Homepage 'currently happening' boxes
+
+Two of the four boxes have been updated to allow for swopping out of the current Akvo.tv & Newsletter features.
+
+Github issue: #441 
+
+
+## Bug fixes & changes
+
+
+### Working at Akvo
+
+This page has been made customisable for the Communications team.
+
+http://akvo.org/about-us/working-at-akvo/
+
+
+Github issue:  #463 & #462  
+
+###  Smaller improvements
+
+Images could not be loaded into the WP media library when over 2MB, although the limit was set to 64MB, this was fixed on the server side.
+
+Github issue:  #461 
+
+RSR Up menu item has been removed & a link to the RSR Up page now resides on the RSR Product page.
+
+http://akvo.org/products/rsr/
+
+#437  
+
+---
 Akvo.org ver 1.1.9 Jumping Jackfruit
 ---
 
