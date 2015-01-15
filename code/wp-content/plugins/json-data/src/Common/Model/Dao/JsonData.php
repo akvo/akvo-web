@@ -201,6 +201,16 @@ class JsonData {
 		return $aIDs;
 	}
     
+    public function fetchAllFeedQueues () {
+		global $wpdb;
+
+		$sQuery = "SELECT jd.feed_slug,jdq.* FROM `" . $this->_sQueueTableName."` AS jdq"
+                . " JOIN `" . $this->_sTableName."` AS jd ON jdq.json_data_id = jd.id";
+        $aResults = $wpdb->get_results($sQuery, ARRAY_A);
+        
+		return $aResults;
+	}
+    
     public function fetchFeedQueue ($iFeedId) {
 		global $wpdb;
 
