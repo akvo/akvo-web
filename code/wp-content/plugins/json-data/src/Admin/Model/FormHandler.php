@@ -111,15 +111,21 @@ class FormHandler {
 			$aPopulateData['hiddenSlug'] = $aDetail['feed_slug'];
 			$aPopulateData['textUrl'] = $aDetail['feed_url'];
 			$aPopulateData['selectUpdateInterval'] = $aDetail['feed_update_interval'];
+            $contents='';
             $filename = JsonData_Cache_Dir . $aDetail['feed_slug'] . '/template.phtml';
-            $handle = fopen($filename, "r");
-            $contents = fread($handle, filesize($filename));
-            fclose($handle);
+            if(file_exists($filename)){
+                $handle = fopen($filename, "r");
+                $contents = fread($handle, filesize($filename));
+                fclose($handle);
+            }
 			$aPopulateData['textTemplateMarkup']= $contents;
+            $contents='';
 			$filename = JsonData_Cache_Dir . $aDetail['feed_slug'] . '/style.css';
-            $handle = fopen($filename, "r");
-            $contents = fread($handle, filesize($filename));
-            fclose($handle);
+            if(file_exists($filename)){
+                $handle = fopen($filename, "r");
+                $contents = fread($handle, filesize($filename));
+                fclose($handle);
+            }
 			$aPopulateData['textTemplateStylesheet'] = $contents;
 
 

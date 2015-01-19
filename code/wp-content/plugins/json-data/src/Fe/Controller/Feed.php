@@ -24,17 +24,19 @@ class Feed {
         $aFeed = $oDaoJsonData->fetchFeedBySlug($sFeedSlug);
         $iFeedId = $aFeed['id'];
         $aDefaultParameters = unserialize($aFeed['feed_parameters']);
-        
-        ksort($aAttributes);
-        ksort($aDefaultParameters);
-        $aNewKeys = array_diff($aAttributes, $aDefaultParameters);
-        $aAllParams = array_merge($aDefaultParameters,$aNewKeys);
-        ksort($aAllParams);
-        $aAttributes = array_combine(array_keys($aAllParams),$aAttributes);
-        
-        ksort($aAttributes);
-        $sSerializedParameters= serialize($aAttributes);
-        
+        $sSerializedParameters = $aFeed['feed_parameters'];
+        if($aAttributes && $aDefaultParameters){
+            ksort($aAttributes);
+            ksort($aDefaultParameters);
+            $aNewKeys = array_diff($aAttributes, $aDefaultParameters);
+            $aAllParams = array_merge($aDefaultParameters,$aNewKeys);
+            ksort($aAllParams);
+
+            $aAttributes = array_combine(array_keys($aAllParams),$aAttributes);
+
+            ksort($aAttributes);
+            $sSerializedParameters= serialize($aAttributes);
+        }
 		$aFeedDetail = $oDaoJsonData->fetchSingleFeedQueueByParams($iFeedId,$sSerializedParameters);
         if(!$aFeedDetail){
             $aInsertData = array();
@@ -58,7 +60,7 @@ class Feed {
             $oDaoJsonData->updateDisplayTime($iFeedQueueId);
             $this->enqueueFrontEndCss($iFeedId, $sFeedSlug);
             $sData = file_get_contents(
-              JsonData_Cache_Dir . DIRECTORY_SEPARATOR . $sFeedSlug . DIRECTORY_SEPARATOR . 'data-'.$iFeedQueueId.'.json'
+              JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR . 'data-'.$iFeedQueueId.'.json'
             );
             $aData = json_decode($sData, true);
             require JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR . 'template.phtml';
