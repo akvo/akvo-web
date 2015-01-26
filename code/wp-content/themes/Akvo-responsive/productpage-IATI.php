@@ -66,7 +66,7 @@
     <p  class="fullWidthParag centerED"><?php the_field('whouse_text'); ?></p>
     <ul class="wrapper twoColumns floats-in">
     <?php while( have_rows('feature_images') ): the_row(); ?>
-      <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title="akvosites"/></a></li>
+      <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title="images"/></a></li>
     <?php endwhile; ?>
     </ul>
   </section>
