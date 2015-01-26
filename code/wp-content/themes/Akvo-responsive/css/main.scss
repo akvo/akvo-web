@@ -3730,10 +3730,12 @@ section.inFivePoints li h3 {
 }
 
 .akvoIatiPag {
-    hgroup h1 {
-        height:55px;
-        background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
-        background-size:auto 50px;
+    hgroup {
+        h1 {
+            height:55px;
+            background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+            background-size:auto 50px;
+        }
     }
     .descrTwoCol {
         img {
@@ -4558,6 +4560,7 @@ h1 {
     margin: 0em auto;
     @include noWrapTxt;
 }
+
 .dashData li h4 {
     color: inherit;
     font-size: 0.8em;
