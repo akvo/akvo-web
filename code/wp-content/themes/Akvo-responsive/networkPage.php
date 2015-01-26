@@ -45,7 +45,7 @@ Template Name: akvoNetwork
                 <?php the_field('flow_devices'); ?>
               </span></li>
               <li><!--<h4>People Helped:</h4><span>2,013,237</span>-->
-              <h4>Organisations using FLOW</h4>
+              <h4>Organisations using FLOW:</h4>
               <span>
               <?php the_field('organisations_using_flow'); ?>
               </span>
@@ -74,7 +74,7 @@ Template Name: akvoNetwork
                 <h4>Total commitments:</h4>
                 <span id="">
                 <?php the_field('openaid_commit'); ?>
-              <span class="unit">billion</span> </span> </li>
+              <span class="unit">bn</span> </span> </li>
               <li>
                 <h4>More Stats soon</h4>
               </li>
