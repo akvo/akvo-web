@@ -31,3 +31,5 @@ code/wp-snapshots
 vagrant/.vagrant
 
 *.orig
+
+*.codekit
