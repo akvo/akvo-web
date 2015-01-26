@@ -95,22 +95,13 @@
     <?php the_field('rsr_support_text'); ?>
     </p>
   </section>
-  <section id="rsrRealWorld" class="wrapper">
-    <h1 class="">Who is using Akvo RSR?</h1>
-    <p class="fullWidthParag centerED">
-    <?php the_field('rsr_real_world_text'); ?>
-    </p>
-    <a href="http://akvorsr.akvoapp.org/">
-      <img src="<?php the_field('rsr_who_is_img'); ?>" />
-    </a>
-  </section>
 
   <section class="whoUseIt marginVertical" style="background:rgb(248,248,248);">
     <h2><?php the_field('whouse_title'); ?></h2>
     <p  class="fullWidthParag centerED"><?php the_field('whouse_text'); ?></p>
     <ul class="wrapper twoColumns floats-in">
     <?php while( have_rows('feature_images') ): the_row(); ?>
-      <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title=""/></a></li>
+      <li><p class="centerED"><?php the_sub_field('image_text'); ?></p><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title=""/></a></li>
     <?php endwhile; ?>
     </ul>
   </section>
