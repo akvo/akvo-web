@@ -1,6 +1,6 @@
 <?php
 /*
-  Template Name: product-flow
+Template Name: product-flow
 */
 ?>
 <?php get_header(); ?>
@@ -59,13 +59,13 @@
       <p>Akvo FLOW collects, manages, analyses and displays geographically referenced monitoring and evaluation data by using:</p>
       <ol class="wrapper">
         <li>
-            <p>•  Internet-based management tools: design surveys and manage how they are distributed to smart phones</p>
+          <p>•  Internet-based management tools: design surveys and manage how they are distributed to smart phones</p>
         </li>
         <li>
-            <p>•  FLOW app: staff in the field can conduct surveys using the FLOW field survey app on Android smart phones and send the data to databases hosted in the cloud; colleagues can design and send the survey questionnaires to field staff over the air</p>
+          <p>•  FLOW app: staff in the field can conduct surveys using the FLOW field survey app on Android smart phones and send the data to databases hosted in the cloud; colleagues can design and send the survey questionnaires to field staff over the air</p>
         </li>
         <li>
-            <p>•  Maps and dashboards: makes it easy to manage phone users, create surveys and generate online maps to view, explore and share survey data</p>
+          <p>•  Maps and dashboards: makes it easy to manage phone users, create surveys and generate online maps to view, explore and share survey data</p>
         </li>
       </ol>
     </section>
@@ -137,8 +137,18 @@
       <p class="fullWidthParag centerED">
       <?php the_field('flow_real_world_text'); ?>
       </p>
-    <a href="http://akvoflow.akvoapp.org">
-    <img src="<?php the_field('flow_who_is_img'); ?>" /></a> </section>
+      <a href="http://akvoflow.akvoapp.org">
+      <img src="<?php the_field('flow_who_is_img'); ?>" /></a>
+    </section>
+    <section class="whoUseIt marginVertical" style="background:rgb(248,248,248);">
+      <h2><?php the_field('whouse_title'); ?></h2>
+      <p  class="fullWidthParag centerED"><?php the_field('whouse_text'); ?></p>
+      <ul class="wrapper twoColumns floats-in">
+        <?php while( have_rows('feature_images') ): the_row(); ?>
+        <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title=""/></a></li>
+        <?php endwhile; ?>
+      </ul>
+    </section>
     <section id="flowTech" class="wrapper">
       <h1 class="">Technical specifications</h1>
       <ul>
@@ -164,13 +174,13 @@
     <section class="twoPager">
       <h1 class="" id="download">Downloads</h1>
       <div class="twoPagerContainer centerED">
-      <h2><?php the_field('two_pager_subtitle'); ?></h2>
+        <h2><?php the_field('two_pager_subtitle'); ?></h2>
         <ul class="wrapper twoColumns floats-in centerED">
           <li><?php the_field('region_title_left'); ?></li>
           <li><?php the_field('region_title_right'); ?></li>
         </ul>
         <ul class="wrapper twoColumns floats-in centerED">
-         <?php while( have_rows('download_brochures') ): the_row(); ?>
+          <?php while( have_rows('download_brochures') ): the_row(); ?>
           <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title="akvosites"/></a></li>
           <?php endwhile; ?>
         </ul></div>
