@@ -3492,6 +3492,14 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     background: rgb(242, 242, 242);
     padding: 5px 10px;
 }
+.whoUseIt {
+    ul.twoColumns li a {
+      margin: 0 auto;
+      text-align: center;
+      display: table; 
+    }
+}
+
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
     padding: 0;
