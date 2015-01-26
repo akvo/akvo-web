@@ -3605,8 +3605,33 @@ section.inFivePoints li h3 {
 
 .akvoSitesProdPag hgroup h1 {
   height: 55px;
-  background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
+  background: url("../images/akvosites_logo_gold_400x75px.png") center center no-repeat;
   background-size: auto 50px; }
+
+.akvoIatiPag hgroup h1 {
+  height: 55px;
+  background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+  background-size: auto 50px; }
+.akvoIatiPag .descrTwoCol img {
+  max-width: 60%;
+  margin: 0 20%;
+  text-align: center; }
+.akvoIatiPag .whoUseIt {
+  padding: 20px 0; }
+
+.heroFormat, .heroFormatContain {
+  width: 100%;
+  display: inline-block;
+  margin: 0em auto !important;
+  text-align: center;
+  vertical-align: middle;
+  width: 100%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.heroFormatContain {
+  background-size: contain; }
 
 .flowProdPag hgroup h1,
 .flowMonProdPag hgroup h1 {
@@ -4318,31 +4343,40 @@ h1.akvopediaHelp {
 .dashData li p {
   display: table;
   font-size: 0.8em;
-  margin: 0em auto; }
+  margin: 0em auto;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .dashData li h4 {
   color: inherit;
   font-size: 0.8em;
   margin-bottom: inherit;
   margin: 0.5em 0em 1em 0.5em;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .dashData li span {
   font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 2.5em;
   margin: 0.1em 0em 0em 0.25em;
   text-shadow: 0em 0em 3px black;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .dashData li span.unit {
   font-family: "Palatino", "Book Antiqua", Georgia, serif;
-  font-size: 0.9em;
+  font-size: 0.8em;
   font-style: italic;
-  text-transform: lowercase; }
+  text-transform: lowercase;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
-@media only screen and (max-width: 768px) {
-  .dashData li span.unit {
-    display: block; } }
 .dashData li:nth-child(2n+1) {
   margin: 0em 0.75% 0.35em 1.75%; }
 
