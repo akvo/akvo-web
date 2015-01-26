@@ -929,7 +929,6 @@ a.helpIcon:hover {
     width: 73%;
 }
 @include responsive (small-max-screens) {
-
     #main {
         display: block;
         float: none;
@@ -3718,9 +3717,48 @@ section.inFivePoints li h3 {
 }
 .akvoSitesProdPag hgroup h1 {
     height:55px;
-    background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
+    background: url("../images/akvosites_logo_gold_400x75px.png") center center no-repeat;
     background-size:auto 50px;
 }
+
+.akvoIatiPag {
+    hgroup h1 {
+        height:55px;
+        background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+        background-size:auto 50px;
+    }
+    .descrTwoCol {
+        img {
+            max-width: 60%;
+            margin:0 20%;
+            text-align: center;
+        }
+    }
+    .whoUseIt {
+        padding:20px 0;
+    }
+}
+
+
+.heroFormat {
+    width: 100%;
+    display: inline-block;
+    margin: 0em auto !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.heroFormatContain {
+    @extend .heroFormat;
+    background-size: contain;
+}
+
+
+
 .flowProdPag hgroup h1,
 .flowMonProdPag hgroup h1 {
     background: url("../images/flow60px.png") center center no-repeat;
@@ -4510,6 +4548,7 @@ h1 {
     display: table;
     font-size: 0.8em;
     margin: 0em auto;
+    @include noWrapTxt;
 }
 .dashData li h4 {
     color: inherit;
@@ -4517,6 +4556,7 @@ h1 {
     margin-bottom: inherit;
     margin: 0.5em 0em 1em 0.5em;
     text-transform: uppercase;
+    @include noWrapTxt;
 }
 .dashData li span {
     font-family: $titleFont;
@@ -4524,18 +4564,14 @@ h1 {
     margin: 0.1em 0em 0em 0.25em;
     text-shadow: 0em 0em 3px rgb(0, 0, 0);
     text-transform: uppercase;
+    @include noWrapTxt;    
 }
 .dashData li span.unit {
     font-family: $scriptFont;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-style: italic;
     text-transform: lowercase;
-}
-@include responsive (small-max-screens) {
-
-    .dashData li span.unit {
-        display: block;
-    }
+    @include noWrapTxt;    
 }
 .dashData li:nth-child(2n+1) {
     margin: 0em 0.75% 0.35em 1.75%;
