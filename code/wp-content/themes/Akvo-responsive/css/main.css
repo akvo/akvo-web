@@ -2300,6 +2300,30 @@ moreStuffHome figcaption a {
 /*-----------------------------------
 				BLOG
 ------------------------------------*/
+.widget figure div {
+  background: #ececec;
+  -moz-border-radius: 0.35em;
+  -o-border-radius: 0.35em;
+  -webkit-border-radius: 0.35em;
+  border-radius: 0.35em;
+  margin: 0em 5%;
+  max-height: 150px;
+  min-height: 150px;
+  overflow: hidden;
+  padding: 0;
+  position: relative;
+  width: 90%; }
+  .widget figure div a {
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em; }
+.widget figure figcaption {
+  font-size: 110%;
+  margin: 10px auto 5px;
+  width: 85%; }
+  .widget figure figcaption a {
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 1.1em; }
+
 .fluid-width-video-wrapper {
   margin-bottom: 50px !important; }
 
