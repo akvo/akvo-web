@@ -115,16 +115,14 @@ if (!empty($aNameErrors)) {
                     <p><small>Once the URL has been entered, you may define the default values for the GET parameters here.</small></p>
 						
                     <div id="iDivAjaxReturn">
-                        <?php if($aFeedParams){
-                                foreach($aFeedParams AS $sParamName=>$sParamValue){?>
-                                <div class="control-group " id="element-<?php echo $sParamName; ?>">
-                                    <label class="control-label" for="textParam-<?php echo $sParamName; ?>"><?php echo $sParamName; ?></label>
-                                    <div class="controls">
-                                        <input type="text" name="textParam[<?php echo $sParamName; ?>]" id="textParam-<?php echo $sParamName; ?>" value="<?php echo $sParamValue; ?>" class="input-xxlarge paramInput">
-                                    </div>
+                        <?php foreach($aFeedParams AS $sParamName=>$sParamValue){?>
+                            <div class="control-group " id="element-<?php echo $sParamName; ?>">
+                                <label class="control-label" for="textParam-<?php echo $sParamName; ?>"><?php echo $sParamName; ?></label>
+                                <div class="controls">
+                                    <input type="text" name="textParam[<?php echo $sParamName; ?>]" id="textParam-<?php echo $sParamName; ?>" value="<?php echo $sParamValue; ?>" class="input-xxlarge paramInput">
                                 </div>
-                            <?php }
-                        }?>
+                            </div>
+                        <?php } ?>
                     </div>
                     <div id="iDivShortcodeExample">
                         

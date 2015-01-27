@@ -13,7 +13,7 @@ class Feed {
         if(!is_dir(JsonData_Cache_Dir)){
             mkdir(JsonData_Cache_Dir,0775);
         }
-        @chmod(JsonData_Cache_Dir, 0775);
+        chmod(JsonData_Cache_Dir, 0775);
     }
 
     /**
@@ -80,21 +80,34 @@ class Feed {
     }
 
     /**
-     * remove unused shortcode feed queues
+     * remove unused shortcode feeds
      */
     public function cronRemove(){
         $oDaoJsonData = new JsonDataDao();
-        $aFeeds = $oDaoJsonData->fetchAllFeedQueues();
-        $aIdsToBeDeleted = array();
-        $aSlugsToBeDeleted = array();
-        foreach($aFeeds AS $aFeedQueue){
-            if(strtotime($aFeedQueue['last_display_time']) <= strtotime('-1 month')){
-                $aIdsToBeDeleted[]=$aFeedQueue['id'];
-                $aSlugsToBeDeleted[]=$aFeedQueue['feed_slug'];
+        $aFeeds = $oDaoJsonData->fetchAllFeedQueueIDs();
+
+        $query = new \WP_Query(array('post_status'=>'any','posts_per_page'=>-1));
+        $aPosts = $query->get_posts();
+        $pattern = get_shortcode_regex();
+        ///get all used queues
+        $aUsedQueues = array();
+        foreach($aPosts AS $post){
+
+
+            if (   preg_match_all( '/'. $pattern .'/s', $post->post_content, $matches )
+                && array_key_exists( 2, $matches )
+                && in_array( JD\Config::SHORTCODE_JSON_DATA, $matches[2] ) )
+            {
+                foreach($matches[0] AS $sShortcode){
+                    $aParams = shortcode_parse_atts( $sShortcode );
+                    if(array_key_exists('id', $aParams)){
+                        $aUsedQueues[]=$aParams['id'];
+                    }
+                }
             }
         }
-        
-        array_map(array(&$this,'_removeQueueFiles'),$aIdsToBeDeleted,$aSlugsToBeDeleted);
+        $aToBeDeleted = array_diff($aFeeds, $aUsedQueues);
+        array_map(array(&$this,'_removeQueueFiles'),$aToBeDeleted);
     }
 
     public function scheduleCron(){
@@ -153,9 +166,9 @@ class Feed {
         $iQueueId = $aFeedQueue['id'];
         $sQueueDataFilename = $sDirName . DIRECTORY_SEPARATOR . 'data-'.$iQueueId.'.json';
 
-       
+        //$iFeedId = $aFeedQueue['json_data_id'];
         $aQueueParams = unserialize($aFeedQueue['parameters']);
-        $sUrlParams = ($aQueueParams) ? http_build_query($aQueueParams) : '';
+        $sUrlParams = http_build_query($aQueueParams);
 
         $sQueueUrl=$sRootUrl.'?'.$sUrlParams;
 
@@ -172,12 +185,12 @@ class Feed {
     /**
      * remove unused queue
      * @param int $iFeedQueueId
-     * @param strin $sFeedSlug
      */
-    private function _removeQueueFiles($iFeedQueueId,$sFeedSlug){
+    private function _removeQueueFiles($iFeedQueueId){
         $oDaoJsonData = new JsonDataDao();
         $aFeedQueue = $oDaoJsonData->fetchSingleFeedQueue($iFeedQueueId);
-        $sDirName = JsonData_Cache_Dir . $sFeedSlug . DIRECTORY_SEPARATOR;
+        $sDirName = JsonData_Cache_Dir . $aFeedQueue['json_data_id'] . DIRECTORY_SEPARATOR;
+
         unlink($sDirName . 'data-' . $iFeedQueueId . '.json');
         $oDaoJsonData->deleteFeedQueue($iFeedQueueId);
     }
@@ -219,9 +232,7 @@ class Feed {
         if($aDetail){
             $aParams = unserialize($aDetail['feed_parameters']);
             $sParams= '';
-            if($aParams){
-                foreach($aParams AS $k=>$v)$sParams.= ' '.$k.'="'.$v.'"';
-            }
+            foreach($aParams AS $k=>$v)$sParams.= ' '.$k.'="'.$v.'"';
             $sShortcode = '[jsondata_feed slug="'.$slug.'"'.$sParams.']';
             $args=array(
                 'post_type' => 'jdata',
