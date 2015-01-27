@@ -2389,6 +2389,11 @@ moreStuffHome figcaption a {
             a{
                 font-family: $titleFont;
                 font-size: 1.1em;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background-size: cover;
+                background-position: center; 
             }
         }
         figcaption {

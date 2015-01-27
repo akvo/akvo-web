@@ -2315,7 +2315,12 @@ moreStuffHome figcaption a {
   width: 90%; }
   .widget figure div a {
     font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 1.1em; }
+    font-size: 1.1em;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    background-position: center; }
 .widget figure figcaption {
   font-size: 110%;
   margin: 10px auto 5px;
