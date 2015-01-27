@@ -3884,6 +3884,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/imgcompress\/thumb.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/imgcompress\/thumb.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -3892,6 +3901,672 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/acf-date_time_picker.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/acf-date_time_picker.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_0_aaaaaa_40x100.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 180,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_0_aaaaaa_40x100.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_75_ffffff_40x100.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 178,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_75_ffffff_40x100.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_flat_75_ffffff_40x100.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_55_fbf9ee_1x400.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 120,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_55_fbf9ee_1x400.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_65_ffffff_1x400.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 105,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_65_ffffff_1x400.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_65_ffffff_1x400.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_dadada_1x400.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 111,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_dadada_1x400.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_dadada_1x400.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_e6e6e6_1x400.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 110,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_75_e6e6e6_1x400.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_95_fef1ec_1x400.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 119,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_95_fef1ec_1x400.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_glass_95_fef1ec_1x400.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 101,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-bg_highlight-soft_75_cccccc_1x100.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_222222_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4369,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_222222_256x240.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_222222_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_2e83ff_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4369,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_2e83ff_256x240.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_2e83ff_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_454545_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4369,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_454545_256x240.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_454545_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_888888_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4369,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_888888_256x240.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_888888_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_cd0a0a_256x240.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4369,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_cd0a0a_256x240.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/images\/ui-icons_cd0a0a_256x240.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/input.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/input.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/jquery-ui-timepicker-addon.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/jquery-ui-timepicker-addon.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/jquery-ui.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/jquery-ui.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/timepicker.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/css\/timepicker.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v3.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v3.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v4.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v4.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v5.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/date_time_picker-v5.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/input.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/input.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/min\/input-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/jquery-ui-sliderAccess.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/jquery-ui-sliderAccess.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/min\/jquery-ui-sliderAccess-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/jquery-ui-timepicker-addon.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/jquery-ui-timepicker-addon.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/min\/jquery-ui-timepicker-addon-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-af.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-af.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-af-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-bg.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-bg.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-bg-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ca.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ca.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-ca-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-cs.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-cs.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-cs-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-da.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-da.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-da-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-de.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-de.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-de-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-el.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-el.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-el-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-es.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-es.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-es-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-et.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-et.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-et-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-eu.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-eu.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-eu-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-fi.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-fi.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-fi-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-fr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-fr.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-fr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-gl.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-gl.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-gl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-he.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-he.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-he-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-hr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-hr.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-hr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-hu.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-hu.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-hu-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-id.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-id.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-id-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-it.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-it.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-it-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ja.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ja.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-ja-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ko.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ko.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-ko-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-lt.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-lt.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-lt-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-nl.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-nl.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-nl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-no.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-no.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-no-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pl.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pl.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-pl-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pt-BR.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pt-BR.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-pt-BR-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pt.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-pt.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-pt-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ro.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ro.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-ro-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ru.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-ru.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-ru-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-sk.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-sk.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-sk-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-sv.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-sv.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-sv-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-th.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-th.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-th-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-tr.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-tr.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-tr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-uk.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-uk.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-uk-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-vi.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-vi.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-vi-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-zh-CN.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-zh-CN.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-zh-CN-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-zh-TW.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/jquery-ui-timepicker-zh-TW.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/localization\/min\/jquery-ui-timepicker-zh-TW-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/timepicker-localization.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/timepicker-localization.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/min\/timepicker-localization-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/timepicker.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/timepicker.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/acf-field-date-time-picker\/js\/min\/timepicker-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/code\/wp-content\/plugins\/acf-repeater\/acf-repeater-update.php": {
 		"fileType": 8192,
@@ -6199,6 +6874,44 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/AkvoHomepageWidgets.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/AkvoHomepageWidgets.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/HomepageWidget.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/HomepageWidget.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/upload-media.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/upload-media.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/min\/upload-media-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/widget.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/AkvoHomepageWidgets\/classes\/widget.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/plugins\/AkvoPartner\/AkvoPartner.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -6832,28 +7545,6 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/code\/wp-content\/plugins\/duplicator\/assets\/img\/approved.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 10166,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/approved.png",
-		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/approved.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/assets\/img\/books.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 5686,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/books.png",
-		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/books.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/code\/wp-content\/plugins\/duplicator\/assets\/img\/create.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -6905,17 +7596,6 @@
 		"initialSize": 8014,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/paypal.png",
 		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/paypal.png",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/assets\/img\/support.png": {
-		"fileType": 32768,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 7501,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/support.png",
-		"outputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/assets\/img\/support.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -6985,20 +7665,20 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/plugins\/duplicator\/classes\/server.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/classes\/server.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/plugins\/duplicator\/classes\/settings.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/classes\/settings.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/classes\/task.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/classes\/task.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -7093,24 +7773,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/code\/wp-content\/plugins\/duplicator\/installer\/build\/class.config.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/installer\/build\/class.config.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/installer\/build\/class.utils.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/installer\/build\/class.utils.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/code\/wp-content\/plugins\/duplicator\/installer\/build\/classes\/class.config.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -7143,24 +7805,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/installer\/build\/classes\/class.utils.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/installer\/build\/inc.assets.css.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/installer\/build\/inc.assets.css.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/installer\/build\/inc.assets.js.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/installer\/build\/inc.assets.js.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -7246,6 +7890,24 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/plugins\/duplicator\/views\/help\/about.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/help\/about.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/duplicator\/views\/help\/help.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/help\/help.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/plugins\/duplicator\/views\/inc.header.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -7300,20 +7962,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc-a.reqs.php": {
+	"\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc.form.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc-a.reqs.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc-b.form.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc-b.form.php",
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/packages\/new1.inc.form.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -7345,29 +7998,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/code\/wp-content\/plugins\/duplicator\/views\/settings\/diagnostics.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/settings\/diagnostics.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/code\/wp-content\/plugins\/duplicator\/views\/settings\/general.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/settings\/general.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/duplicator\/views\/support.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/support.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -7386,6 +8021,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/tools\/controller.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/duplicator\/views\/tools\/diagnostics.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/duplicator\/views\/tools\/diagnostics.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -10029,38 +10673,11 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/code\/wp-content\/plugins\/json-data\/src\/Admin\/Model\/FormHandler.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Admin\/Model\/FormHandler.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/code\/wp-content\/plugins\/json-data\/src\/Admin\/Model\/Settings.php": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Admin\/Model\/Settings.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/json-data\/src\/Common\/Model\/Dao\/JsonData.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Common\/Model\/Dao\/JsonData.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/json-data\/src\/Common\/Model\/Feed.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Common\/Model\/Feed.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -10097,15 +10714,6 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Fe\/Controller.php",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
-	"\/code\/wp-content\/plugins\/json-data\/src\/Fe\/Controller\/Feed.php": {
-		"fileType": 8192,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/json-data\/src\/Fe\/Controller\/Feed.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -19395,6 +20003,177 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/80403.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/80403.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/80502.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/80502.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/80602.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/80602.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/80800.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/80800.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90001.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90001.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90206.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90206.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90405.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90405.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90601.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90601.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90700.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90700.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90801.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90801.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90821.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90821.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90910.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90910.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90920.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90920.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90940.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90940.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90961.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90961.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90971.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90971.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/90980.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/90980.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/91006.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/91006.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/plugins\/wp-piwik\/update\/91007.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/plugins\/wp-piwik\/update\/91007.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/plugins\/wp-piwik\/update\/index.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -20228,6 +21007,17 @@
 		"initialSize": 108993,
 		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/images\/Akvo_annual_report_2009b.jpg",
 		"outputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/images\/Akvo_annual_report_2009b.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/images\/Akvo_IATI_logo_RGB_300px.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5802,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/images\/Akvo_IATI_logo_RGB_300px.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/images\/Akvo_IATI_logo_RGB_300px.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -23722,6 +24512,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/jobs_page.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/jobs_page.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/themes\/Akvo-responsive\/js\/akvo-jquery.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -23816,6 +24615,28 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/jquery.hoverizr.js",
 		"outputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/jquery.hoverizr-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/akvo-jquery-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/akvo-jquery-min.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/min\/akvo-jquery-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
+		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/common-js-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/common-js-min.js",
+		"outputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/js\/min\/min\/common-js-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 1,
@@ -23976,6 +24797,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/productpage-IATI.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/productpage-IATI.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/code\/wp-content\/themes\/Akvo-responsive\/productpage-openaid.php": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -24073,6 +24903,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/searchform.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-content\/themes\/Akvo-responsive\/sidebar-homewidget.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-content\/themes\/Akvo-responsive\/sidebar-homewidget.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
@@ -77997,6 +78836,468 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px-240x83.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4817,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px-240x83.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px-240x83.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5802,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Akvo_IATI_logo_RGB_300px.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/forum-icon-240x135.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11038,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/forum-icon-240x135.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/forum-icon-240x135.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/forum-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 2770,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/forum-icon.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/forum-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image-1030x675.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 170774,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-1030x675.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-1030x675.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15305,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image-516x338.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 60801,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-516x338.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image-516x338.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.42095e+06,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image1-1200x545.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 161756,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-1200x545.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-1200x545.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image1-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14949,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image1-600x272.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56021,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-600x272.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1-600x272.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/header-image1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1.05731e+06,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/header-image1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-1200x375.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 39200,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-1200x375.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-1200x375.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7695,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-600x187.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14068,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-600x187.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px-600x187.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 80539,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-improves-icons_1600-px.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12379,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-579x338.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 37865,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-579x338.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo-579x338.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-logo.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 56814,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-logo.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-172x675.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36048,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-172x675.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-172x675.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10115,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-86x338.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11229,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-86x338.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1-86x338.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 908465,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-page-wireframev2.1.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-1200x206.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 43980,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-1200x206.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-1200x206.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10662,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-600x103.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 14122,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-600x103.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px-600x103.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 111650,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/IATI-XML-graphic-1600px.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8821,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-579x338.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26354,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-579x338.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR-579x338.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 36840,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/Really-Simple-RSR.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/video-icon-240x135.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18757,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/video-icon-240x135.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/video-icon-240x135.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/video-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3129,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/video-icon.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/video-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/web-icon-240x135.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28120,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/web-icon-240x135.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/web-icon-240x135.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/web-icon.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 16595,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/web-icon.png",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/web-icon.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11523,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 59964,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_cordaid.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7475,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31903,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-forum.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 6281,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26872,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_IATI-standard.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid-240x135.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11799,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid-240x135.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid-240x135.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 79338,
+		"inputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid.jpg",
+		"outputAbbreviatedPath": "\/code\/wp-content\/uploads\/2015\/01\/what-others-say_openaid.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/code\/wp-content\/w3tc-config\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -82651,6 +83952,15 @@
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/code\/wp-signup.php",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/code\/wp-snapshots\/dtoken.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/code\/wp-snapshots\/dtoken.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

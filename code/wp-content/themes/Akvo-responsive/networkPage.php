@@ -45,7 +45,7 @@ Template Name: akvoNetwork
                 <?php the_field('flow_devices'); ?>
               </span></li>
               <li><!--<h4>People Helped:</h4><span>2,013,237</span>-->
-              <h4>Organisations using FLOW</h4>
+              <h4>Organisations using FLOW:</h4>
               <span>
               <?php the_field('organisations_using_flow'); ?>
               </span>
