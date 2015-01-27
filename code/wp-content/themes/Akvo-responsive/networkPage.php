@@ -74,7 +74,7 @@ Template Name: akvoNetwork
                 <h4>Total commitments:</h4>
                 <span id="">
                 <?php the_field('openaid_commit'); ?>
-              <span class="unit">bn</span> </span> </li>
+              <span class="unit">billion</span> </span> </li>
               <li>
                 <h4>More Stats soon</h4>
               </li>
