@@ -2371,6 +2371,39 @@ moreStuffHome figcaption a {
 /*-----------------------------------
 				BLOG
 ------------------------------------*/
+.widget {
+    figure {
+        img {
+
+        }
+        div {
+            background: rgb(236, 236, 236);
+            @include border-radius(0.35em);
+            margin: 0em 5%;
+            max-height: 150px;
+            min-height: 150px;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 90%;
+            a{
+                font-family: $titleFont;
+                font-size: 1.1em;
+            }
+        }
+        figcaption {
+            font-size: 110%;
+            margin: 10px auto 5px;
+            width: 85%;
+            a {
+                font-family: $titleFont;
+                font-size: 1.1em;
+            }
+        }
+    }
+}
+
+
 .fluid-width-video-wrapper {
 	margin-bottom:50px !important;}
 .entry {
