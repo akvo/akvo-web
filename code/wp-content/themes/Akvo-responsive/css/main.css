@@ -1042,7 +1042,8 @@ a.helpIcon:hover {
   width: 44%; }
 
 @media only screen and (max-width: 768px) {
-  .twoColumns > div {
+  .twoColumns > div,
+  .twoColumns > li {
     float: none;
     margin: 0em auto;
     padding: 1%;
@@ -1056,10 +1057,10 @@ a.helpIcon:hover {
   margin: 0em 1% 0em 0em; }
 
 @media only screen and (max-width: 768px) {
-  .twoColumns > div:first-child {
+  .twoColumns > div:first-child, .twoColumns > li:first-child {
     margin: inherit; } }
 @media only screen and (max-width: 768px) {
-  .twoColumns > div:last-child {
+  .twoColumns > div:last-child, .twoColumns > li:last-child {
     margin: inherit; } }
 .twoColumnsSidebar {
   margin: 1px auto 0em auto;
@@ -3426,8 +3427,7 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .whoUseIt ul.twoColumns li a {
   margin: 0 auto;
-  text-align: center;
-  display: table; }
+  text-align: center; }
 
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
@@ -3632,7 +3632,7 @@ section.inFivePoints li h3 {
 
 .akvoSitesProdPag hgroup h1 {
   height: 55px;
-  background: url("../images/akvosites_logo_gold_400x75px.png") center center no-repeat;
+  background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
   background-size: auto 50px; }
 
 .akvoIatiPag hgroup h1 {
