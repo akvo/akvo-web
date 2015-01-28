@@ -3427,8 +3427,7 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .whoUseIt ul.twoColumns li a {
   margin: 0 auto;
-  text-align: center;
-  display: table; }
+  text-align: center; }
 
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
