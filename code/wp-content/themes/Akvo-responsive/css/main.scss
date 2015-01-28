@@ -976,7 +976,7 @@ a.helpIcon:hover {
     position: relative;
 }
 .twoColumns > div,
-.twoColumns > li {
+.twoColumns > li {  
     float: left;
     margin: 0em 0.5%;
     padding: 2%;
@@ -984,8 +984,8 @@ a.helpIcon:hover {
     width: 44%;
 }
 @include responsive (small-max-screens) {
-
-    .twoColumns > div {
+    .twoColumns > div,
+    .twoColumns > li {
         float: none;
         margin: 0em auto;
         padding: 1%;
@@ -1002,13 +1002,13 @@ a.helpIcon:hover {
 }
 @include responsive (small-max-screens) {
 
-    .twoColumns > div:first-child {
+    .twoColumns > div:first-child, .twoColumns > li:first-child {
         margin: inherit;
     }
 }
 @include responsive (small-max-screens) {
 
-    .twoColumns > div:last-child {
+    .twoColumns > div:last-child, .twoColumns > li:last-child {
         margin: inherit;
     }
 }
@@ -3532,7 +3532,6 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     ul.twoColumns li a {
       margin: 0 auto;
       text-align: center;
-      display: table; 
     }
 }
 
@@ -3761,7 +3760,7 @@ section.inFivePoints li h3 {
 }
 .akvoSitesProdPag hgroup h1 {
     height:55px;
-    background: url("../images/akvosites_logo_gold_400x75px.png") center center no-repeat;
+    background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
     background-size:auto 50px;
 }
 
