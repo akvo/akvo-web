@@ -1,18 +1,15 @@
-
-
-
-
-
-
-
-
-
-
-
-
+Tuesday 27 January 2015, @lynngre
 
 --------
-Akvo.org ver 1.1.10 Kinetic kiwi
+Akvo.org ver 1.1.11 Lightning Lemon Hotfix
+---
+
+## Hotfix
+
+Hotfix resolved issues with responsiveness http://akvo.org/products/akvo-sites/ page as well as fixing the anchor text at the top of each product page.
+
+--------
+Akvo.org ver 1.1.11 Lightning Lemon
 ---
 
 Tuesday 27 January 2015, @lynngre
