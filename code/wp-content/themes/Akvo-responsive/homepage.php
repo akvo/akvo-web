@@ -121,10 +121,8 @@
             success: function(data) {
               for (i=0; i<5; i++) {
                 if (data.objects[i].photo === '') {
-                  console.log('no photo, moving on');
                   continue;
                 } else {
-                  console.log('pic!');
                   var title, src, absolute_url;
                   src = data.objects[i].photo;
                   title = data.objects[i].title;

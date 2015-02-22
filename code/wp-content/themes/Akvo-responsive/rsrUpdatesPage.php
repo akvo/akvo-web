@@ -59,21 +59,16 @@
       var populateUpdates = function(data) {
         for (var i=0; i<updateBatchSize*2; i++) {
           if (data.objects[i].photo === '') {
-            console.log('no photo, moving on');
             continue;
           } else {
             update = data.objects[i];
-            console.log('pic! ' + i + ' ' + update.title);
             populateUpdate($("#update_" + (updatesShown + successCount)), update);
             successCount++;
             if (successCount >= updateBatchSize) {
               showUpdates();
-              console.log('i: ' + i);
               offset = offset + i + 1;
-              console.log('offset: ' + offset);
               updatesShown += successCount;
               successCount = 0;
-              console.log("Batch done, updatesShown:" + updatesShown + " offset: " + offset)
               break;
             }
           }
@@ -106,7 +101,6 @@
       };
 
       var cloneUpdateDOM = function(original, index) {
-        console.log('Cloning ' + index);
         original
           .clone()
           .attr("id", "update_" + index)
@@ -138,7 +132,6 @@
       createUpdates();
       var path = '/api/v1/project_update/?depth=1&limit=' + updateBatchSize * 2;
       callAPI(path);
-      console.log('offset; ' + offset);
 
     });
   </script>

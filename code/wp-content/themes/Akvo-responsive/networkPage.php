@@ -293,11 +293,9 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
       var populateUpdates = function (data) {
         for (var i = 0; i < limit; i++) {
           if (data.objects[i].photo === '') {
-            console.log('no photo, moving on');
             continue;
           } else {
             update = data.objects[i];
-            console.log('pic! ' + i + ' ' + update.title);
             populateUpdate($("#update_" + (updatesShown + successCount)), update);
             successCount++;
             if (successCount >= updateBatchSize) {
@@ -305,7 +303,6 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
               offset = offset + i + 1;
               updatesShown += successCount;
               successCount = 0;
-              console.log("Batch done, updatesShown:" + updatesShown + " offset: " + offset)
               break;
             }
           }
@@ -338,7 +335,6 @@ How often is this data refreshed? Whenever the page is loaded" class="tooltips m
       };
 
       var cloneUpdateDOM = function (original, index) {
-        console.log('Cloning ' + index);
         original
           .clone()
           .attr("id", "update_" + index)
