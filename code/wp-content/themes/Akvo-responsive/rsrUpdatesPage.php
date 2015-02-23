@@ -77,14 +77,12 @@
           path = "/more-updates/?limit=" + limit + "&offset=" + offset;
           callAPI(path);
           offset = offset + limit;
-          console.log('offset; ' + offset);
         }
 
         $('#loadMore').click(function() {
           moreUpdates();
         });
 
-        console.log('offset; ' + offset);
       });
     </script>
   </section>
