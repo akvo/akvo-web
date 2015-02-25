@@ -4803,3 +4803,20 @@ div[id^="inline-"] {
   margin: 0.75em 0 0.25em 0;
   padding: 0.25em;
   font-size: 1.25em; }
+
+/*-----------------------------------
+				Newsletters page
+------------------------------------*/
+.newsletter-container h2 {
+  margin: 0 auto 0.6em auto; }
+.newsletter-container p {
+  text-align: justify; }
+.newsletter-container .newsletter-profile {
+  margin: 4em auto; }
+.newsletter-container .link-button {
+  margin-top: 1.25em;
+  text-align: center; }
+.newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
+  display: none; }
+
+/*# sourceMappingURL=main.css.map */

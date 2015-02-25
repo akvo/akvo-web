@@ -5046,3 +5046,34 @@ div[id^="inline-"] {
   }
 
 }
+
+/*-----------------------------------
+				Newsletters page
+------------------------------------*/
+
+.newsletter-container {
+
+  h2 {
+    margin: 0 auto 0.6em auto;
+  }
+
+  p {
+    text-align: justify;
+  }
+  
+  .newsletter-profile {
+    margin: 4em auto;
+  }
+
+  .link-button {
+    margin-top: 1.25em;
+    text-align: center;
+  }
+
+  .newsletter-profile.fullWidthParag:last-child hr {
+    display: none;
+  }
+}
+
+
+
