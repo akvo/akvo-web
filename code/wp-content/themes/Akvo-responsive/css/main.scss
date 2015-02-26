@@ -4491,6 +4491,10 @@ section.rsrNuggetsSection li h3 {
     text-align: center;
 }
 
+section.rsrNuggetsSection li h3 {
+    text-align: left;
+}
+
 @include responsive(small-max-screens) {
     section.inFivePoints li h3,
     section.rsrNuggetsSection li h3 {

@@ -3723,6 +3723,9 @@ section.rsrNuggetsSection li h3 {
   position: relative;
   text-align: center; }
 
+section.rsrNuggetsSection li h3 {
+  text-align: left; }
+
 @media only screen and (max-width: 768px) {
   section.inFivePoints li h3,
   section.rsrNuggetsSection li h3 {
