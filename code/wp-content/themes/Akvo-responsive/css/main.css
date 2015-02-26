@@ -3521,6 +3521,59 @@ li.rarNuggets:after {
   color: #646464;
   z-index: 999999; }
 
+section.inFivePoints ol {
+  list-style-type: decimal; }
+
+section.inFivePoints li {
+  background: whitesmoke;
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid white;
+  display: block;
+  height: auto;
+  margin: 0em auto;
+  padding: 4em 2% 0em 2%;
+  position: relative;
+  width: 96%; }
+
+@media only screen and (max-width: 768px) {
+  section.inFivePoints li {
+    padding: 1em 2% 0em; } }
+.rsrProdPag section.inFivePoints li.pointThree,
+.rsrProdPag section.inFivePoints li.pointFour {
+  border-bottom: none;
+  border-top: none; }
+
+.rsrProdPag section.inFivePoints li:last-child {
+  border-top: none;
+  padding: 0.25em 2% 0em; }
+
+section.inFivePoints li:first-child {
+  border-bottom: 1px solid #e6e6e6;
+  border-top: none; }
+
+section.inFivePoints li:last-child {
+  border-top: 1px solid white; }
+
+section.inFivePoints li img {
+  bottom: 0em;
+  position: relative;
+  width: 50%; }
+
+@media only screen and (max-width: 768px) {
+  section.inFivePoints li img {
+    width: 100%; } }
+.rsrProdPag section.inFivePoints li.pointOne img {
+  margin: 2% 0em 0em 0em; }
+
+.rsrProdPag section.inFivePoints li.pointTwo img {
+  margin: 6% 0em 0em 0em; }
+
+.rsrProdPag section.inFivePoints li.pointThree img {
+  margin: 5% 0em 0em 0em; }
+
+.rsrProdPag section.inFivePoints li.pointFour img {
+  margin: 4% 0em 0em 0em; }
+
 section.rsrNuggetsSection ol {
   list-style-type: decimal; }
 
@@ -3585,6 +3638,31 @@ li.rsrNuggets.floats-in {
 .pedia4points h3 {
   font-size: 1.7em; }
 
+section.inFivePoints li div {
+  float: right;
+  position: relative;
+  width: 48%; }
+
+@media only screen and (max-width: 768px) {
+  section.inFivePoints li div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: 100%; } }
+section.inFivePoints li p {
+  padding: 1.5em 0em 0em;
+  text-shadow: 0em 1px white; }
+
+section.inFivePoints li:nth-child(2n+1) {
+  /* background:     rgb(182,182,182); */ }
+
+section.inFivePoints li:nth-child(2n) img {
+  float: right; }
+
+section.inFivePoints li:nth-child(2n) div {
+  float: left; }
+
 @media only screen and (max-width: 768px) {
   section.rsrNuggetsSection h3.nuggetTitle {
     padding-bottom: 0.6em;
@@ -3620,6 +3698,11 @@ section.rsrNuggetsSection li p {
     margin: 0em auto;
     padding: 0em; } }
 .productDescr h3 {
+  margin: 1.25em auto 1em;
+  text-align: center;
+  width: 80%; }
+
+.rsrProdPag .productDescr h3 {
   margin: 0 auto;
   text-align: center;
   width: 80%;
@@ -3634,12 +3717,14 @@ section.rsrNuggetsSection li p {
 .splitImg ol.threeFlowPoints {
   width: 45%; }
 
+section.inFivePoints li h3,
 section.rsrNuggetsSection li h3 {
   padding-bottom: 2em;
   position: relative;
-  text-align: left; }
+  text-align: center; }
 
 @media only screen and (max-width: 768px) {
+  section.inFivePoints li h3,
   section.rsrNuggetsSection li h3 {
     padding-bottom: 10px; } }
 .inFivePoints li span {
@@ -3712,9 +3797,6 @@ section.rsrNuggetsSection li h3 {
 .rsrUpDescr p {
   margin: 3em auto; }
 
-#rsrUpTech ul li, .techSpecs ul li {
-  margin: 0.5em 0 1em 25px; }
-
 #rsrTech {
   background: whitesmoke; }
 
@@ -3736,6 +3818,9 @@ h2.rsrProductPage#download {
   ** a single column. Hide them on narrow viewports */
   .rsrProdPag .languageHeader {
     display: none; } }
+#rsrUpTech ul li, .techSpecs ul li {
+  margin: 0.5em 0 1em 25px; }
+
 #rsrTech ul li {
   margin: 0em 0em 2em; }
 
@@ -4840,6 +4925,9 @@ div[id^="inline-"] {
 ------------------------------------*/
 .twoPagerContainer {
   width: 500px; }
+
+.rsrProdPag .twoPagerContainer {
+  max-width: 100%; }
 
 /*-----------------------------------
                 FLOW help page

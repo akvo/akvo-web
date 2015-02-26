@@ -4205,6 +4205,78 @@ li.rarNuggets:after {
     z-index: 999999;
 }
 
+section.inFivePoints ol {
+    list-style-type: decimal;
+}
+
+section.inFivePoints li {
+    background: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top: 1px solid rgb(255, 255, 255);
+    display: block;
+    height: auto;
+    margin: 0em auto;
+    padding: 4em 2% 0em 2%;
+    position: relative;
+    width: 96%;
+}
+
+@include responsive(small-max-screens) {
+    section.inFivePoints li {
+        padding: 1em 2% 0em;
+    }
+}
+
+
+.rsrProdPag section.inFivePoints li.pointThree,
+.rsrProdPag section.inFivePoints li.pointFour {
+    border-bottom: none;
+    border-top: none;
+}
+
+.rsrProdPag section.inFivePoints li:last-child {
+    border-top: none;
+    padding: 0.25em 2% 0em;
+}
+
+section.inFivePoints li:first-child {
+    border-bottom: 1px solid rgb(230, 230, 230);
+    border-top: none;
+}
+
+section.inFivePoints li:last-child {
+    border-top: 1px solid rgb(255, 255, 255);
+}
+
+section.inFivePoints li img {
+    bottom: 0em;
+    position: relative;
+    width: 50%;
+}
+
+@include responsive(small-max-screens) {
+    section.inFivePoints li img {
+        width: 100%;
+    }
+}
+
+
+.rsrProdPag section.inFivePoints li.pointOne img {
+    margin: 2% 0em 0em 0em;
+}
+
+.rsrProdPag section.inFivePoints li.pointTwo img {
+    margin: 6% 0em 0em 0em;
+}
+
+.rsrProdPag section.inFivePoints li.pointThree img {
+    margin: 5% 0em 0em 0em;
+}
+
+.rsrProdPag section.inFivePoints li.pointFour img {
+    margin: 4% 0em 0em 0em;
+}
+
 section.rsrNuggetsSection ol {
     list-style-type: decimal;
 }
@@ -4298,6 +4370,38 @@ li.rsrNuggets {
     font-size: 1.7em;
 }
 
+section.inFivePoints li div {
+    float: right;
+    position: relative;
+    width: 48%;
+}
+
+@include responsive(small-max-screens) {
+    section.inFivePoints li div {
+        @include box-sizing(border-box);
+        padding: 0px 10px;
+        width: 100%;
+    }
+}
+
+
+section.inFivePoints li p {
+    padding: 1.5em 0em 0em;
+    text-shadow: 0em 1px rgb(255, 255, 255);
+}
+
+section.inFivePoints li:nth-child(2n+1) {
+    /* background:     rgb(182,182,182); */
+}
+
+section.inFivePoints li:nth-child(2n) img {
+    float: right;
+}
+
+section.inFivePoints li:nth-child(2n) div {
+    float: left;
+}
+
 section.rsrNuggetsSection {
     @include responsive(small-max-screens) {
         h3.nuggetTitle {
@@ -4350,10 +4454,18 @@ section.rsrNuggetsSection {
 
 
 .productDescr h3 {
-    margin: 0 auto;
+    margin: 1.25em auto 1em;
     text-align: center;
     width: 80%;
-    padding: 1.25em 0 1em 0;
+}
+
+.rsrProdPag {
+    .productDescr h3 {
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        padding: 1.25em 0 1em 0;
+    }
 }
 
 .productPage img + h3 {
@@ -4372,13 +4484,15 @@ section.rsrNuggetsSection {
     width: 45%;
 }
 
+section.inFivePoints li h3,
 section.rsrNuggetsSection li h3 {
     padding-bottom: 2em;
     position: relative;
-    text-align: left;
+    text-align: center;
 }
 
 @include responsive(small-max-screens) {
+    section.inFivePoints li h3,
     section.rsrNuggetsSection li h3 {
         padding-bottom: 10px;
     }
@@ -4478,10 +4592,6 @@ section.rsrNuggetsSection li h3 {
     margin: 3em auto;
 }
 
-#rsrUpTech ul li, .techSpecs ul li {
-    margin: 0.5em 0 1em 25px;
-}
-
 #rsrTech {
     background: whitesmoke;
 }
@@ -4513,6 +4623,10 @@ h2.rsrProductPage#download {
     }
 }
 
+
+#rsrUpTech ul li, .techSpecs ul li {
+    margin: 0.5em 0 1em 25px;
+}
 
 #rsrTech ul li {
     margin: 0em 0em 2em;
@@ -5840,6 +5954,10 @@ div[id^="inline-"] {
 
 .twoPagerContainer {
     width: 500px;
+}
+
+.rsrProdPag .twoPagerContainer {
+    max-width: 100%;
 }
 
 /*-----------------------------------
