@@ -4088,6 +4088,21 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     .productPage section.figure img {
         display: none;
     }
+    .productPage.rsrProdPag {
+        section {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        section.figure {
+            display: block;
+            img {
+                dispaly: block;
+            }
+        }
+        .soloImageSection {
+            display: none;
+        }
+    }
 }
 
 
@@ -4126,6 +4141,43 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     max-width: none;
 }
 
+.productDescr.rsr {
+    background: whitesmoke;
+}
+
+section.rsrNuggetsSection {
+    h3.nuggetTitle {
+        display: inline-block;
+        width: 50%;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        &:nth-child(odd) {
+            img {
+                float: right;
+                padding-right: 0;
+            }
+        }
+        &:nth-child(even) {
+            img {
+                float: left;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.soloImage {
+    padding: 3em 2%;
+    width: 96%;
+    max-width: 1000px;
+}
+
+li.rarNuggets:after {
+    clear: both;
+}
+
 @include responsive(small-max-screens) {
     .figure img {
         height: auto;
@@ -4153,76 +4205,79 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     z-index: 999999;
 }
 
-section.inFivePoints ol {
+section.rsrNuggetsSection ol {
     list-style-type: decimal;
 }
 
-section.inFivePoints li {
-    background: rgb(245, 245, 245);
-    border-bottom: 1px solid rgb(230, 230, 230);
-    border-top: 1px solid rgb(255, 255, 255);
-    display: block;
-    height: auto;
-    margin: 0em auto;
-    padding: 4em 2% 0em 2%;
-    position: relative;
-    width: 96%;
-}
+section.rsrNuggetsSection {
+    li {
+        background: rgb(245, 245, 245);
+        display: block;
+        height: auto;
+        margin: 0em auto;
+        padding: 4em 4% 0em 4%;
+        position: relative;
+        width: 92%;
+        &.supportingYourTeam {
+            background: rgb(255, 255, 255);
+        }
+        img {
+            bottom: 0em;
+            position: relative;
+            width: 44%;
+            padding: 1em 6% 1em 6%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        li {
+            padding: 1em 2% 0em 2%;
+            width: inherit;
+            img {
+                position: relative;
+                padding: 1em 0;
+            }
+        }
+    }
 
-@include responsive(small-max-screens) {
-    section.inFivePoints li {
-        padding: 1em 2% 0em;
+    p.nuggetDescription.nuggetAside {
+        display: inline-block;
+        max-width: 50%;
+    }
+    @media only screen and (max-width: 768px) {
+        p.nuggetDescription.nuggetAside {
+            display: block;
+            max-width: 100%;
+        }
+        h3.nuggetTitle.nuggetAside {
+            display: block;
+            width: 100%;
+        }
     }
 }
 
-
-.rsrProdPag section.inFivePoints li.pointThree,
-.rsrProdPag section.inFivePoints li.pointFour {
-    border-bottom: none;
-    border-top: none;
-}
-
-.rsrProdPag section.inFivePoints li:last-child {
-    border-top: none;
-    padding: 0.25em 2% 0em;
-}
-
-section.inFivePoints li:first-child {
-    border-bottom: 1px solid rgb(230, 230, 230);
-    border-top: none;
-}
-
-section.inFivePoints li:last-child {
-    border-top: 1px solid rgb(255, 255, 255);
-}
-
-section.inFivePoints li img {
-    bottom: 0em;
-    position: relative;
-    width: 50%;
-}
-
-@include responsive(small-max-screens) {
-    section.inFivePoints li img {
-        width: 100%;
+li.rsrNuggets {
+    &.floats-in {
+        padding-top: 5em;
+        &:first-child {
+            padding-top: 3.5em;
+        }
+        &:nth-last-child(2),
+        &:last-child {
+            padding-bottom: 2.5em;
+        }
     }
-}
-
-
-.rsrProdPag section.inFivePoints li.pointOne img {
-    margin: 2% 0em 0em 0em;
-}
-
-.rsrProdPag section.inFivePoints li.pointTwo img {
-    margin: 6% 0em 0em 0em;
-}
-
-.rsrProdPag section.inFivePoints li.pointThree img {
-    margin: 5% 0em 0em 0em;
-}
-
-.rsrProdPag section.inFivePoints li.pointFour img {
-    margin: 4% 0em 0em 0em;
+    @include responsive(small-max-screens) {
+        .floats-in {
+            padding-top: 2em;
+            &:first-child {
+                padding-top: 1.5em;
+            }
+            &:nth-last-child(2),
+            &:last-child {
+                padding-bottom: 1.5em;
+            }
+        }
+    }
 }
 
 .akvopedia #akvopediaInFour li img {
@@ -4243,36 +4298,39 @@ section.inFivePoints li img {
     font-size: 1.7em;
 }
 
-section.inFivePoints li div {
-    float: right;
-    position: relative;
-    width: 48%;
-}
-
-@include responsive(small-max-screens) {
-    section.inFivePoints li div {
-        @include box-sizing(border-box);
-        padding: 0px 10px;
-        width: 100%;
+section.rsrNuggetsSection {
+    @include responsive(small-max-screens) {
+        h3.nuggetTitle {
+            padding-bottom: 0.6em;
+            text-align: center;
+        }
+        p.nuggetDescription {
+            text-align: justify;
+        }
+        li img {
+            width: 100%;
+        }
     }
-}
 
+    li {
+        div {
+            float: right;
+            position: relative;
+            width: 48%;
+        }
+        @include responsive(small-max-screens) {
+            div {
+                @include box-sizing(border-box);
+                padding: 0px 10px;
+                width: 100%;
+            }
+        }
 
-section.inFivePoints li p {
-    padding: 1.5em 0em 0em;
-    text-shadow: 0em 1px rgb(255, 255, 255);
-}
-
-section.inFivePoints li:nth-child(2n+1) {
-    /* background:     rgb(182,182,182); */
-}
-
-section.inFivePoints li:nth-child(2n) img {
-    float: right;
-}
-
-section.inFivePoints li:nth-child(2n) div {
-    float: left;
+        p {
+            padding: 1.5em 0em 0em;
+            text-shadow: 0em 1px rgb(255, 255, 255);
+        }
+    }
 }
 
 .productPage h3 {
@@ -4292,9 +4350,10 @@ section.inFivePoints li:nth-child(2n) div {
 
 
 .productDescr h3 {
-    margin: 1.25em auto 1em;
+    margin: 0 auto;
     text-align: center;
     width: 80%;
+    padding: 1.25em 0 1em 0;
 }
 
 .productPage img + h3 {
@@ -4313,14 +4372,14 @@ section.inFivePoints li:nth-child(2n) div {
     width: 45%;
 }
 
-section.inFivePoints li h3 {
+section.rsrNuggetsSection li h3 {
     padding-bottom: 2em;
     position: relative;
-    text-align: center;
+    text-align: left;
 }
 
 @include responsive(small-max-screens) {
-    section.inFivePoints li h3 {
+    section.rsrNuggetsSection li h3 {
         padding-bottom: 10px;
     }
 }
@@ -4422,6 +4481,38 @@ section.inFivePoints li h3 {
 #rsrUpTech ul li, .techSpecs ul li {
     margin: 0.5em 0 1em 25px;
 }
+
+#rsrTech {
+    background: whitesmoke;
+}
+
+@include responsive(small-max-screens) {
+    section#rsrTech p {
+        text-align: justify;
+    }
+}
+
+
+h2.rsrProductPage {
+    margin: 1.25em 0 0.75em 0;
+}
+
+h2.rsrProductPage#download {
+    margin-bottom: 2em;
+}
+
+@include responsive(small-max-screens) {
+    h2.rsrProductPage#download,
+    .rsrProdPag .twoPagerContainer > h2 {
+        margin-bottom: 0.6em;
+    }
+    /* The language headers are misleading when manuals are displayed in
+    ** a single column. Hide them on narrow viewports */
+    .rsrProdPag .languageHeader {
+        display: none;
+    }
+}
+
 
 #rsrTech ul li {
     margin: 0em 0em 2em;
@@ -5769,6 +5860,7 @@ div[id^="inline-"] {
         }
     }
 }
+
 /*-----------------------------------
                 Newsletters page
 ------------------------------------*/
@@ -5789,7 +5881,7 @@ div[id^="inline-"] {
     }
     .newsletter-profile.fullWidthParag {
         &:last-child {
-             hr {
+            hr {
                 display: none;
             }
         }

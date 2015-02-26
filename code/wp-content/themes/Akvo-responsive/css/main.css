@@ -3438,6 +3438,16 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     display: none; }
 
   .productPage section.figure img {
+    display: none; }
+
+  .productPage.rsrProdPag section {
+    padding-top: 1em;
+    padding-bottom: 1em; }
+  .productPage.rsrProdPag section.figure {
+    display: block; }
+    .productPage.rsrProdPag section.figure img {
+      dispaly: block; }
+  .productPage.rsrProdPag .soloImageSection {
     display: none; } }
 .rsr .productPage section.figure {
   background: url("../images/chruch.png") repeat; }
@@ -3466,6 +3476,29 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .figure.fullWidthImg img {
   max-width: none; }
 
+.productDescr.rsr {
+  background: whitesmoke; }
+
+section.rsrNuggetsSection h3.nuggetTitle {
+  display: inline-block;
+  width: 50%;
+  padding: 0;
+  margin: 0; }
+section.rsrNuggetsSection li:nth-child(odd) img {
+  float: right;
+  padding-right: 0; }
+section.rsrNuggetsSection li:nth-child(even) img {
+  float: left;
+  padding-left: 0; }
+
+.soloImage {
+  padding: 3em 2%;
+  width: 96%;
+  max-width: 1000px; }
+
+li.rarNuggets:after {
+  clear: both; }
+
 @media only screen and (max-width: 768px) {
   .figure img {
     height: auto;
@@ -3488,58 +3521,55 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   color: #646464;
   z-index: 999999; }
 
-section.inFivePoints ol {
+section.rsrNuggetsSection ol {
   list-style-type: decimal; }
 
-section.inFivePoints li {
+section.rsrNuggetsSection li {
   background: whitesmoke;
-  border-bottom: 1px solid #e6e6e6;
-  border-top: 1px solid white;
   display: block;
   height: auto;
   margin: 0em auto;
-  padding: 4em 2% 0em 2%;
+  padding: 4em 4% 0em 4%;
   position: relative;
-  width: 96%; }
-
+  width: 92%; }
+  section.rsrNuggetsSection li.supportingYourTeam {
+    background: white; }
+  section.rsrNuggetsSection li img {
+    bottom: 0em;
+    position: relative;
+    width: 44%;
+    padding: 1em 6% 1em 6%; }
 @media only screen and (max-width: 768px) {
-  section.inFivePoints li {
-    padding: 1em 2% 0em; } }
-.rsrProdPag section.inFivePoints li.pointThree,
-.rsrProdPag section.inFivePoints li.pointFour {
-  border-bottom: none;
-  border-top: none; }
-
-.rsrProdPag section.inFivePoints li:last-child {
-  border-top: none;
-  padding: 0.25em 2% 0em; }
-
-section.inFivePoints li:first-child {
-  border-bottom: 1px solid #e6e6e6;
-  border-top: none; }
-
-section.inFivePoints li:last-child {
-  border-top: 1px solid white; }
-
-section.inFivePoints li img {
-  bottom: 0em;
-  position: relative;
-  width: 50%; }
-
+  section.rsrNuggetsSection li {
+    padding: 1em 2% 0em 2%;
+    width: inherit; }
+    section.rsrNuggetsSection li img {
+      position: relative;
+      padding: 1em 0; } }
+section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+  display: inline-block;
+  max-width: 50%; }
 @media only screen and (max-width: 768px) {
-  section.inFivePoints li img {
+  section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+    display: block;
+    max-width: 100%; }
+  section.rsrNuggetsSection h3.nuggetTitle.nuggetAside {
+    display: block;
     width: 100%; } }
-.rsrProdPag section.inFivePoints li.pointOne img {
-  margin: 2% 0em 0em 0em; }
 
-.rsrProdPag section.inFivePoints li.pointTwo img {
-  margin: 6% 0em 0em 0em; }
-
-.rsrProdPag section.inFivePoints li.pointThree img {
-  margin: 5% 0em 0em 0em; }
-
-.rsrProdPag section.inFivePoints li.pointFour img {
-  margin: 4% 0em 0em 0em; }
+li.rsrNuggets.floats-in {
+  padding-top: 5em; }
+  li.rsrNuggets.floats-in:first-child {
+    padding-top: 3.5em; }
+  li.rsrNuggets.floats-in:nth-last-child(2), li.rsrNuggets.floats-in:last-child {
+    padding-bottom: 2.5em; }
+@media only screen and (max-width: 768px) {
+  li.rsrNuggets .floats-in {
+    padding-top: 2em; }
+    li.rsrNuggets .floats-in:first-child {
+      padding-top: 1.5em; }
+    li.rsrNuggets .floats-in:nth-last-child(2), li.rsrNuggets .floats-in:last-child {
+      padding-bottom: 1.5em; } }
 
 .akvopedia #akvopediaInFour li img {
   max-width: 200px;
@@ -3555,30 +3585,28 @@ section.inFivePoints li img {
 .pedia4points h3 {
   font-size: 1.7em; }
 
-section.inFivePoints li div {
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection h3.nuggetTitle {
+    padding-bottom: 0.6em;
+    text-align: center; }
+  section.rsrNuggetsSection p.nuggetDescription {
+    text-align: justify; }
+  section.rsrNuggetsSection li img {
+    width: 100%; } }
+section.rsrNuggetsSection li div {
   float: right;
   position: relative;
   width: 48%; }
-
 @media only screen and (max-width: 768px) {
-  section.inFivePoints li div {
+  section.rsrNuggetsSection li div {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
-section.inFivePoints li p {
+section.rsrNuggetsSection li p {
   padding: 1.5em 0em 0em;
   text-shadow: 0em 1px white; }
-
-section.inFivePoints li:nth-child(2n+1) {
-  /* background:     rgb(182,182,182); */ }
-
-section.inFivePoints li:nth-child(2n) img {
-  float: right; }
-
-section.inFivePoints li:nth-child(2n) div {
-  float: left; }
 
 .productPage h3 {
   color: #2c2a74;
@@ -3592,9 +3620,10 @@ section.inFivePoints li:nth-child(2n) div {
     margin: 0em auto;
     padding: 0em; } }
 .productDescr h3 {
-  margin: 1.25em auto 1em;
+  margin: 0 auto;
   text-align: center;
-  width: 80%; }
+  width: 80%;
+  padding: 1.25em 0 1em 0; }
 
 .productPage img + h3 {
   margin: 1.25em auto 1em; }
@@ -3605,13 +3634,13 @@ section.inFivePoints li:nth-child(2n) div {
 .splitImg ol.threeFlowPoints {
   width: 45%; }
 
-section.inFivePoints li h3 {
+section.rsrNuggetsSection li h3 {
   padding-bottom: 2em;
   position: relative;
-  text-align: center; }
+  text-align: left; }
 
 @media only screen and (max-width: 768px) {
-  section.inFivePoints li h3 {
+  section.rsrNuggetsSection li h3 {
     padding-bottom: 10px; } }
 .inFivePoints li span {
   margin: 0em 0.25em 0em 0em; }
@@ -3686,6 +3715,27 @@ section.inFivePoints li h3 {
 #rsrUpTech ul li, .techSpecs ul li {
   margin: 0.5em 0 1em 25px; }
 
+#rsrTech {
+  background: whitesmoke; }
+
+@media only screen and (max-width: 768px) {
+  section#rsrTech p {
+    text-align: justify; } }
+h2.rsrProductPage {
+  margin: 1.25em 0 0.75em 0; }
+
+h2.rsrProductPage#download {
+  margin-bottom: 2em; }
+
+@media only screen and (max-width: 768px) {
+  h2.rsrProductPage#download,
+  .rsrProdPag .twoPagerContainer > h2 {
+    margin-bottom: 0.6em; }
+
+  /* The language headers are misleading when manuals are displayed in
+  ** a single column. Hide them on narrow viewports */
+  .rsrProdPag .languageHeader {
+    display: none; } }
 #rsrTech ul li {
   margin: 0em 0em 2em; }
 
@@ -4818,3 +4868,5 @@ div[id^="inline-"] {
   text-align: center; }
 .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
   display: none; }
+
+/*# sourceMappingURL=main.css.map */
