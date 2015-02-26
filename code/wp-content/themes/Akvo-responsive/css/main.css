@@ -4813,8 +4813,8 @@ div[id^="inline-"] {
   text-align: justify; }
 .newsletter-container .newsletter-profile {
   margin: 4em auto; }
+  .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
+    display: none; }
 .newsletter-container .link-button {
   margin-top: 1.25em;
   text-align: center; }
-.newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
-  display: none; }

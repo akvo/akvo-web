@@ -5782,16 +5782,16 @@ div[id^="inline-"] {
     }
     .newsletter-profile {
         margin: 4em auto;
+        &.fullWidthParag {
+            &:last-child {
+                 hr {
+                    display: none;
+                }
+            }
+        }
     }
     .link-button {
         margin-top: 1.25em;
         text-align: center;
-    }
-    .newsletter-profile.fullWidthParag {
-        &:last-child {
-             hr {
-                display: none;
-            }
-        }
     }
 }
