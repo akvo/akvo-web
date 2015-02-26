@@ -3609,6 +3609,11 @@ section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
   section.rsrNuggetsSection h3.nuggetTitle.nuggetAside {
     display: block;
     width: 100%; } }
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto; } }
 
 li.rsrNuggets.floats-in {
   padding-top: 5em; }

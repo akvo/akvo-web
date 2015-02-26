@@ -4325,6 +4325,13 @@ section.rsrNuggetsSection {
             width: 100%;
         }
     }
+    @include responsive(small-max-screens) {
+        p.nuggetDescription.nuggetAside {
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
 li.rsrNuggets {
