@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
-		Title:          Akvo.org Styles for Desktop, mobile, tablet
-		Author:         Loic Sans, loic@akvo.org
+        Title:          Akvo.org Styles for Desktop, mobile, tablet
+        Author:         Loic Sans, loic@akvo.org
 
 /*---------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ a:hover {
   text-decoration: underline; }
 
 /*--------------------------------------------------------------
-   						Default Typography.
+                        Default Typography.
   --------------------------------------------------------------*/
 /* Default font settings.
    The font-size percentage is of 16px. (0.875 * 16px = 14px) */
@@ -206,7 +206,7 @@ body.network {
   body {
     font-size: 1em; } }
 /*--------------------------------------------------------------
-							Headings
+                            Headings
 -------------------------------------------------------------- */
 h1,
 h2,
@@ -262,8 +262,8 @@ h6 img {
   color: #e27c00;
   position: relative;
   /* text-overflow:     ellipsis;
-              	white-space:     nowrap;
-              	overflow:     hidden;
+                  white-space:     nowrap;
+                  overflow:     hidden;
               */ }
 
 .backLinedGrey {
@@ -273,8 +273,8 @@ h6 img {
   text-shadow: none;
     /* text-overflow:     ellipsis;
 
-                	white-space:     nowrap;
-                	overflow:     hidden;
+                    white-space:     nowrap;
+                    overflow:     hidden;
                 */ }
 
 .backLined {
@@ -348,7 +348,7 @@ p {
   margin: 3em auto; }
 
 /*--------------------------------------------------------------
-							Misc.
+                            Misc.
 --------------------------------------------------------------*/
 .hidden {
   display: none !important; }
@@ -363,7 +363,7 @@ a img {
   border: none; }
 
 /* self-clear floats
-	I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
+    I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
 */
 .floats-in:after {
   clear: both;
@@ -666,7 +666,7 @@ div.centerED > p,
   margin-top: 2em !important; }
 
 /*==========================================================================
-								   Forms
+                                   Forms
 ========================================================================== */
 form {
   margin: 0em;
@@ -854,7 +854,7 @@ input[type="submit"] {
   border-radius: 0.25em; }
 
 /*---------------------------------------------
-				  Back to top
+                  Back to top
 --------------------------------------------- */
 #back-top {
   bottom: 0px;
@@ -966,7 +966,7 @@ a.helpIcon:hover {
   top: 0em; }
 
 /************************************************************************
-								STRUCTURE
+                                STRUCTURE
 ************************************************************************/
 #content {
   position: relative;
@@ -1365,7 +1365,7 @@ div.headerWrap {
   color: white; }
 
 /* ---------------------------------------------
-			Top navigation styles
+            Top navigation styles
 --------------------------------------------- */
 #navbar {
   display: none; }
@@ -1635,7 +1635,7 @@ nav#n ul li:last-child {
     color: #fff;
     text-decoration: none; } }
 /*-----------------------------------
-	Top Header Search input
+    Top Header Search input
 ------------------------------------*/
 input[type="search"] {
   -moz-transition: width 0.2s linear;
@@ -1652,7 +1652,7 @@ input[type="search"] {
   vertical-align: middle;
   width: 10%;
   /* z-index:    1099999;
-              	opacity:    0.8;
+                  opacity:    0.8;
               */ }
 
 @media only screen and (max-width: 768px) {
@@ -1693,7 +1693,7 @@ header#top input[type="submit"] {
   display: none; }
 
 /*---------------------------------------------
- 				breadCrumb
+                breadCrumb
 --------------------------------------------- */
 body.home div.breadCrumb {
   display: none; }
@@ -1751,7 +1751,7 @@ div.breadCrumbs {
   color: #2c2a74; }
 
 /*---------------------------------------------------------------------------------------
-											Home Page
+                                            Home Page
 ---------------------------------------------------------------------------------------*/
 body.home h1.akvoDescr {
   font-size: 2em;
@@ -2092,7 +2092,7 @@ body.home h1.akvoDescr {
   background-size: 85%; }
 
 /*************************************************************
-					FAQ
+                    FAQ
 *************************************************************/
 .faqMenu {
   margin: 0em 0em 10px; }
@@ -2179,7 +2179,7 @@ ul.faqMenuList h3,
   text-align: left !important; }
 
 /*************************************************************
-					Looking for more
+                    Looking for more
 *************************************************************/
 #moreStuffHome {
   padding: 3.5em 0em;
@@ -2299,7 +2299,7 @@ moreStuffHome figcaption a {
   margin: 0em 0em 0em 1%; }
 
 /*-----------------------------------
-				BLOG
+                BLOG
 ------------------------------------*/
 .widget figure div {
   background: #ececec;
@@ -2545,7 +2545,7 @@ blockquote p {
   color: white; }
 
 /*-----------------------------------
-				Comments
+                Comments
 ------------------------------------*/
 #respond {
   background: #f2f2f2;
@@ -2752,7 +2752,7 @@ p#allowed_tags code {
   top: 1px; }
 
 /*-----------------------------------
-			Widget area
+            Widget area
 ------------------------------------*/
 #sidebar-responsive {
   display: none; }
@@ -2860,7 +2860,7 @@ p#allowed_tags code {
   text-decoration: none; }
 
 /*----------------------------------------------------------------------
-								Footer
+                                Footer
 -----------------------------------------------------------------------*/
 li.problem {
   margin: 1em 0 0 0; }
@@ -3223,7 +3223,7 @@ footer.bottomPage small:before {
   width: 100%; }
 
 /*************************************************************
-						Product Pages
+                        Product Pages
 *************************************************************/
 .rsr #mainbody,
 .akvoflow #mainbody,
@@ -3280,7 +3280,7 @@ nav.anchorNav h5 {
 p.mLabel {
   color: rgba(222, 137, 41, 0.8);
   /*color:    rgb(102,102,102);
-              	color:    rgb(0,0,0);*/
+                  color:    rgb(0,0,0);*/
   font-size: 0.6em;
   text-transform: uppercase; }
 
@@ -3482,9 +3482,9 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   text-transform: none;
   width: 75%;
   /* text-shadow:    1px 1px 2px rgb(103,103,103);
-              	text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
-              	color:     rgb(222, 137, 41);
-              	*/
+                  text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
+                  color:     rgb(222, 137, 41);
+                  */
   color: #646464;
   z-index: 999999; }
 
@@ -3749,7 +3749,7 @@ section.flowMonDescr {
     top: 143px;
     text-align: left; } }
 /*-----------------------------------
-			Contact Info Page
+            Contact Info Page
 ------------------------------------*/
 .contactInfo section {
   margin: 2em auto 0em auto; }
@@ -3818,7 +3818,7 @@ section.flowMonDescr {
   -webkit-animation: highlight 2s; }
 
 /*-----------------------------------
-				Annual Report Page
+                Annual Report Page
 ------------------------------------*/
 .aReport {
   margin: 2em auto; }
@@ -3830,7 +3830,7 @@ section.flowMonDescr {
   box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1); }
 
 /*-----------------------------------
-				Team Page
+                Team Page
 ------------------------------------*/
 .teamPage {
   margin: 0em auto; }
@@ -4095,7 +4095,7 @@ ul.staff li:nth-child(6n) {
   width: 100%; }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------
-																         Media section
+                                                                         Media section
 ----------------------------------------------------------------------------------------------------------------------------------------*/
 .media h2 {
   margin: 1.5em 0em 0.5em; }
@@ -4139,7 +4139,7 @@ ul.staff li:nth-child(6n) {
   margin: 50px auto; }
 
 /*--------------------------------------------------------------------
-							Help section
+                            Help section
 --------------------------------------------------------------------*/
 .akvo-policies-and-terms ul {
   margin: 0em 0em 0em 10px; }
@@ -4281,7 +4281,7 @@ h1.akvopediaHelp {
           text-align: center; } }
 
 /*--------------------------------------------------------------------
-							Network Page
+                            Network Page
 --------------------------------------------------------------------*/
 #akvoDashboard {
   background: #202024;
@@ -4730,7 +4730,7 @@ h1.akvopediaHelp {
   max-width: none; }
 
 /***********************************
-						Price table
+                        Price table
 ********************************************/
 .pricingList {
   margin: 3em auto; }
@@ -4786,26 +4786,26 @@ div[id^="inline-"] {
   display: none; }
 
 /*-----------------------------------
-				Work with us
+                Work with us
 ------------------------------------*/
 .twoPagerContainer {
   width: 500px; }
 
 /*-----------------------------------
-				FLOW help page
+                FLOW help page
 ------------------------------------*/
 .flow-help-mailchimp-signup label {
   font-size: inherit; }
 .flow-help-mailchimp-signup input {
   display: block;
   margin: 1em 0; }
-.flow-help-mailchimp-signup input.email {
-  margin: 0.75em 0 0.25em 0;
-  padding: 0.25em;
-  font-size: 1.25em; }
+  .flow-help-mailchimp-signup input.email {
+    margin: 0.75em 0 0.25em 0;
+    padding: 0.25em;
+    font-size: 1.25em; }
 
 /*-----------------------------------
-				Newsletters page
+                Newsletters page
 ------------------------------------*/
 .newsletter-container h2 {
   margin: 0 auto 0.6em auto; }
@@ -4818,5 +4818,3 @@ div[id^="inline-"] {
   text-align: center; }
 .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
   display: none; }
-
-/*# sourceMappingURL=main.css.map */
