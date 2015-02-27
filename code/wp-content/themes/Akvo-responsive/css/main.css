@@ -5039,8 +5039,8 @@ div[id^="inline-"] {
     max-width: 100%; }
   .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
     position: absolute;
-    left: 10em;
-    top: 6em; }
+    left: 10% em;
+    top: 15% em; }
     .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
       text-align: left;
       margin-left: 0; }
