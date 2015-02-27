@@ -3449,6 +3449,9 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
       display: block; }
   .productPage.rsrProdPag .soloImageSection {
     display: none; } }
+.rsrProdPag h2 {
+  margin-bottom: 3em; }
+
 .rsr .productPage section.figure {
   background: url("../images/chruch.png") repeat; }
 
