@@ -20,7 +20,11 @@ Template Name: jobs-page
   </section>
   <hr class="delicate" />
   <div class="wrapper">
-    <p class="fullWidthParag"><?php the_field('jobs_page_intro'); ?></p>
+    <p class="fullWidthParag"><?php the_field('jobs_page_intro'); ?>
+    Read more about working for Akvo in our 
+    <a href="<?php the_field('jobs_handbook_url'); ?>" title= "Akvo Staff Handbook">
+    staff handbook</a>.
+    </p>
   </div>
   <hr class="delicate" />
   <div class="wrapper">
