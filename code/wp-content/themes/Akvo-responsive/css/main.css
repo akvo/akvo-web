@@ -4968,4 +4968,94 @@ div[id^="inline-"] {
 .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
   display: none; }
 
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+.rsrProdPagWhatsNew.rsrProdPag h2 {
+  margin-bottom: 1em; }
+.rsrProdPagWhatsNew h2, .rsrProdPagWhatsNew h3 {
+  max-width: 90%;
+  margin: 0 auto; }
+.rsrProdPagWhatsNew section.textOfImage {
+  background: whitesmoke; }
+  .rsrProdPagWhatsNew section.textOfImage div.container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: table; }
+  .rsrProdPagWhatsNew section.textOfImage .row {
+    display: table-row; }
+  .rsrProdPagWhatsNew section.textOfImage .cell {
+    display: table-cell; }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.textOfImage .cell {
+      padding-bottom: 0.75em; }
+    .rsrProdPagWhatsNew section.textOfImage .row:last-child .cell:last-child {
+      padding-bottom: 0; } }
+  .rsrProdPagWhatsNew section.textOfImage .pointTitle {
+    padding-top: 0.5em;
+    padding-right: 2em;
+    font-weight: bold; }
+.rsrProdPagWhatsNew .textOfImage h2,
+.rsrProdPagWhatsNew .contributing h2 {
+  margin-top: 1.75em; }
+@media only screen and (max-width: 768px) {
+  .rsrProdPagWhatsNew .textOfImage h2,
+  .rsrProdPagWhatsNew .contributing h2 {
+    margin-top: 0.75em; } }
+.rsrProdPagWhatsNew section.contributing {
+  background: whitesmoke;
+  padding-bottom: 1em; }
+.rsrProdPagWhatsNew section.sideBySide {
+  padding-top: 2em; }
+  .rsrProdPagWhatsNew section.sideBySide .container {
+    width: 40%;
+    padding: 2em 5%; }
+    .rsrProdPagWhatsNew section.sideBySide .container.iati {
+      float: left; }
+    .rsrProdPagWhatsNew section.sideBySide .container.backEnd {
+      float: right;
+      background: whitesmoke; }
+    .rsrProdPagWhatsNew section.sideBySide .container img {
+      max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .rsrProdPagWhatsNew section.sideBySide .container .fullWidthParag {
+        width: 100%; } }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.sideBySide .container {
+      width: 100%;
+      padding: 2em 0;
+      margin: 0 auto; }
+      .rsrProdPagWhatsNew section.sideBySide .container.iati, .rsrProdPagWhatsNew section.sideBySide .container.backEnd {
+        float: none; } }
+.rsrProdPagWhatsNew section.improvedNavigation {
+  background: whitesmoke;
+  padding-bottom: 0;
+  position: relative; }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.improvedNavigation {
+      padding-bottom: 1.5em; } }
+  .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+    width: 100%;
+    max-width: 100%; }
+  .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+    position: absolute;
+    left: 10em;
+    top: 6em; }
+    .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+      text-align: left;
+      margin-left: 0; }
+    @media only screen and (min-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption p.fullWidthParag {
+        margin-left: 0;
+        text-align: left; } }
+    @media only screen and (max-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        position: static; }
+        .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+          text-align: center;
+          padding: 1.2em 0 0.75em 0; } }
+@media only screen and (max-width: 768px) {
+  .rsrProdPagWhatsNew p.fullWidthParag {
+    text-align: justify; } }
+
 /*# sourceMappingURL=main.css.map */
