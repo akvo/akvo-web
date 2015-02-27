@@ -43,10 +43,10 @@
     <h5>Menu</h5>
     <div class="mShownCollapse"><a></a></div>
     <ul>
-      <li><a href="#nuggets">RSR in three points</a></li>
-      <li><a href="#rsrRealWorld">Who's using RSR?</a></li>
-      <li><a href="#rsrTech">Technical specifications</a></li>
-      <li><a href="#download">Downloads</a></li>
+      <li><a href="#nuggets"><?php the_field('rsr_nav_nuggets'); ?></a></li>
+      <li><a href="#rsrRealWorld"><?php the_field('rsr_nav_whats_happening'); ?></a></li>
+      <li><a href="#rsrTech"><?php the_field('rsr_nav_tech_specs'); ?></a></li>
+      <li><a href="#download"><?php the_field('rsr_nav_downloads'); ?></a></li>
     </ul>
   </nav>
 
@@ -59,16 +59,16 @@
     <?php if( have_rows('rsr_feature_nuggets') ): ?>
       <?php while( have_rows('rsr_feature_nuggets') ): the_row(); ?>
         <li class="rsrNuggets floats-in">
-        <h3 class="nuggetTitle nuggetAside"><?php the_sub_field('nugget_title'); ?></h3>
-        <img src="<?php the_sub_field('nugget_image'); ?>" class="nuggetImage">
-        <p class="nuggetDescription nuggetAside"><?php the_sub_field('nugget_description'); ?></p>
+          <h3 class="nuggetTitle nuggetAside"><?php the_sub_field('nugget_title'); ?></h3>
+          <img src="<?php the_sub_field('nugget_image'); ?>" class="nuggetImage">
+          <p class="nuggetDescription nuggetAside"><?php the_sub_field('nugget_description'); ?></p>
         </li>      
       <?php endwhile; ?>
     <?php endif; ?>
     <li class="rsrNuggets floats-in supportingYourTeam">
       <h3 class="nuggetTitle nuggetAside"><?php the_field('support_nugget_title'); ?></h3>
       <img src="<?php the_field('support_nugget_image'); ?>" class="nuggetImage">
-      <p class="nuggetDescription nuggetAside"><?php the_field('support_nugget_description'); ?></p>    
+      <p class="nuggetDescription nuggetAside"><?php the_field('support_nugget_description'); ?></p>  
     </li>
     </ul>
   </section>
