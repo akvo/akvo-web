@@ -4088,8 +4088,29 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     .productPage section.figure img {
         display: none;
     }
+    .productPage.rsrProdPag {
+        section {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        section.figure {
+            display: block;
+            img {
+                display: block;
+            }
+        }
+        .soloImageSection {
+            display: none;
+        }
+    }
 }
 
+
+.rsrProdPag {
+    h2 {
+        margin-bottom: 3em;
+    }
+}
 
 .rsr .productPage section.figure {
     background: url("../images/chruch.png") repeat;
@@ -4124,6 +4145,43 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .figure.fullWidthImg img {
     max-width: none;
+}
+
+.productDescr.rsr {
+    background: whitesmoke;
+}
+
+section.rsrNuggetsSection {
+    h3.nuggetTitle {
+        display: inline-block;
+        width: 50%;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        &:nth-child(odd) {
+            img {
+                float: right;
+                padding-right: 0;
+            }
+        }
+        &:nth-child(even) {
+            img {
+                float: left;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.soloImage {
+    padding: 3em 2%;
+    width: 96%;
+    max-width: 1000px;
+}
+
+li.rarNuggets:after {
+    clear: both;
 }
 
 @include responsive(small-max-screens) {
@@ -4225,6 +4283,88 @@ section.inFivePoints li img {
     margin: 4% 0em 0em 0em;
 }
 
+section.rsrNuggetsSection ol {
+    list-style-type: decimal;
+}
+
+section.rsrNuggetsSection {
+    li {
+        background: rgb(245, 245, 245);
+        display: block;
+        height: auto;
+        margin: 0em auto;
+        padding: 4em 4% 0em 4%;
+        position: relative;
+        width: 92%;
+        &.supportingYourTeam {
+            background: rgb(255, 255, 255);
+        }
+        img {
+            bottom: 0em;
+            position: relative;
+            width: 44%;
+            padding: 1em 6% 1em 6%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        li {
+            padding: 1em 2% 0em 2%;
+            width: inherit;
+            img {
+                position: relative;
+                padding: 1em 0;
+            }
+        }
+    }
+
+    p.nuggetDescription.nuggetAside {
+        display: inline-block;
+        max-width: 50%;
+    }
+    @media only screen and (max-width: 768px) {
+        p.nuggetDescription.nuggetAside {
+            display: block;
+            max-width: 100%;
+        }
+        h3.nuggetTitle.nuggetAside {
+            display: block;
+            width: 100%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.nuggetDescription.nuggetAside {
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+li.rsrNuggets {
+    &.floats-in {
+        padding-top: 5em;
+        &:first-child {
+            padding-top: 3.5em;
+        }
+        &:nth-last-child(2),
+        &:last-child {
+            padding-bottom: 2.5em;
+        }
+    }
+    @include responsive(small-max-screens) {
+        .floats-in {
+            padding-top: 2em;
+            &:first-child {
+                padding-top: 1.5em;
+            }
+            &:nth-last-child(2),
+            &:last-child {
+                padding-bottom: 1.5em;
+            }
+        }
+    }
+}
+
 .akvopedia #akvopediaInFour li img {
     max-width: 200px;
     width: 100%;
@@ -4275,6 +4415,41 @@ section.inFivePoints li:nth-child(2n) div {
     float: left;
 }
 
+section.rsrNuggetsSection {
+    @include responsive(small-max-screens) {
+        h3.nuggetTitle {
+            padding-bottom: 0.6em;
+            text-align: center;
+        }
+        p.nuggetDescription {
+            text-align: justify;
+        }
+        li img {
+            width: 100%;
+        }
+    }
+
+    li {
+        div {
+            float: right;
+            position: relative;
+            width: 48%;
+        }
+        @include responsive(small-max-screens) {
+            div {
+                @include box-sizing(border-box);
+                padding: 0px 10px;
+                width: 100%;
+            }
+        }
+
+        p {
+            padding: 1.5em 0em 0em;
+            text-shadow: 0em 1px rgb(255, 255, 255);
+        }
+    }
+}
+
 .productPage h3 {
     color: $akvoPurple;
     margin: 0.25em auto 1em auto;
@@ -4297,6 +4472,15 @@ section.inFivePoints li:nth-child(2n) div {
     width: 80%;
 }
 
+.rsrProdPag {
+    .productDescr h3 {
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        padding: 1.25em 0 1em 0;
+    }
+}
+
 .productPage img + h3 {
     margin: 1.25em auto 1em;
 }
@@ -4313,14 +4497,20 @@ section.inFivePoints li:nth-child(2n) div {
     width: 45%;
 }
 
-section.inFivePoints li h3 {
+section.inFivePoints li h3,
+section.rsrNuggetsSection li h3 {
     padding-bottom: 2em;
     position: relative;
     text-align: center;
 }
 
+section.rsrNuggetsSection li h3 {
+    text-align: left;
+}
+
 @include responsive(small-max-screens) {
-    section.inFivePoints li h3 {
+    section.inFivePoints li h3,
+    section.rsrNuggetsSection li h3 {
         padding-bottom: 10px;
     }
 }
@@ -4419,6 +4609,38 @@ section.inFivePoints li h3 {
     margin: 3em auto;
 }
 
+#rsrTech {
+    background: whitesmoke;
+}
+
+@include responsive(small-max-screens) {
+    section#rsrTech p {
+        text-align: justify;
+    }
+}
+
+
+h2.rsrProductPage {
+    margin: 1.25em 0 0.75em 0;
+}
+
+h2.rsrProductPage#download {
+    margin-bottom: 2em;
+}
+
+@include responsive(small-max-screens) {
+    h2.rsrProductPage#download,
+    .rsrProdPag .twoPagerContainer > h2 {
+        margin-bottom: 0.6em;
+    }
+    /* The language headers are misleading when manuals are displayed in
+    ** a single column. Hide them on narrow viewports */
+    .rsrProdPag .languageHeader {
+        display: none;
+    }
+}
+
+
 #rsrUpTech ul li, .techSpecs ul li {
     margin: 0.5em 0 1em 25px;
 }
@@ -4432,18 +4654,14 @@ section.inFivePoints li h3 {
 }
 
 ol.threeFlowPoints {
-    list-style: outside decimal;
-}
-
-ol.threeFlowPoints li {
-    margin: 0em auto 1em auto;
-    padding: 0em 1em;
-}
-
-ol.threeFlowPoints li span {}
-
-ol.threeFlowPoints li p {
-    font-weight: 500;
+    list-style: outside decimal; 
+    li {
+        margin: 0em auto 1em auto;
+        padding: 0em 1em;
+        p {
+            font-weight: 500;
+        }
+    }
 }
 
 .videoCenter blockquote {
@@ -4666,7 +4884,7 @@ ul.staff li {
     display: inline;
     float: left;
     margin: 0em 0.8% 0px 0em;
-    min-height: 210px;
+    min-height: 218px;
     position: relative;
     width: 16%;
 }
@@ -5751,6 +5969,10 @@ div[id^="inline-"] {
     width: 500px;
 }
 
+.rsrProdPag .twoPagerContainer {
+    max-width: 100%;
+}
+
 /*-----------------------------------
                 FLOW help page
 ------------------------------------*/
@@ -5762,6 +5984,9 @@ div[id^="inline-"] {
 }
 
 .flow-help-mailchimp-signup {
+    background: rgba($akvoPurple, 0.1);
+    @include border-radius(5px);
+    padding: 10px 15px 20px;
     label {
         font-size: inherit;
     }
@@ -5775,6 +6000,7 @@ div[id^="inline-"] {
         }
     }
 }
+
 /*-----------------------------------
                 Newsletters page
 ------------------------------------*/
@@ -5788,6 +6014,13 @@ div[id^="inline-"] {
     }
     .newsletter-profile {
         margin: 4em auto;
+        &.fullWidthParag {
+            &:last-child {
+                hr {
+                    display: none;
+                }
+            }
+        }
     }
     .link-button {
         margin-top: 1.25em;
@@ -5795,9 +6028,162 @@ div[id^="inline-"] {
     }
     .newsletter-profile.fullWidthParag {
         &:last-child {
-             hr {
+            hr {
                 display: none;
             }
+        }
+    }
+}
+
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+
+.rsrProdPagWhatsNew {
+    &.rsrProdPag {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+    h2, h3 {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section#rsrWhatsNewHero {
+        @include responsive(small-max-screens) {
+            display: none;
+        }
+    }
+    section.textOfImage {
+        background: whitesmoke;
+        div.container {
+            max-width: 90%;
+            margin: 0 auto;
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        @include responsive(small-max-screens) {
+            .cell {
+                padding-bottom: 0.75em;
+            }
+            .row {
+                &:last-child {
+                    .cell {
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pointTitle {
+            padding-top: 0.5em;
+            padding-right: 2em;
+            font-weight: bold;
+        }
+    }
+    .textOfImage,
+    .contributing {
+        h2 {
+            margin-top: 1.75em;
+        }
+        @include responsive(small-max-screens) {
+            h2 {
+                margin-top: 0.75em;
+            }
+        }
+    }
+    section.contributing {
+        background: whitesmoke;
+        padding-bottom: 1em;
+    }
+    section.sideBySide {
+        padding-top: 2em;
+        .container {
+            width: 40%;
+            padding: 2em 5%;
+            &.iati {
+                float: left;
+            }
+            &.backEnd {
+                float: right;
+                background: whitesmoke;
+            }
+            img {
+                max-width: 100%;
+            }
+            @media only screen and (min-width: 768px) {
+                .fullWidthParag {
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive(small-max-screens) {
+            .container {
+                width: 100%;
+                padding: 2em 0;
+                margin: 0 auto;
+                &.iati,
+                &.backEnd {
+                    float: none;
+                }
+            }
+        }
+    }
+    section.improvedNavigation {
+        background: whitesmoke;
+        padding-bottom: 0;
+        position: relative;
+        @include responsive(small-max-screens) {
+            padding-bottom: 1.5em;
+        }
+
+        .improvedNavigationWrapper {
+            position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .backgroundImage {
+            width: 100%;
+            max-width: 100%;
+        }
+        .improvedNavigationCaption {
+            position: absolute;
+            left: 10%;
+            top: 15%;
+            max-width: 75%;
+            @media only screen and (min-width: 768px) and (max-width: 992px) {
+                max-width: 60%;
+            }
+            h3 {
+                text-align: left;
+                margin-left: 0;
+            }
+            p.fullWidthParag {
+                @media only screen and (min-width: 768px) {
+                    margin-left: 0;
+                    text-align: left;
+                }
+            }
+            @include responsive(small-max-screens) {
+                position: static;
+                h3 {
+                    text-align: center;
+                    padding: 1.2em 0 0.75em 0;
+                }
+            }
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.fullWidthParag {
+            text-align: justify;
         }
     }
 }
