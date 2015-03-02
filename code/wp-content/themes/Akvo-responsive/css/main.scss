@@ -5982,6 +5982,9 @@ div[id^="inline-"] {
 ------------------------------------*/
 
 .flow-help-mailchimp-signup {
+    background:rgba($akvoPurple, 0.1);
+    @include border-radius(5px);
+    padding:10px 15px 20px;
     label {
         font-size: inherit;
     }
@@ -6009,6 +6012,13 @@ div[id^="inline-"] {
     }
     .newsletter-profile {
         margin: 4em auto;
+        &.fullWidthParag {
+            &:last-child {
+                 hr {
+                    display: none;
+                }
+            }
+        }
     }
     .link-button {
         margin-top: 1.25em;
