@@ -4794,15 +4794,22 @@ div[id^="inline-"] {
 /*-----------------------------------
                 FLOW help page
 ------------------------------------*/
-.flow-help-mailchimp-signup label {
-  font-size: inherit; }
-.flow-help-mailchimp-signup input {
-  display: block;
-  margin: 1em 0; }
-  .flow-help-mailchimp-signup input.email {
-    margin: 0.75em 0 0.25em 0;
-    padding: 0.25em;
-    font-size: 1.25em; }
+.flow-help-mailchimp-signup {
+  background: rgba(44, 42, 116, 0.1);
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px 15px 20px; }
+  .flow-help-mailchimp-signup label {
+    font-size: inherit; }
+  .flow-help-mailchimp-signup input {
+    display: block;
+    margin: 1em 0; }
+    .flow-help-mailchimp-signup input.email {
+      margin: 0.75em 0 0.25em 0;
+      padding: 0.25em;
+      font-size: 1.25em; }
 
 /*-----------------------------------
                 Newsletters page
