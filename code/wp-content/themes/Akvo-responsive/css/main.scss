@@ -6116,7 +6116,7 @@ div[id^="inline-"] {
             img {
                 max-width: 100%;
             }
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: $width-small) {
                 .fullWidthParag {
                     width: 100%;
                 }
@@ -6160,7 +6160,7 @@ div[id^="inline-"] {
                 margin-left: 10%;
                 margin-right: 0;
             }
-            @media only screen and (min-width: 768px) and (max-width: 992px) {
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
                 width: 75%;
                 max-width: 75%;
                 margin-left: 25%;
@@ -6172,7 +6172,7 @@ div[id^="inline-"] {
             left: 5%;
             top: 15%;
             max-width: 64%;
-            @media only screen and (min-width: 768px) and (max-width: 992px) {
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
                 max-width: 60%;
             }
             h3 {
@@ -6188,7 +6188,7 @@ div[id^="inline-"] {
             }
 
             p.fullWidthParag {
-                @media only screen and (min-width: 768px) {
+                @media only screen and (min-width: $width-small) {
                     margin-left: 0;
                     text-align: left;
                 }
