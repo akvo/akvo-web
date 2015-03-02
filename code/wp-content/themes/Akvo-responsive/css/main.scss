@@ -4106,6 +4106,12 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 }
 
 
+.rsrProdPag {
+    h2 {
+        margin-bottom: 3em;
+    }
+}
+
 .rsr .productPage section.figure {
     background: url("../images/chruch.png") repeat;
 }
@@ -4323,6 +4329,13 @@ section.rsrNuggetsSection {
         h3.nuggetTitle.nuggetAside {
             display: block;
             width: 100%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.nuggetDescription.nuggetAside {
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 }
@@ -6006,6 +6019,144 @@ div[id^="inline-"] {
             hr {
                 display: none;
             }
+        }
+    }
+}
+
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+
+.rsrProdPagWhatsNew {
+    &.rsrProdPag {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+    h2, h3 {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section.textOfImage {
+        background: whitesmoke;
+        div.container {
+            max-width: 90%;
+            margin: 0 auto;
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        @include responsive(small-max-screens) {
+            .cell {
+                padding-bottom: 0.75em;
+            }
+            .row {
+                &:last-child {
+                    .cell {
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pointTitle {
+            padding-top: 0.5em;
+            padding-right: 2em;
+            font-weight: bold;
+        }
+    }
+    .textOfImage,
+    .contributing {
+        h2 {
+            margin-top: 1.75em;
+        }
+        @include responsive(small-max-screens) {
+            h2 {
+                margin-top: 0.75em;
+            }
+        }
+    }
+    section.contributing {
+        background: whitesmoke;
+        padding-bottom: 1em;
+    }
+    section.sideBySide {
+        padding-top: 2em;
+        .container {
+            width: 40%;
+            padding: 2em 5%;
+            &.iati {
+                float: left;
+            }
+            &.backEnd {
+                float: right;
+                background: whitesmoke;
+            }
+            img {
+                max-width: 100%;
+            }
+            @media only screen and (min-width: 768px) {
+                .fullWidthParag {
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive(small-max-screens) {
+            .container {
+                width: 100%;
+                padding: 2em 0;
+                margin: 0 auto;
+                &.iati,
+                &.backEnd {
+                    float: none;
+                }
+            }
+        }
+    }
+    section.improvedNavigation {
+        background: whitesmoke;
+        padding-bottom: 0;
+        position: relative;
+        @include responsive(small-max-screens) {
+            padding-bottom: 1.5em;
+        }
+
+        .backgroundImage {
+            width: 100%;
+            max-width: 100%;
+        }
+        .improvedNavigationCaption {
+            position: absolute;
+            left: 10% em;
+            top: 15% em;
+            h3 {
+                text-align: left;
+                margin-left: 0;
+            }
+            p.fullWidthParag {
+                @media only screen and (min-width: 768px) {
+                    margin-left: 0;
+                    text-align: left;
+                }
+            }
+            @include responsive(small-max-screens) {
+                position: static;
+                h3 {
+                    text-align: center;
+                    padding: 1.2em 0 0.75em 0;
+                }
+            }
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.fullWidthParag {
+            text-align: justify;
         }
     }
 }
