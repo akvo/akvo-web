@@ -4794,6 +4794,11 @@ div[id^="inline-"] {
 /*-----------------------------------
                 FLOW help page
 ------------------------------------*/
+#content.flowHelpSupport {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+
 .flow-help-mailchimp-signup label {
   font-size: inherit; }
 .flow-help-mailchimp-signup input {
@@ -4818,3 +4823,5 @@ div[id^="inline-"] {
   text-align: center; }
 .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
   display: none; }
+
+/*# sourceMappingURL=main.css.map */
