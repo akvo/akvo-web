@@ -6037,6 +6037,11 @@ div[id^="inline-"] {
         max-width: 90%;
         margin: 0 auto;
     }
+    section#rsrWhatsNewHero {
+        @include responsive(small-max-screens) {
+            display: none;
+        }
+    }
     section.textOfImage {
         background: whitesmoke;
         div.container {
@@ -6127,6 +6132,12 @@ div[id^="inline-"] {
             padding-bottom: 1.5em;
         }
 
+        .improvedNavigationWrapper {
+            position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         .backgroundImage {
             width: 100%;
             max-width: 100%;
@@ -6135,6 +6146,10 @@ div[id^="inline-"] {
             position: absolute;
             left: 10%;
             top: 15%;
+            max-width: 75%;
+            @media only screen and (min-width: 768px) and (max-width: 992px) {
+                max-width: 60%;
+            }
             h3 {
                 text-align: left;
                 margin-left: 0;

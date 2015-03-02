@@ -19,7 +19,7 @@
       </p>
     </div>
   </section>
-  <section class="figure"> <img src="<?php the_field('hero_image'); ?>" title="rsrImg"/> </section>
+  <section class="figure" id="rsrWhatsNewHero"> <img src="<?php the_field('hero_image'); ?>" title="rsrImg"/> </section>
 
   <section class="textOfImage">
     <h2><?php the_field('img_text_title'); ?></h2>
@@ -66,7 +66,7 @@
     </div>
   </section>
   <section class="improvedNavigation">
-    <div>
+    <div class="improvedNavigationWrapper">
       <img class="backgroundImage" src="<?php the_field('improved_nav_image'); ?>">
       <div class="improvedNavigationCaption">
         <h3><?php the_field('improved_nav_title'); ?></h3>
