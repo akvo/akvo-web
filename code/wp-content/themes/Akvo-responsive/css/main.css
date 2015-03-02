@@ -4976,6 +4976,9 @@ div[id^="inline-"] {
 .rsrProdPagWhatsNew h2, .rsrProdPagWhatsNew h3 {
   max-width: 90%;
   margin: 0 auto; }
+@media only screen and (max-width: 768px) {
+  .rsrProdPagWhatsNew section#rsrWhatsNewHero {
+    display: none; } }
 .rsrProdPagWhatsNew section.textOfImage {
   background: whitesmoke; }
   .rsrProdPagWhatsNew section.textOfImage div.container {
@@ -5034,13 +5037,22 @@ div[id^="inline-"] {
   @media only screen and (max-width: 768px) {
     .rsrProdPagWhatsNew section.improvedNavigation {
       padding-bottom: 1.5em; } }
+  .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationWrapper {
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
   .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
     width: 100%;
     max-width: 100%; }
   .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
     position: absolute;
     left: 10%;
-    top: 15%; }
+    top: 15%;
+    max-width: 75%; }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        max-width: 60%; } }
     .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
       text-align: left;
       margin-left: 0; }
