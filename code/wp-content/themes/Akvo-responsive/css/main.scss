@@ -4654,18 +4654,14 @@ h2.rsrProductPage#download {
 }
 
 ol.threeFlowPoints {
-    list-style: outside decimal;
-}
-
-ol.threeFlowPoints li {
-    margin: 0em auto 1em auto;
-    padding: 0em 1em;
-}
-
-ol.threeFlowPoints li span {}
-
-ol.threeFlowPoints li p {
-    font-weight: 500;
+    list-style: outside decimal; 
+    li {
+        margin: 0em auto 1em auto;
+        padding: 0em 1em;
+        p {
+            font-weight: 500;
+        }
+    }
 }
 
 .videoCenter blockquote {
@@ -5980,6 +5976,12 @@ div[id^="inline-"] {
 /*-----------------------------------
                 FLOW help page
 ------------------------------------*/
+
+#content.flowHelpSupport {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 .flow-help-mailchimp-signup {
     background: rgba($akvoPurple, 0.1);
