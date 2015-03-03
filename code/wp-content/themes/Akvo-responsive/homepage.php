@@ -140,13 +140,10 @@ $(function() {
     success: function(data) {
       for (i=0; i<5; i++) {
         if (data.objects[i].photo === '') {
-          console.log('no photo, moving on');
           continue;
         } else {
-          console.log('pic!');
           var title, src, absolute_url;
           src = data.objects[i].photo;
-          console.log(src);
           title = data.objects[i].title;
           absolute_url = data.objects[i].absolute_url;
           $("#update_url").attr("style", "background-image: url("+akvo_domain + src+")");
