@@ -6050,14 +6050,14 @@ div[id^="inline-"] {
         margin: 0 auto;
     }
     section#rsrWhatsNewHero {
-        @include responsive(small-max-screens) {
+        @include responsive(medium-max-screens) {
             display: none;
         }
     }
     section.textOfImage {
         background: whitesmoke;
         /* Hide the section when hero image viewable */
-        @media only screen and (min-width: $width-small) {
+        @media only screen and (min-width: $width-medium) {
             display: none;
         }
         div.container {
@@ -6085,6 +6085,7 @@ div[id^="inline-"] {
                 }
             }
         }
+
         .pointTitle {
             padding-top: 0.5em;
             padding-right: 2em;

@@ -4988,13 +4988,13 @@ div[id^="inline-"] {
 .rsrProdPagWhatsNew h2, .rsrProdPagWhatsNew h3 {
   max-width: 90%;
   margin: 0 auto; }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .rsrProdPagWhatsNew section#rsrWhatsNewHero {
     display: none; } }
 .rsrProdPagWhatsNew section.textOfImage {
   background: whitesmoke;
   /* Hide the section when hero image viewable */ }
-  @media only screen and (min-width: 768px) {
+  @media only screen and (min-width: 992px) {
     .rsrProdPagWhatsNew section.textOfImage {
       display: none; } }
   .rsrProdPagWhatsNew section.textOfImage div.container {
