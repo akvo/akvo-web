@@ -105,10 +105,35 @@
     </ul>
   </section>
 
-  <section class="twoPager">
+ <section class="callToAction" id="callToAction">
+    <div class="wrapper">
+      <h2><?php the_field('cta_title'); ?></h2>
+      <div class="ctaLinks">
+        <?php if( have_rows('cta_entries') ): ?>
+          <?php while( have_rows('cta_entries') ): the_row(); ?>
+            <div class="ctaEntry">
+              <p class="fullWidthParag">
+                <?php the_sub_field('cta_sub_text'); ?>
+              </p> 
+              <p class="fullWidthParag">
+                <a href="<?php the_sub_field('cta_sub_link_dest'); ?>"
+                   title="<?php the_sub_field('cta_sub_link_text'); ?>"
+                   class="ctaLink">
+                  <?php the_sub_field('cta_sub_link_text'); ?>
+                </a>
+              </p>
+            </div>
+            <hr class="delicate">                    
+          <?php endwhile; ?>
+        <?php endif; ?>
+      </div>      
+    </div>
+  </section>  
+
+  <section class="twoPager rsrDownloads">
     <h2 class="rsrProductPage" id="download">Downloads</h2>
     <div class="twoPagerContainer centerED">
-      <h2><?php the_field('two_pager_subtitle'); ?></h2>
+      <h3><?php the_field('two_pager_subtitle'); ?></h3>
       <ul class="wrapper twoColumns floats-in centerED languageHeader">
         <li><?php the_field('region_title_left'); ?></li>
         <li><?php the_field('region_title_right'); ?></li>

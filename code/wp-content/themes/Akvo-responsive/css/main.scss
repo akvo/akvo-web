@@ -4508,6 +4508,12 @@ section.rsrNuggetsSection li h3 {
     text-align: left;
 }
 
+.rsrProdPag {
+    section.rsrDownloads {
+        background: whitesmoke;
+    }
+}
+
 @include responsive(small-max-screens) {
     section.inFivePoints li h3,
     section.rsrNuggetsSection li h3 {
@@ -4625,7 +4631,15 @@ h2.rsrProductPage {
 }
 
 h2.rsrProductPage#download {
-    margin-bottom: 2em;
+    margin-bottom: 1em;
+}
+
+section.whoUseIt {
+    &#rsrRealWorld {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
 }
 
 @include responsive(small-max-screens) {
@@ -6211,6 +6225,27 @@ div[id^="inline-"] {
     @include responsive(small-max-screens) {
         p.fullWidthParag {
             text-align: justify;
+        }
+    }
+}
+
+.rsrProdPag {
+    section.callToAction {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        .fullWidthParag {
+            @media only screen and (min-width: $width-small) {
+                text-align: center;
+            }
+        }
+        hr.delicate {
+            margin: 30px auto;
+            &:last-child {
+                display: none;
+            }
+        }
+        h2 {
+            margin-bottom: 1em;
         }
     }
 }
