@@ -4634,6 +4634,14 @@ h2.rsrProductPage#download {
     margin-bottom: 1em;
 }
 
+section.whoUseIt {
+    &#rsrRealWorld {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+}
+
 @include responsive(small-max-screens) {
     h2.rsrProductPage#download,
     .rsrProdPag .twoPagerContainer > h2 {

@@ -3823,6 +3823,9 @@ h2.rsrProductPage {
 h2.rsrProductPage#download {
   margin-bottom: 1em; }
 
+section.whoUseIt#rsrRealWorld h2 {
+  margin-bottom: 1em; }
+
 @media only screen and (max-width: 768px) {
   h2.rsrProductPage#download,
   .rsrProdPag .twoPagerContainer > h2 {
