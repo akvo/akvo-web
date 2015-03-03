@@ -18,7 +18,7 @@ get_header(); ?>
       <li><a href="#partnershipGroup" class="pStaff">Partnerships</a></li>
       <li><a href="#communicationGroup" class="cStaff">Communication &amp; PR</a></li>
       <li><a href="#engineeringGroup" class="eStaff">Engineering &amp; design</a></li>
-      <li><a href="#contractorsGroup" class="oStaff">Extended Team</a></li>
+      <li><a href="#contractorsGroup" class="oStaff">Extended team</a></li>
     </ul>
   </nav>
   <p>Are you looking for our <a href="../foundations/" class="board">Board Members</a>?</p>
