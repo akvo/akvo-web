@@ -3821,7 +3821,7 @@ h2.rsrProductPage {
   margin: 1.25em 0 0.75em 0; }
 
 h2.rsrProductPage#download {
-  margin-bottom: 2em; }
+  margin-bottom: 1em; }
 
 @media only screen and (max-width: 768px) {
   h2.rsrProductPage#download,

@@ -133,7 +133,7 @@
   <section class="twoPager rsrDownloads">
     <h2 class="rsrProductPage" id="download">Downloads</h2>
     <div class="twoPagerContainer centerED">
-      <h2><?php the_field('two_pager_subtitle'); ?></h2>
+      <h3><?php the_field('two_pager_subtitle'); ?></h3>
       <ul class="wrapper twoColumns floats-in centerED languageHeader">
         <li><?php the_field('region_title_left'); ?></li>
         <li><?php the_field('region_title_right'); ?></li>
