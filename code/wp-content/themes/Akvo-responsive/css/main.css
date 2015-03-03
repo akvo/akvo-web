@@ -5038,7 +5038,9 @@ div[id^="inline-"] {
       padding: 2em 0;
       margin: 0 auto; }
       .rsrProdPagWhatsNew section.sideBySide .container.iati, .rsrProdPagWhatsNew section.sideBySide .container.backEnd {
-        float: none; } }
+        float: none; }
+      .rsrProdPagWhatsNew section.sideBySide .container img {
+        width: 100%; } }
 .rsrProdPagWhatsNew section.improvedNavigation {
   background: whitesmoke;
   padding-bottom: 0;
@@ -5054,17 +5056,35 @@ div[id^="inline-"] {
   .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
     width: 100%;
     max-width: 100%; }
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+        width: 90%;
+        max-width: 90%;
+        margin-left: 10%;
+        margin-right: 0; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+        width: 75%;
+        max-width: 75%;
+        margin-left: 25%;
+        margin-right: 0; } }
   .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
     position: absolute;
-    left: 10%;
+    left: 5%;
     top: 15%;
-    max-width: 75%; }
+    max-width: 64%; }
     @media only screen and (min-width: 768px) and (max-width: 992px) {
       .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
         max-width: 60%; } }
     .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
       text-align: left;
       margin-left: 0; }
+    @media only screen and (max-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        max-width: 100%; }
+        .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+          margin-left: auto;
+          margin-right: auto; } }
     @media only screen and (min-width: 768px) {
       .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption p.fullWidthParag {
         margin-left: 0;
@@ -5078,3 +5098,5 @@ div[id^="inline-"] {
 @media only screen and (max-width: 768px) {
   .rsrProdPagWhatsNew p.fullWidthParag {
     text-align: justify; } }
+
+/*# sourceMappingURL=main.css.map */

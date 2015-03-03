@@ -5982,9 +5982,9 @@ div[id^="inline-"] {
 ------------------------------------*/
 
 .flow-help-mailchimp-signup {
-    background:rgba($akvoPurple, 0.1);
+    background: rgba($akvoPurple, 0.1);
     @include border-radius(5px);
-    padding:10px 15px 20px;
+    padding: 10px 15px 20px;
     label {
         font-size: inherit;
     }
@@ -6014,7 +6014,7 @@ div[id^="inline-"] {
         margin: 4em auto;
         &.fullWidthParag {
             &:last-child {
-                 hr {
+                hr {
                     display: none;
                 }
             }
@@ -6116,7 +6116,7 @@ div[id^="inline-"] {
             img {
                 max-width: 100%;
             }
-            @media only screen and (min-width: 768px) {
+            @media only screen and (min-width: $width-small) {
                 .fullWidthParag {
                     width: 100%;
                 }
@@ -6130,6 +6130,9 @@ div[id^="inline-"] {
                 &.iati,
                 &.backEnd {
                     float: none;
+                }
+                img {
+                    width: 100%;
                 }
             }
         }
@@ -6151,21 +6154,41 @@ div[id^="inline-"] {
         .backgroundImage {
             width: 100%;
             max-width: 100%;
+            @media only screen and (min-width: $width-medium) and (max-width: $width-large) {
+                width: 90%;
+                max-width: 90%;
+                margin-left: 10%;
+                margin-right: 0;
+            }
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
+                width: 75%;
+                max-width: 75%;
+                margin-left: 25%;
+                margin-right: 0;
+            }
         }
         .improvedNavigationCaption {
             position: absolute;
-            left: 10%;
+            left: 5%;
             top: 15%;
-            max-width: 75%;
-            @media only screen and (min-width: 768px) and (max-width: 992px) {
+            max-width: 64%;
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
                 max-width: 60%;
             }
             h3 {
                 text-align: left;
                 margin-left: 0;
             }
+            @include responsive(small-max-screens) {
+                max-width: 100%;
+                h3 {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
             p.fullWidthParag {
-                @media only screen and (min-width: 768px) {
+                @media only screen and (min-width: $width-small) {
                     margin-left: 0;
                     text-align: left;
                 }
