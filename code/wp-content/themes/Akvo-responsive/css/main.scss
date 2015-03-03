@@ -4654,7 +4654,7 @@ h2.rsrProductPage#download {
 }
 
 ol.threeFlowPoints {
-    list-style: outside decimal; 
+    list-style: outside decimal;
     li {
         margin: 0em auto 1em auto;
         padding: 0em 1em;
@@ -6056,6 +6056,10 @@ div[id^="inline-"] {
     }
     section.textOfImage {
         background: whitesmoke;
+        /* Hide the section when hero image viewable */
+        @media only screen and (min-width: $width-small) {
+            display: none;
+        }
         div.container {
             max-width: 90%;
             margin: 0 auto;
@@ -6081,7 +6085,6 @@ div[id^="inline-"] {
                 }
             }
         }
-
         .pointTitle {
             padding-top: 0.5em;
             padding-right: 2em;
