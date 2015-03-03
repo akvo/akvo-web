@@ -3734,6 +3734,9 @@ section.rsrNuggetsSection li h3 {
 section.rsrNuggetsSection li h3 {
   text-align: left; }
 
+.rsrProdPag section.rsrDownloads {
+  background: whitesmoke; }
+
 @media only screen and (max-width: 768px) {
   section.inFivePoints li h3,
   section.rsrNuggetsSection li h3 {
@@ -5105,5 +5108,18 @@ div[id^="inline-"] {
 @media only screen and (max-width: 768px) {
   .rsrProdPagWhatsNew p.fullWidthParag {
     text-align: justify; } }
+
+.rsrProdPag section.callToAction {
+  padding-top: 4em;
+  padding-bottom: 2em; }
+  @media only screen and (min-width: 768px) {
+    .rsrProdPag section.callToAction .fullWidthParag {
+      text-align: center; } }
+  .rsrProdPag section.callToAction hr.delicate {
+    margin: 30px auto; }
+    .rsrProdPag section.callToAction hr.delicate:last-child {
+      display: none; }
+  .rsrProdPag section.callToAction h2 {
+    margin-bottom: 1em; }
 
 /*# sourceMappingURL=main.css.map */
