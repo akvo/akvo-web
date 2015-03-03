@@ -1,3 +1,68 @@
+Tuesday 27 January 2015, @lynngre
+
+--------
+Akvo.org ver 1.1.11 Lightning Lemon Hotfix
+---
+
+## Hotfix
+
+Hotfix resolved issues with responsiveness http://akvo.org/products/akvo-sites/ page as well as fixing the anchor text at the top of each product page.
+
+--------
+Akvo.org ver 1.1.11 Lightning Lemon
+---
+
+Tuesday 27 January 2015, @lynngre
+
+
+## New & noteworthy
+
+Because Akvo works with the IATI standard, we can help you share your work via IATI and at the same time get much more out of your programme reporting, monitoring and evaluation.  Discover our new [Akvo IATI page]( http://akvo.org/products/akvo-iati/) for further details.
+
+We have also updated our [Akvo RSR](http://akvo.org/products/rsr/) and [Akvo FLOW](http://akvo.org/products/akvoflow/) product pages to include some examples of how Akvo products can assist you - from collecting data to decision making based on that data.
+
+There are also two new focus area widgets added to the sidebar of the blog.  Right now you can watch a news clip of [Akvo's work with UNICEF Pacific](http://akvo.org/blog/) in Fiji.
+
+
+## New features
+
+
+### Akvo/IATI page
+
+New page linking from the Akvo RSR product page highlighting IATI and Akvo's products integrate into the framework.
+
+http://akvo.org/products/akvo-iati/
+
+
+Github issue: #494 
+
+
+### Widgets for the Blog page sidebar
+
+Two new widgets added to allow for addition of the newsletter signup and any other focus area.
+
+http://akvo.org/blog/
+
+
+Github issue:  #495 
+
+
+## Bug fixes & changes
+
+
+### Page edits
+
+Small edits to various pages to correct issues such as line breaks and grammar in page headings.
+
+Github issue:  #483 & #477 
+
+###  RSR Product page & FLOW Product page - Who is using?
+
+The 'Who is using?' area on both the Akvo RSR and Akvo FLOW product pages have been updated with various case studies of how are where the tools are used from the collection of data through to the decision making based on that data.
+
+http://akvo.org/products/rsr/
+http://akvo.org/products/akvoflow/
+
 --------
 Akvo.org ver 1.1.10 Kinetic kiwi
 ---

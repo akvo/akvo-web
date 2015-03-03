@@ -1,7 +1,7 @@
 /*---------------------------------------------------------------------------------
 
-		Title:          Akvo.org Styles for Desktop, mobile, tablet
-		Author:         Loic Sans, loic@akvo.org
+        Title:          Akvo.org Styles for Desktop, mobile, tablet
+        Author:         Loic Sans, loic@akvo.org
 
 /*---------------------------------------------------------------------------------*/
 /*---------------------------------------------------------------------------------
@@ -179,7 +179,7 @@ a:hover {
   text-decoration: underline; }
 
 /*--------------------------------------------------------------
-   						Default Typography.
+                        Default Typography.
   --------------------------------------------------------------*/
 /* Default font settings.
    The font-size percentage is of 16px. (0.875 * 16px = 14px) */
@@ -206,7 +206,7 @@ body.network {
   body {
     font-size: 1em; } }
 /*--------------------------------------------------------------
-							Headings
+                            Headings
 -------------------------------------------------------------- */
 h1,
 h2,
@@ -262,8 +262,8 @@ h6 img {
   color: #e27c00;
   position: relative;
   /* text-overflow:     ellipsis;
-              	white-space:     nowrap;
-              	overflow:     hidden;
+                  white-space:     nowrap;
+                  overflow:     hidden;
               */ }
 
 .backLinedGrey {
@@ -273,8 +273,8 @@ h6 img {
   text-shadow: none;
     /* text-overflow:     ellipsis;
 
-                	white-space:     nowrap;
-                	overflow:     hidden;
+                    white-space:     nowrap;
+                    overflow:     hidden;
                 */ }
 
 .backLined {
@@ -348,7 +348,7 @@ p {
   margin: 3em auto; }
 
 /*--------------------------------------------------------------
-							Misc.
+                            Misc.
 --------------------------------------------------------------*/
 .hidden {
   display: none !important; }
@@ -363,7 +363,7 @@ a img {
   border: none; }
 
 /* self-clear floats
-	I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
+    I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
 */
 .floats-in:after {
   clear: both;
@@ -666,7 +666,7 @@ div.centerED > p,
   margin-top: 2em !important; }
 
 /*==========================================================================
-								   Forms
+                                   Forms
 ========================================================================== */
 form {
   margin: 0em;
@@ -854,7 +854,7 @@ input[type="submit"] {
   border-radius: 0.25em; }
 
 /*---------------------------------------------
-				  Back to top
+                  Back to top
 --------------------------------------------- */
 #back-top {
   bottom: 0px;
@@ -966,7 +966,7 @@ a.helpIcon:hover {
   top: 0em; }
 
 /************************************************************************
-								STRUCTURE
+                                STRUCTURE
 ************************************************************************/
 #content {
   position: relative;
@@ -1365,7 +1365,7 @@ div.headerWrap {
   color: white; }
 
 /* ---------------------------------------------
-			Top navigation styles
+            Top navigation styles
 --------------------------------------------- */
 #navbar {
   display: none; }
@@ -1635,7 +1635,7 @@ nav#n ul li:last-child {
     color: #fff;
     text-decoration: none; } }
 /*-----------------------------------
-	Top Header Search input
+    Top Header Search input
 ------------------------------------*/
 input[type="search"] {
   -moz-transition: width 0.2s linear;
@@ -1652,7 +1652,7 @@ input[type="search"] {
   vertical-align: middle;
   width: 10%;
   /* z-index:    1099999;
-              	opacity:    0.8;
+                  opacity:    0.8;
               */ }
 
 @media only screen and (max-width: 768px) {
@@ -1693,7 +1693,7 @@ header#top input[type="submit"] {
   display: none; }
 
 /*---------------------------------------------
- 				breadCrumb
+                breadCrumb
 --------------------------------------------- */
 body.home div.breadCrumb {
   display: none; }
@@ -1751,7 +1751,7 @@ div.breadCrumbs {
   color: #2c2a74; }
 
 /*---------------------------------------------------------------------------------------
-											Home Page
+                                            Home Page
 ---------------------------------------------------------------------------------------*/
 body.home h1.akvoDescr {
   font-size: 2em;
@@ -2092,7 +2092,7 @@ body.home h1.akvoDescr {
   background-size: 85%; }
 
 /*************************************************************
-					FAQ
+                    FAQ
 *************************************************************/
 .faqMenu {
   margin: 0em 0em 10px; }
@@ -2179,7 +2179,7 @@ ul.faqMenuList h3,
   text-align: left !important; }
 
 /*************************************************************
-					Looking for more
+                    Looking for more
 *************************************************************/
 #moreStuffHome {
   padding: 3.5em 0em;
@@ -2299,7 +2299,7 @@ moreStuffHome figcaption a {
   margin: 0em 0em 0em 1%; }
 
 /*-----------------------------------
-				BLOG
+                BLOG
 ------------------------------------*/
 .widget figure div {
   background: #ececec;
@@ -2545,7 +2545,7 @@ blockquote p {
   color: white; }
 
 /*-----------------------------------
-				Comments
+                Comments
 ------------------------------------*/
 #respond {
   background: #f2f2f2;
@@ -2752,7 +2752,7 @@ p#allowed_tags code {
   top: 1px; }
 
 /*-----------------------------------
-			Widget area
+            Widget area
 ------------------------------------*/
 #sidebar-responsive {
   display: none; }
@@ -2860,7 +2860,7 @@ p#allowed_tags code {
   text-decoration: none; }
 
 /*----------------------------------------------------------------------
-								Footer
+                                Footer
 -----------------------------------------------------------------------*/
 li.problem {
   margin: 1em 0 0 0; }
@@ -3223,7 +3223,7 @@ footer.bottomPage small:before {
   width: 100%; }
 
 /*************************************************************
-						Product Pages
+                        Product Pages
 *************************************************************/
 .rsr #mainbody,
 .akvoflow #mainbody,
@@ -3280,7 +3280,7 @@ nav.anchorNav h5 {
 p.mLabel {
   color: rgba(222, 137, 41, 0.8);
   /*color:    rgb(102,102,102);
-              	color:    rgb(0,0,0);*/
+                  color:    rgb(0,0,0);*/
   font-size: 0.6em;
   text-transform: uppercase; }
 
@@ -3438,7 +3438,20 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     display: none; }
 
   .productPage section.figure img {
+    display: none; }
+
+  .productPage.rsrProdPag section {
+    padding-top: 1em;
+    padding-bottom: 1em; }
+  .productPage.rsrProdPag section.figure {
+    display: block; }
+    .productPage.rsrProdPag section.figure img {
+      display: block; }
+  .productPage.rsrProdPag .soloImageSection {
     display: none; } }
+.rsrProdPag h2 {
+  margin-bottom: 3em; }
+
 .rsr .productPage section.figure {
   background: url("../images/chruch.png") repeat; }
 
@@ -3466,6 +3479,29 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .figure.fullWidthImg img {
   max-width: none; }
 
+.productDescr.rsr {
+  background: whitesmoke; }
+
+section.rsrNuggetsSection h3.nuggetTitle {
+  display: inline-block;
+  width: 50%;
+  padding: 0;
+  margin: 0; }
+section.rsrNuggetsSection li:nth-child(odd) img {
+  float: right;
+  padding-right: 0; }
+section.rsrNuggetsSection li:nth-child(even) img {
+  float: left;
+  padding-left: 0; }
+
+.soloImage {
+  padding: 3em 2%;
+  width: 96%;
+  max-width: 1000px; }
+
+li.rarNuggets:after {
+  clear: both; }
+
 @media only screen and (max-width: 768px) {
   .figure img {
     height: auto;
@@ -3482,9 +3518,9 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
   text-transform: none;
   width: 75%;
   /* text-shadow:    1px 1px 2px rgb(103,103,103);
-              	text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
-              	color:     rgb(222, 137, 41);
-              	*/
+                  text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
+                  color:     rgb(222, 137, 41);
+                  */
   color: #646464;
   z-index: 999999; }
 
@@ -3541,6 +3577,61 @@ section.inFivePoints li img {
 .rsrProdPag section.inFivePoints li.pointFour img {
   margin: 4% 0em 0em 0em; }
 
+section.rsrNuggetsSection ol {
+  list-style-type: decimal; }
+
+section.rsrNuggetsSection li {
+  background: whitesmoke;
+  display: block;
+  height: auto;
+  margin: 0em auto;
+  padding: 4em 4% 0em 4%;
+  position: relative;
+  width: 92%; }
+  section.rsrNuggetsSection li.supportingYourTeam {
+    background: white; }
+  section.rsrNuggetsSection li img {
+    bottom: 0em;
+    position: relative;
+    width: 44%;
+    padding: 1em 6% 1em 6%; }
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection li {
+    padding: 1em 2% 0em 2%;
+    width: inherit; }
+    section.rsrNuggetsSection li img {
+      position: relative;
+      padding: 1em 0; } }
+section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+  display: inline-block;
+  max-width: 50%; }
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+    display: block;
+    max-width: 100%; }
+  section.rsrNuggetsSection h3.nuggetTitle.nuggetAside {
+    display: block;
+    width: 100%; } }
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection p.nuggetDescription.nuggetAside {
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto; } }
+
+li.rsrNuggets.floats-in {
+  padding-top: 5em; }
+  li.rsrNuggets.floats-in:first-child {
+    padding-top: 3.5em; }
+  li.rsrNuggets.floats-in:nth-last-child(2), li.rsrNuggets.floats-in:last-child {
+    padding-bottom: 2.5em; }
+@media only screen and (max-width: 768px) {
+  li.rsrNuggets .floats-in {
+    padding-top: 2em; }
+    li.rsrNuggets .floats-in:first-child {
+      padding-top: 1.5em; }
+    li.rsrNuggets .floats-in:nth-last-child(2), li.rsrNuggets .floats-in:last-child {
+      padding-bottom: 1.5em; } }
+
 .akvopedia #akvopediaInFour li img {
   max-width: 200px;
   width: 100%; }
@@ -3580,6 +3671,29 @@ section.inFivePoints li:nth-child(2n) img {
 section.inFivePoints li:nth-child(2n) div {
   float: left; }
 
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection h3.nuggetTitle {
+    padding-bottom: 0.6em;
+    text-align: center; }
+  section.rsrNuggetsSection p.nuggetDescription {
+    text-align: justify; }
+  section.rsrNuggetsSection li img {
+    width: 100%; } }
+section.rsrNuggetsSection li div {
+  float: right;
+  position: relative;
+  width: 48%; }
+@media only screen and (max-width: 768px) {
+  section.rsrNuggetsSection li div {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0px 10px;
+    width: 100%; } }
+section.rsrNuggetsSection li p {
+  padding: 1.5em 0em 0em;
+  text-shadow: 0em 1px white; }
+
 .productPage h3 {
   color: #2c2a74;
   margin: 0.25em auto 1em auto;
@@ -3596,6 +3710,12 @@ section.inFivePoints li:nth-child(2n) div {
   text-align: center;
   width: 80%; }
 
+.rsrProdPag .productDescr h3 {
+  margin: 0 auto;
+  text-align: center;
+  width: 80%;
+  padding: 1.25em 0 1em 0; }
+
 .productPage img + h3 {
   margin: 1.25em auto 1em; }
 
@@ -3605,13 +3725,21 @@ section.inFivePoints li:nth-child(2n) div {
 .splitImg ol.threeFlowPoints {
   width: 45%; }
 
-section.inFivePoints li h3 {
+section.inFivePoints li h3,
+section.rsrNuggetsSection li h3 {
   padding-bottom: 2em;
   position: relative;
   text-align: center; }
 
+section.rsrNuggetsSection li h3 {
+  text-align: left; }
+
+.rsrProdPag section.rsrDownloads {
+  background: whitesmoke; }
+
 @media only screen and (max-width: 768px) {
-  section.inFivePoints li h3 {
+  section.inFivePoints li h3,
+  section.rsrNuggetsSection li h3 {
     padding-bottom: 10px; } }
 .inFivePoints li span {
   margin: 0em 0.25em 0em 0em; }
@@ -3633,7 +3761,7 @@ section.inFivePoints li h3 {
 .akvoSitesProdPag hgroup h1 {
   height: 55px;
   background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
-  background-size: auto 50px; }
+  background-size: auto 40px; }
 
 .akvoIatiPag hgroup h1 {
   height: 55px;
@@ -3683,6 +3811,30 @@ section.inFivePoints li h3 {
 .rsrUpDescr p {
   margin: 3em auto; }
 
+#rsrTech {
+  background: whitesmoke; }
+
+@media only screen and (max-width: 768px) {
+  section#rsrTech p {
+    text-align: justify; } }
+h2.rsrProductPage {
+  margin: 1.25em 0 0.75em 0; }
+
+h2.rsrProductPage#download {
+  margin-bottom: 1em; }
+
+section.whoUseIt#rsrRealWorld h2 {
+  margin-bottom: 1em; }
+
+@media only screen and (max-width: 768px) {
+  h2.rsrProductPage#download,
+  .rsrProdPag .twoPagerContainer > h2 {
+    margin-bottom: 0.6em; }
+
+  /* The language headers are misleading when manuals are displayed in
+  ** a single column. Hide them on narrow viewports */
+  .rsrProdPag .languageHeader {
+    display: none; } }
 #rsrUpTech ul li, .techSpecs ul li {
   margin: 0.5em 0 1em 25px; }
 
@@ -3694,13 +3846,11 @@ section.inFivePoints li h3 {
 
 ol.threeFlowPoints {
   list-style: outside decimal; }
-
-ol.threeFlowPoints li {
-  margin: 0em auto 1em auto;
-  padding: 0em 1em; }
-
-ol.threeFlowPoints li p {
-  font-weight: 500; }
+  ol.threeFlowPoints li {
+    margin: 0em auto 1em auto;
+    padding: 0em 1em; }
+    ol.threeFlowPoints li p {
+      font-weight: 500; }
 
 .videoCenter blockquote {
   width: 75%; }
@@ -3749,7 +3899,7 @@ section.flowMonDescr {
     top: 143px;
     text-align: left; } }
 /*-----------------------------------
-			Contact Info Page
+            Contact Info Page
 ------------------------------------*/
 .contactInfo section {
   margin: 2em auto 0em auto; }
@@ -3818,7 +3968,7 @@ section.flowMonDescr {
   -webkit-animation: highlight 2s; }
 
 /*-----------------------------------
-				Annual Report Page
+                Annual Report Page
 ------------------------------------*/
 .aReport {
   margin: 2em auto; }
@@ -3830,7 +3980,7 @@ section.flowMonDescr {
   box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1); }
 
 /*-----------------------------------
-				Team Page
+                Team Page
 ------------------------------------*/
 .teamPage {
   margin: 0em auto; }
@@ -3861,7 +4011,7 @@ ul.staff li {
   display: inline;
   float: left;
   margin: 0em 0.8% 0px 0em;
-  min-height: 205px;
+  min-height: 218px;
   position: relative;
   width: 16%; }
 
@@ -4095,7 +4245,7 @@ ul.staff li:nth-child(6n) {
   width: 100%; }
 
 /*----------------------------------------------------------------------------------------------------------------------------------------
-																         Media section
+                                                                         Media section
 ----------------------------------------------------------------------------------------------------------------------------------------*/
 .media h2 {
   margin: 1.5em 0em 0.5em; }
@@ -4139,7 +4289,7 @@ ul.staff li:nth-child(6n) {
   margin: 50px auto; }
 
 /*--------------------------------------------------------------------
-							Help section
+                            Help section
 --------------------------------------------------------------------*/
 .akvo-policies-and-terms ul {
   margin: 0em 0em 0em 10px; }
@@ -4281,7 +4431,7 @@ h1.akvopediaHelp {
           text-align: center; } }
 
 /*--------------------------------------------------------------------
-							Network Page
+                            Network Page
 --------------------------------------------------------------------*/
 #akvoDashboard {
   background: #202024;
@@ -4730,7 +4880,7 @@ h1.akvopediaHelp {
   max-width: none; }
 
 /***********************************
-						Price table
+                        Price table
 ********************************************/
 .pricingList {
   margin: 3em auto; }
@@ -4786,7 +4936,193 @@ div[id^="inline-"] {
   display: none; }
 
 /*-----------------------------------
-				Work with us
+                Work with us
 ------------------------------------*/
 .twoPagerContainer {
   width: 500px; }
+
+.rsrProdPag .twoPagerContainer {
+  max-width: 100%; }
+
+/*-----------------------------------
+                FLOW help page
+------------------------------------*/
+#content.flowHelpSupport {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+
+.flow-help-mailchimp-signup {
+  background: rgba(44, 42, 116, 0.1);
+  -moz-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  padding: 10px 15px 20px; }
+  .flow-help-mailchimp-signup label {
+    font-size: inherit; }
+  .flow-help-mailchimp-signup input {
+    display: block;
+    margin: 1em 0; }
+    .flow-help-mailchimp-signup input.email {
+      margin: 0.75em 0 0.25em 0;
+      padding: 0.25em;
+      font-size: 1.25em; }
+
+/*-----------------------------------
+                Newsletters page
+------------------------------------*/
+.newsletter-container h2 {
+  margin: 0 auto 0.6em auto; }
+.newsletter-container p {
+  text-align: justify; }
+.newsletter-container .newsletter-profile {
+  margin: 4em auto; }
+  .newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
+    display: none; }
+.newsletter-container .link-button {
+  margin-top: 1.25em;
+  text-align: center; }
+.newsletter-container .newsletter-profile.fullWidthParag:last-child hr {
+  display: none; }
+
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+.rsrProdPagWhatsNew.rsrProdPag h2 {
+  margin-bottom: 1em; }
+.rsrProdPagWhatsNew h2, .rsrProdPagWhatsNew h3 {
+  max-width: 90%;
+  margin: 0 auto; }
+@media only screen and (max-width: 992px) {
+  .rsrProdPagWhatsNew section#rsrWhatsNewHero {
+    display: none; } }
+.rsrProdPagWhatsNew section.textOfImage {
+  background: whitesmoke;
+  /* Hide the section when hero image viewable */ }
+  @media only screen and (min-width: 992px) {
+    .rsrProdPagWhatsNew section.textOfImage {
+      display: none; } }
+  .rsrProdPagWhatsNew section.textOfImage div.container {
+    max-width: 90%;
+    margin: 0 auto;
+    display: table; }
+  .rsrProdPagWhatsNew section.textOfImage .row {
+    display: table-row; }
+  .rsrProdPagWhatsNew section.textOfImage .cell {
+    display: table-cell; }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.textOfImage .cell {
+      padding-bottom: 0.75em; }
+    .rsrProdPagWhatsNew section.textOfImage .row:last-child .cell:last-child {
+      padding-bottom: 0; } }
+  .rsrProdPagWhatsNew section.textOfImage .pointTitle {
+    padding-top: 0.5em;
+    padding-right: 2em;
+    font-weight: bold; }
+.rsrProdPagWhatsNew .textOfImage h2,
+.rsrProdPagWhatsNew .contributing h2 {
+  margin-top: 1.75em; }
+@media only screen and (max-width: 768px) {
+  .rsrProdPagWhatsNew .textOfImage h2,
+  .rsrProdPagWhatsNew .contributing h2 {
+    margin-top: 0.75em; } }
+.rsrProdPagWhatsNew section.contributing {
+  background: whitesmoke;
+  padding-bottom: 1em; }
+.rsrProdPagWhatsNew section.sideBySide {
+  padding-top: 2em; }
+  .rsrProdPagWhatsNew section.sideBySide .container {
+    width: 40%;
+    padding: 2em 5%; }
+    .rsrProdPagWhatsNew section.sideBySide .container.iati {
+      float: left; }
+    .rsrProdPagWhatsNew section.sideBySide .container.backEnd {
+      float: right;
+      background: whitesmoke; }
+    .rsrProdPagWhatsNew section.sideBySide .container img {
+      max-width: 100%; }
+    @media only screen and (min-width: 768px) {
+      .rsrProdPagWhatsNew section.sideBySide .container .fullWidthParag {
+        width: 100%; } }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.sideBySide .container {
+      width: 100%;
+      padding: 2em 0;
+      margin: 0 auto; }
+      .rsrProdPagWhatsNew section.sideBySide .container.iati, .rsrProdPagWhatsNew section.sideBySide .container.backEnd {
+        float: none; }
+      .rsrProdPagWhatsNew section.sideBySide .container img {
+        width: 100%; } }
+.rsrProdPagWhatsNew section.improvedNavigation {
+  background: whitesmoke;
+  padding-bottom: 0;
+  position: relative; }
+  @media only screen and (max-width: 768px) {
+    .rsrProdPagWhatsNew section.improvedNavigation {
+      padding-bottom: 1.5em; } }
+  .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationWrapper {
+    position: relative;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto; }
+  .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+    width: 100%;
+    max-width: 100%; }
+    @media only screen and (min-width: 992px) and (max-width: 1200px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+        width: 90%;
+        max-width: 90%;
+        margin-left: 10%;
+        margin-right: 0; } }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .backgroundImage {
+        width: 75%;
+        max-width: 75%;
+        margin-left: 25%;
+        margin-right: 0; } }
+  .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    max-width: 64%; }
+    @media only screen and (min-width: 768px) and (max-width: 992px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        max-width: 60%; } }
+    .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+      text-align: left;
+      margin-left: 0; }
+    @media only screen and (max-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        max-width: 100%; }
+        .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+          margin-left: auto;
+          margin-right: auto; } }
+    @media only screen and (min-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption p.fullWidthParag {
+        margin-left: 0;
+        text-align: left; } }
+    @media only screen and (max-width: 768px) {
+      .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption {
+        position: static; }
+        .rsrProdPagWhatsNew section.improvedNavigation .improvedNavigationCaption h3 {
+          text-align: center;
+          padding: 1.2em 0 0.75em 0; } }
+@media only screen and (max-width: 768px) {
+  .rsrProdPagWhatsNew p.fullWidthParag {
+    text-align: justify; } }
+
+.rsrProdPag section.callToAction {
+  padding-top: 4em;
+  padding-bottom: 2em; }
+  @media only screen and (min-width: 768px) {
+    .rsrProdPag section.callToAction .fullWidthParag {
+      text-align: center; } }
+  .rsrProdPag section.callToAction hr.delicate {
+    margin: 30px auto; }
+    .rsrProdPag section.callToAction hr.delicate:last-child {
+      display: none; }
+  .rsrProdPag section.callToAction h2 {
+    margin-bottom: 1em; }
+
+/*# sourceMappingURL=main.css.map */

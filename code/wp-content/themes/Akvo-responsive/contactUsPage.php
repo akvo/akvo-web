@@ -48,6 +48,10 @@
               <h3><?php the_sub_field('title'); ?></h3>
               <h4><?php the_sub_field('location'); ?></h4>
               <p><?php the_sub_field('info'); ?></p>
+              <p>
+                <a href="<?php the_sub_field('google_maps_link'); ?>" target="_blank">
+                <?php the_sub_field('google_maps_text'); ?></a>
+              </p>
           </div>
       </li>
     <?php endwhile; ?>
