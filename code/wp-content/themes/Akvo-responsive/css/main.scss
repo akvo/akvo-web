@@ -1300,6 +1300,71 @@ a.helpIcon:hover {
     }
 }
 
+.fiveColumns {
+    margin: 0em auto;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    .fiveColumns.wrapper {
+        padding: 0em;
+    }
+}
+
+
+.fiveColumns > div,
+.fiveColumns > li {
+    @include border-radius(0.25em);
+    float: left;
+    margin: 0em 0.15%;
+    min-height: 200px;
+    padding: 0.2em 0.25% 0.25em 0.25%;
+    position: relative;
+    width: 19.20%;
+}
+
+@include responsive(wide-max-screens) {
+    @include responsive(small-screens) {
+        .fiveColumns > div,
+        .fiveColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 31%;
+        }
+        .fiveColumns > li:nth-child(4) {
+            margin-left: 15.5%;
+        }
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    .fiveColumns div,
+    .fiveColumns > li {
+        float: left;
+        margin-left: 0;
+        margin: 30px auto;
+        padding: 1%;
+        width: 47.75%;
+    }
+    .fiveColumns > li:nth-child(5),
+    .fiveColumns > div:nth-child(5) {
+        margin-left: 23.875%;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .fiveColumns div,
+    .fiveColumns > li {
+        margin: 30px auto;
+        padding: 1%;
+        width: 98%;
+    }
+}
+
 .splitImg {
     margin: 2.5em auto;
     position: relative;
@@ -6246,6 +6311,21 @@ div[id^="inline-"] {
         }
         h2 {
             margin-bottom: 1em;
+        }
+    }
+}
+
+/*-----------------------------------
+        Akvopedia product page
+------------------------------------*/
+
+.akvopediaProdPag {
+    .pedia4points {
+        li {
+            h3 {
+                display: block;
+                min-height: 2.5em;
+            }
         }
     }
 }
