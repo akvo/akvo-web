@@ -1,7 +1,7 @@
 <?php
-	/*
-		Template Name: product-akvopedia
-	*/
+  /*
+    Template Name: product-akvopedia
+  */
 ?>
 <?php get_header(); ?>
 
@@ -29,7 +29,7 @@
   <div class="mShownCollapse"><a></a></div>
   <ul>
     <li><a href="#akvopediaDescr">Description</a></li>
-    <li><a href="#akvopediaInFour">Four portals</a></li>
+    <li><a href="#akvopediaInFour">Five portals</a></li>
     <li><a href="#akvopediaProject">Project links</a></li>
     <li class="hidden"><a href="#akvopediaRealWorld">Who is using Akvopedia?</a></li>
     <li><a href="#akvopediaContribute">Contribute</a></li>
@@ -65,12 +65,12 @@
       <a href="http://akvopedia.org/wiki/Sustainability_Portal"><h3> <span>04</span>
         <?php the_field('akvopedia_point_four_h3'); ?>
       </h3>
-      <img src="<?php the_field('akvopedia_point_five_img'); ?>"  class="centerED" /></a></li>
+      <img src="<?php the_field('akvopedia_point_four_img'); ?>"  class="centerED" /></a></li>
     <li class="pointFive floats-in">
       <a href="http://akvopedia.org/wiki/Decision_%26_Assessment_Tools"><h3> <span>05</span>
         <?php the_field('akvopedia_point_five_h3'); ?>
       </h3>
-      <img src="<?php the_field('akvopedia_point_four_img'); ?>"  class="centerED" /></a></li>
+      <img src="<?php the_field('akvopedia_point_five_img'); ?>"  class="centerED" /></a></li>
   </ul>
 </section>
 <section id="akvopediaProject" class="wrapper floats-in">
