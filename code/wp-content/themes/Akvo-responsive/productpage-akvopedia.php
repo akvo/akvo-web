@@ -41,11 +41,11 @@
   </div>
   <img src="<?php the_field('product_akvopedia_img'); ?>" title="akvopediaImg" class="wrapper"/> </section>
 <section class="" id="akvopediaInFour">
-  <h1 class="">Four portals</h1>
+  <h1 class="">Five portals</h1>
   <div class="fullWidthParag centerED">
    <?php the_field('akvopedia_fourPortal_txt'); ?>
   </div>
-  <ul class="wrapper fourColumns floats-in pedia4points">
+  <ul class="wrapper fiveColumns floats-in pedia4points">
     <li class="pointOne floats-in"> 
       <a href="http://akvopedia.org/wiki/Water_Portal"><h3> <span>01</span>
         <?php the_field('akvopedia_point_one_h3'); ?>
@@ -64,6 +64,11 @@
     <li class="pointFour floats-in">
       <a href="http://akvopedia.org/wiki/Sustainability_Portal"><h3> <span>04</span>
         <?php the_field('akvopedia_point_four_h3'); ?>
+      </h3>
+      <img src="<?php the_field('akvopedia_point_five_img'); ?>"  class="centerED" /></a></li>
+    <li class="pointFive floats-in">
+      <a href="http://akvopedia.org/wiki/Decision_%26_Assessment_Tools"><h3> <span>05</span>
+        <?php the_field('akvopedia_point_five_h3'); ?>
       </h3>
       <img src="<?php the_field('akvopedia_point_four_img'); ?>"  class="centerED" /></a></li>
   </ul>
