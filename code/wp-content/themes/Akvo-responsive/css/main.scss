@@ -1,10 +1,11 @@
 /*---------------------------------------------------------------------------------
 
-		Title:          Akvo.org Styles for Desktop, mobile, tablet
-		Author:         Loic Sans, loic@akvo.org
+        Title:          Akvo.org Styles for Desktop, mobile, tablet
+        Author:         Loic Sans, loic@akvo.org
 
 /*---------------------------------------------------------------------------------*/
-@import 'library';
+@import "library";
+
 html,
 body,
 div,
@@ -93,9 +94,11 @@ video {
     padding: 0em;
     vertical-align: baseline;
 }
+
 html {
     height: 101%;
 }
+
 article,
 aside,
 details,
@@ -109,43 +112,52 @@ nav,
 section {
     display: block;
 }
+
 header {
     width: 100%;
 }
+
 ol,
 ul {
     list-style: none;
 }
+
 blockquote,
 q {
     quotes: none;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0em;
 }
+
 img {
     border: 0em;
     height: auto;
     max-width: 100%;
 }
+
 a {
     color: #5d9de5;
     text-decoration: none;
-	@include transition(color 0.2s linear);
+    @include transition(color 0.2s linear);
 }
+
 a:hover {
     color: #3f7cc0;
     text-decoration: underline;
 }
+
 /*--------------------------------------------------------------
-   						Default Typography.
+                        Default Typography.
   --------------------------------------------------------------*/
 
 /* Default font settings.
@@ -159,6 +171,7 @@ html {
     overflow-y: scroll;
     text-size-adjust: 100%;
 }
+
 body {
     color: rgb(32, 32, 36);
     font-family: $bodyFont;
@@ -166,17 +179,20 @@ body {
     line-height: 1.4em;
     text-rendering: optimizeLegibility;
 }
+
 body.network {
     background: url("../images/debut_light.png") repeat;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     body {
         font-size: 1em;
     }
 }
+
+
 /*--------------------------------------------------------------
-							Headings
+                            Headings
 -------------------------------------------------------------- */
 h1,
 h2,
@@ -188,6 +204,7 @@ h6 {
     font-weight: normal;
     text-transform: none;
 }
+
 h1 {
     color: $akvoPurple;
     font-size: 2.9em;
@@ -195,6 +212,7 @@ h1 {
     /* text-shadow:     1px 2px 0 rgb(222, 137, 41);
                 */
 }
+
 h2 {
     color: $akvoPurple;
     font-size: 2.3em;
@@ -202,23 +220,28 @@ h2 {
     /* margin:     0 auto 1.5em auto;*/
     text-align: center;
 }
+
 h3 {
     font-size: 1.6em;
     line-height: 1.2em;
 }
+
 h4 {
     color: $akvoPurple;
     font-size: 1.2em;
     line-height: 1.25em;
     margin: 1.1em 0em 0.5em;
 }
+
 h5 {
     font-size: 1.1em;
     margin-bottom: 1.1em;
 }
+
 h6 {
     font-size: 1em;
 }
+
 h1 img,
 h2 img,
 h3 img,
@@ -227,15 +250,17 @@ h5 img,
 h6 img {
     margin: 0em;
 }
+
 /* Lined behind Header. */
 .backLinedPurple {
     color: rgb(226, 124, 0);
     position: relative;
     /* text-overflow:     ellipsis;
-                	white-space:     nowrap;
-                	overflow:     hidden;
+                    white-space:     nowrap;
+                    overflow:     hidden;
                 */
 }
+
 .backLinedGrey {
     color: rgb(222, 137, 41);
     padding: 0em 0em 0px 0px;
@@ -243,10 +268,11 @@ h6 img {
     text-shadow: none;
     /* text-overflow:     ellipsis;
 
-                	white-space:     nowrap;
-                	overflow:     hidden;
+                    white-space:     nowrap;
+                    overflow:     hidden;
                 */
 }
+
 .backLined {
     margin: 0.75em auto;
     padding: 0em;
@@ -254,58 +280,69 @@ h6 img {
     text-align: center;
     text-shadow: none;
 }
+
 .backLined span {
     background: rgb(255, 255, 255);
     padding: 5px 10px;
 }
+
 .productPage p.darkCenter {
     margin-bottom: 0px;
 }
+
 .darkCenter {
     color: rgb(92, 112, 112);
     margin: 5px auto 0em 5px;
     text-align: center;
 }
+
 /* Styles the & when class "amp" is applied around &amp;  */
 .amp {
     font-family: Baskerville, "Goudy Old Style", "Palatino", "Book Antiqua", Georgia, serif;
     font-style: italic;
 }
+
 em {
     color: rgb(222, 137, 41);
-    font-family:$scriptFont;
+    font-family: $scriptFont;
     font-size: 1.2em;
     font-style: italic;
     margin: 0.1em 2% 0em 0em;
     padding-bottom: 1em;
 }
+
 time {
     font-family: $bodyFont;
     font-size: 0.9em;
     margin: 0.2em 2% 0em 0em;
 }
+
 p {
     font-size: 1em;
     line-height: 1.6em;
     margin: 0.5em 0em;
     text-align: left;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     p {
         font-size: 1em;
     }
 }
+
+
 .indentNbr {
     font-weight: bold;
     margin-right: 0.5em;
 }
+
 .strongType {
-    font-family:$titleFont;
+    font-family: $titleFont;
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1.2em;
 }
+
 .Absolute-Center {
     bottom: 0em;
     height: 50%;
@@ -317,26 +354,32 @@ p {
     top: 0em;
     width: 50%;
 }
+
 .vertMargin {
     margin: 3em auto;
 }
+
 /*--------------------------------------------------------------
-							Misc.
+                            Misc.
 --------------------------------------------------------------*/
 .hidden {
     display: none !important;
 }
+
 .shown {
     display: block !important;
 }
+
 .hide {
     display: none;
 }
+
 a img {
     border: none;
 }
+
 /* self-clear floats
-	I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
+    I use a class named .floats-in > This implicitely says that each time a container contains floated elements within. We can clear those by applying this class to that container.
 */
 .floats-in:after {
     clear: both;
@@ -345,6 +388,7 @@ a img {
     height: 0em;
     visibility: hidden;
 }
+
 hr.delicate {
     width: 50%;
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -364,9 +408,11 @@ hr.delicate {
     height: 1px;
     margin: 50px auto 20px auto;
 }
+
 .foundations.Page hr.delicate {
     margin: 20px auto 50px;
 }
+
 hr.delicateSmall {
     width: 70%;
     /* IE9 SVG, needs conditional override of 'filter' to 'none' */
@@ -386,6 +432,7 @@ hr.delicateSmall {
     height: 1px;
     margin: 10px auto;
 }
+
 .btn {
     cursor: pointer;
     display: inline-block;
@@ -394,57 +441,68 @@ hr.delicateSmall {
     text-align: center;
     vertical-align: middle;
 }
+
 .btn-primary,
 .editlink a {
     background: rgb(0, 136, 204);
 }
+
 .editlink a,
 .gatewayLink {
-	@include box-shadow(0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25));
+    @include box-shadow(0em 1px rgba(255, 255, 255, 0.1) inset, 0em 1px 5px rgba(0, 0, 0, 0.25));
     color: white !important;
     display: table;
     margin: 1em 0em 0em;
     padding: 0.25em 0.5em;
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
 }
+
 .editlink a:hover,
 .gatewayLink:hover,
 .btn-primary:hover {
     background: rgb(50, 186, 244);
 }
+
 iframe {
     display: block;
     margin: 2em auto;
     max-width: 100%;
 }
+
 .contact-info iframe {
     margin: 0em auto;
 }
+
 .floatThumb {
     float: left;
     margin: 0em 10px 10px 0em;
 }
+
 .fullWidthParag {
     margin: 0.5em auto;
     position: relative;
     width: 65%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .fullWidthParag {
         width: 90%;
     }
 }
+
+
 .loadMore {
     display: table;
     margin: 1em auto 2em auto !important;
     padding: 0.5em 1em;
     position: relative;
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
 }
+
 .loadMore:hover {
     color: rgb(255, 255, 255);
 }
+
 /* links
 ---------------------------------------------------------------*/
 a:link,
@@ -455,20 +513,25 @@ a:visited {
     outline: none;
     text-decoration: none;
 }
+
 a:hover {
     color: rgb(222, 137, 41);
 }
+
 a.seeMore,
 footer a:link,
 footer a:visited {
     color: rgba(55, 146, 179, 1);
 }
+
 #siteMap a:hover {
     color: rgb(222, 137, 41);
 }
+
 .seeMore {
     margin: 1em auto;
 }
+
 .moreLink {
     background: url("../images/moreLink.png") right bottom no-repeat;
     display: table;
@@ -477,28 +540,33 @@ footer a:visited {
     height: 19px;
     padding: 3px 28px 3px 0em;
 }
+
 .moreLink:hover {
     background: url("../images/moreLink.png") right bottom no-repeat;
 }
+
 .tooltips {
     background: url("../images/helpIcn.png") right bottom no-repeat;
 }
+
 .tooltips:hover {
     background: url("../images/helpIcn.png") right bottom no-repeat;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .tooltips {
         display: none;
     }
 }
+
+
 /* nav toggle
 --------------------------------------------- */
 nav {
     li {
         @include transition(background-color 0.4s linear);
         a {
-        	@include transition(background-color 0.4s linear);
+            @include transition(background-color 0.4s linear);
         }
     }
 }
@@ -506,9 +574,11 @@ nav {
 .seeMore {
     margin-top: 2em;
 }
+
 p > .moreLink {
     margin: 0.25em 0em 0em;
 }
+
 .moreLink.darkBg {
     background: url("../images/moreLink.png") right top no-repeat;
     color: rgb(255, 255, 255);
@@ -519,43 +589,53 @@ p > .moreLink {
     padding: 3px 28px 3px 0em;
     text-transform: uppercase;
 }
+
 .moreLink.darkBg:hover {
     background: url("../images/moreLink.png") right bottom no-repeat;
     color: rgb(0, 123, 182);
 }
+
 ::-moz-selection {
     background: rgb(222, 137, 41);
     color: #fff;
     text-shadow: none;
 }
+
 ::selection {
     background: rgb(222, 137, 41);
     color: #fff;
     text-shadow: none;
 }
+
 a:link {
     -webkit-tap-highlight-color: #fcd700;
 }
+
 ins {
     background-color: #930;
     color: #000;
     text-decoration: none;
 }
+
 mark {
     background-color: #930;
     color: #000;
     font-style: italic;
     font-weight: bold;
 }
+
 .fadedText {
     color: rgb(153, 153, 153);
 }
+
 .selectInfo {
     color: rgb(58, 58, 58);
 }
+
 .visible {
     visibility: hidden;
 }
+
 .nonVisible {
     visibility: visible;
 }
@@ -564,15 +644,18 @@ small {
     display: block;
     font-size: 0.8em;
 }
+
 .topDescr {
     background: rgb(245, 245, 245);
     padding: 0.5em 0.75em;
 }
+
 .emphasizeMe {
     color: $akvoPurple;
     font-size: 1em;
     margin: 0.25em auto 35px auto;
 }
+
 div.centerED > p,
 .centerED {
     display: block;
@@ -580,24 +663,30 @@ div.centerED > p,
     margin-right: auto;
     text-align: center;
 }
+
 .uncenterED {
     display: block;
     text-align: left;
 }
+
 .address {
     background: rgb(240, 240, 240);
     margin-bottom: 1px !important;
     min-height: 120px;
 }
+
 .address:first-child {
     background: rgb(240, 240, 240) url("../images/addressBg.png") center right no-repeat;
 }
+
 .contactName {}
+
 .topLine {
     font-weight: bold;
 }
+
 .bgDeco {
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
     background: rgb(248, 248, 248);
     min-height: 150px;
     /*color:    rgb(123,123,123);*/
@@ -605,107 +694,117 @@ div.centerED > p,
     min-height: 210px;
     text-shadow: 1px 1px 0em rgb(255, 255, 255);
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .bgDeco {
         min-height: 0em;
     }
 }
-@media screen and (min-width:768px) and (max-width:1024px) {
+
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
     .bgDeco {
         min-height: 345px;
     }
 }
-@media screen and (min-width:1024px) and (max-width:1156px) {
+
+@media screen and (min-width: 1024px) and (max-width: 1156px) {
     .bgDeco {
         min-height: 240px;
     }
 }
-@media screen and (min-width:1156px) {
+
+@media screen and (min-width: 1156px) {
     .bgDeco {
         min-height: 240px;
     }
 }
+
 .bgDecoB {
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
     background: rgb(248, 248, 248);
     min-height: 210px;
     text-shadow: 1px 1px 0em rgb(255, 255, 255);
 }
-.marginVertical {
-    margin-top:2em !important;
 
+.marginVertical {
+    margin-top: 2em !important;
 }
+
 /*==========================================================================
-								   Forms
+                                   Forms
 ========================================================================== */
 
-@mixin placeholder-color($color){
-  &.placeholder{
-    color: $color;
-  }
-
-  &:-moz-placeholder{
-    color: $color;
-  }
-
-  &::-webkit-input-placeholder{
-    color: $color;
-  }
-
-  &:-ms-input-placeholder{
-    color: $color;
-  }
+@mixin placeholder-color($color) {
+    &.placeholder {
+        color: $color;
+    }
+    &:-moz-placeholder {
+        color: $color;
+    }
+    &::-webkit-input-placeholder {
+        color: $color;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+    }
 }
-
 
 form {
     margin: 0em;
     padding: 0em;
 }
+
 input,
 textarea,
 button,
 select {
     color: rgb(142, 142, 142);
     font-weight: normal;
-	@include placeholder-color(rgb(149, 148, 185));
+    @include placeholder-color(rgb(149, 148, 185));
 }
+
 input,
 textarea {
     @include box-shadow(0em 1px 2px rgb(242, 240, 230) inset);
     background: rgb(242, 240, 230);
     border: 1px solid rgb(242, 240, 230);
-	@include border-radius(0.15em);
+    @include border-radius(0.15em);
 }
+
 textarea {
     font-family: sans-serif;
     overflow: auto;
     resize: vertical;
 }
+
 input:hover,
 textarea:hover {
     @include box-shadow(none);
     background: rgb(224, 224, 224);
     border: 1px solid $akvoPurple;
 }
+
 input:focus,
 textarea:focus {
     @include box-shadow(none);
     background: rgb(245, 255, 216);
     border: 1px solid rgb(245, 255, 216);
 }
+
 fieldset {
     border: 0em;
     margin: 0em;
     padding: 0em;
 }
+
 /* Indicate that 'label' will shift focus to the associated form element */
 label {
     cursor: pointer;
     font-size: 1.3em;
     margin: 2px;
 }
+
 /* * 1. Correct color not inheriting in IE6/7/8/9
  * 2. Correct alignment displayed oddly in IE6/7
  */
@@ -715,16 +814,19 @@ select {
     padding: 3px 12px 3px 5px;
     width: 90%;
 }
+
 legend {
     border: 0em;
     margin-left: -7px;
     padding: 0em;
     white-space: normal;
 }
+
 button,
 input {
     line-height: normal;
 }
+
 /* * 1. Display hand cursor for clickable form elements
  * 2. Allow styling of clickable form elements in iOS
  * 3. Correct inner spacing displayed oddly in IE7 (doesn't effect IE6)
@@ -737,12 +839,14 @@ input[type="submit"] {
     cursor: pointer;
     overflow: visible;
 }
+
 /* * Re-set default cursor for disabled elements
  */
 button[disabled],
 input[disabled] {
     cursor: default;
 }
+
 /* * Consistent box sizing and appearance
  */
 input[type="checkbox"],
@@ -752,6 +856,7 @@ input[type="radio"] {
     padding: 0em;
     width: 13px;
 }
+
 input[type="search"] {
     @include box-shadow(inset 0em 1px 2px rgb(230, 230, 230), inset 0px -1px 2px rgb(230, 230, 230));
     @include box-sizing(content-box);
@@ -760,18 +865,22 @@ input[type="search"] {
     border: 1px solid rgb(0, 0, 0);
     padding: 2px 25px 2px 6px;
 }
+
 input[type="search"]::-webkit-search-decoration,
 input[type="search"]::-webkit-search-cancel-button {}
+
 input[type="search"]:hover {
     @include box-shadow(none);
     background: rgb(244, 244, 244) url("../images/search-icon.png") no-repeat center right;
     border: 1px solid $rsrBlue;
 }
+
 input[type="search"]:focus {
     @include box-shadow(none);
     background: rgb(244, 244, 244) url("../images/search-icon.png") no-repeat center right;
     border: 1px solid rgb(234, 234, 241);
 }
+
 button::-moz-focus-inner,
 input::-moz-focus-inner {
     border: 0em;
@@ -784,10 +893,12 @@ input::-moz-focus-inner {
     color: rgb(149, 148, 185);
     font-size: 1em;
 }
+
 input:-moz-placeholder {
     color: rgb(149, 148, 185);
     font-size: 1em;
 }
+
 input[type="submit"] {
     @include box-shadow(none);
     background: rgb(0, 103, 167);
@@ -795,18 +906,19 @@ input[type="submit"] {
     color: rgb(255, 255, 255);
     padding: 7px 10px;
     text-transform: uppercase;
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
 }
+
 /*---------------------------------------------
-				  Back to top
+                  Back to top
 --------------------------------------------- */
 #back-top {
     bottom: 0px;
     position: fixed;
     right: 5px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #back-top {
         bottom: inherit;
         height: 20px;
@@ -816,6 +928,8 @@ input[type="submit"] {
         width: 98%;
     }
 }
+
+
 #back-top a {
     @include box-shadow(0em 1px rgb(245, 245, 245));
     -moz-transition: 1s;
@@ -831,19 +945,23 @@ input[type="submit"] {
     transition: 1s;
     width: 80px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #back-top a {
         font-size: 1.5em;
         width: 100%;
     }
 }
+
+
 #back-top a:hover {
     color: $akvoLink;
 }
+
 #back-top a:hover span {
     background-color: $akvoLink;
 }
+
 #back-top span {
     @include box-shadow(1px 1px 0em rgb(255, 255, 255));
     -moz-transition: 1s;
@@ -855,19 +973,20 @@ input[type="submit"] {
     margin: 0em auto;
     transition: 1s;
     width: 28px;
-	@include border-radius(0.2em);
+    @include border-radius(0.2em);
 }
 
-@include responsive (small-max-screens) {
-
+@include responsive(small-max-screens) {
     #back-top span {
-		@include border-radius(0.5em);
+        @include border-radius(0.5em);
         height: 80px;
         margin: 0em auto 4px auto;
         width: 80px;
-		background-size:50%;
+        background-size: 50%;
     }
 }
+
+
 a.helpIcon {
     @include transition(opacity 0.4s ease-in);
     background: url("../images/helpIcon.png") center top no-repeat;
@@ -880,19 +999,22 @@ a.helpIcon {
     top: 5px;
     width: 26px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     a.helpIcon {
         display: none;
     }
 }
+
+
 a.helpIcon:hover {
     opacity: 1;
 }
+
 #tooltip {
     @include box-shadow(0em 0em 2px rgb(0, 0, 0));
     background: rgb(255, 255, 165);
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
     display: none;
     font-size: 1.2em;
     line-height: 1.3em;
@@ -901,26 +1023,30 @@ a.helpIcon:hover {
     position: absolute;
     top: 0em;
 }
+
 /************************************************************************
-								STRUCTURE
+                                STRUCTURE
 ************************************************************************/
 #content {
     position: relative;
     width: 100%;
 }
+
 .home #content {
     margin: 75px auto 0em;
 }
-@include responsive (small-max-screens) {
 
-	#content {
-		padding:0 1%;
-		width: 98%;
-	}
+@include responsive(small-max-screens) {
+    #content {
+        padding: 0 1%;
+        width: 98%;
+    }
     .home #content {
         margin: 0px auto 0em;
     }
 }
+
+
 #main {
     @include box-sizing(border-box);
     display: block;
@@ -928,8 +1054,8 @@ a.helpIcon:hover {
     margin: 25px 2% 0em 0em;
     width: 73%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #main {
         display: block;
         float: none;
@@ -939,9 +1065,12 @@ a.helpIcon:hover {
         width: auto;
     }
 }
+
+
 .defaultWrap {
     padding: 0.25em;
 }
+
 #sidebar {
     display: block;
     float: right;
@@ -950,32 +1079,38 @@ a.helpIcon:hover {
     padding: 0.25em 0.5% 5px 0em;
     width: 24%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #sidebar {
         display: none;
         float: none;
     }
 }
+
+
 #mainbody {
     display: block;
     width: 100%;
     z-index: auto;
 }
+
 .wrapper {
     margin: 0em auto;
     max-width: 1198px;
     position: relative;
 }
+
 .wrapperHead {
     margin: 0em auto;
     max-width: 1208px;
     position: relative;
 }
+
 .twoColumns {
     margin: 1px auto 0em auto;
     position: relative;
 }
+
 .twoColumns > div,
 .twoColumns > li {
     float: left;
@@ -984,58 +1119,70 @@ a.helpIcon:hover {
     position: relative;
     width: 44%;
 }
-@include responsive (small-max-screens) {
 
-    .twoColumns > div {
+@include responsive(small-max-screens) {
+    .twoColumns > div,
+    .twoColumns > li {
         float: none;
         margin: 0em auto;
         padding: 1%;
         width: 98%;
     }
 }
+
+
 .twoColumns > div:first-child,
 .twoColumns > li:first-child {
     margin: 0em 0em 0em 1%;
 }
+
 .twoColumns > div:last-child,
 .twoColumns > li:last-child {
     margin: 0em 1% 0em 0em;
 }
-@include responsive (small-max-screens) {
 
-    .twoColumns > div:first-child {
+@include responsive(small-max-screens) {
+    .twoColumns > div:first-child, .twoColumns > li:first-child {
         margin: inherit;
     }
 }
-@include responsive (small-max-screens) {
 
-    .twoColumns > div:last-child {
+
+@include responsive(small-max-screens) {
+    .twoColumns > div:last-child, .twoColumns > li:last-child {
         margin: inherit;
     }
 }
+
+
 .twoColumnsSidebar {
     margin: 1px auto 0em auto;
     position: relative;
 }
+
 .twoColumnsSidebar > div {
     margin: 0em 0.5%;
     padding: 2%;
     position: relative;
 }
+
 .twoColumnsSidebar > div:first-child {
     float: left;
     margin: 0em 0em 0em 1%;
     width: 15%;
 }
+
 .twoColumnsSidebar > div:last-child {
     float: right;
     margin: 0em 1% 0em 0em;
     width: 75%;
 }
+
 .threeColumns {
     margin: 1px auto 0em auto;
     position: relative;
 }
+
 .threeColumns > div,
 .threeColumns > li,
 .threeColumns > p,
@@ -1046,16 +1193,17 @@ a.helpIcon:hover {
     position: relative;
     width: 28.333333333333333%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .threeColumns > li {
-   		 @include box-sizing(border-box);
+        @include box-sizing(border-box);
         padding: 0px 10px;
         width: 100%;
     }
 }
-@include responsive (small-max-screens) {
 
+
+@include responsive(small-max-screens) {
     .threeColumns > div {
         background: rgba(255, 255, 255, 0.5);
         border-top: thin solid #f0f0f0;
@@ -1066,16 +1214,20 @@ a.helpIcon:hover {
         width: 98%;
     }
 }
+
+
 .threeColumns > div:nth-child(3n+1),
 .threeColumns > li:nth-child(3n+1),
 .threeColumns > p:nth-child(3n+1) {
     margin: 0em 0em 0em 1%;
 }
+
 .threeColumns > div:nth-child(3n),
 .threeColumns > li:nth-child(3n),
 .threeColumns > p:nth-child(3n) {
     margin: 0em 1% 0em 0em;
 }
+
 .threeColumnsImg > a {
     float: left;
     margin: 0em 0.5%;
@@ -1083,8 +1235,8 @@ a.helpIcon:hover {
     position: relative;
     width: 31.333%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .threeColumns > div:first-child,
     .threeColumns > div:last-child {
         margin: inherit;
@@ -1098,19 +1250,23 @@ a.helpIcon:hover {
         margin: 0em;
     }
 }
+
+
 .fourColumns {
     margin: 0em auto;
     width: 100%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .fourColumns.wrapper {
         padding: 0em;
     }
 }
+
+
 .fourColumns > div,
 .fourColumns > li {
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
     float: left;
     margin: 0em 0.15%;
     min-height: 200px;
@@ -1118,8 +1274,8 @@ a.helpIcon:hover {
     position: relative;
     width: 24.20%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .fourColumns div,
     .fourColumns > li {
         float: left;
@@ -1133,9 +1289,76 @@ a.helpIcon:hover {
         margin-left: 0em;
     }
 }
-@media screen and (max-width:360px) {
+
+
+@media screen and (max-width: 360px) {
     .fourColumns div,
     .fourColumns > li {
+        margin: 30px auto;
+        padding: 1%;
+        width: 98%;
+    }
+}
+
+.fiveColumns {
+    margin: 0em auto;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    .fiveColumns.wrapper {
+        padding: 0em;
+    }
+}
+
+
+.fiveColumns > div,
+.fiveColumns > li {
+    @include border-radius(0.25em);
+    float: left;
+    margin: 0em 0.15%;
+    min-height: 200px;
+    padding: 0.2em 0.25% 0.25em 0.25%;
+    position: relative;
+    width: 19.20%;
+}
+
+@include responsive(wide-max-screens) {
+    @include responsive(small-screens) {
+        .fiveColumns > div,
+        .fiveColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 31%;
+        }
+        .fiveColumns > li:nth-child(4) {
+            margin-left: 15.5%;
+        }
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    .fiveColumns div,
+    .fiveColumns > li {
+        float: left;
+        margin-left: 0;
+        margin: 30px auto;
+        padding: 1%;
+        width: 47.75%;
+    }
+    .fiveColumns > li:nth-child(5),
+    .fiveColumns > div:nth-child(5) {
+        margin-left: 23.875%;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .fiveColumns div,
+    .fiveColumns > li {
         margin: 30px auto;
         padding: 1%;
         width: 98%;
@@ -1145,51 +1368,52 @@ a.helpIcon:hover {
 .splitImg {
     margin: 2.5em auto;
     position: relative;
-		&:nth-child(2n) {
-			background: rgb(245, 245, 245);
-		}
-		img {
-			display: inline-block;
-			margin: 3.5em 0em 0em;
-			vertical-align: middle;
-			width: 25%;
-			}
-		.paragraphesRight {
-			float: right;
-			margin: 2.5em 2.5% 0em;
-			position: relative;
-			width: 70%;
-		}
-		.paragraphesLeft {
-			@extend .paragraphesRight;
-			float: left;
-		}
+    &:nth-child(2n) {
+        background: rgb(245, 245, 245);
+    }
+    img {
+        display: inline-block;
+        margin: 3.5em 0em 0em;
+        vertical-align: middle;
+        width: 25%;
+    }
+    .paragraphesRight {
+        float: right;
+        margin: 2.5em 2.5% 0em;
+        position: relative;
+        width: 70%;
+    }
+    .paragraphesLeft {
+        @extend .paragraphesRight;
+        float: left;
+    }
 }
+
 .splitImgSmall {
     border-bottom: 1px solid rgb(225, 225, 225);
     margin: 2.5em auto;
     padding: 0.5em 2.5%;
     position: relative;
     width: 85%;
-	&:nth-child(2n) {
- 	   background: rgb(245, 245, 245);
-	}
-	img {
-		display: inline-block;
-		margin: 3.5em 0em 0em;
-		vertical-align: middle;
-		width: 30%;
-	}
-	.paragraphesRight {
-		float: right;
-		margin: 2.5em 2.5% 0em;
-		position: relative;
-		width: 65%;
-	}
-	.paragraphesLeft {
-		@extend .paragraphesRight;
-		float: left;
-	}
+    &:nth-child(2n) {
+        background: rgb(245, 245, 245);
+    }
+    img {
+        display: inline-block;
+        margin: 3.5em 0em 0em;
+        vertical-align: middle;
+        width: 30%;
+    }
+    .paragraphesRight {
+        float: right;
+        margin: 2.5em 2.5% 0em;
+        position: relative;
+        width: 65%;
+    }
+    .paragraphesLeft {
+        @extend .paragraphesRight;
+        float: left;
+    }
 }
 
 .splitImgMid {
@@ -1197,44 +1421,52 @@ a.helpIcon:hover {
     padding: 0.15em 1% 0.15em 1%;
     position: relative;
 }
+
 .splitImgMid:nth-child(2n) {
     background: rgb(245, 245, 245);
 }
+
 .splitImgMid img {
     display: inline-block;
     margin: 3.5em 0em 0em;
     vertical-align: middle;
     width: 39.5%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .splitImgMid img {
         margin: 0em;
         width: 100%;
     }
 }
+
+
 .splitImgMid .paragraphesRight {
     float: right;
     margin: 2.5em 2.5% 0em;
     position: relative;
     width: 54.5%;
 }
+
 .splitImgMid .paragraphesLeft {
     float: left;
     margin: 2.5em 2.5% 0em;
     position: relative;
     width: 54.5%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .splitImgMid .paragraphesLeft {
         margin-top: 15px;
         width: 100%;
     }
 }
+
+
 .contact-info .threeColumns li.bgDecoB {
     min-height: 330px;
 }
+
 /* .header
 --------------------------------------------- */
 header#top {
@@ -1246,19 +1478,22 @@ header#top {
     width: 100%;
     z-index: 99999;
 }
+
 div.headerWrap {
     margin: 0em auto;
     max-width: 1208px;
     position: relative;
     width: 80%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     header#top {
         margin: 0em;
         position: relative;
     }
 }
+
+
 header#top h1 {
     height: 35px;
     left: 5px;
@@ -1266,8 +1501,8 @@ header#top h1 {
     top: 8px;
     width: 169px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     header#top h1 {
         display: block;
         height: 52px;
@@ -1277,6 +1512,8 @@ header#top h1 {
         width: 250px;
     }
 }
+
+
 header#top h1 a {
     background: url("../images/akvoLogoTop.png") no-repeat center top;
     display: block;
@@ -1284,12 +1521,12 @@ header#top h1 a {
     text-indent: -9999px;
     width: 169px;
 }
+
 header#top h1:hover a {
     background: url("../images/akvoLogoTop.png") no-repeat center bottom;
 }
 
-@include responsive (small-max-screens) {
-
+@include responsive(small-max-screens) {
     header#top h1 a {
         background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
         background-size: 211px 50px;
@@ -1302,18 +1539,22 @@ header#top h1:hover a {
         opacity: 1;
     }
 }
-@include responsive (small-max-screens) {
 
+
+@include responsive(small-max-screens) {
     header#top > div.wrapper {
         padding-bottom: 5px;
     }
 }
+
+
 div.headerWrap {
     margin: 0em auto;
     max-width: 1208px;
     position: relative;
     width: 80%;
 }
+
 #openSource {
     display: block;
     height: 100px;
@@ -1322,63 +1563,75 @@ div.headerWrap {
     top: 0em;
     width: 100px;
 }
+
 #openSource h2 {
     background: url("../images/openSource.png") no-repeat center -1px;
     height: 100px;
     text-indent: -9999px;
     width: 100px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #openSource {
         display: none;
     }
 }
+
+
 .logInHeader {
     font-size: 0.8em;
     position: absolute;
     right: 100px;
     top: 14px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .logInHeader {
         position: absolute;
         right: 15px;
         top: 20px;
     }
 }
+
+
 .logInHeader a {
     color: rgb(222, 137, 41);
     font-size: 1.1em;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .logInHeader a {
-		@include border-radius(0.25em);
+        @include border-radius(0.25em);
         background: rgba(255, 255, 255, 0.2);
         font-size: 130%;
         padding: 0.25em 0.5em;
     }
 }
+
+
 .logInHeader a:hover {
     color: rgb(255, 255, 255);
 }
+
 /* ---------------------------------------------
-			Top navigation styles
+            Top navigation styles
 --------------------------------------------- */
 #navbar {
     display: none;
 }
+
 nav {
     display: block;
 }
+
 nav#n {
     margin: 0em 0em 0em 180px;
 }
+
 #n ul {
     display: block;
 }
+
 #n ul li {
     background: url("../images/navSeparator.png") no-repeat scroll right center transparent;
     display: inline-block;
@@ -1386,6 +1639,7 @@ nav#n {
     margin-right: -3px;
     position: relative;
 }
+
 #n ul li a {
     -moz-transition: color 0.4s linear;
     -o-transition: color 0.4s linear;
@@ -1398,10 +1652,12 @@ nav#n {
     padding: 0px 12px;
     transition: color 0.4s linear;
 }
+
 #n ul li a:hover {
     color: rgb(222, 137, 41);
     text-decoration: none;
 }
+
 nav#n ul li.current_page_item > a,
 nav#n ul li.current_page_parent > a,
 header.top li.current_page_item > a {
@@ -1410,13 +1666,14 @@ header.top li.current_page_item > a {
     margin-top: 1px;
     z-index: 9998;
 }
+
 header li.menu-item > a {
-	color:white;
-	}
+    color: white;
+}
 
 .current-menu-parent > a, .current-menu-item > a {
-  color: #de8929 !important; }
-
+    color: #de8929 !important;
+}
 
 nav#n ul li.current_page_item ul.sub-menu a,
 nav#n ul li.current_page_parent ul.sub-menu a,
@@ -1424,17 +1681,21 @@ header.top li.current_page_item ul.sub-menu a {
     background: none;
     color: rgb(255, 255, 255);
 }
+
 nav#n ul li.current_page_item ul.children li.page_item a {
     color: rgb(255, 255, 255);
 }
+
 nav#n ul li.current_page_item ul.children li.page_item a:hover {
     color: rgb(222, 137, 41);
 }
+
 nav#n ul li.current_page_parent a {
     background: url("../images/currentMenuMarker.png") center 30px no-repeat;
     margin-top: 1px;
     z-index: 9998;
 }
+
 #n ul li ul.sub-menu {
     @include border-radius(0em 0em 0.25em 0.25em);
     @include box-shadow(0em 0em 5px rgba(32, 32, 36, 0.8));
@@ -1447,6 +1708,7 @@ nav#n ul li.current_page_parent a {
     z-index: 9999;
     zoom: 1;
 }
+
 #n ul li ul.sub-menu li {
     background: none;
     display: inline;
@@ -1455,10 +1717,13 @@ nav#n ul li.current_page_parent a {
     position: relative;
     z-index: 9999;
 }
+
 #n ul li ul.sub-menu li:hover {}
+
 nav#n ul li:last-child {
     background: none;
 }
+
 #n ul li ul.sub-menu li a {
     @include transition(background-color 0.4s linear);
     background: none;
@@ -1471,20 +1736,26 @@ nav#n ul li:last-child {
     padding: 7px 10px;
     white-space: nowrap;
 }
+
 #n ul li ul.sub-menu li a:hover {
-    background: rgb(02, 02, 06);
+    background: rgb(2, 2, 6);
     color: rgb(222, 137, 41);
     text-decoration: none;
 }
+
 #n ul li ul li:first-child a {}
+
 #n ul li ul li:last-child a {}
+
 #n ul li:hover > ul {
     display: block;
 }
+
 #n ul li:hover > a {
     text-decoration: none;
 }
-@media only screen and (min-width:0) and (max-width:768px) {
+
+@media only screen and (min-width: 0) and (max-width: 768px) {
     nav#n {
         margin: 0em;
     }
@@ -1629,8 +1900,9 @@ nav#n ul li:last-child {
         text-decoration: none;
     }
 }
+
 /*-----------------------------------
-	Top Header Search input
+    Top Header Search input
 ------------------------------------*/
 input[type="search"] {
     -moz-transition: width 0.2s linear;
@@ -1647,11 +1919,11 @@ input[type="search"] {
     vertical-align: middle;
     width: 10%;
     /* z-index:    1099999;
-                	opacity:    0.8;
+                    opacity:    0.8;
                 */
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     input[type="search"] {
         display: block;
         font-size: 1.5em;
@@ -1662,7 +1934,9 @@ input[type="search"] {
         width: 85%;
     }
 }
-@media screen and (min-width:768px) and (max-width:860px) {
+
+
+@media screen and (min-width: 768px) and (max-width: 860px) {
     input[type="search"] {
         display: block;
         font-size: 1.2em;
@@ -1677,32 +1951,39 @@ input[type="search"] {
         margin-top: 145px;
     }
 }
+
 header#top input[type="search"]:focus {
     width: 14%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     header#top input[type="search"]:focus {
         width: 90%;
     }
 }
-@media screen and (min-width:768px) and (max-width:860px) {
+
+
+@media screen and (min-width: 768px) and (max-width: 860px) {
     header#top input[type="search"]:focus {
         width: 85%;
     }
 }
+
 header#top label.screen-reader-text {
     display: none;
 }
+
 header#top input[type="submit"] {
     display: none;
 }
+
 /*---------------------------------------------
- 				breadCrumb
+                breadCrumb
 --------------------------------------------- */
 body.home div.breadCrumb {
     display: none;
 }
+
 div.breadCrumb {
     background: rgb(240, 240, 240);
     display: relative;
@@ -1711,17 +1992,20 @@ div.breadCrumb {
     position: relative;
     width: 99%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     div.breadCrumb {
         margin: 0em auto;
-		width: 98%;
-		padding: 10px 0em 15px 2%;
+        width: 98%;
+        padding: 10px 0em 15px 2%;
     }
 }
+
+
 div.breadCrumbs {
     position: relative;
 }
+
 .projectGateWay {
     display: inline-block;
     position: absolute;
@@ -1729,19 +2013,23 @@ div.breadCrumbs {
     text-align: right;
     z-index: 1;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .projectGateWay {
         display: none;
     }
 }
+
+
 .projectGateWay > * {
     display: inline;
 }
+
 .projectGateWay > p {
     color: $akvoPurple;
     margin: 5px 20px 0em 0em;
 }
+
 .projectGateWay > a {
     background: rgb(164, 179, 87);
     color: rgb(255, 255, 255);
@@ -1751,12 +2039,14 @@ div.breadCrumbs {
     @include border-radius(5px);
     @include transition(all 0.2s linear);
 }
+
 .projectGateWay > a:hover {
     background-color: rgba(44, 42, 116, 0.1);
     color: $akvoPurple;
 }
+
 /*---------------------------------------------------------------------------------------
-											Home Page
+                                            Home Page
 ---------------------------------------------------------------------------------------*/
 body.home h1.akvoDescr {
     font-size: 2em;
@@ -1768,27 +2058,31 @@ body.home h1.akvoDescr {
     text-shadow: none;
     text-transform: none;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     body.home h1.akvoDescr {
         margin: 30px auto;
         width: 90%;
     }
 }
+
+
 #actionHeroBox {
-//    background: rgb(32, 32, 36);
+    //    background: rgb(32, 32, 36);
     border-bottom: 1px solid rgb(221, 221, 221);
     border-top: 1px solid rgb(221, 221, 221);
     position: relative;
     width: 100%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #actionHeroBox {
         background: #f2f2f2;
         max-height: inherit;
     }
 }
+
+
 #actionHeroBox img {
     display: inline-block;
     margin: 0em auto !important;
@@ -1798,30 +2092,34 @@ body.home h1.akvoDescr {
     /* max-height:     500px;
                 */
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #actionHeroBox img {
         margin-top: 0em !important;
     }
 }
+
+
 #actionHeroBox #image {
     padding-bottom: 46%;
     background-position: center center;
     background-size: cover;
 }
-@include responsive (small-screens) {
 
+@include responsive(small-screens) {
     #actionHeroBox #image {
         padding-bottom: 38%;
     }
 }
-@include responsive (huge-screens) {
 
+
+@include responsive(huge-screens) {
     #actionHeroBox #image {
         padding-bottom: 0;
         height: 532px;
     }
 }
+
 
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
@@ -1835,10 +2133,10 @@ body.home h1.akvoDescr {
     position: absolute;
     right: 5%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #actionHeroBox #actionHeroInfo {
-		@include border-radius(0.5em);
+        @include border-radius(0.5em);
         @include box-shadow(none);
         background: none;
         bottom: inherit;
@@ -1853,7 +2151,9 @@ body.home h1.akvoDescr {
         width: 94%;
     }
 }
-@include responsive (small-screens) {
+
+
+@include responsive(small-screens) {
     #actionHeroBox #actionHeroInfo.top_left {
         bottom: auto;
         right: auto;
@@ -1879,76 +2179,88 @@ body.home h1.akvoDescr {
     width: 100%;
     z-index: 9999;
 }
+
 .borderTop {
     background: url("../images/actionHeroTopBorder.png") left top repeat-x;
     top: 0em;
 }
+
 .borderBottom {
     background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
     bottom: 0em;
 }
+
 #actionHeroBox p,
 #actionHeroBox h1,
 #actionHeroBox h2,
 #actionHeroBox a {}
+
 #actionHeroBox p {
     color: rgb(40, 40, 40);
     display: none;
 }
+
 #actionHeroBox p span {
     color: rgb(40, 40, 40);
 }
+
 #actionHeroBox p span.akvorsr {
     color: rgb(66, 76, 43);
 }
+
 #actionHeroBox p span.akvoflow {
     color: rgb(222, 137, 41);
 }
+
 #actionHeroBox p span.akvoopenaid {
     color: rgb(227, 27, 35);
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #actionHeroBox hgroup {
         width: 100%;
     }
 }
-#actionHeroBox {
-		h1 {
-			display: block;
-			font-family: 'Raleway', sans-serif;
-			font-size: 1.5em;
-			font-weight: 700;
-			position: relative;
-			margin: 10px 10px 0em 0em;
-		}
-		h2 {
-			display: block;
-			font-size: 1.2em;
-			margin: 0em 10px 5px 0em;
-		}
-}
-@include responsive (small-max-screens) {
 
-    #actionHeroBox {
-		 h1 {
-			font-size: 1.8em;
-			text-align: center;
-		}
-    	h2 {
-			font-size: 1.4em;
-			text-align: center;
-    	}
-	}
+
+#actionHeroBox {
+    h1 {
+        display: block;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        position: relative;
+        margin: 10px 10px 0em 0em;
+    }
+    h2 {
+        display: block;
+        font-size: 1.2em;
+        margin: 0em 10px 5px 0em;
+    }
 }
+
+@include responsive(small-max-screens) {
+    #actionHeroBox {
+        h1 {
+            font-size: 1.8em;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.4em;
+            text-align: center;
+        }
+    }
+}
+
+
 #actionHeroBox h2,
 #actionHeroBox h1,
 #actionHeroBox #actionHeroInfo > a,
 #actionHeroBox #actionHeroInfo {
     text-align: right;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #actionHeroBox h2,
     #actionHeroBox h1,
     #actionHeroBox #actionHeroInfo > a,
@@ -1956,13 +2268,15 @@ body.home h1.akvoDescr {
         text-align: center;
     }
 }
+
+
 .actionHeroBtn {
     margin: 0em 0em 0em 50%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .actionHeroBtn {
-		@include border-radius(0.5em);
+        @include border-radius(0.5em);
         @include box-shadow(none);
         background: rgb(32, 32, 36);
         border: 0em none;
@@ -1978,6 +2292,8 @@ body.home h1.akvoDescr {
         width: auto;
     }
 }
+
+
 #productWindow {
     background-color: rgb(245, 245, 245);
     border-bottom: 1px solid rgb(221, 221, 221);
@@ -1986,14 +2302,16 @@ body.home h1.akvoDescr {
     position: relative;
     width: 100%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow {
         background-color: rgb(245, 245, 245);
         padding: 0em;
         text-align: center;
     }
 }
+
+
 .products #productWindow {
     background-color: rgb(255, 255, 255);
     border-bottom: none;
@@ -2001,37 +2319,44 @@ body.home h1.akvoDescr {
     margin: 3em auto;
     padding: 0em;
 }
+
 #productWindow div.fourColumns div {
     text-align: center;
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow div.fourColumns div {
         background: rgba(255, 255, 255, 0.5);
         border-top: none;
         text-align: center;
     }
 }
+
+
 .products #productWindow div.fourColumns div {
     background: rgb(255, 255, 255);
 }
+
 #productWindow div h1,
 #productWindow div h2 {
     padding-left: 0.5em;
     padding-right: 0.5em;
     text-align: left;
 }
+
 #productWindow div p {
     margin: 12px auto;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow div p {
         font-size: 1.2em;
         margin: 12px 0em;
     }
 }
+
+
 #productWindow div a {
     bottom: -0.75em;
     font-size: 0.9em;
@@ -2040,8 +2365,8 @@ body.home h1.akvoDescr {
     text-align: center;
     text-transform: uppercase;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow div a {
         bottom: inherit;
         font-size: 1em;
@@ -2049,6 +2374,8 @@ body.home h1.akvoDescr {
         margin: 5px auto;
     }
 }
+
+
 #productWindow div.fourColumns div a.moreLink {
     bottom: 5px;
     display: none;
@@ -2059,13 +2386,14 @@ body.home h1.akvoDescr {
     text: ellipsis uppercase;
     white-space: nowrap;
 }
+
 #productWindow div h1 {
     display: block;
     margin: 20px auto 0em auto;
     text-indent: -99999px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow div h1 {
         display: block;
         height: 45px;
@@ -2073,8 +2401,9 @@ body.home h1.akvoDescr {
         padding: 10px 0em;
     }
 }
-@include responsive (small-max-screens) {
 
+
+@include responsive(small-max-screens) {
     #productWindow div h1:after {
         content: "";
         display: block;
@@ -2082,14 +2411,16 @@ body.home h1.akvoDescr {
         width: 90%;
     }
 }
+
+
 #productWindow a.tagLine:after {
     content: "";
     display: block;
     margin: 50px auto 15px;
     width: 100%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow a.tagLine:after {
         border-bottom: none;
         border-top: none;
@@ -2101,59 +2432,73 @@ body.home h1.akvoDescr {
         width: 100%;
     }
 }
+
+
 #productWindow div h2 {
     display: none;
     font-size: 1.2em;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #productWindow div h2 {
         padding: 0em 0em 0em 2.5%;
     }
 }
+
+
 #productWindow div img {
     display: inherit;
     margin: 0em auto;
     max-width: 75%;
 }
+
 #rsrBucket h1,
 #rsrBucket h2 {
     color: rgb(87, 193, 232);
 }
+
 #flowBucket h1,
 #flowBucket h2 {
     color: rgb(226, 124, 0);
 }
+
 #openaidBucket h1,
 #openaidBucket h2 {
     color: rgb(255, 206, 0);
 }
+
 #akvopedia h1,
 #akvopedia h2 {
     color: rgb(191, 131, 185);
 }
+
 #rsrBucket h1 {
     background: url("../images/rsr-logo-40px.png") center top no-repeat;
-	background-size: 85%;
+    background-size: 85%;
 }
+
 #flowBucket h1 {
     background: url("../images/flow-logo-40px.png") center top no-repeat;
-	background-size: 85%;
+    background-size: 85%;
 }
+
 #openaidBucket h1 {
     background: url("../images/openaid-logo-40px.png") center top no-repeat;
-	background-size: 85%;
+    background-size: 85%;
 }
+
 #akvopedia h1 {
     background: url("../images/akvopedia-logo-40px.png") center top no-repeat;
-	background-size: 85%;
+    background-size: 85%;
 }
+
 /*************************************************************
-					FAQ
+                    FAQ
 *************************************************************/
 .faqMenu {
     margin: 0em 0em 10px;
 }
+
 a.faqMenuHead,
 .qa-faq-title {
     background: url("../images/menuCollapseShow.png") left top no-repeat;
@@ -2161,33 +2506,37 @@ a.faqMenuHead,
     font-size: 1.1em;
     padding: 5px 0em 5px 35px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     a.faqMenuHead {
         background-color: rgb(232, 232, 232);
         background-image: none;
         color: $akvoLink;
         display: block;
         font-size: 120%;
-		padding: 20px 5%;
-		width: 90%;
-	    }
+        padding: 20px 5%;
+        width: 90%;
+    }
 }
+
+
 a.faqMenuHead.openED {
     background: url("../images/menuCollapseShow.png") left bottom no-repeat;
     color: $akvoBlack;
 }
+
 ul.faqMenuList {
     margin: 5px 0em 5px 30px;
 }
+
 ul.faqMenuList > li,
 .qa-faq-answer {
     background: rgb(248, 248, 248);
     margin: 0em 0em 2px 0px;
     padding: 25px 0em 25px 10px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     ul.faqMenuList {
         margin: 5px 0em;
     }
@@ -2198,27 +2547,33 @@ ul.faqMenuList > li,
     ul.faqMenuList li {
         background: rgb(248, 248, 248);
         margin: 0em 0em 2px 0px;
-		padding: 20px 5%;
-		width: 90%;
-		}
+        padding: 20px 5%;
+        width: 90%;
+    }
 }
+
+
 ul.faqMenuList li:first-child {
     margin: 5px 0em 2px 0px;
 }
+
 ul.faqMenuList li:hover {
     background: rgb(248, 248, 248);
 }
+
 ul.faqMenuList li a {
     display: block;
 }
+
 ul.faqMenuList h3,
 .qa-faq-answer h3 {
-	margin-top:1em;
+    margin-top: 1em;
 }
 
 .qa-faq {
     margin-bottom: 0;
 }
+
 .qa-faq-answer {
     padding: 15px;
     margin-right: 10px;
@@ -2231,6 +2586,7 @@ ul.faqMenuList h3,
     margin-left: 20px;
     list-style: initial;
 }
+
 .qa-faq ol {
     list-style: decimal;
 }
@@ -2238,24 +2594,29 @@ ul.faqMenuList h3,
 .answers h4 {
     font-weight: bold;
 }
+
 .answers p {
     margin-bottom: 3em;
 }
+
 .partnerRules h2 {
     text-align: left !important;
 }
+
 /*************************************************************
-					Looking for more
+                    Looking for more
 *************************************************************/
 #moreStuffHome {
     padding: 3.5em 0em;
     position: relative;
 }
+
 #moreStuffHome div h3 {
     font-size: 1.4em;
     margin: 0em auto 1em;
     width: 98%;
 }
+
 #moreStuffHome div h3:before {
     border-bottom: 1px solid rgb(255, 255, 255);
     content: "";
@@ -2263,13 +2624,12 @@ ul.faqMenuList h3,
     margin: 0.2em auto 0em auto;
     width: 96%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #moreStuffHome {
         margin: 2em auto 0;
         padding: 0;
     }
-
     #moreStuffHome div > div > div {
         margin: 0.5em auto 0.25% auto;
         min-height: 200px;
@@ -2278,7 +2638,7 @@ ul.faqMenuList h3,
         width: 94%;
     }
     #moreStuffHome div h3 {
-        margin-bottom: 0
+        margin-bottom: 0;
     }
     #moreStuffHome .fourColumns.wrapper {
         font-size: 0;
@@ -2293,7 +2653,10 @@ ul.faqMenuList h3,
         width: 50%;
     }
 }
+
+
 #moreStuffHome > div {}
+
 #moreStuffHome div h3 a {
     color: $akvoPurple;
     display: block;
@@ -2305,9 +2668,11 @@ ul.faqMenuList h3,
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 moreStuffHome figcaption a {
     background: none;
 }
+
 #moreStuffHome div.read-more {
     background: transparent;
     margin: 0em auto;
@@ -2317,17 +2682,20 @@ moreStuffHome figcaption a {
     text-align: center;
     width: 99%;
 }
+
 #moreStuffHome div.blogIcon {}
+
 #moreStuffHome div.blogIcon h2 {
     font-size: 1em;
     margin: 0em 0em 0.05em 1%;
     text-align: left;
     width: 98%;
 }
+
 #moreStuffHome figure > div {
     background: rgb(236, 236, 236);
-	@include border-radius(0.35em);
-//    border: 1px solid rgb(212, 212, 212);
+    @include border-radius(0.35em);
+    //    border: 1px solid rgb(212, 212, 212);
     margin: 0em 5%;
     max-height: 150px;
     min-height: 150px;
@@ -2336,6 +2704,7 @@ moreStuffHome figcaption a {
     position: relative;
     width: 90%;
 }
+
 #moreStuffHome figure > div a {
     height: 100%;
     width: 100%;
@@ -2343,56 +2712,103 @@ moreStuffHome figcaption a {
     background-size: cover;
     background-position: center;
 }
+
 #moreStuffHome .videoIcon figure > div {
     background: rgb(32, 32, 36);
 }
+
 #moreStuffHome figure > figcaption {
     font-size: 110%;
     margin: 10px auto 5px;
     text-align: center;
     width: 85%;
 }
+
 #moreStuffHome figure > figcaption a {
     font-family: $titleFont;
     font-size: 1.1em;
 }
+
 #moreStuffHome figure img {
     display: block;
     margin: 0em auto;
     width: 105%;
 }
+
 #moreStuffHome div.blogIcon p {
     line-height: 1.2em;
     margin-bottom: 2px;
 }
+
 #moreStuffHome div.blogIcon time {
     margin: 0em 0em 0em 1%;
 }
+
 #moreStuffHome div.fourColumns > div {}
+
 /*-----------------------------------
-				BLOG
+                BLOG
 ------------------------------------*/
+.widget {
+    figure {
+        img {}
+        div {
+            background: rgb(236, 236, 236);
+            @include border-radius(0.35em);
+            margin: 0em 5%;
+            max-height: 150px;
+            min-height: 150px;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 90%;
+            a {
+                font-family: $titleFont;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        figcaption {
+            font-size: 110%;
+            margin: 10px auto 5px;
+            width: 85%;
+            a {
+                font-family: $titleFont;
+            }
+        }
+    }
+}
+
 .fluid-width-video-wrapper {
-	margin-bottom:50px !important;}
+    margin-bottom: 50px !important;
+}
+
 .entry {
     margin: 5px 0em 0em;
     padding: 5px 1% 0em 1%;
     width: 98%;
 }
+
 .entry img {
     display: block;
     height: auto;
     margin: 10px auto;
     width: 100%;
 }
+
 .entry img.lowRes {
     width: inherit;
 }
+
 .entry em {
     display: block;
     font-size: 1.2em;
     margin: 0.1em 0em 0em;
 }
+
 .entry ul,
 .entry ol,
 .answers ul,
@@ -2403,59 +2819,72 @@ moreStuffHome figcaption a {
     margin: 1em 0em 1em 1em;
     padding: 0.25em 0em 0.25em 2em;
 }
+
 .entry li,
 .akvo-faq .answers li,
 .policies li {
     margin: 0.5em 0em 0.5em 0.25em;
 }
+
 .entry p {
     margin: 0em 0em 20px;
     width: 100%;
 }
+
 article.post {
     border-bottom: thin solid rgb(232, 232, 232);
     padding: 0em 0em 20px;
 }
+
 article.post h2 {
     margin: 45px 0em 5px 5px;
     text-align: left;
 }
+
 article.post:first-child h2 {
     margin: 0px 0em 5px 5px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     article.post:first-child h2 {
         margin: 20px 0em 5px;
     }
 }
+
+
 article.post h2 a {
     color: $akvoPurple;
     margin: 0em auto;
     padding: 5px 0em;
 }
+
 article.post h2 a:hover {
     color: rgb(222, 137, 41);
 }
+
 .post {
     display: block;
     margin-bottom: 25px;
     padding-bottom: 15px;
     padding-top: 10px;
 }
+
 .post header {
     display: block;
     margin-bottom: 25px;
 }
+
 .post header h2 {
     margin-bottom: 4px !important;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .post header h2 {
         font-size: 2.75em;
     }
 }
+
+
 .post h2 {
     color: #434343;
     display: block;
@@ -2463,7 +2892,9 @@ article.post h2 a:hover {
     line-height: 1.4em;
     margin-bottom: 15px;
 }
+
 .post h3 {}
+
 .post h4 {
     border-left: 3px solid #56b972;
     color: #56b972;
@@ -2477,52 +2908,62 @@ article.post h2 a:hover {
     text-decoration: none;
     text-transform: uppercase;
 }
+
 #content article,
 .widget-area aside,
 form#commentform {
     margin-bottom: 20px;
 }
+
 .meta,
 .postmetadata {
     color: rgb(36, 48, 50);
 }
+
 div.postmetadata {
     margin: 0px 0em 0em;
     padding: 5px 0em 8px 0.5em;
     width: 100%;
 }
+
 div.postmetadata em {
     font-size: 1em;
     margin-right: 1em;
 }
+
 div.postmetadata a {
     font-size: 0.9em;
 }
+
 div.meta {
     border-bottom: thin solid rgb(245, 245, 245);
     font-size: 0.8em;
     margin: 5px 0em 10px 5px;
     padding: 5px 0em;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     div.meta {
         font-size: 1.1em;
         line-height: 1.6em;
     }
 }
+
+
 div.meta time {
     background: url("../images/post-time-icon.png") left top no-repeat;
     overflow: hidden;
-    padding:2px 0 2px 18px;
+    padding: 2px 0 2px 18px;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 div.meta a {
     margin: 0em 0em 0em 5px;
 }
+
 blockquote {
-	@include border-radius(0.3em);
+    @include border-radius(0.3em);
     @include box-sizing(border-box);
     background: #fbf0de;
     color: rgb(153, 153, 153);
@@ -2531,6 +2972,7 @@ blockquote {
     margin: 18px auto;
     padding: 9px 15px;
 }
+
 blockquote p {
     color: #797064;
     font-size: 1em;
@@ -2538,9 +2980,11 @@ blockquote p {
     font-weight: normal;
     margin-bottom: 3px;
 }
+
 .entry blockquote p {
     margin-bottom: 3px;
 }
+
 .post .more-link {
     display: table;
     font-size: 0.9em;
@@ -2549,18 +2993,22 @@ blockquote p {
     text-align: center;
     text-transform: uppercase;
 }
+
 .postbrdr {
     border-bottom: 3px solid #ccc;
 }
+
 .archiveshead {
     border-bottom: 1px solid rgb(242, 242, 242);
     padding: 0.25em 1%;
     width: 98%;
 }
+
 .archiveshead h2 {
     color: rgb(222, 137, 41);
     text-align: left;
 }
+
 #navbelow {
     display: block;
     margin-bottom: 15px;
@@ -2568,64 +3016,78 @@ blockquote p {
     padding: 2em 0em;
     width: 100%;
 }
+
 .nav-prev {
     display: block;
     float: left;
 }
+
 .nav-next {
     display: block;
     float: right;
 }
+
 .nav-prev a,
 .nav-next a {
-	@include border-radius(0.2em);
+    @include border-radius(0.2em);
     background: rgb(167, 199, 220);
     color: rgb(255, 255, 255);
     display: block;
     padding: 4px 7px;
 }
+
 .nav-prev a:hover,
 .nav-next a:hover {
     background: rgb(63, 76, 107);
     color: rgb(255, 255, 255);
 }
+
 /*-----------------------------------
-				Comments
+                Comments
 ------------------------------------*/
 #respond {
     background: rgb(242, 242, 242);
     padding: 1.5%;
     position: relative;
 }
+
 #respond h3 {
     font-size: 1.2em;
     margin: 0em 0em 10px;
     text-shadow: 0em -1px 0em rgb(185, 185, 185), 0em 2px 0em rgb(255, 255, 255);
 }
+
 #respond p {
     font-size: 0.8em;
     line-height: inherit;
     margin-bottom: 0em;
 }
+
 #respond p input[type="submit"] {
     margin: 10px 0em 0em;
 }
+
 #respond textarea {
     padding: 7px 5px 7px 3px;
 }
+
 #respond p a[title^="Log"] {
     margin: 0em 0em 0em 20px;
 }
+
 #comments {
     display: block;
     margin-top: 35px;
 }
+
 #comments h3 {
     margin-bottom: 15px;
 }
+
 #comments em {
     display: block;
 }
+
 p#allowed_tags {
     background: rgb(255, 255, 255);
     font-style: italic;
@@ -2633,15 +3095,19 @@ p#allowed_tags {
     padding: 1.25%;
     width: 97%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     p#allowed_tags {
         display: none;
     }
 }
+
+
 p#allowed_tags code {
     display: block;
     font-style: normal;
 }
+
 /* for the threaded reply comment form styles */
 #cancel-comment-reply {
     display: block;
@@ -2650,29 +3116,35 @@ p#allowed_tags code {
     right: 0.5em;
     top: 0.5em;
 }
+
 #cancel-comment-reply-link {
-	@include border-radius(0.25em);
+    @include border-radius(0.25em);
     display: block;
     font-size: 0.8em;
     padding: 0px 4px;
 }
+
 #cancel-comment-reply-link:hover {
     background: #5d9de5;
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
 .commentlist {
     list-style: none;
 }
+
 .commentlist .comment {
     display: block;
     margin: 50px auto 80px auto;
     position: relative;
 }
+
 .commentlist .comment .comment-author {
     border-bottom: 1px solid rgb(232, 232, 232);
     position: relative;
 }
+
 .commentlist .comment .comment-author .avatar {
     background: #fafafa;
     border: 1px solid #ccc;
@@ -2680,6 +3152,7 @@ p#allowed_tags code {
     margin-right: 15px;
     padding: 5px;
 }
+
 .commentlist .comment .comment-author .fn {
     color: #535353;
     font-style: normal;
@@ -2687,24 +3160,29 @@ p#allowed_tags code {
     position: absolute;
     top: 2px;
 }
+
 .commentlist .comment .comment-author .says {
     display: none;
 }
+
 .commentlist .comment .comment-meta {
     font-size: 0.8em;
     margin-left: 60px;
     position: absolute;
     top: 20px;
 }
+
 .commentlist .comment p {
     display: block;
     padding: 0.8em;
 }
+
 .commentlist .comment .comment-body .reply {
     border-bottom: 1px solid rgb(232, 232, 232);
     font-size: 0.9em;
     margin: 1.5em 0em 0em;
 }
+
 .commentlist .comment .comment-body .reply a.comment-reply-link {
     background: rgb(0, 136, 204);
     color: rgb(255, 255, 255);
@@ -2713,11 +3191,13 @@ p#allowed_tags code {
     @include border-radius(0.25em 0.25em 0em 0em);
     text-shadow: 0em -1px 0em rgba(0, 0, 0, 0.25);
 }
+
 .commentlist .comment .comment-body .reply a.comment-reply-link:hover {
     color: rgb(132, 132, 136);
     display: inline-block;
     padding: 0.25em 1em;
 }
+
 .comment-awaiting-moderation {
     color: #444;
     display: block;
@@ -2727,19 +3207,23 @@ p#allowed_tags code {
     text-align: center;
     text-decoration: underline;
 }
+
 .commentlist .comment ul.children {
     margin-left: 40px;
     padding-top: 15px;
 }
+
 #commentform {
     display: block;
     margin-bottom: 0em;
     margin-top: 6px;
     width: 100%;
 }
+
 #commentform label {
     font-size: 0.9em;
 }
+
 #commentform label small {
     color: #7dafe6;
     display: inline;
@@ -2747,15 +3231,18 @@ p#allowed_tags code {
     font-weight: normal;
     size: 0.9em;
 }
+
 #commentfields #commentfields {
     display: block;
     margin-bottom: 4px;
 }
+
 #commentfields #commentfields .ibox {
     display: block;
     margin-bottom: 10px;
     width: 100%;
 }
+
 #commentfields .basicinput {
     border: 1px solid #dbdbdb;
     color: #487cb7;
@@ -2765,6 +3252,7 @@ p#allowed_tags code {
     padding: 7px 6px;
     width: 90%;
 }
+
 #commentfields textarea {
     border: 1px solid #dbdbdb;
     color: #487cb7;
@@ -2774,6 +3262,7 @@ p#allowed_tags code {
     padding: 5px 4px;
     width: 97%;
 }
+
 #commentform #comment {
     color: #565656;
     display: block;
@@ -2782,27 +3271,32 @@ p#allowed_tags code {
     margin-bottom: 8px;
     padding: 4px 7px;
 }
+
 #commentform #submit,
 .button {}
+
 #commentform #submit:hover,
 .button:hover {
     background-color: #4197ee;
-    background: -webkit-gradient( linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff) );
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff));
 }
+
 #commentform #submit:active,
 .button:active {
     position: relative;
     top: 1px;
 }
+
 /*-----------------------------------
-			Widget area
+            Widget area
 ------------------------------------*/
 #sidebar-responsive {
     display: none;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     #sidebar-responsive {
-   		 @include box-sizing(border-box);
+        @include box-sizing(border-box);
         display: block;
         margin-bottom: 15px;
         padding: 0em 12px;
@@ -2837,109 +3331,132 @@ p#allowed_tags code {
         text-decoration: none;
     }
 }
+
+
 #sidebar .widget {
     display: block;
     margin-bottom: 20px;
 }
+
 #sidebar .widget.twitBuck {
     padding: 0em 0em 0em 2%;
 }
+
 #sidebar .widget h3 {
     font-size: 1.4em;
     padding: 1.5% 1% 1.5% 4%;
     width: 95%;
 }
+
 #sidebar .widget ul {
     display: block;
 }
+
 #sidebar .widget ul li {
     margin: 0em auto 1px auto;
     width: 96%;
 }
+
 #sidebar .widget ul#recentcomments {
     display: block;
     margin: 0em auto;
     padding: 5px 1%;
     width: 96%;
 }
+
 #sidebar .widget ul li.recentcomments {
     display: block;
     margin: 0em auto 30px auto;
     width: 90%;
 }
+
 #sidebar .widget ul li.recentcomments:first-child {
     margin: 10px auto 30px auto;
 }
+
 #sidebar .widget ul li ul {
     font-size: 0.9em;
 }
+
 #sidebar .widget ul li a {
     @include border-radius(0.1em);
     @include transition(color 0.2s linear);
-	@include transition(background .2s linear);
+    @include transition(background 0.2s linear);
     display: block;
     font-weight: normal;
     padding: 3px 3%;
     width: 94%;
 }
+
 #sidebar .widget ul li a:hover {
     background: rgb(222, 137, 41);
     color: rgb(255, 255, 255);
     text-decoration: none;
 }
+
 /*----------------------------------------------------------------------
-								Footer
+                                Footer
 -----------------------------------------------------------------------*/
-li.problem { margin: 1em 0 0 0;
-			a {
-				color: rgb(227, 27, 35);
-				opacity: 1;
-   			    @include transition(opacity 0.2s linear);
-				&:hover {
-					opacity: 0.7;
-					}
-				}
-			 }
+li.problem {
+    margin: 1em 0 0 0;
+    a {
+        color: rgb(227, 27, 35);
+        opacity: 1;
+        @include transition(opacity 0.2s linear);
+        &:hover {
+            opacity: 0.7;
+        }
+    }
+}
+
 #menu-footer-menu {
     float: left;
     width: 70%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     #menu-footer-menu {
         margin-top: 20px;
         width: 96%;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer .menu {
         margin: 0px 15px;
     }
 }
+
+
 footer .menu > li {
     float: left;
     padding: 0em 0em 0em 1.5%;
-	width:23.5%;
+    width: 23.5%;
 }
 
-
-@include responsive (small-max-screens) {
+@include responsive(small-max-screens) {
     footer .menu > li {
         margin: 5px 0px;
         width: 100%;
-		padding: 0em 0em 0em 0;
+        padding: 0em 0em 0em 0;
     }
 }
+
+
 footer .menu > li ul.sub-menu {
     margin-bottom: 20px;
 }
+
 footer .menu > li ul li {
     display: block;
     float: none;
     width: 97%;
-	padding-left:3%;
-	@include border-radius(0.25em);
+    padding-left: 3%;
+    @include border-radius(0.25em);
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer .menu > li ul li {
         background: none repeat scroll 0em 0em rgb(245, 245, 245);
         font-size: 130%;
@@ -2952,11 +3469,15 @@ footer .menu > li ul li {
         color: rgb(222, 137, 41);
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap .menu h3 {
         margin-top: 0em;
     }
 }
+
+
 footer.bottomPage {
     background: rgb(252, 252, 252);
     border-top: 1px solid rgb(235, 235, 235);
@@ -2965,85 +3486,107 @@ footer.bottomPage {
     position: relative;
     width: 100%;
 }
+
 footer.bottomPage h1 {
     font-size: 2em;
 }
+
 footer.bottomPage section#siteMap {
     padding: 50px 0em 3em;
     position: relative;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap {
         padding: 0px 0px 30px;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap h1 {
         font-size: 2em;
     }
 }
+
+
 footer.bottomPage section#siteMap h3 {
     color: #202024;
     margin: 0em 0em 0.5em;
     text-align: left;
-	@include noWrapTxt;
+    @include noWrapTxt;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap h3 {
         font-size: 2em;
         margin: 25px auto 10px auto;
-
     }
 }
+
+
 footer.bottomPage section#siteMap h3:nth-of-type(2n) {
     margin: 0.5em 0em 0.25em;
 }
+
 div.socialAkvo h1.backLinedGrey {
     margin: -10px auto 0em auto;
     text-align: center;
     width: 80%;
 }
+
 div.socialAkvo .backLinedGrey span {
     background: transparent;
 }
+
 footer.bottomPage section#siteMap div.socialAkvo {
     float: right;
     min-height: 100px;
     position: relative;
     width: 30%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo {
         float: left;
         margin: 20px auto 10px;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo h1 {
     color: rgb(222, 137, 41);
 }
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
     display: block;
     margin: 15px auto 0em;
     position: relative;
     width: 100%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
     text-align: center;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
         text-align: center;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter form {
-		@include box-sizing(border-box);
+        @include box-sizing(border-box);
         float: left;
         margin: 0px;
         margin-top: -10px;
@@ -3051,31 +3594,40 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
         width: 100%;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.intro {
         padding: 0em;
         text-align: center;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_description {
     display: block;
     margin-bottom: 10px;
 }
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body {
     float: left;
     width: 80%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body {
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li {
     float: left;
     width: 50%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li {
         width: 100%;
     }
@@ -3083,54 +3635,66 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul l
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li:nth-of-type(odd) {
     margin-right: 1%;
     width: 49%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_body ul li:nth-of-type(odd) {
         margin-bottom: 5px;
         margin-right: 0em;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_footer {
     float: left;
     margin-left: 2%;
     width: 18%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .gform_footer {
         margin-left: 0em;
         margin-top: 10px;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
     color: #202024;
     display: none;
     font-size: 0.9em;
     letter-spacing: 0.01em;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter label {
         font-size: 1.2em;
         margin-top: 10px;
         text-align: center;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
     @include box-shadow(none);
-	@include box-sizing(border-box);
+    @include box-sizing(border-box);
     border: 1px solid #dedcdc;
     display: inline-block;
     font-size: 0.8em;
     padding: 0.75em 0.5em;
     width: 100%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
-		@include box-sizing(border-box);
+        @include box-sizing(border-box);
         display: block;
         font-size: 1.2em;
         margin: 5px auto 0em;
@@ -3138,11 +3702,15 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input {
         width: 100%;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter input:focus {
         width: 92%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input,
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input {
     display: inline;
@@ -3151,41 +3719,52 @@ footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email inpu
     padding: 0.8em;
     position: relative;
 }
+
 p.sml_submit input {
     float: right;
     margin-top: 0em;
     width: 17.8%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     p.sml_submit input {
         float: left;
         width: 100% !important;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input {
     width: 28%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_name input {
         margin-bottom: 10px;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input {
     margin: 0em 0em 0em 0.5%;
     width: 36.5%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter p.sml_email input {
         margin-bottom: 10px;
         width: 100%;
     }
 }
+
+
 footer.bottomPage section#siteMap div.socialAkvo nav.socialLinks {
     margin: 0em auto;
     position: relative;
     width: 100%;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li {
     display: inline;
     float: left;
@@ -3193,6 +3772,7 @@ footer.bottomPage section#siteMap nav.socialLinks li {
     text-align: center;
     width: 25%;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li a {
     @include transition(opacity 0.2s linear);
     display: block;
@@ -3202,24 +3782,31 @@ footer.bottomPage section#siteMap nav.socialLinks li a {
     text-indent: -9999px;
     width: 100%;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li a:hover {
     opacity: 0.5;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.twitter a {
     background: url("../images/socialTwitter.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.github a {
     background: url("../images/socialGithub.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.facebook a {
     background: url("../images/socialFacebook.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.flickr a {
     background: url("../images/socialFlickr.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.youtube a {
     background: url("../images/socialYoutube.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.rss a {
     background: url("../images/socialRss.png") center center no-repeat;
 }
@@ -3227,12 +3814,15 @@ footer.bottomPage section#siteMap nav.socialLinks li.rss a {
 li.rss a {
     background: url("../images/socialRss.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.email a {
     background: url("../images/socialEmail.png") center center no-repeat;
 }
+
 footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a {
     background: url("../images/socialContact.png") center center no-repeat;
 }
+
 footer.bottomPage section#aboutAkvo {
     background: #202024;
     color: #b9b9b9;
@@ -3241,33 +3831,42 @@ footer.bottomPage section#aboutAkvo {
     position: relative;
     width: 100%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#aboutAkvo {
         margin-bottom: 20px;
     }
 }
-@include responsive (small-max-screens) {
+
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#aboutAkvo p {
         font-size: 1em;
         line-height: 1.4em;
         width: 95%;
     }
 }
+
+
 footer.bottomPage section#aboutAkvo div h1 {
     margin: 0em 0em 0em 5px;
 }
+
 footer.bottomPage section#aboutAkvo div p {
     font-weight: normal;
     margin: 0.25em 0em 0em 5px;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     footer.bottomPage section#aboutAkvo div p {
         font-size: 1.1em;
         margin: 10px 0em 15px;
-		padding:0 1.5%;
-		width:97%;
+        padding: 0 1.5%;
+        width: 97%;
     }
 }
+
+
 footer.bottomPage small {
     color: #7c7c7c;
     display: block;
@@ -3279,6 +3878,7 @@ footer.bottomPage small {
     text-align: center;
     width: 100%;
 }
+
 footer.bottomPage small:before {
     border-bottom: 1px solid #565656;
     border-top: 1px solid #000;
@@ -3287,18 +3887,21 @@ footer.bottomPage small:before {
     margin: 0em auto 0.5em auto;
     width: 100%;
 }
+
 /*************************************************************
-						Product Pages
+                        Product Pages
 *************************************************************/
 .rsr #mainbody,
 .akvoflow #mainbody,
 .akvoopenaid #mainbody {
     background: rgb(255, 255, 255);
 }
+
 .productPage section.productDescr,
 .productPage section.figure {
     border-top: none;
 }
+
 nav.anchorNav, nav.anchorNav2 {
     background: rgba(44, 42, 116, 0.1);
     border-bottom: thin solid rgb(232, 232, 232);
@@ -3307,14 +3910,17 @@ nav.anchorNav, nav.anchorNav2 {
     padding: 15px 1%;
     width: 98%;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     nav.anchorNav, nav.anchorNav2 {
         background: #f8f8f8;
         position: relative;
     }
 }
+
+
 nav.anchorNav2 {
-    background:none;
+    background: none;
     border-bottom: none;
     border-top: none;
     margin: 30px auto;
@@ -3325,46 +3931,57 @@ nav.anchorNav2 {
 .rsr nav.anchorNav {
     background: rgba(87, 193, 232, 0.1);
 }
+
 .akvoflow nav.anchorNav {
     background: rgba(252, 159, 0, 0.1);
 }
+
 .akvoopenaid nav.anchorNav {
     background: rgba(255, 206, 0, 0.1);
 }
+
 .akvopedia nav.anchorNav {
-    background: rgba(190, 73 , 155, 0.1);
+    background: rgba(190, 73, 155, 0.1);
 }
+
 .team nav.anchorNav {
     margin-bottom: 10px;
 }
+
 .mShownCollapse {
     display: none;
 }
+
 nav.anchorNav h5 {
     color: rgb(255, 255, 255);
     display: none;
     text-transform: uppercase;
 }
+
 p.mLabel {
     color: rgba(222, 137, 41, 0.8);
     /*color:    rgb(102,102,102);
-                	color:    rgb(0,0,0);*/
+                    color:    rgb(0,0,0);*/
     font-size: 0.6em;
     text-transform: uppercase;
 }
+
 .teamPage p.mLabel {
     margin-bottom: 15px;
 }
+
 nav.anchorNav ul, nav.anchorNav2 ul {
     margin: 0em auto;
     position: relative;
     text-align: center;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     nav.anchorNav ul, nav.anchorNav2 ul {
         width: 100%;
     }
 }
+
 
 nav.anchorNav ul li, nav.anchorNav2 ul li {
     background: url("../images/productNavSep.png") left center no-repeat;
@@ -3372,29 +3989,40 @@ nav.anchorNav ul li, nav.anchorNav2 ul li {
     margin: 0em;
     padding: 0em 0.5em;
 }
-@include responsive (small-max-screens) {
-    nav.anchorNav ul li, nav.anchorNav2 ul li  {
+
+@include responsive(small-max-screens) {
+    nav.anchorNav ul li, nav.anchorNav2 ul li {
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
         display: block;
         margin: 0em auto 5px auto;
         padding: 10px 5px;
     }
 }
-.all-rsr-project-updates nav.anchorNav2 ul li { background:none;}
-@include responsive (small-max-screens) {
-    nav.anchorNav ul li:hover a, nav.anchorNav2 ul li:hover a  {
+
+
+.all-rsr-project-updates nav.anchorNav2 ul li {
+    background: none;
+}
+
+@include responsive(small-max-screens) {
+    nav.anchorNav ul li:hover a, nav.anchorNav2 ul li:hover a {
         background: none;
         color: #3792b3;
     }
 }
+
+
 nav.anchorNav ul li:first-child {
     background: none;
 }
-@include responsive (small-max-screens) {
+
+@include responsive(small-max-screens) {
     nav.anchorNav ul li:first-child {
         background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IwZDRlMyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM4OGJhY2YiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
     }
 }
+
+
 nav.anchorNav ul li a, nav.anchorNav2 ul li a {
     @include border-radius(0.1em);
     -moz-transition: background 0.2s linear;
@@ -3407,15 +4035,15 @@ nav.anchorNav ul li a, nav.anchorNav2 ul li a {
     padding: 0.25em 0.5em;
     transition: background 0.2s linear;
 }
+
 nav.anchorNav2 ul li a {
     background: transparent;
     font-weight: normal;
 }
 
-
-@include responsive (small-max-screens) {
+@include responsive(small-max-screens) {
     nav.anchorNav ul li a, nav.anchorNav2 ul li a {
-    	@include border-radius(0.2em);
+        @include border-radius(0.2em);
         background: transparent;
         color: #fff;
         display: block;
@@ -3424,23 +4052,29 @@ nav.anchorNav2 ul li a {
         padding: 0.35em 0.5em;
     }
 }
+
+
 nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     background-color: rgba(44, 42, 116, 0.6);
     box-shadow: 1px 2px 0em rgb(223, 223, 223);
     color: rgb(255, 255, 255);
 }
+
 .rsrProdPag nav.anchorNav ul li a:hover {
     background: rgba(87, 193, 232, 0.5);
     color: rgb(44, 110, 128);
 }
+
 .flowProdPag nav.anchorNav ul li a:hover {
     background: rgba(252, 159, 0, 0.5);
     color: rgb(255, 255, 255);
 }
+
 .openaidProdPag nav.anchorNav ul li a:hover {
     background: rgba(255, 206, 0, 0.5);
     color: rgb(32, 32, 36);
 }
+
 .board {
     text-align: center;
 }
@@ -3449,16 +4083,19 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     margin: 0em auto;
     padding: 0.5em 1em;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .productPage section {
         padding: 0em;
     }
 }
+
+
 .productPage section h1 {
     margin: 0.25em auto 1em auto;
     text-align: center;
 }
+
 .productPage section h1:before {
     content: "";
     display: block;
@@ -3480,47 +4117,86 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     height: 1px;
     margin: 30px auto;
 }
+
 .productPage section:target {
     @include transition(background 0.5s ease-in);
     background: rgb(242, 242, 242);
 }
+
 .productPage section:target h1 {
     @include transition(color 0.5s ease-in);
     color: rgb(222, 137, 41);
 }
+
 .productPage section:target .backLined span {
     @include transition(background 0.5s ease-in);
     background: rgb(242, 242, 242);
     padding: 5px 10px;
 }
+
+.whoUseIt {
+    ul.twoColumns li a {
+        margin: 0 auto;
+        text-align: center;
+    }
+}
+
 /* ------------------------------------------------------- RSR ------------------------------------------------------- */
 .productPage section.figure {
     padding: 0;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .productPage section.figure {
         display: none;
     }
     .productPage section.figure img {
         display: none;
     }
+    .productPage.rsrProdPag {
+        section {
+            padding-top: 1em;
+            padding-bottom: 1em;
+        }
+        section.figure {
+            display: block;
+            img {
+                display: block;
+            }
+        }
+        .soloImageSection {
+            display: none;
+        }
+    }
 }
+
+
+.rsrProdPag {
+    h2 {
+        margin-bottom: 3em;
+    }
+}
+
 .rsr .productPage section.figure {
     background: url("../images/chruch.png") repeat;
 }
+
 .akvoflow .productPage section.figure {
     background: url("../images/background-banner.jpg") repeat;
 }
+
 .akvopedia .productPage section.figure {
     background: url("../images/akvopedia_bg.jpg") repeat;
 }
+
 .figure {
     background: rgb(32, 32, 36);
 }
+
 .akvopediaProdPag .figure {
     background: rgb(232, 232, 236);
 }
+
 .akvoopenaid .figure {
     background: rgb(242, 242, 246);
 }
@@ -3531,16 +4207,56 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     width: 100%;
     max-width: 1208px;
 }
+
 .figure.fullWidthImg img {
     max-width: none;
 }
-@include responsive (small-max-screens) {
 
+.productDescr.rsr {
+    background: whitesmoke;
+}
+
+section.rsrNuggetsSection {
+    h3.nuggetTitle {
+        display: inline-block;
+        width: 50%;
+        padding: 0;
+        margin: 0;
+    }
+    li {
+        &:nth-child(odd) {
+            img {
+                float: right;
+                padding-right: 0;
+            }
+        }
+        &:nth-child(even) {
+            img {
+                float: left;
+                padding-left: 0;
+            }
+        }
+    }
+}
+
+.soloImage {
+    padding: 3em 2%;
+    width: 96%;
+    max-width: 1000px;
+}
+
+li.rarNuggets:after {
+    clear: both;
+}
+
+@include responsive(small-max-screens) {
     .figure img {
         height: auto;
         max-width: 100%;
     }
 }
+
+
 .figure .figcaption {
     font-family: $titleFont;
     font-size: 1.2em;
@@ -3553,15 +4269,17 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
     text-transform: none;
     width: 75%;
     /* text-shadow:    1px 1px 2px rgb(103,103,103);
-                	text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
-                	color:     rgb(222, 137, 41);
-                	*/
+                    text-shadow:    1px 1px 2px rgba(0,0,0,0.7);
+                    color:     rgb(222, 137, 41);
+                    */
     color: rgb(100, 100, 100);
     z-index: 999999;
 }
+
 section.inFivePoints ol {
     list-style-type: decimal;
 }
+
 section.inFivePoints li {
     background: rgb(245, 245, 245);
     border-bottom: 1px solid rgb(230, 230, 230);
@@ -3573,91 +4291,230 @@ section.inFivePoints li {
     position: relative;
     width: 96%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     section.inFivePoints li {
         padding: 1em 2% 0em;
     }
 }
+
+
 .rsrProdPag section.inFivePoints li.pointThree,
 .rsrProdPag section.inFivePoints li.pointFour {
     border-bottom: none;
     border-top: none;
 }
+
 .rsrProdPag section.inFivePoints li:last-child {
     border-top: none;
     padding: 0.25em 2% 0em;
 }
+
 section.inFivePoints li:first-child {
     border-bottom: 1px solid rgb(230, 230, 230);
     border-top: none;
 }
+
 section.inFivePoints li:last-child {
     border-top: 1px solid rgb(255, 255, 255);
 }
+
 section.inFivePoints li img {
     bottom: 0em;
     position: relative;
     width: 50%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     section.inFivePoints li img {
         width: 100%;
     }
 }
+
+
 .rsrProdPag section.inFivePoints li.pointOne img {
     margin: 2% 0em 0em 0em;
 }
+
 .rsrProdPag section.inFivePoints li.pointTwo img {
     margin: 6% 0em 0em 0em;
 }
+
 .rsrProdPag section.inFivePoints li.pointThree img {
     margin: 5% 0em 0em 0em;
 }
+
 .rsrProdPag section.inFivePoints li.pointFour img {
     margin: 4% 0em 0em 0em;
 }
+
+section.rsrNuggetsSection ol {
+    list-style-type: decimal;
+}
+
+section.rsrNuggetsSection {
+    li {
+        background: rgb(245, 245, 245);
+        display: block;
+        height: auto;
+        margin: 0em auto;
+        padding: 4em 4% 0em 4%;
+        position: relative;
+        width: 92%;
+        &.supportingYourTeam {
+            background: rgb(255, 255, 255);
+        }
+        img {
+            bottom: 0em;
+            position: relative;
+            width: 44%;
+            padding: 1em 6% 1em 6%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        li {
+            padding: 1em 2% 0em 2%;
+            width: inherit;
+            img {
+                position: relative;
+                padding: 1em 0;
+            }
+        }
+    }
+
+    p.nuggetDescription.nuggetAside {
+        display: inline-block;
+        max-width: 50%;
+    }
+    @media only screen and (max-width: 768px) {
+        p.nuggetDescription.nuggetAside {
+            display: block;
+            max-width: 100%;
+        }
+        h3.nuggetTitle.nuggetAside {
+            display: block;
+            width: 100%;
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.nuggetDescription.nuggetAside {
+            max-width: 95%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+}
+
+li.rsrNuggets {
+    &.floats-in {
+        padding-top: 5em;
+        &:first-child {
+            padding-top: 3.5em;
+        }
+        &:nth-last-child(2),
+        &:last-child {
+            padding-bottom: 2.5em;
+        }
+    }
+    @include responsive(small-max-screens) {
+        .floats-in {
+            padding-top: 2em;
+            &:first-child {
+                padding-top: 1.5em;
+            }
+            &:nth-last-child(2),
+            &:last-child {
+                padding-bottom: 1.5em;
+            }
+        }
+    }
+}
+
 .akvopedia #akvopediaInFour li img {
     max-width: 200px;
     width: 100%;
 }
+
 .akvopedia #akvopediaInFour li > a:hover img {
     border-radius: 1em;
     box-shadow: 2px 2px 0em rgba(223, 49, 201, 0.8), -2px -2px 0em rgba(223, 49, 201, 0.8);
 }
+
 .pedia4points {
     margin: 2em auto;
 }
+
 .pedia4points h3 {
     font-size: 1.7em;
 }
+
 section.inFivePoints li div {
     float: right;
     position: relative;
     width: 48%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     section.inFivePoints li div {
-		@include box-sizing(border-box);
+        @include box-sizing(border-box);
         padding: 0px 10px;
         width: 100%;
     }
 }
+
+
 section.inFivePoints li p {
     padding: 1.5em 0em 0em;
     text-shadow: 0em 1px rgb(255, 255, 255);
 }
+
 section.inFivePoints li:nth-child(2n+1) {
     /* background:     rgb(182,182,182); */
 }
+
 section.inFivePoints li:nth-child(2n) img {
     float: right;
 }
+
 section.inFivePoints li:nth-child(2n) div {
     float: left;
 }
+
+section.rsrNuggetsSection {
+    @include responsive(small-max-screens) {
+        h3.nuggetTitle {
+            padding-bottom: 0.6em;
+            text-align: center;
+        }
+        p.nuggetDescription {
+            text-align: justify;
+        }
+        li img {
+            width: 100%;
+        }
+    }
+
+    li {
+        div {
+            float: right;
+            position: relative;
+            width: 48%;
+        }
+        @include responsive(small-max-screens) {
+            div {
+                @include box-sizing(border-box);
+                padding: 0px 10px;
+                width: 100%;
+            }
+        }
+
+        p {
+            padding: 1.5em 0em 0em;
+            text-shadow: 0em 1px rgb(255, 255, 255);
+        }
+    }
+}
+
 .productPage h3 {
     color: $akvoPurple;
     margin: 0.25em auto 1em auto;
@@ -3665,43 +4522,75 @@ section.inFivePoints li:nth-child(2n) div {
     text-align: center;
     text-shadow: 0em 1px rgb(255, 255, 255);
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .productPage h3 {
         margin: 0em auto;
         padding: 0em;
     }
 }
+
+
 .productDescr h3 {
     margin: 1.25em auto 1em;
     text-align: center;
     width: 80%;
 }
-.productPage img+h3 {
+
+.rsrProdPag {
+    .productDescr h3 {
+        margin: 0 auto;
+        text-align: center;
+        width: 80%;
+        padding: 1.25em 0 1em 0;
+    }
+}
+
+.productPage img + h3 {
     margin: 1.25em auto 1em;
 }
+
 .productPage p {
     margin-bottom: 15px;
 }
+
 .productPage .productDescr p {}
+
 #flowIntro p {}
+
 .splitImg ol.threeFlowPoints {
     width: 45%;
 }
-section.inFivePoints li h3 {
+
+section.inFivePoints li h3,
+section.rsrNuggetsSection li h3 {
     padding-bottom: 2em;
     position: relative;
     text-align: center;
 }
-@include responsive (small-max-screens) {
 
-    section.inFivePoints li h3 {
+section.rsrNuggetsSection li h3 {
+    text-align: left;
+}
+
+.rsrProdPag {
+    section.rsrDownloads {
+        background: whitesmoke;
+    }
+}
+
+@include responsive(small-max-screens) {
+    section.inFivePoints li h3,
+    section.rsrNuggetsSection li h3 {
         padding-bottom: 10px;
     }
 }
+
+
 .inFivePoints li span {
     margin: 0em 0.25em 0em 0em;
 }
+
 .productPage hgroup h1 {
     display: block;
     height: 45px;
@@ -3709,62 +4598,155 @@ section.inFivePoints li h3 {
     padding: 0em;
     text-indent: -99999px;
 }
+
 .rsrProdPag hgroup h1 {
     background: url("../images/rsr60px.png") center center no-repeat;
 }
+
 .rsrUpProdPag hgroup h1 {
     height: 55px;
     background: url("../images/rsrUp60px.png") center center no-repeat;
 }
+
 .akvoSitesProdPag hgroup h1 {
-    height:55px;
+    height: 55px;
     background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
-    background-size:auto 50px;
+    background-size: auto 40px;
 }
+
+.akvoIatiPag {
+    hgroup {
+        h1 {
+            height: 55px;
+            background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+            background-size: auto 50px;
+        }
+    }
+    .descrTwoCol {
+        img {
+            max-width: 60%;
+            margin: 0 20%;
+            text-align: center;
+        }
+    }
+    .whoUseIt {
+        padding: 20px 0;
+    }
+}
+
+.heroFormat {
+    width: 100%;
+    display: inline-block;
+    margin: 0em auto !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.heroFormatContain {
+    @extend .heroFormat;
+    background-size: contain;
+}
+
 .flowProdPag hgroup h1,
 .flowMonProdPag hgroup h1 {
     background: url("../images/flow60px.png") center center no-repeat;
 }
+
 .openaidProdPag hgroup h1 {
     background: url("../images/openaid60px.png") center center no-repeat;
 }
+
 .akvopediaProdPag hgroup h1 {
     background: url("../images/akvopedia60px.png") center center no-repeat;
 }
+
 .productPage hgroup h2 {
     font-size: 1.4em;
     text-align: center;
 }
+
 .rsrUpProdPag hgroup h2,
 .flowMonProdPag hgroup h2 {
     font-size: 1.4em;
     text-align: center;
-	margin:1em auto 2em auto;
+    margin: 1em auto 2em auto;
 }
-.rsrUpDescr p {margin:3em auto;}
+
+.rsrUpDescr p {
+    margin: 3em auto;
+}
+
+#rsrTech {
+    background: whitesmoke;
+}
+
+@include responsive(small-max-screens) {
+    section#rsrTech p {
+        text-align: justify;
+    }
+}
+
+
+h2.rsrProductPage {
+    margin: 1.25em 0 0.75em 0;
+}
+
+h2.rsrProductPage#download {
+    margin-bottom: 1em;
+}
+
+section.whoUseIt {
+    &#rsrRealWorld {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+@include responsive(small-max-screens) {
+    h2.rsrProductPage#download,
+    .rsrProdPag .twoPagerContainer > h2 {
+        margin-bottom: 0.6em;
+    }
+    /* The language headers are misleading when manuals are displayed in
+    ** a single column. Hide them on narrow viewports */
+    .rsrProdPag .languageHeader {
+        display: none;
+    }
+}
+
+
 #rsrUpTech ul li, .techSpecs ul li {
-	margin:0.5em 0 1em 25px;
-	}
+    margin: 0.5em 0 1em 25px;
+}
+
 #rsrTech ul li {
     margin: 0em 0em 2em;
 }
+
 #rsrTech h3 {
     margin: 0em 0em 0.5em;
 }
+
 ol.threeFlowPoints {
     list-style: outside decimal;
+    li {
+        margin: 0em auto 1em auto;
+        padding: 0em 1em;
+        p {
+            font-weight: 500;
+        }
+    }
 }
-ol.threeFlowPoints li {
-    margin: 0em auto 1em auto;
-    padding: 0em 1em;
-}
-ol.threeFlowPoints li span {}
-ol.threeFlowPoints li p {
-    font-weight: 500;
-}
+
 .videoCenter blockquote {
     width: 75%;
 }
+
 #flowFeatures img {
     display: block;
     margin: 1em auto;
@@ -3779,24 +4761,26 @@ section.flowMonDescr {
     text-align: center;
     position: relative;
 }
+
 .flowMonProdPag .productImage img {
     max-width: 1600px;
     width: 100%;
 }
 
-.flowMonProdPag .productImage h3 {
+.flowMonProdPag .productImage h3 {}
 
-}
-
-@include responsive (small-max-screens) {
+@include responsive(small-max-screens) {
     .flowMonProdPag .productImage h3 {
         margin-bottom: 0.5em;
     }
 }
+
+
 .flowMonProdPag section.productImage.grey {
     background-color: #f8f8f8;
 }
-@include responsive (small-screens) {
+
+@include responsive(small-screens) {
     .flowMonProdPag section.productImage.textInside {
         padding: 0;
         h3 {
@@ -3824,21 +4808,24 @@ section.flowMonDescr {
         }
     }
 }
+
+
 /*-----------------------------------
-			Contact Info Page
+            Contact Info Page
 ------------------------------------*/
 .contactInfo section {
     margin: 2em auto 0em auto;
 }
+
 .contactInfo section:last-child {
     margin: 2em auto 2em auto;
 }
+
 .hubmap {
     position: relative;
     padding-bottom: 49%;
     background: #ffd300 url(../images/map.gif) center no-repeat;
     background-size: 91%;
-
     .marker {
         position: absolute;
         width: 4%;
@@ -3853,7 +4840,7 @@ section.flowMonDescr {
         font-size: 20px;
         padding-top: 1%;
         box-sizing: border-box;
-        @include responsive (small-max-screens) {
+        @include responsive(small-max-screens) {
             display: none;
         }
     }
@@ -3867,22 +4854,24 @@ section.flowMonDescr {
         padding-top: 0.9%;
     }
 }
+
 @-webkit-keyframes highlight {
-  0% {
-    background: #fff3cc;
-  }
-  100% {
-    background: none;
-  }
+    0% {
+        background: #fff3cc;
+    }
+    100% {
+        background: none;
+    }
 }
+
+
 .hubs {
     li {
         margin: 70px auto 0;
         max-width: 800px;
         clear: left;
         overflow: hidden;
-
-        @include responsive (small-max-screens) {
+        @include responsive(small-max-screens) {
             h4 {
                 margin-top: 0;
             }
@@ -3891,7 +4880,7 @@ section.flowMonDescr {
             }
         }
 
-        @include responsive (small-screens) {
+        @include responsive(small-screens) {
             .text {
                 margin-left: 280px;
             }
@@ -3904,7 +4893,8 @@ section.flowMonDescr {
             }
             img {
                 float: left;
-//                margin-bottom: 70px;
+                //                margin-bottom: 70px;
+           
             }
         }
     }
@@ -3915,35 +4905,41 @@ section.flowMonDescr {
 }
 
 /*-----------------------------------
-				Annual Report Page
+                Annual Report Page
 ------------------------------------*/
 .aReport {
     margin: 2em auto;
 }
+
 .aReport h2 {
     margin: 0.5em auto 1em auto;
 }
+
 .annual-reports img {
-    box-shadow:1px 1px 3px rgba(32,32,36,0.1), -1px -1px 3px rgba(32,32,36,0.1);
+    box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1);
 }
+
 /*-----------------------------------
-				Team Page
+                Team Page
 ------------------------------------*/
 .teamPage {
     margin: 0em auto;
 }
+
 .teamPage > p {
     margin: 0.25em auto 1.75em auto;
     text-align: center;
     width: 85%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .teamPage > p {
         margin: 0.25em auto;
         width: 98%;
     }
 }
+
+
 ul.staff {
     display: block;
     margin: 0em auto;
@@ -3951,41 +4947,48 @@ ul.staff {
     position: relative;
     width: 99%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     ul.staff {
         margin: 1em auto 2em auto;
     }
 }
+
+
 ul.staff:target {
     background: rgb(242, 242, 242);
 }
+
 ul.staff li {
     display: inline;
     float: left;
     margin: 0em 0.8% 0px 0em;
-    min-height: 205px;
+    min-height: 218px;
     position: relative;
     width: 16%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     ul.staff li {
         font-size: 1.2em;
         margin: 0em 2% 0px 1%;
         width: 48%;
     }
 }
-@include responsive (small-max-screens) {
 
+
+@include responsive(small-max-screens) {
     ul.staff li:nth-child(2n) {
         margin: 0em 1% 0px 0em;
     }
 }
+
+
 ul.staff li:hover {
     background: rgb(250, 250, 250);
     cursor: pointer;
 }
+
 ul.staff li small {
     -moz-transition: opacity 0.2s ease-in;
     -o-transition: opacity 0.2s ease-in;
@@ -3997,18 +5000,22 @@ ul.staff li small {
     line-height: 1.2em;
     margin-top: 6px;
 }
+
 ul.staff li:hover small {
     opacity: 1;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     ul.staff li:hover small {
         font-size: 1em;
     }
 }
+
+
 ul.staff li div.staffName {
     margin: 3px 0em;
 }
+
 ul.staff li p.staffTitle {
     color: rgb(124, 124, 124);
     font-size: 0.9em;
@@ -4016,6 +5023,7 @@ ul.staff li p.staffTitle {
     margin: 0em;
     padding: 0em;
 }
+
 ul.staff li div.imgWrapper {
     background: rgb(224, 224, 224);
     display: block;
@@ -4024,27 +5032,34 @@ ul.staff li div.imgWrapper {
     position: relative;
     width: 96%;
 }
+
 .new_staffs .staffBiog,
 .staffAsset .staffBiog,
 .new_partners .staffBiog,
 .foundation_member .staffBiog {
     display: none;
 }
+
 .akvoTeam {
     display: none;
 }
+
 .singleStaffPage .akvoTeam {
     display: block;
 }
+
 ul.staff li.partnership:hover div.imgWrapper {
     background: rgb(250, 162, 27);
 }
+
 ul.staff li.communication:hover div.imgWrapper {
     background: rgb(219, 135, 201);
 }
+
 ul.staff li.engineering:hover div.imgWrapper {
     background: rgb(133, 171, 143);
 }
+
 ul.staff li div.imgWrapper img {
     @include transition(opacity 0.2s ease-in);
     margin: 0em auto;
@@ -4052,31 +5067,38 @@ ul.staff li div.imgWrapper img {
     vertical-align: middle;
     width: 100%;
 }
+
 .directors {
     position: relative;
 }
+
 #netherLand .directorsAbs {
     left: 67.2%;
     position: absolute;
     top: 0em;
 }
+
 #usa .directorsAbs,
 #kenya .directorsAbs {
     left: 50.4%;
     position: absolute;
     top: 0em;
 }
+
 ul.staff li div.imgWrapper img:hover {
     opacity: 0.9;
 }
+
 ul.staff li:nth-child(6n) {
     margin-right: 0em;
 }
+
 .teamPage h2,
 .partnerPage h2 {
     margin: 0em auto 1.5em auto;
     text-align: center;
 }
+
 #managementGroup,
 #partnershipGroup,
 #communicationGroup,
@@ -4088,6 +5110,7 @@ ul.staff li:nth-child(6n) {
     padding: 0.5em 0em;
     position: relative;
 }
+
 #managementGroup legend {
     @include border-radius(0.25em);
     background: rgb(245, 245, 245);
@@ -4098,12 +5121,15 @@ ul.staff li:nth-child(6n) {
     padding: 0.25em 0.5em;
     position: relative;
 }
+
 #managementGroup legend img {
     vertical-align: text-bottom;
 }
+
 #managementGroup b {
     color: #a81f2d;
 }
+
 /*--------------------------*/
 #overlay {
     bottom: 0em;
@@ -4117,6 +5143,7 @@ ul.staff li:nth-child(6n) {
     width: 100%;
     z-index: 1000001;
 }
+
 #blanket {
     background-color: #000;
     bottom: 0em;
@@ -4127,6 +5154,7 @@ ul.staff li:nth-child(6n) {
     top: 0em;
     width: 100%;
 }
+
 .dialog {
     @include border-radius(0em 0em 5px 5px);
     background: rgb(255, 255, 255);
@@ -4139,8 +5167,8 @@ ul.staff li:nth-child(6n) {
     position: relative;
     width: 50%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .dialog {
         @include border-radius(0em);
         background: rgb(255, 255, 255);
@@ -4155,60 +5183,73 @@ ul.staff li:nth-child(6n) {
         width: 90%;
     }
 }
+
+
 #staffDescr {
     margin-top: 10px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #staffDescr h1 {
         font-size: 2em;
     }
 }
+
+
 #staffDescr p {
     display: block;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #staffDescr p {
         width: 95%;
     }
 }
+
+
 .dialog .staffTitle {
     color: rgb(250, 162, 27);
     font-size: 1.1em;
     margin: 2px 0em 10px;
 }
+
 .buttons {
     margin: 10px auto 5px auto;
     position: absolute;
     right: 5px;
     top: 5px;
 }
+
 .buttons .cancel {
     background: url("../images/closePopup.png") left center no-repeat;
     cursor: pointer;
     padding: 6px 5px 8px 40px;
 }
+
 .buttons .cancel:hover {
     cursor: pointer;
     opacity: 0.8;
 }
+
 .extLoad div.imgWrapper {
     border: 1px solid rgb(242, 242, 242);
     float: left;
     margin: 10px 35px 5px 0em;
 }
+
 .extLoad div.imgWrapper img {
     margin: 0em auto;
     vertical-align: middle;
     width: 100%;
 }
+
 /*----------------------------------------------------------------------------------------------------------------------------------------
-																         Media section
+                                                                         Media section
 ----------------------------------------------------------------------------------------------------------------------------------------*/
 .media h2 {
     margin: 1.5em 0em 0.5em;
 }
+
 .media h4 {
     border-bottom: thin solid rgb(222, 137, 41);
     color: rgb(222, 137, 41);
@@ -4216,16 +5257,20 @@ ul.staff li:nth-child(6n) {
     padding: 0em 0em 0.5em;
     width: 100%;
 }
+
 .media ul.twoColumns li {
     padding: 3em 0em;
 }
+
 #tvLogo {
     margin-bottom: 5em;
 }
+
 .media section > h1 {
     margin-bottom: 1em;
     text-align: center;
 }
+
 .media section > h1:before {
     content: "";
     display: block;
@@ -4247,30 +5292,39 @@ ul.staff li:nth-child(6n) {
     height: 1px;
     margin: 50px auto;
 }
+
 /*--------------------------------------------------------------------
-							Help section
+                            Help section
 --------------------------------------------------------------------*/
 .akvo-policies-and-terms ul {
     margin: 0em 0em 0em 10px;
 }
+
 .akvo-terms-of-use p,
 .akvo-privacy-policy p {
     margin: 10px 0em;
 }
+
 .akvo-policies-and-terms h3,
 .akvo-policies-and-terms h4 {
     margin: 2em 0em 0.25em;
 }
-@include responsive (small-max-screens) {
 
-.helpSupport nav ul li, .helpSupport nav ul li:first-child {margin-bottom:20px !important;}
+@include responsive(small-max-screens) {
+    .helpSupport nav ul li, .helpSupport nav ul li:first-child {
+        margin-bottom: 20px !important;
+    }
 }
+
+
 .helpSupport nav ul li.bgDeco {
-    min-height:320px;
+    min-height: 320px;
 }
+
 .helpSupport nav ul li p {
-    color:$akvoPurple;
+    color: $akvoPurple;
 }
+
 .helpSupport nav ul li a {
     display: block;
     height: 70px;
@@ -4279,28 +5333,25 @@ ul.staff li:nth-child(6n) {
         background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
         background-size: 50% auto;
         text-indent: -9999px;
-		@include responsive (small-max-screens) {
-
-                margin:20px 0 0 0;
-            }
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		background-size: 56% auto;
+        background-size: 56% auto;
         text-indent: -9999px;
-		@include responsive (small-max-screens) {
-
-                margin:20px 0 0 0;
-            }
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		 background-size: 65% auto;
+        background-size: 65% auto;
         text-indent: -9999px;
-		@include responsive (small-max-screens) {
-
-                margin:20px 0 0 0;
-            }
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
     }
     &.moreHelp {
         color: $flowOrange;
@@ -4308,41 +5359,43 @@ ul.staff li:nth-child(6n) {
         width: 120px;
         height: 120px;
         margin: 20px auto;
-		opacity:0.5;
+        opacity: 0.5;
         position: relative;
         text-align: center;
-        text-indent:-9999px;
-		&.rsrH {
-					background:url("../images/help_RSR_icn.png") center center no-repeat;
-					background-size:80% 80%;
-					}
-		&.flowH {
-					background: url("../images/help_FLOW_icn.png") center center no-repeat;
-					background-size:80% 80%;
-					}
-		&.pediaH {
-					background: url("../images/help_pedia_icn.png") center center no-repeat;
-					background-size:80% 80%;
-					}
-	}
+        text-indent: -9999px;
+        &.rsrH {
+            background: url("../images/help_RSR_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+        &.flowH {
+            background: url("../images/help_FLOW_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+        &.pediaH {
+            background: url("../images/help_pedia_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+    }
 }
+
 h1 {
-	&.rsrHelp {
+    &.rsrHelp {
         background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
         background-size: auto 56px;
         text-indent: -9999px;
     }
     &.flowHelp {
         background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		background-size: auto 56px;
+        background-size: auto 56px;
         text-indent: -9999px;
     }
     &.akvopediaHelp {
         background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
-		 background-size: auto 56px;
+        background-size: auto 56px;
         text-indent: -9999px;
     }
 }
+
 .helpSupport nav ul li:hover a {
     &.rsrHelp {
         background-size: 52% auto;
@@ -4357,10 +5410,12 @@ h1 {
         opacity: 1;
     }
 }
+
 .helpSupport h2,
 .rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
     text-align: left !important;
 }
+
 #manuals li {
     min-height: 220px;
     a {
@@ -4371,10 +5426,10 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @include responsive (small-max-screens) {
-
+        @include responsive(small-max-screens) {
             background-position: center top;
         }
+
         span {
             bottom: 0em;
             display: block;
@@ -4382,13 +5437,13 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @include responsive (small-max-screens) {
-
+            @include responsive(small-max-screens) {
                 text-align: center;
             }
         }
     }
 }
+
 #android li {
     min-height: 220px;
     a {
@@ -4399,10 +5454,10 @@ h1 {
         padding: 0em;
         position: relative;
         width: 100%;
-        @include responsive (small-max-screens) {
-
+        @include responsive(small-max-screens) {
             background-position: center top;
         }
+
         span {
             bottom: 0em;
             display: block;
@@ -4410,18 +5465,15 @@ h1 {
             position: absolute;
             text-align: left;
             width: 100%;
-            @include responsive (small-max-screens) {
-
+            @include responsive(small-max-screens) {
                 text-align: center;
             }
         }
     }
 }
 
-
-
 /*--------------------------------------------------------------------
-							Network Page
+                            Network Page
 --------------------------------------------------------------------*/
 #akvoDashboard {
     background: $akvoBlack;
@@ -4431,17 +5483,20 @@ h1 {
     position: relative;
     width: 100%;
 }
+
 #akvoDashboard h2 {
     color: rgb(255, 255, 255);
     margin: 0.5em auto 0.75em;
     text-align: center;
 }
+
 #akvoDashboard ul {
     margin: 0em auto 0.5em auto;
 }
+
 #akvoDashboard ul li.dashSingle {
     @include border-radius(0.25em);
-	@include box-sizing(border-box);
+    @include box-sizing(border-box);
     background: rgba(0, 0, 0, 0.2);
     border: 1px solid rgba(0, 0, 0, 0.1);
     display: inline;
@@ -4451,36 +5506,45 @@ h1 {
     position: relative;
     width: 49.5%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     #akvoDashboard ul li.dashSingle {
         width: 100%;
     }
 }
+
+
 #akvoDashboard ul li.dashSingle:nth-child(2n) {
     margin: 0em 0em 0.5em 0.5%;
 }
+
 .dashSingle h2 {
     display: block;
     text-indent: -99999px;
 }
+
 .dashSingle .moreLink {
     position: absolute;
     right: 0em;
     top: 0em;
 }
+
 .dashSingle#rsrDash h2 {
     background: url("../images/rsrWhiteDash.png") no-repeat center center;
 }
+
 .dashSingle#flowDash h2 {
     background: url("../images/flowWhiteDash.png") no-repeat center center;
 }
+
 .dashSingle#opendaidDash h2 {
     background: url("../images/openAidWhiteDash.png") no-repeat center center;
 }
+
 .dashSingle#akvopediaDash h2 {
     background: url("../images/wikiWhiteDash.png") no-repeat center center;
 }
+
 .dashData li {
     @include box-sizing(border-box);
     display: inline;
@@ -4489,12 +5553,14 @@ h1 {
     overflow: hidden;
     width: 47.5%;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .dashData li {
         min-height: 100px;
     }
 }
+
+
 .dashData li.killFloatMerge {
     clear: both;
     display: block;
@@ -4502,81 +5568,94 @@ h1 {
     text-align: center;
     width: 96.5%;
 }
+
 .dashData li img {
     display: table;
     margin: 0em auto;
 }
+
 .dashData li p {
     display: table;
     font-size: 0.8em;
     margin: 0em auto;
+    @include noWrapTxt;
 }
+
 .dashData li h4 {
     color: inherit;
     font-size: 0.8em;
     margin-bottom: inherit;
     margin: 0.5em 0em 1em 0.5em;
     text-transform: uppercase;
+    @include noWrapTxt;
 }
+
 .dashData li span {
     font-family: $titleFont;
     font-size: 2.5em;
     margin: 0.1em 0em 0em 0.25em;
     text-shadow: 0em 0em 3px rgb(0, 0, 0);
     text-transform: uppercase;
+    @include noWrapTxt;
 }
+
 .dashData li span.unit {
     font-family: $scriptFont;
-    font-size: 0.9em;
+    font-size: 0.8em;
     font-style: italic;
     text-transform: lowercase;
+    @include noWrapTxt;
 }
-@include responsive (small-max-screens) {
 
-    .dashData li span.unit {
-        display: block;
-    }
-}
 .dashData li:nth-child(2n+1) {
     margin: 0em 0.75% 0.35em 1.75%;
 }
+
 .dashData li:nth-child(2n) {
     margin: 0em 1.75% 0.35em 0.75%;
 }
+
 .dashData.rsrData li {
     background: rgba(87, 193, 232, 0.05);
     color: rgb(87, 193, 232);
 }
+
 .dashData.flowData li {
     background: rgba(226, 124, 0, 0.05);
     color: rgb(226, 124, 0);
 }
+
 .dashData.openAidData li {
     background: rgba(255, 206, 0, 0.05);
     color: rgb(255, 206, 0);
 }
+
 .dashData.wikiData li {
     background: rgba(191, 131, 185, 0.05);
     color: rgb(191, 131, 185);
     span {
-    color: rgb(191, 131, 185);
-        a {
         color: rgb(191, 131, 185);
+        a {
+            color: rgb(191, 131, 185);
         }
     }
 }
+
 #rsrProjectUpdates {
     background: rgb(242, 242, 242);
     overflow: auto;
     padding: 2em 0em;
     position: relative;
 }
+
 #rsrProjectUpdates > h2 {
     text-align: center;
 }
+
 #rsrProjectUpdates > a.moreLink {
     margin: 0em auto 2em;
 }
+
 .rsrUpdate {
     @include border-radius(0.5em);
     background: rgba(192, 192, 196, 0.15);
@@ -4592,7 +5671,7 @@ h1 {
         background: rgba(192, 192, 196, 0.3);
         pointer: cursor;
     }
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         @include border-radius(0.15em);
         display: inline-block;
         float: left;
@@ -4605,12 +5684,13 @@ h1 {
         }
     }
 }
+
 .rsrUpdate ul li.upMore {
     float: right;
     height: 120px;
     margin-top: -10px;
     width: 120px;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         display: block;
         float: inherit;
         height: inherit;
@@ -4630,12 +5710,12 @@ h1 {
         position: relative;
         transition: all 0.4s ease-in;
         width: 112px;
-        @media screen and (min-width:960px) {
+        @media screen and (min-width: 960px) {
             background: none;
             display: inline-block;
-			width:100%;
-			margin:14px auto 0;
-			height:30px;
+            width: 100%;
+            margin: 14px auto 0;
+            height: 30px;
         }
     }
     &:hover ul li.upMore a {
@@ -4646,20 +5726,21 @@ h1 {
         font-size: 0.8em;
         text-align: center;
         transition: color 0.4s ease-in;
-        @media screen and (max-width:960px) {
-			text-align:center;
+        @media screen and (max-width: 960px) {
+            text-align: center;
         }
     }
     &:hover ul li.upMore span {
         color: rgba(226, 124, 0, 0.8);
     }
 }
+
 .rsrUpdate {
     ul {
         margin-top: 10px;
         padding: 0em;
         width: 100%;
-        @media screen and (min-width:960px) {
+        @media screen and (min-width: 960px) {
             margin-top: 15px;
         }
         li {
@@ -4670,14 +5751,14 @@ h1 {
         li.upImag {
             margin-left: 0.5em;
             width: calc(150px - 0.5em);
-            @media screen and (min-width:960px) {
+            @media screen and (min-width: 960px) {
                 width: 50%;
             }
         }
         li.upInfo {
             display: table-cell;
             width: 30%;
-            @media screen and (min-width:960px) {
+            @media screen and (min-width: 960px) {
                 width: calc(50% - 0.5em);
             }
         }
@@ -4686,7 +5767,7 @@ h1 {
             overflow: hidden;
             position: relative;
             width: calc(100% - 30% - 150px - 120px - 0.5em);
-            @media screen and (min-width:960px) {
+            @media screen and (min-width: 960px) {
                 display: block;
                 margin: 0.2em auto;
                 min-height: 100px;
@@ -4695,6 +5776,7 @@ h1 {
         }
     }
 }
+
 .rsrUpdate h2 {
     display: inline;
     font-size: 1.2em;
@@ -4706,7 +5788,8 @@ h1 {
         width: calc(100%- 0.5em);
     }
 }
-@media screen and (max-width:498px) {
+
+@media screen and (max-width: 498px) {
     .rsrUpdate ul li.upTxt {
         display: none;
     }
@@ -4714,7 +5797,8 @@ h1 {
         width: calc(100% - 120px - 150px);
     }
 }
-@media screen and (max-width:395px) {
+
+@media screen and (max-width: 395px) {
     .rsrUpdate ul li.upTxt {
         display: none;
     }
@@ -4725,34 +5809,38 @@ h1 {
         width: calc(100% - 120px);
     }
 }
+
 .rsrUpdate ul li.upInfo .authorTime {
     margin-left: 1.75em;
     @include noWrapTxt;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         margin-left: 0.25em;
     }
 }
+
 .authorTime em {
     display: inline;
     float: left;
     margin: 0em 0em 0em 0.25em;
     padding: 0em;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         display: none;
     }
 }
+
 .authorTime time {
     color: rgb(116, 116, 116);
     display: inline;
     float: left;
     margin: 0em;
     padding: 0em;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         display: block;
         margin: 0em 0em 0em 0.25em;
         width: calc(100% - 0.25em);
     }
 }
+
 .authorTime span.userName {
     @include noWrapTxt;
     color: $flowOrange;
@@ -4760,11 +5848,12 @@ h1 {
     float: left;
     margin: 0em 0em 0em 0.25em;
     padding: 0em;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         display: inline;
         margin: 0em 0em 3px 0.25em;
     }
 }
+
 .orgAndPlace .org {
     @include noWrapTxt;
     background: #3492b9;
@@ -4773,17 +5862,18 @@ h1 {
     font-size: 0.8em;
     margin: 0.75em 0em 0.75em 1.75em;
     padding: 0.15em 1em 0.35em;
-	a {
-	   color: rgb(255, 255, 255);
-	   &:hover {
-		   color: $flowOrange;
-	  }
-	}
-    @media screen and (min-width:960px) {
+    a {
+        color: rgb(255, 255, 255);
+        &:hover {
+            color: $flowOrange;
+        }
+    }
+    @media screen and (min-width: 960px) {
         display: inline-block;
         margin: 0em 0em 0em 0.5em;
     }
 }
+
 .orgAndPlace .place {
     @include noWrapTxt;
     background: url("../images/pinPoint.png") left center no-repeat;
@@ -4792,14 +5882,14 @@ h1 {
     margin-left: 1.75em;
     padding: 0.25em 0em 0.25em 14px;
     width: 100%;
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         display: block;
         margin: 0em 0em 0em 0.35em;
-    	width: 80%;
+        width: 80%;
     }
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .authorTime span.userName {
         margin: 0em;
     }
@@ -4807,12 +5897,15 @@ h1 {
         margin: 0.25em 0em 0em 1.75em;
     }
 }
+
+
 #rsrNetworkMap {
     background: rgb(255, 248, 245);
     overflow: auto;
     padding: 2em 0em;
     position: relative;
 }
+
 .rsrUpdate > span {
     @include border-radius(0em 0em 0.5em);
     background: rgba(87, 193, 232, 0.6);
@@ -4823,6 +5916,7 @@ h1 {
     padding: 0.15em 0.25em;
     top: 0px;
 }
+
 .rsrUpdate ul li.upTxt p {
     color: $akvoBlack;
     margin: 0em;
@@ -4834,46 +5928,54 @@ h1 {
     &:hover ul li.upTxt p {
         color: $akvoBlack;
     }
-    @media screen and (min-width:960px) {
+    @media screen and (min-width: 960px) {
         color: $akvoBlack;
         font-size: 0.9em;
         padding: 0.5em 2% 0em 2%;
         text-shadow: none;
     }
 }
+
 .rsrUpdate .imgWrap {
     background: rgb(196, 196, 196);
-    border: 2px solid rgb(232,232,232);
+    border: 2px solid rgb(232, 232, 232);
     display: inline-block;
     height: 100px;
     max-width: 100%;
     overflow: hidden;
     position: relative;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .rsrUpdate .imgWrap {
         padding: 0em;
     }
 }
+
+
 .rsrUpdate .imgWrap img {
     margin: 0em auto;
     max-with: 100%;
     position: relative;
 }
+
 #rsrNetworkMap > h2 {
     text-align: center;
 }
+
 #rsrNetworkMap .wrapper img {
-  max-width:none;
+    max-width: none;
 }
+
 #rsrNetworkMap iframe {}
+
 /***********************************
-						Price table
+                        Price table
 ********************************************/
 .pricingList {
     margin: 3em auto;
 }
+
 .pricingList h5 {
     background: rgb(32, 32, 36);
     color: rgb(255, 255, 255);
@@ -4882,17 +5984,19 @@ h1 {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+
 .pricingList img {
     display: table;
     margin: 1em auto;
 }
+
 .pricingList p {
     display: block;
     margin: 1em auto;
-	padding:25px;
+    padding: 25px;
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .pricingList img {
         float: left;
         margin: 0.5em 1em;
@@ -4903,6 +6007,8 @@ h1 {
         margin: 1em auto;
     }
 }
+
+
 .pricingList.fourColumns li {
     border-radius: 0.25em;
     float: left;
@@ -4912,11 +6018,12 @@ h1 {
     position: relative;
     width: 25%;
 }
+
 .pricingList.fourColumns li:nth-child(2n) {
     background: none repeat scroll 0em 0em rgb(238, 238, 238);
 }
-@include responsive (small-max-screens) {
 
+@include responsive(small-max-screens) {
     .pricingList.fourColumns > li {
         float: none;
         margin: 30px auto;
@@ -4927,17 +6034,307 @@ h1 {
         background: none;
     }
 }
+
+
 div[id^="inline-"] {
     display: none;
 }
 
-
-
 /*-----------------------------------
-				Work with us
+                Work with us
 ------------------------------------*/
 
 .twoPagerContainer {
-    width:500px;
+    width: 500px;
+}
 
+.rsrProdPag .twoPagerContainer {
+    max-width: 100%;
+}
+
+/*-----------------------------------
+                FLOW help page
+------------------------------------*/
+
+#content.flowHelpSupport {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flow-help-mailchimp-signup {
+    background: rgba($akvoPurple, 0.1);
+    @include border-radius(5px);
+    padding: 10px 15px 20px;
+    label {
+        font-size: inherit;
+    }
+    input {
+        display: block;
+        margin: 1em 0;
+        &.email {
+            margin: 0.75em 0 0.25em 0;
+            padding: 0.25em;
+            font-size: 1.25em;
+        }
+    }
+}
+
+/*-----------------------------------
+                Newsletters page
+------------------------------------*/
+
+.newsletter-container {
+    h2 {
+        margin: 0 auto 0.6em auto;
+    }
+    p {
+        text-align: justify;
+    }
+    .newsletter-profile {
+        margin: 4em auto;
+        &.fullWidthParag {
+            &:last-child {
+                hr {
+                    display: none;
+                }
+            }
+        }
+    }
+    .link-button {
+        margin-top: 1.25em;
+        text-align: center;
+    }
+    .newsletter-profile.fullWidthParag {
+        &:last-child {
+            hr {
+                display: none;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+
+.rsrProdPagWhatsNew {
+    &.rsrProdPag {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+    h2, h3 {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section#rsrWhatsNewHero {
+        @include responsive(medium-max-screens) {
+            display: none;
+        }
+    }
+    section.textOfImage {
+        background: whitesmoke;
+        /* Hide the section when hero image viewable */
+        @media only screen and (min-width: $width-medium) {
+            display: none;
+        }
+        div.container {
+            max-width: 90%;
+            margin: 0 auto;
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        @include responsive(small-max-screens) {
+            .cell {
+                padding-bottom: 0.75em;
+            }
+            .row {
+                &:last-child {
+                    .cell {
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pointTitle {
+            padding-top: 0.5em;
+            padding-right: 2em;
+            font-weight: bold;
+        }
+    }
+    .textOfImage,
+    .contributing {
+        h2 {
+            margin-top: 1.75em;
+        }
+        @include responsive(small-max-screens) {
+            h2 {
+                margin-top: 0.75em;
+            }
+        }
+    }
+    section.contributing {
+        background: whitesmoke;
+        padding-bottom: 1em;
+    }
+    section.sideBySide {
+        padding-top: 2em;
+        .container {
+            width: 40%;
+            padding: 2em 5%;
+            &.iati {
+                float: left;
+            }
+            &.backEnd {
+                float: right;
+                background: whitesmoke;
+            }
+            img {
+                max-width: 100%;
+            }
+            @media only screen and (min-width: $width-small) {
+                .fullWidthParag {
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive(small-max-screens) {
+            .container {
+                width: 100%;
+                padding: 2em 0;
+                margin: 0 auto;
+                &.iati,
+                &.backEnd {
+                    float: none;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    section.improvedNavigation {
+        background: whitesmoke;
+        padding-bottom: 0;
+        position: relative;
+        @include responsive(small-max-screens) {
+            padding-bottom: 1.5em;
+        }
+
+        .improvedNavigationWrapper {
+            position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .backgroundImage {
+            width: 100%;
+            max-width: 100%;
+            @media only screen and (min-width: $width-medium) and (max-width: $width-large) {
+                width: 90%;
+                max-width: 90%;
+                margin-left: 10%;
+                margin-right: 0;
+            }
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
+                width: 75%;
+                max-width: 75%;
+                margin-left: 25%;
+                margin-right: 0;
+            }
+        }
+        .improvedNavigationCaption {
+            position: absolute;
+            left: 5%;
+            top: 15%;
+            max-width: 64%;
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
+                max-width: 60%;
+            }
+            h3 {
+                text-align: left;
+                margin-left: 0;
+            }
+            @include responsive(small-max-screens) {
+                max-width: 100%;
+                h3 {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            p.fullWidthParag {
+                @media only screen and (min-width: $width-small) {
+                    margin-left: 0;
+                    text-align: left;
+                }
+            }
+            @include responsive(small-max-screens) {
+                position: static;
+                h3 {
+                    text-align: center;
+                    padding: 1.2em 0 0.75em 0;
+                }
+            }
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.fullWidthParag {
+            text-align: justify;
+        }
+    }
+}
+
+.rsrProdPag {
+    section.callToAction {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        .fullWidthParag {
+            @media only screen and (min-width: $width-small) {
+                text-align: center;
+            }
+        }
+        hr.delicate {
+            margin: 30px auto;
+            &:last-child {
+                display: none;
+            }
+        }
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+}
+
+/*-----------------------------------
+             Product Roadmaps page       
+------------------------------------*/
+
+.product-roadmaps {
+    .wrapper {
+        width: 800px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    }
+
+.akvopediaProdPag {
+    .pedia4points {
+        li {
+            h3 {
+                display: block;
+                min-height: 2.5em;
+            }
+        }
+    }
 }
