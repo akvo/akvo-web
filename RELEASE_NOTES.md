@@ -19,7 +19,7 @@ Cookie Law Info - v1.2 to 1.2.1  https://wordpress.org/plugins/cookie-law-info/
 Simple Tooltips - v1.1 to 2.1.2  https://wordpress.org/plugins/simple-tooltips/
 WP-Piwik - v0.9.9.11 to 0.9.9.12  https://wordpress.org/plugins/wp-piwik/
 
-#566 #485 
+Github issue: #566 #485 
 
 Tuesday 3 March 2015, @lynngre
 
