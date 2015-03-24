@@ -1,3 +1,42 @@
+
+Tuesday 24 March 2015, @lynngre
+
+--------
+Akvo.org ver 1.1.11 Lightning Lemon Hotfix
+---
+
+## Wordpress upgrade
+
+Upgraded from Wordpress 3.9.1 to 4.1.1.
+
+
+## Plugins upgraded
+
+Post Types Order - v1.6.8 to 1.7.7  https://wordpress.org/plugins/post-types-order/
+Advanced Custom Fields - v4.3.9 to 4.4  https://wordpress.org/plugins/advanced-custom-fields/
+Akismet - v3.0.3a1 to 3.1.1 https://wordpress.org/plugins/akismet/
+Cookie Law Info - v1.2 to 1.2.1  https://wordpress.org/plugins/cookie-law-info/
+Simple Tooltips - v1.1 to 2.1.2  https://wordpress.org/plugins/simple-tooltips/
+WP-Piwik - v0.9.9.11 to 0.9.9.12  https://wordpress.org/plugins/wp-piwik/
+
+#566 #485 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tuesday 27 January 2015, @lynngre
 
 --------
