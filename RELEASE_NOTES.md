@@ -203,7 +203,7 @@ RSR Up menu item has been removed & a link to the RSR Up page now resides on the
 
 http://akvo.org/products/rsr/
 
-#437  
+Github issue: #437  
 
 ---
 Akvo.org ver 1.1.9 Jumping Jackfruit
