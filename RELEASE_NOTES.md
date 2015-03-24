@@ -64,7 +64,7 @@ We're very proud to have included our staff handbook in this release.  Detailing
 
 It can be downloaded here:  http://akvo.org/about-us/working-at-akvo/
 
-#525 
+github issue: #525 
 
 ## Bug fixes & changes
 
