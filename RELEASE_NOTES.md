@@ -21,6 +21,13 @@ Upgraded from Wordpress 3.9.1 to 4.1.1.
 
 Github issue: #566 #485 
 
+##  Other changes
+
+RSR login link was permanently corrected as after RSR version 3, it linked to a 404.
+
+Github issue: #550
+
+
 Tuesday 3 March 2015, @lynngre
 
 --------
