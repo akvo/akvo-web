@@ -1,9 +1,9 @@
 === Akismet ===
-Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic
+Contributors: matt, ryan, andy, mdawaffe, tellyworth, josephscott, lessbloat, eoigal, cfinke, automattic, jgs
 Tags: akismet, comments, spam
-Requires at least: 3.1
-Tested up to: 4.0
-Stable tag: 3.0.2
+Requires at least: 3.2
+Tested up to: 4.1.1
+Stable tag: 3.1.1
 License: GPLv2 or later
 
 Akismet checks your comments against the Akismet Web service to see if they look like spam or not.
@@ -30,9 +30,34 @@ Upload the Akismet plugin to your blog, Activate it, then enter your [Akismet.co
 
 == Changelog ==
 
-= 3.0.3 =
+= 3.1.1 =
+*Release Date - 17th March, 2015*
 
+* Improvements to the "Remove comment author URL" JavaScript
+* Include the pingback pre-check from the 2.6 branch.
+
+= 3.1 =
+*Release Date - 11th March, 2015*
+
+* Use HTTPS by default for all requests to Akismet.
+* Fix for a situation where Akismet might strip HTML from a comment.
+
+= 3.0.4 =
+*Release Date - 11th December, 2014*
+
+* Fix to make .htaccess compatible with Apache 2.4.
+* Fix to allow removal of https author URLs.
+* Fix to avoid stripping part of the author URL when removing and re-adding.
+* Removed the "Check for Spam" button from the "Trash" and "Approved" queues, where it would have no effect.
+* Allow automatic API key configuration when Jetpack is installed and connected to a WordPress.com account
+
+= 3.0.3 =
+*Release Date - 3rd November, 2014*
+
+* Fix for sending the wrong data to delete_comment action that could have prevented old spam comments from being deleted.
 * Added a filter to disable logging of Akismet debugging information.
+* Added a filter for the maximum comment age when deleting old spam comments.
+* Added a filter for the number per batch when deleting old spam comments.
 * Removed the "Check for Spam" button from the Spam folder.
 
 = 3.0.2 =

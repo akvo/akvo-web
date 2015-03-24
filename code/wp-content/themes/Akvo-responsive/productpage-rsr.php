@@ -9,7 +9,7 @@
 
   <div class="projectGateWay">
     <p>Already an RSR user?</p>
-    <a href="http://rsr.akvo.org/signin" class="">Log in to Akvo RSR &rsaquo;</a>
+    <a href="http://rsr.akvo.org/sign_in" class="">Log in to Akvo RSR &rsaquo;</a>
   </div>
 
   <hgroup>
