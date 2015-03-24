@@ -81,19 +81,19 @@ There was some JavaScript code that contained debugging console.log statements.
 
 These have been removed.
 
-#520 
+Github issue:  #520 
 
 ###  Edge-padding on narrow viewports
 
 FLOW help & support page updated to make it easier to read.
 
-#537 
+Github issue:  #537 
 
 ### Contact us
 
 Google map links to each hub have been added to the [Contact us](http://www.akvodev.org/contact-info/) page.
 
-#526 
+Github issue:  #526 
 
 Tuesday 27 January 2015, @lynngre
 
