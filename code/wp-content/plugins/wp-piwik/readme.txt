@@ -2,8 +2,8 @@
 
 Contributors: Braekling
 Requires at least: 3.8
-Tested up to: 3.9.1
-Stable tag: 0.9.9.11
+Tested up to: 4.0.0
+Stable tag: 0.9.9.12
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6046779
 Tags: statistics, stats, analytics, piwik, wpmu
 
@@ -13,7 +13,7 @@ This plugin adds a Piwik stats site to your WordPress or WordPress multisite das
 
 This plugin adds a Piwik stats site to your WordPress dashboard. It's also able to add the Piwik tracking code to your blog using wp_footer.
 
-You need a running **Piwik 2.0.2 or higher** installation and at least view access to your stats. Also **PHP 5.3 or higher** is strictly required.
+You need a running **Piwik 2.7.0 or higher** installation and at least view access to your stats. Also **PHP 5.3 or higher** is strictly required.
 
 Look at the [Piwik website](http://piwik.org/) to get further information about Piwik.
 
@@ -125,6 +125,12 @@ Please update Piwik if not done yet (Piwik 2.0 or higher is recommended)!
 
 == Changelog ==
 
+= 0.9.9.12 =
+* Bugfix: Avoid forced relogin on site change (WP network)
+* Bugfix: Avoid multiple annotations on post updates
+* Bugfix: User mergeSubdomains instead of mergeAliasURLs
+* Feature: Added mergeAliasURLs as additional feature
+
 = 0.9.9.11 =
 * Bugfix: PHP API causes plain text output issue, see http://wordpress.org/support/topic/bug-cant-access-to-tabs-in-setting-after-configuration
 * Bugfix: PHP API causes WordPress multisite login issue, see http://wordpress.org/support/topic/causes-multisite-superadmin-subsite-login-problem
@@ -138,7 +144,7 @@ Please update Piwik if not done yet (Piwik 2.0 or higher is recommended)!
 * Feature: Show page views (actions) in "visitors last 30"
 
 = 0.9.9.9 =
-* Update: PHP API will use namespaces (Piwik 2.x compatibility)
+* Update: PHP API will use namespaces (Piwik 2.x compatibility, PHP 5.3+ required)
 * Update: Piwik URL isn't necessary to use PHP API anymore.
 * Feature: Limit cookie lifetime
 * Feature: Track visitors across all subdomains
