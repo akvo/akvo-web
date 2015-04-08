@@ -21,6 +21,7 @@
 		</div>
 	</div>
 </section>
+
 <section class="flowPricing">
 	<div class="wrapper">
 		<h2 class="flowLogo"></h2>
@@ -30,6 +31,7 @@
 		</div>
 	</div>
 </section>
+
 <section class="othersPricing">
 	<div class="threeColumns wrapper">
 		<div><h2 class="rsrLogo"></h2></div>
@@ -38,6 +40,7 @@
 	</div>
 	<div class="wrapper"><div class="fullWidthParag centerED"><?php the_field('others_price_text'); ?></div></div>
 </section>
+
 <section class="pricingHelp">
 	<h2><?php the_field('price_help_title'); ?></h2>
 	<div class="wrapper"><div class="fullWidthParag centerED"><?php the_field('price_help_text'); ?></div></div>
