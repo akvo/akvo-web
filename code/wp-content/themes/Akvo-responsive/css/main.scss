@@ -1109,6 +1109,7 @@ a.helpIcon:hover {
 .twoColumns {
     margin: 1px auto 0em auto;
     position: relative;
+    display: block;
 }
 
 .twoColumns > div,
@@ -1203,7 +1204,7 @@ a.helpIcon:hover {
 }
 
 
-@include responsive(small-max-screens) {
+@include responsive(mediums-max-screens) {
     .threeColumns > div {
         background: rgba(255, 255, 255, 0.5);
         border-top: thin solid #f0f0f0;
@@ -4649,7 +4650,6 @@ section.rsrNuggetsSection li h3 {
         margin:20px auto;
     }
     .flowPricing {
-        margin-bottom:40px;
         .flowLogo {
             display: block;
             height: 45px;
@@ -4658,9 +4658,12 @@ section.rsrNuggetsSection li h3 {
             background: url("../images/pricing/akvo_flow-350px.png") center center no-repeat;
             background-size: auto 45px;
         }
+        .twoColumns {
+            display:inline-block;
+
+        }
     }
     .othersPricing {
-        margin-top:40px;
         .rsrLogo {
             display: block;
             height: 45px;
@@ -6394,6 +6397,9 @@ div[id^="inline-"] {
         h2 {
             margin-bottom: 1em;
         }
+    }
+    em {
+        margin-right:0 !important;
     }
 }
 

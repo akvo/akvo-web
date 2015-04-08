@@ -968,7 +968,8 @@ a.helpIcon:hover {
 
 .twoColumns {
   margin: 1px auto 0em auto;
-  position: relative; }
+  position: relative;
+  display: block; }
 
 .twoColumns > div,
 .twoColumns > li {
@@ -1037,7 +1038,7 @@ a.helpIcon:hover {
     box-sizing: border-box;
     padding: 0px 10px;
     width: 100%; } }
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 992px) {
   .threeColumns > div {
     background: rgba(255, 255, 255, 0.5);
     border-top: thin solid #f0f0f0;
@@ -3650,12 +3651,6 @@ section.rsrNuggetsSection li h3 {
   .pricingPage .engageBtn {
     position: absolute;
     right: 50px; }
-    @media only screen and (max-width: 992px) {
-      .pricingPage .engageBtn {
-        right: 100px; } }
-    @media only screen and (max-width: 992px) {
-      .pricingPage .engageBtn {
-        right: 10px; } }
     @media only screen and (max-width: 768px) {
       .pricingPage .engageBtn {
         right: 10px; } }
@@ -3672,38 +3667,36 @@ section.rsrNuggetsSection li h3 {
     background-size: auto 45px; }
   .pricingPage .pricingHero {
     margin: 20px auto; }
-  .pricingPage .flowPricing {
-    margin-bottom: 40px; }
-    .pricingPage .flowPricing .flowLogo {
-      display: block;
-      height: 45px;
-      margin: 35px 0em 25px;
-      padding: 0em;
-      background: url("../images/pricing/akvo_flow-350px.png") center center no-repeat;
-      background-size: auto 45px; }
-  .pricingPage .othersPricing {
+  .pricingPage .flowPricing .flowLogo {
+    display: block;
+    height: 45px;
+    margin: 35px 0em 25px;
+    padding: 0em;
+    background: url("../images/pricing/akvo_flow-350px.png") center center no-repeat;
+    background-size: auto 45px; }
+  .pricingPage .flowPricing .twoColumns {
+    display: inline-block; }
+  .pricingPage .othersPricing .rsrLogo {
+    display: block;
+    height: 45px;
+    padding: 0em;
+    background: url("../images/pricing/akvo_rsr-350px.png") center center no-repeat;
+    background-size: auto 45px;
     margin-top: 40px; }
-    .pricingPage .othersPricing .rsrLogo {
-      display: block;
-      height: 45px;
-      padding: 0em;
-      background: url("../images/pricing/akvo_rsr-350px.png") center center no-repeat;
-      background-size: auto 45px;
-      margin-top: 40px; }
-    .pricingPage .othersPricing .sitesLogo {
-      display: block;
-      height: 45px;
-      padding: 0em;
-      background: url("../images/pricing/akvo_sites-350px.png") center center no-repeat;
-      background-size: auto 45px;
-      margin-top: 40px; }
-    .pricingPage .othersPricing .openaidLogo {
-      display: block;
-      height: 45px;
-      padding: 0em;
-      background: url("../images/pricing/akvo_openaid-350px.png") center center no-repeat;
-      background-size: auto 45px;
-      margin-top: 40px; }
+  .pricingPage .othersPricing .sitesLogo {
+    display: block;
+    height: 45px;
+    padding: 0em;
+    background: url("../images/pricing/akvo_sites-350px.png") center center no-repeat;
+    background-size: auto 45px;
+    margin-top: 40px; }
+  .pricingPage .othersPricing .openaidLogo {
+    display: block;
+    height: 45px;
+    padding: 0em;
+    background: url("../images/pricing/akvo_openaid-350px.png") center center no-repeat;
+    background-size: auto 45px;
+    margin-top: 40px; }
   .pricingPage .pricingHelp h2 {
     margin: 40px auto; }
 
@@ -4904,9 +4897,6 @@ div[id^="inline-"] {
 .rsrProdPagWhatsNew h2, .rsrProdPagWhatsNew h3 {
   max-width: 90%;
   margin: 0 auto; }
-@media only screen and (max-width: 992px) {
-  .rsrProdPagWhatsNew section#rsrWhatsNewHero {
-    display: none; } }
 .rsrProdPagWhatsNew section.textOfImage {
   background: whitesmoke;
   /* Hide the section when hero image viewable */ }
@@ -5034,6 +5024,8 @@ div[id^="inline-"] {
       display: none; }
   .rsrProdPag section.callToAction h2 {
     margin-bottom: 1em; }
+.rsrProdPag em {
+  margin-right: 0 !important; }
 
 /*-----------------------------------
              Product Roadmaps page       
