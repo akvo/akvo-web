@@ -3265,6 +3265,8 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .productPage section {
   margin: 0em auto;
   padding: 0.5em 1em; }
+  .productPage section.pricingHero {
+    margin: 40px auto; }
 
 @media only screen and (max-width: 768px) {
   .productPage section {
@@ -3642,6 +3644,68 @@ section.rsrNuggetsSection li h3 {
   height: 55px;
   background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
   background-size: auto 40px; }
+
+.pricingPage {
+  position: relative; }
+  .pricingPage .engageBtn {
+    position: absolute;
+    right: 50px; }
+    @media only screen and (max-width: 992px) {
+      .pricingPage .engageBtn {
+        right: 100px; } }
+    @media only screen and (max-width: 992px) {
+      .pricingPage .engageBtn {
+        right: 10px; } }
+    @media only screen and (max-width: 768px) {
+      .pricingPage .engageBtn {
+        right: 10px; } }
+    .pricingPage .engageBtn a {
+      display: block;
+      background: red;
+      padding: 10px 15px;
+      color: white;
+      border-radius: 5px; }
+      .pricingPage .engageBtn a:hover {
+        background: #990000; }
+  .pricingPage hgroup h1 {
+    background: url("../images/pricing/akvo_org-350px.png") center center no-repeat;
+    background-size: auto 45px; }
+  .pricingPage .pricingHero {
+    margin: 20px auto; }
+  .pricingPage .flowPricing {
+    margin-bottom: 40px; }
+    .pricingPage .flowPricing .flowLogo {
+      display: block;
+      height: 45px;
+      margin: 35px 0em 25px;
+      padding: 0em;
+      background: url("../images/pricing/akvo_flow-350px.png") center center no-repeat;
+      background-size: auto 45px; }
+  .pricingPage .othersPricing {
+    margin-top: 40px; }
+    .pricingPage .othersPricing .rsrLogo {
+      display: block;
+      height: 45px;
+      padding: 0em;
+      background: url("../images/pricing/akvo_rsr-350px.png") center center no-repeat;
+      background-size: auto 45px;
+      margin-top: 40px; }
+    .pricingPage .othersPricing .sitesLogo {
+      display: block;
+      height: 45px;
+      padding: 0em;
+      background: url("../images/pricing/akvo_sites-350px.png") center center no-repeat;
+      background-size: auto 45px;
+      margin-top: 40px; }
+    .pricingPage .othersPricing .openaidLogo {
+      display: block;
+      height: 45px;
+      padding: 0em;
+      background: url("../images/pricing/akvo_openaid-350px.png") center center no-repeat;
+      background-size: auto 45px;
+      margin-top: 40px; }
+  .pricingPage .pricingHelp h2 {
+    margin: 40px auto; }
 
 .akvoIatiPag hgroup h1 {
   height: 55px;
