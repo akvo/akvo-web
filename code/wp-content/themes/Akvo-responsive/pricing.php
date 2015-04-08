@@ -33,12 +33,12 @@
 </section>
 
 <section class="othersPricing">
-	<div class="threeColumns">
-		<div><h2 class="rsrLogo">	</h2></div>
+	<div class="threeColumns wrapper">
+		<div><h2 class="rsrLogo"></h2></div>
 		<div><h2 class="sitesLogo"></h2></div>
 		<div><h2 class="openaidLogo"></h2></div>
 	</div>
-	<div class=""><div class="fullWidthParag centerED"><?php the_field('others_price_text'); ?></div></div>
+	<div class="wrapper"><div class="fullWidthParag centerED"><?php the_field('others_price_text'); ?></div></div>
 </section>
 
 <section class="pricingHelp">
