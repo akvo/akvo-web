@@ -972,7 +972,8 @@ a.helpIcon:hover {
   display: block; }
 
 .twoColumns > div,
-.twoColumns > li {
+.twoColumns > li,
+.twoColumns > p {
   float: left;
   margin: 0em 0.5%;
   padding: 2%;
@@ -981,24 +982,25 @@ a.helpIcon:hover {
 
 @media only screen and (max-width: 768px) {
   .twoColumns > div,
-  .twoColumns > li {
+  .twoColumns > li,
+  .twoColumns > p {
     float: none;
     margin: 0em auto;
     padding: 1%;
     width: 98%; } }
 .twoColumns > div:first-child,
-.twoColumns > li:first-child {
+.twoColumns > li:first-child, .twoColumns > p:first-child {
   margin: 0em 0em 0em 1%; }
 
 .twoColumns > div:last-child,
-.twoColumns > li:last-child {
+.twoColumns > li:last-child, .twoColumns > p:last-child {
   margin: 0em 1% 0em 0em; }
 
 @media only screen and (max-width: 768px) {
-  .twoColumns > div:first-child, .twoColumns > li:first-child {
+  .twoColumns > div:first-child, .twoColumns > li:first-child, .twoColumns > p:first-child {
     margin: inherit; } }
 @media only screen and (max-width: 768px) {
-  .twoColumns > div:last-child, .twoColumns > li:last-child {
+  .twoColumns > div:last-child, .twoColumns > li:last-child, .twoColumns > p:last-child {
     margin: inherit; } }
 .twoColumnsSidebar {
   margin: 1px auto 0em auto;
