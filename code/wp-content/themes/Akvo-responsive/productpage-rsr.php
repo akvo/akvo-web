@@ -149,6 +149,7 @@
   <section class="wrapper centerED marginVertical">
     <a href="/help/akvo-policies-and-terms-2/akvo-rsr-terms-of-use/">Akvo RSR terms of use </a>
   </section>
+  <section class="centerED"><em>Top photo by</em><span> SNV/Bart Verwei</span></section>
 
 </div>
 <!-- end content -->
