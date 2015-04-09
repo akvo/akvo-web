@@ -33,3 +33,4 @@ vagrant/.vagrant
 *.orig
 
 *.codekit
+*.codekit

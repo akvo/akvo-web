@@ -1,3 +1,107 @@
+
+Tuesday 24 March 2015, @lynngre
+
+--------
+Akvo.org Wordpress 4.1.1 & plugins upgrade
+---
+
+## Wordpress upgrade
+
+Upgraded from Wordpress 3.9.1 to 4.1.1.
+
+
+## Plugins upgraded
+
+* Post Types Order - v1.6.8 to 1.7.7  https://wordpress.org/plugins/post-types-order/
+* Advanced Custom Fields - v4.3.9 to 4.4  https://wordpress.org/plugins/advanced-custom-fields/
+* Akismet - v3.0.3a1 to 3.1.1 https://wordpress.org/plugins/akismet/
+* Cookie Law Info - v1.2 to 1.2.1  https://wordpress.org/plugins/cookie-law-info/
+* Simple Tooltips - v1.1 to 2.1.2  https://wordpress.org/plugins/simple-tooltips/
+* WP-Piwik - v0.9.9.11 to 0.9.9.12  https://wordpress.org/plugins/wp-piwik/
+
+Github issue: #566 #485 
+
+##  Other changes
+
+RSR login link was permanently corrected as after RSR version 3, it linked to a 404.
+
+Github issue: #550
+
+
+Tuesday 3 March 2015, @lynngre
+
+--------
+Akvo.org ver 1.1.12 Magnetokinetic Melon
+---
+
+## New & noteworthy
+
+This release includes a new [Akvo RSR product page](http://akvo.org/products/rsr/), which reflects the changes made to RSR in the latest release '3.0 Douglas'.  We have also included a page detailing the [changes](http://www.akvodev.org/products/rsr/whats-new-in-akvo-rsr/) made in RSR v3.0 Douglas.  
+
+We have added our [Akvo staff handbook](http://www.akvodev.org/about-us/working-at-akvo/) to our 'Working at Akvo' page.  Take a peak and find out what our vision, mission, strategy and core values are.
+
+Akvo FLOW bulletin signup and archived bulletins are now also available from the [help & support page](http://www.akvodev.org/help/help-support/flow-help/).
+
+## New features
+
+
+### Akvo RSR product page & 'What's new in RSR'
+
+The Akvo RSR product page has been redesigned to reflect the changes included in the RSR version 3 Douglas release. 
+
+A new page highlighting the specific enhancements to RSR in version 3 Douglas.
+
+Release notes for that change can be found here:  https://github.com/akvo/akvo-rsr/releases/tag/v3.0
+
+
+Github issue: #394 #546 
+
+
+### Akvo FLOW bulletin
+
+A signup to the Akvo FLOW bulletin which includes future upgrades, issues, etc has been added to the FLOW help page.
+
+http://akvo.org/help/help-support/flow-help/
+
+Github issue:  #479 
+
+### Akvo staff handbook
+
+We're very proud to have included our staff handbook in this release.  Detailing exactly why you would love to work for our organisation.
+
+It can be downloaded here:  http://akvo.org/about-us/working-at-akvo/
+
+github issue: #525 
+
+## Bug fixes & changes
+
+
+### Page edits
+
+Small edits to various pages to correct issues such as line breaks and grammar in page headings.
+
+Github issue:  #432 #512 #515 
+
+###  Removed debugging statements
+
+There was some JavaScript code that contained debugging console.log statements.
+
+These have been removed.
+
+Github issue:  #520 
+
+###  Edge-padding on narrow viewports
+
+FLOW help & support page updated to make it easier to read.
+
+Github issue:  #537 
+
+### Contact us
+
+Google map links to each hub have been added to the [Contact us](http://www.akvodev.org/contact-info/) page.
+
+Github issue:  #526 
+
 Tuesday 27 January 2015, @lynngre
 
 --------
@@ -106,7 +210,7 @@ RSR Up menu item has been removed & a link to the RSR Up page now resides on the
 
 http://akvo.org/products/rsr/
 
-#437  
+Github issue: #437  
 
 ---
 Akvo.org ver 1.1.9 Jumping Jackfruit
