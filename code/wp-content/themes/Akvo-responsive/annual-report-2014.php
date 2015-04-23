@@ -7,7 +7,6 @@
 <!--Start of Annual Report 2014-->
 <div id="content" class="floats-in annual-report">
   <section class="wrapper heading">
-      <img class="logo" src="<?php the_field('ar_akvo_logo_url'); ?>">
       <h1><?php the_field('ar_title'); ?></h1>
       <?php the_field('ar_see_previous_reports'); ?>
   </section>
