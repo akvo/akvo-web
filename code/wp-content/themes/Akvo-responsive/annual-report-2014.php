@@ -121,7 +121,9 @@
       <?php if( have_rows('ar_stories_items') ): ?>
         <?php while( have_rows('ar_stories_items') ): the_row(); ?>
           <li>
-            <img src="<?php the_sub_field('ar_story_image_url'); ?>">
+            <a href="<?php the_sub_field('ar_story_link_url'); ?>">
+              <img src="<?php the_sub_field('ar_story_image_url'); ?>">
+            </a>
           </li>      
         <?php endwhile; ?>
       <?php endif; ?>
