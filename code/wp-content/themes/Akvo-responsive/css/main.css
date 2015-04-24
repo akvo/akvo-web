@@ -5267,7 +5267,7 @@ div[id^="inline-"] {
     text-align: center; }
   .annual-report .heading h1 {
     margin-top: 0.5em;
-    font-size: 1.75em; }
+    font-size: 2.3em; }
   .annual-report .heading .logo {
     display: block;
     margin-left: auto;
@@ -5323,7 +5323,8 @@ div[id^="inline-"] {
     .annual-report .overview .hub img {
       display: block;
       margin-left: auto;
-      margin-right: auto; }
+      margin-right: auto;
+      max-height: 250px; }
     @media only screen and (min-width: 992px) {
       .annual-report .overview .hub:nth-child(even) {
         float: right; } }
@@ -5338,6 +5339,8 @@ div[id^="inline-"] {
     padding-bottom: 0.5em; }
   .annual-report .overview1 .wrapper > p {
     text-align: center; }
+.annual-report .overview2 {
+  margin-top: -1em; }
 .annual-report .staffHero {
   padding: 0;
   clear: both; }
@@ -5357,8 +5360,8 @@ div[id^="inline-"] {
     top: 50%; } }
 .annual-report .financials {
   background: whitesmoke;
-  padding-bottom: 2.25em;
-  margin-top: -1em; }
+  margin-top: 2em;
+  padding-bottom: 2.25em; }
   .annual-report .financials h2 {
     padding-top: 1em; }
   .annual-report .financials .wrapper > p {
@@ -5389,6 +5392,9 @@ div[id^="inline-"] {
       padding-left: 1em; }
     .annual-report .financials .tableContainer .padBelow td {
       padding-bottom: 1.25em; }
+    .annual-report .financials .tableContainer .total > td {
+      border-top: 1px solid black;
+      padding-top: 0.5em; }
     .annual-report .financials .tableContainer .balance {
       color: #c80000;
       font-weight: bold; }
