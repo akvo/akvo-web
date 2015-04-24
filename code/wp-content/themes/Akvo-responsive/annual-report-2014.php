@@ -29,7 +29,7 @@
       <p><?php the_field('ar_overview_subtitle'); ?></p>
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_1_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_1_link'); ?>"><?php the_field('ar_nugget_1_title'); ?></a></h3>
         <?php the_field('ar_nugget_1_body'); ?>
       </div>
 
@@ -38,12 +38,12 @@
       </div>
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_2_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_2_link'); ?>"><?php the_field('ar_nugget_2_title'); ?></a></h3>
         <?php the_field('ar_nugget_2_body'); ?>      
       </div>    
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_3_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_3_link'); ?>"><?php the_field('ar_nugget_3_title'); ?></a></h3>
         <?php the_field('ar_nugget_3_body'); ?>      
       </div>  
 
@@ -52,12 +52,12 @@
       </div>  
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_4_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_4_link'); ?>"><?php the_field('ar_nugget_4_title'); ?></a></h3>
         <?php the_field('ar_nugget_4_body'); ?>      
       </div>  
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_5_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_5_link'); ?>"><?php the_field('ar_nugget_5_title'); ?></a></h3>
         <?php the_field('ar_nugget_5_body'); ?>      
       </div>  
     </div>
@@ -70,12 +70,12 @@
   <section class="overview overview2">
     <div class="wrapper">
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_6_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_6_link'); ?>"><?php the_field('ar_nugget_6_title'); ?></a></h3>
         <?php the_field('ar_nugget_6_body'); ?>      
       </div>
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_7_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_7_link'); ?>"><?php the_field('ar_nugget_7_title'); ?></a></h3>
         <?php the_field('ar_nugget_7_body'); ?>      
       </div> 
 
@@ -84,46 +84,40 @@
       </div>      
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_8_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_8_link'); ?>"><?php the_field('ar_nugget_8_title'); ?></a></h3>
         <?php the_field('ar_nugget_8_body'); ?>      
       </div> 
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_9_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_9_link'); ?>"><?php the_field('ar_nugget_9_title'); ?></a></h3>
         <?php the_field('ar_nugget_9_body'); ?>      
       </div> 
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_10_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_10_link'); ?>"><?php the_field('ar_nugget_10_title'); ?></a></h3>
         <?php the_field('ar_nugget_10_body'); ?>      
       </div> 
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_11_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_11_link'); ?>"><?php the_field('ar_nugget_11_title'); ?></a></h3>
         <?php the_field('ar_nugget_11_body'); ?>      
-      </div> 
-
-      <div class="arNugget hub">
-        <img src="<?php the_field('ar_dc_url'); ?>">
-      </div>       
+      </div>      
 
       <div class="arNugget text">
-        <h3><?php the_field('ar_nugget_12_title'); ?></h3>
+        <h3><a href="<?php the_field('ar_nugget_12_link'); ?>"><?php the_field('ar_nugget_12_title'); ?></a></h3>
         <?php the_field('ar_nugget_12_body'); ?>      
       </div> 
     </div>     
 
   </section>
 
-  <section class="stories">
+  <section class="wrapper stories">
     <h2><?php the_field('ar_stories_title'); ?></h2>
     <ul class="bxslider">
       <?php if( have_rows('ar_stories_items') ): ?>
         <?php while( have_rows('ar_stories_items') ): the_row(); ?>
           <li>
-            <a href="<?php the_sub_field('ar_story_link_url'); ?>">
-              <img src="<?php the_sub_field('ar_story_image_url'); ?>">
-            </a>
+            <img src="<?php the_sub_field('ar_story_image_url'); ?>">
           </li>      
         <?php endwhile; ?>
       <?php endif; ?>
