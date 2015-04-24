@@ -5342,11 +5342,12 @@ div[id^="inline-"] {
 .annual-report .overview2 {
   margin-top: -1em; }
 .annual-report .staffHero {
-  padding: 0;
-  clear: both; }
+  padding: 2em 0;
+  clear: both;
+  background-color: black; }
   .annual-report .staffHero img {
     width: 100%;
-    margin: 0;
+    margin: 0 auto;
     padding: 0; }
 .annual-report .stories h2 {
   padding-top: 1em;
