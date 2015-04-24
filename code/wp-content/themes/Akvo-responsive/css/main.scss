@@ -6463,6 +6463,9 @@ div[id^="inline-"] {
         }
     }
     .introText {
+
+        padding-bottom: 3em;
+
         h2 {
             font-size: 1.75em;
             margin-bottom: 1em;
@@ -6478,6 +6481,10 @@ div[id^="inline-"] {
     .videoStatement {
         padding-bottom: 3em;
         background-color: whitesmoke;
+
+        h2 {
+            padding-top: 1.75em;
+        }
         .videoContainer {
             max-width: 1200px;
             margin: 0 auto;
@@ -6498,7 +6505,7 @@ div[id^="inline-"] {
         .arNugget {
             display: inline-block;
             width: 40%;
-            margin-top: 1.5em;
+            margin-top: 2.5em;
             padding-left: 4.5%;
             padding-right: 4.5%;
             vertical-align: top;

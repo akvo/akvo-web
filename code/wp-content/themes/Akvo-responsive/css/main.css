@@ -5272,18 +5272,22 @@ div[id^="inline-"] {
     display: block;
     margin-left: auto;
     margin-right: auto; }
-.annual-report .introText h2 {
-  font-size: 1.75em;
-  margin-bottom: 1em; }
-.annual-report .introText p {
-  margin-bottom: 2.5em;
-  text-align: center; }
-  @media only screen and (max-width: 992px) {
-    .annual-report .introText p {
-      text-align: justify; } }
+.annual-report .introText {
+  padding-bottom: 3em; }
+  .annual-report .introText h2 {
+    font-size: 1.75em;
+    margin-bottom: 1em; }
+  .annual-report .introText p {
+    margin-bottom: 2.5em;
+    text-align: center; }
+    @media only screen and (max-width: 992px) {
+      .annual-report .introText p {
+        text-align: justify; } }
 .annual-report .videoStatement {
   padding-bottom: 3em;
   background-color: whitesmoke; }
+  .annual-report .videoStatement h2 {
+    padding-top: 1.75em; }
   .annual-report .videoStatement .videoContainer {
     max-width: 1200px;
     margin: 0 auto;
@@ -5301,7 +5305,7 @@ div[id^="inline-"] {
   .annual-report .overview .arNugget {
     display: inline-block;
     width: 40%;
-    margin-top: 1.5em;
+    margin-top: 2.5em;
     padding-left: 4.5%;
     padding-right: 4.5%;
     vertical-align: top; }

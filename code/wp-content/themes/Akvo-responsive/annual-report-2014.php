@@ -64,7 +64,7 @@
   </section>
 
   <section class="staffHero">
-    <img src="<?php the_field('ar_staff_hero_url'); ?>">
+    <img class="wrapper" src="<?php the_field('ar_staff_hero_url'); ?>">
   </section>
 
   <section class="overview overview2">
