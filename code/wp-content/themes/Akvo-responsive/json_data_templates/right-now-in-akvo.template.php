@@ -20,5 +20,5 @@
     <span id=""><?= $aData['number_of_organisations']?></span> </li>
   <li>
     <h4>Project Budgets:</h4>
-    <span id="">€ <?= $aData['projects_budget_millions']?><span class="unit">million</span></span></li>
+    <span id="">€ <?= round($aData['projects_budget_millions'])/1000 ?><span class="unit">billion</span></span></li>
 </ul>
