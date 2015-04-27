@@ -5350,6 +5350,9 @@ div[id^="inline-"] {
   clear: both;
   background-color: black;
   /* We're forced to use "!important" for gfycat embed to override inline styles */ }
+  @media only screen and (max-width: 700px) {
+    .annual-report .staffHero {
+      display: none; } }
   .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
     display: block !important;
     width: 1198px !important;
@@ -5380,19 +5383,19 @@ div[id^="inline-"] {
     display: none !important; }
   .annual-report .staffHero .gfyitem.wrapper .gfyCtrlBox {
     display: none !important; }
-  @media only screen and (max-width: 700px) {
-    .annual-report .staffHero .gfyitem {
-      display: none; } }
-.annual-report .stories h2 {
-  padding-top: 1em;
-  padding-bottom: 0.5em; }
-.annual-report .stories .bx-wrapper .bxslider li img {
-  width: 100%; }
-@media only screen and (max-width: 768px) {
-  .annual-report .stories .bx-wrapper .bx-pager {
-    bottom: 10px; }
-  .annual-report .stories .bx-wrapper .bx-controls-direction a {
-    top: 50%; } }
+.annual-report .stories {
+  padding-right: 1em;
+  padding-left: 1em; }
+  .annual-report .stories h2 {
+    padding-top: 1em;
+    padding-bottom: 0.5em; }
+  .annual-report .stories .bx-wrapper .bxslider li img {
+    width: 100%; }
+  @media only screen and (max-width: 768px) {
+    .annual-report .stories .bx-wrapper .bx-pager {
+      bottom: 10px; }
+    .annual-report .stories .bx-wrapper .bx-controls-direction a {
+      top: 50%; } }
 .annual-report .financials {
   background: whitesmoke;
   margin-top: 2em;

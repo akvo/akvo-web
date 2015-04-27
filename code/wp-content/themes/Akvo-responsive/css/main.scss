@@ -6563,6 +6563,9 @@ div[id^="inline-"] {
         padding: 2em 0;
         clear: both;
         background-color: rgb(0, 0, 0);
+        @media only screen and (max-width: 700px) {
+            display: none;
+        }
         /* We're forced to use "!important" for gfycat embed to override inline styles */
         .gfyitem {
             &.wrapper, &.wrapper > div {
@@ -6606,12 +6609,11 @@ div[id^="inline-"] {
                     display: none !important;
                 }
             }
-            @media only screen and (max-width: 700px) {
-                display: none;
-            }
         }
     }
     .stories {
+        padding-right: 1em;
+        padding-left: 1em;
         h2 {
             padding-top: 1em;
             padding-bottom: 0.5em;
