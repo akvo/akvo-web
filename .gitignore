@@ -4,6 +4,7 @@
 dwsync.xml
 *.css.map
 *.scssc
+*.*~
 
 # Configurable files
 code/nginx.conf
