@@ -64,7 +64,7 @@
   </section>
 
   <section class="staffHero">
-    <img class="wrapper" src="<?php the_field('ar_staff_hero_url'); ?>">
+    <img class="gfyitem wrapper" data-id="<?php the_field('ar_gfycat_id'); ?>" />
   </section>
 
   <section class="overview overview2">
@@ -234,6 +234,14 @@
   $(document).ready(function() {
       $('.bxslider').bxSlider();
   });
+</script>
+<script>
+ (function(d, t) {
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+    g.src = 'http://assets.gfycat.com/js/gfyajax-0.517d.js';
+    s.parentNode.insertBefore(g, s);
+}(document, 'script'));
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
 <!-- end content --> 
