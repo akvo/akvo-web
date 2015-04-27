@@ -1,4 +1,73 @@
 
+Thursday 9 April 2015, @lynngre
+
+--------
+Akvo.org v1.1.13 Nefarious Nectarine
+---
+
+## New & noteworthy
+
+This release includes a new [Akvo pricing page](http://akvo.org/products/pricing/). 
+
+Akvo is established as a non-profit foundation. We work on the basis of ‘not for profit, not for loss’.
+
+For more details have a look at the new pricing page and get in touch with our team for any further information.
+
+
+## New features
+
+### Akvo pricing page 
+
+We are working towards making our pricing more transparent.  This page will be updated with more information in our next release.   http://akvo.org/products/pricing
+
+Github issue: #336  
+
+
+### Akvopedia  - 5th portal
+
+A 5th portal has gone live on Akvopedia.  It can be reached from the product page http://akvo.org/products/akvopedia or from Akvopedia.org.
+
+Github issue:  #517 
+
+
+
+## Bug fixes & changes
+
+### Contact us
+
+Our contact page has been slightly reformatted and additional hubs have been added.  http://akvo.org/contact-info
+
+Github issue:  #486 
+
+
+###  RSR login
+
+The link to Akvo RSR login has been adapted to the new url.  http://akvo.org/akvo-services-login
+
+Github issue: #554
+
+
+###  Akvo handbook link customisable
+
+Adding customisation options.
+
+Github issue: #556 
+
+
+### Photo credit
+
+Photo credit for image used on our Akvo RSR product page has been added.
+
+Github issue: #561 
+
+
+### Roadmap
+
+Formatting changes to the product roadmap page. http://akvo.org/products/product-roadmaps
+
+Github issues:  #559 
+
+
 Tuesday 24 March 2015, @lynngre
 
 --------
