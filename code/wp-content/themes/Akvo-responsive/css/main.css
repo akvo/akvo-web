@@ -5348,12 +5348,41 @@ div[id^="inline-"] {
 .annual-report .staffHero {
   padding: 2em 0;
   clear: both;
-  background-color: black; }
-  .annual-report .staffHero img {
-    display: block;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0; }
+  background-color: black;
+  /* We're forced to use "!important" for gfycat embed to override inline styles */ }
+  .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+    display: block !important;
+    width: 1198px !important;
+    height: 480px !important;
+    max-width: 100% !important; }
+    @media only screen and (max-width: 1100px) {
+      .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+        height: 440px !important; } }
+    @media only screen and (max-width: 1000px) {
+      .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+        height: 400px !important; } }
+    @media only screen and (max-width: 900px) {
+      .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+        height: 360px !important; } }
+    @media only screen and (max-width: 800px) {
+      .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+        height: 320px !important; } }
+    @media only screen and (max-width: 700px) {
+      .annual-report .staffHero .gfyitem.wrapper, .annual-report .staffHero .gfyitem.wrapper > div {
+        display: none !important; } }
+  .annual-report .staffHero .gfyitem.wrapper video.gfyVidIframe, .annual-report .staffHero .gfyitem.wrapper video.gfyVid {
+    width: 100% !important;
+    height: auto; }
+  .annual-report .staffHero .gfyitem.wrapper img.gfyGifIframe, .annual-report .staffHero .gfyitem.wrapper img.gfyGifIframe {
+    width: 100% !important;
+    height: auto; }
+  .annual-report .staffHero .gfyitem.wrapper canvas {
+    display: none !important; }
+  .annual-report .staffHero .gfyitem.wrapper .gfyCtrlBox {
+    display: none !important; }
+  @media only screen and (max-width: 700px) {
+    .annual-report .staffHero .gfyitem {
+      display: none; } }
 .annual-report .stories h2 {
   padding-top: 1em;
   padding-bottom: 0.5em; }
