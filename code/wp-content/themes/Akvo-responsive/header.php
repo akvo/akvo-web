@@ -30,6 +30,8 @@
 <meta name="google-site-verification" content="h6M7-buFJgu3jUVcALgFkBDxi0UtePXQhVUcZBYO5Lk" />
 <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
 <link rel="icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-180x180.png">
+<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-120x120.png">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/style.css">
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quando">
