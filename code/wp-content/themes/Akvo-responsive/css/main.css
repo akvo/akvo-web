@@ -5350,6 +5350,7 @@ div[id^="inline-"] {
   clear: both;
   background-color: black; }
   .annual-report .staffHero img {
+    display: block;
     width: 100%;
     margin: 0 auto;
     padding: 0; }
