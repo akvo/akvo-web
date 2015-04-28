@@ -198,7 +198,7 @@
           </tr> 
           <tr class="total padBelow">
             <td>Total costs</td>
-            <td class="num">3,910</td>          
+            <td class="num">3,837</td>          
           </tr>
           <tr class="balance">
             <td>Balance of income and costs</td>
