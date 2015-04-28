@@ -237,7 +237,7 @@
   $(document).ready(function() {
       $('.bxslider').bxSlider();
 
-      var expectedVideoId = '<?php the_field('ar_statement_id'); ?>',
+      var expectedVideoId = '<?php the_field('ar_statement_id'); ?>';
       var videoBlockMessageTimeout = 10000;
 
       // Check that vimeo isn't blocked
