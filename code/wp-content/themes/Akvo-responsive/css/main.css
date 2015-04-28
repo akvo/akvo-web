@@ -5376,7 +5376,7 @@ div[id^="inline-"] {
   .annual-report .staffHero .gfyitem.wrapper video.gfyVidIframe, .annual-report .staffHero .gfyitem.wrapper video.gfyVid {
     width: 100% !important;
     height: auto; }
-  .annual-report .staffHero .gfyitem.wrapper img.gfyGifIframe, .annual-report .staffHero .gfyitem.wrapper img.gfyGifIframe {
+  .annual-report .staffHero .gfyitem.wrapper img.gfyGifIframe, .annual-report .staffHero .gfyitem.wrapper img.gfyGif {
     width: 100% !important;
     height: auto; }
   .annual-report .staffHero .gfyitem.wrapper canvas {
