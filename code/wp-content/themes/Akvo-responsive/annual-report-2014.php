@@ -237,13 +237,14 @@
   $(document).ready(function() {
       $('.bxslider').bxSlider();
 
+      var expectedVideoId = '<?php the_field('ar_statement_id'); ?>';
+
       // Check that vimeo isn't blocked
       $.ajax({
-        url: 'https://vimeo.com/api/v2/video/125024363.json',
+        url: 'https://vimeo.com/api/v2/video/' + expectedVideoId + '.json',
         context: document.body 
       }).done( function(response) {
-        var expectedVideoId = '125024363',
-            urlFromAPI= response[0].url;
+        var urlFromAPI= response[0].url;
 
         // Does the id returned by the api match the real id?
         if (urlFromAPI.indexOf(expectedVideoId) < 0) {
