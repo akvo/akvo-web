@@ -237,12 +237,14 @@
   $(document).ready(function() {
       $('.bxslider').bxSlider();
 
-      var expectedVideoId = '<?php the_field('ar_statement_id'); ?>';
+      var expectedVideoId = '<?php the_field('ar_statement_id'); ?>',
+      var videoBlockMessageTimeout = 10000;
 
       // Check that vimeo isn't blocked
       $.ajax({
         url: 'https://vimeo.com/api/v2/video/' + expectedVideoId + '.json',
-        context: document.body 
+        context: document.body,
+        timeout: videoBlockMessageTimeout
       }).done( function(response) {
         var urlFromAPI= response[0].url;
 
