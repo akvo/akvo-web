@@ -5291,6 +5291,13 @@ div[id^="inline-"] {
     margin: 0 auto;
     padding-left: 1em;
     padding-right: 1em; }
+    .annual-report .videoStatement .videoContainer .vimeoBlockedMessage {
+      display: none;
+      margin-top: 1em;
+      text-align: center;
+      font-size: 1.25em; }
+      .annual-report .videoStatement .videoContainer .vimeoBlockedMessage p {
+        text-align: center; }
     .annual-report .videoStatement .videoContainer iframe {
       margin-top: 0;
       margin-bottom: 0;

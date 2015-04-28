@@ -6484,6 +6484,15 @@ div[id^="inline-"] {
             margin: 0 auto;
             padding-left: 1em;
             padding-right: 1em;
+            .vimeoBlockedMessage {
+                display: none;
+                margin-top: 1em;
+                text-align: center;
+                font-size: 1.25em;
+                p {
+                    text-align: center;
+                }
+            }
             iframe {
                 margin-top: 0;
                 margin-bottom: 0;
@@ -6563,6 +6572,7 @@ div[id^="inline-"] {
         @include responsive(small-max-screens) {
             display: none;
         }
+
         img {
             display: block;
             width: 90%;
