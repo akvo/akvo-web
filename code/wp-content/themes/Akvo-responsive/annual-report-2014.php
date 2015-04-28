@@ -111,7 +111,7 @@
 
   </section>
 
-  <section class="wrapper stories">
+  <section class="stories">
     <h2><?php the_field('ar_stories_title'); ?></h2>
     <ul class="bxslider">
       <?php if( have_rows('ar_stories_items') ): ?>
