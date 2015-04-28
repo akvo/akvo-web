@@ -114,63 +114,7 @@ Template Name: akvoNetwork
                   <?php do_shortcode('[jsondata_feed slug="rsr-updates" limit="3" photo__gte="a"]'); ?>
                 </ul>
               </section>
-              <section id="rsrNetworkMap">
-                <h2>Akvo RSR map of all projects</h2>
-                <div class="wrapper">
-                  <div class= "akvo_map centerED" id="akvo_map" style="width:975px;height:600px;"></div>
-                </div>
-                <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
-                <script type="text/javascript">
-                var googleMap = {
-                canvas: document.getElementById('akvo_map'),
-                options: {
-                mapTypeId: google.maps.MapTypeId.ROADMAP,
-                streetViewControl: false
-                },
-                projects: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="0"]'); ?>,
-                projects2: <?php do_shortcode('[jsondata_feed slug="rsr-projects-global-map" status__in="N,H,A,C" limit="1000" offset="1000"]'); ?>,
-                load: function() {
-                var map = new google.maps.Map(this.canvas, this.options);
-                var bounds = new google.maps.LatLngBounds();
-                var i;
-                var all_projects = this.projects.concat(this.projects2);
-                for (i = 0; i < all_projects.length; i++) {
-                var project = all_projects[i];
-                var position = new google.maps.LatLng(project.latitude, project.longitude);
-                var marker = new google.maps.Marker({
-                icon: '<?php bloginfo('template_directory'); ?>/images/blueMarker.png',
-                position: position,
-                map: map
-                });
-                window['contentString'+i] = '<div class="mapInfoWindow" style="height:150px; min-height:150px; max-height:150px; overflow:hidden;">'+
-                  '<a href="' + project.absolute_url + '">' + project.title +'</a>'+
-                  '<div style="text-align: center; margin-top: 10px;">'+
-                    '<a href="' + project.absolute_url + '" title="' + project.title +'">'+
-                      '<img src="' + project.map_thumb + '" alt="">'+
-                    '</a>'+
-                  '</div>'+
-                '</div>';
-                (function(marker, i) {
-                google.maps.event.addListener(marker, 'click', function() {
-                infowindow = new google.maps.InfoWindow({
-                content: window['contentString'+i]
-                });
-                infowindow.open(map, marker);
-                });
-                })(marker, i);
-                bounds.extend(marker.position);
-                }
-                map.fitBounds(bounds);
-                map.panToBounds(bounds);
-                var listener = google.maps.event.addListener(map, "idle", function() {
-                if (map.getZoom() > 8) map.setZoom(8);
-                google.maps.event.removeListener(listener);
-                });
-                }
-                };
-                window.onload = function (){googleMap.load()};
-                </script>
-              </section>
+
             </div>
             <!-- end content -->
             <?php get_footer(); ?>
