@@ -5362,13 +5362,17 @@ div[id^="inline-"] {
   .annual-report .stories h2 {
     padding-top: 1em;
     padding-bottom: 0.5em; }
-  .annual-report .stories .bx-wrapper .bxslider li img {
-    width: 100%; }
-  @media only screen and (max-width: 768px) {
-    .annual-report .stories .bx-wrapper .bx-pager {
-      bottom: 10px; }
-    .annual-report .stories .bx-wrapper .bx-controls-direction a {
-      top: 50%; } }
+  .annual-report .stories .bx-wrapper {
+    width: 1198px !important;
+    max-width: 75% !important;
+    margin: 0 auto; }
+    .annual-report .stories .bx-wrapper .bxslider li img {
+      width: 100%; }
+    @media only screen and (max-width: 768px) {
+      .annual-report .stories .bx-wrapper .bx-pager {
+        bottom: 10px; }
+      .annual-report .stories .bx-wrapper .bx-controls-direction a {
+        top: 50%; } }
 .annual-report .financials {
   background: whitesmoke;
   margin-top: 2em;

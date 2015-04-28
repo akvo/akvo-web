@@ -6580,6 +6580,9 @@ div[id^="inline-"] {
             padding-bottom: 0.5em;
         }
         .bx-wrapper {
+            width: 1198px !important;
+            max-width: 75% !important;
+            margin: 0 auto;
             .bxslider {
                 li {
                     img {
