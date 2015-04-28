@@ -64,7 +64,7 @@
   </section>
 
   <section class="staffHero">
-    <img class="gfyitem wrapper" data-id="<?php the_field('ar_gfycat_id'); ?>" />
+    <img class="wrapper" src="<?php the_field('ar_staff_hero'); ?>" >
   </section>
 
   <section class="overview overview2">
