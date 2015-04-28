@@ -19,6 +19,9 @@
   <section class="videoStatement">
     <h2><?php the_field('ar_statement_title'); ?></h2>
     <div class="videoContainer">
+      <div class="vimeoBlockedMessage">
+        <?php the_field('ar_video_backup_message'); ?>
+      </div>
       <iframe width="800" height="450" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('ar_statement_url'); ?>"></iframe>
     </div>
   </section>
@@ -233,6 +236,26 @@
 <script type="text/javascript">
   $(document).ready(function() {
       $('.bxslider').bxSlider();
+
+      // Check that vimeo isn't blocked
+      $.ajax({
+        url: 'https://vimeo.com/api/v2/video/125024363.json',
+        context: document.body 
+      }).done( function(response) {
+        var expectedVideoId = '125024363',
+            urlFromAPI= response[0].url;
+
+        // Does the id returned by the api match the real id?
+        if (urlFromAPI.indexOf(expectedVideoId) < 0) {
+          vimeoIsBlocked();
+        }
+      }).fail( function() {
+        vimeoIsBlocked();
+      })
+
+      function vimeoIsBlocked() {
+        $('.vimeoBlockedMessage').show();
+      }
   });
 </script>
 <script>

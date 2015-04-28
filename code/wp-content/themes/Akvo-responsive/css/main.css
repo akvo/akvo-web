@@ -5273,7 +5273,7 @@ div[id^="inline-"] {
     margin-left: auto;
     margin-right: auto; }
 .annual-report .introText {
-  padding-bottom: 3em; }
+  padding-bottom: 2em; }
   .annual-report .introText h2 {
     font-size: 1.75em;
     margin-bottom: 1em; }
@@ -5286,13 +5286,18 @@ div[id^="inline-"] {
 .annual-report .videoStatement {
   padding-bottom: 3em;
   background-color: whitesmoke; }
-  .annual-report .videoStatement h2 {
-    padding-top: 1.75em; }
   .annual-report .videoStatement .videoContainer {
     max-width: 1200px;
     margin: 0 auto;
     padding-left: 1em;
     padding-right: 1em; }
+    .annual-report .videoStatement .videoContainer .vimeoBlockedMessage {
+      display: none;
+      margin-top: 1em;
+      text-align: center;
+      font-size: 1.25em; }
+      .annual-report .videoStatement .videoContainer .vimeoBlockedMessage p {
+        text-align: center; }
     .annual-report .videoStatement .videoContainer iframe {
       margin-top: 0;
       margin-bottom: 0;
