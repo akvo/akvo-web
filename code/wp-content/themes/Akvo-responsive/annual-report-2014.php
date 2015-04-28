@@ -178,7 +178,7 @@
           </tr>
           <tr class="padBelow">
             <td>Management and administration</td>
-            <td class="num">90</td>
+            <td class="num">923</td>
           </tr>        
           <tr>
             <td>Charged staff costs</td>
