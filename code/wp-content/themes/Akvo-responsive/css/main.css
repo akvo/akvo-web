@@ -5162,10 +5162,10 @@ div[id^="inline-"] {
     padding-top: 1em;
     padding-bottom: 0.5em; }
   .annual-report .stories .bx-wrapper {
-    width: 1198px !important;
-    max-width: 75% !important;
+    width: 1198px;
+    max-width: 75%;
     margin: 0 auto; }
-    @media screen and (device-width: 768px) and (device-height: 1024px) and (-webkit-device-pixel-ratio: 1) {
+    @media screen and (width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 1) {
       .annual-report .stories .bx-wrapper {
         max-height: 90%;
         width: auto;
