@@ -6516,7 +6516,7 @@ div[id^="inline-"] {
                 display: block;
                 width: 80%;
                 p {
-                    text-align: justify;
+                    text-align: left;
                 }
             }
 
@@ -6664,7 +6664,7 @@ div[id^="inline-"] {
                 }
             }
             .balance {
-                color: rgb(200, 0, 0);
+                color: rgb(0, 200, 0);
                 font-weight: bold;
             }
         }

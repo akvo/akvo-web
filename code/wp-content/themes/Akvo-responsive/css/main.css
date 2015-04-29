@@ -5113,7 +5113,7 @@ div[id^="inline-"] {
         display: block;
         width: 80%; }
         .annual-report .overview .arNugget p {
-          text-align: justify; } }
+          text-align: left; } }
     .annual-report .overview .arNugget h3 {
       color: #3792b3;
       font-size: 2em; }
@@ -5215,7 +5215,7 @@ div[id^="inline-"] {
       border-top: 1px solid black;
       padding-top: 0.5em; }
     .annual-report .financials .tableContainer .balance {
-      color: #c80000;
+      color: #00c800;
       font-weight: bold; }
 .annual-report .reflections h2 {
   padding-top: 1.25em;
