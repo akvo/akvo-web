@@ -29,7 +29,7 @@
   <section class="overview overview1">
     <div class="wrapper">
       <h2><?php the_field('ar_overview_title'); ?></h2>
-      <p><?php the_field('ar_overview_subtitle'); ?></p>
+      <?php the_field('ar_overview_subtitle'); ?>
 
       <div class="arNugget text">
         <h3><a href="<?php the_field('ar_nugget_1_link'); ?>"><?php the_field('ar_nugget_1_title'); ?></a></h3>
