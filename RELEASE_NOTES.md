@@ -1,3 +1,62 @@
+Tuesday 28 April 2015, @lynngre
+
+--------
+Akvo.org v1.1.14 Omnilingual Onion
+---
+
+## New & noteworthy
+
+This release includes the back-end necessary for creating the online Annual Report 2014 as well as 2 critical WordPress security updates.
+
+## New features
+
+### Annual report 2014
+
+Back-end has been added to allow the Communications team to create an online Annual Report for the first time.  To be published shortly.
+
+Github issue: #581  
+
+## Bug fixes & changes
+
+### Akvo RSR help & support
+
+Links in the FAQs on http://akvo.org/help/help-support/rsr-help/ needed updating after being changed by Akvo RSR v3.
+
+Github issue:  #585 
+
+
+###  Seeithappen 'all projects' map
+
+The current JSON plugin only caches "all" data it pulls, it has no
+concept of a permanent cache that updates with new data.
+
+As the Akvo RSR v3 API now only allows 10 per fetch  we have had to remove the map on http://akvo.org/seeithappen until we can update the new JSON plugin with long term cache management.
+
+Github issue: #587 
+
+
+###  Critical WordPress security updates
+
+WordPress 4.2.1 - https://wordpress.org/news/2015/04/wordpress-4-2-1/
+
+WordPress 4.1.2 - https://wordpress.org/news/2015/04/wordpress-4-1-2/
+
+Github issue: #600 & #583 
+
+
+### Security policy link
+
+A security policy has been added and linked he link to the security policy document on http://akvo.org/help/akvo-policies-and-terms-2/
+
+Github issue: #560 
+
+
+### Seeithappen RSR budget
+
+Decimal point & text for 'project budget' field needed to be updated to reflect passing the 1 billion mark.  http://akvo.org/seeithappen
+
+Github issues:  #589 
+
 
 Thursday 9 April 2015, @lynngre
 

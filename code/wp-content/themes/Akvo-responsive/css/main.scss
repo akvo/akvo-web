@@ -6516,7 +6516,7 @@ div[id^="inline-"] {
                 display: block;
                 width: 80%;
                 p {
-                    text-align: justify;
+                    text-align: left;
                 }
             }
 
@@ -6587,9 +6587,14 @@ div[id^="inline-"] {
             padding-bottom: 0.5em;
         }
         .bx-wrapper {
-            width: 1198px !important;
-            max-width: 75% !important;
+            width: 1198px;
+            max-width: 75%;
             margin: 0 auto;
+            @media screen and (width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 1) {
+                max-height: 90%;
+                width:auto;
+                max-width:95%;
+            }
             .bxslider {
                 li {
                     img {
@@ -6659,7 +6664,7 @@ div[id^="inline-"] {
                 }
             }
             .balance {
-                color: rgb(200, 0, 0);
+                color: rgb(0, 200, 0);
                 font-weight: bold;
             }
         }
