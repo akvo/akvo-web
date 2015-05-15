@@ -4937,6 +4937,9 @@ section.flowMonDescr {
             padding-top: 2.75%;
             margin-top: 5.8%;
         }
+        @include responsive(mediums-max-screens) {
+            font-size: 90%;
+        }
     }
     .marker.LON {
         background-image: url(../images/marker-left.png);

@@ -4045,6 +4045,9 @@ section.flowMonDescr {
       background-size: 100%;
       padding-top: 2.75%;
       margin-top: 5.8%; }
+    @media only screen and (max-width: 992px) {
+      .hubmap .marker {
+        font-size: 90%; } }
   .hubmap .marker.LON {
     background-image: url(../images/marker-left.png);
     width: 5.8%;
