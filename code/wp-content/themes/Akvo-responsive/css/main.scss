@@ -4930,6 +4930,16 @@ section.flowMonDescr {
         @include responsive(small-max-screens) {
             display: none;
         }
+
+        &.flipped {
+            background: url(../images/marker-flipped.png) no-repeat;
+            background-size: 100%;
+            padding-top: 2.75%;
+            margin-top: 5.8%;
+        }
+        @include responsive(mediums-max-screens) {
+            font-size: 90%;
+        }
     }
     .marker.LON {
         background-image: url(../images/marker-left.png);
@@ -6592,8 +6602,8 @@ div[id^="inline-"] {
             margin: 0 auto;
             @media screen and (width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 1) {
                 max-height: 90%;
-                width:auto;
-                max-width:95%;
+                width: auto;
+                max-width: 95%;
             }
             .bxslider {
                 li {
