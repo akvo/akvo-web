@@ -1,6 +1,6 @@
 27 May 2015, @lynngre
 
-This release schedule is not fixed and dates may change as need arises.
+This release schedule is not fixed and dates may change as need arises.  Anything urgent, can of course, be added off the release cycle as a seperate release.
 
 This release schedule does not include releases which are carried out purely for system maintenance/upgrades such as WordPress critical security updates.
 
