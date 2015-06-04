@@ -3506,6 +3506,16 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .rsrProdPag h2 {
   margin-bottom: 3em; }
 
+.rsrProdPag .videoContainer, .flowProdPag .videoContainer {
+  display: none; }
+  .rsrProdPag .videoContainer .vimeoBlockedMessage, .flowProdPag .videoContainer .vimeoBlockedMessage {
+    display: none;
+    text-align: center; }
+  .rsrProdPag .videoContainer div.videoContainer, .flowProdPag .videoContainer div.videoContainer {
+    width: 1000px;
+    max-width: 90%;
+    margin: 0 auto; }
+
 .rsr .productPage section.figure {
   background: url("../images/chruch.png") repeat; }
 
