@@ -4702,7 +4702,7 @@ section.rsrNuggetsSection li h3 {
     hgroup {
         h1 {
             height: 55px;
-            background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+            background: url("../images/Akvo_IATI_logo_RGB_final.png") center center no-repeat;
             background-size: auto 50px;
         }
     }
@@ -4715,6 +4715,14 @@ section.rsrNuggetsSection li h3 {
     }
     .whoUseIt {
         padding: 20px 0;
+    }
+    .figure {
+        background: none;
+        > div {
+            &.heroFormatContain {
+                background-color: rgba(255, 211, 0, 0.1);
+            }
+        }
     }
 }
 
@@ -6705,4 +6713,51 @@ div[id^="inline-"] {
 
 .clearfix {
     clear: both;
+}
+
+/*-----------------------------------
+    Foundation page     
+------------------------------------*/
+
+.foundation {
+    .text-column {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    .directorContainer {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .directors {
+        .subDirectors {
+            width: 45%;
+            display: inline-block;
+            &:nth-child(odd) {
+                margin-left: 4.5%;
+            }
+            &:nth-child(even) {
+                margin-right: 4.5%;
+            }
+            li {
+                width: 48%;
+                margin: 0 1%;
+                min-height: 190px;
+                p {
+                    text-align: left;
+                }
+            }
+            h4 {
+                margin-bottom: 1em;
+                margin-left: 1%;
+            }
+            @media only screen and (max-width: $width-med) {
+                width: 100%;
+                display: block;
+                margin-right: 0;
+                margin-left: 0;
+            }
+        }
+    }
 }
