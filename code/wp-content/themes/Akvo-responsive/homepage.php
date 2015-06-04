@@ -63,7 +63,7 @@
     </div>
     <div id="openaidBucket"> <a href="/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvoopenaid/" class="moreLink">find out more</a>
       <hgroup> <a href="/products/akvoopenaid/">
-        <h1>Akvo OpenAid</h1>
+        <h1>Akvo IATI</h1>
         </a>
         <h2>
           <?php the_field('openaid_bucket_sub'); ?>
@@ -72,7 +72,7 @@
     </div>
     <div id="akvopedia"> <a href="/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="/products/akvopedia/" class="moreLink">find out more</a>
       <hgroup> <a href="/products/akvopedia/">
-        <h1>Akvo IATI</h1>
+        <h1>Akvopedia</h1>
         </a>
         <h2>
           <?php the_field('akvopedia_bucket_sub'); ?>
