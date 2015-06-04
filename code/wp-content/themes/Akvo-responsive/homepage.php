@@ -43,21 +43,21 @@
 
 <section id="productWindow" class="floats-in">
   <div class="fourColumns wrapper">
-    <div id="rsrBucket"> <a href="/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="/products/rsr/" class="moreLink">find out more</a>
-      <hgroup> <a href="/products/rsr/">
-        <h1>Akvo RSR</h1>
-        </a>
-        <h2>
-          <?php the_field('rsr_bucket_sub'); ?>
-        </h2>
-      </hgroup>
-    </div>
     <div id="flowBucket"> <a href="/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="/products/akvoflow/" class="moreLink">find out more</a>
       <hgroup> <a href="/products/akvoflow/">
         <h1>Akvo Flow</h1>
         </a>
         <h2>
           <?php the_field('flow_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>    
+    <div id="rsrBucket"> <a href="/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="/products/rsr/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/rsr/">
+        <h1>Akvo RSR</h1>
+        </a>
+        <h2>
+          <?php the_field('rsr_bucket_sub'); ?>
         </h2>
       </hgroup>
     </div>
@@ -72,7 +72,7 @@
     </div>
     <div id="akvopedia"> <a href="/products/akvopedia/" class="tagLine"> <img src="<?php the_field('akvopedia_bucket_text'); ?>" title="akvopediaImg" /> </a> <a href="/products/akvopedia/" class="moreLink">find out more</a>
       <hgroup> <a href="/products/akvopedia/">
-        <h1>Akvopedia</h1>
+        <h1>Akvo IATI</h1>
         </a>
         <h2>
           <?php the_field('akvopedia_bucket_sub'); ?>
