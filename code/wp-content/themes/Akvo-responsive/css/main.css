@@ -5452,4 +5452,38 @@ div[id^="inline-"] {
 .clearfix {
   clear: both; }
 
+/*-----------------------------------
+    Foundation page     
+------------------------------------*/
+.foundation .text-column {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center; }
+.foundation .directorContainer {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+.foundation .directors .subDirectors {
+  width: 45%;
+  display: inline-block; }
+  .foundation .directors .subDirectors:nth-child(odd) {
+    margin-left: 4.5%; }
+  .foundation .directors .subDirectors:nth-child(even) {
+    margin-right: 4.5%; }
+  .foundation .directors .subDirectors li {
+    width: 48%;
+    margin: 0 1%;
+    min-height: 190px; }
+    .foundation .directors .subDirectors li p {
+      text-align: left; }
+  .foundation .directors .subDirectors h4 {
+    margin-bottom: 1em;
+    margin-left: 1%; }
+  @media only screen and (max-width: 1024px) {
+    .foundation .directors .subDirectors {
+      width: 100%;
+      display: block;
+      margin-right: 0;
+      margin-left: 0; } }
+
 /*# sourceMappingURL=main.css.map */

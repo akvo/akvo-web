@@ -11,7 +11,7 @@
 
 <div id="content" class="floats-in foundation">
   <h1 class="backLined"><?php the_title(); ?></h1>
-  <div class="wrapper fullWidthParag centerED">
+  <div class="wrapper textColumn centerED">
     <?php 
     // force post id to get the_content to work
     $post = get_post(9479);
@@ -22,15 +22,17 @@
 
   <?php while( have_rows('section') ): the_row(); ?>
     <hr class="delicate"/>
-    <section class="wrapper uncenterED floats-in">
-      <h2><?php the_sub_field('name'); ?></h2>
-      <?php the_sub_field('description'); ?>
-      <br/>
-      <br/>
+    <section class="wrapper uncenterED floats-in directorContainer">
+      <div class="textColumn">
+        <h2><?php the_sub_field('name'); ?></h2>
+        <?php the_sub_field('description'); ?>
+      </div>
       <div class="directors">
         <?php while( has_sub_field('group') ): ?>
-          <p><?php the_sub_field('title'); ?></p>
-          <ul class="<?php the_sub_field('class'); ?> staff floats-in"></ul>
+          <div class="subDirectors">
+            <h4><?php the_sub_field('title'); ?></h4>
+            <ul class="<?php the_sub_field('class'); ?> staff floats-in"></ul>
+          </div>
         <?php endwhile; ?>
       </div>
     </section>
