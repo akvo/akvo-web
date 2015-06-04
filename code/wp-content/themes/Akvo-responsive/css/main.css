@@ -3884,6 +3884,10 @@ section.rsrNuggetsSection li h3 {
   text-align: center; }
 .akvoIatiPag .whoUseIt {
   padding: 20px 0; }
+.akvoIatiPag .figure {
+  background: none; }
+  .akvoIatiPag .figure > div.heroFormatContain {
+    background-color: rgba(255, 211, 0, 0.1); }
 
 .heroFormat, .heroFormatContain {
   width: 100%;

@@ -38,7 +38,7 @@
   </div>  
 
   <section class="figure marginVertical"> 
-    <div style="background-color:#BFCED4; background-image:url(<?php the_field('descr_image'); ?>); height:400px;" title="akvoiati description image" class="heroFormatContain"></div> 
+    <div style="background-image:url(<?php the_field('descr_image'); ?>); height:400px;" title="akvoiati description image" class="heroFormatContain"></div> 
   </section>
 
   <h2 class="marginVertical"><span class="wrapper centerED"><?php the_field('bigDescr'); ?></span></h2>      
@@ -48,7 +48,7 @@
 
 
   <section class="figure marginVertical"> 
-      <div style="background-color:#BFCED4; background-image:url(<?php the_field('descr_image_two'); ?>); height:400px;" title="akvoiati description image XML" class="heroFormatContain"></div>
+      <div style="background-image:url(<?php the_field('descr_image_two'); ?>); height:400px;" title="akvoiati description image XML" class="heroFormatContain"></div>
   </section>
   
   <h2 class="marginVertical"><span class="wrapper centerED"><?php the_field('bigDescr2'); ?></span></h2>      

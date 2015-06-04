@@ -4719,6 +4719,14 @@ section.rsrNuggetsSection li h3 {
     .whoUseIt {
         padding: 20px 0;
     }
+    .figure {
+        background: none;
+        > div {
+            &.heroFormatContain {
+                background-color: rgba(255, 211, 0, 0.1);
+            }
+        }
+    }
 }
 
 .heroFormat {
