@@ -5467,7 +5467,7 @@ div[id^="inline-"] {
 /*-----------------------------------
     Foundation page     
 ------------------------------------*/
-.foundation .text-column {
+.foundation .textColumn {
   max-width: 800px;
   margin: 0 auto;
   text-align: center; }
@@ -5477,15 +5477,18 @@ div[id^="inline-"] {
   margin-right: auto; }
 .foundation .directors .subDirectors {
   width: 45%;
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: top; }
   .foundation .directors .subDirectors:nth-child(odd) {
-    margin-left: 4.5%; }
-  .foundation .directors .subDirectors:nth-child(even) {
     margin-right: 4.5%; }
+  .foundation .directors .subDirectors:nth-child(even) {
+    margin-left: 4.5%; }
   .foundation .directors .subDirectors li {
     width: 48%;
     margin: 0 1%;
-    min-height: 190px; }
+    min-height: 190px;
+    float: none;
+    display: inline-block; }
     .foundation .directors .subDirectors li p {
       text-align: left; }
   .foundation .directors .subDirectors h4 {
