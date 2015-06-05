@@ -26,7 +26,7 @@ Template Name: product-flow
         <?php the_field('flow_descr_text'); ?>
       </p>
       <p class="fullWidthParag centerED">
-        <a href="#" title="See the video" class="showVideo">><?php the_field('flow_video_link_text'); ?></a>
+        <a href="#" title="See the video" class="showVideo"><?php the_field('flow_video_link_text'); ?></a>
       </p>      
     </section>
 
