@@ -4183,12 +4183,10 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .rsrProdPag, .flowProdPag {
     .videoContainer {
         display: none;
-
         .vimeoBlockedMessage {
             display: none;
             text-align: center;
         }
-
         div.videoContainer {
             width: 1000px;
             max-width: 90%;
@@ -6737,7 +6735,7 @@ div[id^="inline-"] {
 ------------------------------------*/
 
 .foundation {
-    .text-column {
+    .textColumn {
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
@@ -6751,16 +6749,19 @@ div[id^="inline-"] {
         .subDirectors {
             width: 45%;
             display: inline-block;
+            vertical-align: top;
             &:nth-child(odd) {
-                margin-left: 4.5%;
+                margin-right: 4.5%;
             }
             &:nth-child(even) {
-                margin-right: 4.5%;
+                margin-left: 4.5%;
             }
             li {
                 width: 48%;
                 margin: 0 1%;
                 min-height: 190px;
+                float: none;
+                display: inline-block;
                 p {
                     text-align: left;
                 }
