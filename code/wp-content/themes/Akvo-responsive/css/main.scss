@@ -6739,9 +6739,14 @@ div[id^="inline-"] {
         max-width: 800px;
         margin: 0 auto;
         text-align: center;
+
+        p {
+           text-align: center; 
+        }
     }
     .directorContainer {
         max-width: 90%;
+        width: 1200px;
         margin-left: auto;
         margin-right: auto;
     }
