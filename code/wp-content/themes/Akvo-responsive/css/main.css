@@ -5471,8 +5471,11 @@ div[id^="inline-"] {
   max-width: 800px;
   margin: 0 auto;
   text-align: center; }
+  .foundation .textColumn p {
+    text-align: center; }
 .foundation .directorContainer {
   max-width: 90%;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto; }
 .foundation .directors .subDirectors {
