@@ -29,7 +29,7 @@
   <div class="mShownCollapse"><a></a></div>
   <ul>
     <li><a href="#akvopediaDescr">Description</a></li>
-    <li><a href="#akvopediaInFour">Five portals</a></li>
+    <li><a href="#akvopediaInFour">Six portals</a></li>
     <li><a href="#akvopediaProject">Project links</a></li>
     <li class="hidden"><a href="#akvopediaRealWorld">Who is using Akvopedia?</a></li>
     <li><a href="#akvopediaContribute">Contribute</a></li>
