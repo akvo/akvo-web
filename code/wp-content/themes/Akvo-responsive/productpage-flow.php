@@ -11,20 +11,34 @@ Template Name: product-flow
     <a href="#" class="">Get to the FLOW gateway &rsaquo;</a></div>
     <hgroup>
     <h1>
-    <?php the_field('flow_name'); ?>
+      <?php the_field('flow_name'); ?>
     </h1>
     <h2>
-    <?php the_field('flow_tagline'); ?>
+      <?php the_field('flow_tagline'); ?>
     </h2>
     </hgroup>
+
     <section class="productDescr wrapper" id="flowDescr">
       <h3>
-      <?php the_field('flow_descr_title'); ?>
+        <?php the_field('flow_descr_title'); ?>
       </h3>
       <p class="fullWidthParag centerED">
-      <?php the_field('flow_descr_text'); ?>
+        <?php the_field('flow_descr_text'); ?>
       </p>
+      <p class="fullWidthParag centerED">
+        <a href="#" title="See the video" class="showVideo"><?php the_field('flow_video_link_text'); ?></a>
+      </p>      
     </section>
+
+    <section class="videoContainer">
+      <div class="videoContainer">
+        <div class="vimeoBlockedMessage">
+          <?php the_field('flow_video_backup_message'); ?>
+        </div>
+        <iframe width="800" height="450" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('flow_video_url'); ?>"></iframe>
+      </div>
+    </section>    
+
     <nav class="anchorNav wrapper">
       <h5>menu</h5>
       <div class="mShownCollapse"><a></a></div>
@@ -181,5 +195,37 @@ Template Name: product-flow
       <section class="wrapper centerED marginVertical">
         <a href="/help/akvo-policies-and-terms-2/akvo-flow-terms-of-use/">Akvo FLOW terms of use</a>  </section>
       </div>
+
+      <script type="text/javascript">
+        $(document).ready(function() {
+          var expectedVideoId = '<?php the_field('flow_video_id'); ?>';
+          var videoBlockMessageTimeout = 10000;
+
+          // Check that vimeo isn't blocked
+          $.ajax({
+            url: 'https://vimeo.com/api/v2/video/' + expectedVideoId + '.json',
+            context: document.body,
+            timeout: videoBlockMessageTimeout
+          }).done( function(response) {
+            var urlFromAPI= response[0].url;
+
+            // Does the id returned by the api match the real id?
+            if (urlFromAPI.indexOf(expectedVideoId) < 0) {
+              vimeoIsBlocked();
+            }
+          }).fail( function() {
+            vimeoIsBlocked();
+          })
+
+          function vimeoIsBlocked() {
+            $('.vimeoBlockedMessage').show();
+          }
+
+          $('.showVideo').click( function(event) {
+            event.preventDefault();
+            $('.videoContainer').fadeIn(200);
+          });
+        });
+      </script>      
       <!-- end content -->
       <?php get_footer(); ?>

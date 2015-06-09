@@ -20,7 +20,7 @@
       <div class="hubmap">
     <?php if( have_rows('hubs') ): ?>
     <?php while( have_rows('hubs') ): the_row(); ?>
-        <a href="#<?php the_sub_field('marker_text'); ?>" class="marker <?php the_sub_field('marker_text'); ?>" data-hub="<?php the_sub_field('marker_text'); ?>" style="left: <?php the_sub_field('marker_x'); ?>%; top: <?php the_sub_field('marker_y'); ?>%;"><?php the_sub_field('marker_text'); ?></a>
+        <a href="#<?php the_sub_field('marker_text'); ?>" class="marker <?php the_sub_field('marker_text'); ?> <?php the_sub_field('flip'); ?>" data-hub="<?php the_sub_field('marker_text'); ?>" style="left: <?php the_sub_field('marker_x'); ?>%; top: <?php the_sub_field('marker_y'); ?>%;"><?php the_sub_field('marker_text'); ?></a>
     <?php endwhile; ?>
     <?php endif; ?>
       </div>

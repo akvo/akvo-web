@@ -1106,6 +1106,8 @@ a.helpIcon:hover {
     position: relative;
 }
 
+/* Two columns */
+
 .twoColumns {
     margin: 1px auto 0em auto;
     position: relative;
@@ -1181,6 +1183,8 @@ a.helpIcon:hover {
     width: 75%;
 }
 
+/* Three columns */
+
 .threeColumns {
     margin: 1px auto 0em auto;
     position: relative;
@@ -1254,6 +1258,7 @@ a.helpIcon:hover {
     }
 }
 
+/* Four columns */
 
 .fourColumns {
     margin: 0em auto;
@@ -1302,6 +1307,8 @@ a.helpIcon:hover {
         width: 98%;
     }
 }
+
+/* Five columns */
 
 .fiveColumns {
     margin: 0em auto;
@@ -2130,7 +2137,7 @@ body.home h1.akvoDescr {
     bottom: 70px;
     display: inline-block;
     max-width: 35%;
-    min-width: 22%;
+    min-width: 0;
     overflow: auto;
     padding: 0em 2% !important;
     position: absolute;
@@ -2274,7 +2281,9 @@ body.home h1.akvoDescr {
 
 
 .actionHeroBtn {
-    margin: 0em 0em 0em 50%;
+    margin: 0em;
+    display: block;
+    padding-bottom: 0.4em;
 }
 
 @include responsive(small-max-screens) {
@@ -2486,7 +2495,7 @@ body.home h1.akvoDescr {
 }
 
 #openaidBucket h1 {
-    background: url("../images/openaid-logo-40px.png") center top no-repeat;
+    background: url("../images/akvo-iati-logo-40px.png") center top no-repeat;
     background-size: 85%;
 }
 
@@ -4170,9 +4179,6 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
                 display: block;
             }
         }
-        .soloImageSection {
-            display: none;
-        }
     }
 }
 
@@ -4180,6 +4186,21 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 .rsrProdPag {
     h2 {
         margin-bottom: 3em;
+    }
+}
+
+.rsrProdPag, .flowProdPag {
+    .videoContainer {
+        display: none;
+        .vimeoBlockedMessage {
+            display: none;
+            text-align: center;
+        }
+        div.videoContainer {
+            width: 1000px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
     }
 }
 
@@ -4448,6 +4469,62 @@ li.rsrNuggets {
 
 .pedia4points {
     margin: 2em auto;
+    max-width: 800px;
+
+    &.sixColumns {
+        margin: 0em auto;
+        width: 100%;
+    }
+
+    @include responsive(small-max-screens) {
+        &.sixColumns.wrapper {
+            padding: 0em;
+        }
+    }
+
+    &.sixColumns > div,
+    &.sixColumns > li {
+        @include border-radius(0.25em);
+        float: left;
+        margin: 0em 0.15%;
+        min-height: 200px;
+        padding: 0.2em 0.25% 0.25em 0.25%;
+        position: relative;
+        width: 15.8%;
+    }
+
+    @include responsive(small-screens) {
+        &.sixColumns > div,
+        &.sixColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 31%;
+        }
+    }
+
+
+    @include responsive(small-max-screens) {
+        &.sixColumns div,
+        &.sixColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 47.75%;
+        }
+    }
+
+
+    @media screen and (max-width: 360px) {
+        &.sixColumns div,
+        &.sixColumns > li {
+            margin: 30px auto;
+            padding: 1%;
+            width: 98%;
+        }
+    }    
 }
 
 .pedia4points h3 {
@@ -4705,7 +4782,7 @@ section.rsrNuggetsSection li h3 {
     hgroup {
         h1 {
             height: 55px;
-            background: url("../images/Akvo_IATI_logo_RGB_300px.png") center center no-repeat;
+            background: url("../images/Akvo_IATI_logo_RGB_final.png") center center no-repeat;
             background-size: auto 50px;
         }
     }
@@ -4718,6 +4795,14 @@ section.rsrNuggetsSection li h3 {
     }
     .whoUseIt {
         padding: 20px 0;
+    }
+    .figure {
+        background: none;
+        > div {
+            &.heroFormatContain {
+                background-color: rgba(255, 211, 0, 0.1);
+            }
+        }
     }
 }
 
@@ -4929,6 +5014,16 @@ section.flowMonDescr {
         box-sizing: border-box;
         @include responsive(small-max-screens) {
             display: none;
+        }
+
+        &.flipped {
+            background: url(../images/marker-flipped.png) no-repeat;
+            background-size: 100%;
+            padding-top: 2.75%;
+            margin-top: 5.8%;
+        }
+        @include responsive(mediums-max-screens) {
+            font-size: 90%;
         }
     }
     .marker.LON {
@@ -6592,8 +6687,8 @@ div[id^="inline-"] {
             margin: 0 auto;
             @media screen and (width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 1) {
                 max-height: 90%;
-                width:auto;
-                max-width:95%;
+                width: auto;
+                max-width: 95%;
             }
             .bxslider {
                 li {
@@ -6698,4 +6793,83 @@ div[id^="inline-"] {
 
 .clearfix {
     clear: both;
+}
+
+/*-----------------------------------
+    Foundation page     
+------------------------------------*/
+
+.foundation {
+    .textColumn {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+
+        p {
+           text-align: center; 
+        }
+    }
+    .directorContainer {
+        max-width: 90%;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .directors {
+        .subDirectors {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+            &:nth-child(odd) {
+                margin-right: 4.5%;
+            }
+            &:nth-child(even) {
+                margin-left: 4.5%;
+            }
+            li {
+                width: 48%;
+                margin: 0 1%;
+                min-height: 190px;
+                float: none;
+                display: inline-block;
+                vertical-align: top;
+                p {
+                    text-align: left;
+                }
+            }
+            h4 {
+                margin-bottom: 1em;
+                margin-left: 1%;
+            }
+            @media only screen and (max-width: $width-med) {
+                width: 100%;
+                display: block;
+                margin-right: 0;
+                margin-left: 0;
+
+                &:nth-child(odd) {
+                    margin-right: 0;
+                }
+                &:nth-child(even) {
+                    margin-left: 0;
+                }                
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+    Akvo-iati page   
+------------------------------------*/
+
+.akvo-iati {
+    .productPage {
+        @include responsive(small-max-screens) {
+            section {
+                &.figure {
+                    display: block;
+                }
+            }
+        }
+    }
 }
