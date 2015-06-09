@@ -3709,14 +3709,13 @@ li.rsrNuggets.floats-in {
 .pedia4points {
   margin: 2em auto;
   max-width: 800px; }
-  .pedia4points .sixColumns {
+  .pedia4points.sixColumns {
     margin: 0em auto;
     width: 100%; }
   @media only screen and (max-width: 768px) {
-    .pedia4points .sixColumns.wrapper {
+    .pedia4points.sixColumns.wrapper {
       padding: 0em; } }
-  .pedia4points .sixColumns > div,
-  .pedia4points .sixColumns > li {
+  .pedia4points.sixColumns > div, .pedia4points.sixColumns > li {
     -moz-border-radius: 0.25em;
     -o-border-radius: 0.25em;
     -webkit-border-radius: 0.25em;
@@ -3728,24 +3727,21 @@ li.rsrNuggets.floats-in {
     position: relative;
     width: 15.8%; }
   @media only screen and (min-width: 768px) {
-    .pedia4points .sixColumns > div,
-    .pedia4points .sixColumns > li {
+    .pedia4points.sixColumns > div, .pedia4points.sixColumns > li {
       float: left;
       margin-left: 0;
       margin: 30px auto;
       padding: 1%;
       width: 31%; } }
   @media only screen and (max-width: 768px) {
-    .pedia4points .sixColumns div,
-    .pedia4points .sixColumns > li {
+    .pedia4points.sixColumns div, .pedia4points.sixColumns > li {
       float: left;
       margin-left: 0;
       margin: 30px auto;
       padding: 1%;
       width: 47.75%; } }
   @media screen and (max-width: 360px) {
-    .pedia4points .sixColumns div,
-    .pedia4points .sixColumns > li {
+    .pedia4points.sixColumns div, .pedia4points.sixColumns > li {
       margin: 30px auto;
       padding: 1%;
       width: 98%; } }

@@ -41,11 +41,11 @@
   </div>
   <img src="<?php the_field('product_akvopedia_img'); ?>" title="akvopediaImg" class="wrapper"/> </section>
 <section class="" id="akvopediaInFour">
-  <h1 class="">Five portals</h1>
+  <h1 class="">Six portals</h1>
   <div class="fullWidthParag centerED">
    <?php the_field('akvopedia_fourPortal_txt'); ?>
   </div>
-  <ul class="wrapper fiveColumns floats-in pedia4points">
+  <ul class="wrapper sixColumns floats-in pedia4points">
     <li class="pointOne floats-in"> 
       <a href="http://akvopedia.org/wiki/Water_Portal"><h3> <span>01</span>
         <?php the_field('akvopedia_point_one_h3'); ?>
