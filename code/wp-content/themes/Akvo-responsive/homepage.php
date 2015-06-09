@@ -61,8 +61,8 @@
         </h2>
       </hgroup>
     </div>
-    <div id="openaidBucket"> <a href="/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvoopenaid/" class="moreLink">find out more</a>
-      <hgroup> <a href="/products/akvoopenaid/">
+    <div id="openaidBucket"> <a href="/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvo-iati/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvo-iati/">
         <h1>Akvo IATI</h1>
         </a>
         <h2>
