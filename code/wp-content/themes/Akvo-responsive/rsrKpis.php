@@ -44,7 +44,7 @@ Template Name: rsrKpis
       </ul>
     </section>
 
-    <script src="http://127.0.0.1:8888/reportserver/fileServerAccess?id=126929" type="application/javascript"></script>
+    <script src="https://reporting.test.akvo-ops.org/reportserver/reportserver/fileServerAccess?id=221679" type="application/javascript"></script>
 
     <script type="text/javascript">
       var akvoChartConfig =
