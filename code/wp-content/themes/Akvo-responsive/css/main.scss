@@ -1106,6 +1106,8 @@ a.helpIcon:hover {
     position: relative;
 }
 
+/* Two columns */
+
 .twoColumns {
     margin: 1px auto 0em auto;
     position: relative;
@@ -1181,6 +1183,8 @@ a.helpIcon:hover {
     width: 75%;
 }
 
+/* Three columns */
+
 .threeColumns {
     margin: 1px auto 0em auto;
     position: relative;
@@ -1254,6 +1258,7 @@ a.helpIcon:hover {
     }
 }
 
+/* Four columns */
 
 .fourColumns {
     margin: 0em auto;
@@ -1302,6 +1307,8 @@ a.helpIcon:hover {
         width: 98%;
     }
 }
+
+/* Five columns */
 
 .fiveColumns {
     margin: 0em auto;
@@ -4460,6 +4467,62 @@ li.rsrNuggets {
 
 .pedia4points {
     margin: 2em auto;
+    max-width: 800px;
+
+    .sixColumns {
+        margin: 0em auto;
+        width: 100%;
+    }
+
+    @include responsive(small-max-screens) {
+        .sixColumns.wrapper {
+            padding: 0em;
+        }
+    }
+
+    .sixColumns > div,
+    .sixColumns > li {
+        @include border-radius(0.25em);
+        float: left;
+        margin: 0em 0.15%;
+        min-height: 200px;
+        padding: 0.2em 0.25% 0.25em 0.25%;
+        position: relative;
+        width: 15.8%;
+    }
+
+    @include responsive(small-screens) {
+        .sixColumns > div,
+        .sixColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 31%;
+        }
+    }
+
+
+    @include responsive(small-max-screens) {
+        .sixColumns div,
+        .sixColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 47.75%;
+        }
+    }
+
+
+    @media screen and (max-width: 360px) {
+        .sixColumns div,
+        .sixColumns > li {
+            margin: 30px auto;
+            padding: 1%;
+            width: 98%;
+        }
+    }    
 }
 
 .pedia4points h3 {
