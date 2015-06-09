@@ -1862,7 +1862,7 @@ body.home h1.akvoDescr {
   -o-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
-  background: rgba(255, 255, 245, 0.6);
+  background: rgba(255, 255, 245, 0.8);
   bottom: 70px;
   display: inline-block;
   max-width: 35%;
