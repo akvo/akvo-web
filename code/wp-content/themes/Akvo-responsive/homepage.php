@@ -43,6 +43,15 @@
 
 <section id="productWindow" class="floats-in">
   <div class="fourColumns wrapper">
+    <div id="flowBucket"> <a href="/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="/products/akvoflow/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvoflow/">
+        <h1>Akvo Flow</h1>
+        </a>
+        <h2>
+          <?php the_field('flow_bucket_sub'); ?>
+        </h2>
+      </hgroup>
+    </div>    
     <div id="rsrBucket"> <a href="/products/rsr/" class="tagLine"> <img src="<?php the_field('rsr_bucket_text'); ?>" title="rsrImg" /> </a> <a href="/products/rsr/" class="moreLink">find out more</a>
       <hgroup> <a href="/products/rsr/">
         <h1>Akvo RSR</h1>
@@ -52,18 +61,9 @@
         </h2>
       </hgroup>
     </div>
-    <div id="flowBucket"> <a href="/products/akvoflow/" class="tagLine"><img src="<?php the_field('flow_bucket_text'); ?>" title="flowImg" /> </a> <a href="/products/akvoflow/" class="moreLink">find out more</a>
-      <hgroup> <a href="/products/akvoflow/">
-        <h1>Akvo Flow</h1>
-        </a>
-        <h2>
-          <?php the_field('flow_bucket_sub'); ?>
-        </h2>
-      </hgroup>
-    </div>
-    <div id="openaidBucket"> <a href="/products/akvoopenaid/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvoopenaid/" class="moreLink">find out more</a>
-      <hgroup> <a href="/products/akvoopenaid/">
-        <h1>Akvo OpenAid</h1>
+    <div id="openaidBucket"> <a href="/products/akvo-iati/" class="tagLine"> <img src="<?php the_field('openaid_bucket_text'); ?>" title="openaidImg" /> </a> <a href="/products/akvo-iati/" class="moreLink">find out more</a>
+      <hgroup> <a href="/products/akvo-iati/">
+        <h1>Akvo IATI</h1>
         </a>
         <h2>
           <?php the_field('openaid_bucket_sub'); ?>
