@@ -71,6 +71,11 @@
         <?php the_field('akvopedia_point_five_h3'); ?>
       </h3>
       <img src="<?php the_field('akvopedia_point_five_img'); ?>"  class="centerED" /></a></li>
+    <li class="pointSix floats-in">
+      <a href="http://akvopedia.org/wiki/Food_%26_Nutrition_Security_Portal"><h3> <span>06</span>
+        <?php the_field('akvopedia_point_six_h3'); ?>
+      </h3>
+      <img src="<?php the_field('akvopedia_point_six_img'); ?>"  class="centerED" /></a></li>      
   </ul>
 </section>
 <section id="akvopediaProject" class="wrapper floats-in">
