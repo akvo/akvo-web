@@ -2137,7 +2137,7 @@ body.home h1.akvoDescr {
     bottom: 70px;
     display: inline-block;
     max-width: 35%;
-    min-width: 22%;
+    min-width: 0;
     overflow: auto;
     padding: 0em 2% !important;
     position: absolute;
@@ -2281,7 +2281,9 @@ body.home h1.akvoDescr {
 
 
 .actionHeroBtn {
-    margin: 0em 0em 0em 50%;
+    margin: 0em;
+    display: block;
+    padding-bottom: 0.4em;
 }
 
 @include responsive(small-max-screens) {
