@@ -5491,7 +5491,8 @@ div[id^="inline-"] {
     margin: 0 1%;
     min-height: 190px;
     float: none;
-    display: inline-block; }
+    display: inline-block;
+    vertical-align: top; }
     .foundation .directors .subDirectors li p {
       text-align: left; }
   .foundation .directors .subDirectors h4 {
@@ -5502,6 +5503,10 @@ div[id^="inline-"] {
       width: 100%;
       display: block;
       margin-right: 0;
-      margin-left: 0; } }
+      margin-left: 0; }
+      .foundation .directors .subDirectors:nth-child(odd) {
+        margin-right: 0; }
+      .foundation .directors .subDirectors:nth-child(even) {
+        margin-left: 0; } }
 
 /*# sourceMappingURL=main.css.map */
