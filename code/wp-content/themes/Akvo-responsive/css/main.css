@@ -5550,4 +5550,11 @@ div[id^="inline-"] {
       .foundation .directors .subDirectors:nth-child(even) {
         margin-left: 0; } }
 
+/*-----------------------------------
+    Akvo-iati page   
+------------------------------------*/
+@media only screen and (max-width: 768px) {
+  .akvo-iati .productPage section.figure {
+    display: block; } }
+
 /*# sourceMappingURL=main.css.map */
