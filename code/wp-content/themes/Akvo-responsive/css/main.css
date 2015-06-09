@@ -1862,11 +1862,11 @@ body.home h1.akvoDescr {
   -o-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
-  background: rgba(255, 255, 245, 0.6);
+  background: rgba(255, 255, 245, 0.8);
   bottom: 70px;
   display: inline-block;
   max-width: 35%;
-  min-width: 22%;
+  min-width: 0;
   overflow: auto;
   padding: 0em 2% !important;
   position: absolute;
@@ -1974,7 +1974,9 @@ body.home h1.akvoDescr {
   #actionHeroBox #actionHeroInfo {
     text-align: center; } }
 .actionHeroBtn {
-  margin: 0em 0em 0em 50%; }
+  margin: 0em;
+  display: block;
+  padding-bottom: 0.4em; }
 
 @media only screen and (max-width: 768px) {
   .actionHeroBtn {
