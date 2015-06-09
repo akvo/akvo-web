@@ -7,7 +7,7 @@ Akvo.org v1.1.15 Prehensile Prickly Pear
 
 ## New & noteworthy
 
-In this release we've included a link to our feature packed [Akvo RSR](http://akvo.org/products/rsr/) and [Akvo FLOW](http://akvo.org/products/akvoflow/) product videos to our product pages.
+In this release we've included a link to our feature packed [Akvo RSR](http://akvo.org/products/rsr/) and [Akvo FLOW](http://akvo.org/products/akvoflow/) product videos on our product pages.
 
 We've also made a few small changes in this release, which will allow our Communications Team to make better use of the site such as including [Akvo+IATI](http://akvo.org/products/akvo-iati/) more prominently on our homepage.
 
