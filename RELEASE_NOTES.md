@@ -1,4 +1,15 @@
 
+Wednesday 10 June 2015, @lynngre
+
+--------
+Akvo.org Wordpress v4.2.2
+---
+
+## Security release
+
+https://codex.wordpress.org/Version_4.2.2 latest release security & maintenance.
+
+
 Tuesday 9 June 2015, @lynngre
 
 --------
