@@ -4640,6 +4640,10 @@ h1.akvopediaHelp {
   position: relative;
   width: 49.5%; }
 
+#akvoDashboard ul li.KPI {
+    background: rgba(255, 255, 255, 1);
+}
+
 @media only screen and (max-width: 768px) {
   #akvoDashboard ul li.dashSingle {
     width: 100%; } }
