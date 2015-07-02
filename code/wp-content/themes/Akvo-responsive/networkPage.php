@@ -24,7 +24,7 @@ Template Name: akvoNetwork
         <a href="#"
           title="<p><em style='display:block;color:rgb(114, 205, 255);'>How is this data collected?</em> Automatically from the Akvo RSR database via the <a href='https://github.com/akvo/akvo-rsr/wili/Akvo-RSR-API'>RSR API</a></p>
           <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> Every four hours.</p>"
-          class="tooltips moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
+          class="normalTip  moreLink ">info</a> <a href="" class="moreLink darkBg  hidden">See more</a> </li>
           
           <li class="dashSingle" id="flowDash">
             <h2>Akvo Flow</h2>
@@ -54,7 +54,7 @@ Template Name: akvoNetwork
           <a href="#"
             title="<p><em style='display:block;color:rgb(114, 205, 255);'>How is this data collected?</em> Manually, via a script run on the Google App Enging FLOW instances.</p>
             <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> Monthly.</p>"
-            class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a>
+            class="normalTip  moreLink">info</a> <a href="" class="moreLink darkBg  hidden">See more</a>
           </li>
           
           <li class="dashSingle" id="opendaidDash">
@@ -84,7 +84,7 @@ Template Name: akvoNetwork
               the other values are collected via the <a href='https://github.com/openaid-IATI/'>OpenAid API</a></p>
               <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> 'Total commitments' is updated monthly,
               the rest is refreshed every four hours.</p>"
-              class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> 
+              class="normalTip  moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> 
             </li>
               
               <li class="dashSingle" id="akvopediaDash">
@@ -94,7 +94,7 @@ Template Name: akvoNetwork
                   title="<p><em style='display:block;color:rgb(114, 205, 255);'>How is this data collected?</em> 'Articles' is collected automatically using the Mediawiki API.
                   The rest is collected automatically from the Piwik API</p>
                   <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> Every four hours.</p>"
-                  class="tooltips moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> 
+                  class="normalTip  moreLink">info</a> <a href="" class="moreLink darkBg hidden">See more</a> 
 
                 </li>
               </ul>
