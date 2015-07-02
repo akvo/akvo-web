@@ -4,9 +4,9 @@
 <footer class="floats-in bottomPage" role="contentinfo">
   <div>
     <section id="siteMap" class="floats-in">
-      <div class="wrapperHead">
-        <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu' ) ); ?>
+            
 
+        <div class="wrapperHead">
         <div class="socialAkvo">
           <h1 class="backLinedGrey">Let's be friends</h1>
           <nav class="socialLinks">
@@ -22,14 +22,18 @@
             </ul>
           </nav>
           <div class="newsLetter">
-            <p class="subscribe">Subscribe to our monthly newsletter</p>
-            <?php gravity_form(1, false, true, false, '', true); ?>
+            <div>
+                <h3 class="subscribe">Subscribe to our monthly newsletter</h3>
+                <?php gravity_form(1, false, true, false, '', true); ?>
+            </div>
           </div>
         </div>
       </div>
+        <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu' ) ); ?>
+
     </section>
-    <section id="aboutAkvo">
-      <div class="wrapper">
+    <section id="aboutAkvo hidden">
+      <div class="wrapper  hidden">
         <h1 class="backLinedGrey">A little more about Akvo.org</h1>
         <p>Akvo creates and runs open source internet and mobile services that make it easy to bring international development work online. We focus on project and programme dashboards, reporting, monitoring, evaluation and making data easier to share. Headquartered in Amsterdam, Akvo is a non-profit foundation that works with more than a thousand organisations around the world.</p>
       </div>
@@ -80,7 +84,6 @@
   $( document ).ready(function() {
     // footer menu headings
   
-    $('footer .menu > li > a').contents().unwrap().wrap('<h3></h3>');
   
     $("#content").fitVids();
       function adjustImage() {
