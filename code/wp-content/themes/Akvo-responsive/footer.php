@@ -70,10 +70,8 @@
 
 <!-- End Piwik Code -->
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-1.8.3.min.js'>\x3C/script>")</script>
-<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.8/jquery-ui.min.js"></script>
-<script>window.jQuery || document.write("<script src='/js/jquery-ui-1.8.24.custom.min'>\x3C/script>")</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
