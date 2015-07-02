@@ -6855,3 +6855,113 @@ div[id^="inline-"] {
         }
     }
 }
+
+
+/*-----------------------------------
+    Akvo in a nutshell page   
+------------------------------------*/
+
+.nutshell {
+    h1 {
+        text-align: center;
+        padding-top: 1em;
+        padding-bottom: 1em;
+    }
+    .headerImage {
+        img {
+            width: 100%;
+        }
+    }
+    .columnText {
+        max-width: 600px;
+        width: 90%;
+        margin: 0 auto;
+        text-align: center;
+        * {
+            text-align: center;
+        }
+    }
+    .introText {
+        background-color: whitesmoke;
+        padding: 2em 0;
+        .introTextWrapper {
+            @extend .columnText;
+        }
+    }
+    .nutPoints {
+        margin-top: 2em;
+        margin-bottom: 3.5em;
+        .nutPoint {
+            width: 25%;
+            margin: 0 4%;
+            display: inline-block;
+            vertical-align: top;
+            img {
+                width: 100%;
+            }
+            h3 {
+                text-align: center;
+                padding: 1em 0;
+                color: $akvoPurple;
+                font-size: 1.75em;
+            }
+            @media only screen and (max-width: $width-med) {
+                display: block;
+                width: 100%;
+                max-width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+                margin-bottom: 5em;
+                &:nth-child(3) {
+                    margin-bottom: 0;
+                }
+                img {
+                    display: block;
+                    width: 300px;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
+                h3 {
+                    padding-bottom: 0.615em;
+                }
+                .pointText {
+                    max-width: 600px;
+                    width: 100%;
+                    margin: 0 auto;
+                    text-align: center;
+                    * {
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+    .openSource {
+        background: whitesmoke;
+        padding: 2em 0;
+        img {
+            display: block;
+            width: $width-medium;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+        h2 {
+            margin: 1.5em 0;
+        }
+        .osText {
+            @extend .columnText;
+        }
+        .button {
+            display: block;
+            margin: 2em auto;
+            font-size: 1.1em;
+            padding: 0.7em 0;
+            width: 350px;
+            max-width: 50%;
+            text-align: center;
+            color: white;
+            background-color: $akvoLink;
+            @include border-radius(0.4em);
+        }
+    }
+}
