@@ -3410,7 +3410,6 @@ p#allowed_tags code {
                                 Footer
 -----------------------------------------------------------------------*/
 li.problem {
-    margin: 1em 0 0 0;
     a {
         color: rgb(227, 27, 35);
         opacity: 1;
@@ -3420,10 +3419,15 @@ li.problem {
         }
     }
 }
-
+.menu-footer-menu-container {
+    background: black;
+}
 #menu-footer-menu {
-    float: left;
-    width: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
 }
 
 @include responsive(small-max-screens) {
@@ -3432,19 +3436,24 @@ li.problem {
         width: 96%;
     }
 }
-
-
+footer .menu {
+    margin: 0em auto;
+    max-width: 1208px;
+    position: relative;
+    padding:10px 0;
+}
 @include responsive(small-max-screens) {
     footer .menu {
         margin: 0px 15px;
+        display: block;
+        width:100%;
     }
 }
 
 
 footer .menu > li {
-    float: left;
     padding: 0em 0em 0em 1.5%;
-    width: 23.5%;
+    display:inline;
 }
 
 @include responsive(small-max-screens) {
@@ -3452,40 +3461,6 @@ footer .menu > li {
         margin: 5px 0px;
         width: 100%;
         padding: 0em 0em 0em 0;
-    }
-}
-
-
-footer .menu > li ul.sub-menu {
-    margin-bottom: 20px;
-}
-
-footer .menu > li ul li {
-    display: block;
-    float: none;
-    width: 97%;
-    padding-left: 3%;
-    @include border-radius(0.25em);
-}
-
-@include responsive(small-max-screens) {
-    footer .menu > li ul li {
-        background: none repeat scroll 0em 0em rgb(245, 245, 245);
-        font-size: 130%;
-        margin: 0em 0em 5px;
-        padding: 20px 0 20px 3%;
-        width: 97%;
-    }
-    footer .menu > li ul li:hover {
-        background: rgb(32, 32, 36);
-        color: rgb(222, 137, 41);
-    }
-}
-
-
-@include responsive(small-max-screens) {
-    footer.bottomPage section#siteMap .menu h3 {
-        margin-top: 0em;
     }
 }
 
@@ -3552,10 +3527,9 @@ div.socialAkvo .backLinedGrey span {
 }
 
 footer.bottomPage section#siteMap div.socialAkvo {
-    float: right;
     min-height: 100px;
     position: relative;
-    width: 30%;
+    margin: 15px auto;
 }
 
 @include responsive(small-max-screens) {
@@ -3573,21 +3547,26 @@ footer.bottomPage section#siteMap div.socialAkvo h1 {
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
     display: block;
-    margin: 15px auto 0em;
+    margin: 30px auto 15px;
     position: relative;
-    width: 100%;
+    background: rgb(241,241,241);
+    padding:25px 0;
+    overflow:auto;
+    & > div {
+        width: 45%;
+        margin: 0px auto;
+    }
 }
 
 @include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
-        width: 100%;
+        & > div {
+            width: 100%;
+            margin: 0px auto;
+        }
     }
 }
 
-
-footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
-    text-align: center;
-}
 
 @include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
@@ -3782,7 +3761,10 @@ footer.bottomPage section#siteMap nav.socialLinks li {
     float: left;
     height: 85px;
     text-align: center;
-    width: 25%;
+    width: 12.5%;
+    @include responsive(small-max-screens) {
+        width: 25%;
+    }
 }
 
 footer.bottomPage section#siteMap nav.socialLinks li a {
