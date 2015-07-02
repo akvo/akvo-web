@@ -1862,7 +1862,7 @@ body.home h1.akvoDescr {
   -o-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
-  background: rgba(255, 255, 245, 0.8);
+  background: rgba(255, 255, 245, 0.6);
   bottom: 70px;
   display: inline-block;
   max-width: 35%;
@@ -5558,5 +5558,88 @@ div[id^="inline-"] {
 @media only screen and (max-width: 768px) {
   .akvo-iati .productPage section.figure {
     display: block; } }
+
+/*-----------------------------------
+    Akvo in a nutshell page   
+------------------------------------*/
+.nutshell h1 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em; }
+.nutshell .headerImage img {
+  width: 100%; }
+.nutshell .columnText, .nutshell .introText .introTextWrapper, .nutshell .openSource .osText {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+  .nutshell .columnText *, .nutshell .introText .introTextWrapper *, .nutshell .openSource .osText * {
+    text-align: center; }
+.nutshell .introText {
+  background-color: whitesmoke;
+  padding: 2em 0; }
+.nutshell .nutPoints {
+  margin-top: 2em;
+  margin-bottom: 3.5em; }
+  .nutshell .nutPoints .nutPoint {
+    width: 25%;
+    margin: 0 4%;
+    display: inline-block;
+    vertical-align: top; }
+    .nutshell .nutPoints .nutPoint img {
+      width: 100%; }
+    .nutshell .nutPoints .nutPoint h3 {
+      text-align: center;
+      padding: 1em 0;
+      color: #2c2a74;
+      font-size: 1.75em; }
+    @media only screen and (max-width: 1024px) {
+      .nutshell .nutPoints .nutPoint {
+        display: block;
+        width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em; }
+        .nutshell .nutPoints .nutPoint:nth-child(3) {
+          margin-bottom: 0; }
+        .nutshell .nutPoints .nutPoint img {
+          display: block;
+          width: 300px;
+          max-width: 100%;
+          margin: 0 auto; }
+        .nutshell .nutPoints .nutPoint h3 {
+          padding-bottom: 0.615em; }
+        .nutshell .nutPoints .nutPoint .pointText {
+          max-width: 600px;
+          width: 100%;
+          margin: 0 auto;
+          text-align: center; }
+          .nutshell .nutPoints .nutPoint .pointText * {
+            text-align: center; } }
+.nutshell .openSource {
+  background: whitesmoke;
+  padding: 2em 0; }
+  .nutshell .openSource img {
+    display: block;
+    width: 992px;
+    max-width: 90%;
+    margin: 0 auto; }
+  .nutshell .openSource h2 {
+    margin: 1.5em 0; }
+  .nutshell .openSource .button {
+    display: block;
+    margin: 2em auto;
+    font-size: 1.1em;
+    padding: 0.7em 0;
+    width: 350px;
+    max-width: 50%;
+    text-align: center;
+    color: white;
+    background-color: #3792b3;
+    -moz-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em; }
 
 /*# sourceMappingURL=main.css.map */

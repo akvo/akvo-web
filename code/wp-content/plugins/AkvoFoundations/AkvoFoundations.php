@@ -32,8 +32,8 @@ function create_new_foundation_member() {
  
             'public' => true,
             'menu_position' => 15,
-            'supports' => array( 'title', 'editor', 'author','thumbnail', 'revisions'),
-            'taxonomies' => array( '' ),
+            'supports' => array( 'title', 'editor', 'author','thumbnail', 'revisions', 'post_tag'),
+            'taxonomies' => array( 'post_tag' ),
             'menu_icon' => plugins_url( 'images/akvoStaff_icn.png', __FILE__ ),
             'has_archive' => true
         )
