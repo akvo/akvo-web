@@ -71,7 +71,7 @@
 <!-- End Piwik Code -->
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
 <script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
