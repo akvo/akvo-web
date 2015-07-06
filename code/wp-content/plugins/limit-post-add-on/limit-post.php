@@ -3,12 +3,12 @@
 Plugin Name: Limit Post Add-On
 Plugin URI: http://www.doc4design.com/plugins/limit-post/
 Description: Limits the displayed text length with both the_content_limit and get_the_content_limit
-Version: 1.0
+Version: 1.1
 Author: Doc4, Alfonso Sanchez-Paus Diaz, Julian Simon de Castro
 Author URI: http://www.doc4design.com
 */
 
-function the_content_limit($max_char, $more_link_text = 'read more', $stripteaser = 0, $more_file = '') {
+function the_content_limit($max_char, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
     $content = get_the_content($more_link_text, $stripteaser, $more_file);
     $content = apply_filters('the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
@@ -26,7 +26,7 @@ function the_content_limit($max_char, $more_link_text = 'read more', $striptease
         echo "<br>";
         echo "<div class=";
 		echo "'read-more'>";
-		echo "<a class='moreLink' href='";
+		echo "<a href='";
         the_permalink();
         echo "'>".$more_link_text."</a></div></p>";
    }
@@ -35,7 +35,7 @@ function the_content_limit($max_char, $more_link_text = 'read more', $striptease
    }
 }
 
-function get_the_content_limit($max_char, $more_link_text = 'read more ›', $stripteaser = 0, $more_file = '') {
+function get_the_content_limit($max_char, $more_link_text = '(more...)', $stripteaser = 0, $more_file = '') {
     $content = get_the_content($more_link_text, $stripteaser, $more_file);
     $content = apply_filters('get_the_content', $content);
     $content = str_replace(']]>', ']]&gt;', $content);
