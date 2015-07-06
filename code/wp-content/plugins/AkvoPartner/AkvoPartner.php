@@ -141,4 +141,4 @@ function create_partner_taxonomies() {
         )
     );
 }
-å?>
+?>
