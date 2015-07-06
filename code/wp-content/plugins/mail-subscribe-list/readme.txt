@@ -1,34 +1,44 @@
 === Mail Subscribe List ===
 Contributors: webfwd
-Donate link: 
-Tags: mail, email, newsletter, subscribe, list, mailinglist, mail list, mailing list, campaignmonitor, mailchimp, constant contact, subscriber, subscribers, email marketing, marketing, widget, post, plugin, admin, posts, sidebar, page, pages
+Tags: mail, email, newsletter, subscribe, list, mailinglist, mail list, mailing list, campaignmonitor, mailchimp, aweber, constant contact, vertical response,madmimi,myemma, subscriber, subscribers, email marketing, marketing, widget, post, plugin, admin, posts, 
 Requires at least: 3.0
-Tested up to: 3.5.2
-Stable tag: trunk
+Tested up to: 4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Simple customisable plugin that displays a name/email form where visitors can submit their information, manageable in the WordPress admin.
+Simple customizable plugin that displays a name/email form where visitors can submit their information, manageable in the WordPress admin.
 
 == Description ==
+
+[**To get even more email subscribers, use this plugin too!**](http://bit.ly/1zqOXPs)
 
 This is a **simple plugin** that allows visitors to enter their name and email address on your website, the visitors details are then added to the subscribers list which is available to view and modify in the WordPress admin area. 
 
 This plugin can be used not only for Mailing List subscriptions but can be used generally for collecting email address and/or peoples names that are visiting your website.
 
-The name/email form can not only be customised but can also be displayed on any WordPress page by using either the 'Subscribe Widget', WordPress shortcode [smlsubform] or from your WordPress theme by calling the php function.
+The name/email form can not only be customized but can also be displayed on any WordPress page by using either the 'Subscribe Widget', WordPress shortcode [smlsubform] or from your WordPress theme by calling the php function.
 
 I developed this plugin as I could not find any plugin that simply allows users to submit their name and email address to a simple list viewable in the WordPress admin, all the plugins that I found had lots of extra features such as 3rd party integration, mass emailing and double opt-in, my clients do not need any of these features.
 
-Like this plugin? **Please follow me on Twitter and Facebook**
+= Works with every email service provider =
 
-**Twitter** - https://twitter.com/webfwd
+Fortunately you can use this to export your subscribers to ANY email providers. Some of the most popular email providers we recommend:
 
-**Facebook** - https://www.facebook.com/pages/Webforward/208823852487018
+* MailChimp
+* Aweber
+* Constant Contact
+* Vertical Response
+* iContact
+* MyEmma
+* MadMimi
+* GetResponse
+* Infusionsoft
+* Ontraport
+
 
 = Extra Options  =
 
-I have developed some customisable options that allow you to change the way the plugin is displayed.
+I have developed some customizable options that allow you to change the way the plugin is displayed.
 
 Below is an explanation of what each option does:-
 
@@ -160,7 +170,7 @@ No, this plugin was designed to collect email addresses from visitors. This plug
 
 * Created a few extra options to customise the form.
 * Check to see if the email address is already in the database.
-* Customisable thank you for subscribing message.
+* customizable thank you for subscribing message.
 * Ability to choose between a paragraph or JavaScript Alert based thank you message.
 * Extended documentation.
         

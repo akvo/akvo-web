@@ -37,10 +37,6 @@ function cli_show_cookiebar(p) {
 		html = p.html,
 		json_payload = p.settings;
 	
-	// Edit 09/05:
-	// Replaced eval with JSON.parse. See http://caniuse.com/json for support (sorry IE7 users but you're dinosaurs these days...)
-	//var settings = eval('(' + json_payload +')');
-	
 	if (typeof JSON.parse !== "function") {
 		console.log("CookieLawInfo requires JSON.parse but your browser doesn't support it");
 		return;
@@ -80,6 +76,7 @@ function cli_show_cookiebar(p) {
 	if ( settings.notify_position_vertical == "top" ) {
 		if ( settings.border_on ) {
 			hdr_args['border-bottom'] = '4px solid ' + l1hs(settings.border);
+			hdr_args['position'] = 'fixed';
 		}
 		showagain_args.top = '0';
 	}
@@ -144,7 +141,8 @@ function cli_show_cookiebar(p) {
 	}
 	
 	// Action event listener for "show header" event:
-	cached_showagain_tab.click(function() {	
+	cached_showagain_tab.click(function(e) {	
+		e.preventDefault();
 		cached_showagain_tab.slideUp(settings.animate_speed_hide, function slideShow() {
 			cached_header.slideDown(settings.animate_speed_show);
 		});
@@ -157,15 +155,13 @@ function cli_show_cookiebar(p) {
 		return false;
 	});
 	
-	// Action event listener for debug cookies value link. To use:
-	// <a href='#' id='cookielawinfo-debug-cookie'>Show Cookie Value</a>
-	jQuery("#cookielawinfo-debug-cookie").click(function() {
-		alert("Cookie value: " + Cookie.read(ACCEPT_COOKIE_NAME));
-		return false;
-	});
-	
 	// action event listeners to capture "accept/continue" events:
-	jQuery("#cookie_action_close_header").click(function() {
+	jQuery("#cookie_action_close_header").click(function(e) {
+		e.preventDefault();
+		accept_close();
+	});
+
+	function accept_close() {
 		// Set cookie then hide header:
 		Cookie.set(ACCEPT_COOKIE_NAME, 'yes', ACCEPT_COOKIE_EXPIRE);
 		
@@ -177,7 +173,25 @@ function cli_show_cookiebar(p) {
 		}
 		cached_showagain_tab.slideDown(settings.animate_speed_show);
 		return false;
-	});
+	}
+
+	/**
+	 * Soprattutto per gli italiani :)
+	 * If the visitor scrolls then under Italian law you have implied consent
+	 * Please note that this is not the law in other EU states, this is the Italian interpretation of the law
+	 */
+	function closeOnScroll() {
+		if (window.pageYOffset > 100 && !Cookie.read(ACCEPT_COOKIE_NAME)) {
+			accept_close();
+			if (settings.scroll_close_reload === true) {
+				location.reload();
+			}
+			window.removeEventListener("scroll", closeOnScroll, false);
+		}
+	}
+	if (settings.scroll_close === true) {
+		window.addEventListener("scroll", closeOnScroll, false);
+	}
 	
 	function displayHeader() {
 		if (settings.notify_animate_show) {
