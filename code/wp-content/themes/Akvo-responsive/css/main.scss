@@ -6907,6 +6907,8 @@ div[id^="inline-"] {
                 width: 100%;
             }
             h3 {
+                display: block;
+                height: 2.3em;
                 text-align: center;
                 padding: 1em 0;
                 color: $akvoPurple;

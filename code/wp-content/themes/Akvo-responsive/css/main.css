@@ -5585,6 +5585,8 @@ div[id^="inline-"] {
     .nutshell .nutPoints .nutPoint img {
       width: 100%; }
     .nutshell .nutPoints .nutPoint h3 {
+      display: block;
+      height: 2.3em;
       text-align: center;
       padding: 1em 0;
       color: #2c2a74;
