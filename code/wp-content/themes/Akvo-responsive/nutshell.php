@@ -53,7 +53,10 @@
       <?php the_field('nut_os_text'); ?>
     </div>
 
-    <a class="button" href="<?php the_field('nut_os_cta_url'); ?>"><?php the_field('nut_os_cta_text'); ?></a>
+    <div class="cta-links">
+      <a class="button" href="<?php the_field('nut_os_cta_url'); ?>"><?php the_field('nut_os_cta_text'); ?></a>
+      <a class="button" href="<?php the_field('nut_os_cta_url2'); ?>"><?php the_field('nut_os_cta_text2'); ?></a>    
+    </div>
   </section>
 </div>
 <div class="clearfix"></div>

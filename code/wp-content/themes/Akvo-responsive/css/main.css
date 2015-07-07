@@ -5554,7 +5554,14 @@ div[id^="inline-"] {
 .nutshell h1 {
   text-align: center;
   padding-top: 1em;
-  padding-bottom: 1em; }
+  padding-bottom: 1em;
+  font-size: 2em;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (max-width: 768px) {
+    .nutshell h1 {
+      font-size: 1.5em; } }
 .nutshell .headerImage img {
   width: 100%; }
 .nutshell .columnText, .nutshell .introText .introTextWrapper, .nutshell .openSource .osText {
@@ -5616,19 +5623,24 @@ div[id^="inline-"] {
     margin: 0 auto; }
   .nutshell .openSource h2 {
     margin: 1.5em 0; }
-  .nutshell .openSource .button {
-    display: block;
-    margin: 2em auto;
-    font-size: 1.1em;
-    padding: 0.7em 0;
-    width: 350px;
-    max-width: 50%;
+  .nutshell .openSource .cta-links {
     text-align: center;
-    color: white;
-    background-color: #3792b3;
-    -moz-border-radius: 0.4em;
-    -o-border-radius: 0.4em;
-    -webkit-border-radius: 0.4em;
-    border-radius: 0.4em; }
+    padding-top: 3em;
+    padding-bottom: 3em; }
+    .nutshell .openSource .cta-links .button {
+      display: inline-block;
+      margin: 2em auto;
+      font-size: 1.1em;
+      padding: 0.7em 0;
+      margin: 1em;
+      width: 350px;
+      max-width: 50%;
+      text-align: center;
+      color: white;
+      background-color: #3792b3;
+      -moz-border-radius: 0.4em;
+      -o-border-radius: 0.4em;
+      -webkit-border-radius: 0.4em;
+      border-radius: 0.4em; }
 
 /*# sourceMappingURL=main.css.map */

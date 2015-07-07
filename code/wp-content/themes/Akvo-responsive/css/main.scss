@@ -6866,6 +6866,13 @@ div[id^="inline-"] {
         text-align: center;
         padding-top: 1em;
         padding-bottom: 1em;
+        font-size: 2em;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        @include responsive(small-max-screens) {
+            font-size: 1.5em;
+        }        
     }
     .headerImage {
         img {
@@ -6951,17 +6958,24 @@ div[id^="inline-"] {
         .osText {
             @extend .columnText;
         }
-        .button {
-            display: block;
-            margin: 2em auto;
-            font-size: 1.1em;
-            padding: 0.7em 0;
-            width: 350px;
-            max-width: 50%;
+        .cta-links {
             text-align: center;
-            color: white;
-            background-color: $akvoLink;
-            @include border-radius(0.4em);
+            padding-top: 3em;
+            padding-bottom: 3em;
+
+            .button {
+                display: inline-block;
+                margin: 2em auto;
+                font-size: 1.1em;
+                padding: 0.7em 0;
+                margin: 1em;
+                width: 350px;
+                max-width: 50%;
+                text-align: center;
+                color: white;
+                background-color: $akvoLink;
+                @include border-radius(0.4em);
+            }            
         }
     }
 }
