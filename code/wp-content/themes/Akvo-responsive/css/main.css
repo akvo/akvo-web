@@ -1862,7 +1862,7 @@ body.home h1.akvoDescr {
   -o-border-radius: 0.5em;
   -webkit-border-radius: 0.5em;
   border-radius: 0.5em;
-  background: rgba(255, 255, 245, 0.8);
+  background: rgba(255, 255, 245, 0.6);
   bottom: 70px;
   display: inline-block;
   max-width: 35%;
@@ -2920,66 +2920,50 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
-li.problem {
-  margin: 1em 0 0 0; }
-  li.problem a {
-    color: #e31b23;
-    opacity: 1;
-    -moz-transition: opacity 0.2s linear;
-    -o-transition: opacity 0.2s linear;
-    -webkit-transition: opacity 0.2s linear;
-    transition: opacity 0.2s linear; }
-    li.problem a:hover {
-      opacity: 0.7; }
+li.problem a {
+  color: #e31b23;
+  opacity: 1;
+  -moz-transition: opacity 0.2s linear;
+  -o-transition: opacity 0.2s linear;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear; }
+  li.problem a:hover {
+    opacity: 0.7; }
+
+.menu-footer-menu-container {
+  background: black; }
 
 #menu-footer-menu {
-  float: left;
-  width: 70%; }
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around; }
 
 @media only screen and (max-width: 768px) {
   #menu-footer-menu {
     margin-top: 20px;
     width: 96%; } }
+footer .menu {
+  margin: 0em auto;
+  max-width: 1208px;
+  position: relative;
+  padding: 10px 0; }
+
 @media only screen and (max-width: 768px) {
   footer .menu {
-    margin: 0px 15px; } }
+    margin: 0px 15px;
+    display: block;
+    width: 100%; } }
 footer .menu > li {
-  float: left;
   padding: 0em 0em 0em 1.5%;
-  width: 23.5%; }
+  display: inline; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
     margin: 5px 0px;
     width: 100%;
     padding: 0em 0em 0em 0; } }
-footer .menu > li ul.sub-menu {
-  margin-bottom: 20px; }
-
-footer .menu > li ul li {
-  display: block;
-  float: none;
-  width: 97%;
-  padding-left: 3%;
-  -moz-border-radius: 0.25em;
-  -o-border-radius: 0.25em;
-  -webkit-border-radius: 0.25em;
-  border-radius: 0.25em; }
-
-@media only screen and (max-width: 768px) {
-  footer .menu > li ul li {
-    background: none repeat scroll 0em 0em whitesmoke;
-    font-size: 130%;
-    margin: 0em 0em 5px;
-    padding: 20px 0 20px 3%;
-    width: 97%; }
-
-  footer .menu > li ul li:hover {
-    background: #202024;
-    color: #de8929; } }
-@media only screen and (max-width: 768px) {
-  footer.bottomPage section#siteMap .menu h3 {
-    margin-top: 0em; } }
 footer.bottomPage {
   background: #fcfcfc;
   border-top: 1px solid #ebebeb;
@@ -3025,10 +3009,9 @@ div.socialAkvo .backLinedGrey span {
   background: transparent; }
 
 footer.bottomPage section#siteMap div.socialAkvo {
-  float: right;
   min-height: 100px;
   position: relative;
-  width: 30%; }
+  margin: 15px auto; }
 
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo {
@@ -3040,16 +3023,19 @@ footer.bottomPage section#siteMap div.socialAkvo h1 {
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;
-  margin: 15px auto 0em;
+  margin: 30px auto 15px;
   position: relative;
-  width: 100%; }
+  background: #f1f1f1;
+  padding: 25px 0;
+  overflow: auto; }
+  footer.bottomPage section#siteMap div.socialAkvo div.newsLetter > div {
+    width: 45%;
+    margin: 0px auto; }
 
 @media only screen and (max-width: 768px) {
-  footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
-    width: 100%; } }
-footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
-  text-align: center; }
-
+  footer.bottomPage section#siteMap div.socialAkvo div.newsLetter > div {
+    width: 100%;
+    margin: 0px auto; } }
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo div.newsLetter .subscribe {
     text-align: center; } }
@@ -3188,7 +3174,10 @@ footer.bottomPage section#siteMap nav.socialLinks li {
   float: left;
   height: 85px;
   text-align: center;
-  width: 25%; }
+  width: 12.5%; }
+  @media only screen and (max-width: 768px) {
+    footer.bottomPage section#siteMap nav.socialLinks li {
+      width: 25%; } }
 
 footer.bottomPage section#siteMap nav.socialLinks li a {
   -moz-transition: opacity 0.2s linear;
@@ -5558,5 +5547,103 @@ div[id^="inline-"] {
 @media only screen and (max-width: 768px) {
   .akvo-iati .productPage section.figure {
     display: block; } }
+
+/*-----------------------------------
+    Akvo in a nutshell page   
+------------------------------------*/
+.nutshell#content h1 {
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-size: 2em;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto; }
+  @media only screen and (max-width: 768px) {
+    .nutshell#content h1 {
+      font-size: 1.5em; } }
+.nutshell .headerImage img {
+  width: 100%; }
+.nutshell .columnText, .nutshell .introText .introTextWrapper, .nutshell .openSource .osText {
+  max-width: 600px;
+  width: 90%;
+  margin: 0 auto;
+  text-align: center; }
+  .nutshell .columnText *, .nutshell .introText .introTextWrapper *, .nutshell .openSource .osText * {
+    text-align: center; }
+.nutshell .introText {
+  background-color: whitesmoke;
+  padding: 2em 0; }
+.nutshell .nutPoints {
+  margin-top: 2em;
+  margin-bottom: 3.5em; }
+  .nutshell .nutPoints .nutPoint {
+    width: 25%;
+    margin: 0 4%;
+    display: inline-block;
+    vertical-align: top; }
+    .nutshell .nutPoints .nutPoint img {
+      width: 100%; }
+    .nutshell .nutPoints .nutPoint h3 {
+      display: block;
+      height: 2.3em;
+      text-align: center;
+      padding: 1em 0;
+      color: #2c2a74;
+      font-size: 1.75em; }
+    @media only screen and (max-width: 1024px) {
+      .nutshell .nutPoints .nutPoint {
+        display: block;
+        width: 100%;
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5em; }
+        .nutshell .nutPoints .nutPoint:nth-child(3) {
+          margin-bottom: 0; }
+        .nutshell .nutPoints .nutPoint img {
+          display: block;
+          width: 300px;
+          max-width: 100%;
+          margin: 0 auto; }
+        .nutshell .nutPoints .nutPoint h3 {
+          padding-bottom: 0.615em; }
+        .nutshell .nutPoints .nutPoint .pointText {
+          max-width: 600px;
+          width: 100%;
+          margin: 0 auto;
+          text-align: center; }
+          .nutshell .nutPoints .nutPoint .pointText * {
+            text-align: center; } }
+.nutshell .openSource {
+  background: whitesmoke;
+  padding: 2em 0; }
+  .nutshell .openSource img {
+    display: block;
+    width: 992px;
+    max-width: 90%;
+    margin: 0 auto; }
+  .nutshell .openSource h2 {
+    margin: 1.5em 0; }
+  .nutshell .openSource .cta-links {
+    text-align: center;
+    padding-top: 3em;
+    padding-bottom: 3em; }
+    .nutshell .openSource .cta-links .button {
+      vertical-align: top;
+      display: inline-block;
+      margin: 2em auto;
+      font-size: 1.1em;
+      padding: 0.7em;
+      margin: 1em;
+      width: 350px;
+      max-width: 50%;
+      text-align: center;
+      color: white;
+      background-color: #3792b3;
+      -moz-border-radius: 0.4em;
+      -o-border-radius: 0.4em;
+      -webkit-border-radius: 0.4em;
+      border-radius: 0.4em; }
 
 /*# sourceMappingURL=main.css.map */
