@@ -1,3 +1,112 @@
+
+Wednesday 10 June 2015, @lynngre
+
+--------
+Akvo.org Wordpress v4.2.2
+---
+
+## Security release
+
+https://codex.wordpress.org/Version_4.2.2 latest release security & maintenance.
+
+
+Tuesday 9 June 2015, @lynngre
+
+--------
+Akvo.org v1.1.15 Prehensile Prickly Pear
+---
+
+## New & noteworthy
+
+In this release we've included a link to our feature packed [Akvo RSR](http://akvo.org/products/rsr/) and [Akvo FLOW](http://akvo.org/products/akvoflow/) product videos on our product pages.
+
+We've also made a few small changes in this release, which will allow our Communications Team to make better use of the site such as including [Akvo+IATI](http://akvo.org/products/akvo-iati/) more prominently on our homepage.
+
+One of the changes was to allow them more flexibility in the use of the 'Hero stories' slider on our homepage.  Check out the new story posted today! [Akvo.org](http://akvo.org/)
+
+Another great new addition is the launch of the 6th [Akvopedia](http://akvo.org/products/akvopedia/) wiki portal on Food Security.  
+
+
+## New features
+
+###  RSR product page
+
+Product video has been included as a link on the page.
+
+http://akvo.org/products/rsr/
+
+Github issue: #639  
+
+
+###  FLOW product page
+
+Product video has been included as a link on the page.
+
+http://akvo.org/products/akvoflow/
+
+Github issue: #635 
+
+
+### Akvopedia product page
+
+A 6th portal on 'Food Security' has been added to Akvopedia.org wiki!
+
+Github issue:  #569 
+
+
+## Bug fixes & changes
+
+### Homepage 
+
+Slider updates so that hero image captions will have a smaller minimum size.
+
+Increase in the background opacity to make the caption text easier to read.
+
+Rearranged product section on the homepage & updated [Akvo + IATI](http://akvo.org/products/akvo-iati/).
+
+Github issue:  #656 & #638 
+
+
+###  RSR product page
+
+Corrected issue with the second image on the page disappeared when viewing the page on a mobile. 
+
+http://akvo.org/products/rsr/
+
+Github issue: #639  
+
+
+###  Akvo+IATI product page
+
+The Akvo+IATI logo has been updated to a yellow version, in turn the IATI page has been updated too.
+
+The logo on top has been replaced by the new logo.
+
+Background of images changed to yellow.
+
+http://akvo.org/products/akvo-iati/
+
+Github issue: #637 
+
+
+### Our foundations page
+
+Has been updated to 'Our organisations' and has been restructured.
+
+http://akvo.org/about-us/foundations/
+
+Github issue: #558 
+
+
+### All products page
+
+Aligned with product reshuffle on the homepage product area.
+
+http://akvo.org/products/
+
+Github issue:  #638 & #662
+
+
 Tuesday 28 April 2015, @lynngre
 
 --------

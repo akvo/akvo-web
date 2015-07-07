@@ -2,9 +2,9 @@
 /*
 Plugin Name: Mail Subscribe List
 Plugin URI: http://www.webfwd.co.uk/packages/wordpress-hosting/
-Description: Simple customisable plugin that displays a name/email form where visitors can submit their information, managable in the WordPress admin.
-Version: 2.1.1
-Author: Richard Leishman t/a Webforward
+Description: Simple customizable plugin that displays a name/email form where visitors can submit their information, managable in the WordPress admin.
+Version: 2.1.2
+Author: Webforward
 Author URI: http://www.webfwd.co.uk/
 License: GPL
 
@@ -83,7 +83,7 @@ function smlsubform($atts=array()){
 	
 	if ($showname) $return .= '<p class="sml_name"><label class="sml_namelabel" for="sml_name">'.$nametxt.'</label><input class="sml_nameinput" placeholder="'.$nameholder.'" name="sml_name" type="text" value=""></p>';
 	$return .= '<p class="sml_email"><label class="sml_emaillabel" for="sml_email">'.$emailtxt.'</label><input class="sml_emailinput" name="sml_email" placeholder="'.$emailholder.'" type="text" value=""></p>';
-	if ($showsubmit) $return .= '<p class="sml_submit"><input name="submit" class="btn btn-primary" type="submit" value="'.($submittxt?$submittxt:'Submit').'"></p>';
+	if ($showsubmit) $return .= '<p class="sml_submit"><input name="submit" class="btn sml_submitbtn" type="submit" value="'.($submittxt?$submittxt:'Submit').'"></p>';
 	$return .= '</form>';
 	
  	return $return;
