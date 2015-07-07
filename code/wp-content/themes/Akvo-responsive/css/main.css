@@ -5628,10 +5628,11 @@ div[id^="inline-"] {
     padding-top: 3em;
     padding-bottom: 3em; }
     .nutshell .openSource .cta-links .button {
+      vertical-align: top;
       display: inline-block;
       margin: 2em auto;
       font-size: 1.1em;
-      padding: 0.7em 0;
+      padding: 0.7em;
       margin: 1em;
       width: 350px;
       max-width: 50%;
