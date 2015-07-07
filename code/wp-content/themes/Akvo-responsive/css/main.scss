@@ -6862,16 +6862,18 @@ div[id^="inline-"] {
 ------------------------------------*/
 
 .nutshell {
-    h1 {
-        text-align: center;
-        padding-top: 1em;
-        padding-bottom: 1em;
-        font-size: 2em;
-        max-width: 90%;
-        margin-left: auto;
-        margin-right: auto;
-        @include responsive(small-max-screens) {
-            font-size: 1.5em;
+    &#content {
+        h1 {
+            text-align: center;
+            padding-top: 1em;
+            padding-bottom: 1em;
+            font-size: 2em;
+            max-width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+            @include responsive(small-max-screens) {
+                font-size: 1.5em;
+            }        
         }        
     }
     .headerImage {
