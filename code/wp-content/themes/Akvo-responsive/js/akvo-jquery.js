@@ -67,11 +67,11 @@ $("document").ready(function() {
         $('#staffDescr p.staffTitle').html(staffTitle);
         $('#staffDescr p.staffBio').html(biog);
         $('#staffDescr .imgWrapper').html(staffPic);
+        $('#descrDialog .cancel').click( function(e) {
+            e.stopPropagation();
+            closeDialog('#descrDialog');
+        });
         return false;
-    });
-    $('#descrDialog').find('.ok, .cancel').on('click', function(e) {
-        e.stopPropagation();
-        closeDialog(this);
     });
     $('#blanket').click(function() {
         closeDialog('#descrDialog');
