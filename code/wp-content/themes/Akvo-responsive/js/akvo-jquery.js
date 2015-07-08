@@ -69,7 +69,7 @@ $("document").ready(function() {
         $('#staffDescr .imgWrapper').html(staffPic);
         return false;
     });
-    $('#descrDialog').find('.ok, .cancel').live('click', function(e) {
+    $('#descrDialog').find('.ok, .cancel').on('click', function(e) {
         e.stopPropagation();
         closeDialog(this);
     });
