@@ -1,3 +1,48 @@
+Tuesday 7 July 2015, @lynngre
+
+--------
+Akvo.org v1.1.16  Quantum Quandong
+---
+
+## New & noteworthy
+
+We have lost our old footer!  We now have a shiny new one.
+
+This release also contains part of the backend for 'Akvo in a Nutshell' (the new 'About us' page) and WordPress plugin updates.
+
+
+## New features
+
+###  Footer
+
+Footer has been modernised & decluttered.
+
+Github issue: #633
+
+###  'Akvo in a nutshell' backend
+
+Allows for the future creation of a new 'About us' page heavily dependent on the new marketing approach around our products.
+
+Github issue: #673 
+
+
+## Bug fixes & changes
+
+### Wordpress plugin updates
+
+Various.
+
+Github issue:  #631 
+
+### Overlapping map pins
+
+Corrected on 'Contact us' page.
+
+Github issue:  #626 
+
+### Various small fixes
+
+Github issue:  #685 #674 #669  
 
 Wednesday 10 June 2015, @lynngre
 
