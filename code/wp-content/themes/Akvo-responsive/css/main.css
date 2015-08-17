@@ -2782,14 +2782,6 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
-li.problem a {
-  color: #e31b23;
-  opacity: 1;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear; }
-  li.problem a:hover {
-    opacity: 0.7; }
-
 .menu-footer-menu-container {
   background: #2e1353; }
 
@@ -2835,6 +2827,8 @@ footer .menu > li {
     color: white; }
     footer .menu > li a.problem {
       color: #e31b23; }
+  footer .menu > li.problem a {
+    color: #e31b23; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
@@ -2892,11 +2886,13 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo {
-    float: left;
+    float: none;
     margin: 20px auto 10px;
     width: 100%; } }
-footer.bottomPage section#siteMap div.socialAkvo h1 {
-  color: #2e1353; }
+footer.bottomPage section#siteMap {
+  background: white; }
+  footer.bottomPage section#siteMap div.socialAkvo h1 {
+    color: #2e1353; }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;

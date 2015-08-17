@@ -3409,16 +3409,7 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
-li.problem {
-    a {
-        color: rgb(227, 27, 35);
-        opacity: 1;
-        @include transition(opacity 0.2s linear);
-        &:hover {
-            opacity: 0.7;
-        }
-    }
-}
+
 .menu-footer-menu-container {
     background: $darkPurple;
 }
@@ -3461,6 +3452,11 @@ footer .menu > li {
         color:white;
         &.problem {
             color: rgb(227, 27, 35);
+        }
+    }
+   &.problem {
+    a {
+        color: rgb(227, 27, 35);
         }
     }
 }
@@ -3543,17 +3539,19 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 @include responsive(small-max-screens) {
     footer.bottomPage section#siteMap div.socialAkvo {
-        float: left;
+        float: none;
         margin: 20px auto 10px;
         width: 100%;
     }
 }
 
 
-footer.bottomPage section#siteMap div.socialAkvo h1 {
-    color: $darkPurple;
+footer.bottomPage section#siteMap {
+    background:white;
+    div.socialAkvo h1 {
+        color: $darkPurple;
+    }
 }
-
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
     display: block;
     margin: 30px auto 15px;
