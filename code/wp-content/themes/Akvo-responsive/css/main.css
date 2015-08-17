@@ -2921,18 +2921,8 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
-li.problem a {
-  color: #e31b23;
-  opacity: 1;
-  -moz-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear; }
-  li.problem a:hover {
-    opacity: 0.7; }
-
 .menu-footer-menu-container {
-  background: black; }
+  background: #2e1353; }
 
 #menu-footer-menu {
   width: 100%;
@@ -2940,6 +2930,8 @@ li.problem a {
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around; }
+  #menu-footer-menu a {
+    color: white; }
 
 @media only screen and (max-width: 768px) {
   #menu-footer-menu {
@@ -2959,6 +2951,12 @@ footer .menu {
 footer .menu > li {
   padding: 0em 0em 0em 1.5%;
   display: inline; }
+  footer .menu > li a {
+    color: white; }
+    footer .menu > li a.problem {
+      color: #e31b23; }
+  footer .menu > li.problem a {
+    color: #e31b23; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
@@ -3016,11 +3014,13 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo {
-    float: left;
+    float: none;
     margin: 20px auto 10px;
     width: 100%; } }
-footer.bottomPage section#siteMap div.socialAkvo h1 {
-  color: #de8929; }
+footer.bottomPage section#siteMap {
+  background: white; }
+  footer.bottomPage section#siteMap div.socialAkvo h1 {
+    color: #2e1353; }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;
