@@ -7120,10 +7120,13 @@ div[id^="inline-"] {
     }
 }
 
-.homepage-2015 {
+.homepage-2015, .productPage-2015 {
     .wrapper {
         width: 90%;
     }
+}
+
+.homepage-2015 {
     .topIcons {
         margin-top: 1em;
         margin-bottom: 1em;
@@ -7242,6 +7245,85 @@ div[id^="inline-"] {
                     }
                 }
             }
+        }
+    }
+}
+
+.productPage-2015 {
+    .topIcons {
+        background-color: rgb(247, 244, 234);
+        padding: 2em 0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .orange {
+        border-bottom: 12px solid $orange2015;
+    }
+    .yellow {
+        border-bottom: 12px solid $yellow2015;
+    }
+    .green {
+        border-bottom: 12px solid $green2015;
+    }
+    .pink {
+        border-bottom: 12px solid $pink2015;
+    }
+    .orange, .yellow, .green, .pink {
+        @include transition(border 200ms ease-in-out);
+        &:hover {
+            border-color: $akvoLink;
+        }
+        &:active {
+            @include transition(border 10ms ease-in-out);
+            border-color: white;
+        }
+    }
+    .bigImage {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        img {
+            width: 100%;
+        }
+    }
+    .products {
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            display: inline-block;
+            width: 39.5%;
+            vertical-align: top;
+            padding-top: 1em;
+            &:nth-child(1),
+            &:nth-child(4n),
+            &:nth-child(4n+1) {
+                width: 59.5%;
+            }
+            &:nth-child(odd) {
+                padding-right: 1%;
+            }
+            &:nth-child(even) {
+                padding-left: 1%;
+            }
+            &:hover {
+                opacity: 0.8;
+                @include transition(opacity 200ms ease-in-out);
+            }
+            @media only screen and (max-width: 600px) {
+                &:nth-child(n) {
+                    display: block;
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 1em;
+                    padding-bottom: 0;
+                    margin: 0;
+                }
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
         }
     }
 }

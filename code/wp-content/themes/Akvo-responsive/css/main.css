@@ -5761,8 +5761,9 @@ div[id^="inline-"] {
         padding-top: 1em;
         padding-bottom: 1em; } }
 
-.homepage-2015 .wrapper {
+.homepage-2015 .wrapper, .productPage-2015 .wrapper {
   width: 90%; }
+
 .homepage-2015 .topIcons {
   margin-top: 1em;
   margin-bottom: 1em; }
@@ -5850,3 +5851,66 @@ div[id^="inline-"] {
       @media only screen and (max-width: 992px) {
         .homepage-2015 .smallItems > div a span {
           font-size: 0.9em; } }
+
+.productPage-2015 .topIcons {
+  background-color: #f7f4ea;
+  padding: 2em 0;
+  margin-top: 1em;
+  margin-bottom: 1em; }
+.productPage-2015 .orange {
+  border-bottom: 12px solid #de8929; }
+.productPage-2015 .yellow {
+  border-bottom: 12px solid #ffd200; }
+.productPage-2015 .green {
+  border-bottom: 12px solid #74b631; }
+.productPage-2015 .pink {
+  border-bottom: 12px solid #db87c9; }
+.productPage-2015 .orange, .productPage-2015 .yellow, .productPage-2015 .green, .productPage-2015 .pink {
+  -moz-transition: border 200ms ease-in-out;
+  -o-transition: border 200ms ease-in-out;
+  -webkit-transition: border 200ms ease-in-out;
+  transition: border 200ms ease-in-out; }
+  .productPage-2015 .orange:hover, .productPage-2015 .yellow:hover, .productPage-2015 .green:hover, .productPage-2015 .pink:hover {
+    border-color: #3792b3; }
+  .productPage-2015 .orange:active, .productPage-2015 .yellow:active, .productPage-2015 .green:active, .productPage-2015 .pink:active {
+    -moz-transition: border 10ms ease-in-out;
+    -o-transition: border 10ms ease-in-out;
+    -webkit-transition: border 10ms ease-in-out;
+    transition: border 10ms ease-in-out;
+    border-color: white; }
+.productPage-2015 .bigImage {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  .productPage-2015 .bigImage img {
+    width: 100%; }
+.productPage-2015 .products * {
+  box-sizing: border-box; }
+.productPage-2015 .products a {
+  display: inline-block;
+  width: 39.5%;
+  vertical-align: top;
+  padding-top: 1em; }
+  .productPage-2015 .products a:nth-child(1), .productPage-2015 .products a:nth-child(4n), .productPage-2015 .products a:nth-child(4n+1) {
+    width: 59.5%; }
+  .productPage-2015 .products a:nth-child(odd) {
+    padding-right: 1%; }
+  .productPage-2015 .products a:nth-child(even) {
+    padding-left: 1%; }
+  .productPage-2015 .products a:hover {
+    opacity: 0.8;
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out; }
+  @media only screen and (max-width: 600px) {
+    .productPage-2015 .products a:nth-child(n) {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 1em;
+      padding-bottom: 0;
+      margin: 0; } }
+.productPage-2015 .products img {
+  display: block;
+  width: 100%; }
