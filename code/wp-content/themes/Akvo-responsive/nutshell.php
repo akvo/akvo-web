@@ -18,6 +18,7 @@
 
   <section class="introText">
     <div class="introTextWrapper">
+      <h2><?php the_field('nut_intro_title'); ?></h2>
       <?php the_field('nut_intro_text'); ?>
     </div>
   </section>
