@@ -2833,6 +2833,8 @@ footer .menu > li {
   display: inline; }
   footer .menu > li a {
     color: white; }
+    footer .menu > li a.problem {
+      color: #e31b23; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
