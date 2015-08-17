@@ -2810,6 +2810,8 @@ li.problem a {
   -webkit-justify-content: space-around;
       -ms-flex-pack: distribute;
           justify-content: space-around; }
+  #menu-footer-menu a {
+    color: white; }
 
 @media only screen and (max-width: 768px) {
   #menu-footer-menu {
@@ -2829,6 +2831,8 @@ footer .menu {
 footer .menu > li {
   padding: 0em 0em 0em 1.5%;
   display: inline; }
+  footer .menu > li a {
+    color: white; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
@@ -2890,7 +2894,7 @@ footer.bottomPage section#siteMap div.socialAkvo {
     margin: 20px auto 10px;
     width: 100%; } }
 footer.bottomPage section#siteMap div.socialAkvo h1 {
-  color: #de8929; }
+  color: #2e1353; }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;

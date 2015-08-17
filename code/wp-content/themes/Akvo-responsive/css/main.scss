@@ -3428,6 +3428,9 @@ li.problem {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
+    a {
+        color:white;
+    }
 }
 
 @include responsive(small-max-screens) {
@@ -3454,6 +3457,9 @@ footer .menu {
 footer .menu > li {
     padding: 0em 0em 0em 1.5%;
     display:inline;
+    a {
+        color:white;
+    }
 }
 
 @include responsive(small-max-screens) {
@@ -3542,7 +3548,7 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 
 footer.bottomPage section#siteMap div.socialAkvo h1 {
-    color: rgb(222, 137, 41);
+    color: $darkPurple;
 }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
