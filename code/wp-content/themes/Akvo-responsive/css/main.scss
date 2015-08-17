@@ -3459,6 +3459,9 @@ footer .menu > li {
     display:inline;
     a {
         color:white;
+        &.problem {
+            color: rgb(227, 27, 35);
+        }
     }
 }
 
