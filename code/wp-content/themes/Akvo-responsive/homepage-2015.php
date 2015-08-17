@@ -34,7 +34,7 @@
     <?php query_posts('post_type=new_heroBox&meta_key=hero_box_active&meta_value=1&posts_per_page=4'); ?>
     <?php if (have_posts()) : ?>
       <ul class="bxslider">
-      <?php while (have_posts()) : the_post(); ?>
+        <?php while (have_posts()) : the_post(); ?>
           <li class="<?php the_field('hero_box_color'); ?>">
             <div class="borderTop"></div>
             <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
@@ -51,13 +51,14 @@
                   <?php the_field('hero_box_subtitle'); ?>
                 </h2>
               </hgroup>
-              <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a> </div>
+              <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a>
+            </div>
             <div class="borderBottom"></div>
             </div>
           </li>
-    <?php endwhile; ?>
-          </ul>
-          <?php endif; wp_reset_query(); ?>
+        <?php endwhile; ?>
+      </ul>
+    <?php endif; wp_reset_query(); ?>
   </section>
 
   <section class="featuredItems wrapper">
