@@ -493,26 +493,24 @@ footer a:visited {
 .seeMore {
   margin: 1em auto; }
 
-.moreLink {
-  background: url("../images/moreLink.png") right bottom no-repeat;
-  display: table;
-  font-size: 0.9em;
-  font-weight: normal;
-  height: 19px;
-  padding: 3px 28px 3px 0em; }
+.tooltipContainer {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .tooltipContainer .tooltips {
+    position: absolute;
+    background: #202024;
+    width: 350px;
+    top: 25px;
+    right: 5px;
+    border-radius: 3px;
+    padding: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    display: none; }
+    .tooltipContainer .tooltips p {
+      color: white; }
 
-.moreLink:hover {
-  background: url("../images/moreLink.png") right bottom no-repeat; }
-
-.tooltips {
-  background: url("../images/helpIcn.png") right bottom no-repeat; }
-
-.tooltips:hover {
-  background: url("../images/helpIcn.png") right bottom no-repeat; }
-
-@media only screen and (max-width: 768px) {
-  .tooltips {
-    display: none; } }
 /* nav toggle
 --------------------------------------------- */
 nav li {

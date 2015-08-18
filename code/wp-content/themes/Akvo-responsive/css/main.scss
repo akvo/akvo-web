@@ -532,34 +532,26 @@ footer a:visited {
     margin: 1em auto;
 }
 
-.moreLink {
-    background: url("../images/moreLink.png") right bottom no-repeat;
-    display: table;
-    font-size: 0.9em;
-    font-weight: normal;
-    height: 19px;
-    padding: 3px 28px 3px 0em;
-}
-
-.moreLink:hover {
-    background: url("../images/moreLink.png") right bottom no-repeat;
-}
-
-.tooltips {
-    background: url("../images/helpIcn.png") right bottom no-repeat;
-}
-
-.tooltips:hover {
-    background: url("../images/helpIcn.png") right bottom no-repeat;
-}
-
-@include responsive(small-max-screens) {
+.tooltipContainer {
+    position: absolute;
+    top:0;
+    right:0;
     .tooltips {
+        position:absolute;
+        background:rgba(32,32,36,1);
+        width: 350px;
+        top:25px;
+        right:5px;
+        @include border-radius(3px);
+        padding:5px;
+        border:1px solid rgba(white,0.2);
+        box-shadow: 0 0 3px rgba(white,0.5);
         display: none;
+        p {
+            color:white;
+        }
     }
 }
-
-
 /* nav toggle
 --------------------------------------------- */
 nav {
