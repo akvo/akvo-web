@@ -542,10 +542,10 @@ footer a:visited {
         width: 350px;
         top:25px;
         right:5px;
-        @include border-radius(3px);
+        @include border-radius(2px);
         padding:5px;
         border:1px solid rgba(white,0.2);
-        box-shadow: 0 0 3px rgba(white,0.5);
+        box-shadow: 1px 1px 3px rgba(white,0.5);
         display: none;
         p {
             color:white;
@@ -3534,7 +3534,6 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 
 footer.bottomPage section#siteMap div.socialAkvo h1 {
-    color: rgb(222, 137, 41);
 }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {

@@ -503,10 +503,10 @@ footer a:visited {
     width: 350px;
     top: 25px;
     right: 5px;
-    border-radius: 3px;
+    border-radius: 2px;
     padding: 5px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 3px rgba(255, 255, 255, 0.5);
     display: none; }
     .tooltipContainer .tooltips p {
       color: white; }
@@ -2887,9 +2887,6 @@ footer.bottomPage section#siteMap div.socialAkvo {
     float: left;
     margin: 20px auto 10px;
     width: 100%; } }
-footer.bottomPage section#siteMap div.socialAkvo h1 {
-  color: #de8929; }
-
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;
   margin: 30px auto 15px;

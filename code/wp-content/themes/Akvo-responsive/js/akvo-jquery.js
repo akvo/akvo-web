@@ -105,7 +105,7 @@ $("document").ready(function() {
         $(this).next('div.tooltips').css('display', 'block');
     }, function() {
             $( this ).next('div.tooltips').css('display', 'none');
-          });
+    });
 
 
 });
