@@ -3047,12 +3047,12 @@ footer.bottomPage section#siteMap nav.socialLinks li a {
   display: block;
   float: left;
   height: 100%;
-  opacity: 0.8;
+  opacity: 0.5;
   text-indent: -9999px;
   width: 100%; }
 
 footer.bottomPage section#siteMap nav.socialLinks li a:hover {
-  opacity: 0.5; }
+  opacity: 1; }
 
 footer.bottomPage section#siteMap nav.socialLinks li.twitter a {
   background: url("../images/socialTwitter.png") center center no-repeat; }
