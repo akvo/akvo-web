@@ -6882,7 +6882,7 @@ div[id^="inline-"] {
         }
     }
     .columnText {
-        max-width: 600px;
+        max-width: 550px;
         width: 90%;
         margin: 0 auto;
         text-align: center;
@@ -6891,15 +6891,21 @@ div[id^="inline-"] {
         }
     }
     .introText {
-        background-color: whitesmoke;
-        padding: 2em 0;
+        padding: 0 0 2em 0;
         .introTextWrapper {
             @extend .columnText;
         }
+        h2 {
+            font-size: 1.7em;
+        }
+        p {
+            margin-bottom: 1.6em;
+        }
     }
     .nutPoints {
-        margin-top: 2em;
-        margin-bottom: 3.5em;
+        padding-top: 2em;
+        padding-bottom: 3.5em;
+        background: whitesmoke;
         .nutPoint {
             width: 25%;
             margin: 0 4%;
@@ -6948,7 +6954,6 @@ div[id^="inline-"] {
         }
     }
     .openSource {
-        background: whitesmoke;
         padding: 2em 0;
         img {
             display: block;
