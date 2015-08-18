@@ -5920,6 +5920,14 @@ div[id^="inline-"] {
   margin-bottom: 1em; }
   .productPage-2015 .bigImage img {
     width: 100%; }
+  .productPage-2015 .bigImage:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .productPage-2015 .bigImage:active {
+    opacity: 0.6; }
 .productPage-2015 .products * {
   box-sizing: border-box; }
 .productPage-2015 .products a {
