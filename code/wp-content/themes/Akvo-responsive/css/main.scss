@@ -7096,6 +7096,9 @@ div[id^="inline-"] {
                     margin-right: 4%;
                 }
             }
+            img {
+                width: 100%;
+            }
         }
     }
     .longItem {
@@ -7223,6 +7226,7 @@ div[id^="inline-"] {
         >div {
             display: inline-block;
             width: 24.5%;
+            vertical-align: top;
             @media only screen and (max-width: $width-medium) {
                 width: 24%;
             }
