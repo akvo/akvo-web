@@ -7223,23 +7223,44 @@ div[id^="inline-"] {
     .smallItems {
         >div {
             display: inline-block;
-            width: 24.5%;
+            width: 23%;
+            margin-right: 2%;
             vertical-align: top;
+            &:last-child {
+                margin-right: 0;
+            }
             @media only screen and (max-width: $width-medium) {
-                width: 24%;
+                width: 22.5%;
             }
             @media only screen and (max-width: $width-small) {
-                width: 100%;
+                width: 47.3%;
                 margin-top: 1em;
                 margin-bottom: 1em;
+                &:nth-child(odd) {
+                    margin-right: 2%;
+                }
             }
+            @media only scren and(max-width: 500px) {
+                width: 46.9%;
+            }             
             a {
                 display: block;
                 position: relative;
-                width: 90%;
+                width: 100%;
                 margin: 0 auto;
-                img {
-                    width: 100%;
+                >div {
+                    height: 150px;
+                    background-size: cover;
+                    background-position: center;
+                    @media only screen and (max-width: $width-medium) {
+                        height: 125px;
+                    }
+                    @media only screen and (max-width: $width-medium) {
+                        height: 175px;
+                    }
+                    @media only screen and(max-width: 500px) {
+                        height: 100px;
+                    }                    
                 }
                 h3, span {
                     display: block;
