@@ -498,19 +498,18 @@ footer a:visited {
   position: absolute;
   top: 0;
   right: 0; }
+  .tooltipContainer .tooltipTrigger {
+    right: 5px; }
   .tooltipContainer .tooltips {
     position: absolute;
     background: #202024;
     width: 350px;
     top: 25px;
     right: 5px;
-    -moz-border-radius: 3px;
-    -o-border-radius: 3px;
-    -webkit-border-radius: 3px;
-    border-radius: 3px;
-    padding: 5px;
+    border-radius: 2px;
+    padding: 5px 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 0 3px rgba(255, 255, 255, 0.5);
+    box-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
     display: none; }
     .tooltipContainer .tooltips p {
       color: white; }
@@ -2891,8 +2890,6 @@ footer.bottomPage section#siteMap div.socialAkvo {
     width: 100%; } }
 footer.bottomPage section#siteMap {
   background: white; }
-  footer.bottomPage section#siteMap div.socialAkvo h1 {
-    color: #2e1353; }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;
