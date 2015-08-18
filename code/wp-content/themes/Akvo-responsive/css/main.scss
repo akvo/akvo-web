@@ -7084,6 +7084,12 @@ div[id^="inline-"] {
     .pink img {
         border-bottom: 12px solid $pink2015;
     }
+    .lightblue img {
+        border-bottom: 12px solid $lightblue2015;
+    }
+    .darkblue img {
+        border-bottom: 12px solid $darkblue2015;
+    }
     .row {
         margin-bottom: 1.5em;
         @media only screen and (max-width: $width-med) {
@@ -7167,7 +7173,19 @@ div[id^="inline-"] {
                         background: rgba(219, 135, 201, 0.6);
                     }
                 }
-                &.orange, &.green, &.yellow, &.pink {
+                &.lightblue {
+                    border-bottom: 12px solid $lightblue2015;
+                    #actionHeroInfo {
+                        background: rgba(114, 205, 255, 0.6);
+                    }
+                }
+                &.darkblue {
+                    border-bottom: 12px solid $darkblue2015;
+                    #actionHeroInfo {
+                        background: rgba(44, 42, 116, 0.6);
+                    }                    
+                }
+                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue {
                     #actionHeroInfo {
                         color: white;
                         h1, h2 {
@@ -7274,7 +7292,13 @@ div[id^="inline-"] {
     .pink {
         border-bottom: 12px solid $pink2015;
     }
-    .orange, .yellow, .green, .pink {
+    .lightblue {
+        border-bottom: 12px solid $lightblue2015;
+    }
+    .darkblue {
+        border-bottom: 12px solid $darkblue2015;
+    }
+    .orange, .yellow, .green, .pink, .lightblue, .darkblue {
         @include transition(border 200ms ease-in-out);
         &:hover {
             border-color: $akvoLink;
