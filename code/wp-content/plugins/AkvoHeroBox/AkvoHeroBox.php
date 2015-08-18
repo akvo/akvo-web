@@ -122,6 +122,24 @@ if(function_exists("register_field_group"))
                 'allow_null' => 0,
                 'multiple' => 0,
             ),
+            array (
+                'key' => 'field_2f0ed209871a8',
+                'label' => 'Hero Box Color',
+                'name' => 'hero_box_color',
+                'type' => 'select',
+                'required' => 0,
+                'choices' => array (
+                    'orange' => 'orange',
+                    'green' => 'green',
+                    'yellow' => 'yellow',
+                    'pink' => 'pink',
+                    'lightblue' => 'lightblue',
+                    'darkblue' => 'darkblue',
+                ),
+                'default_value' => 'bottom_right',
+                'allow_null' => 0,
+                'multiple' => 0,
+            ),
         ),
         'location' => array (
             array (

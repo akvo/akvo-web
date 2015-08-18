@@ -81,8 +81,7 @@
 <script type="text/javascript">
   $( document ).ready(function() {
     // footer menu headings
-  
-  
+
     $("#content").fitVids();
       function adjustImage() {
         $(".hero-image").css('margin-top', ($("#actionHeroBox").height() - $(".hero-image").height()) / 2);
