@@ -9,19 +9,13 @@
 <div id="content" class="floats-in homepage-2015">
   <section class="topIcons wrapper">
     <div class="topIcon capture">
-      <a href="topIcon_capture_link">
-        <img src="<?php the_field('topIcon_capture_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_capture_img'); ?>">
     </div>
     <div class="topIcon understand">
-      <a href="topIcon_understand_link">
-        <img src="<?php the_field('topIcon_understand_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_understand_img'); ?>">
     </div>
     <div class="topIcon share">
-      <a href="topIcon_share_link">
-        <img src="<?php the_field('topIcon_share_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_share_img'); ?>">
     </div>
     <div class="readMoreContainer">
       <a href="<?php the_field('topIcon_readMoreLink'); ?>">
