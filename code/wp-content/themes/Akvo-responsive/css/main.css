@@ -5765,6 +5765,14 @@ div[id^="inline-"] {
         width: 100%;
         padding-top: 1em;
         padding-bottom: 1em; } }
+  .featuredItems a:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .featuredItems a:active {
+    opacity: 0.6; }
 
 .homepage-2015 .wrapper, .productPage-2015 .wrapper {
   width: 90%; }
@@ -5884,6 +5892,14 @@ div[id^="inline-"] {
       @media only screen and (max-width: 992px) {
         .homepage-2015 .smallItems > div a span {
           font-size: 0.9em; } }
+  .homepage-2015 .smallItems > div:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .homepage-2015 .smallItems > div:active {
+    opacity: 0.6; }
 
 .productPage-2015 .topIcons {
   background-color: #f7f4ea;
@@ -5921,11 +5937,13 @@ div[id^="inline-"] {
   .productPage-2015 .products a:nth-child(even) {
     padding-left: 1%; }
   .productPage-2015 .products a:hover {
-    opacity: 0.8;
     -moz-transition: opacity 200ms ease-in-out;
     -o-transition: opacity 200ms ease-in-out;
     -webkit-transition: opacity 200ms ease-in-out;
-    transition: opacity 200ms ease-in-out; }
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .productPage-2015 .products a:active {
+    opacity: 0.6; }
   @media only screen and (max-width: 600px) {
     .productPage-2015 .products a:nth-child(n) {
       display: block;

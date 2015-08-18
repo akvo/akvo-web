@@ -7123,6 +7123,15 @@ div[id^="inline-"] {
             }
         }
     }
+    a {
+        &:hover {
+            @include transition(opacity 200ms ease-in-out);
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }        
+    }
 }
 
 .homepage-2015, .productPage-2015 {
@@ -7284,6 +7293,13 @@ div[id^="inline-"] {
                     }
                 }
             }
+            &:hover {
+                @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
         }
     }
 }
@@ -7341,8 +7357,11 @@ div[id^="inline-"] {
                 padding-left: 1%;
             }
             &:hover {
-                opacity: 0.8;
                 @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
             }
             @media only screen and (max-width: 600px) {
                 &:nth-child(n) {
