@@ -5781,7 +5781,7 @@ div[id^="inline-"] {
   margin-top: 1em;
   margin-bottom: 1em; }
 .homepage-2015 #actionHeroBox {
-  border-bottom: none;
+  border: none;
   width: 90%; }
   .homepage-2015 #actionHeroBox .bxslider li {
     border-bottom: 12px solid rgba(0, 0, 0, 0); }
