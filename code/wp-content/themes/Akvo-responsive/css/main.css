@@ -5749,15 +5749,15 @@ div[id^="inline-"] {
       .featuredItems .row .item img {
         width: 100%; }
   .featuredItems .longItem {
-    width: 55%; }
+    width: 58.2%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .longItem {
-        width: 53.625%; } }
+        width: 56.5%; } }
   .featuredItems .shortItem {
-    width: 42%; }
+    width: 38.8%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .shortItem {
-        width: 40.95%; } }
+        width: 37.6%; } }
   @media only screen and (max-width: 768px) {
     .featuredItems .row {
       margin: 0; }
