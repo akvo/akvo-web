@@ -7290,16 +7290,6 @@ div[id^="inline-"] {
     .darkblue {
         border-bottom: 12px solid $darkblue2015;
     }
-    .orange, .yellow, .green, .pink, .lightblue, .darkblue {
-        @include transition(border 200ms ease-in-out);
-        &:hover {
-            border-color: $akvoLink;
-        }
-        &:active {
-            @include transition(border 10ms ease-in-out);
-            border-color: white;
-        }
-    }
     .bigImage {
         margin-top: 1em;
         margin-bottom: 1em;

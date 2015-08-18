@@ -516,6 +516,9 @@ footer a:visited {
     width: 350px;
     top: 25px;
     right: 5px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 5px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -5879,19 +5882,6 @@ div[id^="inline-"] {
   border-bottom: 12px solid #72cdff; }
 .productPage-2015 .darkblue {
   border-bottom: 12px solid #2c2a74; }
-.productPage-2015 .orange, .productPage-2015 .yellow, .productPage-2015 .green, .productPage-2015 .pink, .productPage-2015 .lightblue, .productPage-2015 .darkblue {
-  -moz-transition: border 200ms ease-in-out;
-  -o-transition: border 200ms ease-in-out;
-  -webkit-transition: border 200ms ease-in-out;
-  transition: border 200ms ease-in-out; }
-  .productPage-2015 .orange:hover, .productPage-2015 .yellow:hover, .productPage-2015 .green:hover, .productPage-2015 .pink:hover, .productPage-2015 .lightblue:hover, .productPage-2015 .darkblue:hover {
-    border-color: #3792b3; }
-  .productPage-2015 .orange:active, .productPage-2015 .yellow:active, .productPage-2015 .green:active, .productPage-2015 .pink:active, .productPage-2015 .lightblue:active, .productPage-2015 .darkblue:active {
-    -moz-transition: border 10ms ease-in-out;
-    -o-transition: border 10ms ease-in-out;
-    -webkit-transition: border 10ms ease-in-out;
-    transition: border 10ms ease-in-out;
-    border-color: white; }
 .productPage-2015 .bigImage {
   margin-top: 1em;
   margin-bottom: 1em; }
