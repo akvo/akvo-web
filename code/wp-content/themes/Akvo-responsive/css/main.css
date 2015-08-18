@@ -504,6 +504,9 @@ footer a:visited {
     width: 350px;
     top: 25px;
     right: 5px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    -webkit-border-radius: 3px;
     border-radius: 3px;
     padding: 5px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -5540,16 +5543,18 @@ div[id^="inline-"] {
         @media only screen and (max-width: 1024px) {
           .featuredItems .row .item:first-child {
             margin-right: 4%; } }
+      .featuredItems .row .item img {
+        width: 100%; }
   .featuredItems .longItem {
-    width: 55%; }
+    width: 58.2%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .longItem {
-        width: 53.625%; } }
+        width: 56.5%; } }
   .featuredItems .shortItem {
-    width: 42%; }
+    width: 38.8%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .shortItem {
-        width: 40.95%; } }
+        width: 37.6%; } }
   @media only screen and (max-width: 768px) {
     .featuredItems .row {
       margin: 0; }
@@ -5621,7 +5626,8 @@ div[id^="inline-"] {
       bottom: 5px; } }
 .homepage-2015 .smallItems > div {
   display: inline-block;
-  width: 24.5%; }
+  width: 24.5%;
+  vertical-align: top; }
   @media only screen and (max-width: 992px) {
     .homepage-2015 .smallItems > div {
       width: 24%; } }
@@ -5673,15 +5679,6 @@ div[id^="inline-"] {
   border-bottom: 12px solid #72cdff; }
 .productPage-2015 .darkblue {
   border-bottom: 12px solid #2c2a74; }
-.productPage-2015 .orange, .productPage-2015 .yellow, .productPage-2015 .green, .productPage-2015 .pink, .productPage-2015 .lightblue, .productPage-2015 .darkblue {
-  -webkit-transition: border 200ms ease-in-out;
-  transition: border 200ms ease-in-out; }
-  .productPage-2015 .orange:hover, .productPage-2015 .yellow:hover, .productPage-2015 .green:hover, .productPage-2015 .pink:hover, .productPage-2015 .lightblue:hover, .productPage-2015 .darkblue:hover {
-    border-color: #3792b3; }
-  .productPage-2015 .orange:active, .productPage-2015 .yellow:active, .productPage-2015 .green:active, .productPage-2015 .pink:active, .productPage-2015 .lightblue:active, .productPage-2015 .darkblue:active {
-    -webkit-transition: border 10ms ease-in-out;
-    transition: border 10ms ease-in-out;
-    border-color: white; }
 .productPage-2015 .bigImage {
   margin-top: 1em;
   margin-bottom: 1em; }

@@ -7094,18 +7094,21 @@ div[id^="inline-"] {
                     margin-right: 4%;
                 }
             }
+            img {
+                width: 100%;
+            }
         }
     }
     .longItem {
-        width: 55%;
+        width: 58.2%;
         @media only screen and (max-width: $width-med) {
-            width: 53.625%;
+            width: 56.5%;
         }
     }
     .shortItem {
-        width: 42%;
+        width: 38.8%;
         @media only screen and (max-width: $width-med) {
-            width: 40.95%;
+            width: 37.6%;
         }
     }
     @media only screen and (max-width: $width-small) {
@@ -7221,6 +7224,7 @@ div[id^="inline-"] {
         >div {
             display: inline-block;
             width: 24.5%;
+            vertical-align: top;
             @media only screen and (max-width: $width-medium) {
                 width: 24%;
             }
@@ -7287,16 +7291,6 @@ div[id^="inline-"] {
     }
     .darkblue {
         border-bottom: 12px solid $darkblue2015;
-    }
-    .orange, .yellow, .green, .pink, .lightblue, .darkblue {
-        @include transition(border 200ms ease-in-out);
-        &:hover {
-            border-color: $akvoLink;
-        }
-        &:active {
-            @include transition(border 10ms ease-in-out);
-            border-color: white;
-        }
     }
     .bigImage {
         margin-top: 1em;
