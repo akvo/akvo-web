@@ -1,6 +1,6 @@
 <?php
 /*
-	Template Name: akvoHome 2015
+	Template Name: akvoHome_2015
 */
 ?>
 <?php get_header(); ?>

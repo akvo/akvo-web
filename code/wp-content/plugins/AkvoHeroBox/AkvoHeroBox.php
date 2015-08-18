@@ -133,6 +133,8 @@ if(function_exists("register_field_group"))
                     'green' => 'green',
                     'yellow' => 'yellow',
                     'pink' => 'pink',
+                    'lightblue' => 'lightblue',
+                    'darkblue' => 'darkblue',
                 ),
                 'default_value' => 'bottom_right',
                 'allow_null' => 0,
