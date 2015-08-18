@@ -103,7 +103,11 @@ $("document").ready(function() {
     $('.tooltipContainer > div.tooltips').css('display', 'none');
     $('.tooltipContainer > a.tooltipTrigger').hover(function() {
         $(this).next('div.tooltips').css('display', 'block');
-    });
+    }, function() {
+            $( this ).next('div.tooltips').css('display', 'none');
+          });
+
+
 });
 
 
