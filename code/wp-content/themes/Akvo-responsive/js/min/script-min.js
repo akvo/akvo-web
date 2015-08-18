@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#navbar a").click(function(n){n.preventDefault();var i=$("#n ul");i.is(":visible")?i.slideUp():i.slideDown()}),$(window).resize(function(){var n=$("#n > ul, #n > div > ul");$(window).width()>620&&n.show()})});

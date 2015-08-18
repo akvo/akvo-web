@@ -81,8 +81,11 @@
 <script type="text/javascript">
   $( document ).ready(function() {
     // footer menu headings
-  
-  
+
+    $('.tooltipContainer > .tooltips').css('display', 'none');
+    $('.tooltipContainer > .tooltipTrigger').hover(function() {
+        $(this).next('.tooltips').css('display', 'block');
+    });
     $("#content").fitVids();
       function adjustImage() {
         $(".hero-image").css('margin-top', ($("#actionHeroBox").height() - $(".hero-image").height()) / 2);
