@@ -10,12 +10,6 @@
     <h1><?php the_field('nut_title'); ?></h1>
   </section>
 
-  <section class="headerImage">
-    <div class="wrapper">
-      <img src="<?php the_field('nut_header_img'); ?>">
-    </div>
-  </section> 
-
   <section class="introText">
     <div class="introTextWrapper">
       <h2><?php the_field('nut_intro_title'); ?></h2>
