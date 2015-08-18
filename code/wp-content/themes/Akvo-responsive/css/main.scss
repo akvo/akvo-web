@@ -3418,9 +3418,7 @@ p#allowed_tags code {
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-    a {
-        color:white;
-    }
+
 }
 
 @include responsive(small-max-screens) {
@@ -3458,7 +3456,7 @@ footer .menu > li {
     }
    &.problem {
     a {
-        color: rgb(227, 27, 35);
+        color: rgb(227, 27, 35) !important;
         }
     }
 }
