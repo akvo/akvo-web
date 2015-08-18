@@ -518,6 +518,9 @@ footer a:visited {
     width: 350px;
     top: 25px;
     right: 5px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
     border-radius: 2px;
     padding: 5px 10px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -5564,18 +5567,22 @@ div[id^="inline-"] {
 .nutshell .headerImage img {
   width: 100%; }
 .nutshell .columnText, .nutshell .introText .introTextWrapper, .nutshell .openSource .osText {
-  max-width: 600px;
+  max-width: 550px;
   width: 90%;
   margin: 0 auto;
   text-align: center; }
   .nutshell .columnText *, .nutshell .introText .introTextWrapper *, .nutshell .openSource .osText * {
     text-align: center; }
 .nutshell .introText {
-  background-color: whitesmoke;
-  padding: 2em 0; }
+  padding: 0 0 2em 0; }
+  .nutshell .introText h2 {
+    font-size: 1.7em; }
+  .nutshell .introText p {
+    margin-bottom: 1.6em; }
 .nutshell .nutPoints {
-  margin-top: 2em;
-  margin-bottom: 3.5em; }
+  padding-top: 2em;
+  padding-bottom: 3.5em;
+  background: whitesmoke; }
   .nutshell .nutPoints .nutPoint {
     width: 25%;
     margin: 0 4%;
@@ -5615,7 +5622,6 @@ div[id^="inline-"] {
           .nutshell .nutPoints .nutPoint .pointText * {
             text-align: center; } }
 .nutshell .openSource {
-  background: whitesmoke;
   padding: 2em 0; }
   .nutshell .openSource img {
     display: block;
