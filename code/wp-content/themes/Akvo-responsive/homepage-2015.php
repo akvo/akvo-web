@@ -9,19 +9,13 @@
 <div id="content" class="floats-in homepage-2015">
   <section class="topIcons wrapper">
     <div class="topIcon capture">
-      <a href="topIcon_capture_link">
-        <img src="<?php the_field('topIcon_capture_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_capture_img'); ?>">
     </div>
     <div class="topIcon understand">
-      <a href="topIcon_understand_link">
-        <img src="<?php the_field('topIcon_understand_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_understand_img'); ?>">
     </div>
     <div class="topIcon share">
-      <a href="topIcon_share_link">
-        <img src="<?php the_field('topIcon_share_img'); ?>">
-      </a>
+      <img src="<?php the_field('topIcon_share_img'); ?>">
     </div>
     <div class="readMoreContainer">
       <a href="<?php the_field('topIcon_readMoreLink'); ?>">
@@ -89,31 +83,38 @@
   </section>
 
   <section class="smallItems wrapper">
-    <div class="item1 <?php the_field('si_item1_class'); ?>">
-      <a href="<?php the_field('si_item1_link'); ?>">
-        <img src="<?php the_field('si_item1_img'); ?>">
-        <h3>
-          <?php the_field('si_item1_title'); ?>
-        </h3>
-        <span class="text">
-          <?php the_field('si_item1_text'); ?>
-        </span>
-      </a>
+
+    <div class="item1 latestBlog">
+      <?php
+        $args = array( 'numberposts' => 1 );
+        $lastposts = get_posts( $args );
+        foreach($lastposts as $post) : setup_postdata($post); ?>
+        <a href="<?php the_permalink(); ?>">
+          <?php if ( has_post_thumbnail() ) { $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); } ?>
+          <div style="background-image: url('<?php echo $feat_image; ?>')"></div>
+          <h3>
+            Latest blog
+          </h3>
+          <span class="text">
+            <?php the_title(); ?>
+          </span>          
+        </a>
+      <?php endforeach; ?>
+      <?php wp_reset_query(); ?>
     </div>
-    <div class="item2 <?php the_field('si_item2_class'); ?>">
-      <a href="<?php the_field('si_item2_link'); ?>">
-        <img src="<?php the_field('si_item2_img'); ?>">
+    <div class="item2 latestRSR">
+      <a href="" class="update_url">
+        <div class="update_img_url"></div>
         <h3>
-          <?php the_field('si_item2_title'); ?>
+          Latest RSR update
         </h3>
-        <span class="text">
-          <?php the_field('si_item2_text'); ?>
+        <span class="text update_title">
         </span>
       </a>
     </div>
     <div class="item3 <?php the_field('si_item3_class'); ?>">
       <a href="<?php the_field('si_item3_link'); ?>">
-        <img src="<?php the_field('si_item3_img'); ?>">
+        <div style="background-image: url('<?php the_field('si_item3_img'); ?>')"></div>
         <h3>
           <?php the_field('si_item3_title'); ?>
         </h3>
@@ -124,7 +125,7 @@
     </div>
     <div class="item4 <?php the_field('si_item4_class'); ?>">
       <a href="<?php the_field('si_item4_link'); ?>">
-        <img src="<?php the_field('si_item4_img'); ?>">
+        <div style="background-image: url('<?php the_field('si_item4_img'); ?>')"></div>
         <h3>
           <?php the_field('si_item4_title'); ?>
         </h3>
@@ -132,12 +133,38 @@
           <?php the_field('si_item4_text'); ?>
         </span>
       </a>
-    </div>            
+    </div>    
   </section>
 </div>
 <!-- end content -->
 
-<script type="text/javascript">    
+<script type="text/javascript"> 
+$(function() {
+  var akvo_domain = 'http://rsr.akvo.org';
+  $.ajax({
+    url: akvo_domain + '/api/v1/project_update/?limit=5',
+    dataType: "jsonp",
+    jsonp: 'callback',
+    jsonpCallback: 'callback',
+    cache: true,
+    success: function(data) {
+      for (i=0; i<5; i++) {
+        if (data.objects[i].photo === '') {
+          continue;
+        } else {
+          var title, src, absolute_url;
+          src = data.objects[i].photo;
+          title = data.objects[i].title;
+          absolute_url = data.objects[i].absolute_url;
+          $('.update_url').attr('href', akvo_domain + absolute_url);
+          $('.update_img_url').css('background-image', 'url("' + akvo_domain + src + '")')
+          $('.update_title').text(title);
+          break;
+        }
+      }
+    }
+  });
+});   
 $(document).ready(function() {
     $('.bxslider').bxSlider();
 });

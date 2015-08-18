@@ -7123,6 +7123,15 @@ div[id^="inline-"] {
             }
         }
     }
+    a {
+        &:hover {
+            @include transition(opacity 200ms ease-in-out);
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }        
+    }
 }
 
 .homepage-2015, .productPage-2015 {
@@ -7137,7 +7146,7 @@ div[id^="inline-"] {
         margin-bottom: 1em;
     }
     #actionHeroBox {
-        border-bottom: none;
+        border: none;
         width: 90%;
         .bxslider {
             li {
@@ -7223,23 +7232,44 @@ div[id^="inline-"] {
     .smallItems {
         >div {
             display: inline-block;
-            width: 24.5%;
+            width: 23%;
+            margin-right: 2%;
             vertical-align: top;
+            &:last-child {
+                margin-right: 0;
+            }
             @media only screen and (max-width: $width-medium) {
-                width: 24%;
+                width: 22.5%;
             }
             @media only screen and (max-width: $width-small) {
-                width: 100%;
+                width: 47.3%;
                 margin-top: 1em;
                 margin-bottom: 1em;
+                &:nth-child(odd) {
+                    margin-right: 2%;
+                }
             }
+            @media only scren and(max-width: 500px) {
+                width: 46.9%;
+            }             
             a {
                 display: block;
                 position: relative;
-                width: 90%;
+                width: 100%;
                 margin: 0 auto;
-                img {
-                    width: 100%;
+                >div {
+                    height: 150px;
+                    background-size: cover;
+                    background-position: center;
+                    @media only screen and (max-width: $width-medium) {
+                        height: 125px;
+                    }
+                    @media only screen and (max-width: $width-medium) {
+                        height: 175px;
+                    }
+                    @media only screen and(max-width: 500px) {
+                        height: 100px;
+                    }                    
                 }
                 h3, span {
                     display: block;
@@ -7262,6 +7292,13 @@ div[id^="inline-"] {
                         font-size: 0.9em;
                     }
                 }
+            }
+            &:hover {
+                @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
             }
         }
     }
@@ -7320,8 +7357,11 @@ div[id^="inline-"] {
                 padding-left: 1%;
             }
             &:hover {
-                opacity: 0.8;
                 @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
             }
             @media only screen and (max-width: 600px) {
                 &:nth-child(n) {
