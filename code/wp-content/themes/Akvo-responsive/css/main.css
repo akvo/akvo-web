@@ -32,6 +32,7 @@
 /* Akvo Kaki (Greenish Brown) */
 /* Akvo Off White */
 /* Akvo darkish blue / Water Point */
+/* Colors for the 2015 homepage redesign */
 /* Media Queries
   ========================================================================== */
 /* Placeholder
@@ -505,26 +506,28 @@ footer a:visited {
 .seeMore {
   margin: 1em auto; }
 
-.moreLink {
-  background: url("../images/moreLink.png") right bottom no-repeat;
-  display: table;
-  font-size: 0.9em;
-  font-weight: normal;
-  height: 19px;
-  padding: 3px 28px 3px 0em; }
+.tooltipContainer {
+  position: absolute;
+  top: 0;
+  right: 0; }
+  .tooltipContainer .tooltipTrigger {
+    right: 5px; }
+  .tooltipContainer .tooltips {
+    position: absolute;
+    background: #202024;
+    width: 350px;
+    top: 25px;
+    right: 5px;
+    -moz-border-radius: 2px;
+    -o-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    padding: 5px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    display: none; }
+    .tooltipContainer .tooltips p {
+      color: white; }
 
-.moreLink:hover {
-  background: url("../images/moreLink.png") right bottom no-repeat; }
-
-.tooltips {
-  background: url("../images/helpIcn.png") right bottom no-repeat; }
-
-.tooltips:hover {
-  background: url("../images/helpIcn.png") right bottom no-repeat; }
-
-@media only screen and (max-width: 768px) {
-  .tooltips {
-    display: none; } }
 /* nav toggle
 --------------------------------------------- */
 nav li {
@@ -2920,18 +2923,8 @@ p#allowed_tags code {
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
-li.problem a {
-  color: #e31b23;
-  opacity: 1;
-  -moz-transition: opacity 0.2s linear;
-  -o-transition: opacity 0.2s linear;
-  -webkit-transition: opacity 0.2s linear;
-  transition: opacity 0.2s linear; }
-  li.problem a:hover {
-    opacity: 0.7; }
-
 .menu-footer-menu-container {
-  background: black; }
+  background: #2e1353; }
 
 #menu-footer-menu {
   width: 100%;
@@ -2958,6 +2951,12 @@ footer .menu {
 footer .menu > li {
   padding: 0em 0em 0em 1.5%;
   display: inline; }
+  footer .menu > li a {
+    color: white; }
+    footer .menu > li a.problem {
+      color: #e31b23; }
+  footer .menu > li.problem a {
+    color: #e31b23 !important; }
 
 @media only screen and (max-width: 768px) {
   footer .menu > li {
@@ -3003,7 +3002,8 @@ footer.bottomPage section#siteMap h3:nth-of-type(2n) {
 div.socialAkvo h1.backLinedGrey {
   margin: -10px auto 0em auto;
   text-align: center;
-  width: 80%; }
+  width: 80%;
+  color: #2e1353; }
 
 div.socialAkvo .backLinedGrey span {
   background: transparent; }
@@ -3015,11 +3015,11 @@ footer.bottomPage section#siteMap div.socialAkvo {
 
 @media only screen and (max-width: 768px) {
   footer.bottomPage section#siteMap div.socialAkvo {
-    float: left;
+    float: none;
     margin: 20px auto 10px;
     width: 100%; } }
-footer.bottomPage section#siteMap div.socialAkvo h1 {
-  color: #de8929; }
+footer.bottomPage section#siteMap {
+  background: white; }
 
 footer.bottomPage section#siteMap div.socialAkvo div.newsLetter {
   display: block;
@@ -3187,12 +3187,12 @@ footer.bottomPage section#siteMap nav.socialLinks li a {
   display: block;
   float: left;
   height: 100%;
-  opacity: 1;
+  opacity: 0.5;
   text-indent: -9999px;
   width: 100%; }
 
 footer.bottomPage section#siteMap nav.socialLinks li a:hover {
-  opacity: 0.5; }
+  opacity: 1; }
 
 footer.bottomPage section#siteMap nav.socialLinks li.twitter a {
   background: url("../images/socialTwitter.png") center center no-repeat; }
@@ -4104,8 +4104,10 @@ section.flowMonDescr {
 @-webkit-keyframes highlight {
   0% {
     background: #fff3cc; }
+
   100% {
     background: none; } }
+
 .hubs li {
   margin: 70px auto 0;
   max-width: 800px;
@@ -4479,21 +4481,21 @@ ul.staff li:nth-child(6n) {
   height: 70px;
   transition: all 0.2s ease-in; }
   .helpSupport nav ul li a.rsrHelp {
-    background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top transparent;
+    background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
     background-size: 50% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
       .helpSupport nav ul li a.rsrHelp {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.flowHelp {
-    background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top transparent;
+    background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
     background-size: 56% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
       .helpSupport nav ul li a.flowHelp {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.akvopediaHelp {
-    background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top transparent;
+    background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
     background-size: 65% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
@@ -4520,15 +4522,15 @@ ul.staff li:nth-child(6n) {
       background-size: 80% 80%; }
 
 h1.rsrHelp {
-  background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
+  background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
   background-size: auto 56px;
   text-indent: -9999px; }
 h1.flowHelp {
-  background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
+  background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
   background-size: auto 56px;
   text-indent: -9999px; }
 h1.akvopediaHelp {
-  background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
+  background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
   background-size: auto 56px;
   text-indent: -9999px; }
 
@@ -5565,18 +5567,22 @@ div[id^="inline-"] {
 .nutshell .headerImage img {
   width: 100%; }
 .nutshell .columnText, .nutshell .introText .introTextWrapper, .nutshell .openSource .osText {
-  max-width: 600px;
+  max-width: 550px;
   width: 90%;
   margin: 0 auto;
   text-align: center; }
   .nutshell .columnText *, .nutshell .introText .introTextWrapper *, .nutshell .openSource .osText * {
     text-align: center; }
 .nutshell .introText {
-  background-color: whitesmoke;
-  padding: 2em 0; }
+  padding: 0 0 2em 0; }
+  .nutshell .introText h2 {
+    font-size: 1.7em; }
+  .nutshell .introText p {
+    margin-bottom: 1.6em; }
 .nutshell .nutPoints {
-  margin-top: 2em;
-  margin-bottom: 3.5em; }
+  padding-top: 2em;
+  padding-bottom: 3.5em;
+  background: whitesmoke; }
   .nutshell .nutPoints .nutPoint {
     width: 25%;
     margin: 0 4%;
@@ -5616,7 +5622,6 @@ div[id^="inline-"] {
           .nutshell .nutPoints .nutPoint .pointText * {
             text-align: center; } }
 .nutshell .openSource {
-  background: whitesmoke;
   padding: 2em 0; }
   .nutshell .openSource img {
     display: block;
@@ -5646,4 +5651,319 @@ div[id^="inline-"] {
       -webkit-border-radius: 0.4em;
       border-radius: 0.4em; }
 
-/*# sourceMappingURL=main.css.map */
+/*-----------------------------------
+    Homepage 2015   
+------------------------------------*/
+.tagLine h1 {
+  text-align: center;
+  font-size: 1.75em; }
+
+.topIcons .topIcon {
+  width: 12%;
+  margin: 0 6%;
+  display: inline-block;
+  vertical-align: top; }
+  @media only screen and (max-width: 768px) {
+    .topIcons .topIcon {
+      width: 30%;
+      margin: 0 9% 2em 9%; } }
+.topIcons .readMoreContainer {
+  width: 25%;
+  margin: 0;
+  position: relative;
+  display: inline-block; }
+  @media only screen and (max-width: 768px) {
+    .topIcons .readMoreContainer {
+      width: 30%;
+      margin: 0 9%; } }
+  .topIcons .readMoreContainer a {
+    display: block;
+    vertical-align: top;
+    width: 70%;
+    padding: 0.5em 0;
+    font-size: 1em;
+    color: white;
+    background-color: #2c2a74;
+    text-align: center;
+    -moz-border-radius: 0.4em;
+    -o-border-radius: 0.4em;
+    -webkit-border-radius: 0.4em;
+    border-radius: 0.4em;
+    text-transform: uppercase;
+    margin: 3em auto; }
+    .topIcons .readMoreContainer a:hover {
+      background-color: #181660; }
+    .topIcons .readMoreContainer a:active {
+      background-color: #04024c; }
+    @media only screen and (max-width: 1200px) {
+      .topIcons .readMoreContainer a {
+        margin-top: 2.5em; } }
+    @media only screen and (max-width: 992px) {
+      .topIcons .readMoreContainer a {
+        margin-top: 2em; } }
+    @media only screen and (max-width: 768px) {
+      .topIcons .readMoreContainer a {
+        margin-top: 4.5em; } }
+    @media only screen and (max-width: 650px) {
+      .topIcons .readMoreContainer a {
+        font-size: 90%; } }
+    @media only screen and (max-width: 550px) {
+      .topIcons .readMoreContainer a {
+        font-size: 80%; } }
+    @media only screen and (max-width: 450px) {
+      .topIcons .readMoreContainer a {
+        margin-top: 3.5em; } }
+    @media only screen and (max-width: 400px) {
+      .topIcons .readMoreContainer a {
+        margin-top: 2em; } }
+
+.featuredItems {
+  margin-top: 1.5em; }
+  @media only screen and (max-width: 1024px) {
+    .featuredItems {
+      margin-top: 2em; } }
+  .featuredItems .orange img {
+    border-bottom: 12px solid #de8929; }
+  .featuredItems .green img {
+    border-bottom: 12px solid #74b631; }
+  .featuredItems .yellow img {
+    border-bottom: 12px solid #ffd200; }
+  .featuredItems .pink img {
+    border-bottom: 12px solid #db87c9; }
+  .featuredItems .lightblue img {
+    border-bottom: 12px solid #72cdff; }
+  .featuredItems .darkblue img {
+    border-bottom: 12px solid #2c2a74; }
+  .featuredItems .row {
+    margin-bottom: 1.5em; }
+    @media only screen and (max-width: 1024px) {
+      .featuredItems .row {
+        margin-top: 2em; } }
+    .featuredItems .row .item {
+      display: inline-block;
+      margin: 0; }
+      .featuredItems .row .item:first-child {
+        margin-right: 2.5%; }
+        @media only screen and (max-width: 1024px) {
+          .featuredItems .row .item:first-child {
+            margin-right: 4%; } }
+      .featuredItems .row .item img {
+        width: 100%; }
+  .featuredItems .longItem {
+    width: 58.2%; }
+    @media only screen and (max-width: 1024px) {
+      .featuredItems .longItem {
+        width: 56.5%; } }
+  .featuredItems .shortItem {
+    width: 38.8%; }
+    @media only screen and (max-width: 1024px) {
+      .featuredItems .shortItem {
+        width: 37.6%; } }
+  @media only screen and (max-width: 768px) {
+    .featuredItems .row {
+      margin: 0; }
+      .featuredItems .row .item, .featuredItems .row .longItem, .featuredItems .row .shortItem {
+        display: block;
+        margin: 0;
+        width: 100%;
+        padding-top: 1em;
+        padding-bottom: 1em; } }
+  .featuredItems a:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .featuredItems a:active {
+    opacity: 0.6; }
+
+.homepage-2015 .wrapper, .productPage-2015 .wrapper {
+  width: 90%; }
+
+.homepage-2015 .topIcons {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+.homepage-2015 #actionHeroBox {
+  border: none;
+  width: 90%; }
+  .homepage-2015 #actionHeroBox .bxslider li {
+    border-bottom: 12px solid rgba(0, 0, 0, 0); }
+    .homepage-2015 #actionHeroBox .bxslider li.orange {
+      border-bottom: 12px solid #de8929; }
+      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo {
+        background: rgba(222, 137, 41, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.green {
+      border-bottom: 12px solid #74b631; }
+      .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo {
+        background: rgba(116, 182, 49, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.yellow {
+      border-bottom: 12px solid #ffd200; }
+      .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo {
+        background: rgba(255, 210, 0, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.pink {
+      border-bottom: 12px solid #db87c9; }
+      .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo {
+        background: rgba(219, 135, 201, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.lightblue {
+      border-bottom: 12px solid #72cdff; }
+      .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo {
+        background: rgba(114, 205, 255, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.darkblue {
+      border-bottom: 12px solid #2c2a74; }
+      .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo {
+        background: rgba(44, 42, 116, 0.6); }
+    .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo {
+      color: white; }
+      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h2 {
+        color: #2c2a74; }
+      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a {
+        color: white; }
+        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:hover {
+          opacity: 0.8; }
+        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:active {
+          opacity: 0.6; }
+    @media only screen and (max-width: 768px) {
+      .homepage-2015 #actionHeroBox .bxslider li #actionHeroInfo {
+        display: block;
+        width: 100%;
+        padding-left: 0em !important;
+        padding-right: 0em !important;
+        padding-top: 0.1em !important;
+        padding-bottom: 3.5em !important;
+        margin: 0;
+        margin-bottom: -0.5em;
+        -moz-border-radius: 0em;
+        -o-border-radius: 0em;
+        -webkit-border-radius: 0em;
+        border-radius: 0em; } }
+  @media only screen and (max-width: 768px) {
+    .homepage-2015 #actionHeroBox .bx-wrapper .bx-pager.bx-default-pager {
+      bottom: 5px; } }
+.homepage-2015 .smallItems > div {
+  display: inline-block;
+  width: 23%;
+  margin-right: 2%;
+  vertical-align: top; }
+  .homepage-2015 .smallItems > div:last-child {
+    margin-right: 0; }
+  @media only screen and (max-width: 992px) {
+    .homepage-2015 .smallItems > div {
+      width: 22.5%; } }
+  @media only screen and (max-width: 768px) {
+    .homepage-2015 .smallItems > div {
+      width: 47.3%;
+      margin-top: 1em;
+      margin-bottom: 1em; }
+      .homepage-2015 .smallItems > div:nth-child(odd) {
+        margin-right: 2%; } }
+  @media only scren and (max-width: 500px) {
+    .homepage-2015 .smallItems > div {
+      width: 46.9%; } }
+  .homepage-2015 .smallItems > div a {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 auto; }
+    .homepage-2015 .smallItems > div a > div {
+      height: 150px;
+      background-size: cover;
+      background-position: center; }
+      @media only screen and (max-width: 992px) {
+        .homepage-2015 .smallItems > div a > div {
+          height: 125px; } }
+      @media only screen and (max-width: 992px) {
+        .homepage-2015 .smallItems > div a > div {
+          height: 175px; } }
+      @media only screen and (max-width: 500px) {
+        .homepage-2015 .smallItems > div a > div {
+          height: 100px; } }
+    .homepage-2015 .smallItems > div a h3, .homepage-2015 .smallItems > div a span {
+      display: block;
+      max-width: 95%;
+      margin: 0 auto; }
+    .homepage-2015 .smallItems > div a h3 {
+      text-transform: uppercase;
+      font-size: 1.1em;
+      padding: 0.1em 0;
+      color: #2c2a74; }
+      @media only screen and (max-width: 992px) {
+        .homepage-2015 .smallItems > div a h3 {
+          font-size: 1em; } }
+    .homepage-2015 .smallItems > div a span {
+      color: black;
+      font-size: 1em; }
+      @media only screen and (max-width: 992px) {
+        .homepage-2015 .smallItems > div a span {
+          font-size: 0.9em; } }
+  .homepage-2015 .smallItems > div:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .homepage-2015 .smallItems > div:active {
+    opacity: 0.6; }
+
+.productPage-2015 .topIcons {
+  background-color: #f7f4ea;
+  padding: 2em 0;
+  margin-top: 1em;
+  margin-bottom: 1em; }
+.productPage-2015 .orange {
+  border-bottom: 12px solid #de8929; }
+.productPage-2015 .yellow {
+  border-bottom: 12px solid #ffd200; }
+.productPage-2015 .green {
+  border-bottom: 12px solid #74b631; }
+.productPage-2015 .pink {
+  border-bottom: 12px solid #db87c9; }
+.productPage-2015 .lightblue {
+  border-bottom: 12px solid #72cdff; }
+.productPage-2015 .darkblue {
+  border-bottom: 12px solid #2c2a74; }
+.productPage-2015 .bigImage {
+  margin-top: 1em;
+  margin-bottom: 1em; }
+  .productPage-2015 .bigImage img {
+    width: 100%; }
+  .productPage-2015 .bigImage:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .productPage-2015 .bigImage:active {
+    opacity: 0.6; }
+.productPage-2015 .products * {
+  box-sizing: border-box; }
+.productPage-2015 .products a {
+  display: inline-block;
+  width: 39.5%;
+  vertical-align: top;
+  padding-top: 1em; }
+  .productPage-2015 .products a:nth-child(1), .productPage-2015 .products a:nth-child(4n), .productPage-2015 .products a:nth-child(4n+1) {
+    width: 59.5%; }
+  .productPage-2015 .products a:nth-child(odd) {
+    padding-right: 1%; }
+  .productPage-2015 .products a:nth-child(even) {
+    padding-left: 1%; }
+  .productPage-2015 .products a:hover {
+    -moz-transition: opacity 200ms ease-in-out;
+    -o-transition: opacity 200ms ease-in-out;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    opacity: 0.8; }
+  .productPage-2015 .products a:active {
+    opacity: 0.6; }
+  @media only screen and (max-width: 600px) {
+    .productPage-2015 .products a:nth-child(n) {
+      display: block;
+      width: 100%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 1em;
+      padding-bottom: 0;
+      margin: 0; } }
+.productPage-2015 .products img {
+  display: block;
+  width: 100%; }

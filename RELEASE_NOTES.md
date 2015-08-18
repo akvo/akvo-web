@@ -1,3 +1,16 @@
+Thursday 9 July 2015, @lynngre
+
+--------
+Akvo.org v1.1.16  Quantum Quandong HOT FIX
+---
+
+An update to the jquery library in v1.1.16 broke the layout of our partner and team pages.
+
+The problem:  #681 
+
+The fix:  #692 
+
+
 Tuesday 7 July 2015, @lynngre
 
 --------

@@ -3,6 +3,7 @@
 
 $("document").ready(function() {
 
+
     // Fixes the Zooming while scrolling on google map iframe.
     $(document).bind('em_maps_location_hook', function(e, map, infowindow, marker) {
         // Disable scroll zoom on Google Maps
@@ -67,7 +68,7 @@ $("document").ready(function() {
         $('#staffDescr p.staffTitle').html(staffTitle);
         $('#staffDescr p.staffBio').html(biog);
         $('#staffDescr .imgWrapper').html(staffPic);
-        $('#descrDialog .cancel').click( function(e) {
+        $('#descrDialog .cancel').click(function(e) {
             e.stopPropagation();
             closeDialog('#descrDialog');
         });
@@ -77,6 +78,11 @@ $("document").ready(function() {
         closeDialog('#descrDialog');
     });
 
+
+    $('.tooltipContainer > .tooltips').css('display','none');
+    $('.tooltipContainer > .tooltipTrigger').hover(function(){
+      $(this).next('.tooltips').css('display','block');
+    });
 
     $('#partnershipGroup ul').append($('li.partnerships'));
     $('#communicationGroup ul').append($('li.communication-pr'));
@@ -93,6 +99,14 @@ $("document").ready(function() {
     $('#intGovGroup ul').append($('li.inter-governmental'));
     $('#ngoGroup ul').append($('li.ngos'));
     $('#knowledgeGroup ul').append($('li.knowledge-institutes'));
+
+    $('.tooltipContainer > div.tooltips').css('display', 'none');
+    $('.tooltipContainer > a.tooltipTrigger').hover(function() {
+        $(this).next('div.tooltips').css('display', 'block');
+    }, function() {
+            $( this ).next('div.tooltips').css('display', 'none');
+          });
+
 
 });
 
