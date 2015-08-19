@@ -6984,6 +6984,12 @@ div[id^="inline-"] {
                 color: white;
                 background-color: $akvoLink;
                 @include border-radius(0.4em);
+                &:hover {
+                    background: rgb(75, 166, 199);
+                }
+                &:active {
+                    background: rgb(95, 186, 219);
+                }
             }
         }
     }
