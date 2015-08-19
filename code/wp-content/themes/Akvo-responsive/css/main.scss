@@ -7105,15 +7105,15 @@ div[id^="inline-"] {
         }
     }
     .longItem {
-        width: 58.2%;
+        width: 58.5%;
         @media only screen and (max-width: $width-med) {
-            width: 56.5%;
+            width: 57.6%;
         }
     }
     .shortItem {
-        width: 38.8%;
+        width: 39%;
         @media only screen and (max-width: $width-med) {
-            width: 37.6%;
+            width: 38.4%;
         }
     }
     @media only screen and (max-width: $width-small) {
@@ -7237,25 +7237,29 @@ div[id^="inline-"] {
     .smallItems {
         >div {
             display: inline-block;
-            width: 23%;
+            width: 23.5%;
             margin-right: 2%;
             vertical-align: top;
             &:last-child {
                 margin-right: 0;
             }
             @media only screen and (max-width: $width-medium) {
-                width: 22.5%;
+                width: 22.75%;
+                margin-right: 3%;
+                &:last-child {
+                    margin-right: 0;
+                }                
             }
             @media only screen and (max-width: $width-small) {
-                width: 47.3%;
+                width: 48%;
                 margin-top: 1em;
                 margin-bottom: 1em;
                 &:nth-child(odd) {
-                    margin-right: 2%;
+                    margin-right: 4%;
                 }
-            }
-            @media only scren and(max-width: 500px) {
-                width: 46.9%;
+                &:nth-child(even) {
+                    margin-right: 0%;
+                }
             }             
             a {
                 display: block;
@@ -7269,7 +7273,7 @@ div[id^="inline-"] {
                     @media only screen and (max-width: $width-medium) {
                         height: 125px;
                     }
-                    @media only screen and (max-width: $width-medium) {
+                    @media only screen and (max-width: $width-small) {
                         height: 175px;
                     }
                     @media only screen and(max-width: 500px) {
