@@ -30,13 +30,11 @@
     </a>
   </section>
 
+  <!-- The ugly formatting here is necessary to prevent whitepace or newlines between the
+  elements, which interferes with wrapping when widths add up to 100% -->
   <section class="products wrapper">
     <?php if( have_rows('products') ): ?>
-      <?php while( have_rows('products') ): the_row(); ?>
-        <a href="<?php the_sub_field('product_link'); ?>">
-          <img class="<?php the_sub_field('product_color'); ?>" src="<?php the_sub_field('product_image'); ?>">
-        </a>
-      <?php endwhile; ?>
+<?php while( have_rows('products') ): the_row(); ?><a href="<?php the_sub_field('product_link'); ?>"><img class="<?php the_sub_field('product_color'); ?>" src="<?php the_sub_field('product_image'); ?>"></a><?php endwhile; ?>
     <?php endif; ?>
   </section>
 </div>

@@ -5750,15 +5750,15 @@ div[id^="inline-"] {
       .featuredItems .row .item img {
         width: 100%; }
   .featuredItems .longItem {
-    width: 58.2%; }
+    width: 58.5%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .longItem {
-        width: 56.5%; } }
+        width: 57.6%; } }
   .featuredItems .shortItem {
-    width: 38.8%; }
+    width: 39%; }
     @media only screen and (max-width: 1024px) {
       .featuredItems .shortItem {
-        width: 37.6%; } }
+        width: 38.4%; } }
   @media only screen and (max-width: 768px) {
     .featuredItems .row {
       margin: 0; }
@@ -5841,24 +5841,26 @@ div[id^="inline-"] {
       bottom: 5px; } }
 .homepage-2015 .smallItems > div {
   display: inline-block;
-  width: 23%;
+  width: 23.5%;
   margin-right: 2%;
   vertical-align: top; }
   .homepage-2015 .smallItems > div:last-child {
     margin-right: 0; }
   @media only screen and (max-width: 992px) {
     .homepage-2015 .smallItems > div {
-      width: 22.5%; } }
+      width: 22.75%;
+      margin-right: 3%; }
+      .homepage-2015 .smallItems > div:last-child {
+        margin-right: 0; } }
   @media only screen and (max-width: 768px) {
     .homepage-2015 .smallItems > div {
-      width: 47.3%;
+      width: 48%;
       margin-top: 1em;
       margin-bottom: 1em; }
       .homepage-2015 .smallItems > div:nth-child(odd) {
-        margin-right: 2%; } }
-  @media only scren and (max-width: 500px) {
-    .homepage-2015 .smallItems > div {
-      width: 46.9%; } }
+        margin-right: 4%; }
+      .homepage-2015 .smallItems > div:nth-child(even) {
+        margin-right: 0%; } }
   .homepage-2015 .smallItems > div a {
     display: block;
     position: relative;
@@ -5871,7 +5873,7 @@ div[id^="inline-"] {
       @media only screen and (max-width: 992px) {
         .homepage-2015 .smallItems > div a > div {
           height: 125px; } }
-      @media only screen and (max-width: 992px) {
+      @media only screen and (max-width: 768px) {
         .homepage-2015 .smallItems > div a > div {
           height: 175px; } }
       @media only screen and (max-width: 500px) {
@@ -5938,11 +5940,11 @@ div[id^="inline-"] {
   box-sizing: border-box; }
 .productPage-2015 .products a {
   display: inline-block;
-  width: 39.5%;
+  width: 40.175%;
   vertical-align: top;
   padding-top: 1em; }
   .productPage-2015 .products a:nth-child(1), .productPage-2015 .products a:nth-child(4n), .productPage-2015 .products a:nth-child(4n+1) {
-    width: 59.5%; }
+    width: 59.825%; }
   .productPage-2015 .products a:nth-child(odd) {
     padding-right: 1%; }
   .productPage-2015 .products a:nth-child(even) {
