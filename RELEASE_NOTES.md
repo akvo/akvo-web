@@ -1,3 +1,70 @@
+Tuesday 18 August 2015, @lynngre
+
+--------
+Akvo.org v1.2.0 Retrocognition Rhubarb
+---
+
+## New & noteworthy
+
+We've given our homepage a facelift!  
+
+The site has been updated to explain as clearly as possible what we do. We’re keen to help existing and new partners use data to improve decision making and are in [Stockholm](http://akvo.org/blog/akvo-stockholm9-team-world-water-week-2015/ "Stockholm") next week to engage with people on exactly that. 
+
+In trying to describe Akvo 'in a nutshell' we've also updated our [About Us](http://akvo.org/about-us/ "About us") page in line with the above.
+
+We have a shiny new [Akvo Tools](http://akvo.org/products/ "Akvo tools") page too.
+
+## New features
+
+###  About us
+
+Updated to reflect data to decision.  Customisable by Comms team.
+
+Github issue: #673 
+
+###  Homepage
+
+Updated to reflect data to decision.  Includes new header, different content boxes of various sizes.
+
+Github issue: #632  
+
+###  Akvo Tools
+
+Product page with only four product buckets,  is replaced by the new Akvo tools page with customisable boxes of various sizes.
+
+Github issue: #672   
+
+
+## Bug fixes & changes
+
+###  Footer
+
+Footer has been updated.
+
+Github issue: #703 
+
+### Simple tooltips replacement
+
+Plugin was creating errors on the page.  This has been replaced with our own code.  Use of Simple Tooltips is no longer required.
+
+Github issue:  #634 
+
+### Remove header image tag from about us
+
+Github issue:  #723 
+
+
+Wednesday 10 June 2015, @lynngre
+
+--------
+Akvo.org WordPress v4.2.2
+---
+
+## Security release
+
+https://codex.wordpress.org/Version_4.2.2 latest release security & maintenance.
+
+
 Thursday 9 July 2015, @lynngre
 
 --------
