@@ -7159,6 +7159,9 @@ div[id^="inline-"] {
     #actionHeroBox {
         border: none;
         width: 90%;
+        .bx-wrapper, .bx-viewport {
+            overflow: hidden;
+        }
         .bxslider {
             li {
                 border-bottom: 12px solid rgba(0, 0, 0, 0);

@@ -5790,6 +5790,8 @@ div[id^="inline-"] {
 .homepage-2015 #actionHeroBox {
   border: none;
   width: 90%; }
+  .homepage-2015 #actionHeroBox .bx-wrapper, .homepage-2015 #actionHeroBox .bx-viewport {
+    overflow: hidden; }
   .homepage-2015 #actionHeroBox .bxslider li {
     border-bottom: 12px solid rgba(0, 0, 0, 0); }
     .homepage-2015 #actionHeroBox .bxslider li.orange {
