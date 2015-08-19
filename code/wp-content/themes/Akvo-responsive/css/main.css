@@ -5940,11 +5940,11 @@ div[id^="inline-"] {
   box-sizing: border-box; }
 .productPage-2015 .products a {
   display: inline-block;
-  width: 39.5%;
+  width: 40.175%;
   vertical-align: top;
   padding-top: 1em; }
   .productPage-2015 .products a:nth-child(1), .productPage-2015 .products a:nth-child(4n), .productPage-2015 .products a:nth-child(4n+1) {
-    width: 59.5%; }
+    width: 59.825%; }
   .productPage-2015 .products a:nth-child(odd) {
     padding-right: 1%; }
   .productPage-2015 .products a:nth-child(even) {
