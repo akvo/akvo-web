@@ -4678,7 +4678,7 @@ section.rsrNuggetsSection li h3 {
 
 .akvoSitesProdPag hgroup h1 {
     height: 55px;
-    background: url("../images/akvosites/akvosites_logo_gold_400x75px.png") center center no-repeat;
+    background: url("../images/akvosites/akvosites_logo_yellow_400x75px.png") center center no-repeat;
     background-size: auto 40px;
 }
 
@@ -6984,6 +6984,12 @@ div[id^="inline-"] {
                 color: white;
                 background-color: $akvoLink;
                 @include border-radius(0.4em);
+                &:hover {
+                    background: rgb(75, 166, 199);
+                }
+                &:active {
+                    background: rgb(95, 186, 219);
+                }
             }
         }
     }
@@ -7105,15 +7111,15 @@ div[id^="inline-"] {
         }
     }
     .longItem {
-        width: 58.2%;
+        width: 58.5%;
         @media only screen and (max-width: $width-med) {
-            width: 56.5%;
+            width: 57.6%;
         }
     }
     .shortItem {
-        width: 38.8%;
+        width: 39%;
         @media only screen and (max-width: $width-med) {
-            width: 37.6%;
+            width: 38.4%;
         }
     }
     @media only screen and (max-width: $width-small) {
@@ -7153,6 +7159,9 @@ div[id^="inline-"] {
     #actionHeroBox {
         border: none;
         width: 90%;
+        .bx-wrapper, .bx-viewport {
+            overflow: hidden;
+        }
         .bxslider {
             li {
                 border-bottom: 12px solid rgba(0, 0, 0, 0);
@@ -7237,25 +7246,29 @@ div[id^="inline-"] {
     .smallItems {
         >div {
             display: inline-block;
-            width: 23%;
+            width: 23.5%;
             margin-right: 2%;
             vertical-align: top;
             &:last-child {
                 margin-right: 0;
             }
             @media only screen and (max-width: $width-medium) {
-                width: 22.5%;
+                width: 22.75%;
+                margin-right: 3%;
+                &:last-child {
+                    margin-right: 0;
+                }                
             }
             @media only screen and (max-width: $width-small) {
-                width: 47.3%;
+                width: 48%;
                 margin-top: 1em;
                 margin-bottom: 1em;
                 &:nth-child(odd) {
-                    margin-right: 2%;
+                    margin-right: 4%;
                 }
-            }
-            @media only scren and(max-width: 500px) {
-                width: 46.9%;
+                &:nth-child(even) {
+                    margin-right: 0%;
+                }
             }             
             a {
                 display: block;
@@ -7269,7 +7282,7 @@ div[id^="inline-"] {
                     @media only screen and (max-width: $width-medium) {
                         height: 125px;
                     }
-                    @media only screen and (max-width: $width-medium) {
+                    @media only screen and (max-width: $width-small) {
                         height: 175px;
                     }
                     @media only screen and(max-width: 500px) {
@@ -7354,13 +7367,13 @@ div[id^="inline-"] {
         }
         a {
             display: inline-block;
-            width: 39.5%;
+            width: 40.175%;
             vertical-align: top;
             padding-top: 1em;
             &:nth-child(1),
             &:nth-child(4n),
             &:nth-child(4n+1) {
-                width: 59.5%;
+                width: 59.825%;
             }
             &:nth-child(odd) {
                 padding-right: 1%;

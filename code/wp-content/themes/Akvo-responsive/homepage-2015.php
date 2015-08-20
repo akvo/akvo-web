@@ -55,14 +55,15 @@
     <?php endif; wp_reset_query(); ?>
   </section>
 
+  <!-- In the next two sections, "item" elements must have no whitespace or newlines
+  between theme, else they will not wrap properly when widths add up to 100% -->
   <section class="featuredItems wrapper">
     <div class="row row1">
       <div class="row1 item longItem <?php the_field('fi_row1_long_class'); ?>">
         <a href="<?php the_field('fi_row1_long_link'); ?>">
           <img src="<?php the_field('fi_row1_long_img'); ?>">
         </a>
-      </div>
-      <div class="row1 item shortItem <?php the_field('fi_row1_short_class'); ?>">
+      </div><div class="row1 item shortItem <?php the_field('fi_row1_short_class'); ?>">
         <a href="<?php the_field('fi_row1_short_link'); ?>">
           <img src="<?php the_field('fi_row1_short_img'); ?>">
         </a>
@@ -73,8 +74,7 @@
         <a href="<?php the_field('fi_row2_short_link'); ?>">
           <img src="<?php the_field('fi_row2_short_img'); ?>">
         </a>
-      </div>
-      <div class="row2 item longItem <?php the_field('fi_row2_long_class'); ?>">
+      </div><div class="row2 item longItem <?php the_field('fi_row2_long_class'); ?>">
         <a href="<?php the_field('fi_row2_long_link'); ?>">
           <img src="<?php the_field('fi_row2_long_img'); ?>">
         </a>
@@ -83,7 +83,6 @@
   </section>
 
   <section class="smallItems wrapper">
-
     <div class="item1 latestBlog">
       <?php
         $args = array( 'numberposts' => 1 );
@@ -101,8 +100,7 @@
         </a>
       <?php endforeach; ?>
       <?php wp_reset_query(); ?>
-    </div>
-    <div class="item2 latestRSR">
+    </div><div class="item2 latestRSR">
       <a href="" class="update_url">
         <div class="update_img_url"></div>
         <h3>
@@ -111,8 +109,7 @@
         <span class="text update_title">
         </span>
       </a>
-    </div>
-    <div class="item3 <?php the_field('si_item3_class'); ?>">
+    </div><div class="item3 <?php the_field('si_item3_class'); ?>">
       <a href="<?php the_field('si_item3_link'); ?>">
         <div style="background-image: url('<?php the_field('si_item3_img'); ?>')"></div>
         <h3>
@@ -122,8 +119,7 @@
           <?php the_field('si_item3_text'); ?>
         </span>
       </a>
-    </div>
-    <div class="item4 <?php the_field('si_item4_class'); ?>">
+    </div><div class="item4 <?php the_field('si_item4_class'); ?>">
       <a href="<?php the_field('si_item4_link'); ?>">
         <div style="background-image: url('<?php the_field('si_item4_img'); ?>')"></div>
         <h3>
