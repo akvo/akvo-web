@@ -1848,18 +1848,27 @@ body.home h1.akvoDescr {
 @media only screen and (max-width: 768px) {
   #actionHeroBox img {
     margin-top: 0em !important; } }
-#actionHeroBox #image {
+#actionHeroBox #image, #actionHeroBox .videoSlide {
   padding-bottom: 46%;
   background-position: center center;
   background-size: cover; }
+  @media only screen and (min-width: 768px) {
+    #actionHeroBox #image, #actionHeroBox .videoSlide {
+      padding-bottom: 38%; } }
+  @media only screen and (min-width: 1400px) {
+    #actionHeroBox #image, #actionHeroBox .videoSlide {
+      padding-bottom: 0;
+      height: 532px; } }
+#actionHeroBox .videoSlide {
+  position: relative;
+  overflow: hidden; }
+  #actionHeroBox .videoSlide video {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0; }
 
-@media only screen and (min-width: 768px) {
-  #actionHeroBox #image {
-    padding-bottom: 38%; } }
-@media only screen and (min-width: 1400px) {
-  #actionHeroBox #image {
-    padding-bottom: 0;
-    height: 532px; } }
 #actionHeroBox #actionHeroInfo {
   -moz-border-radius: 0.5em;
   -o-border-radius: 0.5em;
