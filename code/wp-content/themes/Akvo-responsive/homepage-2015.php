@@ -31,7 +31,16 @@
         <?php while (have_posts()) : the_post(); ?>
           <li class="<?php the_field('hero_box_color'); ?>">
             <div class="borderTop"></div>
-            <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+            <?php if (get_field('hero_box_slide_type')=='video'): ?>
+              <div class="videoSlide">
+                <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
+                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg">
+                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4"> 
+                </video>
+              </div>
+            <?php else: ?>
+              <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+            <?php endif ?>
             <div>
             <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
               <p>
@@ -163,6 +172,7 @@ $(function() {
 });   
 $(document).ready(function() {
     $('.bxslider').bxSlider();
+    $('video')[0].play();
 });
 </script>
 

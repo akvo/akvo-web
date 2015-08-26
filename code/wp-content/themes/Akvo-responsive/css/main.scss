@@ -2109,27 +2109,34 @@ body.home h1.akvoDescr {
     }
 }
 
-
-#actionHeroBox #image {
-    padding-bottom: 46%;
-    background-position: center center;
-    background-size: cover;
-}
-
-@include responsive(small-screens) {
-    #actionHeroBox #image {
-        padding-bottom: 38%;
+#actionHeroBox {
+    #image, .videoSlide {
+        padding-bottom: 46%;
+        background-position: center center;
+        background-size: cover;   
+        
+        @include responsive(small-screens) {
+            padding-bottom: 38%;
+        }   
+        @include responsive(huge-screens) {
+            padding-bottom: 0;
+            height: 532px;
+        }        
     }
-}
 
-
-@include responsive(huge-screens) {
-    #actionHeroBox #image {
-        padding-bottom: 0;
-        height: 532px;
+    .videoSlide {
+        position: relative;
+        overflow: hidden;
+        video {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
     }
-}
 
+}
 
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
