@@ -1859,6 +1859,20 @@ body.home h1.akvoDescr {
     #actionHeroBox #image, #actionHeroBox .videoSlide {
       padding-bottom: 0;
       height: 532px; } }
+#actionHeroBox .videoSlide.image {
+  /* Hide the video div if display type is "image" */
+  display: none; }
+#actionHeroBox #image.video {
+  /* Hide the image slide if display type is "video"... */
+  display: none; }
+  @media only screen and (max-width: 768px) {
+    #actionHeroBox #image.video {
+      /* ...unless we're on mobile */
+      display: block; } }
+@media only screen and (max-width: 768px) {
+  #actionHeroBox .videoSlide.video {
+    /* ...unless we're on mobile */
+    display: none; } }
 #actionHeroBox .videoSlide {
   position: relative;
   overflow: hidden; }
