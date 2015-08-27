@@ -32,15 +32,14 @@
           <li class="<?php the_field('hero_box_color'); ?>">
             <div class="borderTop"></div>
             <?php if (get_field('hero_box_slide_type')=='video'): ?>
-              <div class="videoSlide">
+              <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
                 <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
                   <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg">
                   <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4"> 
                 </video>
               </div>
-            <?php else: ?>
-              <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
             <?php endif ?>
+            <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
             <div>
             <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
               <p>
@@ -172,7 +171,24 @@ $(function() {
 });   
 $(document).ready(function() {
     $('.bxslider').bxSlider();
-    $('video')[0].play();
+    respondToWidth();
+
+    function respondToWidth() {
+      var vid = $('video');
+      if ($(document).width() >= 768) {
+        vid.attr('preload', 'auto');
+        vid[0].load();
+        vid[0].play();
+      } else {
+        vid.attr('preload', 'none');
+      }      
+    }
+
+    $(window).resize( function() {
+      if ($(document).width() >= 768) {
+        $('video')[0].play();
+      }
+    })
 });
 </script>
 

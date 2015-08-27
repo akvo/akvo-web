@@ -2123,6 +2123,24 @@ body.home h1.akvoDescr {
             height: 532px;
         }        
     }
+    .videoSlide.image {
+        /* Hide the video div if display type is "image" */
+        display: none;
+    }
+    #image.video {
+        /* Hide the image slide if display type is "video"... */
+        display: none;
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: block;
+        }
+    }
+    .videoSlide.video {
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: none;
+        }        
+    }
 
     .videoSlide {
         position: relative;
