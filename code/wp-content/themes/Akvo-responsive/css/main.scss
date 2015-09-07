@@ -2154,6 +2154,8 @@ body.home h1.akvoDescr {
             object-fit: cover;
         }
         .videoOverlay {
+            top: 0;
+            background-position: bottom;
             background-size: cover;
             overflow: hidden;
             z-index: 1;
