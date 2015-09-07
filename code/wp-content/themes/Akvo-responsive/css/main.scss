@@ -2147,13 +2147,15 @@ body.home h1.akvoDescr {
         overflow: hidden;
         video, .videoOverlay {
             position: absolute;
-            height: 100%;
+            width: 100%;
             left: 0;
             right: 0;
             bottom: 0;
             object-fit: cover;
         }
         .videoOverlay {
+            top: 0;
+            background-position: bottom;
             background-size: cover;
             overflow: hidden;
             z-index: 1;

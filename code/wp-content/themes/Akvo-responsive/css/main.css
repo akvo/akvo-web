@@ -1878,12 +1878,14 @@ body.home h1.akvoDescr {
   overflow: hidden; }
   #actionHeroBox .videoSlide video, #actionHeroBox .videoSlide .videoOverlay {
     position: absolute;
-    height: 100%;
+    width: 100%;
     left: 0;
     right: 0;
     bottom: 0;
     object-fit: cover; }
   #actionHeroBox .videoSlide .videoOverlay {
+    top: 0;
+    background-position: bottom;
     background-size: cover;
     overflow: hidden;
     z-index: 1; }
