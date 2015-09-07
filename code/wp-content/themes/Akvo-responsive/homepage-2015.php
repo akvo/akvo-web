@@ -33,6 +33,7 @@
             <div class="borderTop"></div>
             <?php if (get_field('hero_box_slide_type')=='video'): ?>
               <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
+                <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
                 <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
                   <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
                   <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
@@ -183,6 +184,15 @@ $(document).ready(function() {
         vid.attr('preload', 'none');
       }      
     }
+
+    // Hide the video overlay when the video is ready to play
+    $('video').on('canplay', function() {
+      $('.videoOverlay').hide();
+    });
+
+   $('video').on('error', function() {
+      $('.videoOverlay').show();
+    });
 
     $(window).resize( function() {
       if ($(document).width() >= 768) {

@@ -2145,12 +2145,15 @@ body.home h1.akvoDescr {
     .videoSlide {
         position: relative;
         overflow: hidden;
-        video {
+        video, .videoOverlay {
             position: absolute;
             width: 100%;
             left: 0;
             right: 0;
             bottom: 0;
+        }
+        .videoOverlay {
+            background-size: cover;
         }
     }
 

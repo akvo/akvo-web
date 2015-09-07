@@ -1876,12 +1876,14 @@ body.home h1.akvoDescr {
 #actionHeroBox .videoSlide {
   position: relative;
   overflow: hidden; }
-  #actionHeroBox .videoSlide video {
+  #actionHeroBox .videoSlide video, #actionHeroBox .videoSlide .videoOverlay {
     position: absolute;
     width: 100%;
     left: 0;
     right: 0;
     bottom: 0; }
+  #actionHeroBox .videoSlide .videoOverlay {
+    background-size: cover; }
 
 #actionHeroBox #actionHeroInfo {
   -moz-border-radius: 0.5em;
