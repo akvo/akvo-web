@@ -34,8 +34,8 @@
             <?php if (get_field('hero_box_slide_type')=='video'): ?>
               <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
                 <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
-                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg">
-                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4"> 
+                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
+                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
                 </video>
               </div>
             <?php endif ?>
