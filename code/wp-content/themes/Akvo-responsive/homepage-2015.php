@@ -33,18 +33,14 @@
             <div class="borderTop"></div>
             <?php if (get_field('hero_box_slide_type')=='video'): ?>
               <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
-                <a href="<?php the_field('hero_box_link'); ?>">
-                  <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
-                  <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
-                    <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
-                    <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
-                  </video>
-                </a>
+                <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
+                <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
+                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
+                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
+                </video>
               </div>
             <?php endif ?>
-            <a href="<?php the_field('hero_box_link'); ?>">
-              <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
-            </a>
+            <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
             <div>
             <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
               <p>
