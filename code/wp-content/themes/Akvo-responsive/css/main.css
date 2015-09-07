@@ -5769,6 +5769,8 @@ div[id^="inline-"] {
     border-bottom: 12px solid #72cdff; }
   .featuredItems .darkblue img {
     border-bottom: 12px solid #2c2a74; }
+  .featuredItems .none img {
+    border-bottom: 12px solid rgba(0, 0, 0, 0); }
   .featuredItems .row {
     margin-bottom: 1.5em; }
     @media only screen and (max-width: 1024px) {
@@ -5849,15 +5851,15 @@ div[id^="inline-"] {
       border-bottom: 12px solid #2c2a74; }
       .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo {
         background: rgba(44, 42, 116, 0.6); }
-    .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo {
+    .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo {
       color: white; }
-      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h2 {
+      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo h2, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo h1, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo h2 {
         color: #2c2a74; }
-      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a {
+      .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo a {
         color: white; }
-        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:hover {
+        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:hover, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo a:hover {
           opacity: 0.8; }
-        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:active {
+        .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.green #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.yellow #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.pink #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.lightblue #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.darkblue #actionHeroInfo a:active, .homepage-2015 #actionHeroBox .bxslider li.none #actionHeroInfo a:active {
           opacity: 0.6; }
     @media only screen and (max-width: 768px) {
       .homepage-2015 #actionHeroBox .bxslider li #actionHeroInfo {
@@ -5960,6 +5962,8 @@ div[id^="inline-"] {
   border-bottom: 12px solid #72cdff; }
 .productPage-2015 .darkblue {
   border-bottom: 12px solid #2c2a74; }
+.productPage-2015 .none {
+  border-bottom: 12px solid rgba(0, 0, 0, 0); }
 .productPage-2015 .bigImage {
   margin-top: 1em;
   margin-bottom: 1em; }
