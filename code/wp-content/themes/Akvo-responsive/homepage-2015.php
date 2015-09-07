@@ -33,26 +33,32 @@
             <div class="borderTop"></div>
             <?php if (get_field('hero_box_slide_type')=='video'): ?>
               <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
-                <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
-                <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
-                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
-                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
-                </video>
+                <a href="<?php the_field('hero_box_link'); ?>">
+                  <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
+                  <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
+                    <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
+                    <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
+                  </video>
+                </a>
               </div>
             <?php endif ?>
-            <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+            <a href="<?php the_field('hero_box_link'); ?>">
+              <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+            </a>
             <div>
             <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
               <p>
                 <?php the_field('product_featured'); ?>
               </p>
               <hgroup>
-                <h1>
-                  <?php the_field('hero_box_title'); ?>
-                </h1>
-                <h2>
-                  <?php the_field('hero_box_subtitle'); ?>
-                </h2>
+                <a href="<?php the_field('hero_box_link'); ?>">
+                  <h1>
+                    <?php the_field('hero_box_title'); ?>
+                  </h1>
+                  <h2>
+                    <?php the_field('hero_box_subtitle'); ?>
+                  </h2>
+                </a>
               </hgroup>
               <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a>
             </div>
