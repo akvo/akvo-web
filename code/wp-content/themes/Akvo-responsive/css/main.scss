@@ -2175,6 +2175,7 @@ body.home h1.akvoDescr {
     padding: 0em 2% !important;
     position: absolute;
     right: 5%;
+    z-index:2;
 }
 
 @include responsive(small-max-screens) {
