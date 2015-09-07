@@ -2147,13 +2147,16 @@ body.home h1.akvoDescr {
         overflow: hidden;
         video, .videoOverlay {
             position: absolute;
-            width: 100%;
+            height: 100%;
             left: 0;
             right: 0;
             bottom: 0;
+            object-fit: cover;
         }
         .videoOverlay {
             background-size: cover;
+            overflow: hidden;
+            z-index: 1;
         }
     }
 
