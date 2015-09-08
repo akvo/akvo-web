@@ -47,12 +47,14 @@
                 <?php the_field('product_featured'); ?>
               </p>
               <hgroup>
-                <h1>
-                  <?php the_field('hero_box_title'); ?>
-                </h1>
-                <h2>
-                  <?php the_field('hero_box_subtitle'); ?>
-                </h2>
+                <a href="<?php the_field('hero_box_link'); ?>">
+                  <h1>
+                    <?php the_field('hero_box_title'); ?>
+                  </h1>
+                  <h2>
+                    <?php the_field('hero_box_subtitle'); ?>
+                  </h2>
+                </a>
               </hgroup>
               <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a>
             </div>
