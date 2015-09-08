@@ -129,6 +129,7 @@ if(function_exists("register_field_group"))
                 'type' => 'select',
                 'required' => 0,
                 'choices' => array (
+                    'none' => 'none',
                     'orange' => 'orange',
                     'green' => 'green',
                     'yellow' => 'yellow',
@@ -136,6 +137,7 @@ if(function_exists("register_field_group"))
                     'lightblue' => 'lightblue',
                     'darkblue' => 'darkblue',
                 ),
+                'default_value' => 'none',
                 'allow_null' => 0,
                 'multiple' => 0,
             ),

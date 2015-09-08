@@ -7125,6 +7125,9 @@ div[id^="inline-"] {
     .darkblue img {
         border-bottom: 12px solid $darkblue2015;
     }
+    .none img {
+        border-bottom: 12px solid rgba(0,0,0,0);
+    }    
     .row {
         margin-bottom: 1.5em;
         @media only screen and (max-width: $width-med) {
@@ -7235,7 +7238,7 @@ div[id^="inline-"] {
                         background: rgba(44, 42, 116, 0.6);
                     }                    
                 }
-                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue {
+                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue, &.none {
                     #actionHeroInfo {
                         color: white;
                         h1, h2 {
@@ -7380,6 +7383,9 @@ div[id^="inline-"] {
     }
     .darkblue {
         border-bottom: 12px solid $darkblue2015;
+    }
+    .none {
+        border-bottom: 12px solid rgba(0,0,0,0);
     }
     .bigImage {
         margin-top: 1em;
