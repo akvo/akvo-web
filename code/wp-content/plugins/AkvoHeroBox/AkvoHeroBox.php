@@ -69,6 +69,7 @@ if(function_exists("register_field_group"))
                 'save_format' => 'url',
                 'preview_size' => 'thumbnail',
                 'library' => 'all',
+                'instructions' => 'If this slide is a video, the image should be the first frame of the video',
             ),
             array (
                 'key' => 'field_52d7f8078e311',
@@ -152,6 +153,7 @@ if(function_exists("register_field_group"))
                 'default_value' => 'image',
                 'allow_null' => 0,
                 'multiple' => 0,
+                'instructions' => 'Please only include one active video slide in the hero box at any one time',
             ),    
             array (
                 'key' => 'field_8a019283910a1',
@@ -161,6 +163,7 @@ if(function_exists("register_field_group"))
                 'required' => 0,               
                 'allow_null' => 0,
                 'multiple' => 0,
+                'instructions' => 'A URL to a 5-10 second mp4 video encoded via h.264 with a resolution of 960x540. The top portion of the clip may be obscured depnding on browser dimensions, so the important part should be towards the bottom of the frame. The file size should be under 2MB. NOTE - an ogg/theora version of the same video is required.',
             ),
             array (
                 'key' => 'field_213890309e81982a',
@@ -170,6 +173,7 @@ if(function_exists("register_field_group"))
                 'required' => 0,               
                 'allow_null' => 0,
                 'multiple' => 0,
+                'instructions' => 'Link to the same clip as the mp4, encoded as theora video in an ogv container, with the same resolution (960x540)',
             ),                                              
         ),
         'location' => array (
