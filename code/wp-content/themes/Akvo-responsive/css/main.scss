@@ -2109,27 +2109,60 @@ body.home h1.akvoDescr {
     }
 }
 
-
-#actionHeroBox #image {
-    padding-bottom: 46%;
-    background-position: center center;
-    background-size: cover;
-}
-
-@include responsive(small-screens) {
-    #actionHeroBox #image {
-        padding-bottom: 38%;
+#actionHeroBox {
+    #image, .videoSlide {
+        padding-bottom: 46%;
+        background-position: center center;
+        background-size: cover;   
+        
+        @include responsive(small-screens) {
+            padding-bottom: 38%;
+        }   
+        @include responsive(huge-screens) {
+            padding-bottom: 0;
+            height: 532px;
+        }        
     }
-}
-
-
-@include responsive(huge-screens) {
-    #actionHeroBox #image {
-        padding-bottom: 0;
-        height: 532px;
+    .videoSlide.image {
+        /* Hide the video div if display type is "image" */
+        display: none;
     }
-}
+    #image.video {
+        /* Hide the image slide if display type is "video"... */
+        display: none;
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: block;
+        }
+    }
+    .videoSlide.video {
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: none;
+        }        
+    }
 
+    .videoSlide {
+        position: relative;
+        overflow: hidden;
+        video, .videoOverlay {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+        .videoOverlay {
+            top: 0;
+            background-position: bottom;
+            background-size: cover;
+            overflow: hidden;
+            z-index: 1;
+        }
+    }
+
+}
 
 #actionHeroBox #actionHeroInfo {
     @include border-radius(0.5em);
@@ -2142,6 +2175,7 @@ body.home h1.akvoDescr {
     padding: 0em 2% !important;
     position: absolute;
     right: 5%;
+    z-index:2;
 }
 
 @include responsive(small-max-screens) {
@@ -7091,6 +7125,9 @@ div[id^="inline-"] {
     .darkblue img {
         border-bottom: 12px solid $darkblue2015;
     }
+    .none img {
+        border-bottom: 12px solid rgba(0,0,0,0);
+    }    
     .row {
         margin-bottom: 1.5em;
         @media only screen and (max-width: $width-med) {
@@ -7201,7 +7238,7 @@ div[id^="inline-"] {
                         background: rgba(44, 42, 116, 0.6);
                     }                    
                 }
-                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue {
+                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue, &.none {
                     #actionHeroInfo {
                         color: white;
                         h1, h2 {
@@ -7346,6 +7383,9 @@ div[id^="inline-"] {
     }
     .darkblue {
         border-bottom: 12px solid $darkblue2015;
+    }
+    .none {
+        border-bottom: 12px solid rgba(0,0,0,0);
     }
     .bigImage {
         margin-top: 1em;
