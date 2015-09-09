@@ -20,7 +20,9 @@
     <div class="wrapper">
       <p class="fullWidthParag centerED"><?php the_field('text'); ?></p>
  
-    <img src="<?php the_field('descr_image'); ?>" title="akvosites description image" class="centerED"/> 
+    <a href="<?php the_field('descr_image_link'); ?>">
+      <img src="<?php the_field('descr_image'); ?>" title="akvosites description image" class="centerED"/> 
+    </a>
 
     <p class="fullWidthParag centerED">
       <?php the_field('text2'); ?>
