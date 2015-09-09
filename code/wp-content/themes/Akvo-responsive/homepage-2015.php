@@ -31,19 +31,30 @@
         <?php while (have_posts()) : the_post(); ?>
           <li class="<?php the_field('hero_box_color'); ?>">
             <div class="borderTop"></div>
-            <div id="image" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
+            <?php if (get_field('hero_box_slide_type')=='video'): ?>
+              <div class="videoSlide <?php the_field('hero_box_slide_type') ?>">
+                <div class="videoOverlay" style="background-image: url('<?php the_field('hero_box_image'); ?>')"></div>
+                <video preload="auto" muted="muted" loop="loop" autoplay="autoplay">
+                  <source src="<?php the_field('hero_box_video_mp4'); ?>" type="video/mp4">                  
+                  <source src="<?php the_field('hero_box_video_ogv'); ?>" type="video/ogg"> 
+                </video>
+              </div>
+            <?php endif ?>
+            <div id="image" class="<?php the_field('hero_box_slide_type') ?>" style="background-image:url(<?php the_field('hero_box_image'); ?>);"></div>
             <div>
             <div id="actionHeroInfo" class="<?php the_field('hero_box_text_position'); ?>">
               <p>
                 <?php the_field('product_featured'); ?>
               </p>
               <hgroup>
-                <h1>
-                  <?php the_field('hero_box_title'); ?>
-                </h1>
-                <h2>
-                  <?php the_field('hero_box_subtitle'); ?>
-                </h2>
+                <a href="<?php the_field('hero_box_link'); ?>">
+                  <h1>
+                    <?php the_field('hero_box_title'); ?>
+                  </h1>
+                  <h2>
+                    <?php the_field('hero_box_subtitle'); ?>
+                  </h2>
+                </a>
               </hgroup>
               <a class="actionHeroBtn" href="<?php the_field('hero_box_link'); ?>">Read More</a>
             </div>
@@ -163,6 +174,33 @@ $(function() {
 });   
 $(document).ready(function() {
     $('.bxslider').bxSlider();
+    respondToWidth();
+
+    function respondToWidth() {
+      var vid = $('video');
+      if ($(document).width() >= 768) {
+        vid.attr('preload', 'auto');
+        vid[0].load();
+        vid[0].play();
+      } else {
+        vid.attr('preload', 'none');
+      }      
+    }
+
+    // Hide the video overlay when the video is ready to play
+    $('video').on('canplay', function() {
+      $('.videoOverlay').hide();
+    });
+
+   $('video').on('error', function() {
+      $('.videoOverlay').show();
+    });
+
+    $(window).resize( function() {
+      if ($(document).width() >= 768) {
+        $('video')[0].play();
+      }
+    })
 });
 </script>
 

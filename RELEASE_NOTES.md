@@ -1,3 +1,38 @@
+
+Thursday 20 August 2015, @lynngre
+
+--------
+Akvo.org v1.2.0A Retrocognition Rhubarb
+---
+
+
+## Hotfix
+
+### Jagged left edge on carousel
+
+Border on carousel is not displaying correctly in Safari & Chrome for some visitors.
+
+Github issues:  #740 
+
+### Force WordPress to load a new CSS file
+
+Using 'version control' type numbering of css files to push visitors' cache to refresh.
+
+Github issues:  #734 
+
+### Buttons on about us
+
+Buttons towards bottom of the About-Us page shouldn't change cover when hovered over.
+
+Github issues:  #731 
+
+### New Akvo Sites logo
+
+Added on the Akvo Sites product page.
+
+Github issues:  #729 
+
+
 Tuesday 18 August 2015, @lynngre
 
 --------
