@@ -9,7 +9,7 @@
 
 <div id="content" class="floats-in productPage withSubMenu">
   <hgroup>
-    <h1 class="" style="height: 55px; background: url('<?php the_field('productLogo'); ?>') center center no-repeat; background-size: auto 40px;"> <?php the_field('productBrand'); ?></h1>
+    <h1 class="" style="height: 55px; background: url('<?php the_field('newProductLogo'); ?>') center center no-repeat; background-size: auto 40px;"> <?php the_field('newProductBrand'); ?></h1>
     <h2><?php the_field('subtitle'); ?></h2>
   </hgroup>
   <section class="figure marginVertical"> 
