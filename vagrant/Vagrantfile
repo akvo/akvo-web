@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "homepage-20151027"
-    config.vm.box_url = "http://files.support.akvo-ops.org/homepage-dev-20151027.box"
+    config.vm.box = "homepage-20151222"
+    config.vm.box_url = "http://files.support.akvo-ops.org/homepage-dev-20151222.box"
     config.vm.synced_folder "../", "/vagrant/homepage/checkout/", id: "code-root",
       :owner => "homepage",
       :group => "www-data",
