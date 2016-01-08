@@ -318,12 +318,12 @@ class MP_WP_Preserved_Markup {
             'MP_WP_Preserved_Markup',
             'fix_editor_content'
         ), 1);
-
+/*
         add_filter('the_editor_content', array(
             'MP_WP_Preserved_Markup',
             'fix_wysiwyg_content'
         ), 1);
-
+*/
         add_filter('wp_insert_post_data', array(
             'MP_WP_Preserved_Markup',
             'fix_post_content'
