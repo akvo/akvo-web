@@ -1,0 +1,19 @@
+Global Hide Admin Tool Bar - Build 2014.04.16 - (Version 1.6.1) MD5 Checksum:
+
+/lang/
+
+global-hide-remove-toolbar-plugin_de.mo      C260980F40788A73C15C0FE53B3DE1C7
+global-hide-remove-toolbar-plugin_en.mo      67BC9155E5217B8BC3AD0D54A084DC91
+global-hide-remove-toolbar-plugin_de.po      AD7E46BA2B27E3F577CA60E130B9AB68
+global-hide-remove-toolbar-plugin_en.po      DFE71B1D86340051519E072A45496AA9
+
+/
+
+index.html                                   4D4F5751967030B846DAA84384AC1F59
+.htaccess                                    5C15A9E1B4B468CBF73D400455334B0B
+global-hide-admin-tool-bar.php               B53F9EE99BF463D044E080AA404E12D9
+global-hide-brute-force-admin-bar.php        45DE8F695DE56632737D3B81C80F8DFF
+index.php                                    1565911569FFD99A8725C0412638D8D3
+license.txt                                  39BBA7D2CF0BA1036F2A6E2BE52FE3F0
+readme.txt                                   B7BD85F033A682BD5CECF6C2BCE0CDAE
+uninstall.php                                3D2DB3FC1826A1A05FF085E1BB7D9FDE
