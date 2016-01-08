@@ -2,8 +2,8 @@
 # vi: set ft=ruby :
 
 Vagrant.configure("2") do |config|
-    config.vm.box = "homepage-20150612"
-    config.vm.box_url = "http://files.support.akvo-ops.org/homepage-dev-20150612.box"
+    config.vm.box = "homepage-20151222"
+    config.vm.box_url = "http://files.support.akvo-ops.org/homepage-dev-20151222.box"
     config.vm.synced_folder "../", "/vagrant/homepage/checkout/", id: "code-root",
       :owner => "homepage",
       :group => "www-data",
@@ -11,7 +11,9 @@ Vagrant.configure("2") do |config|
      
     config.vm.network :private_network, ip: "192.168.50.101"
 
-    config.vm.provision :shell, :path => "./provision_vagrant.sh"
+    config.vm.provision "shell", path: "./provisioning/link_code.sh"
+    config.vm.provision "shell", path: "./provisioning/prepare_test_db.sh"
+    config.vm.provision "shell", run: "always", path: "./provisioning/fix_dns.sh"
 
 end
 
