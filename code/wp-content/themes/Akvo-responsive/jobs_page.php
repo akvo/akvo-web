@@ -31,7 +31,7 @@ Template Name: jobs-page
     <h1 class="backLined">Open positions</h1>
     <ul class="jobList">
       <?php while( have_rows('jobs') ): the_row(); ?>
-      <li class="fullWidthParag">
+      <li class="fullWidthParag jobsEntry">
         <h2 class="uncenterED" name="<?php the_sub_field('job_anchor'); ?>"><?php the_sub_field('job_title'); ?></h2>
         <h4>Location: <?php the_sub_field('job_location'); ?></h4>
         <h5>Posted on: <time datetime="DD/MM/YYYY"><?php the_sub_field('job_date'); ?></h5>
