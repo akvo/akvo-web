@@ -195,6 +195,16 @@ function post_type_pagesize( $query ) {
 add_action( 'pre_get_posts', 'post_type_pagesize', 1);
 add_filter('show_admin_bar', '__return_false');
 
+// Events listing thumbnail to sidebar widget
+
+function custom_widget_featured_image() {
+global $post;
+
+echo tribe_event_featured_image( $post->ID, 'thumbnail' );
+
+}
+add_action( 'tribe_events_list_widget_before_the_event_title', 'custom_widget_featured_image' );
+
 // JSON plugin support
 
 function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country_and_city, $text)
