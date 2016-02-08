@@ -1,8 +1,8 @@
-# RSR Vagrant Development Environment 
+# Akvo.org Vagrant Development Environment 
 
 ## System setup
 
-If you have never used Vagrant or the RSR Vagrant development environment, follow these steps first.
+If you have never used Vagrant or the Akvo.org Vagrant development environment, follow these steps first.
 
 1. Ensure you have at least Vagrant version 1.2 installed:
     
