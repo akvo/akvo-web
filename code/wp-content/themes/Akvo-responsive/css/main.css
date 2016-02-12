@@ -6020,3 +6020,7 @@ div[id^="inline-"] {
 .tribe-events-list h2.tribe-events-page-title{
 	font-size: 2.3em !important;
 }
+
+.tribe-events-gcal{
+	margin-right: 0px !important;
+}
