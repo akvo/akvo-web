@@ -6017,6 +6017,7 @@ div[id^="inline-"] {
 /* Apply list styles to custom form content, overriding resets */
 
 
+/* STYLES of EVENTS CALENDAR */
 .tribe-events-list h2.tribe-events-page-title{
 	font-size: 2.3em !important;
 }
@@ -6024,3 +6025,8 @@ div[id^="inline-"] {
 .tribe-events-gcal{
 	margin-right: 0px !important;
 }
+
+.tribe-events-list h2.tribe-events-page-title{
+	margin-bottom: 0.8em !important;
+}
+/* END OF STYLES - EVENTS CALENDAR */
