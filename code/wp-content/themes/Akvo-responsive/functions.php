@@ -72,7 +72,13 @@ function the_breadcrumb()
             } elseif (is_year()) {
                 printf(__('%s', 'text_domain'), get_the_date(_x('Y', 'yearly archives date format', 'text_domain')));
             } else {
-                _e('Blog Archives', 'text_domain');
+                global $post_type;
+				if($post_type == 'tribe_events'){
+					_e('Events');
+				}
+				else{
+					_e('Blog Archives', 'text_domain');	
+				}
             }
         }
         
@@ -243,4 +249,79 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
   </li>
 <?php
 }
+
+	/* custom schedule details for events */
+	function tribe_events_event_schedule_details_2( $event = null, $before = '', $after = '' ) {
+		if ( is_null( $event ) ) {
+			global $post;
+			$event = $post;
+		}
+		
+		if ( is_numeric( $event ) ) { $event = get_post( $event );}
+
+		$inner                    = '<span class="tribe-event-date-start">';
+		$format                   = '';
+		$date_without_year_format = tribe_get_date_format();
+		$date_with_year_format    = tribe_get_date_format( true );
+		$time_format              = get_option( 'time_format' );
+		$datetime_separator       = tribe_get_option( 'dateTimeSeparator', ' @ ' );
+		$time_range_separator     = tribe_get_option( 'timeRangeSeparator', ' - ' );
+
+		$settings = array(
+			'show_end_time' => true,
+			'time'          => true,
+		);
+
+		$settings = wp_parse_args( apply_filters( 'tribe_events_event_schedule_details_formatting', $settings ), $settings );
+		if ( ! $settings['time'] ) {$settings['show_end_time'] = false;}
+
+		extract( $settings );
+
+		$format = $date_with_year_format;
+		
+		if ( tribe_event_is_multiday( $event ) ) { // multi-date event
+
+			$format2ndday = apply_filters( 'tribe_format_second_date_in_range', $format, $event );
+
+			if ( tribe_event_is_all_day( $event ) ) {
+				$inner .= tribe_get_start_date( $event, true, $format );
+				$inner .= '</span>' . $time_range_separator;
+				$inner .= '<span class="tribe-event-date-end">';
+
+				$end_date_full = tribe_get_end_date( $event, true, Tribe__Date_Utils::DBDATETIMEFORMAT );
+				$end_date_full_timestamp = strtotime( $end_date_full );
+
+				// if the end date is <= the beginning of the day, consider it the previous day
+				if ( $end_date_full_timestamp <= strtotime( tribe_beginning_of_day( $end_date_full ) ) ) {
+					$end_date = tribe_format_date( $end_date_full_timestamp - DAY_IN_SECONDS, false, $format2ndday );
+				} else {
+					$end_date = tribe_get_end_date( $event, false, $format2ndday );
+				}
+
+				$inner .= $end_date;
+			} else {
+				$inner .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+				$inner .= '</span>' . $time_range_separator;
+				$inner .= '<span class="tribe-event-date-end">';
+				$inner .= tribe_get_end_date( $event, false, $format2ndday ) . ( $time ? $datetime_separator . tribe_get_end_date( $event, false, $time_format ) : '' );
+			}
+		} elseif ( tribe_event_is_all_day( $event ) ) { // all day event
+			$inner .= tribe_get_start_date( $event, true, $format );
+		} else { // single day event
+			if ( tribe_get_start_date( $event, false, 'g:i A' ) === tribe_get_end_date( $event, false, 'g:i A' ) ) { // Same start/end time
+				$inner .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+			} else { // defined start/end time
+				$inner .= tribe_get_start_date( $event, false, $format ) . ( $time ? $datetime_separator . tribe_get_start_date( $event, false, $time_format ) : '' );
+				$inner .= '</span>' . ( $show_end_time ? $time_range_separator : '' );
+				$inner .= '<span class="tribe-event-time">';
+				$inner .= ( $show_end_time ? tribe_get_end_date( $event, false, $time_format ) : '' );
+			}
+		}
+
+		$inner .= '</span>';
+		$inner = apply_filters( 'tribe_events_event_schedule_details_inner', $inner, $event->ID );
+		$schedule = $before . $inner . $after;
+		return apply_filters( 'tribe_events_event_schedule_details_2', $schedule, $event->ID, $before, $after );
+	}
+	
 ?>
