@@ -52,8 +52,8 @@ function new_excerpt_more($more)
 add_filter('excerpt_more', 'new_excerpt_more');
 
 
-function the_breadcrumb()
-{
+function the_breadcrumb(){
+	global $post_type;
     $sep = '   &rsaquo;  ';
     if (!is_front_page()) {
         echo '<div class="breadcrumbs wrapper">';
@@ -71,18 +71,17 @@ function the_breadcrumb()
                 printf(__('%s', 'text_domain'), get_the_date(_x('F Y', 'monthly archives date format', 'text_domain')));
             } elseif (is_year()) {
                 printf(__('%s', 'text_domain'), get_the_date(_x('Y', 'yearly archives date format', 'text_domain')));
-            } else {
-                global $post_type;
-				if($post_type == 'tribe_events'){
-					_e('Events');
-				}
-				else{
-					_e('Blog Archives', 'text_domain');	
-				}
-            }
+            } elseif($post_type == 'tribe_events'){
+				_e('Events');
+			} else {
+				_e('Blog Archives', 'text_domain');	
+			}
         }
         
         if (is_single()) {
+			if($post_type == 'tribe_events'){
+				_e('Events');
+			}
             echo $sep;
             the_title();
         }
@@ -105,6 +104,7 @@ function the_breadcrumb()
         echo '</div>';
     }
 }
+
 
 /**
  * Customize the 'Read More' link text
