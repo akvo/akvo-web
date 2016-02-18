@@ -7453,3 +7453,26 @@ div[id^="inline-"] {
 .fullWidthParag {
 
 }
+
+/* STYLES of EVENTS CALENDAR */
+.tribe-events-list{
+	h2.tribe-events-page-title{
+		font-size: 2.3em !important;
+		margin-bottom: 0.8em !important;
+	}	
+} 
+.tribe-events-gcal{
+	margin-right: 0px !important;
+}
+.tribe-events-meta-group{
+	dt{font-style:italic;font-size: 0.8em;}
+	dd{margin-bottom:5px;}
+} 
+
+@media only screen and (max-width: 768px) {
+	.tribe-events-event-meta .tribe-events-meta-group{
+		margin-bottom:20px !important;
+	}	
+}
+/* END OF STYLES - EVENTS CALENDAR */
+
