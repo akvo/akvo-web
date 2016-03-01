@@ -6061,7 +6061,9 @@ div[id^="inline-"] {
 #content.rsrProdPag .bxslider .image {
   width: 100%;
   min-height: 400px;
-  position: relative; }
+  position: relative;
+  background-position: center;
+  background-size: cover; }
   #content.rsrProdPag .bxslider .image a[href] {
     position: absolute;
     height: 100%;

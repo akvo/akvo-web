@@ -7519,6 +7519,8 @@ div[id^="inline-"] {
 			width:100%;
 			min-height:400px;
 			position: relative;
+			background-position: center;
+			background-size: cover;
 			
 			a[href]{
 				position:absolute;
