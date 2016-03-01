@@ -7474,5 +7474,86 @@ div[id^="inline-"] {
 		margin-bottom:20px !important;
 	}	
 }
-/* END OF STYLES - EVENTS CALENDAR */
+/* END OF STYLES - EVENTS CALENDAR */ 
 
+
+/* STYLES FOR TABULAR CONTENT */
+.tabs{
+	border-bottom:#ccc solid 1px;
+	list-style: none;
+	text-align:center;
+	
+	.tab{
+		border:#5d9de5 solid 1px;
+		display: inline-block;
+		padding: 5px 10px;
+		border-radius: 3px 3px 0 0;
+		border-bottom: none;
+	}
+	.tab.active{
+		background: #5d9de5;
+		
+		
+		a[href]{
+			color: #FFF;
+		}
+	}
+}
+/* END OF TABULAR CONTENT STYLES */
+
+
+/* HELPER CLASSES */
+.text-center{
+	text-align:center;
+}
+/* */
+
+/* RSR ELEMENTS */
+#content.rsrProdPag{ 
+	.threeColumns.wrapper{
+		min-height: 120px;
+		div{ border:none;}
+	}
+	.bxslider{
+		.image{
+			width:100%;
+			min-height:400px;
+			position: relative;
+			
+			a[href]{
+				position:absolute;
+				height:100%;
+				width:50%;
+				background: rgba(255, 255, 255, 0.7);
+				padding:20px 25px;
+				top:0;
+				left:10%;
+				color: #2c2a74;
+			}
+		}
+	}
+	
+	.sub-section{
+		margin:5em 0;
+	}
+	
+	.list-box{
+		text-align:center;
+		li.box{
+			display:inline-block;
+			margin:20px 10px;
+			width:320px;
+			height: 400px;
+			overflow:hidden;
+			p{text-align:center;font-size:0.75em;}
+			hr{width:60%;}
+			
+			.image{
+				background-repeat: no-repeat;
+				position:relative;
+				min-height:150px;
+				background-position: center;
+			}
+		}	
+	}
+}	
