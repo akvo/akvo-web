@@ -7514,6 +7514,12 @@ div[id^="inline-"] {
 		min-height: 120px;
 		div{ border:none;}
 	}
+	
+	
+	section:target{
+		background: #FFF;
+	}
+	
 	.bxslider{
 		.image{
 			width:100%;
@@ -7537,11 +7543,11 @@ div[id^="inline-"] {
 	}
 	
 	.sub-section{
-		margin:5em 0;
+		margin:0 0 7em;
 	}
 	
 	.banner{
-		height: 300px;
+		height: 200px;
 		background-size: cover;
 	}
 	
