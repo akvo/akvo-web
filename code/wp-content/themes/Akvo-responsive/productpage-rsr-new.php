@@ -279,9 +279,9 @@
   	</hgroup>
 	
 	<section>
-  		<ul class="tabs" data-behaviour="tabs">	
+  		<ul class="rsr-tabs" data-behaviour="rsr-tabs">	
   			<?php foreach($tabs as $tab):?>
-      		<li class="tab" data-tagline="<?php the_field($tab['tagline']);?>">
+      		<li class="rsr-tab" data-tagline="<?php the_field($tab['tagline']);?>">
         		<a href="#<?php _e(slugify($tab['title'])); ?>"><?php _e($tab['title']);?></a>
         	</li>
         	<?php endforeach;?>	
@@ -306,6 +306,12 @@
 	</section>
   	<?php endforeach;?>	
 </div>  
+
+<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
+<?php get_footer(); ?>
 <script type="text/javascript">
 	
 	
@@ -338,7 +344,10 @@
 
 
 	(function($){
-    	$.fn.tabs = function(){
+		
+		console.log('pre-tabs');	
+	
+    	$.fn.rsr_tabs = function(){
        		return this.each(function(){
        			console.log('tabs init');
        			var ul = $(this);
@@ -398,16 +407,12 @@
     		});
     	};
     	
-	}(jQuery));  
-	
-	
-
-	$(document).ready(function() {
-		console.log('init');
+    	console.log('init');
 		$('.bxslider').bxSlider({
   			onSliderLoad: function(){
   				console.log('slider:after-load');
-    			$('body').find('[data-behaviour~=tabs]').tabs();
+    			
+    			$('body').find('[data-behaviour~=rsr-tabs]').rsr_tabs();
     			
     			$('[data-behaviour~=show-video]').click( function(event) {
       				event.preventDefault();
@@ -417,16 +422,15 @@
     			
   			}
 		});
-  	
-		
-	});
+    	
+    	
+    	
+	}(jQuery));  
+	
+	
+
+	
 	
 		
 	
 </script>
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-<!--script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script-->
-
-<?php get_footer(); ?>
-
