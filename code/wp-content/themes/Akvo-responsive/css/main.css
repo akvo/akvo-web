@@ -6033,19 +6033,19 @@ div[id^="inline-"] {
     margin-bottom: 20px !important; } }
 /* END OF STYLES - EVENTS CALENDAR */
 /* STYLES FOR TABULAR CONTENT */
-.tabs {
+.rsr-tabs {
   border-bottom: #ccc solid 1px;
   list-style: none;
   text-align: center; }
-  .tabs .tab {
+  .rsr-tabs .rsr-tab {
     border: #5d9de5 solid 1px;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 3px 3px 0 0;
     border-bottom: none; }
-  .tabs .tab.active {
+  .rsr-tabs .rsr-tab.active {
     background: #5d9de5; }
-    .tabs .tab.active a[href] {
+    .rsr-tabs .rsr-tab.active a[href] {
       color: #FFF; }
 
 .tab-content .tab-desc {

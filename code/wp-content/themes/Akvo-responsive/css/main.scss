@@ -7479,19 +7479,19 @@ div[id^="inline-"] {
 
 
 /* STYLES FOR TABULAR CONTENT */
-.tabs{
+.rsr-tabs{
 	border-bottom:#ccc solid 1px;
 	list-style: none;
 	text-align:center;
 	
-	.tab{
+	.rsr-tab{
 		border:#5d9de5 solid 1px;
 		display: inline-block;
 		padding: 5px 10px;
 		border-radius: 3px 3px 0 0;
 		border-bottom: none;
 	}
-	.tab.active{
+	.rsr-tab.active{
 		background: #5d9de5;
 		
 		
