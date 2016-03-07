@@ -9,7 +9,7 @@
 <?php
 	$tabs = array(
 		'overview' => array(
-			'title' => 'overview_title',
+			'title' => 'Overview',
 			'tagline' => 'overview_tagline',
 			'elements' => array(
 				'overview_carousel' => 'rsr_carousel',
@@ -21,7 +21,7 @@
 			)
 		),
 		'features' => array(
-			'title' => 'feature_title',
+			'title' => 'Features',
 			'tagline' => 'feature_tagline',
 			'elements' => array(
 				'feature_banner' => 'rsr_banner',
@@ -31,7 +31,7 @@
 			)
 		),
 		'pricing' => array(
-			'title' => 'pricing_title',
+			'title' => 'Pricing',
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
@@ -39,7 +39,7 @@
 			)
 		),
 		'support' => array(
-			'title' => 'support_title',
+			'title' => 'Support',
 			'tagline' => 'support_tagline',
 			'elements' => array(
 				'support_banner' => 'rsr_banner',
@@ -92,7 +92,7 @@
       			</li>
   			</ul>
   		</div>	
-  		<div id="video" class="videoContainer">
+  		<div id="video" class="videoContainer wrapper">
 			<div class="vimeoBlockedMessage">
         		<?php the_field('rsr_video_backup_message'); ?>
       		</div>
@@ -282,16 +282,14 @@
   		<ul class="tabs" data-behaviour="tabs">	
   			<?php foreach($tabs as $tab):?>
       		<li class="tab" data-tagline="<?php the_field($tab['tagline']);?>">
-        		<a href="#<?php _e(slugify(get_field($tab['title']))); ?>">
-        			<?php the_field($tab['title']);?>
-        		</a>
+        		<a href="#<?php _e(slugify($tab['title'])); ?>"><?php _e($tab['title']);?></a>
         	</li>
         	<?php endforeach;?>	
     	</ul>
 	</section>
   	
   	<?php foreach($tabs as $tab):?>
-  	<section class="tab-content" id="<?php _e(slugify(get_field($tab['title']))); ?>">
+  	<section class="tab-content" id="<?php _e(slugify($tab['title'])); ?>">
   		<?php	
   			/* Displaying the inline elements within the tab */ 
   			$elements = $tab['elements'];
@@ -335,29 +333,14 @@
       		$('.vimeoBlockedMessage').show();
     	}
 		*/
-    	$('[data-behaviour~=show-video]').click( function(event) {
-      		event.preventDefault();
-      		$('.videoContainer').fadeIn(200);
-    	});
+    	
   	});
 
 
-	
-
-	$(document).ready(function() {
-		console.log('init');
-		$('.bxslider').bxSlider({
-  			onSliderLoad: function(){
-    			$('body').find('[data-behaviour~=tabs]').tabs();
-  			}
-		});
-  	
-		
-	});
-	
 	(function($){
     	$.fn.tabs = function(){
        		return this.each(function(){
+       			console.log('tabs init');
        			var ul = $(this);
        			
        			ul.activate = function(list){
@@ -415,7 +398,30 @@
     		});
     	};
     	
-	}(jQuery));  	
+	}(jQuery));  
+	
+	
+
+	$(document).ready(function() {
+		console.log('init');
+		$('.bxslider').bxSlider({
+  			onSliderLoad: function(){
+  				console.log('slider:after-load');
+    			$('body').find('[data-behaviour~=tabs]').tabs();
+    			
+    			$('[data-behaviour~=show-video]').click( function(event) {
+      				event.preventDefault();
+      				$('.videoContainer').fadeIn(200);
+    			});
+    			
+    			
+  			}
+		});
+  	
+		
+	});
+	
+		
 	
 </script>
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
