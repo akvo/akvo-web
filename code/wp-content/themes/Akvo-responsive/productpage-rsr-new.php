@@ -88,7 +88,7 @@
       				<a data-behaviour="show-video" href="#video" title="<?php the_field('video_link_text'); ?>" class="button"><?php the_field('video_link_text'); ?></a>
       			</li>
       			<li class="box">
-      				<a href="<?php the_field('tour_link'); ?>" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
+      				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>
   		</div>	
@@ -382,6 +382,25 @@
 
 	(function($){
 		
+		$.fn.rsr_anchor_reload = function(){
+			return this.each(function(){
+				var ahref = $(this);
+				
+				ahref.click(function(ev){
+					ev.preventDefault();
+					ev.stopPropagation();
+					
+					
+					var href = ahref.attr('href');
+					
+					$('.rsr-tabs a[href=' + href + ']').click();
+					
+					
+					
+					console.log('reload');
+				});
+			});
+		};
 		
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
@@ -396,7 +415,6 @@
 				
 				for(var i=0; i<str.length; i++){
 					var digit_val = str[i];
-					console.log(digit_val);
 					
 					var digit = $(document.createElement('span'));
 					digit.addClass('digit');
@@ -490,6 +508,7 @@
     			
     			
     			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
+    			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
   			}
 		});

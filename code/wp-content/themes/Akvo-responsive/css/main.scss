@@ -7662,12 +7662,21 @@ div[id^="inline-"] {
 	}
 	.media-small{
 		width:40%;
-		
 	}
+	
+	
 	
 	.clear { clear: both }
 }
 
+@media only screen and (max-width: 768px){
+		.media-small{
+			display: none !important;
+		}
+		.media-big{
+			width: 100% !important;
+		}
+	}
 
 
 .timeTicker {

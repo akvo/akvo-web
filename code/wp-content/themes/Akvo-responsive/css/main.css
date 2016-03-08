@@ -6158,6 +6158,12 @@ div[id^="inline-"] {
   .media-box .clear {
     clear: both; }
 
+@media only screen and (max-width: 768px) {
+  .media-small {
+    display: none !important; }
+
+  .media-big {
+    width: 100% !important; } }
 .timeTicker {
   margin: 0 auto;
   width: 152px; }
