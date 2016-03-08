@@ -105,7 +105,8 @@
 	?>
 		<div class='sub-section text-center'>
 			<h4><?php the_field($el."_text");?></h4><br>
-			<a href="#modal-form" data-behaviour="modal-show" class="button">Get in touch</a>
+			<!--a href="#modal-form" data-behaviour="modal-show" class="button">Get in touch</a-->
+			<a href="<?php the_field('get_in_touch_form');?>" class="button">Get in touch</a>
 		</div>	
 	<?php
 	}
@@ -345,7 +346,7 @@
 	</section>
   	<?php endforeach;?>	
   	
-  	<?php if(get_field('get_in_touch_form')):?>
+  	<?php if(get_field('___get_in_touch_form')):?>
   	<section id="modal-form" class="modal" data-behaviour="modal">
   		<div class="backdrop"></div>
   		<div class="modal-content">
