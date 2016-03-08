@@ -6128,6 +6128,38 @@ div[id^="inline-"] {
   #content.rsrProdPag .screenshot {
     max-width: 800px;
     margin: 0 auto 80px; }
+  #content.rsrProdPag .threeColumns > div:nth-child(3n+1), #content.rsrProdPag .threeColumns > li:nth-child(3n+1), #content.rsrProdPag .threeColumns > p:nth-child(3n+1) {
+    margin: 0; }
+  #content.rsrProdPag .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: none; }
+    #content.rsrProdPag .modal .backdrop {
+      background: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0; }
+    #content.rsrProdPag .modal .modal-content {
+      top: 20%;
+      left: 8%;
+      position: absolute;
+      background: #FFF;
+      width: 80%;
+      min-height: 200px;
+      padding: 20px;
+      border: #ccc solid 1px;
+      border-radius: 5px; }
+    #content.rsrProdPag .modal .close-btn {
+      font-size: 4em;
+      position: absolute;
+      top: 20px;
+      right: 20px; }
 
 .media-box {
   background: rgba(87, 193, 232, 0.1);
