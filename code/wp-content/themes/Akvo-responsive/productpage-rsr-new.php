@@ -267,6 +267,27 @@
 	function rsr_support_section($el){
 	
 	?>
+		<!--div class="sub-section">
+			<div class="wrapper">
+				
+				<ul>
+					
+					<li>
+						
+						<div class="left-col"></div>
+						<div class="right-col"></div>
+						
+					</li>
+					
+					
+				</ul>
+				
+				
+				
+			</div>
+		</div-->
+		
+		
 		<section id="nuggets" class="rsrNuggetsSection">
 			<ul class="wrapper">
     		<?php if(have_rows($el)):?>
@@ -410,6 +431,7 @@
        				
        				$(section_id).show();	
        				
+       				
        			};
        			
        			ul.find('li').each(function(){
@@ -447,11 +469,14 @@
     				var section_id = window.location.hash;
     				ul.activate(ul.find('[href~=' + section_id + ']').closest('li'));
   					console.log(section_id);
+  					
+  					
+  					
 				} else {
   					ul.activate(ul.find('li:first'));
   					
 				}
-    			$( "#tagline" ).scroll();
+    			
     			
     		});
     	};
@@ -474,6 +499,11 @@
   			}
 		});
     	
+    	
+    	$('html, body').animate({
+        	scrollTop: $("#mainbody").offset().top
+    	}, 500);
+  					
     	
     	
 	}(jQuery));  
