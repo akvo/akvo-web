@@ -112,12 +112,19 @@
 	
 	function rsr_overview_counter($el){
 		?>
+		
+		<?php 
+			$url = 'http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json';
+			$str = file_get_contents($url);
+			
+			$json = json_decode($str, true); 
+		?>	
 		<div class='sub-section'>
 			<ul class='list-box'>
 				<li class="box">
       				<h4>Organisations that trust us and are using Akvo RSR.</h4>
       				<div class="timeTicker">            
-    					<p class="timeSegment clear">
+    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json['number_of_organisations']);?>">
        						<span class="digit">1</span>
        						<span class="digit">2</span>
        						<span class="digit">5</span>
@@ -128,7 +135,7 @@
       			<li class="box">
       				<h4>Projects that our partners have uploaded to RSR.</h4>
       				<div class="timeTicker">            
-    					<p class="timeSegment clear">
+    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json['number_of_projects']);?>">
        						<span class="digit">1</span>
        						<span class="digit">2</span>
        						<span class="digit">5</span>
@@ -168,7 +175,21 @@
 	
 	function rsr_testimonials($el){
 	?>
-		<div class="sub-section big-box-wrapper">
+		<div class="sub-section">	
+			<div class="threeColumns wrapper">
+				<?php while(have_rows($el)): the_row();?>
+				<div class="text-center">
+					<img src="<?php the_sub_field('profile_picture');?>" />
+					<h4><?php the_sub_field('title');?></h4>
+					<p><?php the_sub_field('description');?></p>
+					<hr>
+					<p><small><?php the_sub_field('name');?><br><?php the_sub_field('job_title');?></small></p>
+				</div>
+				<?php endwhile;?>
+			</div>
+		</div>	
+		<div class='clearfix'></div>
+		<!--div class="sub-section big-box-wrapper">
 			<div class="wrapper">
 				<h3 class='text-center'>What our users say</h3>
 				<ul class='list-box'>
@@ -183,7 +204,7 @@
 				<?php endwhile;?>
 				</ul>
 			</div>
-		</div>	
+		</div-->	
 	<?php	
 	}
 	
@@ -345,8 +366,35 @@
 
 	(function($){
 		
+		
+		$.fn.rsr_time_ticker = function(){
+			return this.each(function(){
+				var el = $(this);
+				
+				el.html('');
+				
+				console.log('time ticker');
+				
+				var str = "" + el.data('value') + "";
+				
+				
+				for(var i=0; i<str.length; i++){
+					var digit_val = str[i];
+					console.log(digit_val);
+					
+					var digit = $(document.createElement('span'));
+					digit.addClass('digit');
+					digit.html(digit_val);
+					
+					digit.appendTo(el);					
+					
+				}
+				
+       		});
+		};
+		
 		console.log('pre-tabs');	
-	
+			
     	$.fn.rsr_tabs = function(){
        		return this.each(function(){
        			console.log('tabs init');
@@ -401,8 +449,9 @@
   					console.log(section_id);
 				} else {
   					ul.activate(ul.find('li:first'));
+  					
 				}
-    			
+    			$( "#tagline" ).scroll();
     			
     		});
     	};
@@ -419,6 +468,8 @@
       				$('.videoContainer').fadeIn(200);
     			});
     			
+    			
+    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
     			
   			}
 		});
