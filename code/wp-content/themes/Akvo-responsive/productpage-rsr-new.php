@@ -88,7 +88,7 @@
       				<a data-behaviour="show-video" href="#video" title="<?php the_field('video_link_text'); ?>" class="button"><?php the_field('video_link_text'); ?></a>
       			</li>
       			<li class="box">
-      				<a href="<?php the_field('tour_link'); ?>" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
+      				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>
   		</div>	
@@ -105,7 +105,7 @@
 	?>
 		<div class='sub-section text-center'>
 			<h4><?php the_field($el."_text");?></h4><br>
-			<a href="<?php the_field($el."_link");?>" class="button">Get in touch</a>
+			<a href="#modal-form" data-behaviour="modal-show" class="button">Get in touch</a>
 		</div>	
 	<?php
 	}
@@ -315,6 +315,8 @@
     	<h2 id="tagline"></h2>
   	</hgroup>
 	
+	
+	
 	<section>
   		<ul class="rsr-tabs" data-behaviour="rsr-tabs">	
   			<?php foreach($tabs as $tab):?>
@@ -342,6 +344,17 @@
   		
 	</section>
   	<?php endforeach;?>	
+  	
+  	<?php if(get_field('get_in_touch_form')):?>
+  	<section id="modal-form" class="modal" data-behaviour="modal">
+  		<div class="backdrop"></div>
+  		<div class="modal-content">
+  			<a class="close-btn" href="#">&times;</a>
+  			<?php gravity_form(get_field('get_in_touch_form'), false, true, false, '', true); ?>
+  		</div>
+  		
+  	</section>
+  	<?php endif;?>
 </div>  
 
 <link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
@@ -382,6 +395,63 @@
 
 	(function($){
 		
+		$.fn.rsr_modal = function(){
+			return this.each(function(){
+				var modal = $(this);
+				var backdrop = modal.find('.backdrop');
+				var close_btn = modal.find('.close-btn')
+				
+				modal.hide_now = function(){
+					modal.hide();
+				};
+				
+				close_btn.click(function(ev){
+					ev.preventDefault();
+					ev.stopPropagation();
+					modal.hide();
+				});
+				
+				backdrop.click(function(){
+					modal.hide();
+				});
+				
+			});
+		};
+		$.fn.rsr_modal_show = function(){
+			return this.each(function(){
+				var ahref = $(this);
+				
+				var modal = $(ahref.attr('href'));
+				
+				ahref.click(function(ev){
+					ev.preventDefault();
+					ev.stopPropagation();
+					modal.show();
+				});
+				
+				
+			});
+		};
+		
+		$.fn.rsr_anchor_reload = function(){
+			return this.each(function(){
+				var ahref = $(this);
+				
+				ahref.click(function(ev){
+					ev.preventDefault();
+					ev.stopPropagation();
+					
+					
+					var href = ahref.attr('href');
+					
+					$('.rsr-tabs a[href=' + href + ']').click();
+					
+					
+					
+					console.log('reload');
+				});
+			});
+		};
 		
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
@@ -396,7 +466,6 @@
 				
 				for(var i=0; i<str.length; i++){
 					var digit_val = str[i];
-					console.log(digit_val);
 					
 					var digit = $(document.createElement('span'));
 					digit.addClass('digit');
@@ -490,7 +559,11 @@
     			
     			
     			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
+    			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
+    			$('[data-behaviour~=modal]').rsr_modal();
+    			
+    			$('[data-behaviour~=modal-show]').rsr_modal_show();
   			}
 		});
     	
