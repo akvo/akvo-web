@@ -6129,6 +6129,35 @@ div[id^="inline-"] {
     max-width: 800px;
     margin: 0 auto 80px; }
 
+.media-box {
+  background: rgba(87, 193, 232, 0.1);
+  margin: 5em 0;
+  padding: 2.5em 2%; }
+  .media-box .media-left {
+    display: block;
+    float: left; }
+  .media-box .media-right {
+    display: block;
+    float: right; }
+    .media-box .media-right strong {
+      font-weight: normal;
+      color: #2c2a74;
+      display: block; }
+    .media-box .media-right em {
+      color: #2c2a74;
+      font-size: 1em;
+      line-height: 1em; }
+    .media-box .media-right hr {
+      width: 50%; }
+    .media-box .media-right img {
+      margin-top: -100px; }
+  .media-box .media-big {
+    width: 48%; }
+  .media-box .media-small {
+    width: 40%; }
+  .media-box .clear {
+    clear: both; }
+
 .timeTicker {
   margin: 0 auto;
   width: 152px; }
