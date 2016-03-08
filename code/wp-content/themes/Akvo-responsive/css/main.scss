@@ -7624,6 +7624,49 @@ div[id^="inline-"] {
 	}
 }	
 
+.media-box{
+	background: rgba(87, 193, 232, 0.1);
+	margin:5em 0;
+	padding: 2.5em 2%;
+	
+	.media-left{
+		display: block;
+		float: left;
+	}
+	.media-right{
+		display: block;
+		float:right;
+		
+		strong{
+			font-weight: normal;
+			color: #2c2a74;
+			display: block;
+		}
+		em{
+			color: #2c2a74;
+			font-size:1em;
+			line-height: 1em;
+		}
+		hr{
+			width: 50%;
+		}
+		img{
+			margin-top: -100px;
+		}
+		
+	}
+	
+	.media-big{
+		width: 48%;
+		
+	}
+	.media-small{
+		width:40%;
+		
+	}
+	
+	.clear { clear: both }
+}
 
 
 

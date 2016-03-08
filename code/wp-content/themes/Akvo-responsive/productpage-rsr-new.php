@@ -17,7 +17,7 @@
 				'overview_buttons' => 'rsr_overview_buttons',
 				'testimonials' => 'rsr_testimonials',
 				'counter'=> 'rsr_overview_counter',
-				'overview_get_in_touch' => 'rsr_get_in_touch'
+				'overview_git' => 'rsr_get_in_touch'
 			)
 		),
 		'features' => array(
@@ -267,41 +267,36 @@
 	function rsr_support_section($el){
 	
 	?>
-		<!--div class="sub-section">
+		<div class="sub-section">
 			<div class="wrapper">
 				
+				<?php
+				
+					$sections = get_field($el);
+					//print_r();
+				
+				?>
 				<ul>
-					
-					<li>
-						
-						<div class="left-col"></div>
-						<div class="right-col"></div>
-						
+					<?php foreach($sections as $section):?>
+					<li class="media-box">
+						<div class="media-big <?php if($section['image_text']):?>media-left<?php else:?>media-right<?php endif;?>">
+							<h3><?php _e($section['title']);?></h3>
+							<p><?php _e($section['description']); ?></p>
+						</div>
+						<div class="media-small text-center <?php if($section['image_text']):?>media-right<?php else:?>media-left<?php endif;?>">
+							<img src="<?php _e($section['image']); ?>" />
+							<?php _e($section['image_text']);?>
+						</div>
+						<div class="clear"></div>
 					</li>
-					
-					
+					<?php endforeach;?>
 				</ul>
 				
 				
 				
 			</div>
-		</div-->
+		</div>
 		
-		
-		<section id="nuggets" class="rsrNuggetsSection">
-			<ul class="wrapper">
-    		<?php if(have_rows($el)):?>
-      			<?php while(have_rows($el)): the_row(); ?>
-        		<li class="rsrNuggets floats-in sub-section">
-          			<h3 class="nuggetTitle nuggetAside"><?php the_sub_field('title'); ?></h3>
-          			<img src="<?php the_sub_field('image'); ?>" class="nuggetImage">
-          			<p class="nuggetDescription nuggetAside"><?php the_sub_field('description'); ?></p>
-        		</li>      
-      			<?php endwhile; ?>
-    		<?php endif; ?>
-			
-					
-		</section>
   <?php
   	
 	}
