@@ -14,10 +14,10 @@
 			'elements' => array(
 				'overview_carousel' => 'rsr_carousel',
 				'overview_columns' => 'rsr_overview_columns',
-				'overview_buttons' => 'rsr_overview_buttons',
+				'overview_call_to_action' => 'rsr_overview_buttons',
 				'testimonials' => 'rsr_testimonials',
-				'counter'=> 'rsr_overview_counter',
-				'overview_git' => 'rsr_get_in_touch'
+				'counters'=> 'rsr_overview_counters',
+				'overview_buttons' => 'rsr_buttons'
 			)
 		),
 		'features' => array(
@@ -35,7 +35,7 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_git' => 'rsr_get_in_touch'
+				'pricing_buttons' => 'rsr_buttons'
 			)
 		),
 		'support' => array(
@@ -45,7 +45,7 @@
 				'support_banner' => 'rsr_banner',
 				'support_content' => 'rsr_content',
 				'support_section' => 'rsr_support_section',
-				'support_buttons' => 'rsr_support_buttons'
+				'support_buttons' => 'rsr_buttons'
 				
 			)
 		)
@@ -101,17 +101,9 @@
   	<?php	
   	}
 	
-	function rsr_get_in_touch($el){
-	?>
-		<div class='sub-section text-center'>
-			<h4><?php the_field($el."_text");?></h4><br>
-			<!--a href="#modal-form" data-behaviour="modal-show" class="button">Get in touch</a-->
-			<a href="<?php the_field('get_in_touch_form');?>" class="button">Get in touch</a>
-		</div>	
-	<?php
-	}
 	
-	function rsr_overview_counter($el){
+	
+	function rsr_overview_counters($el){
 		?>
 		
 		<?php 
@@ -122,29 +114,17 @@
 		?>	
 		<div class='sub-section'>
 			<ul class='list-box'>
+				<?php while(have_rows($el)): the_row();?>
 				<li class="box">
-      				<h4>Organisations that trust us and are using Akvo RSR.</h4>
+      				<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
       				<div class="timeTicker">            
-    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json['number_of_organisations']);?>">
-       						<span class="digit">1</span>
-       						<span class="digit">2</span>
-       						<span class="digit">5</span>
-       						<span class="digit">8</span>
+    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json[get_sub_field('json_slug')]);?>">
+       						
    						</p>
             		</div>
       			</li>
-      			<li class="box">
-      				<h4>Projects that our partners have uploaded to RSR.</h4>
-      				<div class="timeTicker">            
-    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json['number_of_projects']);?>">
-       						<span class="digit">1</span>
-       						<span class="digit">2</span>
-       						<span class="digit">5</span>
-       						<span class="digit">8</span>
-   						</p>
-            		</div>
-      			</li>
-  			</ul>
+      			<?php endwhile;?>
+      		</ul>
   		</div>
   		<?php	
 	}
@@ -190,22 +170,7 @@
 			</div>
 		</div>	
 		<div class='clearfix'></div>
-		<!--div class="sub-section big-box-wrapper">
-			<div class="wrapper">
-				<h3 class='text-center'>What our users say</h3>
-				<ul class='list-box'>
-				<?php while(have_rows($el)): the_row();?>
-					<li class='box'>
-						<img src="<?php the_sub_field('profile_picture');?>" />
-						<h4><?php the_sub_field('title');?></h4>
-						<p><?php the_sub_field('description');?></p>
-						<hr>
-						<p><small><?php the_sub_field('name');?><br><?php the_sub_field('job_title');?></small></p>
-					</li>
-				<?php endwhile;?>
-				</ul>
-			</div>
-		</div-->	
+		
 	<?php	
 	}
 	
@@ -238,6 +203,7 @@
             </li>
     	<?php endwhile;
 		_e("</ul>");
+		
 	}
 	
 	function rsr_banner($el){
@@ -246,7 +212,7 @@
 	<?php	
 	}
 	
-	function rsr_support_buttons($el){
+	function rsr_buttons($el){
 		
 	?>
 		<div class='sub-section'>

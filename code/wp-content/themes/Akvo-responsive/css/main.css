@@ -6091,8 +6091,10 @@ div[id^="inline-"] {
       color: #2c2a74; }
   #content.rsrProdPag .sub-section {
     margin: 5em 0; }
+    #content.rsrProdPag .sub-section .threeColumns.wrapper h3 {
+      margin-bottom: 2em; }
   #content.rsrProdPag .box-col {
-    margin: 0 0 5em;
+    margin: 0 0 2em;
     min-height: 250px; }
   #content.rsrProdPag .banner {
     height: 200px;
