@@ -119,10 +119,7 @@
       				<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
       				<div class="timeTicker">            
     					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json[get_sub_field('json_slug')]);?>">
-       						<span class="digit">1</span>
-       						<span class="digit">2</span>
-       						<span class="digit">5</span>
-       						<span class="digit">8</span>
+       						
    						</p>
             		</div>
       			</li>
