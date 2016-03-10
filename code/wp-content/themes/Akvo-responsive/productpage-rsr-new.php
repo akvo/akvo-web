@@ -68,14 +68,16 @@
 	}
 	
 	function rsr_overview_columns($el){
-		_e("<div class='sub-section'>");
+		_e("<div class='sub-section' id='".$el."'>");
 		_e("<div class='threeColumns wrapper'>");
-		while(have_rows($el)): the_row();
-			_e("<div>");
-			_e("<h3>".get_sub_field('title')."</h3>");
-			_e("<p>".get_sub_field('description')."</p>");
-			_e("</div>");
-		endwhile;
+		while(have_rows($el)): the_row();?>
+			<div>
+				<img src="<?php the_sub_field('icon');?>" />
+				<h3><?php the_sub_field('title');?></h3>
+				<p><?php the_sub_field('description');?></p>
+			</div>
+			
+		<?php endwhile;
 		_e("</div><div class='clearfix'></div>");
 		_e("</div>");
 	}
