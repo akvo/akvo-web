@@ -7533,6 +7533,7 @@ $lightBlue: #72CDFF;
 		}
 		em{
 			color: #000;
+			font-size: 1em;
 		}
 	}
 	
@@ -7619,6 +7620,10 @@ $lightBlue: #72CDFF;
 			p{text-align:center;}
 			hr{width:60%;}
 			
+			a[href]{
+				color: inherit;
+			}
+			
 			.image{
 				background-size: cover;
 				background-repeat: no-repeat;
@@ -7701,6 +7706,11 @@ $lightBlue: #72CDFF;
 	margin:5em 1em;
 	padding: 2.5em 2%;
 	border-radius: 3px;
+	
+	h3{
+		text-shadow: none;
+	}
+	
 	.media-left{
 		display: block;
 		float: left;
