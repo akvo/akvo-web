@@ -7518,7 +7518,23 @@ $lightBlue: #72CDFF;
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
-
+	
+	#testimonials{
+		strong{
+			color: #2c2a74;
+			font-size: 1.2em;
+			line-height: 1.25em;
+			margin: 1.1em 0em 0.5em;
+			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+			font-weight: normal;
+		}
+		hr{
+			width:50%;
+		}
+		em{
+			color: #000;
+		}
+	}
 	
 
 	.threeColumns.wrapper{

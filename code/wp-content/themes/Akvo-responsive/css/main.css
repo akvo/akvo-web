@@ -6058,6 +6058,17 @@ div[id^="inline-"] {
 /* RSR ELEMENTS */
 #content.rsrProdPag {
   /* HELPER CLASSES */ }
+  #content.rsrProdPag #testimonials strong {
+    color: #2c2a74;
+    font-size: 1.2em;
+    line-height: 1.25em;
+    margin: 1.1em 0em 0.5em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal; }
+  #content.rsrProdPag #testimonials hr {
+    width: 50%; }
+  #content.rsrProdPag #testimonials em {
+    color: #000; }
   #content.rsrProdPag .threeColumns.wrapper {
     min-height: 120px; }
     #content.rsrProdPag .threeColumns.wrapper div {

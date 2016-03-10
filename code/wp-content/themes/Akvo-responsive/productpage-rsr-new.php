@@ -156,15 +156,12 @@
 	
 	function rsr_testimonials($el){
 	?>
-		<div class="sub-section">	
+		<div class="sub-section" id="<?php _e($el);?>">	
 			<div class="threeColumns wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
 					<img src="<?php the_sub_field('profile_picture');?>" />
-					<h4><?php the_sub_field('title');?></h4>
-					<p><?php the_sub_field('description');?></p>
-					<hr>
-					<p><small><?php the_sub_field('name');?><br><?php the_sub_field('job_title');?></small></p>
+					<?php the_sub_field('description');?>
 				</div>
 				<?php endwhile;?>
 			</div>
