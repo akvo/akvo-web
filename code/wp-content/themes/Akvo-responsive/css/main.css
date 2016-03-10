@@ -6040,12 +6040,12 @@ div[id^="inline-"] {
   .rsr-tabs .rsr-tab {
     border: #72CDFF solid 1px;
     display: inline-block;
-    padding: 10px 25px;
+    padding: 0.5em 25px;
     border-radius: 0.4em 0.4em 0 0;
     border-bottom: none;
     text-transform: uppercase;
     margin: 10px -3px 0 -2px;
-    font-size: 1.5em;
+    font-size: 1em;
     font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
     /*
     @media only screen and (max-width: 550px){
@@ -6094,7 +6094,7 @@ div[id^="inline-"] {
   #content.rsrProdPag .button {
     background: #72CDFF;
     color: #FFF;
-    padding: 7px 25px;
+    padding: 0.5em 25px;
     border-radius: 0.4em;
     font-size: 1.5em;
     font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif; }
