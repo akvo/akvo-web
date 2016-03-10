@@ -7478,6 +7478,8 @@ div[id^="inline-"] {
 /* END OF STYLES - EVENTS CALENDAR */ 
 
 
+$lightBlue: #72CDFF;
+
 /* STYLES FOR TABULAR CONTENT */
 .rsr-tabs{
 	border-bottom:#ccc solid 1px;
@@ -7485,14 +7487,15 @@ div[id^="inline-"] {
 	text-align:center;
 	
 	.rsr-tab{
-		border:#5d9de5 solid 1px;
+		border:$lightBlue solid 1px;
 		display: inline-block;
 		padding: 5px 10px;
 		border-radius: 3px 3px 0 0;
 		border-bottom: none;
+		text-transform: uppercase;
 	}
 	.rsr-tab.active{
-		background: #5d9de5;
+		background: $lightBlue;
 		
 		
 		a[href]{
@@ -7515,6 +7518,9 @@ div[id^="inline-"] {
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
+
+	
+
 	.threeColumns.wrapper{
 		min-height: 120px;
 		div{ border:none;}
@@ -7534,7 +7540,7 @@ div[id^="inline-"] {
 	}
 	
 	.button{
-		background: #5d9de5;
+		background: $lightBlue;
 		color : #FFF;
 		padding: 7px 15px;
 		border-radius: 3px;
@@ -7669,10 +7675,10 @@ div[id^="inline-"] {
 }	
 
 .media-box{
-	background: rgba(87, 193, 232, 0.1);
-	margin:5em 0;
+	background: $lightBlue;
+	margin:5em 1em;
 	padding: 2.5em 2%;
-	
+	border-radius: 3px;
 	.media-left{
 		display: block;
 		float: left;
@@ -7693,6 +7699,8 @@ div[id^="inline-"] {
 		}
 		hr{
 			width: 50%;
+			border: none;
+			border-bottom: #555 solid 1px;
 		}
 		img{
 			margin-top: -100px;

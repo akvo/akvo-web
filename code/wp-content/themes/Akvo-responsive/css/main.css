@@ -6038,13 +6038,14 @@ div[id^="inline-"] {
   list-style: none;
   text-align: center; }
   .rsr-tabs .rsr-tab {
-    border: #5d9de5 solid 1px;
+    border: #72CDFF solid 1px;
     display: inline-block;
     padding: 5px 10px;
     border-radius: 3px 3px 0 0;
-    border-bottom: none; }
+    border-bottom: none;
+    text-transform: uppercase; }
   .rsr-tabs .rsr-tab.active {
-    background: #5d9de5; }
+    background: #72CDFF; }
     .rsr-tabs .rsr-tab.active a[href] {
       color: #FFF; }
 
@@ -6068,7 +6069,7 @@ div[id^="inline-"] {
   #content.rsrProdPag section:target {
     background: #FFF; }
   #content.rsrProdPag .button {
-    background: #5d9de5;
+    background: #72CDFF;
     color: #FFF;
     padding: 7px 15px;
     border-radius: 3px;
@@ -6164,9 +6165,10 @@ div[id^="inline-"] {
       right: 20px; }
 
 .media-box {
-  background: rgba(87, 193, 232, 0.1);
-  margin: 5em 0;
-  padding: 2.5em 2%; }
+  background: #72CDFF;
+  margin: 5em 1em;
+  padding: 2.5em 2%;
+  border-radius: 3px; }
   .media-box .media-left {
     display: block;
     float: left; }
@@ -6182,7 +6184,9 @@ div[id^="inline-"] {
       font-size: 1em;
       line-height: 1em; }
     .media-box .media-right hr {
-      width: 50%; }
+      width: 50%;
+      border: none;
+      border-bottom: #555 solid 1px; }
     .media-box .media-right img {
       margin-top: -100px; }
   .media-box .media-big {
