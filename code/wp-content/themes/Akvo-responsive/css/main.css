@@ -6195,6 +6195,8 @@ div[id^="inline-"] {
   margin: 5em 1em;
   padding: 2.5em 2%;
   border-radius: 3px; }
+  .media-box a[href] {
+    color: inherit; }
   .media-box h3 {
     text-shadow: none; }
   .media-box .media-left {

@@ -7717,6 +7717,10 @@ $lightBlue: #72CDFF;
 	padding: 2.5em 2%;
 	border-radius: 3px;
 	
+	a[href]{
+		color: inherit;
+	}
+	
 	h3{
 		text-shadow: none;
 	}
