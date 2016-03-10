@@ -7489,10 +7489,20 @@ $lightBlue: #72CDFF;
 	.rsr-tab{
 		border:$lightBlue solid 1px;
 		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 3px 3px 0 0;
+		padding: 10px 25px;
+		border-radius: 0.4em 0.4em 0 0;
 		border-bottom: none;
 		text-transform: uppercase;
+		margin:10px -3px 0 -2px;
+		font-size: 1.5em;
+		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		
+		/*
+		@media only screen and (max-width: 550px){
+			padding: 5px 10px;
+			
+		}		
+		*/
 	}
 	.rsr-tab.active{
 		background: $lightBlue;
@@ -7565,7 +7575,7 @@ $lightBlue: #72CDFF;
 		background: $lightBlue;
 		color : #FFF;
 		padding: 7px 25px;
-		border-radius: 5px;
+		border-radius: 0.4em;
 		font-size: 1.5em;
 		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
