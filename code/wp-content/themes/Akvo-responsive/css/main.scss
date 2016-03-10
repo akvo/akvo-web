@@ -7489,10 +7489,20 @@ $lightBlue: #72CDFF;
 	.rsr-tab{
 		border:$lightBlue solid 1px;
 		display: inline-block;
-		padding: 5px 10px;
-		border-radius: 3px 3px 0 0;
+		padding: 10px 25px;
+		border-radius: 0.4em 0.4em 0 0;
 		border-bottom: none;
 		text-transform: uppercase;
+		margin:10px -3px 0 -2px;
+		font-size: 1.5em;
+		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		
+		/*
+		@media only screen and (max-width: 550px){
+			padding: 5px 10px;
+			
+		}		
+		*/
 	}
 	.rsr-tab.active{
 		background: $lightBlue;
@@ -7533,6 +7543,7 @@ $lightBlue: #72CDFF;
 		}
 		em{
 			color: #000;
+			font-size: 1em;
 		}
 	}
 	
@@ -7564,7 +7575,7 @@ $lightBlue: #72CDFF;
 		background: $lightBlue;
 		color : #FFF;
 		padding: 7px 25px;
-		border-radius: 5px;
+		border-radius: 0.4em;
 		font-size: 1.5em;
 		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	}
@@ -7618,6 +7629,10 @@ $lightBlue: #72CDFF;
 			
 			p{text-align:center;}
 			hr{width:60%;}
+			
+			a[href]{
+				color: inherit;
+			}
 			
 			.image{
 				background-size: cover;
@@ -7701,6 +7716,15 @@ $lightBlue: #72CDFF;
 	margin:5em 1em;
 	padding: 2.5em 2%;
 	border-radius: 3px;
+	
+	a[href]{
+		color: inherit;
+	}
+	
+	h3{
+		text-shadow: none;
+	}
+	
 	.media-left{
 		display: block;
 		float: left;
