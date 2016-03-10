@@ -6082,9 +6082,10 @@ div[id^="inline-"] {
   #content.rsrProdPag .button {
     background: #72CDFF;
     color: #FFF;
-    padding: 7px 15px;
-    border-radius: 3px;
-    font-size: 1.5em; }
+    padding: 7px 25px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif; }
   #content.rsrProdPag .bxslider .image {
     width: 100%;
     min-height: 400px;
