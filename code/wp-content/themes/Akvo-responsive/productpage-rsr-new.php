@@ -68,14 +68,16 @@
 	}
 	
 	function rsr_overview_columns($el){
-		_e("<div class='sub-section'>");
+		_e("<div class='sub-section' id='".$el."'>");
 		_e("<div class='threeColumns wrapper'>");
-		while(have_rows($el)): the_row();
-			_e("<div>");
-			_e("<h3>".get_sub_field('title')."</h3>");
-			_e("<p>".get_sub_field('description')."</p>");
-			_e("</div>");
-		endwhile;
+		while(have_rows($el)): the_row();?>
+			<div>
+				<img src="<?php the_sub_field('icon');?>" />
+				<h3><?php the_sub_field('title');?></h3>
+				<p><?php the_sub_field('description');?></p>
+			</div>
+			
+		<?php endwhile;
 		_e("</div><div class='clearfix'></div>");
 		_e("</div>");
 	}
@@ -156,15 +158,12 @@
 	
 	function rsr_testimonials($el){
 	?>
-		<div class="sub-section">	
+		<div class="sub-section" id="<?php _e($el);?>">	
 			<div class="threeColumns wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
 					<img src="<?php the_sub_field('profile_picture');?>" />
-					<h4><?php the_sub_field('title');?></h4>
-					<p><?php the_sub_field('description');?></p>
-					<hr>
-					<p><small><?php the_sub_field('name');?><br><?php the_sub_field('job_title');?></small></p>
+					<?php the_sub_field('description');?>
 				</div>
 				<?php endwhile;?>
 			</div>
