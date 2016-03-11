@@ -245,16 +245,16 @@
 				<ul>
 					<?php foreach($sections as $section):?>
 					<li class="media-box">
-						<a href="<?php _e($section['link']);?>">
+						
 							<div class="media-big <?php if($section['image_text']):?>media-left<?php else:?>media-right<?php endif;?>">
 								<h3><?php _e($section['title']);?></h3>
 								<p><?php _e($section['description']); ?></p>
 							</div>
 							<div class="media-small text-center <?php if($section['image_text']):?>media-right<?php else:?>media-left<?php endif;?>">
-								<img src="<?php _e($section['image']); ?>" />
+								<a href="<?php _e($section['link']);?>"><img src="<?php _e($section['image']); ?>" /></a>	
 								<?php _e($section['image_text']);?>
 							</div>
-						</a>	
+						
 						<div class="clear"></div>
 					</li>
 					<?php endforeach;?>
