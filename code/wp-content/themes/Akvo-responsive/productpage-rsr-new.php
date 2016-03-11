@@ -98,7 +98,7 @@
 			<div class="vimeoBlockedMessage">
         		<?php the_field('rsr_video_backup_message'); ?>
       		</div>
-      		<iframe width="800" height="450" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
+      		<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
     	</div>
   	<?php	
   	}
