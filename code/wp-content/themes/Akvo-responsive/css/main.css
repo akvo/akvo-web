@@ -6155,7 +6155,7 @@ div[id^="inline-"] {
       height: auto;
       overflow: visible !important; } }
   #content.rsrProdPag .screenshot {
-    max-width: 800px;
+    max-width: 600px;
     margin: 0 auto 80px; }
   #content.rsrProdPag .threeColumns > div:nth-child(3n+1), #content.rsrProdPag .threeColumns > li:nth-child(3n+1), #content.rsrProdPag .threeColumns > p:nth-child(3n+1) {
     margin: 0; }
