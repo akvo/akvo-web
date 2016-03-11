@@ -176,8 +176,9 @@
 	function rsr_tour(){
 		_e("<div class='sub-section'>");
 		_e("<h3>Akvo RSR Tour</h3>");
-		while(have_rows('tour')): the_row();?>
-			<div class="screenshot">
+		$i = 0;
+		while(have_rows('tour')): the_row();$i++;?>
+			<div class="screenshot" id="screenshot-<?php _e($i);?>">
 				<h4><?php the_sub_field('title');?></h4>
 				<p><?php the_sub_field('description');?></p>
 				<img src="<?php the_sub_field('image');?>" />
@@ -193,7 +194,7 @@
             	<div class="borderTop"></div>
            		<div class="image" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
            			<?php if(get_sub_field('image_text')):?>
-           			<a href="<?php _e(get_sub_field('image_link'));?>">
+           			<a data-behaviour="anchor-reload" href="<?php _e(get_sub_field('image_link'));?>">
            				<?php _e(get_sub_field('image_text'));?>
            			</a>
            			<?php endif;?>
@@ -412,8 +413,7 @@
 					
 					var href = ahref.attr('href');
 					
-					$('.rsr-tabs a[href=' + href + ']').click();
-					
+					$(href).rsr_scroll_to();
 					
 					
 					console.log('reload');
@@ -447,7 +447,28 @@
 		};
 		
 		console.log('pre-tabs');	
+		
+		$.fn.rsr_scroll_to = function(){
+			return this.each(function(){
 			
+				var el = $(this);
+				
+				var section = el.closest('.tab-content');
+    			
+    			$('.rsr-tabs a[href=#' + section.attr('id') + ']').click();
+    			
+    			var scroll_el = $(el).attr('id') == $(section).attr('id') ? $('#mainbody') : $(el);
+  					
+  				$('html, body').animate({
+        			scrollTop: scroll_el.offset().top
+    			}, 500);
+    			
+    			window.location.hash = el.attr('id');
+			
+			});
+		};
+		
+		
     	$.fn.rsr_tabs = function(){
        		return this.each(function(){
        			console.log('tabs init');
@@ -459,7 +480,7 @@
        				
        				var section_id = list.find('a[href]').attr('href');
        				
-       				window.location.hash = section_id;
+       				
        				
        				$(section_id).show();	
        				
@@ -489,6 +510,7 @@
        						old_tab.hide();
        						old_li.removeClass('active');
        						ul.activate(li);
+       						window.location.hash = tab.attr('id');
        						
        					}
        					console.log('click');
@@ -497,17 +519,28 @@
        			});
     			console.log('tabs');
     			
-    			if(window.location.hash) {
-    				var section_id = window.location.hash;
-    				ul.activate(ul.find('[href~=' + section_id + ']').closest('li'));
-  					console.log(section_id);
+    			
+    			
+    			if(!window.location.hash){
+    				window.location.hash = 'overview';
+    			}
+    			
+    			
+    			var hash = window.location.hash;
+    			
+    			$(hash).rsr_scroll_to();
+    				
+    			/*	
+    			var section = $(hash).closest('.tab-content');
+    				
+    			ul.activate(ul.find('[href~=#' + section.attr('id') + ']').closest('li'));
+  				
+  				var scroll_el = $(hash).attr('id') == $(section).attr('id') ? $('#mainbody') : $(hash);
   					
-  					
-  					
-				} else {
-  					ul.activate(ul.find('li:first'));
-  					
-				}
+  				$('html, body').animate({
+        			scrollTop: scroll_el.offset().top
+    			}, 500);
+  				*/
     			
     			
     		});
@@ -536,9 +569,7 @@
 		});
     	
     	
-    	$('html, body').animate({
-        	scrollTop: $("#mainbody").offset().top
-    	}, 500);
+    	
   					
     	
     	
