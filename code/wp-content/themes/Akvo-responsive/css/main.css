@@ -6067,6 +6067,8 @@ div[id^="inline-"] {
 /* RSR ELEMENTS */
 #content.rsrProdPag {
   /* HELPER CLASSES */ }
+  #content.rsrProdPag #video {
+    max-width: 600px; }
   #content.rsrProdPag #testimonials strong {
     color: #2c2a74;
     font-size: 1.2em;
@@ -6093,8 +6095,8 @@ div[id^="inline-"] {
     background: #FFF; }
   #content.rsrProdPag .button {
     background: #72CDFF;
-    color: #FFF;
-    padding: 0.5em 25px;
+    color: #FFF !important;
+    padding: 0.5em 2em;
     border-radius: 0.4em;
     font-size: 1.5em;
     font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif; }
@@ -6107,8 +6109,8 @@ div[id^="inline-"] {
     #content.rsrProdPag .bxslider .image a[href] {
       position: absolute;
       height: 100%;
-      width: 40%;
-      min-width: 300px;
+      /*width:40%;*/
+      width: 300px;
       background: rgba(255, 255, 255, 0.7);
       padding: 20px 25px;
       top: 0;

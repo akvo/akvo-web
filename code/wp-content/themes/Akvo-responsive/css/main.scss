@@ -7528,7 +7528,9 @@ $lightBlue: #72CDFF;
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
-	
+	#video{
+		max-width: 600px;
+	}
 	#testimonials{
 		strong{
 			color: #2c2a74;
@@ -7573,8 +7575,8 @@ $lightBlue: #72CDFF;
 	
 	.button{
 		background: $lightBlue;
-		color : #FFF;
-		padding: 0.5em 25px;
+		color : #FFF !important;
+		padding: 0.5em 2em;
 		border-radius: 0.4em;
 		font-size: 1.5em;
 		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -7591,8 +7593,8 @@ $lightBlue: #72CDFF;
 			a[href]{
 				position:absolute;
 				height:100%;
-				width:40%;
-				min-width:300px;
+				/*width:40%;*/
+				width:300px;
 				background: rgba(255, 255, 255, 0.7);
 				padding:20px 25px;
 				top:0;
