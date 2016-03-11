@@ -7575,8 +7575,8 @@ $lightBlue: #72CDFF;
 	
 	.button{
 		background: $lightBlue;
-		color : #FFF;
-		padding: 0.5em 25px;
+		color : #FFF !important;
+		padding: 0.5em 2em;
 		border-radius: 0.4em;
 		font-size: 1.5em;
 		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
