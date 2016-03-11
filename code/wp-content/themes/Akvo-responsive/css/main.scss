@@ -7666,7 +7666,7 @@ $lightBlue: #72CDFF;
 	}
 	
 	.screenshot{
-		max-width:800px;
+		max-width:600px;
 		margin:0 auto 80px;
 	}
 	.threeColumns > div:nth-child(3n+1), .threeColumns > li:nth-child(3n+1), .threeColumns > p:nth-child(3n+1){
@@ -7712,8 +7712,9 @@ $lightBlue: #72CDFF;
 }	
 
 .media-box{
-	background: $lightBlue;
-	margin:5em 1em;
+	background: rgba(114, 205, 255, 0.3);
+	margin:5em auto;
+	width:60%;
 	padding: 2.5em 2%;
 	border-radius: 3px;
 	
@@ -7756,7 +7757,7 @@ $lightBlue: #72CDFF;
 	
 	.media-big{
 		width: 48%;
-		
+		max-width: 450px;
 	}
 	.media-small{
 		width:40%;
