@@ -7557,7 +7557,14 @@ $lightBlue: #72CDFF;
 
 	.threeColumns.wrapper{
 		min-height: 120px;
-		div{ border:none;}
+		div{ 
+			border:none;
+			margin: 0em 3em;
+			width: 21%;
+		}
+		div:nth-child(3n+1){
+			margin: 0em 3em;
+		}
 	}
 	
 	/* HELPER CLASSES */
@@ -7614,7 +7621,8 @@ $lightBlue: #72CDFF;
 	
 	.box-col{
 		margin:0 0 2em;
-		min-height: 250px;
+		width: 100% !important;
+		margin:0 auto 3em !important;
 	}
 	
 	.banner{
