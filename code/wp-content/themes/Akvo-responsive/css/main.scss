@@ -7528,7 +7528,9 @@ $lightBlue: #72CDFF;
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
-	
+	#video{
+		max-width: 600px;
+	}
 	#testimonials{
 		strong{
 			color: #2c2a74;

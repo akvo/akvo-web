@@ -6067,6 +6067,8 @@ div[id^="inline-"] {
 /* RSR ELEMENTS */
 #content.rsrProdPag {
   /* HELPER CLASSES */ }
+  #content.rsrProdPag #video {
+    max-width: 600px; }
   #content.rsrProdPag #testimonials strong {
     color: #2c2a74;
     font-size: 1.2em;
