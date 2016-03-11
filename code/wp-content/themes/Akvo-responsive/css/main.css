@@ -6086,7 +6086,11 @@ div[id^="inline-"] {
   #content.rsrProdPag .threeColumns.wrapper {
     min-height: 120px; }
     #content.rsrProdPag .threeColumns.wrapper div {
-      border: none; }
+      border: none;
+      margin: 0em 3em;
+      width: 21%; }
+    #content.rsrProdPag .threeColumns.wrapper div:nth-child(3n+1) {
+      margin: 0em 3em; }
   #content.rsrProdPag .text-center {
     text-align: center !important; }
     #content.rsrProdPag .text-center p {
@@ -6122,7 +6126,8 @@ div[id^="inline-"] {
       margin-bottom: 2em; }
   #content.rsrProdPag .box-col {
     margin: 0 0 2em;
-    min-height: 250px; }
+    width: 100% !important;
+    margin: 0 auto 3em !important; }
   #content.rsrProdPag .banner {
     height: 200px;
     background-size: cover; }
