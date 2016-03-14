@@ -93,13 +93,14 @@
       				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>
+  			<div id="video" class="videoContainer wrapper">
+				<div class="vimeoBlockedMessage">
+        			<?php the_field('rsr_video_backup_message'); ?>
+      			</div>
+      			<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
+    		</div>
   		</div>	
-  		<div id="video" class="videoContainer wrapper">
-			<div class="vimeoBlockedMessage">
-        		<?php the_field('rsr_video_backup_message'); ?>
-      		</div>
-      		<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
-    	</div>
+  		
   	<?php	
   	}
 	
