@@ -7561,6 +7561,10 @@ $lightBlue: #72CDFF;
 			border:none;
 			margin: 0 4%;
 			width: 21%;
+			
+			.fa-2x{
+				color: #2C2A74;
+			}
 		}
 		div:nth-child(3n+1){
 			margin: 0 4%;
@@ -7619,7 +7623,7 @@ $lightBlue: #72CDFF;
 	}
 	
 	.sub-section{
-		margin:5em 0;
+		margin:3em 0;
 		
 		.threeColumns.wrapper h3{
 			margin-bottom:2em;
@@ -7811,10 +7815,10 @@ $lightBlue: #72CDFF;
     	float: left;
     	font-size: 12px;
     	margin-right: 20px;
-    	width: 152px;
+    	min-width: 152px;
     	text-align: center;
     	text-shadow: 0 1px 0 #877E71;
-    	border: #ccc solid 1px;
+    	/*border: #ccc solid 1px;*/
     	padding: 5px;
 	}
 

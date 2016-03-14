@@ -6089,6 +6089,8 @@ div[id^="inline-"] {
       border: none;
       margin: 0 4%;
       width: 21%; }
+      #content.rsrProdPag .threeColumns.wrapper div .fa-2x {
+        color: #2C2A74; }
     #content.rsrProdPag .threeColumns.wrapper div:nth-child(3n+1) {
       margin: 0 4%; }
     @media only screen and (max-width: 992px) {
@@ -6125,7 +6127,7 @@ div[id^="inline-"] {
       left: 10%;
       color: #2c2a74; }
   #content.rsrProdPag .sub-section {
-    margin: 5em 0; }
+    margin: 3em 0; }
     #content.rsrProdPag .sub-section .threeColumns.wrapper h3 {
       margin-bottom: 2em; }
   #content.rsrProdPag .box-col {
@@ -6260,10 +6262,10 @@ div[id^="inline-"] {
     float: left;
     font-size: 12px;
     margin-right: 20px;
-    width: 152px;
+    min-width: 152px;
     text-align: center;
     text-shadow: 0 1px 0 #877E71;
-    border: #ccc solid 1px;
+    /*border: #ccc solid 1px;*/
     padding: 5px; }
   .timeTicker .timeSegment:last-child {
     margin-right: 0; }

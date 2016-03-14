@@ -93,13 +93,14 @@
       				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>
+  			<div id="video" class="videoContainer wrapper">
+				<div class="vimeoBlockedMessage">
+        			<?php the_field('rsr_video_backup_message'); ?>
+      			</div>
+      			<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
+    		</div>
   		</div>	
-  		<div id="video" class="videoContainer wrapper">
-			<div class="vimeoBlockedMessage">
-        		<?php the_field('rsr_video_backup_message'); ?>
-      		</div>
-      		<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php the_field('video_link'); ?>"></iframe>
-    	</div>
+  		
   	<?php	
   	}
 	
@@ -120,8 +121,18 @@
 				<li class="box">
       				<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
       				<div class="timeTicker">            
-    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json[get_sub_field('json_slug')]);?>">
+    					<p class="timeSegment clear">
+       						<?php 
+       							$str = $json[get_sub_field('json_slug')];
+       							for( $i = 0; $i <= strlen($str); $i++ ) {
+       								$char = substr( $str, $i, 1 );
+       								if(is_numeric($char)){
+       									_e("<span class='digit'>". $char ."</span>");
+       								}
+   									
+								}
        						
+       						?>
    						</p>
             		</div>
       			</li>
@@ -220,7 +231,9 @@
 			<ul class='list-box'>
 				<?php while(have_rows($el)): the_row();?>
 				<li class="box">
+					<?php if(has_sub_field('description')):?>
 					<h4><?php the_sub_field('description');?></h4><br>
+					<?php endif;?>
       				<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
       			</li>
       			<?php endwhile;?>
@@ -421,7 +434,7 @@
 				});
 			});
 		};
-		
+		/*
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
 				var el = $(this);
@@ -446,7 +459,7 @@
 				
        		});
 		};
-		
+		*/
 		console.log('pre-tabs');	
 		
 		$.fn.rsr_scroll_to = function(){
@@ -556,16 +569,16 @@
     			
     			$('[data-behaviour~=show-video]').click( function(event) {
       				event.preventDefault();
-      				$('.videoContainer').fadeIn(200);
+      				$('.videoContainer').fadeToggle();
     			});
     			
     			
-    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
+    			//$('[data-behaviour~=time-ticker]').rsr_time_ticker();
     			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
-    			$('[data-behaviour~=modal]').rsr_modal();
+    			//$('[data-behaviour~=modal]').rsr_modal();
     			
-    			$('[data-behaviour~=modal-show]').rsr_modal_show();
+    			//$('[data-behaviour~=modal-show]').rsr_modal_show();
   			}
 		});
     	
