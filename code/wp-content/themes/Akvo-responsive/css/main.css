@@ -2456,7 +2456,7 @@ moreStuffHome figcaption a {
 
 .entry li,
 .akvo-faq .answers li,
-.policies,
+.policies li,
 .jobsEntry li {
   margin: 0.5em 0em 0.5em 0.25em; }
 
@@ -3454,7 +3454,8 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
 
 .productPage section {
   margin: 0em auto;
-  padding: 0.5em 1em; }
+  /*
+  padding: 0.5em 1em;*/ }
   .productPage section.pricingHero {
     margin: 40px auto; }
 
@@ -4138,10 +4139,8 @@ section.flowMonDescr {
 @-webkit-keyframes highlight {
   0% {
     background: #fff3cc; }
-
   100% {
     background: none; } }
-
 .hubs li {
   margin: 70px auto 0;
   max-width: 800px;
@@ -4515,21 +4514,21 @@ ul.staff li:nth-child(6n) {
   height: 70px;
   transition: all 0.2s ease-in; }
   .helpSupport nav ul li a.rsrHelp {
-    background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 50% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
       .helpSupport nav ul li a.rsrHelp {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.flowHelp {
-    background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 56% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
       .helpSupport nav ul li a.flowHelp {
         margin: 20px 0 0 0; } }
   .helpSupport nav ul li a.akvopediaHelp {
-    background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+    background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top transparent;
     background-size: 65% auto;
     text-indent: -9999px; }
     @media only screen and (max-width: 768px) {
@@ -4556,15 +4555,15 @@ ul.staff li:nth-child(6n) {
       background-size: 80% 80%; }
 
 h1.rsrHelp {
-  background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+  background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top transparent;
   background-size: auto 56px;
   text-indent: -9999px; }
 h1.flowHelp {
-  background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+  background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top transparent;
   background-size: auto 56px;
   text-indent: -9999px; }
 h1.akvopediaHelp {
-  background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+  background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top transparent;
   background-size: auto 56px;
   text-indent: -9999px; }
 
@@ -5773,7 +5772,7 @@ div[id^="inline-"] {
   .featuredItems .darkblue img {
     border-bottom: 12px solid #2c2a74; }
   .featuredItems .none img {
-    border-bottom: 12px solid rgba(0, 0, 0, 0); }
+    border-bottom: 12px solid transparent; }
   .featuredItems .row {
     margin-bottom: 1.5em; }
     @media only screen and (max-width: 1024px) {
@@ -5829,7 +5828,7 @@ div[id^="inline-"] {
   .homepage-2015 #actionHeroBox .bx-wrapper, .homepage-2015 #actionHeroBox .bx-viewport {
     overflow: hidden; }
   .homepage-2015 #actionHeroBox .bxslider li {
-    border-bottom: 12px solid rgba(0, 0, 0, 0); }
+    border-bottom: 12px solid transparent; }
     .homepage-2015 #actionHeroBox .bxslider li.orange {
       border-bottom: 12px solid #de8929; }
       .homepage-2015 #actionHeroBox .bxslider li.orange #actionHeroInfo {
@@ -5966,7 +5965,7 @@ div[id^="inline-"] {
 .productPage-2015 .darkblue {
   border-bottom: 12px solid #2c2a74; }
 .productPage-2015 .none {
-  border-bottom: 12px solid rgba(0, 0, 0, 0); }
+  border-bottom: 12px solid transparent; }
 .productPage-2015 .bigImage {
   margin-top: 1em;
   margin-bottom: 1em; }
@@ -6015,3 +6014,341 @@ div[id^="inline-"] {
   width: 100%; }
 
 /* Apply list styles to custom form content, overriding resets */
+/* STYLES of EVENTS CALENDAR */
+.tribe-events-list h2.tribe-events-page-title {
+  font-size: 2.3em !important;
+  margin-bottom: 0.8em !important; }
+
+.tribe-events-gcal {
+  margin-right: 0px !important; }
+
+.tribe-events-meta-group dt {
+  font-style: italic;
+  font-size: 0.8em; }
+.tribe-events-meta-group dd {
+  margin-bottom: 5px; }
+
+@media only screen and (max-width: 768px) {
+  .tribe-events-event-meta .tribe-events-meta-group {
+    margin-bottom: 20px !important; } }
+/* END OF STYLES - EVENTS CALENDAR */
+/* STYLES FOR TABULAR CONTENT */
+.rsr-tabs {
+  border-bottom: #ccc solid 1px;
+  list-style: none;
+  text-align: center; }
+  .rsr-tabs .rsr-tab {
+    border: #72CDFF solid 1px;
+    display: inline-block;
+    padding: 0.5em 25px;
+    border-radius: 0.4em 0.4em 0 0;
+    border-bottom: none;
+    text-transform: uppercase;
+    margin: 10px -3px 0 -2px;
+    font-size: 1em;
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /*
+    @media only screen and (max-width: 550px){
+    	padding: 5px 10px;
+    	
+    }		
+    */ }
+  .rsr-tabs .rsr-tab.active {
+    background: #72CDFF; }
+    .rsr-tabs .rsr-tab.active a[href] {
+      color: #FFF; }
+  @media only screen and (max-width: 768px) {
+    .rsr-tabs .rsr-tab {
+      border-bottom: #72CDFF solid 1px;
+      border-radius: 0.4em;
+      margin: 0.4em auto;
+      display: block;
+      width: 95%;
+      padding: 0.5em; } }
+
+.tab-content .tab-desc {
+  margin: 3em 0; }
+.tab-content .tab-desc, .tab-content .tab-desc p {
+  text-align: center; }
+
+/* END OF TABULAR CONTENT STYLES */
+/* RSR ELEMENTS */
+#content.rsrProdPag {
+  /* HELPER CLASSES */ }
+  #content.rsrProdPag #video {
+    max-width: 600px; }
+  #content.rsrProdPag #testimonials strong {
+    color: #2c2a74;
+    font-size: 1.2em;
+    line-height: 1.25em;
+    margin: 1.1em 0em 0.5em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal; }
+  #content.rsrProdPag #testimonials hr {
+    width: 50%; }
+  #content.rsrProdPag #testimonials em {
+    color: #000;
+    font-size: 1em; }
+  #content.rsrProdPag #overview_columns h3 {
+    margin-top: 0; }
+  #content.rsrProdPag .threeColumns.wrapper {
+    min-height: 120px; }
+    #content.rsrProdPag .threeColumns.wrapper div {
+      border: none;
+      margin: 0 4%;
+      width: 21%; }
+      #content.rsrProdPag .threeColumns.wrapper div .fa-2x {
+        color: #2C2A74; }
+    #content.rsrProdPag .threeColumns.wrapper div:nth-child(3n+1) {
+      margin: 0 4%; }
+    @media only screen and (max-width: 992px) {
+      #content.rsrProdPag .threeColumns.wrapper div {
+        width: 98% !important;
+        margin: 30px auto !important; } }
+  #content.rsrProdPag .text-center {
+    text-align: center !important; }
+    #content.rsrProdPag .text-center p {
+      text-align: center !important; }
+  #content.rsrProdPag section:target {
+    background: #FFF; }
+  #content.rsrProdPag .button {
+    background: #72CDFF;
+    color: #FFF !important;
+    padding: 0.5em 2em;
+    border-radius: 0.4em;
+    font-size: 1.5em;
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  #content.rsrProdPag .bxslider .image {
+    width: 100%;
+    min-height: 400px;
+    position: relative;
+    background-position: center;
+    background-size: cover; }
+    #content.rsrProdPag .bxslider .image a[href] {
+      position: absolute;
+      height: 100%;
+      /*width:40%;*/
+      width: 300px;
+      background: rgba(255, 255, 255, 0.7);
+      padding: 20px 25px;
+      top: 0;
+      left: 10%;
+      color: #2c2a74; }
+  #content.rsrProdPag .sub-section {
+    margin: 3em 0; }
+    #content.rsrProdPag .sub-section .threeColumns.wrapper h3 {
+      margin-bottom: 2em; }
+  #content.rsrProdPag .box-col {
+    margin: 0 0 2em;
+    width: 100% !important;
+    margin: 0 auto 3em !important; }
+  #content.rsrProdPag .banner {
+    height: 200px;
+    background-size: cover; }
+  #content.rsrProdPag .list-box {
+    text-align: center; }
+    #content.rsrProdPag .list-box li.box {
+      display: inline-block;
+      margin: 20px 10px;
+      width: 320px; }
+      #content.rsrProdPag .list-box li.box p {
+        text-align: center; }
+      #content.rsrProdPag .list-box li.box hr {
+        width: 60%; }
+      #content.rsrProdPag .list-box li.box a[href] {
+        color: inherit; }
+      #content.rsrProdPag .list-box li.box .image {
+        background-size: cover;
+        background-repeat: no-repeat;
+        position: relative;
+        height: 80px;
+        width: 80px;
+        margin: 0 auto;
+        background-position: center; }
+  #content.rsrProdPag .big-box-wrapper .box {
+    height: 560px;
+    overflow: hidden; }
+  #content.rsrProdPag section.rsrNuggetsSection li {
+    background: rgba(87, 193, 232, 0.1); }
+  @media only screen and (max-width: 992px) {
+    #content.rsrProdPag .big-box-wrapper .box {
+      width: 100% !important;
+      height: auto;
+      overflow: visible !important; } }
+  #content.rsrProdPag .screenshot {
+    max-width: 600px;
+    margin: 0 auto 80px; }
+  #content.rsrProdPag .threeColumns > div:nth-child(3n+1), #content.rsrProdPag .threeColumns > li:nth-child(3n+1), #content.rsrProdPag .threeColumns > p:nth-child(3n+1) {
+    margin: 0; }
+  #content.rsrProdPag .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 3;
+    display: none; }
+    #content.rsrProdPag .modal .backdrop {
+      background: rgba(255, 255, 255, 0.9);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0; }
+    #content.rsrProdPag .modal .modal-content {
+      top: 20%;
+      left: 8%;
+      position: absolute;
+      background: #FFF;
+      width: 80%;
+      min-height: 200px;
+      padding: 20px;
+      border: #ccc solid 1px;
+      border-radius: 5px; }
+    #content.rsrProdPag .modal .close-btn {
+      font-size: 4em;
+      position: absolute;
+      top: 20px;
+      right: 20px; }
+
+.media-box {
+  background: rgba(114, 205, 255, 0.3);
+  margin: 5em auto;
+  width: 60%;
+  padding: 2.5em 2%;
+  border-radius: 3px; }
+  .media-box a[href] {
+    color: inherit; }
+  .media-box h3 {
+    text-shadow: none; }
+  .media-box .media-left {
+    display: block;
+    float: left; }
+  .media-box .media-right {
+    display: block;
+    float: right; }
+    .media-box .media-right strong {
+      font-weight: normal;
+      color: #2c2a74;
+      display: block; }
+    .media-box .media-right em {
+      color: #2c2a74;
+      font-size: 1em;
+      line-height: 1em; }
+    .media-box .media-right hr {
+      width: 50%;
+      border: none;
+      border-bottom: #555 solid 1px; }
+    .media-box .media-right img {
+      margin-top: -100px; }
+  .media-box .media-big {
+    width: 48%;
+    max-width: 450px; }
+  .media-box .media-small {
+    width: 40%; }
+  @media only screen and (max-width: 768px) {
+    .media-box .media-small {
+      width: 100%;
+      margin-top: 2em; }
+    .media-box .media-right img {
+      margin-top: 0; }
+    .media-box .media-big {
+      width: 100% !important; } }
+  .media-box .clear {
+    clear: both; }
+
+.timeTicker {
+  margin: 0 auto;
+  width: 152px; }
+  .timeTicker .clear:before, .timeTicker .clear:after {
+    content: "";
+    display: table; }
+  .timeTicker .clear:after {
+    clear: both; }
+  .timeTicker .clear {
+    zoom: 1; }
+  .timeTicker .timeSegment {
+    color: #3E3933;
+    float: left;
+    font-size: 12px;
+    margin-right: 20px;
+    min-width: 152px;
+    text-align: center;
+    text-shadow: 0 1px 0 #877E71;
+    /*border: #ccc solid 1px;*/
+    padding: 5px; }
+  .timeTicker .timeSegment:last-child {
+    margin-right: 0; }
+  .timeTicker .digit {
+    /* Digit */
+    background-color: #FFF;
+    border: 1px solid #999;
+    color: #000;
+    float: left;
+    font-size: 28px;
+    height: 60px;
+    line-height: 60px;
+    margin: 0 2px 2px 0;
+    position: relative;
+    text-align: center;
+    text-shadow: none;
+    width: 34px;
+    /* Box Shadow */
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
+    /* Border Radius */
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px; }
+  .timeTicker .digit::before, .timeTicker .digit::after {
+    content: "";
+    height: 29px;
+    left: 0;
+    line-height: 60px;
+    position: absolute;
+    width: 34px; }
+  .timeTicker .digit::before {
+    /* Top element */
+    border-bottom: 1px solid #483F33;
+    top: 0;
+    /* Border Radius */
+    border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+    border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+    /* Box Shadow */
+    box-shadow: 0px 1px 0 #665D53 inset;
+    /* Gradient */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.02)), to(transparent));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.02), transparent);
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.02), transparent);
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.02), transparent);
+    /* IE10 */
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.02), transparent);
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.02), transparent); }
+  .timeTicker .digit::after {
+    /* Bottom element */
+    bottom: 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.18);
+    /* Border Radius */
+    border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+    border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+    /* Gradient */
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.06)), to(rgba(255, 255, 255, 0.01)));
+    /* Saf4+, Chrome */
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+    /* Chrome 10+, Saf5.1+, iOS 5+ */
+    background-image: -moz-linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+    /* FF3.6 */
+    background-image: -ms-linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+    /* IE10 */
+    background-image: -o-linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01));
+    /* Opera 11.10+ */
+    background-image: linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)); }
+
+/*# sourceMappingURL=main.css.map */
