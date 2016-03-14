@@ -120,8 +120,18 @@
 				<li class="box">
       				<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
       				<div class="timeTicker">            
-    					<p class="timeSegment clear" data-behaviour="time-ticker" data-value="<?php _e($json[get_sub_field('json_slug')]);?>">
+    					<p class="timeSegment clear">
+       						<?php 
+       							$str = $json[get_sub_field('json_slug')];
+       							for( $i = 0; $i <= strlen($str); $i++ ) {
+       								$char = substr( $str, $i, 1 );
+       								if(is_numeric($char)){
+       									_e("<span class='digit'>". $char ."</span>");
+       								}
+   									
+								}
        						
+       						?>
    						</p>
             		</div>
       			</li>
@@ -421,7 +431,7 @@
 				});
 			});
 		};
-		
+		/*
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
 				var el = $(this);
@@ -446,7 +456,7 @@
 				
        		});
 		};
-		
+		*/
 		console.log('pre-tabs');	
 		
 		$.fn.rsr_scroll_to = function(){
@@ -560,12 +570,12 @@
     			});
     			
     			
-    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
+    			//$('[data-behaviour~=time-ticker]').rsr_time_ticker();
     			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
-    			$('[data-behaviour~=modal]').rsr_modal();
+    			//$('[data-behaviour~=modal]').rsr_modal();
     			
-    			$('[data-behaviour~=modal-show]').rsr_modal_show();
+    			//$('[data-behaviour~=modal-show]').rsr_modal_show();
   			}
 		});
     	
