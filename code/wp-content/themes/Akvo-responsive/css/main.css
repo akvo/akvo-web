@@ -6260,10 +6260,10 @@ div[id^="inline-"] {
     float: left;
     font-size: 12px;
     margin-right: 20px;
-    width: 152px;
+    min-width: 152px;
     text-align: center;
     text-shadow: 0 1px 0 #877E71;
-    border: #ccc solid 1px;
+    /*border: #ccc solid 1px;*/
     padding: 5px; }
   .timeTicker .timeSegment:last-child {
     margin-right: 0; }

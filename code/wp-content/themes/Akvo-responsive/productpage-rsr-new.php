@@ -566,7 +566,7 @@
     			
     			$('[data-behaviour~=show-video]').click( function(event) {
       				event.preventDefault();
-      				$('.videoContainer').fadeIn(200);
+      				$('.videoContainer').fadeToggle();
     			});
     			
     			
