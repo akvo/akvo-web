@@ -440,18 +440,28 @@
 			return this.each(function(){
 				var ahref = $(this);
 				
-				ahref.click(function(ev){
-					ev.preventDefault();
-					ev.stopPropagation();
+				var href = ahref.attr('href');
+				
+				
+				if(href.substr(0, 1) == '#'){
+				
+					ahref.click(function(ev){
+						ev.preventDefault();
+						ev.stopPropagation();
 					
 					
-					var href = ahref.attr('href');
+						var href = ahref.attr('href');
 					
-					$(href).rsr_scroll_to();
+						$(href).rsr_scroll_to();
 					
 					
-					console.log('reload');
-				});
+						console.log('reload');
+					});
+				
+				
+				}
+				
+				
 			});
 		};
 		$.fn.rsr_time_ticker = function(){
