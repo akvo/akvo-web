@@ -4197,10 +4197,12 @@ nav.anchorNav ul li a:hover, nav.anchorNav2 ul li a:hover {
         display: none;
     }
     .productPage.rsrProdPag {
+    	/*
         section {
             padding-top: 1em;
             padding-bottom: 1em;
         }
+        */
         section.figure {
             display: block;
             img {
@@ -7531,7 +7533,12 @@ $lightBlue: #72CDFF;
 	.tab-desc, .tab-desc p{
 		text-align: center;
 	}
+	
+	
 }
+
+
+
 /* END OF TABULAR CONTENT STYLES */
 
 
@@ -7601,6 +7608,8 @@ $lightBlue: #72CDFF;
 	section:target{
 		background: #FFF;
 	}
+	
+	
 	
 	.button{
 		background: $lightBlue;
@@ -7698,6 +7707,7 @@ $lightBlue: #72CDFF;
 	}
 	
 	.screenshot{
+		padding: 1%;
 		max-width:600px;
 		margin:0 auto 80px;
 	}
@@ -7782,7 +7792,7 @@ $lightBlue: #72CDFF;
 			border-bottom: #555 solid 1px;
 		}
 		img{
-			margin-top: -100px;
+			margin-top: -90px;
 		}
 		
 	}
