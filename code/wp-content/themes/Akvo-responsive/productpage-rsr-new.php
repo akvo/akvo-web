@@ -244,11 +244,11 @@
 	?>
 		<div class='sub-section'>
 			<ul class='list-box'>
-				<?php while(have_rows($el)): the_row();?>
+				<?php while(have_rows($el)): the_row();
+					$desc = get_sub_field('description');
+				?>
 				<li class="box">
-					<?php if(has_sub_field('description')):?>
-					<h4><?php the_sub_field('description');?></h4><br>
-					<?php endif;?>
+					<?php if($desc):?><h4><?php _e($desc);?></h4><br><?php endif;?>
       				<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
       			</li>
       			<?php endwhile;?>
@@ -343,6 +343,11 @@
 	</section>
   	<?php endforeach;?>	
   	
+  	
+  	
+  	
+  	
+  	
   	<?php if(get_field('___get_in_touch_form')):?>
   	<section id="modal-form" class="modal" data-behaviour="modal">
   		<div class="backdrop"></div>
@@ -435,24 +440,33 @@
 			return this.each(function(){
 				var ahref = $(this);
 				
-				ahref.click(function(ev){
-					ev.preventDefault();
-					ev.stopPropagation();
+				var href = ahref.attr('href');
+				
+				
+				if(href.substr(0, 1) == '#'){
+				
+					ahref.click(function(ev){
+						ev.preventDefault();
+						ev.stopPropagation();
 					
 					
-					var href = ahref.attr('href');
+						var href = ahref.attr('href');
 					
-					$(href).rsr_scroll_to();
+						$(href).rsr_scroll_to();
 					
 					
-					console.log('reload');
-				});
+						console.log('reload');
+					});
+				
+				
+				}
+				
+				
 			});
 		};
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
 				var el = $(this);
-				
 				
 				
 				el.animate_counter = function(){
@@ -507,7 +521,7 @@
 				
 				var section = el.closest('.tab-content');
     			
-    			$('.rsr-tabs a[href=#' + section.attr('id') + ']').click();
+    			section.rsr_tab_activate();
     			
     			var scroll_el = $(el).attr('id') == $(section).attr('id') ? $('#mainbody') : $(el);
   					
@@ -520,6 +534,36 @@
 			});
 		};
 		
+		$.fn.rsr_tab_activate = function(){
+			return this.each(function(){
+				var section = $(this);
+				
+				
+				var ul = $('[data-behaviour~=rsr-tabs]');
+				
+				var li = ul.find('a[href=#' + section.attr('id') + ']').closest('li');
+				
+				
+				var old_li = ul.find('li.active');
+       			var old_tab = $(old_li.find('a[href]').attr('href'));
+       			
+       			if(section.attr('id') != old_tab.attr('id')){
+       				old_tab.hide();
+       				old_li.removeClass('active');
+       				
+       				li.addClass('active');
+       				
+       				$('#tagline').html(li.data('tagline'));
+       				
+       				
+       				section.show();	
+       				
+       				
+       						
+       			}
+				
+			});
+		};
 		
     	$.fn.rsr_tabs = function(){
        		return this.each(function(){
@@ -550,23 +594,24 @@
        				/* hide all the tabs */
        				tab.hide();
        				
-       				ahref.click(function(ev){
+       				
+       				li.click(function(ev){
        					ev.preventDefault();
        					ev.stopPropagation();
        					
+       					var section = $(li.find('a[href]').attr('href'));
+       					section.rsr_tab_activate();
        					
-       					var old_li = ul.find('li.active');
-       					var old_tab = $(old_li.find('a[href]').attr('href'));
+       					$('html, body').animate({
+        					scrollTop: $('#mainbody').offset().top
+    					}, 500);
        					
-       					if(tab.attr('id') != old_tab.attr('id')){
-       						old_tab.hide();
-       						old_li.removeClass('active');
-       						ul.activate(li);
-       						window.location.hash = tab.attr('id');
-       						
-       					}
+       					window.location.hash = section.attr('id');
+       					
        					console.log('click');
        				});
+       				
+       				
        				
        			});
     			console.log('tabs');
@@ -582,20 +627,6 @@
     			
     			$(hash).rsr_scroll_to();
     				
-    			/*	
-    			var section = $(hash).closest('.tab-content');
-    				
-    			ul.activate(ul.find('[href~=#' + section.attr('id') + ']').closest('li'));
-  				
-  				var scroll_el = $(hash).attr('id') == $(section).attr('id') ? $('#mainbody') : $(hash);
-  					
-  				$('html, body').animate({
-        			scrollTop: scroll_el.offset().top
-    			}, 500);
-  				*/
-    			
-    			
-    			
     			
     			
     		});
