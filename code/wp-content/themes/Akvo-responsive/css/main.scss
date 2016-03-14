@@ -7512,6 +7512,17 @@ $lightBlue: #72CDFF;
 			color: #FFF;
 		}
 	}
+	
+	@media only screen and (max-width: $width-small) {
+		.rsr-tab{
+			border-bottom:$lightBlue solid 1px;
+			border-radius: 0.4em;
+			margin:0.4em auto;
+			display: block;
+			width:95%;
+			padding: 0.5em;
+		}
+	}
 }
 .tab-content{
 	.tab-desc{

@@ -483,7 +483,7 @@
 				$(window).on('scroll', function() {
   					var y_scroll_pos = window.pageYOffset;
 					var scroll_pos_test = element_position;
-					console.log(y_scroll_pos + " - " + scroll_pos_test);
+					//console.log(y_scroll_pos + " - " + scroll_pos_test);
 					if(y_scroll_pos > scroll_pos_test) {
         				console.log('scroll found');
   						el.animate_counter();	

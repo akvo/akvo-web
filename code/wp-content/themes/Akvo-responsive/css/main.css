@@ -6057,6 +6057,14 @@ div[id^="inline-"] {
     background: #72CDFF; }
     .rsr-tabs .rsr-tab.active a[href] {
       color: #FFF; }
+  @media only screen and (max-width: 768px) {
+    .rsr-tabs .rsr-tab {
+      border-bottom: #72CDFF solid 1px;
+      border-radius: 0.4em;
+      margin: 0.4em auto;
+      display: block;
+      width: 95%;
+      padding: 0.5em; } }
 
 .tab-content .tab-desc {
   margin: 3em 0; }
