@@ -119,7 +119,7 @@
 		$str = file_get_contents($url);
 		$json = json_decode($str, true); 
 		?>	
-		<div class='sub-section'>
+			
 			<ul class='list-box'>
 				<?php while(have_rows($el)): the_row();?>
 				<li class="box">
@@ -142,17 +142,19 @@
       			</li>
       			<?php endwhile;?>
       		</ul>
-  		</div>
+  		
   		<?php	
 	}
 	
 	function rsr_overview_counters($el){
+		echo "<div class='sub-section' data-behaviour='time-ticker'>";
 		if(shortcode_exists('jsondata_feed')){
 			do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
 		}
 		else{
 			rsr_json_counters($el);
-		}
+		}	
+		echo "</div>";
 	}
 	
 	function rsr_feature_columns($el){
@@ -447,32 +449,55 @@
 				});
 			});
 		};
-		/*
 		$.fn.rsr_time_ticker = function(){
 			return this.each(function(){
 				var el = $(this);
 				
-				el.html('');
-				
-				console.log('time ticker');
-				
-				var str = "" + el.data('value') + "";
 				
 				
-				for(var i=0; i<str.length; i++){
-					var digit_val = str[i];
-					
-					var digit = $(document.createElement('span'));
-					digit.addClass('digit');
-					digit.html(digit_val);
-					
-					digit.appendTo(el);					
-					
-				}
+				el.animate_counter = function(){
+					if(!el.attr('data-flag')){
+						console.log('animate counter');
+						el.find('.digit').each(function () {
+  							$(this).prop('Counter',0).animate({
+        						Counter: $(this).text()
+    						}, {
+      							duration: 2000,
+     							easing: 'swing',
+								step: function (now) {
+									$(this).text(Math.ceil(now));
+								}
+							});
+						});
+						el.attr('data-flag', 1);
+					}
+				};
+				
+				
+				
+				
+				var element_position = el.offset().top - el.outerHeight();
+				
+				
+				
+				$(window).on('scroll', function() {
+  					var y_scroll_pos = window.pageYOffset;
+					var scroll_pos_test = element_position;
+					console.log(y_scroll_pos + " - " + scroll_pos_test);
+					if(y_scroll_pos > scroll_pos_test) {
+        				console.log('scroll found');
+  						el.animate_counter();	
+					}
+				});
+				
+				
+				
+				
+    			
 				
        		});
 		};
-		*/
+		
 		console.log('pre-tabs');	
 		
 		$.fn.rsr_scroll_to = function(){
@@ -570,6 +595,9 @@
   				*/
     			
     			
+    			
+    			
+    			
     		});
     	};
     	
@@ -586,12 +614,19 @@
     			});
     			
     			
-    			//$('[data-behaviour~=time-ticker]').rsr_time_ticker();
+    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
     			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
     			//$('[data-behaviour~=modal]').rsr_modal();
     			
     			//$('[data-behaviour~=modal-show]').rsr_modal_show();
+    			
+    			
+    			
+    			
+    			
+    			
+    			
   			}
 		});
     	
