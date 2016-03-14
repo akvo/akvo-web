@@ -9,7 +9,7 @@
 <?php
 	$tabs = array(
 		'overview' => array(
-			'title' => 'Overview',
+			'title' => 'overview',
 			'tagline' => 'overview_tagline',
 			'elements' => array(
 				'overview_carousel' => 'rsr_carousel',
@@ -21,7 +21,7 @@
 			)
 		),
 		'features' => array(
-			'title' => 'Features',
+			'title' => 'features',
 			'tagline' => 'feature_tagline',
 			'elements' => array(
 				'feature_banner' => 'rsr_banner',
@@ -31,7 +31,7 @@
 			)
 		),
 		'pricing' => array(
-			'title' => 'Pricing',
+			'title' => 'pricing',
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
@@ -39,7 +39,7 @@
 			)
 		),
 		'support' => array(
-			'title' => 'Support',
+			'title' => 'support',
 			'tagline' => 'support_tagline',
 			'elements' => array(
 				'support_banner' => 'rsr_banner',
@@ -104,16 +104,20 @@
   	<?php	
   	}
 	
-	
-	
-	function rsr_overview_counters($el){
-		?>
+	function rsr_tab_title($el){
+		$title = get_field($el['title']."_tab_title");
 		
-		<?php 
-			$url = 'http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json';
-			$str = file_get_contents($url);
-			
-			$json = json_decode($str, true); 
+		if(!$title){
+			$title = $el['title'];
+		}
+		return $title;
+	}
+	
+	
+	function rsr_json_counters($el){
+		$url = 'http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json';
+		$str = file_get_contents($url);
+		$json = json_decode($str, true); 
 		?>	
 		<div class='sub-section'>
 			<ul class='list-box'>
@@ -140,6 +144,15 @@
       		</ul>
   		</div>
   		<?php	
+	}
+	
+	function rsr_overview_counters($el){
+		if(shortcode_exists('jsondata_feed')){
+			do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
+		}
+		else{
+			rsr_json_counters($el);
+		}
 	}
 	
 	function rsr_feature_columns($el){
@@ -304,7 +317,7 @@
   		<ul class="rsr-tabs" data-behaviour="rsr-tabs">	
   			<?php foreach($tabs as $tab):?>
       		<li class="rsr-tab" data-tagline="<?php the_field($tab['tagline']);?>">
-        		<a href="#<?php _e(slugify($tab['title'])); ?>"><?php _e($tab['title']);?></a>
+        		<a href="#<?php _e(slugify($tab['title'])); ?>"><?php _e(rsr_tab_title($tab));?></a>
         	</li>
         	<?php endforeach;?>	
     	</ul>
