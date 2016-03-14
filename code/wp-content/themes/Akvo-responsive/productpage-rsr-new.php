@@ -137,17 +137,18 @@
 		<div class='threeColumns wrapper'>
 		<?php while(have_rows($el)): the_row();?>
 			<div>
-			<h3><?php _e(get_sub_field('heading'));?></h3>
-			<?php
-				$boxes = get_sub_field('box');
-				foreach($boxes as $box):
-			?>
+				<img src="<?php the_sub_field('icon');?>" />
+				<h3><?php _e(get_sub_field('heading'));?></h3>
+				<?php
+					$boxes = get_sub_field('box');
+					foreach($boxes as $box):
+				?>
 				<div class="box-col">
 					<i class="fa fa-2x <?php _e($box['icon']);?>"></i>
 					<h4><?php _e($box['title']);?></h4>
 					<p><?php _e($box['description']);?></p>
 				</div>	
-			<?php endforeach;?>
+				<?php endforeach;?>
 			<p><?php _e(get_sub_field('description'));?></p>
 			</div>
 		<?php endwhile;?>
