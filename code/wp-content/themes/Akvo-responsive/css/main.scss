@@ -7795,19 +7795,24 @@ $lightBlue: #72CDFF;
 		width:40%;
 	}
 	
-	
-	
-	.clear { clear: both }
-}
-
-@media only screen and (max-width: 768px){
+	@media only screen and (max-width: 768px){
 		.media-small{
-			display: none !important;
+			width: 100%;
+			margin-top: 2em;
+		}
+		.media-right img{
+			margin-top:0;
 		}
 		.media-big{
 			width: 100% !important;
 		}
 	}
+	
+	
+	.clear { clear: both }
+}
+
+	
 
 
 .timeTicker {

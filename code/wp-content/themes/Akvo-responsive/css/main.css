@@ -6246,15 +6246,17 @@ div[id^="inline-"] {
     max-width: 450px; }
   .media-box .media-small {
     width: 40%; }
+  @media only screen and (max-width: 768px) {
+    .media-box .media-small {
+      width: 100%;
+      margin-top: 2em; }
+    .media-box .media-right img {
+      margin-top: 0; }
+    .media-box .media-big {
+      width: 100% !important; } }
   .media-box .clear {
     clear: both; }
 
-@media only screen and (max-width: 768px) {
-  .media-small {
-    display: none !important; }
-
-  .media-big {
-    width: 100% !important; } }
 .timeTicker {
   margin: 0 auto;
   width: 152px; }
