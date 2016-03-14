@@ -231,7 +231,9 @@
 			<ul class='list-box'>
 				<?php while(have_rows($el)): the_row();?>
 				<li class="box">
+					<?php if(has_sub_field('description')):?>
 					<h4><?php the_sub_field('description');?></h4><br>
+					<?php endif;?>
       				<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
       			</li>
       			<?php endwhile;?>
