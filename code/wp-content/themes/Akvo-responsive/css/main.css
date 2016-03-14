@@ -6087,10 +6087,14 @@ div[id^="inline-"] {
     min-height: 120px; }
     #content.rsrProdPag .threeColumns.wrapper div {
       border: none;
-      margin: 0em 3em;
+      margin: 0 4%;
       width: 21%; }
     #content.rsrProdPag .threeColumns.wrapper div:nth-child(3n+1) {
-      margin: 0em 3em; }
+      margin: 0 4%; }
+    @media only screen and (max-width: 992px) {
+      #content.rsrProdPag .threeColumns.wrapper div {
+        width: 98% !important;
+        margin: 30px auto !important; } }
   #content.rsrProdPag .text-center {
     text-align: center !important; }
     #content.rsrProdPag .text-center p {

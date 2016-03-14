@@ -7559,11 +7559,18 @@ $lightBlue: #72CDFF;
 		min-height: 120px;
 		div{ 
 			border:none;
-			margin: 0em 3em;
+			margin: 0 4%;
 			width: 21%;
 		}
 		div:nth-child(3n+1){
-			margin: 0em 3em;
+			margin: 0 4%;
+		}
+		
+		@media only screen and (max-width: 992px){
+			div{
+				width: 98% !important;
+				margin: 30px auto !important;
+			}
 		}
 	}
 	
