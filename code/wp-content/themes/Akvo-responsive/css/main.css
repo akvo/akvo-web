@@ -6245,7 +6245,7 @@ div[id^="inline-"] {
       border: none;
       border-bottom: #555 solid 1px; }
     .media-box .media-right img {
-      margin-top: -90px; }
+      margin-top: -100px; }
   .media-box .media-big {
     width: 48%;
     max-width: 450px; }
@@ -6264,7 +6264,8 @@ div[id^="inline-"] {
 
 .timeTicker {
   margin: 0 auto;
-  width: 152px; }
+  min-width: 152px;
+  display: inline-block; }
   .timeTicker .clear:before, .timeTicker .clear:after {
     content: "";
     display: table; }
@@ -6277,7 +6278,7 @@ div[id^="inline-"] {
     float: left;
     font-size: 12px;
     margin-right: 20px;
-    min-width: 152px;
+    /*min-width: 152px;*/
     text-align: center;
     text-shadow: 0 1px 0 #877E71;
     /*border: #ccc solid 1px;*/
