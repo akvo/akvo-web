@@ -189,8 +189,11 @@
 			<div class="threeColumns wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
-					<a href="<?php the_sub_field('link');?>"><img src="<?php the_sub_field('profile_picture');?>" /></a>
-					<?php the_sub_field('description');?>
+					<a href="<?php the_sub_field('link');?>">
+						<img src="<?php the_sub_field('profile_picture');?>" />
+						<?php the_sub_field('description');?>
+					</a>
+					
 				</div>
 				<?php endwhile;?>
 			</div>
@@ -202,7 +205,7 @@
 	
 	function rsr_tour(){
 		_e("<div class='sub-section'>");
-		_e("<h3>Akvo RSR Tour</h3>");
+		_e("<h3>".get_field('tour_title')."</h3>");
 		$i = 0;
 		while(have_rows('tour')): the_row();$i++;?>
 			<div class="screenshot" id="screenshot-<?php _e($i);?>">
