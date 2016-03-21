@@ -7565,6 +7565,9 @@ $lightBlue: #72CDFF;
 			color: #000;
 			font-size: 1em;
 		}
+		a[href]:hover{
+			color: inherit;
+		}
 	}
 	
 	#overview_columns{

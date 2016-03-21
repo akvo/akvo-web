@@ -189,8 +189,11 @@
 			<div class="threeColumns wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
-					<a href="<?php the_sub_field('link');?>"><img src="<?php the_sub_field('profile_picture');?>" /></a>
-					<?php the_sub_field('description');?>
+					<a href="<?php the_sub_field('link');?>">
+						<img src="<?php the_sub_field('profile_picture');?>" />
+						<?php the_sub_field('description');?>
+					</a>
+					
 				</div>
 				<?php endwhile;?>
 			</div>
