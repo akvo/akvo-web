@@ -202,7 +202,7 @@
 	
 	function rsr_tour(){
 		_e("<div class='sub-section'>");
-		_e("<h3>Akvo RSR Tour</h3>");
+		_e("<h3>".get_field('tour_title')."</h3>");
 		$i = 0;
 		while(have_rows('tour')): the_row();$i++;?>
 			<div class="screenshot" id="screenshot-<?php _e($i);?>">
