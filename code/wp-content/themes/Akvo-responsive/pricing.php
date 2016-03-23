@@ -7,7 +7,7 @@
 <!-- #content -->
 <!--Start of Akvo.org Pricing-->
 <div id="content" class="floats-in productPage withSubMenu pricingPage">
-	<div class="engageBtn"><a href="mailto:partners@akvo.org">Talk to us now</a></div>
+	<div class="engageBtn"><a href="<?php the_field('talk_to_us_link');?>">Talk to us now</a></div>
 	<hgroup>
 	<h1 class="akvoPricingLogo"> Akvo.org Pricing</h1>
 	<h2><?php the_field('pricing_tagline'); ?></h2>
