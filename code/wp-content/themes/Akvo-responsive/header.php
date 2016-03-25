@@ -70,7 +70,7 @@
       <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container' => false, 'theme_location' => 'header-menu' ) ); ?>
     </nav>
     <?php get_search_form(); ?>
-    <div id="logIn" class="logInHeader"> <a href="/akvo-services-login/">login</a> </div>
+    
   </div>
   <div id="openSource"> <a href="/blog/open-data-content-and-software-at-akvo/">
     <h2>We love Open Source!</h2>
