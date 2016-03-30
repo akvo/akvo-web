@@ -24,7 +24,7 @@
     <?php the_field('akvopedia_descr_text'); ?>
   </p>
 </section>
-<nav class="anchorNav wrapper">
+<nav class="anchorNav wrapper" style="display:none;">
   <h5>Menu</h5>
   <div class="mShownCollapse"><a></a></div>
   <ul>
