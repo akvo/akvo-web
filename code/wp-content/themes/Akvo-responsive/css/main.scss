@@ -7565,6 +7565,9 @@ $lightBlue: #72CDFF;
 			color: #000;
 			font-size: 1em;
 		}
+		a[href]:hover{
+			color: inherit;
+		}
 	}
 	
 	#overview_columns{
@@ -7633,7 +7636,7 @@ $lightBlue: #72CDFF;
 				height:100%;
 				/*width:40%;*/
 				width:300px;
-				background: rgba(255, 255, 255, 0.7);
+				background: rgba(255, 255, 255, 0.8);
 				padding:20px 25px;
 				top:0;
 				left:10%;
@@ -7792,7 +7795,7 @@ $lightBlue: #72CDFF;
 			border-bottom: #555 solid 1px;
 		}
 		img{
-			margin-top: -90px;
+			margin-top: -100px;
 		}
 		
 	}
@@ -7827,7 +7830,8 @@ $lightBlue: #72CDFF;
 
 .timeTicker {
     margin: 0 auto;
-    width: 152px;
+    min-width: 152px;
+    display: inline-block;
     
     .clear:before, .clear:after {
     	content: "";
@@ -7841,7 +7845,7 @@ $lightBlue: #72CDFF;
     	float: left;
     	font-size: 12px;
     	margin-right: 20px;
-    	min-width: 152px;
+    	/*min-width: 152px;*/
     	text-align: center;
     	text-shadow: 0 1px 0 #877E71;
     	/*border: #ccc solid 1px;*/
