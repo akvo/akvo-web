@@ -6078,6 +6078,7 @@ div[id^="inline-"] {
 /* END OF TABULAR CONTENT STYLES */
 /* RSR ELEMENTS */
 #content.rsrProdPag {
+  /* fixing the overall spacing issue */
   /* HELPER CLASSES */ }
   #content.rsrProdPag #video {
     max-width: 600px; }
@@ -6095,8 +6096,8 @@ div[id^="inline-"] {
     font-size: 1em; }
   #content.rsrProdPag #testimonials a[href]:hover {
     color: inherit; }
-  #content.rsrProdPag #overview_columns h3 {
-    margin-top: 0; }
+  #content.rsrProdPag h3 {
+    margin-top: 0.25em; }
   #content.rsrProdPag .threeColumns.wrapper {
     min-height: 120px; }
     #content.rsrProdPag .threeColumns.wrapper div {
