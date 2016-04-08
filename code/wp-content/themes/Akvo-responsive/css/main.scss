@@ -7614,14 +7614,7 @@ $lightBlue: #72CDFF;
 	
 	
 	
-	.button{
-		background: $lightBlue;
-		color : #FFF !important;
-		padding: 0.5em 2em;
-		border-radius: 0.4em;
-		font-size: 1.5em;
-		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	}
+	
 	
 	.bxslider{
 		.image{
@@ -7921,5 +7914,83 @@ $lightBlue: #72CDFF;
 	}
 }
 
+
+/* HELPER CLASSES */
+a[href].button{
+	background: $lightBlue;
+	color : #FFF !important;
+	padding: 0.5em 2em;
+	border-radius: 0.4em;
+	font-size: 1.5em;
+	font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	display: inline-block;
+	margin: 1em auto;
+	text-align:center;
+	min-width: 200px;
+}
+.text-center{
+	text-align: center;
+}
+
+.green-bg{
+	background: $green2015 !important; 
+}
+.grey-bg{
+	background: rgb(241, 241, 241) !important; 
+}
+
+.dashProduct{
+
+	hgroup h1{
+		background: url("../images/rsr60px.png") center center no-repeat;
+	}
+	
+	hgroup h2{
+		margin-bottom: 3em;
+	}
+	
+	.full-width-banner{
+		width:100%;
+		min-height:400px;
+		position:relative;
+		background-position: center;
+		background-size: cover;
+		
+		a[href]{
+			position:absolute;
+			height:100%;
+			width:300px;
+			background: rgba(255, 255, 255, 0.8);
+			padding:20px 25px;
+			top:0;
+			left:10%;
+			color: #2c2a74;
+		}
+	}
+
+	.page-section{	
+		max-width: 800px;
+		margin:0 auto;
+		padding:5em 2em;
+	}
+	
+	.page-section.full-width{
+		max-width:100%;
+		background: rgba(116, 182, 49, 0.3);
+	}
+	
+	li.box{
+		display:inline-block;
+		width:21%;
+		float:left;
+		padding: 0 2%;
+		@media only screen and (max-width: 992px){
+			width: 100%;
+			
+		}
+	}		
+	
+	
+}
 
 
