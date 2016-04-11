@@ -26,7 +26,8 @@
 			'elements' => array(
 				'feature_banner' => 'rsr_banner',
 				'feature_columns' => 'rsr_feature_columns',
-				'tour' => 'rsr_tour'
+				'tour' => 'rsr_tour',
+				'features_section' => 'rsr_features_section'
 				
 			)
 		),
@@ -44,7 +45,7 @@
 			'elements' => array(
 				'support_banner' => 'rsr_banner',
 				'support_content' => 'rsr_content',
-				'support_section' => 'rsr_support_section',
+				'support_section' => 'rsr_media_section',
 				'support_buttons' => 'rsr_buttons'
 				
 			)
@@ -263,7 +264,7 @@
 		
 	}
 	
-	function rsr_support_section($el){
+	function rsr_media_section($el){
 	
 	?>
 		<div class="sub-section">
@@ -272,9 +273,10 @@
 				<?php
 				
 					$sections = get_field($el);
-					//print_r();
+					
 				
 				?>
+				
 				<ul>
 					<?php foreach($sections as $section):?>
 					<li class="media-box">
@@ -284,6 +286,44 @@
 								<p><?php _e($section['description']); ?></p>
 							</div>
 							<div class="media-small text-center <?php if($section['image_text']):?>media-right<?php else:?>media-left<?php endif;?>">
+								<a href="<?php _e($section['link']);?>"><img src="<?php _e($section['image']); ?>" /></a>	
+								<?php _e($section['image_text']);?>
+							</div>
+						
+						<div class="clear"></div>
+					</li>
+					<?php endforeach;?>
+				</ul>
+				
+				
+				
+			</div>
+		</div>
+		
+  <?php
+  	
+	}
+	
+	function rsr_features_section($el){
+	
+	?>
+		<div class="sub-section">
+			<div class="wrapper">
+				
+				<?php
+				
+					$sections = get_field($el);
+					
+				
+				?>
+				<ul>
+					<?php foreach($sections as $section):?>
+					<li class="media-box">
+							<h3><?php _e($section['title']);?></h3>
+							<div class="media-big media-left">
+								<p><?php _e($section['description']); ?></p>
+							</div>
+							<div class="media-small media-right">
 								<a href="<?php _e($section['link']);?>"><img src="<?php _e($section['image']); ?>" /></a>	
 								<?php _e($section['image_text']);?>
 							</div>

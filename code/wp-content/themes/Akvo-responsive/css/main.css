@@ -6078,26 +6078,29 @@ div[id^="inline-"] {
 /* END OF TABULAR CONTENT STYLES */
 /* RSR ELEMENTS */
 #content.rsrProdPag {
-  /* fixing the overall spacing issue */
   /* HELPER CLASSES */ }
   #content.rsrProdPag #video {
     max-width: 600px; }
-  #content.rsrProdPag #testimonials strong {
-    color: #2c2a74;
-    font-size: 1.2em;
-    line-height: 1.25em;
-    margin: 1.1em 0em 0.5em;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-weight: normal; }
-  #content.rsrProdPag #testimonials hr {
-    width: 50%; }
-  #content.rsrProdPag #testimonials em {
-    color: #000;
-    font-size: 1em; }
-  #content.rsrProdPag #testimonials a[href]:hover {
-    color: inherit; }
-  #content.rsrProdPag h3 {
-    margin-top: 0.25em; }
+  #content.rsrProdPag #testimonials {
+    margin-top: 4em !important; }
+    #content.rsrProdPag #testimonials strong {
+      color: #2c2a74;
+      font-size: 1.2em;
+      line-height: 1.25em;
+      margin: 1.1em 0em 0.5em;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: normal; }
+    #content.rsrProdPag #testimonials hr {
+      width: 50%; }
+    #content.rsrProdPag #testimonials em {
+      color: #000;
+      font-size: 1em; }
+    #content.rsrProdPag #testimonials a[href]:hover {
+      color: inherit; }
+  #content.rsrProdPag #features .media-box {
+    background: none; }
+    #content.rsrProdPag #features .media-box .media-right img {
+      margin-top: 0; }
   #content.rsrProdPag .threeColumns.wrapper {
     min-height: 120px; }
     #content.rsrProdPag .threeColumns.wrapper div {
