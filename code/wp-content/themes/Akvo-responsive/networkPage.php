@@ -63,7 +63,7 @@ Template Name: akvoNetwork
               </div>
             </div>
           </li>
-          <li class="dashSingle" id="opendaidDash">
+          <!--li class="dashSingle" id="opendaidDash">
             <h2>Akvo Openaid</h2>
             <ul class="openAidData dashData">
               <li>
@@ -94,7 +94,7 @@ Template Name: akvoNetwork
                           the rest is refreshed every four hours.</p>
                         </div>
                       </div>
-                    </li>
+                    </li-->
                     
                     <li class="dashSingle" id="akvopediaDash">
                       <h2>Akvopedia</h2>
