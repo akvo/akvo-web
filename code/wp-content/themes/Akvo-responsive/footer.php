@@ -17,7 +17,7 @@
               <li class="flickr"><a href="http://www.flickr.com/groups/akvo/" title="Akvo is on flickr">akvo on flickr</a></li>
               <li class="facebook"><a href="https://www.facebook.com/1Akvo" title="Akvo is also on Facebook">akvo on facebook</a></li>
               <li class="rss"><a href="/blog/rss" title="Get our latest blogs RSS">get latest akvo feed</a></li>
-              <li class="email"><a href="mailto:partners@akvo.org" title="Email us at partners@akvo.org">email akvo</a></li>
+              <li class="email"><a href="http://akvo.org/get-in-touch/" title="Send us a message">email akvo</a></li>
               <li class="contactInfo"><a href="/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
             </ul>
           </nav>
