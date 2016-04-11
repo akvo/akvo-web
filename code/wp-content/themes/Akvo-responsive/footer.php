@@ -21,12 +21,12 @@
               <li class="contactInfo"><a href="/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
             </ul>
           </nav>
-          <div class="newsLetter">
+          <!--div class="newsLetter">
             <div>
                 <h3 class="subscribe">Subscribe to our monthly newsletter</h3>
-                <?php gravity_form(1, false, true, false, '', true); ?>
+                <?php //gravity_form(1, false, true, false, '', true); ?>
             </div>
-          </div>
+          </div-->
         </div>
       </div>
         <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu' ) ); ?>
