@@ -7550,6 +7550,8 @@ $lightBlue: #72CDFF;
 		max-width: 600px;
 	}
 	#testimonials{
+		margin-top: 4em !important;
+		
 		strong{
 			color: #2c2a74;
 			font-size: 1.2em;
@@ -7557,6 +7559,7 @@ $lightBlue: #72CDFF;
 			margin: 1.1em 0em 0.5em;
 			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 			font-weight: normal;
+			
 		}
 		hr{
 			width:50%;
@@ -7570,10 +7573,7 @@ $lightBlue: #72CDFF;
 		}
 	}
 	
-	/* fixing the overall spacing issue */
-	h3{
-		margin-top:0.25em;
-	}
+	
 	
 
 	.threeColumns.wrapper{
