@@ -6111,6 +6111,9 @@ div[id^="inline-"] {
     padding-top: 0; }
   #content.rsrProdPag #support_button_title {
     padding: 0 2em; }
+  #content.rsrProdPag #support_buttons {
+    margin-top: 0;
+    padding-top: 0; }
   #content.rsrProdPag #support h2 {
     margin-bottom: 0; }
   #content.rsrProdPag #support_columns {
