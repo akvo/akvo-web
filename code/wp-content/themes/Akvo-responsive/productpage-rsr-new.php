@@ -192,12 +192,16 @@
 	
 	function rsr_testimonials($el){
 		$cols = 'threeColumns';
+		$section = 'sub-section';
 		if($el == 'support_testimonials'){
 			$cols = 'twoColumns';
+			$section = 'page-section';
 		}
 		
+		
+		
 	?>
-		<div class="sub-section" id="<?php _e($el);?>">	
+		<div class="<?php _e($section);?>" id="<?php _e($el);?>">	
 			<div class="<?php _e($cols);?> wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
