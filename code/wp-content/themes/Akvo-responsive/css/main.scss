@@ -8024,13 +8024,16 @@ a[href].button{
 		width:21%;
 		float:left;
 		padding: 0 2%;
+		margin-bottom: 2em;
 		@media only screen and (max-width: 992px){
 			width: 100%;
 			
 		}
 	}		
 	
-	
+	h3{
+		text-shadow: none;
+	}
 }
 
 .page-section{	
@@ -8042,4 +8045,8 @@ a[href].button{
 .page-section.full-width{
 	max-width:100%;
 	background: rgba(116, 182, 49, 0.3);
+	
+	.fa{
+		color: #2c2a74;
+	}
 }
