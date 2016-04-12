@@ -63,7 +63,7 @@ Template Name: akvoNetwork
               </div>
             </div>
           </li>
-          <li class="dashSingle" id="opendaidDash">
+          <!--li class="dashSingle" id="opendaidDash">
             <h2>Akvo Openaid</h2>
             <ul class="openAidData dashData">
               <li>
@@ -94,9 +94,9 @@ Template Name: akvoNetwork
                           the rest is refreshed every four hours.</p>
                         </div>
                       </div>
-                    </li>
+                    </li-->
                     
-                    <li class="dashSingle" id="akvopediaDash">
+                    <!--li class="dashSingle" id="akvopediaDash">
                       <h2>Akvopedia</h2>
                       <?php do_shortcode('[jsondata_feed slug="akvopedia-analytics" module="API" method="API.get" idSite="9" period="range" date="2013-04-01,today" format="json" token_auth="1d1b520b11bea9a3b525b99531ec171a"]'); ?>
                       
@@ -108,7 +108,7 @@ Template Name: akvoNetwork
                           <p><em style='display:block;color:rgb(114, 205, 255);'>How often is this data refreshed?</em> Every four hours.</p>
                         </div>
                       </div>
-                    </li>
+                    </li-->
                   </ul>
                 </section>
                 <section id="rsrProjectUpdates">
