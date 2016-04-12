@@ -7622,6 +7622,11 @@ $lightBlue: #72CDFF;
 	
 	#support_testimonials{
 		padding-top: 2em;
+		
+		.twoColumns div{
+			width: 30%;
+			padding: 9%;
+		}
 	}
 	
 	#support_columns{
