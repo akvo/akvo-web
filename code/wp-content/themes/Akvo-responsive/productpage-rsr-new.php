@@ -65,7 +65,7 @@
 	}
 	
 	function rsr_title($el){
-		_e("<h3>".get_field($el)."</h3>");
+		_e("<h3 id=".$el.">".get_field($el)."</h3>");
 	}
 	
 	function rsr_content($el){

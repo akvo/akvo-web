@@ -6116,6 +6116,12 @@ div[id^="inline-"] {
     padding-top: 0; }
   #content.rsrProdPag #support h2 {
     margin-bottom: 0; }
+  #content.rsrProdPag #support_content {
+    padding-top: 4em; }
+  #content.rsrProdPag #support_training_title {
+    margin-bottom: 1em; }
+  #content.rsrProdPag #support_testimonials {
+    padding-top: 2em; }
   #content.rsrProdPag #support_columns {
     margin-top: 0;
     padding-top: 0; }
@@ -6164,9 +6170,6 @@ div[id^="inline-"] {
     padding: 1em; }
     #content.rsrProdPag .sub-section .threeColumns.wrapper h3 {
       margin-bottom: 2em; }
-    #content.rsrProdPag .sub-section img.aligncenter {
-      margin: 0 auto;
-      display: block; }
   #content.rsrProdPag .box-col {
     margin: 0 0 2em;
     width: 100% !important;
@@ -6445,5 +6448,9 @@ a[href].button {
   background: rgba(116, 182, 49, 0.3); }
   .page-section.full-width .fa {
     color: #2c2a74; }
+  .page-section.full-width img.aligncenter {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2em; }
 
 /*# sourceMappingURL=main.css.map */

@@ -7612,6 +7612,18 @@ $lightBlue: #72CDFF;
 		margin-bottom: 0;
 	}
 	
+	#support_content{
+		padding-top: 4em;
+	}
+	
+	#support_training_title{
+		margin-bottom: 1em;
+	}
+	
+	#support_testimonials{
+		padding-top: 2em;
+	}
+	
 	#support_columns{
 		margin-top:0;
 		padding-top:0;
@@ -7694,10 +7706,7 @@ $lightBlue: #72CDFF;
 		}
 		
 		
-		img.aligncenter{
-			margin: 0 auto;
-			display:block;
-		}
+		
 	}
 	
 	.box-col{
@@ -8053,5 +8062,11 @@ a[href].button{
 	
 	.fa{
 		color: #2c2a74;
+	}
+	
+	img.aligncenter{
+		margin: 0 auto;
+		display:block;
+		margin-bottom: 2em;
 	}
 }
