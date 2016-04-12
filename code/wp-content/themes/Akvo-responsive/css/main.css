@@ -6106,6 +6106,13 @@ div[id^="inline-"] {
     padding-bottom: 0; }
   #content.rsrProdPag #pricing_description_2 {
     padding-top: 0; }
+  #content.rsrProdPag #support_button_title {
+    padding: 0 2em; }
+  #content.rsrProdPag #support h3 {
+    margin-bottom: 0; }
+  #content.rsrProdPag #support_columns {
+    margin-top: 0;
+    padding-top: 0; }
   #content.rsrProdPag #features .media-box {
     background: none; }
     #content.rsrProdPag #features .media-box .media-right img {
