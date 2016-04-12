@@ -6424,10 +6424,13 @@ a[href].button {
   display: inline-block;
   width: 21%;
   float: left;
-  padding: 0 2%; }
+  padding: 0 2%;
+  margin-bottom: 2em; }
   @media only screen and (max-width: 992px) {
     .dashProduct li.box {
       width: 100%; } }
+.dashProduct h3 {
+  text-shadow: none; }
 
 .page-section {
   max-width: 800px;
@@ -6437,5 +6440,7 @@ a[href].button {
 .page-section.full-width {
   max-width: 100%;
   background: rgba(116, 182, 49, 0.3); }
+  .page-section.full-width .fa {
+    color: #2c2a74; }
 
 /*# sourceMappingURL=main.css.map */
