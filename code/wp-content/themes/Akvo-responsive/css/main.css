@@ -6120,6 +6120,8 @@ div[id^="inline-"] {
     padding-top: 4em; }
   #content.rsrProdPag #support_training_title {
     margin-bottom: 1em; }
+  #content.rsrProdPag #support_testimonial_title {
+    margin-bottom: 0; }
   #content.rsrProdPag #support_testimonials {
     padding-top: 2em; }
     #content.rsrProdPag #support_testimonials .twoColumns div {
@@ -6445,15 +6447,15 @@ a[href].button {
   max-width: 800px;
   margin: 0 auto;
   padding: 5em 2em; }
+  .page-section img.aligncenter {
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 2em; }
 
 .page-section.full-width {
   max-width: 100%;
   background: rgba(116, 182, 49, 0.3); }
   .page-section.full-width .fa {
     color: #2c2a74; }
-  .page-section.full-width img.aligncenter {
-    margin: 0 auto;
-    display: block;
-    margin-bottom: 2em; }
 
 /*# sourceMappingURL=main.css.map */
