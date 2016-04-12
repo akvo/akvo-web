@@ -36,7 +36,9 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_buttons' => 'rsr_buttons'
+				'pricing_description' => 'rsr_content',
+				'pricing_buttons' => 'rsr_buttons',
+				'pricing_description_2' => 'rsr_content'
 			)
 		),
 		'support' => array(
@@ -45,8 +47,13 @@
 			'elements' => array(
 				'support_banner' => 'rsr_banner',
 				'support_content' => 'rsr_content',
-				'support_section' => 'rsr_media_section',
-				'support_buttons' => 'rsr_buttons'
+				'support_training_title' => 'rsr_title',
+				'support_columns' => 'rsr_overview_columns',
+				'support_button_title' => 'rsr_content',
+				//'support_section' => 'rsr_media_section',
+				'support_buttons' => 'rsr_buttons',
+				'support_testimonial_title' => 'rsr_title',
+				'support_testimonials' => 'rsr_testimonials'
 				
 			)
 		)
@@ -57,14 +64,13 @@
    		return strtolower($slug);
 	}
 	
+	function rsr_title($el){
+		_e("<h3>".get_field($el)."</h3>");
+	}
+	
 	function rsr_content($el){
 	?>
-		<div class="sub-section">
-			<div class="wrapper">
-				<div class="text-center"><?php the_field($el);?></div>
-			</div>
-		</div>
-		
+		<div id="<?php _e($el);?>" class="page-section"><?php the_field($el);?></div>
 	<?php
 	}
 	
@@ -153,7 +159,7 @@
 			do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
 		}
 		else{
-			rsr_json_counters($el);
+			//rsr_json_counters($el);
 		}	
 		echo "</div>";
 	}
@@ -185,9 +191,14 @@
 	<?php }
 	
 	function rsr_testimonials($el){
+		$cols = 'threeColumns';
+		if($el == 'support_testimonials'){
+			$cols = 'twoColumns';
+		}
+		
 	?>
 		<div class="sub-section" id="<?php _e($el);?>">	
-			<div class="threeColumns wrapper">
+			<div class="<?php _e($cols);?> wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
 					<a href="<?php the_sub_field('link');?>">

@@ -6079,6 +6079,11 @@ div[id^="inline-"] {
 /* RSR ELEMENTS */
 #content.rsrProdPag {
   /* HELPER CLASSES */ }
+  #content.rsrProdPag .list-col {
+    width: 200px;
+    float: left;
+    margin-left: 1em;
+    margin-right: 1em; }
   #content.rsrProdPag #video {
     max-width: 600px; }
   #content.rsrProdPag #testimonials {
@@ -6097,6 +6102,10 @@ div[id^="inline-"] {
       font-size: 1em; }
     #content.rsrProdPag #testimonials a[href]:hover {
       color: inherit; }
+  #content.rsrProdPag #pricing_description {
+    padding-bottom: 0; }
+  #content.rsrProdPag #pricing_description_2 {
+    padding-top: 0; }
   #content.rsrProdPag #features .media-box {
     background: none; }
     #content.rsrProdPag #features .media-box .media-right img {
@@ -6138,9 +6147,13 @@ div[id^="inline-"] {
       left: 10%;
       color: #2c2a74; }
   #content.rsrProdPag .sub-section {
-    margin: 2em 0; }
+    margin: 2em 0;
+    padding: 1em; }
     #content.rsrProdPag .sub-section .threeColumns.wrapper h3 {
       margin-bottom: 2em; }
+    #content.rsrProdPag .sub-section img.aligncenter {
+      margin: 0 auto;
+      display: block; }
   #content.rsrProdPag .box-col {
     margin: 0 0 2em;
     width: 100% !important;
@@ -6397,13 +6410,6 @@ a[href].button {
     top: 0;
     left: 10%;
     color: #2c2a74; }
-.dashProduct .page-section {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 5em 2em; }
-.dashProduct .page-section.full-width {
-  max-width: 100%;
-  background: rgba(116, 182, 49, 0.3); }
 .dashProduct li.box {
   display: inline-block;
   width: 21%;
@@ -6412,5 +6418,14 @@ a[href].button {
   @media only screen and (max-width: 992px) {
     .dashProduct li.box {
       width: 100%; } }
+
+.page-section {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 5em 2em; }
+
+.page-section.full-width {
+  max-width: 100%;
+  background: rgba(116, 182, 49, 0.3); }
 
 /*# sourceMappingURL=main.css.map */

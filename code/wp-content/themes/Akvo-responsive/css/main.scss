@@ -7546,6 +7546,15 @@ $lightBlue: #72CDFF;
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
+
+	.list-col{
+		width:200px;
+		float:left;
+		margin-left:1em;
+		margin-right:1em;
+	}
+
+
 	#video{
 		max-width: 600px;
 	}
@@ -7573,7 +7582,13 @@ $lightBlue: #72CDFF;
 		}
 	}
 	
+	#pricing_description{
+		padding-bottom: 0;
+	}
 	
+	#pricing_description_2{
+		padding-top:0;
+	}
 	
 	#features .media-box{
 		background: none;
@@ -7646,9 +7661,15 @@ $lightBlue: #72CDFF;
 	
 	.sub-section{
 		margin:2em 0;
-		
+		padding: 1em;
 		.threeColumns.wrapper h3{
 			margin-bottom:2em;
+		}
+		
+		
+		img.aligncenter{
+			margin: 0 auto;
+			display:block;
 		}
 	}
 	
@@ -7974,16 +7995,7 @@ a[href].button{
 		}
 	}
 
-	.page-section{	
-		max-width: 800px;
-		margin:0 auto;
-		padding:5em 2em;
-	}
 	
-	.page-section.full-width{
-		max-width:100%;
-		background: rgba(116, 182, 49, 0.3);
-	}
 	
 	li.box{
 		display:inline-block;
@@ -7999,4 +8011,13 @@ a[href].button{
 	
 }
 
-
+.page-section{	
+	max-width: 800px;
+	margin:0 auto;
+	padding:5em 2em;
+}
+	
+.page-section.full-width{
+	max-width:100%;
+	background: rgba(116, 182, 49, 0.3);
+}
