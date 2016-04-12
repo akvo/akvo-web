@@ -65,7 +65,7 @@
 	}
 	
 	function rsr_title($el){
-		_e("<h2>".get_field($el)."</h2>");
+		_e("<h3>".get_field($el)."</h3>");
 	}
 	
 	function rsr_content($el){
@@ -201,7 +201,7 @@
 		
 		
 	?>
-		<div class="<?php _e($section);?>" id="<?php _e($el);?>">	
+		<div class="<?php _e($section);?> testimonials" id="<?php _e($el);?>">	
 			<div class="<?php _e($cols);?> wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
@@ -261,7 +261,7 @@
 	function rsr_buttons($el){
 		
 	?>
-		<div class='sub-section'>
+		<div class='sub-section' id="<?php _e($el);?>">
 			<ul class='list-box'>
 				<?php while(have_rows($el)): the_row();
 					$desc = get_sub_field('description');
