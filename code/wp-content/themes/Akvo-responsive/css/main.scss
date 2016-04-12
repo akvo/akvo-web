@@ -7620,6 +7620,10 @@ $lightBlue: #72CDFF;
 		margin-bottom: 1em;
 	}
 	
+	#support_testimonial_title{
+		margin-bottom: 0;
+	}
+	
 	#support_testimonials{
 		padding-top: 2em;
 		
@@ -8059,6 +8063,12 @@ a[href].button{
 	max-width: 800px;
 	margin:0 auto;
 	padding:5em 2em;
+	
+	img.aligncenter{
+		margin: 0 auto;
+		display:block;
+		margin-bottom: 2em;
+	}
 }
 	
 .page-section.full-width{
@@ -8069,9 +8079,5 @@ a[href].button{
 		color: #2c2a74;
 	}
 	
-	img.aligncenter{
-		margin: 0 auto;
-		display:block;
-		margin-bottom: 2em;
-	}
+	
 }
