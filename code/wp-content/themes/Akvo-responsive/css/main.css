@@ -6091,20 +6091,20 @@ div[id^="inline-"] {
     max-width: 600px; }
   #content.rsrProdPag #testimonials {
     margin-top: 4em !important; }
-    #content.rsrProdPag #testimonials strong {
-      color: #2c2a74;
-      font-size: 1.2em;
-      line-height: 1.25em;
-      margin: 1.1em 0em 0.5em;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      font-weight: normal; }
-    #content.rsrProdPag #testimonials hr {
-      width: 50%; }
-    #content.rsrProdPag #testimonials em {
-      color: #000;
-      font-size: 1em; }
-    #content.rsrProdPag #testimonials a[href]:hover {
-      color: inherit; }
+  #content.rsrProdPag .testimonials strong {
+    color: #2c2a74;
+    font-size: 1.2em;
+    line-height: 1.25em;
+    margin: 1.1em 0em 0.5em;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: normal; }
+  #content.rsrProdPag .testimonials hr {
+    width: 50%; }
+  #content.rsrProdPag .testimonials em {
+    color: #000;
+    font-size: 1em; }
+  #content.rsrProdPag .testimonials a[href]:hover {
+    color: inherit; }
   #content.rsrProdPag #pricing_description {
     padding-bottom: 0; }
   #content.rsrProdPag #pricing_description_2 {
