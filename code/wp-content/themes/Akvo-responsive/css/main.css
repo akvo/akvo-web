@@ -6122,6 +6122,9 @@ div[id^="inline-"] {
     margin-bottom: 1em; }
   #content.rsrProdPag #support_testimonials {
     padding-top: 2em; }
+    #content.rsrProdPag #support_testimonials .twoColumns div {
+      width: 30%;
+      padding: 9%; }
   #content.rsrProdPag #support_columns {
     margin-top: 0;
     padding-top: 0; }
