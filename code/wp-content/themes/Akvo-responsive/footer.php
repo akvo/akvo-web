@@ -14,19 +14,21 @@
               <li class="twitter"><a href="https://twitter.com/akvo/staff" title="Akvo staff Twitter feed">akvo on twitter</a></li>
               <li class="github"><a href="https://github.com/akvo" title="Access Akvo apps code">akvo on github</a></li>
               <li class="youtube"><a href="http://www.youtube.com/user/Akvofoundation" title="Akvo.tv">akvo on youtube</a></li>
-              <li class="flickr"><a href="http://www.flickr.com/groups/akvo/" title="Akvo is on flickr">akvo on flickr</a></li>
+              <!--li class="flickr"><a href="http://www.flickr.com/groups/akvo/" title="Akvo is on flickr">akvo on flickr</a></li-->
               <li class="facebook"><a href="https://www.facebook.com/1Akvo" title="Akvo is also on Facebook">akvo on facebook</a></li>
               <li class="rss"><a href="/blog/rss" title="Get our latest blogs RSS">get latest akvo feed</a></li>
-              <li class="email"><a href="mailto:partners@akvo.org" title="Email us at partners@akvo.org">email akvo</a></li>
+              <li class="newsLetters"><a href="/newsletters/" title="newsletters & bulletins" >Newsletters</a></li>
+              <li class="email"><a href="/get-in-touch/" title="Send us a message">email akvo</a></li>
               <li class="contactInfo"><a href="/contact-info/" title="Contact Akvo" >Contact Akvo</a></li>
+               
             </ul>
           </nav>
-          <div class="newsLetter">
+          <!--div class="newsLetter">
             <div>
                 <h3 class="subscribe">Subscribe to our monthly newsletter</h3>
-                <?php gravity_form(1, false, true, false, '', true); ?>
+                <?php //gravity_form(1, false, true, false, '', true); ?>
             </div>
-          </div>
+          </div-->
         </div>
       </div>
         <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu' ) ); ?>
