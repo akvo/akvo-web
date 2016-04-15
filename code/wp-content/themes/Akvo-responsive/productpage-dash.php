@@ -19,9 +19,9 @@
     </hgroup>
 	
 	
-	<?php while(have_rows('section')): the_row();?>
+	<?php $row_i = 0;while(have_rows('section')): the_row();?>
   	<section>
-  		<div class="full-width-banner" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
+  		<div class="full-width-banner <?php if($row_i){_e('shallow-banner');}?>" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
         	<?php if(get_sub_field('image_text')):?>
            	<a href="<?php _e(get_sub_field('image_link'));?>">
            		<?php _e(get_sub_field('image_text'));?>
@@ -32,7 +32,7 @@
     	<div class='page-section'><?php _e($desc);?></div>
     	<?php endif;?>
   	</section>
-  	<?php endwhile;?>
+  	<?php $row_i++;endwhile;?>
   	
   	<section>
   		<div class='page-section full-width'>
