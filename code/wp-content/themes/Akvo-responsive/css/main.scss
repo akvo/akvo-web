@@ -3860,6 +3860,10 @@ footer.bottomPage section#siteMap nav.socialLinks li.email a {
 footer.bottomPage section#siteMap nav.socialLinks li.contactInfo a {
     background: url("../images/socialContact.png") center center no-repeat;
 }
+footer.bottomPage section#siteMap nav.socialLinks li.newsLetters a {
+    background: url("../images/socialNewsletter.png") center center no-repeat;
+}
+
 
 footer.bottomPage section#aboutAkvo {
     background: #202024;
@@ -7546,11 +7550,25 @@ $lightBlue: #72CDFF;
 
 /* RSR ELEMENTS */
 #content.rsrProdPag{ 
+
+	.list-col{
+		width:200px;
+		float:left;
+		margin-left:1em;
+		margin-right:1em;
+	}
+
+
 	#video{
 		max-width: 600px;
 	}
+	
 	#testimonials{
 		margin-top: 4em !important;
+	}
+	
+	.testimonials{
+		
 		
 		strong{
 			color: #2c2a74;
@@ -7572,10 +7590,64 @@ $lightBlue: #72CDFF;
 			color: inherit;
 		}
 	}
+	#features_section{
+		margin-top: -2em;
+	}
 	
+	#pricing_description{
+		padding-bottom: 0;
+	}
 	
+	#pricing_description_2{
+		padding-top:0;
+	}
 	
-
+	#support_button_title{
+		padding: 0 2em;
+	}
+	
+	#support_buttons{
+		margin-top: 0;
+		padding-top: 0;
+	}
+	
+	#support h2{
+		margin-bottom: 0;
+	}
+	
+	#support_content{
+		padding-top: 4em;
+	}
+	
+	#support_training_title{
+		margin-bottom: 1em;
+	}
+	
+	#support_testimonial_title{
+		margin-bottom: 0;
+	}
+	
+	#support_testimonials{
+		padding-top: 2em;
+		
+		.twoColumns div{
+			width: 30%;
+			padding: 1em 9%;
+		}
+	}
+	
+	#support_columns{
+		margin-top:0;
+		padding-top:0;
+	}
+	
+	#features .media-box{
+		background: none;
+		
+		.media-right img{
+			margin-top:0;
+		}
+	}
 	.threeColumns.wrapper{
 		min-height: 120px;
 		div{ 
@@ -7640,10 +7712,13 @@ $lightBlue: #72CDFF;
 	
 	.sub-section{
 		margin:2em 0;
-		
+		padding: 1em;
 		.threeColumns.wrapper h3{
 			margin-bottom:2em;
 		}
+		
+		
+		
 	}
 	
 	.box-col{
@@ -7968,15 +8043,8 @@ a[href].button{
 		}
 	}
 
-	.page-section{	
-		max-width: 800px;
-		margin:0 auto;
-		padding:5em 2em;
-	}
-	
-	.page-section.full-width{
-		max-width:100%;
-		background: rgba(116, 182, 49, 0.3);
+	.shallow-banner{
+		min-height: 280px;
 	}
 	
 	li.box{
@@ -7984,13 +8052,37 @@ a[href].button{
 		width:21%;
 		float:left;
 		padding: 0 2%;
+		margin-bottom: 2em;
 		@media only screen and (max-width: 992px){
 			width: 100%;
 			
 		}
 	}		
 	
-	
+	h3{
+		text-shadow: none;
+	}
 }
 
-
+.page-section{	
+	max-width: 800px;
+	margin:0 auto;
+	padding:5em 2em;
+	
+	img.aligncenter{
+		margin: 0 auto;
+		display:block;
+		margin-bottom: 4em;
+	}
+}
+	
+.page-section.full-width{
+	max-width:100%;
+	background: rgba(116, 182, 49, 0.3);
+	
+	.fa{
+		color: #2c2a74;
+	}
+	
+	
+}

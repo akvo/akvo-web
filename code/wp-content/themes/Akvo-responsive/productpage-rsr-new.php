@@ -26,7 +26,8 @@
 			'elements' => array(
 				'feature_banner' => 'rsr_banner',
 				'feature_columns' => 'rsr_feature_columns',
-				'tour' => 'rsr_tour'
+				'tour' => 'rsr_tour',
+				'features_section' => 'rsr_features_section'
 				
 			)
 		),
@@ -35,7 +36,9 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_buttons' => 'rsr_buttons'
+				'pricing_description' => 'rsr_content',
+				'pricing_buttons' => 'rsr_buttons',
+				'pricing_description_2' => 'rsr_content'
 			)
 		),
 		'support' => array(
@@ -44,8 +47,13 @@
 			'elements' => array(
 				'support_banner' => 'rsr_banner',
 				'support_content' => 'rsr_content',
-				'support_section' => 'rsr_support_section',
-				'support_buttons' => 'rsr_buttons'
+				'support_training_title' => 'rsr_title',
+				'support_columns' => 'rsr_overview_columns',
+				'support_button_title' => 'rsr_content',
+				//'support_section' => 'rsr_media_section',
+				'support_buttons' => 'rsr_buttons',
+				'support_testimonial_title' => 'rsr_title',
+				'support_testimonials' => 'rsr_testimonials'
 				
 			)
 		)
@@ -56,14 +64,13 @@
    		return strtolower($slug);
 	}
 	
+	function rsr_title($el){
+		_e("<h3 id=".$el.">".get_field($el)."</h3>");
+	}
+	
 	function rsr_content($el){
 	?>
-		<div class="sub-section">
-			<div class="wrapper">
-				<div class="text-center"><?php the_field($el);?></div>
-			</div>
-		</div>
-		
+		<div id="<?php _e($el);?>" class="page-section"><?php the_field($el);?></div>
 	<?php
 	}
 	
@@ -152,7 +159,7 @@
 			do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
 		}
 		else{
-			rsr_json_counters($el);
+			//rsr_json_counters($el);
 		}	
 		echo "</div>";
 	}
@@ -184,9 +191,18 @@
 	<?php }
 	
 	function rsr_testimonials($el){
+		$cols = 'threeColumns';
+		$section = 'sub-section';
+		if($el == 'support_testimonials'){
+			$cols = 'twoColumns';
+			$section = 'page-section';
+		}
+		
+		
+		
 	?>
-		<div class="sub-section" id="<?php _e($el);?>">	
-			<div class="threeColumns wrapper">
+		<div class="<?php _e($section);?> testimonials" id="<?php _e($el);?>">	
+			<div class="<?php _e($cols);?> wrapper">
 				<?php while(have_rows($el)): the_row();?>
 				<div class="text-center">
 					<a href="<?php the_sub_field('link');?>">
@@ -245,7 +261,7 @@
 	function rsr_buttons($el){
 		
 	?>
-		<div class='sub-section'>
+		<div class='sub-section' id="<?php _e($el);?>">
 			<ul class='list-box'>
 				<?php while(have_rows($el)): the_row();
 					$desc = get_sub_field('description');
@@ -263,7 +279,7 @@
 		
 	}
 	
-	function rsr_support_section($el){
+	function rsr_media_section($el){
 	
 	?>
 		<div class="sub-section">
@@ -272,9 +288,10 @@
 				<?php
 				
 					$sections = get_field($el);
-					//print_r();
+					
 				
 				?>
+				
 				<ul>
 					<?php foreach($sections as $section):?>
 					<li class="media-box">
@@ -284,6 +301,44 @@
 								<p><?php _e($section['description']); ?></p>
 							</div>
 							<div class="media-small text-center <?php if($section['image_text']):?>media-right<?php else:?>media-left<?php endif;?>">
+								<a href="<?php _e($section['link']);?>"><img src="<?php _e($section['image']); ?>" /></a>	
+								<?php _e($section['image_text']);?>
+							</div>
+						
+						<div class="clear"></div>
+					</li>
+					<?php endforeach;?>
+				</ul>
+				
+				
+				
+			</div>
+		</div>
+		
+  <?php
+  	
+	}
+	
+	function rsr_features_section($el){
+	
+	?>
+		<div class="sub-section" id="<?php _e($el);?>">
+			<div class="wrapper">
+				
+				<?php
+				
+					$sections = get_field($el);
+					
+				
+				?>
+				<ul>
+					<?php foreach($sections as $section):?>
+					<li class="media-box">
+							<h3><?php _e($section['title']);?></h3>
+							<div class="media-big media-left">
+								<p><?php _e($section['description']); ?></p>
+							</div>
+							<div class="media-small media-right">
 								<a href="<?php _e($section['link']);?>"><img src="<?php _e($section['image']); ?>" /></a>	
 								<?php _e($section['image_text']);?>
 							</div>
