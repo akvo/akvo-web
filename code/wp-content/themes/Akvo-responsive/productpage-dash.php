@@ -19,12 +19,23 @@
     </hgroup>
 	
 	
-	<?php $row_i = 0;while(have_rows('section')): the_row();?>
+	<?php 
+		$row_i = 0;
+		while(have_rows('section')): 
+			the_row();
+			$image_flag = false;
+			
+			$image_text = get_sub_field('image_text');
+			
+			if (strpos($image_text, '<img') !== false) {
+ 			   $image_flag = true;
+			}
+	?>
   	<section>
-  		<div class="full-width-banner <?php if($row_i){_e('shallow-banner');}?>" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
-        	<?php if(get_sub_field('image_text')):?>
+  		<div class="full-width-banner <?php if($row_i){_e('shallow-banner');}?> <?php if($image_flag){_e('overlay-banner');}?>" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
+        	<?php if($image_text):?>
            	<a href="<?php _e(get_sub_field('image_link'));?>">
-           		<?php _e(get_sub_field('image_text'));?>
+           		<?php _e($image_text);?>
            	</a>
            	<?php endif;?>
     	</div>
