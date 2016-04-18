@@ -8047,6 +8047,20 @@ a[href].button{
 		min-height: 280px;
 	}
 	
+	.overlay-banner{
+		min-height: 0;
+		
+		a[href]{
+			position: relative;
+			height: auto;
+			width: auto;
+			background: none;
+			left:0;
+			top:0;
+			
+		}
+	}
+	
 	li.box{
 		display:inline-block;
 		width:21%;
@@ -8070,10 +8084,14 @@ a[href].button{
 	padding:5em 2em;
 	
 	img.aligncenter{
-		margin: 0 auto;
-		display:block;
 		margin-bottom: 4em;
 	}
+	
+}
+	
+img.aligncenter{
+	margin: 0 auto;
+	display:block;
 }
 	
 .page-section.full-width{
