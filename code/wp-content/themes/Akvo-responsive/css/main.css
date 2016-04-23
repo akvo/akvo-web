@@ -1512,11 +1512,12 @@ nav#n ul li.current_page_parent a {
 
 #n ul li ul.sub-menu li {
   background: none;
-  display: inline;
+  display: inline-block;
   margin: 0em;
   padding: 0em;
   position: relative;
-  z-index: 9999; }
+  z-index: 9999;
+  width: 100%; }
 
 nav#n ul li:last-child {
   background: none; }
@@ -1528,7 +1529,7 @@ nav#n ul li:last-child {
   transition: background-color 0.4s linear;
   background: none;
   color: rgba(255, 255, 255, 0.8);
-  display: block;
+  /* display: block;*/
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 0.7em;
   font-weight: normal;
@@ -1546,6 +1547,13 @@ nav#n ul li:last-child {
 
 #n ul li:hover > a {
   text-decoration: none; }
+
+/* second level of menu */
+#n ul li ul li ul.sub-menu {
+  left: 100%;
+  top: 0;
+  font-size: 0.8em;
+  border-radius: 0 0.25em 0.25em 0.25em; }
 
 @media only screen and (min-width: 0) and (max-width: 768px) {
   nav#n {
@@ -1692,7 +1700,10 @@ nav#n ul li:last-child {
   #n ul li ul li a:hover {
     background: #303030;
     color: #fff;
-    text-decoration: none; } }
+    text-decoration: none; }
+
+  #n ul li ul li ul.sub-menu {
+    left: 20px; } }
 /*-----------------------------------
     Top Header Search input
 ------------------------------------*/
