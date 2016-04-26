@@ -8006,6 +8006,9 @@ $lightBlue: #72CDFF;
 	}
 }
 
+#hero-series-wrapper{
+	max-width: 960px;
+}
 
 /* HELPER CLASSES */
 a[href].button{
@@ -8120,4 +8123,22 @@ img.aligncenter{
 	}
 	
 	
+}
+.space-one{
+	margin: 1em;
+}
+
+.box{
+	width: 250px;
+	display: inline-block;
+	margin: 1em;
+	.box-image{
+		width:100%;
+		height: 150px;
+		background-size: cover;
+		background-position: center;
+	}
+	.box-text{
+		margin-top: 0.25em;
+	}
 }
