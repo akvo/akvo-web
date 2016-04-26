@@ -6403,6 +6403,9 @@ div[id^="inline-"] {
     /* Opera 11.10+ */
     background-image: linear-gradient(top, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.01)); }
 
+#hero-series-wrapper {
+  max-width: 960px; }
+
 /* HELPER CLASSES */
 a[href].button {
   background: #72CDFF;
@@ -6483,5 +6486,20 @@ img.aligncenter {
   background: rgba(116, 182, 49, 0.3); }
   .page-section.full-width .fa {
     color: #2c2a74; }
+
+.space-one {
+  margin: 1em; }
+
+.box {
+  width: 250px;
+  display: inline-block;
+  margin: 1em; }
+  .box .box-image {
+    width: 100%;
+    height: 150px;
+    background-size: cover;
+    background-position: center; }
+  .box .box-text {
+    margin-top: 0.25em; }
 
 /*# sourceMappingURL=main.css.map */
