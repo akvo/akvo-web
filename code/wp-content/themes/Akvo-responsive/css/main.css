@@ -6422,6 +6422,9 @@ a[href].button {
 .text-center {
   text-align: center; }
 
+@media only screen and (max-width: 992px) {
+  .text-sm-center {
+    text-align: center; } }
 .green-bg {
   background: #74b631 !important; }
 

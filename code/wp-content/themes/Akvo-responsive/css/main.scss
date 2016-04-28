@@ -8027,6 +8027,12 @@ a[href].button{
 	text-align: center;
 }
 
+@media only screen and (max-width: $width-medium) {
+	.text-sm-center{
+		text-align:center;
+	}
+}
+
 .green-bg{
 	background: $green2015 !important; 
 }
