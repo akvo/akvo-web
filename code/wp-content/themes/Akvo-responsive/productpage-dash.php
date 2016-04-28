@@ -14,8 +14,9 @@
   	</div-->
 
   	<hgroup>
-    	<h1><?php the_field('rsr_name'); ?></h1>
-    	<h2 id="tagline">Make sense of your data</h2>
+  		<img class='prod-logo' src="<?php the_field('logo');?>" />
+    	<!--h1><?php the_field('rsr_name'); ?></h1-->
+    	<h2 id="tagline"><?php the_field('tagline');?></h2>
     </hgroup>
 	
 	

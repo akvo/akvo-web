@@ -6429,7 +6429,7 @@ a[href].button {
   background: #f1f1f1 !important; }
 
 .dashProduct hgroup h1 {
-  background: url("../images/rsr60px.png") center center no-repeat; }
+  background: url("../images/logos/akvo-lumen.png") center center no-repeat; }
 .dashProduct hgroup h2 {
   margin-bottom: 3em; }
 .dashProduct .full-width-banner {
@@ -6463,7 +6463,8 @@ a[href].button {
   width: 21%;
   float: left;
   padding: 0 2%;
-  margin-bottom: 2em; }
+  margin-bottom: 2em;
+  margin: 0; }
   @media only screen and (max-width: 992px) {
     .dashProduct li.box {
       width: 100%; } }
@@ -6489,6 +6490,12 @@ img.aligncenter {
 
 .space-one {
   margin: 1em; }
+
+.prod-logo {
+  max-width: 90%;
+  height: auto;
+  margin: 2em auto;
+  display: block; }
 
 .box {
   width: 250px;

@@ -8037,7 +8037,7 @@ a[href].button{
 .dashProduct{
 
 	hgroup h1{
-		background: url("../images/rsr60px.png") center center no-repeat;
+		background: url("../images/logos/akvo-lumen.png") center center no-repeat;
 	}
 	
 	hgroup h2{
@@ -8087,6 +8087,7 @@ a[href].button{
 		float:left;
 		padding: 0 2%;
 		margin-bottom: 2em;
+		margin: 0;
 		@media only screen and (max-width: 992px){
 			width: 100%;
 			
@@ -8126,6 +8127,13 @@ img.aligncenter{
 }
 .space-one{
 	margin: 1em;
+}
+
+.prod-logo{
+	max-width: 90%;
+	height: auto;
+	margin:2em auto;
+	display:block;
 }
 
 .box{
