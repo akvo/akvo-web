@@ -14,17 +14,29 @@
   	</div-->
 
   	<hgroup>
-    	<h1><?php the_field('rsr_name'); ?></h1>
-    	<h2 id="tagline">Make sense of your data</h2>
+  		<img class='prod-logo' src="<?php the_field('logo');?>" />
+    	<!--h1><?php the_field('rsr_name'); ?></h1-->
+    	<h2 id="tagline"><?php the_field('tagline');?></h2>
     </hgroup>
 	
 	
-	<?php while(have_rows('section')): the_row();?>
+	<?php 
+		$row_i = 0;
+		while(have_rows('section')): 
+			the_row();
+			$image_flag = false;
+			
+			$image_text = get_sub_field('image_text');
+			
+			if (strpos($image_text, '<img') !== false) {
+ 			   $image_flag = true;
+			}
+	?>
   	<section>
-  		<div class="full-width-banner" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
-        	<?php if(get_sub_field('image_text')):?>
+  		<div class="full-width-banner <?php if($row_i){_e('shallow-banner');}?> <?php if($image_flag){_e('overlay-banner');}?>" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
+        	<?php if($image_text):?>
            	<a href="<?php _e(get_sub_field('image_link'));?>">
-           		<?php _e(get_sub_field('image_text'));?>
+           		<?php _e($image_text);?>
            	</a>
            	<?php endif;?>
     	</div>
@@ -32,7 +44,7 @@
     	<div class='page-section'><?php _e($desc);?></div>
     	<?php endif;?>
   	</section>
-  	<?php endwhile;?>
+  	<?php $row_i++;endwhile;?>
   	
   	<section>
   		<div class='page-section full-width'>

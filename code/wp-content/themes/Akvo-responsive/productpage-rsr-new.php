@@ -322,7 +322,7 @@
 	function rsr_features_section($el){
 	
 	?>
-		<div class="sub-section">
+		<div class="sub-section" id="<?php _e($el);?>">
 			<div class="wrapper">
 				
 				<?php
