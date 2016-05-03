@@ -6118,6 +6118,8 @@ div[id^="inline-"] {
     color: inherit; }
   #content.rsrProdPag #features_section {
     margin-top: -2em; }
+  #content.rsrProdPag #pricing_image {
+    max-width: 90%; }
   #content.rsrProdPag #pricing_description {
     padding-bottom: 0; }
   #content.rsrProdPag #pricing_description_2 {
