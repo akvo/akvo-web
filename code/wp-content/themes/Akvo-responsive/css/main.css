@@ -6463,7 +6463,8 @@ a[href].button {
     width: auto;
     background: none;
     left: 0;
-    top: 0; }
+    top: 0;
+    cursor: default; }
 .dashProduct li.box {
   display: inline-block;
   width: 21%;
