@@ -10,12 +10,8 @@ Template Name: product-flow
     <p>Already a FLOW user?</p>
     <a href="#" class="">Get to the FLOW gateway &rsaquo;</a></div>
     <hgroup>
-    <h1>
-      <?php the_field('flow_name'); ?>
-    </h1>
-    <h2>
-      <?php the_field('flow_tagline'); ?>
-    </h2>
+		<?php akvo_page_logo('logo');?>
+		<h2><?php the_field('flow_tagline'); ?></h2>
     </hgroup>
 
     <section class="productDescr wrapper" id="flowDescr">
