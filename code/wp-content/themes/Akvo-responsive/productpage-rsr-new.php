@@ -36,7 +36,6 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'rsr_image',
 				'pricing_description' => 'rsr_content',
 				'pricing_buttons' => 'rsr_buttons',
 				'pricing_description_2' => 'rsr_content'
@@ -67,10 +66,6 @@
 	
 	function rsr_title($el){
 		_e("<h3 id=".$el.">".get_field($el)."</h3>");
-	}
-	
-	function rsr_image($el){
-		echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
 	}
 	
 	function rsr_content($el){
@@ -372,7 +367,7 @@
   	</div-->
 
   	<hgroup>
-    	<?php akvo_page_logo('logo');?>
+    	<h1><?php the_field('rsr_name'); ?></h1>
     	<h2 id="tagline"></h2>
   	</hgroup>
 	
@@ -669,14 +664,7 @@
         					scrollTop: $('#mainbody').offset().top
     					}, 500);
        					
-       					
-       					if(history.pushState) {
- 					 		history.pushState(null, null, '#' + section.attr('id'));
-						}
-						else {
-    						window.location.hash = section.attr('id');
-						}
-       					
+       					window.location.hash = section.attr('id');
        					
        					console.log('click');
        				});
