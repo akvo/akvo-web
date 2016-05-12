@@ -372,7 +372,7 @@
   	</div-->
 
   	<hgroup>
-    	<h1><?php the_field('rsr_name'); ?></h1>
+    	<?php akvo_page_logo('logo');?>
     	<h2 id="tagline"></h2>
   	</hgroup>
 	
@@ -669,7 +669,14 @@
         					scrollTop: $('#mainbody').offset().top
     					}, 500);
        					
-       					window.location.hash = section.attr('id');
+       					
+       					if(history.pushState) {
+ 					 		history.pushState(null, null, '#' + section.attr('id'));
+						}
+						else {
+    						window.location.hash = section.attr('id');
+						}
+       					
        					
        					console.log('click');
        				});
