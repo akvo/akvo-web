@@ -99,7 +99,7 @@
       	<a href="<?php _e(get_permalink($item_post->ID)); ?>">
 			<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($item_post->ID) );?>
 			<?php if($feat_image):?><div style="background-image: url('<?php echo $feat_image; ?>')"></div><?php endif;?>
-          	<h3>Latest blog</h3>
+          	<h3><?php the_field('si_item_title_1');?></h3>
           	<span class="text"><?php _e($item_post->post_title); ?></span>          
         </a>
     </div>
