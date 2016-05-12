@@ -8038,14 +8038,23 @@ a[href].button{
 	}
 }
 
+
+/* BG COLORS */
+.orange-bg{
+	background: $orange2015 !important;
+}
 .green-bg{
-	background: $green2015 !important; 
+	background: $green2015 !important;
+}
+.light-green-bg{
+	background: rgba(116, 182, 49, 0.3) !important;
 }
 .grey-bg{
 	background: rgb(241, 241, 241) !important; 
 }
+/* -------   */
 
-.dashProduct{
+.dashProduct, .caddisflyProduct{
 
 	hgroup h1{
 		background: url("../images/logos/akvo-lumen.png") center center no-repeat;
@@ -8110,6 +8119,21 @@ a[href].button{
 	}
 }
 
+@media only screen and (min-width: 993px){
+	.caddisflyProduct li.box{
+		padding: 0 6%;
+	}
+}
+.box-btn{
+	width: 320px;
+	display: inline-block;
+	margin: 10px 20px;
+	
+	a[href].button{
+		margin:0;
+	}
+}
+
 .page-section{	
 	max-width: 800px;
 	margin:0 auto;
@@ -8125,10 +8149,12 @@ img.aligncenter{
 	margin: 0 auto;
 	display:block;
 }
+
+
 	
 .page-section.full-width{
 	max-width:100%;
-	background: rgba(116, 182, 49, 0.3);
+	
 	
 	.fa{
 		color: #2c2a74;
