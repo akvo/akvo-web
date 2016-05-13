@@ -38,7 +38,7 @@
   		</div>
   		<div class='page-section'><?php the_field('tests_footer');?></div>
   	</section>
-  	<?php akvo_page_section('section_end');?>
+  	<?php akvo_page_section('section_end', true);?>
   	<section>
   		<div class='page-section'>
   			<?php the_field('get_involved_section');?>
