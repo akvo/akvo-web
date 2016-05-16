@@ -17,7 +17,13 @@
 <?php foreach($issues as $i){ if($i['severity'] == 1){ ?>
 <p>* <?php echo htmlspecialchars($i['shortMsg']) ?></p>
 <?php if (!empty($i['tmplData']['badURL'])): ?>
-<p><img src="<?php echo sprintf("http://noc1.wordfence.com/v2.14/?v=%s&s=%s&k=%s&action=image&txt=%s", rawurlencode(wfUtils::getWPVersion()), rawurlencode(home_url()), rawurlencode(wfConfig::get('apiKey')), rawurlencode(base64_encode($i['tmplData']['badURL']))) ?>" alt="" /></p>
+<p><img src="<?php echo WORDFENCE_API_URL_BASE_NONSEC . "?" . http_build_query(array(
+		'v' => wfUtils::getWPVersion(), 
+		's' => home_url(),
+		'k' => wfConfig::get('apiKey'),
+		'action' => 'image',
+		'txt' => base64_encode($i['tmplData']['badURL'])
+	), '', '&') ?>" alt="" /></p>
 <?php endif ?>
 
 <?php } } } ?>
@@ -33,11 +39,13 @@
 
 <?php if(! $isPaid){ ?>
 	<p>NOTE: You are using the free version of Wordfence. Upgrade to Premium today for less than $5 per month!</p>
+
 	<ul>
-		<li>Advanced features like IP reputation monitoring, country blocking, an advanced comment spam filter and cell phone sign-in give you the best protection available</li>
+		<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
+		<li>Other advanced features like IP reputation monitoring, country blocking, an advanced comment spam filter and cell phone sign-in give you the best protection available</li>
 		<li>Remote, frequent and scheduled scans</li>
 		<li>Access to Premium Support</li>
-		<li>Discounts of up to 90% for multiyear and multi-license purchases</li>
+		<li>Discounts of up to 75% for multiyear and multi-license purchases</li>
 	</ul>
 
 	<p>

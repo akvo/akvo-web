@@ -37,18 +37,41 @@ class wfScanEngine {
 	private $userPasswdQueue = "";
 	private $passwdHasIssues = false;
 
-	/**
-	 * @var array
-	 */
-	private $databaseResults;
 
 	/**
 	 * @var wordfenceDBScanner
 	 */
 	private $dbScanner;
 
+	/**
+	 * @var wfScanKnownFilesLoader
+	 */
+	private $knownFilesLoader;
+
+	public static function testForFullPathDisclosure($url = null, $filePath = null) {
+		if ($url === null && $filePath === null) {
+			$url = includes_url('rss-functions.php');
+			$filePath = ABSPATH . WPINC . '/rss-functions.php';
+		}
+
+		$response = wp_remote_get($url);
+		$html = wp_remote_retrieve_body($response);
+		return preg_match("/" . preg_quote(realpath($filePath), "/") . "/i", $html);
+	}
+
+	public static function isDirectoryListingEnabled($url = null) {
+		if ($url === null) {
+			$uploadPaths = wp_upload_dir();
+			$url = $uploadPaths['baseurl'];
+		}
+
+		$response = wp_remote_get($url);
+		return !is_wp_error($response) && ($responseBody = wp_remote_retrieve_body($response)) &&
+			stripos($responseBody, '<title>Index of') !== false;
+	}
+
 	public function __sleep(){ //Same order here as above for properties that are included in serialization
-		return array('hasher', 'jobList', 'i', 'wp_version', 'apiKey', 'startTime', 'maxExecTime', 'publicScanEnabled', 'fileContentsResults', 'scanner', 'scanQueue', 'hoover', 'scanData', 'statusIDX', 'userPasswdQueue', 'passwdHasIssues', 'databaseResults', 'dbScanner');
+		return array('hasher', 'jobList', 'i', 'wp_version', 'apiKey', 'startTime', 'maxExecTime', 'publicScanEnabled', 'fileContentsResults', 'scanner', 'scanQueue', 'hoover', 'scanData', 'statusIDX', 'userPasswdQueue', 'passwdHasIssues', 'dbScanner', 'knownFilesLoader');
 	}
 	public function __construct(){
 		$this->startTime = time();
@@ -67,7 +90,9 @@ class wfScanEngine {
 		$this->jobList[] = 'knownFiles_init';
 		$this->jobList[] = 'knownFiles_main';
 		$this->jobList[] = 'knownFiles_finish';
-		foreach (array('knownFiles', 'fileContents', 'database', 'posts', 'comments', 'passwds', 'dns', 'diskSpace', 'oldVersions') as $scanType) {
+		foreach (array('knownFiles', 'checkReadableConfig', 'fileContents',
+			         // 'wpscan_fullPathDisclosure', 'wpscan_directoryListingEnabled',
+			         'posts', 'comments', 'passwds', 'dns', 'diskSpace', 'oldVersions', 'suspiciousAdminUsers') as $scanType) {
 			if (wfConfig::get('scansEnabled_' . $scanType)) {
 				if (method_exists($this, 'scan_' . $scanType . '_init')) {
 					foreach (array('init', 'main', 'finish') as $op) {
@@ -216,6 +241,127 @@ class wfScanEngine {
 			sleep(2);
 		}
 	}
+
+	private function scan_checkReadableConfig() {
+		$haveIssues = false;
+		$status = wordfence::statusStart("Check for publicly accessible configuration files, backup files and logs");
+
+		$backupFileTests = array(
+//			wfCommonBackupFileTest::createFromRootPath('.user.ini'),
+//			wfCommonBackupFileTest::createFromRootPath('.htaccess'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.bak'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.swo'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.save'),
+			new wfCommonBackupFileTest(home_url('%23wp-config.php%23'), ABSPATH . '#wp-config.php#'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php~'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.old'),
+			wfCommonBackupFileTest::createFromRootPath('.wp-config.php.swp'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.bak'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.save'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php_bak'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.swp'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.old'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.original'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.php.orig'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.txt'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.original'),
+			wfCommonBackupFileTest::createFromRootPath('wp-config.orig'),
+			wfCommonBackupFileTest::createFromRootPath('searchreplacedb2.php'),
+			new wfCommonBackupFileTest(content_url('/debug.log'), WP_CONTENT_DIR . '/debug.log', array(
+				'headers' => array(
+					'Range' => 'bytes=0-700',
+				),
+			)),
+		);
+//		$userIniFilename = ini_get('user_ini.filename');
+//		if ($userIniFilename && $userIniFilename !== '.user.ini') {
+//			$backupFileTests[] = wfCommonBackupFileTest::createFromRootPath($userIniFilename);
+//		}
+
+
+		/** @var wfCommonBackupFileTest $test */
+		foreach ($backupFileTests as $test) {
+			$pathFromRoot = (strpos($test->getPath(), ABSPATH) === 0) ? substr($test->getPath(), strlen(ABSPATH)) : $test->getPath();
+			if ($test->fileExists() && $test->isPubliclyAccessible()) {
+				$key = "configReadable" . bin2hex($test->getUrl());
+				if ($this->addIssue(
+					'configReadable',
+					2,
+					$key,
+					$key,
+					'Publicly accessible config, backup, or log file found: ' . esc_html($pathFromRoot),
+					'<a href="' . $test->getUrl() . '" target="_blank">' . $test->getUrl() . '</a> is publicly
+					accessible and may expose sensitive information about your site. Files such as this one are commonly
+					checked for by scanners such as WPScan and should be removed or made inaccessible.',
+					array(
+						'url'       => $test->getUrl(),
+						'file'      => $pathFromRoot,
+						'canDelete' => true,
+					)
+				)) {
+					$haveIssues = true;
+				}
+			}
+		}
+
+		wordfence::statusEnd($status, $haveIssues);
+	}
+
+	private function scan_wpscan_fullPathDisclosure() {
+		$file = realpath(ABSPATH . WPINC . "/rss-functions.php");
+		if (!$file) {
+			return;
+		}
+
+		$haveIssues = false;
+		$status = wordfence::statusStart("Checking if your server discloses the path to the document root");
+		$testPage = includes_url() . basename($file);
+
+		if (self::testForFullPathDisclosure($testPage, $file)) {
+			$key  = 'wpscan_fullPathDisclosure' . $testPage;
+			if ($this->addIssue(
+				'wpscan_fullPathDisclosure',
+				2,
+				$key,
+				$key,
+				'Web server exposes the document root',
+				'Full Path Disclosure (FPD) vulnerabilities enable the attacker to see the path to the webroot/file. e.g.:
+				 /home/user/htdocs/file/. Certain vulnerabilities, such as using the load_file() (within a SQL Injection)
+				 query to view the page source, require the attacker to have the full path to the file they wish to view.',
+				array('url' => $testPage)
+			)) {
+				$haveIssues = true;
+			}
+		}
+
+		wordfence::statusEnd($status, $haveIssues);
+	}
+
+	private function scan_wpscan_directoryListingEnabled() {
+		$this->statusIDX['wpscan_directoryListingEnabled'] = wordfence::statusStart("Checking to see if directory listing is enabled");
+
+		$uploadPaths = wp_upload_dir();
+		$enabled = self::isDirectoryListingEnabled($uploadPaths['baseurl']);
+
+		$haveIssues = false;
+		if ($enabled) {
+			if ($this->addIssue(
+				'wpscan_directoryListingEnabled',
+				2,
+				'wpscan_directoryListingEnabled',
+				'wpscan_directoryListingEnabled',
+				"Directory listing is enabled",
+				"Directory listing provides an attacker with the complete index of all the resources located inside of the directory. The specific risks and consequences vary depending on which files are listed and accessible, but it is recommended that you disable it unless it is needed.",
+				array(
+					'url' => $uploadPaths['baseurl'],
+				)
+			)) {
+				$haveIssues = true;
+			}
+		}
+		wordfence::statusEnd($this->statusIDX['wpscan_directoryListingEnabled'], $haveIssues);
+	}
+
 	private function scan_checkSpamvertized(){
 		if(wfConfig::get('isPaid')){
 			if(wfConfig::get('spamvertizeCheck')){
@@ -263,46 +409,13 @@ class wfScanEngine {
 			}
 		}
 
-		if(! function_exists( 'get_plugins')){
-			require_once ABSPATH . '/wp-admin/includes/plugin.php';
-		}
 		$this->status(2, 'info', "Getting plugin list from WordPress");
-		$pluginData = get_plugins();
-		$knownFilesPlugins = array();
-		foreach($pluginData as $key => $data){
-			if(preg_match('/^([^\/]+)\//', $key, $matches)){
-				$pluginDir = $matches[1];
-				$pluginFullDir = "wp-content/plugins/" . $pluginDir;
-				$knownFilesPlugins[$key] = array( 
-					'Name' => $data['Name'], 
-					'Version' => $data['Version'],
-					'ShortDir' => $pluginDir,
-					'FullDir' => $pluginFullDir
-					);
-			}
-		}
-			
+		$knownFilesPlugins = $this->getPlugins();
 		$this->status(2, 'info', "Found " . sizeof($knownFilesPlugins) . " plugins");
 		$this->i->updateSummaryItem('totalPlugins', sizeof($knownFilesPlugins));
 
-		if (!function_exists('wp_get_themes')) {
-			require_once ABSPATH . '/wp-includes/theme.php';
-		}
 		$this->status(2, 'info', "Getting theme list from WordPress");
-		$themes = wp_get_themes();
-		foreach ($themes as $themeName => $themeVal) {
-			if (preg_match('/\/([^\/]+)$/', $themeVal['Stylesheet Dir'], $matches)) {
-				$shortDir = $matches[1]; //e.g. evo4cms
-				$fullDir = substr($themeVal['Stylesheet Dir'], strlen(ABSPATH)); //e.g. wp-content/themes/evo4cms
-				$knownFilesThemes[$themeName] = array(
-					'Name'     => $themeVal['Name'],
-					'Version'  => $themeVal['Version'],
-					'ShortDir' => $shortDir,
-					'FullDir'  => $fullDir
-				);
-			}
-		}
-
+		$knownFilesThemes = $this->getThemes();
 		$this->status(2, 'info', "Found " . sizeof($knownFilesThemes) . " themes");
 		$this->i->updateSummaryItem('totalThemes', sizeof($knownFilesThemes));
 
@@ -351,52 +464,7 @@ class wfScanEngine {
 		wordfence::statusEnd($this->statusIDX['GSB'], $haveIssuesGSB);
 	}
 
-	private function scan_database_init() {
-		$this->statusIDX['db_infect'] = wordfence::statusStart('Scanning database for infections and vulnerabilities');
-		$this->dbScanner = new wordfenceDBScanner($this->apiKey, $this->wp_version, ABSPATH);
-		$this->status(2, 'info', "Starting scan of database");
-	}
 
-	private function scan_database_main() {
-		if (!$this->dbScanner) {
-			$this->dbScanner = new wordfenceDBScanner($this->apiKey, $this->wp_version, ABSPATH);
-		}
-		$this->databaseResults = $this->dbScanner->scan($this);
-	}
-
-	private function scan_database_finish() {
-		$this->status(2, 'info', "Done database scan");
-		if ($this->dbScanner->errorMsg) {
-			throw new Exception($this->dbScanner->errorMsg);
-		}
-		$this->dbScanner = null;
-		$haveIssues = false;
-		foreach ($this->databaseResults as $issue) {
-			$this->status(2, 'info', "Adding issue: " . $issue['shortMsg']);
-			$issue_success = $this->addIssue($issue['type'], $issue['severity'], $issue['ignoreP'], $issue['ignoreC'], $issue['shortMsg'], $issue['longMsg'], $issue['data']);
-			if ($issue_success) {
-				$haveIssues = true;
-			}
-		}
-		$this->databaseResults = null;
-
-		$blogsToScan = self::getBlogsToScan('options');
-		$wfdb = new wfDB();
-		foreach ($blogsToScan as $blog) {
-			$charset = $wfdb->querySingle("SELECT option_value FROM " . $blog['table'] . " WHERE option_name='blog_charset'");
-			if (strtolower($charset) == 'utf-7') {
-				$this->addIssue('database', 1, $blog['blog_id'] . 'blog_charset', $blog['blog_id'] . 'blog_charset', "An option was found in your site that indicates it may have been hacked.", "The 'blog_charset' option in your database is set to '" . $charset . "' which indicates your site may have been hacked. If hackers can gain access to your database via phpMyAdmin for example, they will change this value in order to inject malicious code into other parts of your site or allow XSS attacks. The 'badi' hack does this.", array(
-					'isMultisite' => $blog['isMultisite'],
-					'domain'      => $blog['domain'],
-					'path'        => $blog['path'],
-					'blog_id'     => $blog['blog_id']
-				));
-				$haveIssues = true;
-			}
-		}
-
-		wordfence::statusEnd($this->statusIDX['db_infect'], $haveIssues);
-	}
 	private function scan_posts_init(){
 		$this->statusIDX['posts'] = wordfence::statusStart('Scanning posts for URL\'s in Google\'s Safe Browsing List');
 		$blogsToScan = self::getBlogsToScan('posts');
@@ -950,6 +1018,32 @@ class wfScanEngine {
 
 		wordfence::statusEnd($this->statusIDX['oldVersions'], $haveIssues);
 	}
+
+	public function scan_suspiciousAdminUsers() {
+		$this->statusIDX['suspiciousAdminUsers'] = wordfence::statusStart("Scanning for admin users not created through WordPress");
+		$haveIssues = false;
+
+		$adminUsers = new wfAdminUserMonitor();
+		if ($adminUsers->isEnabled() && $suspiciousAdmins = $adminUsers->checkNewAdmins()) {
+			foreach ($suspiciousAdmins as $userID) {
+				$user = new WP_User($userID);
+				$key = 'suspiciousAdminUsers' . $userID;
+				if ($this->addIssue('suspiciousAdminUsers', 1, $key, $key,
+					"An admin user with the username " . esc_html($user->user_login) . " was created outside of WordPress.",
+					"An admin user with the username " . esc_html($user->user_login) . " was created outside of WordPress. It's
+				possible a plugin could have created the account, but if you do not recognize the user, we suggest you remove
+				it.",
+					array(
+						'userID' => $userID,
+					))) {
+					$haveIssues = true;
+				}
+			}
+		}
+
+		wordfence::statusEnd($this->statusIDX['suspiciousAdminUsers'], $haveIssues);
+	}
+
 	public function status($level, $type, $msg){
 		wordfence::status($level, $type, $msg);
 	}
@@ -1039,6 +1133,358 @@ class wfScanEngine {
 		wordfence::status(4, 'info', "getMaxExecutionTime() returning default of: 15");
 		return 15;
 	}
+
+	/**
+	 * @return wfScanKnownFilesLoader
+	 */
+	public function getKnownFilesLoader() {
+		if ($this->knownFilesLoader === null) {
+			$this->knownFilesLoader = new wfScanKnownFilesLoader($this->api, $this->getPlugins(), $this->getThemes());
+		}
+		return $this->knownFilesLoader;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getPlugins() {
+		if(! function_exists( 'get_plugins')){
+			require_once ABSPATH . '/wp-admin/includes/plugin.php';
+		}
+		$pluginData = get_plugins();
+		$plugins = array();
+		foreach ($pluginData as $key => $data) {
+			if (preg_match('/^([^\/]+)\//', $key, $matches)) {
+				$pluginDir = $matches[1];
+				$pluginFullDir = "wp-content/plugins/" . $pluginDir;
+				$plugins[$key] = array(
+					'Name'     => $data['Name'],
+					'Version'  => $data['Version'],
+					'ShortDir' => $pluginDir,
+					'FullDir'  => $pluginFullDir
+				);
+			}
+		}
+		return $plugins;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getThemes() {
+		if (!function_exists('wp_get_themes')) {
+			require_once ABSPATH . '/wp-includes/theme.php';
+		}
+		$themeData = wp_get_themes();
+		$themes = array();
+		foreach ($themeData as $themeName => $themeVal) {
+			if (preg_match('/\/([^\/]+)$/', $themeVal['Stylesheet Dir'], $matches)) {
+				$shortDir = $matches[1]; //e.g. evo4cms
+				$fullDir = substr($themeVal['Stylesheet Dir'], strlen(ABSPATH)); //e.g. wp-content/themes/evo4cms
+				$themes[$themeName] = array(
+					'Name'     => $themeVal['Name'],
+					'Version'  => $themeVal['Version'],
+					'ShortDir' => $shortDir,
+					'FullDir'  => $fullDir
+				);
+			}
+		}
+		return $themes;
+	}
 }
 
-?>
+class wfScanKnownFilesLoader {
+	/**
+	 * @var array
+	 */
+	private $plugins;
+
+	/**
+	 * @var array
+	 */
+	private $themes;
+
+	/**
+	 * @var array
+	 */
+	private $knownFiles = array();
+
+	/**
+	 * @var wfAPI
+	 */
+	private $api;
+
+
+	/**
+	 * @param wfAPI $api
+	 * @param array $plugins
+	 * @param array $themes
+	 */
+	public function __construct($api, $plugins = null, $themes = null) {
+		$this->api = $api;
+		$this->plugins = $plugins;
+		$this->themes = $themes;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isLoaded() {
+		return is_array($this->knownFiles) && count($this->knownFiles) > 0;
+	}
+
+	/**
+	 * @param $file
+	 * @return bool
+	 * @throws wfScanKnownFilesException
+	 */
+	public function isKnownFile($file) {
+		if (!$this->isLoaded()) {
+			$this->fetchKnownFiles();
+		}
+
+		return isset($this->knownFiles['core'][$file]) ||
+			isset($this->knownFiles['plugins'][$file]) ||
+			isset($this->knownFiles['themes'][$file]);
+	}
+
+	/**
+	 * @param $file
+	 * @return bool
+	 * @throws wfScanKnownFilesException
+	 */
+	public function isKnownCoreFile($file) {
+		if (!$this->isLoaded()) {
+			$this->fetchKnownFiles();
+		}
+		return isset($this->knownFiles['core'][$file]);
+	}
+
+	/**
+	 * @param $file
+	 * @return bool
+	 * @throws wfScanKnownFilesException
+	 */
+	public function isKnownPluginFile($file) {
+		if (!$this->isLoaded()) {
+			$this->fetchKnownFiles();
+		}
+		return isset($this->knownFiles['plugins'][$file]);
+	}
+
+	/**
+	 * @param $file
+	 * @return bool
+	 * @throws wfScanKnownFilesException
+	 */
+	public function isKnownThemeFile($file) {
+		if (!$this->isLoaded()) {
+			$this->fetchKnownFiles();
+		}
+		return isset($this->knownFiles['themes'][$file]);
+	}
+
+	/**
+	 * @throws wfScanKnownFilesException
+	 */
+	public function fetchKnownFiles() {
+		try {
+			$dataArr = $this->api->binCall('get_known_files', json_encode(array(
+				'plugins' => $this->plugins,
+				'themes'  => $this->themes
+			)));
+
+			if ($dataArr['code'] != 200) {
+				throw new wfScanKnownFilesException("Got error response from Wordfence servers: " . $dataArr['code'], $dataArr['code']);
+			}
+			$this->knownFiles = @json_decode($dataArr['data'], true);
+			if (!is_array($this->knownFiles)) {
+				throw new wfScanKnownFilesException("Invalid response from Wordfence servers.");
+			}
+		} catch (Exception $e) {
+			throw new wfScanKnownFilesException($e->getMessage(), $e->getCode(), $e);
+		}
+	}
+
+	public function getKnownPluginData($file) {
+		if ($this->isKnownPluginFile($file)) {
+			return $this->knownFiles['plugins'][$file];
+		}
+		return null;
+	}
+
+	public function getKnownThemeData($file) {
+		if ($this->isKnownThemeFile($file)) {
+			return $this->knownFiles['themes'][$file];
+		}
+		return null;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getPlugins() {
+		return $this->plugins;
+	}
+
+	/**
+	 * @param array $plugins
+	 */
+	public function setPlugins($plugins) {
+		$this->plugins = $plugins;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getThemes() {
+		return $this->themes;
+	}
+
+	/**
+	 * @param array $themes
+	 */
+	public function setThemes($themes) {
+		$this->themes = $themes;
+	}
+
+	/**
+	 * @return array
+	 * @throws wfScanKnownFilesException
+	 */
+	public function getKnownFiles() {
+		if (!$this->isLoaded()) {
+			$this->fetchKnownFiles();
+		}
+		return $this->knownFiles;
+	}
+
+	/**
+	 * @param array $knownFiles
+	 */
+	public function setKnownFiles($knownFiles) {
+		$this->knownFiles = $knownFiles;
+	}
+
+	/**
+	 * @return wfAPI
+	 */
+	public function getAPI() {
+		return $this->api;
+	}
+
+	/**
+	 * @param wfAPI $api
+	 */
+	public function setAPI($api) {
+		$this->api = $api;
+	}
+}
+
+class wfScanKnownFilesException extends Exception {
+
+}
+
+class wfCommonBackupFileTest {
+
+	/**
+	 * @param string $path
+	 * @return wfCommonBackupFileTest
+	 */
+	public static function createFromRootPath($path) {
+		return new self(home_url($path), ABSPATH . $path);
+	}
+
+	private $url;
+	private $path;
+	/**
+	 * @var array
+	 */
+	private $requestArgs;
+	private $response;
+
+
+	/**
+	 * @param string $url
+	 * @param string $path
+	 * @param array $requestArgs
+	 */
+	public function __construct($url, $path, $requestArgs = array()) {
+		$this->url = $url;
+		$this->path = $path;
+		$this->requestArgs = $requestArgs;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function fileExists() {
+		return file_exists($this->path);
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function isPubliclyAccessible() {
+		$this->response = wp_remote_get($this->url, $this->requestArgs);
+		if ((int) floor(((int) wp_remote_retrieve_response_code($this->response) / 100)) === 2) {
+			$handle = @fopen($this->path, 'r');
+			if ($handle) {
+				$contents = fread($handle, 700);
+				fclose($handle);
+				$remoteContents = substr(wp_remote_retrieve_body($this->response), 0, 700);
+				return $contents === $remoteContents;
+			}
+		}
+		return false;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getUrl() {
+		return $this->url;
+	}
+
+	/**
+	 * @param string $url
+	 */
+	public function setUrl($url) {
+		$this->url = $url;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getPath() {
+		return $this->path;
+	}
+
+	/**
+	 * @param string $path
+	 */
+	public function setPath($path) {
+		$this->path = $path;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getRequestArgs() {
+		return $this->requestArgs;
+	}
+
+	/**
+	 * @param array $requestArgs
+	 */
+	public function setRequestArgs($requestArgs) {
+		$this->requestArgs = $requestArgs;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getResponse() {
+		return $this->response;
+	}
+}

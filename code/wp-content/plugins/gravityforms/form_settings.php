@@ -21,6 +21,13 @@ class GFFormSettings {
 				self::notification_page();
 				break;
 			default:
+                /**
+                 * Fires when the settings page view is determined
+                 *
+                 * Used to add additional pages to the form settings
+                 *
+                 * @param string $subview Used to complete the action name, allowing an additional subview to be detected
+                 */
 				do_action( "gform_form_settings_page_{$subview}" );
 		}
 
@@ -937,14 +944,30 @@ class GFFormSettings {
 
 
 				<div id="gform_custom_settings">
-					<!--form settings-->
+                    <?php
+                    /**
+                     * Fires after form settings are generated, within a custom settings div
+                     *
+                     * Used to insert custom form settings within the General settings
+                     *
+                     * @param int $form_id The ID of the form that settings are being accessed on
+                     */
+                    ?>
 					<?php do_action( 'gform_properties_settings', 100, $form_id ); ?>
 					<?php do_action( 'gform_properties_settings', 200, $form_id ); ?>
 					<?php do_action( 'gform_properties_settings', 300, $form_id ); ?>
 					<?php do_action( 'gform_properties_settings', 400, $form_id ); ?>
 					<?php do_action( 'gform_properties_settings', 500, $form_id ); ?>
 
-					<!--advanced settings-->
+                    <?php
+                    /**
+                     * Fires after form settings are generated, within a custom settings div
+                     *
+                     * Used to insert custom form settings within the Advanced settings
+                     *
+                     * @param int $form_id The ID of the form that settings are being accessed on
+                     */
+                    ?>
 					<?php do_action( 'gform_advanced_settings', 100, $form_id ); ?>
 					<?php do_action( 'gform_advanced_settings', 200, $form_id ); ?>
 					<?php do_action( 'gform_advanced_settings', 300, $form_id ); ?>
@@ -1152,7 +1175,10 @@ class GFFormSettings {
 				</table>
 
 				<?php
-				//DEPRECATED SINCE 1.7 - use gform_confirmation_ui_settings instead
+                /**
+                 * @deprecated
+                 * @see gform_confirmation_ui_settings
+                 */
 				do_action( 'gform_confirmation_settings', 100, $form_id );
 				do_action( 'gform_confirmation_settings', 200, $form_id );
 				?>
@@ -1571,8 +1597,8 @@ class GFFormSettings {
 		/**
 		 * Fires right before the confirmation that a form is deleted
 		 *
-		 * @param int $form['confirmations'][ $confirmation_id ] The delete confirmation object ID
-		 * @para array $form The Form object to filter through
+		 * @param int   $form['confirmations'][ $confirmation_id ] The delete confirmation object ID
+		 * @para  array $form                                      The Form object
 		 */
 		do_action( 'gform_pre_confirmation_deleted', $form['confirmations'][ $confirmation_id ], $form );
 

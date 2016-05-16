@@ -1,7 +1,9 @@
 <?php
-define('WORDFENCE_API_VERSION', '2.20');
+define('WORDFENCE_API_VERSION', '2.22');
 define('WORDFENCE_API_URL_SEC', 'https://noc1.wordfence.com/');
 define('WORDFENCE_API_URL_NONSEC', 'http://noc1.wordfence.com/');
+define('WORDFENCE_API_URL_BASE_SEC', WORDFENCE_API_URL_SEC . '/v' . WORDFENCE_API_VERSION . '/');
+define('WORDFENCE_API_URL_BASE_NONSEC', WORDFENCE_API_URL_NONSEC . '/v' . WORDFENCE_API_VERSION . '/');
 define('WORDFENCE_HACKATTEMPT_URL', 'http://noc3.wordfence.com:9050/');
 define('WORDFENCE_MAX_SCAN_TIME', 86400); //Increased this from 10 mins to 1 day because very big scans run for a long time. Users can use kill.
 define('WORDFENCE_TRANSIENTS_TIMEOUT', 3600); //how long are items cached in seconds e.g. files downloaded for diffing

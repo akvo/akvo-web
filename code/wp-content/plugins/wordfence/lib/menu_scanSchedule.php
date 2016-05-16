@@ -5,17 +5,14 @@
 <?php if(! wfConfig::get('isPaid')){ ?>
 	<div class="wf-premium-callout" style="margin: 20px;">
 		<h3>Scan Scheduling is only available to Premium Members</h3>
-		<p>Scan Scheduling is a premium feature because it places additional load on our scanning servers. Premium users
-			can increase their WordPress protection by controlling scan frequency up to once per hour. Premium also
-			allows you to control when Wordfence initiates a scan, selecting optimal times that don’t interfere with
-			high-traffic or optimal usage of your site. Upgrade to Premium today:</p>
+		<p>Premium users can increase their WordPress protection by controlling scan frequency up to once per hour. Premium also allows you to control when Wordfence initiates a scan, selecting optimal times that don’t interfere with high-traffic or optimal usage of your site.</p>
+
+		<p>Upgrade to Premium today for less than $5 per month:</p>
 		<ul>
-			<li>You can upgrade now for less than $5 per month</li>
-			<li>Other advanced features like IP reputation monitoring, an advanced comment spam filter, country blocking
-				and cell phone sign-in give you the best protection available
-			</li>
+			<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
+			<li>Other advanced features like IP reputation monitoring, an advanced comment spam filter, country blocking and cell phone sign-in give you the best protection available</li>
 			<li>Access to Premium Support</li>
-			<li>Discounts of up to 90% available for multiyear and multi-license purchases</li>
+			<li>Discounts of up to 75% available for multiyear and multi-license purchases</li>
 		</ul>
 		<p class="center"><a class="button button-primary"
 		                     href="https://www.wordfence.com/gnl1scanSched1/wordfence-signup/">Get Premium</a></p>

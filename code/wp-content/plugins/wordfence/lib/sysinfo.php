@@ -10,7 +10,7 @@ ob_start();
 phpinfo(INFO_ALL); 
 $out = ob_get_clean();
 $out = str_replace('width="600"','width="900"', $out);
-$out = preg_replace('/<hr.*?PHP Credits.*?<\/h1>/s', '', $out);
+// $out = preg_replace('/<hr.*?PHP Credits.*?<\/h1>/s', '', $out);
 $out = preg_replace('/<a [^>]+>/', '', $out);
 $out = preg_replace('/<\/a>/', '', $out);
 $out = preg_replace('/<title>[^<]*<\/title>/','', $out);
