@@ -4,10 +4,10 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=donat
 Plugin URI: http://www.wpsecurityauditlog.com
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
-Tags: wordpress security plugin, wordpress security audit log, audit log, wordpress log, event log wordpress, wordpress user tracking, wordpress activity log, wordpress audit, security event log, audit trail, security audit trail, wordpress security alerts, wordpress monitor, wordpress security monitor, wordpress admin, wordpress admin monitoring, analytics, activity, admin, multisite, wordpress multisite, actions, dashboard, log, notification, wordpress monitoring, email notification, wordpress email alerts, tracking, user tracking, user activity report
+Tags: wordpress security plugin, wordpress security audit log, audit log, wordpress log, event log wordpress, wordpress user tracking, wordpress activity log, wordpress audit, security event log, audit trail, security audit trail, wordpress security alerts, wordpress monitor, wordpress security monitor, wordpress admin, wordpress admin monitoring, analytics, activity, admin, multisite, wordpress multisite, actions, dashboard, log, notification, wordpress monitoring, email notification, wordpress email alerts, tracking, user tracking, user activity report, wordpress audit trail
 Requires at least: 3.6
-Tested up to: 4.4.2
-Stable tag: 2.4
+Tested up to: 4.5
+Stable tag: 2.4.2
 
 Keep an audit trail of all changes and under the hood WordPress activity to ensure productivity and thwart possible WordPress hacker attacks.
 
@@ -83,7 +83,7 @@ WP Security Audit Log is the first tracking and audit WordPress security monitor
 
 For more information about the features for WordPress Multisite network installation refer to [WP Security Audit Log Features for WordPress Multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/)
 
-= Easiy Create Your Own Custom Alerts =
+= Easily Create Your Own Custom Alerts =
 Is there something on your WordPress that the plugin does not monitor, but you would like to keep a record of it? Refer to the [Hooks for custom alerts documentation](https://www.wpsecurityauditlog.com/documentation/create-custom-alerts-wordpress-audit-trail/) to easily create your own custom alerts and keep record of any change on your WordPress, be it a change in a WordPress customization, a third party plugin and more.
 
 = WordPress Security Audit Log in your Language! =
@@ -115,10 +115,12 @@ WP Security Audit Log plugin also has a number of features that make WordPress a
 
 = As Featured On: =
 
+* [WP SmackDown](https://wpsmackdown.com/wp-plugins/wp-security-audit-log/)
 * [WPKube](http://www.wpkube.com/improve-wordpress-security-wp-security-audit-log/)
 * [ManageWP Plugins of the month](https://managewp.com/free-wordpress-plugins-june-2014)
 * [MyWPExpert](http://www.mywpexpert.com/wp-security-audit-log/)
 * [BlogVault](https://blogvault.net/wp-security-audit-log-plugin-review/)
+* [Firewall.cx](http://www.firewall.cx/general-topics-reviews/security-articles/1146-wordpress-audit-monitor-log-site-security-alerts.html)
 * [Pagely](https://pagely.com/blog/2015/01/log-wordpress-dashboard-activity-improved-security-auditing/)
 * [Design Wall](http://www.designwall.com/blog/10-wordpress-multisite-plugins-you-shouldnt-live-without/)
 * [WP Mayor](http://www.wpmayor.com/wp-security-audit-log-plugin-review-user-activity-logging-wordpress/)
@@ -126,6 +128,7 @@ WP Security Audit Log plugin also has a number of features that make WordPress a
 * [Tourqe News](http://torquemag.io/5-awesome-wordpress-plugins-you-may-not-have-heard-of/)
 * [Shout Me Loud](http://www.shoutmeloud.com/how-to-monitor-user-activities-wordpress-dashboard.html)
 * [Monster Post](http://blog.templatemonster.com/2015/12/15/wp-security-audit-log-plugin-review/)
+* [Templatic](https://templatic.com/tips-tricks/improve-wordpress-security-posture/)
 * [Make a Website Hub](http://makeawebsitehub.com/wordpress-security/)
 * [The Darknet](http://www.darknet.org.uk/2015/10/wp-security-audit-log-a-complete-audit-log-plugin-for-wordpress/)
 
@@ -138,6 +141,7 @@ We need help translating the plugin and the WordPress Security Alerts. Please vi
 = Related Links and Documentation =
 For more information and to get started with WordPress Security, check out the following:
 
+* [What is a WordPress Audit Trail?](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-documentation/what-is-a-wordpress-audit-trail/]
 * [List of WordPress Security Alerts](http://www.wpsecurityauditlog.com/documentation/list-monitoring-wordpress-security-alerts-audit-log/)
 * [WordPress Multisite Features](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/)
 * [WP Security Audit Log and Reverse Proxy and WAFs Support](http://www.wpsecurityauditlog.com/documentation/automatically-retrieve-originating-wordpress-user-ip-address/)
@@ -160,40 +164,8 @@ To keep yourself updated with what is new and updated in our WordPress security 
 
 == Frequently Asked Questions ==
 
-= How can I prune WordPress security events? =
-
-By default the plugin will keep 5,000 WordPress Security Alerts. When this limit is reached, older alerts are deleted to make place for the new ones. You can configure the plugin to keep more alerts from the settings page. You can also configure the plugin to delete alerts which are older than a number of days.
-
-= Is there a complete list of all WordPress security audit events? =
-Yes. A complete list can be found [here](http://www.wpsecurityauditlog.com/documentation/list-monitoring-wordpress-security-alerts-audit-log/)
-
-= Can I disable some WordPress security alerts? =
-
-Yes it is possible to disable (and re-enable) specific WordPress security alerts. To do so navigate to the "Enable/Disable Alerts" node in the plugin's menu, select the category tab and untick the WordPress security alert. Tick back the alert to re-enable it.
-
-= Can WP Security Audit Log plugin work and monitor activity on WodPress Multisite? =
-Yes, WP Security Audit Log works on WordPress Multisite networks, i.e. it can monitor user and under the hood WordPress activity on WordPress multisite installations. For more information refer to the post [WP Security Audit Log Features for WordPress Multisite installation](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/). 
-
-= Can I receive an email notification when a specific change happens on WordPress? =
-Yes it is possible to do so with the [Email Notifications Add-On](http://www.wpsecurityauditlog.com/extensions/wordpress-email-notifications-add-on/). This plugin extension enables you to configure triggers to monitor for specific changes and when such changes take place an email is automatically sent to your email address of choice with all the details of such change such as the Alert ID, user, user role, date, time, details about the actual change and more.
-
-= How can I search for a specific WordPress security alert?
-You can use the premium add-on [Search Add-On](http://www.wpsecurityauditlog.com/extensions/search-add-on-for-wordpress-security-audit-log/) to automatically search for a specific WordPress security alert. It supports free text based searches and you can also use the built-in filters to fine tune your searches.
-
-= Can I generate reports from the WordPress security audit log? =
-Yes it is possible to do so with the premium [Reports Add-On](http://www.wpsecurityauditlog.com/extensions/compliance-reports-add-on-for-wordpress/). This plugin extension allows you to generate any type of WordPress report using any type of data source. Reports can be generated in HTML and CSV format.
-
-= Can I store the WordPress Audit Log in an external database (not in the WordPress database? =
-Yes you can easily do so with the premium [External DB Add-on](http://www.wpsecurityauditlog.com/extensions/external-database-for-wp-security-audit-log/).
-
-= Can I exclude users or roles from being monitored? =
-Yes it is possible to exclude both users and roles from being monitored. To exclude a user or a role specify it in the Excluded Objects section in the plugin's settings node.
-
-= Can I exclude custom fields from being monitored? =
-Yes it is possible to exclude custom fields from being monitored. To exclude a custom field you can specify it in the Excluded Objects section in the plugin's settings node, else you can click the option Exclude Custom Field from Monitoring from the alert itself.
-
-= Can I exclude an IP address from being monitoring? =
-Yes. To exclude an IP address you can specify it in the Excluded Objects sections in the plugin's settings node.
+= Plugin FAQs and Technical Documentation =
+Please refer to the [FAQs page](https://www.wpsecurityauditlog.com/documentation/frequently-asked-questions-faqs/) on the plugin's website for the FAQs and the [Support & Documentation](https://www.wpsecurityauditlog.com/support/) section for more technical information and documents about the WP Security Audit Log plugin.
 
 == Screenshots ==
 
@@ -207,6 +179,26 @@ Yes. To exclude an IP address you can specify it in the Excluded Objects section
 8. WP Security Audit Log is integrated with the built-in revision system of WordPress, thus allowing you to see what content changes users make on your WordPress posts, pages and custom post types. For more information read [Keep Record of All WordPress Content Changes with WP Security Audit Log Plugin](http://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-releases/record-all-wordpress-content-changes-wp-security-audit-log-plugin/)
 
 == Changelog ==
+
+= 2.4.2 (2016-04-26) =
+
+* **Improvement**
+	* Removed hardcoded memory limit in database connector. Now all database connections are done via AJAX calls hence there is no need for such limits.
+
+= 2.4.1 (2016-04-20) =
+
+Read the [WP Security Audit Log 2.4 release notes](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-releases/wp-security-audit-log-2-4-1-released/) for a detailed overview of what is new in this version.
+
+* **New Features**
+	* New setting allowing the users to configure the timestamp of the alerts. Read the FAQ [How to change the time zone in the WordPress Audit Trial](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-documentation/faq-change-time-zone-wordpress-audit-trail/) for more information.
+	
+* **New WordPress Security Alerts for Content title changes**
+	* 2086: User changed the title of a post
+	* 2087: User changed the title of a page
+	* 2088: User changed the title of a custom post type
+
+* **Improvements**
+	* Implemented AJAX calls for when migrating the WordPress Audit Trail between databases with the [External DB add-on](https://www.wpsecurityauditlog.com/extensions/external-database-for-wp-security-audit-log/)
 
 = 2.4 (2016-03-28) =
 

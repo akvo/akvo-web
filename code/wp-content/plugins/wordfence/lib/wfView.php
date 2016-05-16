@@ -36,7 +36,7 @@ class wfView {
 	 * @param array  $data
 	 */
 	public function __construct($view, $data = array()) {
-		$this->view_path = WP_PLUGIN_DIR . '/wordfence/views';
+		$this->view_path = WORDFENCE_PATH . 'views';
 		$this->view = $view;
 		$this->data = $data;
 	}
@@ -116,7 +116,7 @@ class wfView {
 	 * Prevent POP
 	 */
 	public function __wakeup() {
-		$this->view_path = WP_PLUGIN_DIR . '/wordfence/views';
+		$this->view_path = WORDFENCE_PATH . 'views';
 		$this->view = null;
 		$this->data = array();
 		$this->view_file_extension = '.php';

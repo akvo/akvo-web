@@ -3,12 +3,19 @@ require_once('wfDB.php');
 require_once('wfUtils.php');
 require_once('wfBrowscap.php');
 class wfLog {
+	public $canLogHit = true;
 	private $hitsTable = '';
 	private $apiKey = '';
 	private $wp_version = '';
 	private $db = false;
 	private $googlePattern = '/\.(?:googlebot\.com|google\.[a-z]{2,3}|google\.[a-z]{2}\.[a-z]{2}|1e100\.net)$/i';
 	private static $gbSafeCache = array();
+
+	/**
+	 * @var wfRequestModel
+	 */
+	private $currentRequest;
+
 	public function __construct($apiKey, $wp_version){
 		$this->apiKey = $apiKey;
 		$this->wp_version = $wp_version;
@@ -25,6 +32,96 @@ class wfLog {
 		$this->ipRangesTable = $wpdb->base_prefix . 'wfBlocksAdv';
 		$this->perfTable = $wpdb->base_prefix . 'wfPerfLog';
 	}
+
+	public function initLogRequest() {
+		if ($this->currentRequest === null) {
+			$this->currentRequest = new wfRequestModel();
+
+			$this->currentRequest->ctime = sprintf('%.6f', microtime(true));
+			$this->currentRequest->statusCode = 200;
+			$this->currentRequest->isGoogle = (wfCrawl::isGoogleCrawler() ? 1 : 0);
+			$this->currentRequest->IP = wfUtils::inet_pton(wfUtils::getIP());
+			$this->currentRequest->userID = $this->getCurrentUserID();
+			$this->currentRequest->newVisit = (wordfence::$newVisit ? 1 : 0);
+			$this->currentRequest->URL = wfUtils::getRequestedURL();
+			$this->currentRequest->referer = (isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : '');
+			$this->currentRequest->UA = (isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '');
+			$this->currentRequest->jsRun = 0;
+			
+			if (!function_exists('wp_verify_nonce')) {
+				add_action('plugins_loaded', array($this, 'actionSetRequestJSEnabled'));
+			} else {
+				$this->actionSetRequestJSEnabled();
+			}
+
+			add_action('init', array($this, 'actionSetRequestOnInit'), 9999);
+
+			if (function_exists('register_shutdown_function')) {
+				register_shutdown_function(array($this, 'logHit'));
+			}
+		}
+	}
+
+	public function actionSetRequestJSEnabled() {
+		$UA = $this->currentRequest->UA;
+		$IP = wfUtils::getIP();
+		$jsRun = (int) (isset($_COOKIE['wordfence_verifiedHuman']) &&
+			$this->validateVerifiedHumanCookie($_COOKIE['wordfence_verifiedHuman'], $UA, $IP));
+		$this->currentRequest->jsRun = $jsRun;
+	}
+
+	/**
+	 * CloudFlare's plugin changes $_SERVER['REMOTE_ADDR'] on init.
+	 */
+	public function actionSetRequestOnInit() {
+		$this->currentRequest->IP = wfUtils::inet_pton(wfUtils::getIP());
+		$this->currentRequest->userID = $this->getCurrentUserID();
+	}
+
+	/**
+	 * @param string $cookieVal
+	 * @param string $ua
+	 * @param string $ip
+	 * @return string
+	 */
+	public function validateVerifiedHumanCookie($cookieVal, $ua = null, $ip = null) {
+		if ($ua === null) {
+			$ua = !empty($this->currentRequest) ? $this->currentRequest->UA : '';
+		}
+		if ($ip === null) {
+			$ip = wfUtils::getIP();
+		}
+		if (!function_exists('hash_equals')) {
+			require_once ABSPATH . WPINC . '/compat.php';
+		}
+		return hash_equals($cookieVal, $this->getVerifiedHumanCookieValue($ua, $ip));
+	}
+
+	/**
+	 * @param string $ua
+	 * @param string $ip
+	 * @return string
+	 */
+	public function getVerifiedHumanCookieValue($ua = null, $ip = null) {
+		if ($ua === null) {
+			$ua = !empty($this->currentRequest) ? $this->currentRequest->UA : '';
+		}
+		if ($ip === null) {
+			$ip = wfUtils::getIP();
+		}
+		if (!function_exists('wp_hash')) {
+			require_once ABSPATH . WPINC . '/pluggable.php';
+		}
+		return wp_hash('wordfence_verifiedHuman' . $ua . $ip, 'nonce');
+	}
+
+	/**
+	 * @return wfRequestModel
+	 */
+	public function getCurrentRequest() {
+		return $this->currentRequest;
+	}
+
 	public function logPerf($IP, $UA, $URL, $data){
 		$IP = wfUtils::inet_pton($IP);
 		$this->getDB()->queryWrite("insert into " . $this->perfTable . " (IP, userID, UA, URL, ctime, fetchStart, domainLookupStart, domainLookupEnd, connectStart, connectEnd, requestStart, responseStart, responseEnd, domReady, loaded) values (%s, %d, '%s', '%s', unix_timestamp(), %d, %d, %d, %d, %d, %d, %d, %d, %d, %d)", 
@@ -60,8 +157,18 @@ class wfLog {
 		if ($action == 'loginFailValidUsername' && $userID == 0) {
 			$action = 'loginFailInvalidUsername';
 		}
+
+		$hitID = 0;
+		if ($this->currentRequest !== null) {
+			$this->currentRequest->userID = $userID;
+			$this->currentRequest->action = $action;
+			$this->currentRequest->save();
+			$hitID = $this->currentRequest->getPrimaryKey();
+		}
+
 		//Else userID stays 0 but we do log this even though the user doesn't exist.
-		$this->getDB()->queryWrite("insert into " . $this->loginsTable . " (ctime, fail, action, username, userID, IP, UA) values (%f, %d, '%s', '%s', %s, %s, '%s')", 
+		$this->getDB()->queryWrite("insert into " . $this->loginsTable . " (hitID, ctime, fail, action, username, userID, IP, UA) values (%d, %f, %d, '%s', '%s', %s, %s, '%s')",
+			$hitID,
 			sprintf('%.6f', microtime(true)),
 			$fail,
 			$action,
@@ -303,6 +410,12 @@ class wfLog {
 
 		wfActivityReport::logBlockedIP($IP);
 
+		if ($this->currentRequest !== null) {
+			$this->currentRequest->statusCode = 403;
+			$this->currentRequest->action = 'blocked:' . ($wfsn ? 'wfsn' : 'wordfence');
+			$this->currentRequest->actionDescription = $reason;
+		}
+
 		wfCache::updateBlockedIPs('add');
 		wfConfig::inc('totalIPsBlocked');
 		return true;
@@ -317,6 +430,12 @@ class wfLog {
 			);
 
 		wfActivityReport::logBlockedIP($IP);
+
+		if ($this->currentRequest !== null) {
+			$this->currentRequest->statusCode = 403;
+			$this->currentRequest->action = 'lockedOut';
+			$this->currentRequest->actionDescription = $reason;
+		}
 
 		wfConfig::inc('totalIPsLocked');
 		return true;
@@ -418,29 +537,28 @@ class wfLog {
 		}
 		return $results;
 	}
+
+	/**
+	 * @return bool|int
+	 */
 	public function logHit(){
-		if(! wfConfig::liveTrafficEnabled()){ return; }	
-		$headers = array();
-		foreach($_SERVER as $h=>$v){
-			if(preg_match('/^HTTP_(.+)$/', $h, $matches) ){
-				$headers[$matches[1]] = $v;
+		$liveTrafficEnabled = wfConfig::liveTrafficEnabled();
+		$action = $this->currentRequest->action;
+		$logHitOK = $this->logHitOK();
+		if (!$logHitOK) {
+			return false;
+		}
+		if (!$liveTrafficEnabled && !$action) {
+			return false;
+		}
+		if ($this->currentRequest !== null) {
+			if ($this->currentRequest->save()) {
+				return $this->currentRequest->getPrimaryKey();
 			}
 		}
-		$ua = isset($_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '';
-		$this->getDB()->queryWrite("insert into " . $this->hitsTable . " (ctime, is404, isGoogle, IP, userID, newVisit, URL, referer, UA, jsRun) values (%f, %d, %d, %s, %s, %d, '%s', '%s', '%s', %d)",
-			sprintf('%.6f', microtime(true)),
-			(is_404() ? 1 : 0),
-			(wfCrawl::isGoogleCrawler() ? 1 : 0),
-			wfUtils::inet_pton(wfUtils::getIP()),
-			$this->getCurrentUserID(),
-			(wordfence::$newVisit ? 1 : 0),
-			wfUtils::getRequestedURL(),
-			(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : ''),
-			$ua,
-			(int) (isset($_COOKIE['wordfence_verifiedHuman']) && wp_verify_nonce($_COOKIE['wordfence_verifiedHuman'], 'wordfence_verifiedHuman' . $ua . wfUtils::getIP()))
-			);
-		return $this->getDB()->querySingle("select last_insert_id()");
+		return false;
 	}
+
 	public function getPerfStats($afterTime, $limit = 50){
 		$serverTime = $this->getDB()->querySingle("select unix_timestamp()");
 		$results = $this->getDB()->querySelect("select * from " . $this->perfTable . " where ctime > %f order by ctime desc limit %d", $afterTime, $limit);
@@ -479,7 +597,7 @@ class wfLog {
 		return $results;
 	}
 	public function getHits($hitType /* 'hits' or 'logins' */, $type, $afterTime, $limit = 50, $IP = false){
-		$serverTime = $this->getDB()->querySingle("select unix_timestamp()");
+		global $wpdb;
 		$IPSQL = "";
 		if($IP){
 			$IPSQL = " and IP=%s ";
@@ -496,7 +614,7 @@ class wfLog {
 			} else if($type == 'gCrawler'){
 				$typeSQL = " and isGoogle = 1 ";
 			} else if($type == '404'){
-				$typeSQL = " and is404 = 1 ";
+				$typeSQL = " and statusCode = 404 ";
 			} else if($type == 'human'){
 				$typeSQL = " and jsRun = 1 ";
 			} else if($type == 'ruser'){
@@ -505,17 +623,33 @@ class wfLog {
 				wordfence::status(1, 'error', "Invalid log type to wfLog: $type");
 				return false;
 			}
-			array_unshift($sqlArgs, "select * from " . $this->hitsTable . " where ctime > %f $IPSQL $typeSQL order by ctime desc limit %d");
+			array_unshift($sqlArgs, "select h.*, u.display_name from {$this->hitsTable} h
+				LEFT JOIN {$wpdb->users} u on h.userID = u.ID
+				where ctime > %f $IPSQL $typeSQL order by ctime desc limit %d");
 			$results = call_user_func_array(array($this->getDB(), 'querySelect'), $sqlArgs);
 
 		} else if($hitType == 'logins'){
-			array_unshift($sqlArgs, "select * from " . $this->loginsTable . " where ctime > %f $IPSQL order by ctime desc limit %d");
+			array_unshift($sqlArgs, "select l.*, u.display_name from {$this->loginsTable} l
+				LEFT JOIN {$wpdb->users} u on l.userID = u.ID
+				where ctime > %f $IPSQL order by ctime desc limit %d");
 			$results = call_user_func_array(array($this->getDB(), 'querySelect'), $sqlArgs ); 
 
 		} else {
 			wordfence::status(1, 'error', "getHits got invalid hitType: $hitType");
 			return false;
 		}
+		$this->processGetHitsResults($type, $results);
+		return $results;
+	}
+
+	/**
+	 * @param string $type
+	 * @param array $results
+	 * @throws Exception
+	 */
+	public function processGetHitsResults($type, &$results) {
+		$serverTime = $this->getDB()->querySingle("select unix_timestamp()");
+
 		$this->resolveIPs($results);
 		$ourURL = parse_url(site_url());
 		$ourHost = strtolower($ourURL['host']);
@@ -577,7 +711,7 @@ class wfLog {
 							if( isset( $refURL['query'] ) ) {
 								parse_str($refURL['query'], $queryVars);
 								if(isset($queryVars[$q])){
-									$res['searchTerms'] = $queryVars[$q];
+									$res['searchTerms'] = urlencode($queryVars[$q]);
 								}
 							}
 						}
@@ -587,7 +721,7 @@ class wfLog {
 					if ( isset( $referringPage ) && stristr( $referringPage['host'], 'google.' ) )
 					{
 						parse_str( $referringPage['query'], $queryVars );
-						echo $queryVars['q']; // This is the search term used
+						// echo $queryVars['q']; // This is the search term used
 					}
 				}
 			}
@@ -605,23 +739,23 @@ class wfLog {
 				}
 			}
 
-						
+
 			if($res['userID']){
 				$ud = get_userdata($res['userID']);
 				if($ud){
 					$res['user'] = array(
 						'editLink' => wfUtils::editUserLink($res['userID']),
-						'display_name' => $ud->display_name,
+						'display_name' => $res['display_name'],
 						'ID' => $res['userID']
-						);
+					);
 					$res['user']['avatar'] = get_avatar($res['userID'], 16);
 				}
 			} else {
 				$res['user'] = false;
 			}
 		}
-		return $results;
 	}
+
 	public function resolveIPs(&$results){
 		if(sizeof($results) < 1){ return; }
 		$IPs = array();
@@ -642,6 +776,9 @@ class wfLog {
 		}
 	}
 	public function logHitOK(){
+		if (!$this->canLogHit) {
+			return false;
+		}
 		if(is_admin()){ return false; } //Don't log admin pageviews
 		if(isset($_SERVER['HTTP_USER_AGENT'])){
 			if(preg_match('/WordPress\/' . $this->wp_version . '/i', $_SERVER['HTTP_USER_AGENT'])){ return false; } //Ignore requests generated by WP UA.
@@ -771,6 +908,7 @@ class wfLog {
 				if($doBlock){
 					$this->getDB()->queryWrite("update " . $this->ipRangesTable . " set totalBlocked = totalBlocked + 1, lastBlocked = unix_timestamp() where id=%d", $blockRec['id']);
 					wfActivityReport::logBlockedIP($IP);
+					$this->currentRequest->actionDescription = 'UA/Referrer/IP Range not allowed';
 					$this->do503(3600, "Advanced blocking in effect.");
 				}
 			}
@@ -828,6 +966,7 @@ class wfLog {
 										$this->redirect(wfConfig::get('cbl_redirURL'));
 									}
 								} else {
+									$this->currentRequest->actionDescription = 'blocked access via country blocking';
 									$this->do503(3600, "Access from your area has been temporarily limited for security reasons");
 									wfConfig::inc('totalCountryBlocked');
 								}
@@ -895,6 +1034,17 @@ class wfLog {
 		}
 	}
 	public function do503($secsToGo, $reason){
+		$this->initLogRequest();
+		$this->currentRequest->statusCode = 403;
+		if (!$this->currentRequest->action) {
+			$this->currentRequest->action = 'blocked:wordfence';
+		}
+		if (!$this->currentRequest->actionDescription) {
+			$this->currentRequest->actionDescription = "blocked: " . $reason;
+		}
+		
+		$this->logHit();
+
 		wfConfig::inc('total503s');
 		wfUtils::doNotCache();
 		header('HTTP/1.1 503 Service Temporarily Unavailable');
@@ -919,7 +1069,7 @@ class wfLog {
 			} else if($nb == 'neverBlockUA' || $nb == 'neverBlockVerified'){
 				if(wfCrawl::isGoogleCrawler()){ //Check the UA using regex
 					if($nb == 'neverBlockVerified'){
-						if(wfCrawl::isVerifiedGoogleCrawler($this->googlePattern, wfUtils::getIP())){ //UA check passed, now verify using PTR if configured to
+						if(wfCrawl::isVerifiedGoogleCrawler(wfUtils::getIP())){ //UA check passed, now verify using PTR if configured to
 							self::$gbSafeCache[$cacheKey] = false; //This is a verified Google crawler, so no we can't block it
 						} else {
 							self::$gbSafeCache[$cacheKey] = true; //This is a crawler claiming to be Google but it did not verify
@@ -1206,4 +1356,828 @@ class wfUserIPRange {
 	}
 }
 
-?>
+/**
+ * The function of this class is to detect admin users created via direct access to the database (in other words, not
+ * through WordPress).
+ */
+class wfAdminUserMonitor {
+
+	public function isEnabled() {
+		$enabled = wfConfig::get('scansEnabled_suspiciousAdminUsers');
+		if ($enabled && is_multisite()) {
+			if (!function_exists('wp_is_large_network')) {
+				require_once ABSPATH . WPINC . '/ms-functions.php';
+			}
+			$enabled = !wp_is_large_network('sites') && !wp_is_large_network('users');
+		}
+		return $enabled;
+	}
+
+	/**
+	 *
+	 */
+	public function createInitialList() {
+		$admins = $this->getCurrentAdmins();
+		wfConfig::set_ser('adminUserList', $admins);
+	}
+
+	/**
+	 * @param int $userID
+	 */
+	public function grantSuperAdmin($userID = null) {
+		if ($userID) {
+			$this->addAdmin($userID);
+		}
+	}
+
+	/**
+	 * @param int $userID
+	 */
+	public function revokeSuperAdmin($userID = null) {
+		if ($userID) {
+			$this->removeAdmin($userID);
+		}
+	}
+
+	/**
+	 * @param int $ID
+	 * @param mixed $role
+	 * @param mixed $old_roles
+	 */
+	public function updateToUserRole($ID = null, $role = null, $old_roles = null) {
+		$admins = $this->getLoggedAdmins();
+		if ($role !== 'administrator' && array_key_exists($ID, $admins)) {
+			$this->removeAdmin($ID);
+		} else if ($role === 'administrator') {
+			$this->addAdmin($ID);
+		}
+	}
+
+	/**
+	 * @return array|bool
+	 */
+	public function checkNewAdmins() {
+		$loggedAdmins = $this->getLoggedAdmins();
+		$admins = $this->getCurrentAdmins();
+		$suspiciousAdmins = array();
+		foreach ($admins as $adminID => $v) {
+			if (!array_key_exists($adminID, $loggedAdmins)) {
+				$suspiciousAdmins[] = $adminID;
+			}
+		}
+		return $suspiciousAdmins ? $suspiciousAdmins : false;
+	}
+
+	/**
+	 * Checks if the supplied user ID is suspicious.
+	 *
+	 * @param int $userID
+	 * @return bool
+	 */
+	public function isAdminUserLogged($userID) {
+		$loggedAdmins = $this->getLoggedAdmins();
+		return array_key_exists($userID, $loggedAdmins);
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getCurrentAdmins() {
+		require_once ABSPATH . WPINC . '/user.php';
+		if (is_multisite()) {
+			$sites = wp_get_sites(array(
+				'network_id' => null,
+			));
+		} else {
+			$sites = array(array(
+				'blog_id' => get_current_blog_id(),
+			));
+		}
+
+		// not very efficient, but the WordPress API doesn't provide a good way to do this.
+		$admins = array();
+		foreach ($sites as $siteRow) {
+			$user_query = new WP_User_Query(array(
+				'blog_id' => $siteRow['blog_id'],
+				'role'    => 'administrator',
+			));
+			$users = $user_query->get_results();
+			if (is_array($users)) {
+				/** @var WP_User $user */
+				foreach ($users as $user) {
+					$admins[$user->ID] = 1;
+				}
+			}
+		}
+
+		// Add any super admins that aren't also admins on a network
+		$superAdmins = get_super_admins();
+		foreach ($superAdmins as $userLogin) {
+			$user = get_user_by('login', $userLogin);
+			if ($user) {
+				$admins[$user->ID] = 1;
+			}
+		}
+		return $admins;
+	}
+
+	public function getLoggedAdmins() {
+		$loggedAdmins = wfConfig::get_ser('adminUserList', false);
+		if (!is_array($loggedAdmins)) {
+			$this->createInitialList();
+			$loggedAdmins = wfConfig::get_ser('adminUserList', false);
+		}
+		if (!is_array($loggedAdmins)) {
+			$loggedAdmins = array();
+		}
+		return $loggedAdmins;
+	}
+
+	/**
+	 * @param int $userID
+	 */
+	public function addAdmin($userID) {
+		$loggedAdmins = $this->getLoggedAdmins();
+		if (!array_key_exists($userID, $loggedAdmins)) {
+			$loggedAdmins[$userID] = 1;
+			wfConfig::set_ser('adminUserList', $loggedAdmins);
+		}
+	}
+
+	/**
+	 * @param int $userID
+	 */
+	public function removeAdmin($userID) {
+		$loggedAdmins = $this->getLoggedAdmins();
+		if (array_key_exists($userID, $loggedAdmins) && !array_key_exists($userID, $this->getCurrentAdmins())) {
+			unset($loggedAdmins[$userID]);
+			wfConfig::set_ser('adminUserList', $loggedAdmins);
+		}
+	}
+}
+
+/**
+ *
+ */
+class wfRequestModel extends wfModel {
+
+	private static $actionDataEncodedParams = array(
+		'paramKey',
+		'paramValue',
+		'path',
+	);
+
+	/**
+	 * @param $actionData
+	 * @return mixed|string|void
+	 */
+	public static function serializeActionData($actionData) {
+		if (is_array($actionData)) {
+			foreach (self::$actionDataEncodedParams as $key) {
+				if (array_key_exists($key, $actionData)) {
+					$actionData[$key] = base64_encode($actionData[$key]);
+				}
+			}
+		}
+		return json_encode($actionData);
+	}
+
+	/**
+	 * @param $actionDataJSON
+	 * @return mixed|string|void
+	 */
+	public static function unserializeActionData($actionDataJSON) {
+		$actionData = json_decode($actionDataJSON, true);
+		if (is_array($actionData)) {
+			foreach (self::$actionDataEncodedParams as $key) {
+				if (array_key_exists($key, $actionData)) {
+					$actionData[$key] = base64_decode($actionData[$key]);
+				}
+			}
+		}
+		return $actionData;
+	}
+
+	private $columns = array(
+		'id',
+		'attackLogTime',
+		'ctime',
+		'IP',
+		'jsRun',
+		'statusCode',
+		'isGoogle',
+		'userID',
+		'newVisit',
+		'URL',
+		'referer',
+		'UA',
+		'action',
+		'actionDescription',
+		'actionData',
+	);
+
+	public function getIDColumn() {
+		return 'id';
+	}
+
+	public function getTable() {
+		return $this->getDB()->base_prefix . 'wfHits';
+	}
+
+	public function hasColumn($column) {
+		return in_array($column, $this->columns);
+	}
+}
+
+
+class wfLiveTrafficQuery {
+
+	protected $validParams = array(
+		'id' => 'h.id',
+		'ctime' => 'h.ctime',
+		'ip' => 'h.ip',
+		'jsrun' => 'h.jsrun',
+		'statuscode' => 'h.statuscode',
+		'isgoogle' => 'h.isgoogle',
+		'userid' => 'h.userid',
+		'newvisit' => 'h.newvisit',
+		'url' => 'h.url',
+		'referer' => 'h.referer',
+		'ua' => 'h.ua',
+		'action' => 'h.action',
+		'actiondescription' => 'h.actiondescription',
+		'actiondata' => 'h.actiondata',
+
+		// wfLogins
+		'user_login' => 'u.user_login',
+		'username' => 'l.username',
+	);
+
+	/** @var wfLiveTrafficQueryFilterCollection */
+	private $filters = array();
+
+	/** @var wfLiveTrafficQueryGroupBy */
+	private $groupBy;
+	/**
+	 * @var float|null
+	 */
+	private $startDate;
+	/**
+	 * @var float|null
+	 */
+	private $endDate;
+	/**
+	 * @var int
+	 */
+	private $limit;
+	/**
+	 * @var int
+	 */
+	private $offset;
+
+	private $tableName;
+
+	/** @var wfLog */
+	private $wfLog;
+
+	/**
+	 * wfLiveTrafficQuery constructor.
+	 *
+	 * @param wfLog $wfLog
+	 * @param wfLiveTrafficQueryFilterCollection $filters
+	 * @param wfLiveTrafficQueryGroupBy $groupBy
+	 * @param float $startDate
+	 * @param float $endDate
+	 * @param int $limit
+	 * @param int $offset
+	 */
+	public function __construct($wfLog, $filters = null, $groupBy = null, $startDate = null, $endDate = null, $limit = 20, $offset = 0) {
+		$this->wfLog = $wfLog;
+		$this->filters = $filters;
+		$this->groupBy = $groupBy;
+		$this->startDate = $startDate;
+		$this->endDate = $endDate;
+		$this->limit = $limit;
+		$this->offset = $offset;
+	}
+
+	/**
+	 * @return array|null|object
+	 */
+	public function execute() {
+		global $wpdb;
+		$sql = $this->buildQuery();
+		$results = $wpdb->get_results($sql, ARRAY_A);
+		$this->getWFLog()->processGetHitsResults('', $results);
+		
+		$verifyCrawlers = false;
+		if ($this->filters !== null && count($this->filters->getFilters()) > 0) {
+			$filters = $this->filters->getFilters();
+			foreach ($filters as $f) {
+				if (strtolower($f->getParam()) == "isgoogle") {
+					$verifyCrawlers = true;
+					break;
+				}
+			}
+		}
+		
+		foreach ($results as $key => &$row) {
+			if ($row['isGoogle'] && $verifyCrawlers) {
+				if (!wfCrawl::isVerifiedGoogleCrawler($row['IP'], $row['UA'])) {
+					unset($results[$key]); //foreach copies $results and iterates on the copy, so it is safe to mutate $results within the loop
+					continue;
+				}
+			}
+			
+			$row['actionData'] = (array) json_decode($row['actionData'], true);
+		}
+		return array_values($results);
+	}
+
+	/**
+	 * @return string
+	 * @throws wfLiveTrafficQueryException
+	 */
+	public function buildQuery() {
+		global $wpdb;
+		$filters = $this->getFilters();
+		$groupBy = $this->getGroupBy();
+		$startDate = $this->getStartDate();
+		$endDate = $this->getEndDate();
+		$limit = absint($this->getLimit());
+		$offset = absint($this->getOffset());
+
+		$wheres = array();
+		if ($startDate) {
+			$wheres[] = $wpdb->prepare('h.ctime > %f', $startDate);
+		}
+		if ($endDate) {
+			$wheres[] = $wpdb->prepare('h.ctime < %f', $endDate);
+		}
+
+		if ($filters instanceof wfLiveTrafficQueryFilterCollection) {
+			$filtersSQL = $filters->toSQL();
+			if ($filtersSQL) {
+				$wheres[] = $filtersSQL;
+			}
+		}
+		$where = join(' AND ', $wheres);
+
+		$orderBy = 'ORDER BY h.ctime DESC';
+		$select = '';
+		$groupBySQL = '';
+		if ($groupBy && $groupBy->validate()) {
+			$groupBySQL = "GROUP BY {$groupBy->getParam()}";
+			$orderBy = 'ORDER BY hitCount DESC';
+			$select .= ', COUNT(h.id) as hitCount';
+		}
+
+		if ($where) {
+			$where = 'WHERE ' . $where;
+		}
+		if (!$limit || $limit > 1000) {
+			$limit = 20;
+		}
+		$limitSQL = $wpdb->prepare('LIMIT %d, %d', $offset, $limit);
+
+		$sql = <<<SQL
+SELECT h.*, u.display_name, l.username{$select} FROM {$this->getTableName()} h
+LEFT JOIN {$wpdb->users} u on h.userID = u.ID
+LEFT JOIN {$wpdb->base_prefix}wfLogins l on h.id = l.hitID
+$where
+$groupBySQL
+$orderBy
+$limitSQL
+SQL;
+
+		return $sql;
+	}
+
+	/**
+	 * @param $param
+	 * @return bool
+	 */
+	public function isValidParam($param) {
+		return array_key_exists(strtolower($param), $this->validParams);
+	}
+
+	/**
+	 * @param $getParam
+	 * @return bool|string
+	 */
+	public function getColumnFromParam($getParam) {
+		$getParam = strtolower($getParam);
+		if (array_key_exists($getParam, $this->validParams)) {
+			return $this->validParams[$getParam];
+		}
+		return false;
+	}
+
+	/**
+	 * @return wfLiveTrafficQueryFilterCollection
+	 */
+	public function getFilters() {
+		return $this->filters;
+	}
+
+	/**
+	 * @param wfLiveTrafficQueryFilterCollection $filters
+	 */
+	public function setFilters($filters) {
+		$this->filters = $filters;
+	}
+
+	/**
+	 * @return float|null
+	 */
+	public function getStartDate() {
+		return $this->startDate;
+	}
+
+	/**
+	 * @param float|null $startDate
+	 */
+	public function setStartDate($startDate) {
+		$this->startDate = $startDate;
+	}
+
+	/**
+	 * @return float|null
+	 */
+	public function getEndDate() {
+		return $this->endDate;
+	}
+
+	/**
+	 * @param float|null $endDate
+	 */
+	public function setEndDate($endDate) {
+		$this->endDate = $endDate;
+	}
+
+	/**
+	 * @return wfLiveTrafficQueryGroupBy
+	 */
+	public function getGroupBy() {
+		return $this->groupBy;
+	}
+
+	/**
+	 * @param wfLiveTrafficQueryGroupBy $groupBy
+	 */
+	public function setGroupBy($groupBy) {
+		$this->groupBy = $groupBy;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getLimit() {
+		return $this->limit;
+	}
+
+	/**
+	 * @param int $limit
+	 */
+	public function setLimit($limit) {
+		$this->limit = $limit;
+	}
+
+	/**
+	 * @return int
+	 */
+	public function getOffset() {
+		return $this->offset;
+	}
+
+	/**
+	 * @param int $offset
+	 */
+	public function setOffset($offset) {
+		$this->offset = $offset;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getTableName() {
+		if ($this->tableName === null) {
+			global $wpdb;
+			$this->tableName = $wpdb->base_prefix . 'wfHits';
+		}
+		return $this->tableName;
+	}
+
+	/**
+	 * @param string $tableName
+	 */
+	public function setTableName($tableName) {
+		$this->tableName = $tableName;
+	}
+
+	/**
+	 * @return wfLog
+	 */
+	public function getWFLog() {
+		return $this->wfLog;
+	}
+
+	/**
+	 * @param wfLog $wfLog
+	 */
+	public function setWFLog($wfLog) {
+		$this->wfLog = $wfLog;
+	}
+}
+
+class wfLiveTrafficQueryFilterCollection {
+
+	private $filters = array();
+
+	/**
+	 * wfLiveTrafficQueryFilterCollection constructor.
+	 *
+	 * @param array $filters
+	 */
+	public function __construct($filters = array()) {
+		$this->filters = $filters;
+	}
+
+	public function toSQL() {
+		$params = array();
+		$sql = '';
+		$filters = $this->getFilters();
+		if ($filters) {
+			/** @var wfLiveTrafficQueryFilter $filter */
+			foreach ($filters as $filter) {
+				$params[$filter->getParam()][] = $filter;
+			}
+		}
+
+		foreach ($params as $param => $filters) {
+			// $sql .= '(';
+			$filtersSQL = '';
+			foreach ($filters as $filter) {
+				$filterSQL = $filter->toSQL();
+				if ($filterSQL) {
+					$filtersSQL .= $filterSQL . ' OR ';
+				}
+			}
+			if ($filtersSQL) {
+				$sql .= '(' . substr($filtersSQL, 0, -4) . ') AND ';
+			}
+		}
+		if ($sql) {
+			$sql = substr($sql, 0, -5);
+		}
+		return $sql;
+	}
+
+	public function addFilter($filter) {
+		$this->filters[] = $filter;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function getFilters() {
+		return $this->filters;
+	}
+
+	/**
+	 * @param array $filters
+	 */
+	public function setFilters($filters) {
+		$this->filters = $filters;
+	}
+}
+
+class wfLiveTrafficQueryFilter {
+
+	private $param;
+	private $operator;
+	private $value;
+
+	protected $validOperators = array(
+		'=',
+		'!=',
+		'contains',
+		'match',
+	);
+
+	/**
+	 * @var wfLiveTrafficQuery
+	 */
+	private $query;
+
+	/**
+	 * wfLiveTrafficQueryFilter constructor.
+	 *
+	 * @param wfLiveTrafficQuery $query
+	 * @param string $param
+	 * @param string $operator
+	 * @param string $value
+	 */
+	public function __construct($query, $param, $operator, $value) {
+		$this->query = $query;
+		$this->param = $param;
+		$this->operator = $operator;
+		$this->value = $value;
+	}
+
+	/**
+	 * @return string|void
+	 */
+	public function toSQL() {
+		$sql = '';
+		if ($this->validate()) {
+			/** @var wpdb $wpdb */
+			global $wpdb;
+			$operator = $this->getOperator();
+			$param = $this->getQuery()->getColumnFromParam($this->getParam());
+			if (!$param) {
+				return $sql;
+			}
+			$value = $this->getValue();
+			switch ($operator) {
+				case 'contains':
+					$like = addcslashes($value, '_%\\');
+					$sql = $wpdb->prepare("$param LIKE %s", "%$like%");
+					break;
+
+				case 'match':
+					$sql = $wpdb->prepare("$param LIKE %s", $value);
+					break;
+
+				default:
+					$sql = $wpdb->prepare("$param $operator %s", $value);
+					break;
+			}
+		}
+		return $sql;
+	}
+
+	/**
+	 * @return bool
+	 */
+	public function validate() {
+		$valid = $this->isValidParam($this->getParam()) && $this->isValidOperator($this->getOperator());
+		if (defined('WP_DEBUG') && WP_DEBUG) {
+			if (!$valid) {
+				throw new wfLiveTrafficQueryException("Invalid param/operator [{$this->getParam()}]/[{$this->getOperator()}] passed to " . get_class($this));
+			}
+			return true;
+		}
+		return $valid;
+	}
+
+	/**
+	 * @param string $param
+	 * @return bool
+	 */
+	public function isValidParam($param) {
+		return $this->getQuery() && $this->getQuery()->isValidParam($param);
+	}
+
+	/**
+	 * @param string $operator
+	 * @return bool
+	 */
+	public function isValidOperator($operator) {
+		return in_array($operator, $this->validOperators);
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getParam() {
+		return $this->param;
+	}
+
+	/**
+	 * @param mixed $param
+	 */
+	public function setParam($param) {
+		$this->param = $param;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getOperator() {
+		return $this->operator;
+	}
+
+	/**
+	 * @param mixed $operator
+	 */
+	public function setOperator($operator) {
+		$this->operator = $operator;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getValue() {
+		return $this->value;
+	}
+
+	/**
+	 * @param mixed $value
+	 */
+	public function setValue($value) {
+		$this->value = $value;
+	}
+
+	/**
+	 * @return wfLiveTrafficQuery
+	 */
+	public function getQuery() {
+		return $this->query;
+	}
+
+	/**
+	 * @param wfLiveTrafficQuery $query
+	 */
+	public function setQuery($query) {
+		$this->query = $query;
+	}
+}
+
+class wfLiveTrafficQueryGroupBy {
+
+	private $param;
+
+	/**
+	 * @var wfLiveTrafficQuery
+	 */
+	private $query;
+
+	/**
+	 * wfLiveTrafficQueryGroupBy constructor.
+	 *
+	 * @param wfLiveTrafficQuery $query
+	 * @param string $param
+	 */
+	public function __construct($query, $param) {
+		$this->query = $query;
+		$this->param = $param;
+	}
+
+	/**
+	 * @return bool
+	 * @throws wfLiveTrafficQueryException
+	 */
+	public function validate() {
+		$valid = $this->isValidParam($this->getParam());
+		if (defined('WP_DEBUG') && WP_DEBUG) {
+			if (!$valid) {
+				throw new wfLiveTrafficQueryException("Invalid param [{$this->getParam()}] passed to " . get_class($this));
+			}
+			return true;
+		}
+		return $valid;
+	}
+
+	/**
+	 * @param string $param
+	 * @return bool
+	 */
+	public function isValidParam($param) {
+		return $this->getQuery() && $this->getQuery()->isValidParam($param);
+	}
+
+	/**
+	 * @return wfLiveTrafficQuery
+	 */
+	public function getQuery() {
+		return $this->query;
+	}
+
+	/**
+	 * @param wfLiveTrafficQuery $query
+	 */
+	public function setQuery($query) {
+		$this->query = $query;
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getParam() {
+		return $this->param;
+	}
+
+	/**
+	 * @param mixed $param
+	 */
+	public function setParam($param) {
+		$this->param = $param;
+	}
+
+}
+
+
+class wfLiveTrafficQueryException extends Exception {
+
+}

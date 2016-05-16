@@ -609,6 +609,7 @@ if ( ! class_exists( 'Tribe__Events__Template__Month' ) ) {
 
 			// this  will skip updating term and meta caches - those were already
 			// updated in $this->set_events_in_month()
+			// expected order of events: sticky events, ongoing multi day events, all day events, then by start time
 			$args   = wp_parse_args(
 				array(
 					'eventDisplay'           => 'month',
@@ -619,8 +620,12 @@ if ( ! class_exists( 'Tribe__Events__Template__Month' ) ) {
 					'update_post_term_cache' => false,
 					'update_post_meta_cache' => false,
 					'no_found_rows'          => false,
+					'do_not_inject_date'     => true,
 					'meta_key'               => '_EventStartDate',
-					'orderby'                => 'meta_value_date',
+					'orderby'                => array(
+						'menu_order' => 'ASC',
+						'meta_value' => 'ASC',
+					),
 				), $this->args
 			);
 

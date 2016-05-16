@@ -503,6 +503,14 @@ class GFFormDetail {
 		<div id="gform_tab_1">
 		<ul>
 		<?php
+        /**
+         * Inserts additional content within the General field settings
+         *
+         * Note: This action fires multiple times.  Use the first parameter to determine positioning on the list.
+         *
+         * @param int 0        The placement of the action being fired
+         * @param int $form_id The current form ID
+         */
 		do_action( 'gform_field_standard_settings', 0, $form_id );
 		?>
 		<li class="label_setting field_setting">
@@ -1835,12 +1843,14 @@ class GFFormDetail {
             <ul>
 				<?php
 
-				/**
-				 * An action that appears multiple times (labeled with an ID. Eg 0, 20, 50) before each of the setting sections of the appearance settings
-				 *
-				 * @param int # And ID for a certain part of the appearance settings
-				 * @param int $form_id The current form ID
-				 */
+                /**
+                 * Inserts additional content within the Appearance field settings
+                 *
+                 * Note: This action fires multiple times.  Use the first parameter to determine positioning on the list.
+                 *
+                 * @param int 0        The placement of the action being fired
+                 * @param int $form_id The current form ID
+                 */
 				do_action( 'gform_field_appearance_settings', 0, $form_id );
 				?>
                 <li class="placeholder_setting field_setting">
@@ -2001,6 +2011,14 @@ class GFFormDetail {
         <div id="gform_tab_2">
 		<ul>
 		<?php
+        /**
+         * Inserts additional content within the Advanced field settings
+         *
+         * Note: This action fires multiple times.  Use the first parameter to determine positioning on the list.
+         *
+         * @param int 0        The placement of the action being fired
+         * @param int $form_id The current form ID
+         */
 		do_action( 'gform_field_advanced_settings', 0, $form_id );
 		?>
 		<li class="admin_label_setting field_setting">
@@ -2705,7 +2723,7 @@ class GFFormDetail {
 	/**
 	 * Saves form meta. Note the special requirements for the meta string.
 	 *
-	 * @param        $id
+	 * @param int    $id
 	 * @param string $form_json A valid JSON string. The JSON is manipulated before decoding and is designed to work together with jQuery.toJSON() rather than json_encode. Avoid using json_encode as it will convert unicode characters into their respective entities with slashes. These slashes get stripped so unicode characters won't survive intact.
 	 *
 	 * @return array
@@ -2753,6 +2771,14 @@ class GFFormDetail {
 
 			$form_meta = RGFormsModel::get_form_meta( $id );
 
+            /**
+             * Fires after a form is saved
+             *
+             * Used to run additional actions after the form is saved
+             *
+             * @param array $form_meta The form meta
+             * @param bool  false      Returns false if the form ID already exists.
+             */
 			do_action( 'gform_after_save_form', $form_meta, false );
 
 			return array( 'status' => $id, 'meta' => $form_meta );
@@ -2803,6 +2829,14 @@ class GFFormDetail {
 
 			$form_meta = RGFormsModel::get_form_meta( $id );
 
+            /**
+             * Fires after a form is saved
+             *
+             * Used to run additional actions after the form is saved
+             *
+             * @param array $form_meta The form meta
+             * @param bool  true       Returns true if this is a new form.
+             */
 			do_action( 'gform_after_save_form', $form_meta, true );
 
 			return array( 'status' => $id * - 1, 'meta' => $form_meta );
