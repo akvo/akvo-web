@@ -29,7 +29,7 @@
   			<ul>
   				<?php while(have_rows('tests')): the_row();?>
   				<li class="box">
-  					<i class="fa fa-2x <?php the_sub_field('icon');?>"></i>
+  					<img src="<?php the_sub_field('icon');?>" />
   					<p><?php the_sub_field('description');?></p>
   				</li>
   				<?php endwhile;?>
