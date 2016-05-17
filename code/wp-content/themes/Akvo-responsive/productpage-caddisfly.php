@@ -40,7 +40,7 @@
   	</section>
   	<?php akvo_page_section('section_end', true);?>
   	<section>
-  		<div class='page-section'>
+  		<div class='page-section' id='get-involved-section'>
   			<?php the_field('get_involved_section');?>
   			<br>
   			<ul class="text-center">
