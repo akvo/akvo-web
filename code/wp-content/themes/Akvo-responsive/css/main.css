@@ -6486,6 +6486,9 @@ a[href].button {
 .dashProduct h3, .caddisflyProduct h3 {
   text-shadow: none; }
 
+.caddisflyProduct #get-involved-section {
+  padding-top: 0; }
+
 @media only screen and (min-width: 993px) {
   .caddisflyProduct li.box {
     padding: 0 6%; } }
