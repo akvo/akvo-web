@@ -1,3 +1,6 @@
+<?php
+$sigUpdateTime = wfConfig::get('signatureUpdateTime');
+?>
 <div class="wordfenceModeElem" id="wordfenceMode_scan"></div>
 <div class="wrap wordfence">
 	<?php require('menuHeader.php'); ?>
@@ -7,7 +10,7 @@
 			<table border="0" cellpadding="0" cellspacing="0" style="width: 800px;">
 			<tr>
 				<td style="width: 250px; padding-top: 10px;">
-					<input type="button" value="Start a Wordfence Scan" id="wfStartScanButton1" class="wfStartScanButton button-primary" onclick="wordfenceAdmin.startScan();" /><br />
+					<button type="button" id="wfStartScanButton1" class="wfStartScanButton button-primary" onclick="wordfenceAdmin.startScan();">Start a Wordfence Scan</button><br />
 					&nbsp;&nbsp;&nbsp;&nbsp;<a href="#" onclick="WFAD.killScan(); return false;" style="font-size: 10px; color: #AAA;">Click to kill the current scan.</a>
 				</td>
 				<td>
@@ -33,28 +36,42 @@
 				</div>
 			<?php } ?>
 			</div></div></div>
-			<?php if(wfConfig::get('isPaid')){ ?>
-			<div style="margin: 0 0 20px 5px; width: 795px; font-weight: bold; color: #0A0;">
-				Premium scanning enabled.	
-			</div>
+			<?php if (wfConfig::get('isPaid')) { ?>
+				<?php if (wfConfig::get('scansEnabled_fileContents')): ?>
+				<div style="width: 800px; ">
+					<p class="wf-success">You are running the Premium version of the Threat Defense Feed which is
+						updated in real-time as new threats emerge.</p>
+				</div>
+			<?php else: ?>
+				<div class="wfSecure">Premium scanning enabled</div>
+			<?php endif ?>
 			<?php } else { ?>
+				<?php if (wfConfig::get('scansEnabled_fileContents')): ?>
+					<p>You are running the Wordfence Community Scan signatures.
+<!--						<em id="wf-scan-sigs-last-update"></em>-->
+					</p>
+				<?php endif ?>
+
 				<div class="wf-premium-callout" style="margin: 20px 0 20px 2px;width: 765px;">
-					<h3>Upgrade to Wordfence Premium today for less than $5 per month</h3>
-					<ul>
-						<li>Advanced features like IP reputation monitoring, country blocking, an advanced comment spam
-							filter and cell phone sign-in give you the best protection available
-						</li>
-						<li>Remote, frequent and scheduled scans</li>
-						<li>Access to Premium Support</li>
-						<li>Discounts of up to 90% for multiyear and multi-license purchases</li>
-					</ul>
+					<h3>The Wordfence Scan alerts you if you've been hacked</h3>
+
+					<p>As new threats emerge, the Threat Defense Feed is updated to detect these new hacks. The Premium
+						version of the Threat Defense Feed is updated in real-time protecting you immediately. As a free
+						user <strong>you are receiving the community version</strong> of the feed which is updated 30 days later. Upgrade
+						now for less than $5 a month!</p>
 					<p class="center"><a class="button button-primary"
 					                     href="https://www.wordfence.com/gnl1scanUpgrade/wordfence-signup/">
 							Get Premium</a></p>
 				</div>
 
-
 			<?php } ?>
+
+			<?php if ($sigUpdateTime ): ?>
+				<script>
+					WFAD.updateSignaturesTimestamp(<?php echo (int) $sigUpdateTime ?>);
+				</script>
+			<?php endif ?>
+
 			<div class="consoleHead" style="margin-top: 20px;">
 				<span class="consoleHeadText">Scan Detailed Activity</span>
 				<a href="#" class="wfALogMailLink" onclick="WFAD.emailActivityLog(); return false;">Email activity log</a>
@@ -155,6 +172,140 @@
 		</div>
 	</div>
 </div>
+<script type="text/x-jquery-template" id="issueTmpl_configReadable">
+<div>
+<div class="wfIssue">
+	<h2>${shortMsg}</h2>
+	<table border="0" class="wfIssue" cellspacing="0" cellpadding="0">
+		<tr>
+			<th>URL:</th>
+			<td><a href="${data.url}" target="_blank">${data.url}</a></td>
+		<tr>
+			<th>Severity:</th>
+			<td>{{if severity == '1'}}Critical{{else}}Warning{{/if}}</td>
+		</tr>
+		<tr>
+			<th>Status</th>
+			<td>
+				{{if status == 'new' }}New{{/if}}
+				{{if status == 'ignoreP' || status == 'ignoreC' }}Ignored{{/if}}
+			</td>
+		</tr>
+	</table>
+	<p>
+		{{html longMsg}}
+	</p>
+	<div class="wfIssueOptions">
+		<strong>Tools:</strong>
+		{{if data.fileExists}}
+		<a target="_blank" href="${WFAD.makeViewFileLink(data.file)}">View the file</a>
+		{{/if}}
+		<a href="#" onclick="WFAD.hideFile('${id}', 'delete'); return false;">Hide this file in <em>.htaccess</em></a>
+		{{if data.canDelete}}
+		<a href="#" onclick="WFAD.deleteFile('${id}'); return false;">Delete this file (can't be undone).</a>
+		<p>
+			<label><input type="checkbox" class="wfdelCheckbox" value="${id}" />&nbsp;Select for bulk delete</label>
+		</p>
+		{{/if}}
+	</div>
+	<div class="wfIssueOptions">
+	{{if status == 'new'}}
+		<strong>Resolve:</strong>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">I have fixed this issue</a>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreC'); return false;">Ignore this issue</a>
+	{{/if}}
+	{{if status == 'ignoreC' || status == 'ignoreP'}}
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">Stop ignoring this issue</a>
+	{{/if}}
+	</div>
+</div>
+</div>
+</script>
+<script type="text/x-jquery-template" id="issueTmpl_wpscan_fullPathDiscl">
+<div>
+<div class="wfIssue">
+	<h2>${shortMsg}</h2>
+	<p>
+		<table border="0" class="wfIssue" cellspacing="0" cellpadding="0">
+		<tr><th>URL:</th><td><a href="${data.url}" target="_blank">${data.url}</a></td>
+		<tr><th>Severity:</th><td>{{if severity == '1'}}Critical{{else}}Warning{{/if}}</td></tr>
+		<tr><th>Status</th><td>
+			{{if status == 'new' }}New{{/if}}
+			{{if status == 'ignoreP' || status == 'ignoreC' }}Ignored{{/if}}
+		</td></tr>
+		</table>
+	</p>
+	<p>
+		{{html longMsg}}
+	</p>
+	<div class="wfIssueOptions">
+		{{if (status == 'new')}}
+			<strong>Resolve:</strong>
+			<?php if (!wfUtils::isNginx()): ?>
+				<a href="#" onclick="WFAD.fixFPD('${id}'); return false;">Fix this issue</a>
+			<?php endif ?>
+			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">I have fixed this issue</a>
+			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreC'); return false;">Ignore this issue</a>
+		{{/if}}
+		{{if status == 'ignoreC' || status == 'ignoreP'}}
+			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">Stop ignoring this issue</a>
+		{{/if}}
+	</div>
+	{{if (status == 'new')}}
+	<div class="wfIssueOptions">
+		<strong style="width: auto;">Manual Fix:</strong>
+		&nbsp;
+		Set <code>display_errors</code> to <code>Off</code> in your php.ini file.
+	</div>
+	{{/if}}
+
+</div>
+</div>
+</script>
+<script type="text/x-jquery-template" id="issueTmpl_wpscan_directoryList">
+<div>
+<div class="wfIssue">
+	<h2>${shortMsg}</h2>
+	<p>
+		<table border="0" class="wfIssue" cellspacing="0" cellpadding="0">
+		<tr><th>URL:</th><td><a href="${data.url}" target="_blank">${data.url}</a></td>
+		<tr><th>Severity:</th><td>{{if severity == '1'}}Critical{{else}}Warning{{/if}}</td></tr>
+		<tr><th>Status</th><td>
+			{{if status == 'new' }}New{{/if}}
+			{{if status == 'ignoreP' || status == 'ignoreC' }}Ignored{{/if}}
+		</td></tr>
+		</table>
+	</p>
+	<p>
+		{{html longMsg}}
+	</p>
+
+	<div class="wfIssueOptions">
+		{{if (status == 'new')}}
+		<strong>Resolve:</strong>
+		<?php if (!wfUtils::isNginx()): ?>
+			<a href="#" onclick="WFAD.disableDirectoryListing('${id}'); return false;">Fix this issue</a>
+		<?php endif ?>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">I have fixed this issue</a>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreC'); return false;">Ignore this issue</a>
+		{{/if}}
+		{{if status == 'ignoreC' || status == 'ignoreP'}}
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">Stop ignoring this issue</a>
+		{{/if}}
+	</div>
+	<?php if (!wfUtils::isNginx()): ?>
+	{{if (status == 'new')}}
+	<div class="wfIssueOptions">
+		<strong style="width: auto;">Manual Fix:</strong>
+		&nbsp;
+		Add <code>Options -Indexes</code> to your .htaccess file.
+	</div>
+	{{/if}}
+	<?php endif ?>
+
+</div>
+</div>
+</script>
 <script type="text/x-jquery-template" id="issueTmpl_wfThemeUpgrade">
 <div>
 <div class="wfIssue">
@@ -183,7 +334,7 @@
 			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreC'); return false;">Ignore this issue</a>
 		{{/if}}
 		{{if status == 'ignoreC' || status == 'ignoreP'}}
-			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreC'); return false;">Stop ignoring this issue</a>
+			<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">Stop ignoring this issue</a>
 		{{/if}}
 	</div>
 </div>
@@ -793,6 +944,39 @@
 </div>
 </script>
 
+<script type="text/x-jquery-template" id="issueTmpl_suspiciousAdminUsers">
+<div>
+<div class="wfIssue">
+	<h2>${shortMsg}</h2>
+	<p>
+		<table border="0" class="wfIssue" cellspacing="0" cellpadding="0">
+		<tr><th>Severity:</th><td>{{if severity == '1'}}Critical{{else}}Warning{{/if}}</td></tr>
+		<tr><th>Status</th><td>
+			{{if status == 'new' }}New{{/if}}
+			{{if status == 'ignoreC' }}This issue will be ignored until it changes.{{/if}}
+			{{if status == 'ignoreP' }}This issue is permanently ignored.{{/if}}
+		</td></tr>
+		</table>
+	</p>
+	<p>
+		{{html longMsg}}
+	</p>
+	<div class="wfIssueOptions">
+	{{if status == 'new'}}
+		<strong>Resolve:</strong>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">I have fixed this issue</a>
+		<a href="#" onclick="WFAD.deleteAdminUser('${id}'); return false;">Delete this user</a>
+		<a href="#" onclick="WFAD.revokeAdminUser('${id}'); return false;">Revoke all capabilities from this user</a>
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'ignoreP'); return false;">Ignore this problem</a>
+	{{/if}}
+	{{if status == 'ignoreP' || status == 'ignoreC'}}
+		<a href="#" onclick="WFAD.updateIssueStatus('${id}', 'delete'); return false;">Stop ignoring this issue</a>
+	{{/if}}
+	</div>
+</div>
+</div>
+</script>
+
 
 
 
@@ -807,7 +991,7 @@
 			and you will see the scan details in the "Activity Log" above in a few seconds.
 		</td></tr>
 		<tr><td>
-			<div class="wordfenceScanButton"><input type="button" value="Start a Wordfence Scan" id="wfStartScanButton2" class="wfStartScanButton button-primary" /></div>
+			<div class="wordfenceScanButton"><button type="button" id="wfStartScanButton2" class="wfStartScanButton button-primary">Start a Wordfence Scan</button></div>
 		</td></tr>
 		</table>
 	</td>
@@ -822,7 +1006,6 @@
 <p>
 	Wordfence is a robust and complete security system and performance enhancer for WordPress. It protects your WordPress site
 	from security threats and keeps you off Google's SEO black-list by providing a firewall, brute force protection, continuous scanning and many other security enhancements. 
-	Wordfence will also make your site <strong>up to 50 times faster</strong> than a standard WordPress site by installing Falcon Engine, the high performance web engine available exclusively with Wordfence.
 </p>
 <p>
 	Wordfence also detects if there are any security problems on 

@@ -65,7 +65,8 @@
 
 <script type="text/x-jquery-template" id="wfLockedOutIPsTmpl">
 <div>
-<div style="border-bottom: 1px solid #CCC; padding-bottom: 10px; margin-bottom: 10px;">
+<p><a class="button" href="#" onclick="WFAD.permanentlyBlockAllIPs('lockedOut'); return false;">Permanently block all locked out IP addresses</a></p>
+<div style="border-top: 1px solid #CCC; padding-top: 10px; margin-top: 10px;">
 <table border="0" style="width: 100%">
 {{each(idx, elem) results}}
 <tr><td>
@@ -103,13 +104,13 @@
 {{/each}}
 </table>
 </div>
-<p><a class="button" href="#" onclick="WFAD.permanentlyBlockAllIPs('lockedOut'); return false;">Permanently block all locked out IP addresses</a></p>
 </div>
 </script>
 
 <script type="text/x-jquery-template" id="wfBlockedIPsTmpl">
 <div>
-<div style="border-bottom: 1px solid #CCC; padding-bottom: 10px; margin-bottom: 10px;">
+<p><a class="button" href="#" onclick="WFAD.permanentlyBlockAllIPs('blocked'); return false;">Permanently block all temporarily blocked IP addresses</a></p>
+<div style="border-top: 1px solid #CCC; padding-top: 10px; margin-top: 10px;">
 <table border="0" style="width: 100%">
 {{each(idx, elem) results}}
 <tr><td>
@@ -159,7 +160,6 @@
 {{/each}}
 </table>
 </div>
-<p><a class="button" href="#" onclick="WFAD.permanentlyBlockAllIPs('blocked'); return false;">Permanently block all temporarily blocked IP addresses</a></p>
 </div>
 </script>
 

@@ -40,6 +40,8 @@
 			passwdAuditUpdateInt: false,
 			_windowHasFocus: true,
 			serverTimestampOffset: 0,
+			serverMicrotime: 0,
+			wfLiveTraffic: null,
 
 			init: function() {
 				this.nonce = WordfenceAdminVars.firstNonce;
@@ -54,6 +56,33 @@
 				}).on('focus', function() {
 					self._windowHasFocus = true;
 				}).focus();
+
+				$('.do-show').click(function() {
+					var $this = $(this);
+					$this.hide();
+					$($this.data('selector')).show();
+					return false;
+				});
+
+				$('#doSendEmail').click(function() {
+					var ticket = $('#_ticketnumber').val();
+					if (ticket === null || typeof ticket === "undefined" || ticket.length == 0) {
+						self.colorbox('400px', "Error", "Please include your support ticket number or forum username.");
+						return;
+					}
+					WFAD.ajax('wordfence_sendDiagnostic', {email: $('#_email').val(), ticket: ticket}, function(res) {
+						if (res.result) {
+							self.colorbox('400px', "Email Diagnostic Report", "Diagnostic report has been sent successfully.");
+						} else {
+							self.colorbox('400px', "Error", "There was an error while sending the email.");
+						}
+					});
+				});
+
+				$('#sendByEmail').click(function() {
+					$('#sendByEmailForm').removeClass('hidden');
+					$(this).hide();
+				});
 
 				$(document).focus();
 
@@ -86,6 +115,12 @@
 					this.startActivityLogUpdates();
 					if (this.needTour()) {
 						this.scanTourStart();
+					}
+				} else if (jQuery('#wordfenceMode_waf').length > 0) {
+					if (this.needTour()) {
+						this.tour('wfWAFTour', 'wfHeading', 'top', 'left', "Learn about Live Traffic", function() {
+							self.tourRedir('WordfenceActivity');
+						});
 					}
 				} else if (jQuery('#wordfenceMode_activity').length > 0) {
 					this.mode = 'activity';
@@ -126,7 +161,7 @@
 					if (this.needTour()) {
 						this.tour('wfContentBasicOptions', 'wfMarkerBasicOptions', 'top', 'left', "Learn about Live Traffic Options", function() {
 							self.tour('wfContentLiveTrafficOptions', 'wfMarkerLiveTrafficOptions', 'bottom', 'left', "Learn about Scanning Options", function() {
-								self.tour('wfContentScansToInclude', 'wfMarkerScansToInclude', 'bottom', 'left', "Learn about Firewall Rules", function() {
+								self.tour('wfContentScansToInclude', 'wfMarkerScansToInclude', 'bottom', 'left', "Learn about Rate Limiting Rules", function() {
 									self.tour('wfContentFirewallRules', 'wfMarkerFirewallRules', 'bottom', 'left', "Learn about Login Security", function() {
 										self.tour('wfContentLoginSecurity', 'wfMarkerLoginSecurity', 'bottom', 'left', "Learn about Other Options", function() {
 											self.tour('wfContentOtherOptions', 'wfMarkerOtherOptions', 'bottom', 'left', false, false);
@@ -240,7 +275,7 @@
 				this.ajax('wordfence_sendTestEmail', {email: email}, function(res) {
 					if (res.result) {
 						self.colorbox('400px', "Test Email Sent", "Your test email was sent to the requested email address. The result we received from the WordPress wp_mail() function was: " +
-						res.result + "<br /><br />A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.");
+							res.result + "<br /><br />A 'True' result means WordPress thinks the mail was sent without errors. A 'False' result means that WordPress encountered an error sending your mail. Note that it's possible to get a 'True' response with an error elsewhere in your mail system that may cause emails to not be delivered.");
 					}
 				});
 			},
@@ -278,8 +313,8 @@
 				var self = this;
 				this.tour('wfWelcomeContent1', 'wfHeading', 'top', 'left', "Continue the Tour", function() {
 					self.tour('wfWelcomeContent2', 'wfHeading', 'top', 'left', "Learn how to use Wordfence", function() {
-						self.tour('wfWelcomeContent3', 'wfHeading', 'top', 'left', "Learn about Live Traffic", function() {
-							self.tourRedir('WordfenceActivity');
+						self.tour('wfWelcomeContent3', 'wfHeading', 'top', 'left', "Learn about the Firewall", function() {
+							self.tourRedir('WordfenceWAF');
 						});
 					});
 				});
@@ -388,9 +423,34 @@
 						this.lastALogCtime = res.items[res.items.length - 1].ctime;
 						this.processActQueue(res.currentScanID);
 					}
+					if (res.signatureUpdateTime) {
+						this.updateSignaturesTimestamp(res.signatureUpdateTime);
+					}
 				}
 				this.activityLogUpdatePending = false;
 			},
+
+			updateSignaturesTimestamp: function(signatureUpdateTime) {
+				var date = new Date(signatureUpdateTime * 1000);
+
+				var dateString = date.toString();
+				if (date.toLocaleString) {
+					dateString = date.toLocaleString();
+				}
+
+				var sigTimestampEl = $('#wf-scan-sigs-last-update');
+				var newText = 'Last Updated: ' + dateString;
+				if (sigTimestampEl.text() !== newText) {
+					sigTimestampEl.text(newText)
+						.css({
+							'opacity': 0
+						})
+						.animate({
+							'opacity': 1
+						}, 500);
+				}
+			},
+
 			processActQueue: function(currentScanID) {
 				if (this.activityQueue.length > 0) {
 					this.addActItem(this.activityQueue.shift());
@@ -527,17 +587,23 @@
 				var self = this;
 				var alsoGet = '';
 				var otherParams = '';
-				if (this.mode == 'activity' && /^(?:404|hit|human|ruser|gCrawler|crawler|loginLogout)$/.test(this.activityMode)) {
+				var data = '';
+				if (this.mode == 'liveTraffic') {
+					alsoGet = 'liveTraffic';
+					otherParams = this.newestActivityTime;
+					data += this.wfLiveTraffic.getCurrentQueryString({
+						since: this.newestActivityTime
+					});
+
+				} else if (this.mode == 'activity' && /^(?:404|hit|human|ruser|gCrawler|crawler|loginLogout)$/.test(this.activityMode)) {
 					alsoGet = 'logList_' + this.activityMode;
 					otherParams = this.newestActivityTime;
 				} else if (this.mode == 'perfStats') {
 					alsoGet = 'perfStats';
 					otherParams = this.newestActivityTime;
 				}
-				this.ajax('wordfence_ticker', {
-					alsoGet: alsoGet,
-					otherParams: otherParams
-				}, function(res) {
+				data += '&alsoGet=' + encodeURIComponent(alsoGet) + '&otherParams=' + encodeURIComponent(otherParams);
+				this.ajax('wordfence_ticker', data, function(res) {
 					self.handleTickerReturn(res);
 				}, function() {
 					self.tickerUpdatePending = false;
@@ -557,8 +623,19 @@
 				}
 				var haveEvents, newElem;
 				this.serverTimestampOffset = (new Date().getTime() / 1000) - res.serverTime;
+				this.serverMicrotime = res.serverMicrotime;
 
-				if (this.mode == 'activity') {
+				if (this.mode == 'liveTraffic') {
+					if (res.events.length > 0) {
+						this.newestActivityTime = res.events[0]['ctime'];
+					}
+					if (typeof WFAD.wfLiveTraffic !== undefined) {
+						WFAD.wfLiveTraffic.prependListings(res.events, res);
+						this.reverseLookupIPs();
+						this.updateTimeAgo();
+					}
+
+				} else if (this.mode == 'activity') { // This mode is deprecated as of 6.1.0
 					if (res.alsoGet != 'logList_' + this.activityMode) {
 						return;
 					} //user switched panels since ajax request started
@@ -624,12 +701,13 @@
 				}
 			},
 			reverseLookupIPs: function() {
+				var self = this;
 				var ips = [];
 				jQuery('.wfReverseLookup').each(function(idx, elem) {
-					var txt = jQuery(elem).text();
+					var txt = jQuery(elem).text().trim();
 					if (/^\d+\.\d+\.\d+\.\d+$/.test(txt) && (!jQuery(elem).data('wfReverseDone'))) {
 						jQuery(elem).data('wfReverseDone', true);
-						ips.push(jQuery(elem).text());
+						ips.push(txt);
 					}
 				});
 				if (ips.length < 1) {
@@ -649,11 +727,11 @@
 					function(res) {
 						if (res.ok) {
 							jQuery('.wfReverseLookup').each(function(idx, elem) {
-								var txt = jQuery(elem).text();
+								var txt = jQuery(elem).text().trim();
 								for (var ip in res.ips) {
 									if (txt == ip) {
 										if (res.ips[ip]) {
-											jQuery(elem).html('<strong>Hostname:</strong>&nbsp;' + res.ips[ip]);
+											jQuery(elem).html('<strong>Hostname:</strong>&nbsp;' + self.htmlEscape(res.ips[ip]));
 										} else {
 											jQuery(elem).html('');
 										}
@@ -674,31 +752,20 @@
 				});
 			},
 			startScan: function() {
+				var spinnerValues = [
+					'|', '/', '-', '\\'
+				];
+				var count = 0;
 				var scanReqAnimation = setInterval(function() {
-					var str = jQuery('#wfStartScanButton1').prop('value');
-					var ch = str.charAt(str.length - 1);
-					if (ch == '/') {
-						ch = '-';
-					}
-					else if (ch == '-') {
-						ch = '\\';
-					}
-					else if (ch == '\\') {
-						ch = '|';
-					}
-					else if (ch == '|') {
-						ch = '/';
-					}
-					else {
-						ch = '/';
-					}
-					jQuery('#wfStartScanButton1,#wfStartScanButton2').prop('value', "Requesting a New Scan " + ch);
+					var ch = spinnerValues[count++ % spinnerValues.length];
+					jQuery('#wfStartScanButton1,#wfStartScanButton2').html("Requesting a New Scan <span class='wf-spinner'>" + ch + "</span>");
 				}, 100);
 				setTimeout(function(res) {
 					clearInterval(scanReqAnimation);
-					jQuery('#wfStartScanButton1,#wfStartScanButton2').prop('value', "Start a Wordfence Scan");
+					jQuery('#wfStartScanButton1,#wfStartScanButton2').text("Start a Wordfence Scan");
 				}, 3000);
 				this.ajax('wordfence_scan', {}, function(res) {
+
 				});
 			},
 			displayPWAuditJobs: function(res) {
@@ -833,6 +900,16 @@
 						data += '&';
 					}
 					data += 'action=' + action + '&nonce=' + this.nonce;
+				} else if (typeof(data) == 'object' && data instanceof Array) {
+					// jQuery serialized form data
+					data.push({
+						name: 'action',
+						value: action
+					});
+					data.push({
+						name: 'nonce',
+						value: this.nonce
+					});
 				} else if (typeof(data) == 'object') {
 					data['action'] = action;
 					data['nonce'] = this.nonce;
@@ -885,8 +962,19 @@
 				this.colorboxOpen(elem[0], elem[1], elem[2]);
 			},
 			colorboxOpen: function(width, heading, body) {
+				var self = this;
 				this.colorboxIsOpen = true;
-				jQuery.colorbox({width: width, html: "<h3>" + heading + "</h3><p>" + body + "</p>"});
+				jQuery.colorbox({
+					width: width,
+					html: "<h3>" + heading + "</h3><p>" + body + "</p>",
+					onClosed: function() {
+						self.colorboxClose();
+					}
+				});
+			},
+			colorboxClose: function() {
+				this.colorboxIsOpen = false;
+				jQuery.colorbox.close();
 			},
 			scanRunningMsg: function() {
 				this.colorbox('400px', "A scan is running", "A scan is currently in progress. Please wait until it finishes before starting another scan.");
@@ -979,6 +1067,88 @@
 					});
 				}
 			},
+			fixFPD: function(issueID) {
+				var self = this;
+				var title = "Full Path Disclosure";
+				issueID = parseInt(issueID);
+
+				this.ajax('wordfence_checkFalconHtaccess', {}, function(res) {
+					if (res.ok) {
+						self.colorbox("400px", title, 'We are about to change your <em>.htaccess</em> file. Please make a backup of this file proceeding'
+							+ '<br/>'
+							+ '<a href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + self.nonce + '" onclick="jQuery(\'#wfFPDNextBut\').prop(\'disabled\', false); return true;">Click here to download a backup copy of your .htaccess file now</a><br /><br /><input type="button" name="but1" id="wfFPDNextBut" value="Click to fix .htaccess" disabled="disabled" onclick="WFAD.fixFPD_WriteHtAccess(' + issueID + ');" />');
+					} else if (res.nginx) {
+						self.colorbox("400px", title, 'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. You will need to manually modify your php.ini to disable <em>display_error</em>');
+					} else if (res.err) {
+						self.colorbox('400px', "We encountered a problem", "We can't modify your .htaccess file for you because: " + res.err);
+					}
+				});
+			},
+			fixFPD_WriteHtAccess: function(issueID) {
+				var self = this;
+				self.colorboxClose();
+				this.ajax('wordfence_fixFPD', {
+					issueID: issueID
+				}, function(res) {
+					if (res.ok) {
+						self.loadIssues(function() {
+							self.colorbox("400px", "File restored OK", "The Full Path disclosure issue has been fixed");
+						});
+					} else {
+						self.loadIssues(function() {
+							self.colorbox('400px', 'An error occurred', res.cerrorMsg);
+						});
+					}
+				});
+			},
+
+			_handleHtAccess: function(issueID, callback, title, nginx) {
+				var self = this;
+				return function(res) {
+					if (res.ok) {
+						self.colorbox("400px", title, 'We are about to change your <em>.htaccess</em> file. Please make a backup of this file proceeding'
+							+ '<br/>'
+							+ '<a id="dlButton" href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + self.nonce + '">Click here to download a backup copy of your .htaccess file now</a>'
+							+ '<br /><br /><input type="button" name="but1" id="wfFPDNextBut" value="Click to fix .htaccess" disabled="disabled" />'
+						);
+						jQuery('#dlButton').click('click', function() {
+							jQuery('#wfFPDNextBut').prop('disabled', false);
+						});
+						jQuery('#wfFPDNextBut').one('click', function() {
+							self[callback](issueID);
+						});
+					} else if (res.nginx) {
+						self.colorbox("400px", title, 'You are using an Nginx web server and using a FastCGI processor like PHP5-FPM. ' + nginx);
+					} else if (res.err) {
+						self.colorbox('400px', "We encountered a problem", "We can't modify your .htaccess file for you because: " + res.err);
+					}
+				};
+			},
+			_hideFile: function(issueID) {
+				var self = this;
+				var title = 'Modifying .htaccess';
+				this.ajax('wordfence_hideFileHtaccess', {
+					issueID: issueID
+				}, function(res) {
+					jQuery.colorbox.close();
+					self.loadIssues(function() {
+						if (res.ok) {
+							self.colorbox("400px", title, 'Your .htaccess file has been updated successfully.');
+						} else {
+							self.colorbox("400px", title, 'We encountered a problem while trying to update your .htaccess file.');
+						}
+					});
+				});
+			},
+			hideFile: function(issueID) {
+				var self = this;
+				var title = "Backup your .htaccess file";
+				var nginx = "You will need to manually delete those files";
+				issueID = parseInt(issueID, 10);
+
+				this.ajax('wordfence_checkFalconHtaccess', {}, this._handleHtAccess(issueID, '_hideFile', title, nginx));
+			},
+
 			restoreFile: function(issueID) {
 				var self = this;
 				this.ajax('wordfence_restoreFile', {
@@ -999,6 +1169,46 @@
 					});
 				}
 			},
+
+			disableDirectoryListing: function(issueID) {
+				var self = this;
+				var title = "Disable Directory Listing";
+				issueID = parseInt(issueID);
+
+				this.ajax('wordfence_checkFalconHtaccess', {}, function(res) {
+					if (res.ok) {
+						self.colorbox("400px", title, 'We are about to change your <em>.htaccess</em> file. Please make a backup of this file proceeding'
+							+ '<br/>'
+							+ '<a href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + self.nonce + '" onclick="jQuery(\'#wf-htaccess-confirm\').prop(\'disabled\', false); return true;">Click here to download a backup copy of your .htaccess file now</a>' +
+							'<br /><br />' +
+							'<button class="button" type="button" id="wf-htaccess-confirm" disabled="disabled" onclick="WFAD.confirmDisableDirectoryListing(' + issueID + ');">Add code to .htaccess</button>');
+					} else if (res.nginx) {
+						self.colorbox('400px', "You are using Nginx as your web server. " +
+							"You'll need to disable autoindexing in your nginx.conf. " +
+							"See the <a target='_blank' href='http://nginx.org/en/docs/http/ngx_http_autoindex_module.html'>Nginx docs for more info</a> on how to do this.");
+					} else if (res.err) {
+						self.colorbox('400px', "We encountered a problem", "We can't modify your .htaccess file for you because: " + res.err);
+					}
+				});
+			},
+			confirmDisableDirectoryListing: function(issueID) {
+				var self = this;
+				this.colorboxClose();
+				this.ajax('wordfence_disableDirectoryListing', {
+					issueID: issueID
+				}, function(res) {
+					if (res.ok) {
+						self.loadIssues(function() {
+							self.colorbox("400px", "Directory Listing Disabled", "Directory listing has been disabled on your server.");
+						});
+					} else {
+						//self.loadIssues(function() {
+						//	self.colorbox('400px', 'An error occurred', res.errorMsg);
+						//});
+					}
+				});
+			},
+
 			deleteIssue: function(id) {
 				var self = this;
 				this.ajax('wordfence_deleteIssue', {id: id}, function(res) {
@@ -1475,7 +1685,7 @@
 					self.loadBlockRanges();
 				});
 			},
-			blockIP: function(IP, reason) {
+			blockIP: function(IP, reason, callback) {
 				var self = this;
 				this.ajax('wordfence_blockIP', {
 					IP: IP,
@@ -1485,6 +1695,7 @@
 						return;
 					} else {
 						self.reloadActivities();
+						typeof callback === 'function' && callback();
 					}
 				});
 			},
@@ -1510,12 +1721,13 @@
 					self.staticTabChanged();
 				});
 			},
-			unblockIP: function(IP) {
+			unblockIP: function(IP, callback) {
 				var self = this;
 				this.ajax('wordfence_unblockIP', {
 					IP: IP
 				}, function(res) {
 					self.reloadActivities();
+					typeof callback === 'function' && callback();
 				});
 			},
 			unblockNetwork: function(id) {
@@ -1646,6 +1858,22 @@
 					}
 				});
 			},
+			saveDebuggingConfig: function() {
+				var qstr = jQuery('#wfDebuggingConfigForm').serialize();
+				var self = this;
+				jQuery('.wfSavedMsg').hide();
+				jQuery('.wfAjax24').show();
+				this.ajax('wordfence_saveDebuggingConfig', qstr, function(res) {
+					jQuery('.wfAjax24').hide();
+					if (res.ok) {
+						self.pulse('.wfSavedMsg');
+					} else if (res.errorMsg) {
+						return;
+					} else {
+						self.colorbox('400px', 'An error occurred', 'We encountered an error trying to save your changes.');
+					}
+				});
+			},
 			changeSecurityLevel: function() {
 				var level = jQuery('#securityLevel').val();
 				for (var k in WFSLevels[level].checkboxes) {
@@ -1668,8 +1896,8 @@
 					return;
 				}
 				this.colorbox('450px', "Please confirm", body +
-				'<br /><br /><center><input type="button" name="but1" value="Cancel" onclick="jQuery.colorbox.close();" />&nbsp;&nbsp;&nbsp;' +
-				'<input type="button" name="but2" value="Yes I\'m sure" onclick="jQuery.colorbox.close(); WFAD.confirmClearAllBlocked(\'' + op + '\');"><br />');
+					'<br /><br /><center><input type="button" name="but1" value="Cancel" onclick="jQuery.colorbox.close();" />&nbsp;&nbsp;&nbsp;' +
+					'<input type="button" name="but2" value="Yes I\'m sure" onclick="jQuery.colorbox.close(); WFAD.confirmClearAllBlocked(\'' + op + '\');"><br />');
 			},
 			confirmClearAllBlocked: function(op) {
 				var self = this;
@@ -1735,7 +1963,7 @@
 				this.countryCodesToSave = codesArr.join(',');
 				if (ownCountryBlocked) {
 					this.colorbox('400px', "Please confirm blocking yourself", "You are about to block your own country. This could lead to you being locked out. Please make sure that your user profile on this machine has a current and valid email address and make sure you know what it is. That way if you are locked out, you can send yourself an unlock email. If you're sure you want to block your own country, click 'Confirm' below, otherwise click 'Cancel'.<br />" +
-					'<input type="button" name="but1" value="Confirm" onclick="jQuery.colorbox.close(); WFAD.confirmSaveCountryBlocking();" />&nbsp;<input type="button" name="but1" value="Cancel" onclick="jQuery.colorbox.close();" />');
+						'<input type="button" name="but1" value="Confirm" onclick="jQuery.colorbox.close(); WFAD.confirmSaveCountryBlocking();" />&nbsp;<input type="button" name="but1" value="Cancel" onclick="jQuery.colorbox.close();" />');
 				} else {
 					this.confirmSaveCountryBlocking();
 				}
@@ -1908,7 +2136,7 @@
 					if (res.users && res.users.length > 0) {
 						for (var i = 0; i < res.users.length; i++) {
 							jQuery('<div id="twoFacCont_' + res.users[i].userID + '">' +
-							jQuery('#wfTwoFacUserTmpl').tmpl(res.users[i]).html() + '</div>').appendTo(jQuery('#wfTwoFacUsers'));
+								jQuery('#wfTwoFacUserTmpl').tmpl(res.users[i]).html() + '</div>').appendTo(jQuery('#wfTwoFacUsers'));
 						}
 					}
 				});
@@ -2083,6 +2311,43 @@
 					}
 				});
 			},
+
+			deleteAdminUser: function(issueID) {
+				var self = this;
+				this.ajax('wordfence_deleteAdminUser', {
+					issueID: issueID
+				}, function(res) {
+					if (res.ok) {
+						self.loadIssues(function() {
+							self.colorbox('400px', "Successfully deleted admin", "The admin user " +
+								self.htmlEscape(res.user_login) + " was successfully deleted.");
+						});
+					} else if (res.errorMsg) {
+						self.loadIssues(function() {
+							self.colorbox('400px', 'An error occurred', res.errorMsg);
+						});
+					}
+				});
+			},
+
+			revokeAdminUser: function(issueID) {
+				var self = this;
+				this.ajax('wordfence_revokeAdminUser', {
+					issueID: issueID
+				}, function(res) {
+					if (res.ok) {
+						self.loadIssues(function() {
+							self.colorbox('400px', "Successfully revoked admin", "All capabilties of admin user " +
+								self.htmlEscape(res.user_login) + " were successfully revoked.");
+						});
+					} else if (res.errorMsg) {
+						self.loadIssues(function() {
+							self.colorbox('400px', 'An error occurred', res.errorMsg);
+						});
+					}
+				});
+			},
+
 			windowHasFocus: function() {
 				if (typeof document.hasFocus === 'function') {
 					return document.hasFocus();
@@ -2128,17 +2393,177 @@
 					if (!timestamp) {
 						timestamp = el.attr('data-timestamp');
 					}
-					var serverTime = (new Date().getTime() / 1000) - self.serverTimestampOffset;
+					var serverTime = self.serverMicrotime;
 					var format = el.data('wfformat');
 					if (!format) {
 						format = el.attr('data-format');
 					}
 					el.html(self.showTimestamp(timestamp, serverTime, format));
 				});
+			},
+
+			wafData: {
+				whitelistedURLParams: []
+			},
+
+			wafConfigSave: function(action, data, onSuccess, showColorBox) {
+				showColorBox = showColorBox === undefined ? true : !!showColorBox;
+				var self = this;
+				if (typeof(data) == 'string') {
+					if (data.length > 0) {
+						data += '&';
+					}
+					data += 'wafConfigAction=' + action;
+				} else if (typeof(data) == 'object' && data instanceof Array) {
+					// jQuery serialized form data
+					data.push({
+						name: 'wafConfigAction',
+						value: action
+					});
+				} else if (typeof(data) == 'object') {
+					data['wafConfigAction'] = action;
+				}
+
+				this.ajax('wordfence_saveWAFConfig', data, function(res) {
+					if (typeof res === 'object' && res.success) {
+						if (showColorBox) {
+							self.colorbox('400px', 'Firewall Configuration', 'The Wordfence Web Application Firewall ' +
+								'configuration was saved successfully.');
+						}
+						self.wafData = res.data;
+						self.wafConfigPageRender();
+						if (typeof onSuccess === 'function') {
+							return onSuccess.apply(this, arguments);
+						}
+					} else {
+						self.colorbox('400px', 'Error saving Firewall configuration', 'There was an error saving the ' +
+							'Web Application Firewall configuration settings.');
+					}
+				});
+			},
+
+			wafWhitelistURLAdd: function(url, param, onSuccess) {
+				this.wafData.whitelistedURLParams.push({
+					'path': url,
+					'paramKey': param,
+					'ruleID': ['all']
+				});
+				var index = this.wafData.whitelistedURLParams.length;
+				var inputPath = $('<input name="whitelistedURLParams[' + index + '][path]" type="hidden" />');
+				var inputParam = $('<input name="whitelistedURLParams[' + index + '][paramKey]" type="hidden" />');
+				var inputEnabled = $('<input name="whitelistedURLParams[' + index + '][enabled]" type="hidden" value="1" />');
+				inputPath.val(url);
+				inputParam.val(param);
+				$('#waf-config-form').append(inputPath)
+						.append(inputParam)
+						.append(inputEnabled);
+				this.wafConfigSave(onSuccess);
+				inputPath.remove();
+				inputParam.remove();
+				inputEnabled.remove();
+			},
+
+			wafConfigPageRender: function() {
+				var whitelistedIPsEl = $('#waf-whitelisted-urls-tmpl').tmpl(this.wafData);
+				$('#waf-whitelisted-urls-wrapper').html(whitelistedIPsEl);
+
+				var rulesEl = $('#waf-rules-tmpl').tmpl(this.wafData);
+				$('#waf-rules-wrapper').html(rulesEl);
+
+				if (this.wafData['rulesLastUpdated']) {
+					var date = new Date(this.wafData['rulesLastUpdated'] * 1000);
+					this.renderWAFRulesLastUpdated(date);
+				}
+				$(window).trigger('wordfenceWAFConfigPageRender');
+			},
+
+			renderWAFRulesLastUpdated: function(date) {
+				var dateString = date.toString();
+				if (date.toLocaleString) {
+					dateString = date.toLocaleString();
+				}
+				$('#waf-rules-last-updated').text('Last Updated: ' + dateString)
+					.css({
+						'opacity': 0
+					})
+					.animate({
+						'opacity': 1
+					}, 500);
+			},
+
+			wafUpdateRules: function(onSuccess) {
+				var self = this;
+				this.ajax('wordfence_updateWAFRules', {}, function(res) {
+					self.wafData = res;
+					self.wafConfigPageRender();
+					if (!self.wafData['isPaid']) {
+						self.colorbox('400px', 'Rules Updated', 'Your rules have been updated successfully. You are ' +
+							'currently using the the free version of Wordfence. ' +
+							'Upgrade to Wordfence premium to have your rules updated automatically as new threats emerge. ' +
+							'<a href="https://www.wordfence.com/wafUpdateRules1/wordfence-signup/">Click here to purchase a premium API key</a>. ' +
+							'<em>Note: Your rules will still update every 30 days as a free user.</em>');
+					} else {
+						self.colorbox('400px', 'Rules Updated', 'Your rules have been updated successfully.');
+					}
+					if (typeof onSuccess === 'function') {
+						return onSuccess.apply(this, arguments);
+					}
+				});
+			},
+
+			dateFormat: function(date) {
+				if (date instanceof Date) {
+					if (date.toLocaleString) {
+						return date.toLocaleString();
+					}
+					return date.toString();
+				}
+				return date;
+			},
+
+			wafAddBootstrap: function() {
+				var self = this;
+				this.ajax('wordfence_wafAddBootstrap', {}, function(res) {
+					self.colorbox('400px', 'File Created', "");
+				});
+			},
+
+			wafConfigureAutoPrepend: function() {
+				var self = this;
+				self.colorbox("400px", 'Backup .htaccess before continuing', 'We are about to change your <em>.htaccess</em> file. Please make a backup of this file proceeding'
+					+ '<br/>'
+					+ '<a href="' + WordfenceAdminVars.ajaxURL + '?action=wordfence_downloadHtaccess&nonce=' + self.nonce + '" onclick="jQuery(\'#wf-htaccess-confirm\').prop(\'disabled\', false); return true;">Click here to download a backup copy of your .htaccess file now</a>' +
+					'<br /><br />' +
+					'<button class="button" type="button" id="wf-htaccess-confirm" disabled="disabled" onclick="WFAD.confirmWAFConfigureAutoPrepend();">Add code to .htaccess</button>');
+			},
+
+			confirmWAFConfigureAutoPrepend: function() {
+				var self = this;
+				this.ajax('wordfence_wafConfigureAutoPrepend', {}, function(res) {
+					self.colorbox('400px', '.htaccess Updated', "Your .htaccess has been updated successfully. Please " +
+						"verify your site is functioning normally.");
+				});
+			},
+
+			base64_decode: function(s) {
+				var e = {}, i, b = 0, c, x, l = 0, a, r = '', w = String.fromCharCode, L = s.length;
+				var A = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+				for (i = 0; i < 64; i++) {
+					e[A.charAt(i)] = i;
+				}
+				for (x = 0; x < L; x++) {
+					c = e[s.charAt(x)];
+					b = (b << 6) + c;
+					l += 6;
+					while (l >= 8) {
+						((a = (b >>> (l -= 8)) & 0xff) || (x < (L - 2))) && (r += w(a));
+					}
+				}
+				return r;
 			}
 		};
-		window['WFAD'] = window['wordfenceAdmin'];
 
+		window['WFAD'] = window['wordfenceAdmin'];
 		setInterval(function() {
 			WFAD.updateTimeAgo();
 		}, 1000);

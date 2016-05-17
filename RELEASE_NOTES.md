@@ -1,3 +1,47 @@
+Thursday 28 April 2016, @lynngre
+
+--------
+Akvo.org v1.2.5 Wongi waverider
+---
+
+## New Features
+
+###  Akvo Dash 
+
+New page (Akvo Dash) for Research & Development area.
+Ability to update logo.
+
+Github issue:  #955 #922 #948 
+
+###  Heroes series
+
+New template to allow for listing of hero blog posts .  Update list manually backend. Url to be added to end of each hero post.
+
+Github issue:  #749 
+
+### Menu item level
+
+Additional level to the menu item.
+
+Github issue:  #943 
+
+
+## Bug fixes & changes
+
+###  Working at Akvo
+
+Custom field for job posting required updating to wysiwyg editor.
+
+Github issue: #945 
+
+### RSR product page
+
+Layout changes.
+
+Github issue:  #939 
+
+
+
 
 Thursday 20 August 2015, @lynngre
 

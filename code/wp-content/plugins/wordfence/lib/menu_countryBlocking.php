@@ -11,16 +11,16 @@ WFAD.countryMap = <?php echo json_encode($wfBulkCountries); ?>;
 <?php if(! wfConfig::get('isPaid')){ ?>
 	<div class="wf-premium-callout" style="margin: 20px">
 		<h3>Country Blocking is only available to Premium Members</h3>
-		<p>Country Blocking is a premium feature because we have licensed a very accurate commercial geolocation
-			database to provide this feature. Upgrade to Premium today:</p>
+		<p>Country blocking is a premium feature that lets you block attacks or malicious activity that originates in a specific country</p>
+
+		<p>Upgrade to Premium today for less than $5 per month:</p>
 		<ul>
-			<li>You can upgrade now for less than $5 per month</li>
-			<li>Other advanced features like IP reputation monitoring, an advanced comment spam filter, advanced
-				scanning options and cell phone sign-in give you the best protection available
-			</li>
+			<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
+			<li>Other advanced features like IP reputation monitoring, an advanced comment spam filter, advanced scanning options and cell phone sign-in give you the best protection available</li>
 			<li>Access to Premium Support</li>
-			<li>Discounts of up to 90% available for multiyear and multi-license purchases</li>
+			<li>Discounts of up to 75% available for multiyear and multi-license purchases</li>
 		</ul>
+
 		<p class="center"><a class="button button-primary"
 		                     href="https://www.wordfence.com/gnl1countryBlock1/wordfence-signup/">Get Premium</a></p>
 	</div>

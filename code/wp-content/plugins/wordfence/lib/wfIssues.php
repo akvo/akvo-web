@@ -178,8 +178,11 @@ class wfIssues {
 					}
 				}
 				if ($issueList[$i]['type'] == 'database') {
-					$prefix = $wpdb->get_blog_prefix($issueList[$i]['data']['site_id']);
-					$issueList[$i]['data']['optionExists'] = $wpdb->get_var($wpdb->prepare("SELECT count(*) FROM {$prefix}options WHERE option_name = %s", $issueList[$i]['data']['option_name'])) > 0;
+					$issueList[$i]['data']['optionExists'] = false;
+					if (!empty($issueList[$i]['data']['site_id'])) {
+						$prefix = $wpdb->get_blog_prefix($issueList[$i]['data']['site_id']);
+						$issueList[$i]['data']['optionExists'] = $wpdb->get_var($wpdb->prepare("SELECT count(*) FROM {$prefix}options WHERE option_name = %s", $issueList[$i]['data']['option_name'])) > 0;
+					}
 				}
 				$issueList[$i]['issueIDX'] = $i;
 			}

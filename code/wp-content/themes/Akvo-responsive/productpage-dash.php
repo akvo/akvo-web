@@ -47,7 +47,7 @@
   	<?php $row_i++;endwhile;?>
   	
   	<section>
-  		<div class='page-section full-width'>
+  		<div class='page-section full-width light-green-bg'>
   			<?php the_field('components_section');?>
   			<br>
   			<ul>
