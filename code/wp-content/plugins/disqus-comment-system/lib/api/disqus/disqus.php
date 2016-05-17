@@ -5,8 +5,8 @@
  * http://groups.google.com/group/disqus-dev/web/api-1-1
  *
  * @author		Disqus <team@disqus.com>
- * @copyright	2007-2010 Big Head Labs
- * @link		http://disqus.com/
+ * @copyright	2007-2016 Big Head Labs
+ * @link		https://disqus.com/
  * @package		Disqus
  * @version		1.1
  */
@@ -53,13 +53,13 @@ if (!extension_loaded('json')) {
  *
  * @package		Disqus
  * @author		DISQUS.com <team@disqus.com>
- * @copyright	2007-2010 Big Head Labs
+ * @copyright	2007-2016 Big Head Labs
  * @version		1.1
  */
 class DisqusAPI {
 	var $user_api_key;
 	var $forum_api_key;
-	var $api_url = 'http://www.disqus.com/api/';
+	var $api_url = 'https://disqus.com/api/';
 	var $api_version = '1.1';
 
 	/**
@@ -72,7 +72,7 @@ class DisqusAPI {
 	 * @param $api_url
 	 *   (optional) The prefix URL to use when calling the Disqus API.
 	 */
-	function DisqusAPI($user_api_key, $forum_api_key, $api_url='http://www.disqus.com/api/') {
+	function __construct($user_api_key, $forum_api_key, $api_url='https://disqus.com/api/') {
 		$this->user_api_key = $user_api_key;
 		$this->forum_api_key = $forum_api_key;
 		$this->api_url = $api_url;

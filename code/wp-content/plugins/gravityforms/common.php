@@ -1117,7 +1117,7 @@ class GFCommon {
 
 				case 'section' :
 
-					if ( GFFormsModel::is_field_hidden( $form, $field, array(), $lead ) ){
+					if ( GFFormsModel::is_field_hidden( $form, $field, array(), $lead ) ) {
 						continue;
 					}
 
@@ -1177,6 +1177,8 @@ class GFCommon {
 					if ( ! $display_field ) {
 						$field_value = false;
 					}
+
+					$field_value = self::encode_shortcodes( $field_value );
 
 					$field_value = apply_filters( 'gform_merge_tag_filter', $field_value, $merge_tag, $options, $field, $raw_field_value );
 
@@ -2024,7 +2026,7 @@ class GFCommon {
 
 	public static function ensure_wp_version() {
 		if ( ! GF_SUPPORTED_WP_VERSION ) {
-			echo "<div class='error' style='padding:10px;'>" . sprintf( esc_html__( 'Gravity Forms require WordPress %s or greater. You must upgrade WordPress in order to use Gravity Forms' , 'gravityforms' ), GF_MIN_WP_VERSION ) . '</div>';
+			echo "<div class='error' style='padding:10px;'>" . sprintf( esc_html__( 'Gravity Forms requires WordPress %s or greater. You must upgrade WordPress in order to use Gravity Forms' , 'gravityforms' ), GF_MIN_WP_VERSION ) . '</div>';
 
 			return false;
 		}
@@ -4409,6 +4411,10 @@ class GFCommon {
 
 		$value = $field->get_value_merge_tag( $value, $input_id, $lead, $form, $modifier, $raw_value, $url_encode, $esc_html, $format, $nl2br );
 
+		if ( ! in_array( $field->type, array( 'html', 'section', 'signature' ) ) ) {
+			$value = self::encode_shortcodes( $value );
+		};
+
 		if ( $esc_attr ) {
 			$value = esc_attr( $value );
 		}
@@ -4443,6 +4449,13 @@ class GFCommon {
 		$text = str_replace( $match[0], $value, $text );
 
 		return $text;
+	}
+
+	public static function encode_shortcodes( $string ) {
+		$find = array( '[', ']' );
+		$replace = array( '&#91;', '&#93;' );
+		$string = str_replace( $find, $replace, $string );
+		return $string;
 	}
 }
 
@@ -4520,7 +4533,7 @@ class GFCache {
 
 		$data = self::get_transient( $key );
 
-		if ( false === ( $data ) ) {
+		if ( false === $data ) {
 			$found = false;
 
 			return false;
@@ -4603,6 +4616,9 @@ class GFCache {
 	}
 
 	private static function delete_transient( $key ) {
+		if ( ! function_exists( 'wp_hash' ) ) {
+			return false;
+		}
 		$key = self::$_transient_prefix . wp_hash( $key );
 		if ( is_multisite() ) {
 			$success = delete_site_transient( $key );
@@ -4614,6 +4630,9 @@ class GFCache {
 	}
 
 	private static function set_transient( $key, $data, $expiration ) {
+		if ( ! function_exists( 'wp_hash' ) ) {
+			return false;
+		}
 		$key = self::$_transient_prefix . wp_hash( $key );
 		if ( is_multisite() ) {
 			$success = set_site_transient( $key, $data, $expiration );
@@ -4625,6 +4644,9 @@ class GFCache {
 	}
 
 	private static function get_transient( $key ) {
+		if ( ! function_exists( 'wp_hash' ) ) {
+			return false;
+		}
 		$key = self::$_transient_prefix . wp_hash( $key );
 		if ( is_multisite() ) {
 			$data = get_site_transient( $key );

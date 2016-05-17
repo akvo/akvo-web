@@ -513,7 +513,7 @@ class wfCache {
 		$excludedURLs = "";
 		if(wfConfig::get('bannedURLs', false)){
 			foreach(explode(',', wfConfig::get('bannedURLs', false)) as $URL){
-				$excludedURLs .= "RewriteCond  %{REQUEST_URI} !^" .  self::regexSpaceFix(preg_quote(trim($URL))) . "$\n\t";
+				$excludedURLs .= "RewriteCond %{REQUEST_URI} !" .  wfUtils::patternToRegex($URL, '', '') . "\n\t";
 			}
 		}
 

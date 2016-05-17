@@ -626,6 +626,11 @@ h3.gf_add_fields {
 	margin-left: 5px;
 }
 
+/* Prevent field label from extending outside field box. */
+.gfield_label {
+	word-break: break-all;
+}
+
 /* list fields added in v.1.6 -----------------------------------------------------------------*/
 
 .top_label .gfield_list {
@@ -2315,6 +2320,7 @@ li.gform_setting_left_half {
 	margin-right: 2%;
 	display: -moz-inline-stack;
 	display: inline-block;
+	vertical-align: top;
 }
 
 li.gform_setting_right_half {
@@ -2324,6 +2330,7 @@ li.gform_setting_right_half {
 	clear: right;
 	display: -moz-inline-stack;
 	display: inline-block;
+	vertical-align: top;
 }
 
 li.gform_setting_left_half select,

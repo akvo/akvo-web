@@ -5901,14 +5901,14 @@ div[id^="inline-"] {
 .homepage-2015 .smallItems > div {
   display: inline-block;
   width: 23.5%;
-  margin-right: 2%;
+  margin-right: 1.8%;
   vertical-align: top; }
   .homepage-2015 .smallItems > div:last-child {
     margin-right: 0; }
   @media only screen and (max-width: 992px) {
     .homepage-2015 .smallItems > div {
       width: 22.75%;
-      margin-right: 3%; }
+      margin-right: 2.8%; }
       .homepage-2015 .smallItems > div:last-child {
         margin-right: 0; } }
   @media only screen and (max-width: 768px) {
@@ -5917,7 +5917,7 @@ div[id^="inline-"] {
       margin-top: 1em;
       margin-bottom: 1em; }
       .homepage-2015 .smallItems > div:nth-child(odd) {
-        margin-right: 4%; }
+        margin-right: 2.8%; }
       .homepage-2015 .smallItems > div:nth-child(even) {
         margin-right: 0%; } }
   .homepage-2015 .smallItems > div a {
@@ -6118,6 +6118,9 @@ div[id^="inline-"] {
     color: inherit; }
   #content.rsrProdPag #features_section {
     margin-top: -2em; }
+  #content.rsrProdPag #pricing_image {
+    max-width: 90%;
+    margin-top: 2.5em; }
   #content.rsrProdPag #pricing_description {
     padding-bottom: 0; }
   #content.rsrProdPag #pricing_description_2 {
@@ -6425,23 +6428,31 @@ a[href].button {
 @media only screen and (max-width: 992px) {
   .text-sm-center {
     text-align: center; } }
+/* BG COLORS */
+.orange-bg {
+  background: #de8929 !important; }
+
 .green-bg {
   background: #74b631 !important; }
+
+.light-green-bg {
+  background: rgba(116, 182, 49, 0.3) !important; }
 
 .grey-bg {
   background: #f1f1f1 !important; }
 
-.dashProduct hgroup h1 {
+/* -------   */
+.dashProduct hgroup h1, .caddisflyProduct hgroup h1 {
   background: url("../images/logos/akvo-lumen.png") center center no-repeat; }
-.dashProduct hgroup h2 {
+.dashProduct hgroup h2, .caddisflyProduct hgroup h2 {
   margin-bottom: 3em; }
-.dashProduct .full-width-banner {
+.dashProduct .full-width-banner, .caddisflyProduct .full-width-banner {
   width: 100%;
   min-height: 400px;
   position: relative;
   background-position: center;
   background-size: cover; }
-  .dashProduct .full-width-banner a[href] {
+  .dashProduct .full-width-banner a[href], .caddisflyProduct .full-width-banner a[href] {
     position: absolute;
     height: 100%;
     width: 300px;
@@ -6450,18 +6461,19 @@ a[href].button {
     top: 0;
     left: 10%;
     color: #2c2a74; }
-.dashProduct .shallow-banner {
+.dashProduct .shallow-banner, .caddisflyProduct .shallow-banner {
   min-height: 280px; }
-.dashProduct .overlay-banner {
+.dashProduct .overlay-banner, .caddisflyProduct .overlay-banner {
   min-height: 0; }
-  .dashProduct .overlay-banner a[href] {
+  .dashProduct .overlay-banner a[href], .caddisflyProduct .overlay-banner a[href] {
     position: relative;
     height: auto;
     width: auto;
     background: none;
     left: 0;
-    top: 0; }
-.dashProduct li.box {
+    top: 0;
+    cursor: default; }
+.dashProduct li.box, .caddisflyProduct li.box {
   display: inline-block;
   width: 21%;
   float: left;
@@ -6469,10 +6481,23 @@ a[href].button {
   margin-bottom: 2em;
   margin: 0; }
   @media only screen and (max-width: 992px) {
-    .dashProduct li.box {
+    .dashProduct li.box, .caddisflyProduct li.box {
       width: 100%; } }
-.dashProduct h3 {
+.dashProduct h3, .caddisflyProduct h3 {
   text-shadow: none; }
+
+.caddisflyProduct #get-involved-section {
+  padding-top: 0; }
+
+@media only screen and (min-width: 993px) {
+  .caddisflyProduct li.box {
+    padding: 0 6%; } }
+.box-btn {
+  width: 320px;
+  display: inline-block;
+  margin: 10px 20px; }
+  .box-btn a[href].button {
+    margin: 0; }
 
 .page-section {
   max-width: 800px;
@@ -6486,8 +6511,7 @@ img.aligncenter {
   display: block; }
 
 .page-section.full-width {
-  max-width: 100%;
-  background: rgba(116, 182, 49, 0.3); }
+  max-width: 100%; }
   .page-section.full-width .fa {
     color: #2c2a74; }
 

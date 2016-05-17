@@ -324,4 +324,36 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		return apply_filters( 'tribe_events_event_schedule_details_2', $schedule, $event->ID, $before, $after );
 	}
 	
+	
+	function akvo_page_section($field, $shallow_banner = false){
+		$row_i = 0;
+		while(have_rows($field)): the_row();
+			$image_flag = false;
+			$image_text = get_sub_field('image_text');
+			if (strpos($image_text, '<img') !== false) {$image_flag = true;}
+				$class = 'full-width-banner';
+				
+				if($shallow_banner || $row_i){ $class .= ' shallow-banner';}
+				if($image_flag){$class .= ' overlay-banner';}
+				
+		?>
+  			<section>
+  				<div class="<?php _e($class);?>" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
+        			<?php if($image_text):?>
+           			<a href="<?php _e(get_sub_field('image_link'));?>">
+           				<?php _e($image_text);?>
+           			</a>
+           			<?php endif;?>
+    			</div>
+    			<?php $desc = get_sub_field('description');if($desc):?>
+    			<div class='page-section'><?php _e($desc);?></div>
+    	<?php endif;?>
+  	</section>
+  	<?php $row_i++;endwhile;
+	}
+	
+	function akvo_page_logo($field){
+		_e("<img class='prod-logo' src='".get_field($field)."' />");
+	}
+	
 ?>

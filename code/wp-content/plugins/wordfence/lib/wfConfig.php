@@ -34,16 +34,18 @@ class wfConfig {
 				"scansEnabled_plugins" => false,
 				"scansEnabled_malware" => false,
 				"scansEnabled_fileContents" => false,
-				"scansEnabled_database" => false,
 				"scansEnabled_posts" => false,
 				"scansEnabled_comments" => false,
 				"scansEnabled_passwds" => false,
 				"scansEnabled_diskSpace" => false,
 				"scansEnabled_options" => false,
+				"scansEnabled_wpscan_fullPathDisclosure" => true,
+				"scansEnabled_wpscan_directoryListingEnabled" => true,
 				"scansEnabled_dns" => false,
 				"scansEnabled_scanImages" => false,
 				"scansEnabled_highSense" => false,
 				"scansEnabled_oldVersions" => false,
+				"scansEnabled_suspiciousAdminUsers" => false,
 				"firewallEnabled" => false,
 				"blockFakeBots" => false,
 				"autoBlockScanners" => false,
@@ -74,7 +76,8 @@ class wfConfig {
 			),
 			"otherParams" => array(
 				'securityLevel' => '0',
-				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "", "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				'liveTraf_maxRows' => 2000,
 				"neverBlockBG" => "neverBlockVerified",
 				"loginSec_countFailMins" => "5",
 				"loginSec_lockoutMins" => "5",
@@ -124,16 +127,18 @@ class wfConfig {
 				"scansEnabled_plugins" => false,
 				"scansEnabled_malware" => true,
 				"scansEnabled_fileContents" => true,
-				"scansEnabled_database" => true,
 				"scansEnabled_posts" => true,
 				"scansEnabled_comments" => true,
 				"scansEnabled_passwds" => true,
 				"scansEnabled_diskSpace" => true,
 				"scansEnabled_options" => true,
+				"scansEnabled_wpscan_fullPathDisclosure" => true,
+				"scansEnabled_wpscan_directoryListingEnabled" => true,
 				"scansEnabled_dns" => true,
 				"scansEnabled_scanImages" => false,
 				"scansEnabled_highSense" => false,
 				"scansEnabled_oldVersions" => true,
+				"scansEnabled_suspiciousAdminUsers" => true,
 				"firewallEnabled" => true,
 				"blockFakeBots" => false,
 				"autoBlockScanners" => true,
@@ -165,6 +170,7 @@ class wfConfig {
 			"otherParams" => array(
 				'securityLevel' => '1',
 				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				'liveTraf_maxRows' => 2000,
 				"neverBlockBG" => "neverBlockVerified",
 				"loginSec_countFailMins" => "5",
 				"loginSec_lockoutMins" => "5",
@@ -201,6 +207,7 @@ class wfConfig {
 				"alertOn_adminLogin" => true,
 				"alertOn_nonAdminLogin" => false,
 				"liveTrafficEnabled" => true,
+				"scansEnabled_checkReadableConfig" => true,
 				"advancedCommentScanning" => false,
 				"checkSpamIP" => false,
 				"spamvertizeCheck" => false,
@@ -214,16 +221,18 @@ class wfConfig {
 				"scansEnabled_plugins" => false,
 				"scansEnabled_malware" => true,
 				"scansEnabled_fileContents" => true,
-				"scansEnabled_database" => true,
 				"scansEnabled_posts" => true,
 				"scansEnabled_comments" => true,
 				"scansEnabled_passwds" => true,
 				"scansEnabled_diskSpace" => true,
 				"scansEnabled_options" => true,
+				"scansEnabled_wpscan_fullPathDisclosure" => true,
+				"scansEnabled_wpscan_directoryListingEnabled" => true,
 				"scansEnabled_dns" => true,
 				"scansEnabled_scanImages" => false,
 				"scansEnabled_highSense" => false,
 				"scansEnabled_oldVersions" => true,
+				"scansEnabled_suspiciousAdminUsers" => true,
 				"firewallEnabled" => true,
 				"blockFakeBots" => false,
 				"autoBlockScanners" => true,
@@ -253,8 +262,10 @@ class wfConfig {
 				'ssl_verify' => true,
 			),
 			"otherParams" => array(
+				"scan_include_extra" => "",
 				'securityLevel' => '2',
 				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				'liveTraf_maxRows' => 2000,
 				"neverBlockBG" => "neverBlockVerified",
 				"loginSec_countFailMins" => "240",
 				"loginSec_lockoutMins" => "240",
@@ -304,16 +315,18 @@ class wfConfig {
 				"scansEnabled_plugins" => false,
 				"scansEnabled_malware" => true,
 				"scansEnabled_fileContents" => true,
-				"scansEnabled_database" => true,
 				"scansEnabled_posts" => true,
 				"scansEnabled_comments" => true,
 				"scansEnabled_passwds" => true,
 				"scansEnabled_diskSpace" => true,
 				"scansEnabled_options" => true,
+				"scansEnabled_wpscan_fullPathDisclosure" => true,
+				"scansEnabled_wpscan_directoryListingEnabled" => true,
 				"scansEnabled_dns" => true,
 				"scansEnabled_scanImages" => false,
 				"scansEnabled_highSense" => false,
 				"scansEnabled_oldVersions" => true,
+				"scansEnabled_suspiciousAdminUsers" => true,
 				"firewallEnabled" => true,
 				"blockFakeBots" => false,
 				"autoBlockScanners" => true,
@@ -345,6 +358,7 @@ class wfConfig {
 			"otherParams" => array(
 				'securityLevel' => '3',
 				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				'liveTraf_maxRows' => 2000,
 				"neverBlockBG" => "neverBlockVerified",
 				"loginSec_countFailMins" => "1440",
 				"loginSec_lockoutMins" => "1440",
@@ -394,16 +408,18 @@ class wfConfig {
 				"scansEnabled_plugins" => false,
 				"scansEnabled_malware" => true,
 				"scansEnabled_fileContents" => true,
-				"scansEnabled_database" => true,
 				"scansEnabled_posts" => true,
 				"scansEnabled_comments" => true,
 				"scansEnabled_passwds" => true,
 				"scansEnabled_diskSpace" => true,
 				"scansEnabled_options" => true,
+				"scansEnabled_wpscan_fullPathDisclosure" => true,
+				"scansEnabled_wpscan_directoryListingEnabled" => true,
 				"scansEnabled_dns" => true,
 				"scansEnabled_scanImages" => false,
 				"scansEnabled_highSense" => false,
 				"scansEnabled_oldVersions" => true,
+				"scansEnabled_suspiciousAdminUsers" => true,
 				"firewallEnabled" => true,
 				"blockFakeBots" => true,
 				"autoBlockScanners" => true,
@@ -435,6 +451,7 @@ class wfConfig {
 			"otherParams" => array(
 				'securityLevel' => '4',
 				"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+				'liveTraf_maxRows' => 2000,
 				"neverBlockBG" => "neverBlockVerified",
 				"loginSec_countFailMins" => "1440",
 				"loginSec_lockoutMins" => "1440",
@@ -551,12 +568,20 @@ class wfConfig {
 			return;
 		}
 
+		if ($key == 'apiKey' && wfWAF::getInstance() && !WFWAF_SUBDIRECTORY_INSTALL) {
+			try {
+				wfWAF::getInstance()->getStorageEngine()->setConfig('apiKey', $val);
+			} catch (wfWAFStorageFileException $e) {
+				error_log($e->getMessage());
+			}
+		}
+
 		self::getDB()->queryWrite("insert into " . self::table() . " (name, val) values ('%s', '%s') ON DUPLICATE KEY UPDATE val='%s'", $key, $val, $val);
 		self::$cache[$key] = $val;
 		self::clearDiskCache();
 	}
 	private static function getCacheFile(){
-		return wfUtils::getPluginBaseDir() . 'wordfence/tmp/configCache.php';
+		return WORDFENCE_PATH . 'tmp/configCache.php';
 	}
 	public static function clearDiskCache(){
 		//When we write to the cache we just trash the whole cache on the first write. Second write won't get called because we've disabled the cache.
@@ -614,7 +639,7 @@ class wfConfig {
 			}
 		}
 		$val = self::getDB()->querySingle("select val from " . self::table() . " where name='%s'", $key);
-		if(self::$diskCacheDisabled){ 
+		if(self::$diskCacheDisabled){
 			return $val; 
 		}
 		wfConfig::$diskCache[$key] = isset($val) ? $val : '';
@@ -660,7 +685,7 @@ class wfConfig {
 		// because we would have to concatenate $val twice into the query which could also exceed max packet for the mysql server
 		$serialized = serialize($val);
 		$tempFilename = 'wordfence_tmpfile_' . $key . '.php';
-		if((strlen($serialized) * 1.1) > self::getDB()->getMaxAllowedPacketBytes()){ //If it's greater than max_allowed_packet + 10% for escaping and SQL
+		if((strlen($serialized) * 2) + 50 > self::getDB()->getMaxAllowedPacketBytes()){ //If it's greater than max_allowed_packet + 20% for escaping and SQL
 			if($canUseDisk){
 				$dir = self::getTempDir();
 				$potentialDirs = self::getPotentialTempDirs();
@@ -694,10 +719,12 @@ class wfConfig {
 				self::deleteOldTempFile($tempDir . $tempFilename);
 			}
 			$exists = self::getDB()->querySingle("select name from " . self::table() . " where name='%s'", $key);
+			$serializedHex = bin2hex($serialized);
+
 			if($exists){
-				self::getDB()->queryWrite("update " . self::table() . " set val=%s where name=%s", $serialized, $key);
+				self::getDB()->queryWrite(sprintf("update " . self::table() . " set val=X'%s' where name=%%s", $serializedHex), $key);
 			} else {
-				self::getDB()->queryWrite("insert IGNORE into " . self::table() . " (name, val) values (%s, %s)", $key, $serialized);
+				self::getDB()->queryWrite(sprintf("insert ignore into " . self::table() . " (name, val) values (%%s, X'%s')", $serializedHex), $key);
 			}
 		}
 		self::getDB()->flush();
@@ -734,7 +761,7 @@ class wfConfig {
 		}
 	}
 	private static function getPotentialTempDirs() {
-		return array(wfUtils::getPluginBaseDir() . 'wordfence/tmp/', sys_get_temp_dir(), ABSPATH . 'wp-content/uploads/');
+		return array(WORDFENCE_PATH . 'tmp/', sys_get_temp_dir(), ABSPATH . 'wp-content/uploads/');
 	}
 	public static function f($key){
 		echo esc_attr(self::get($key));
@@ -843,9 +870,9 @@ class wfConfig {
 			wp_update_plugins();
 			ob_start();
 			$upgrader = new Plugin_Upgrader();
-			$upret = $upgrader->upgrade('wordfence/wordfence.php');
+			$upret = $upgrader->upgrade(WORDFENCE_BASENAME);
 			if($upret){
-				$cont = file_get_contents(WP_PLUGIN_DIR . '/wordfence/wordfence.php');
+				$cont = file_get_contents(WORDFENCE_FCPATH);
 				if(wfConfig::get('alertOn_update') == '1' && preg_match('/Version: (\d+\.\d+\.\d+)/', $cont, $matches) ){
 					wordfence::alert("Wordfence Upgraded to version " . $matches[1], "Your Wordfence installation has been upgraded to version " . $matches[1], '127.0.0.1');
 				}

@@ -94,24 +94,16 @@
   </section>
 
   <section class="smallItems wrapper">
+    <?php $item_post = get_field('si_item_1');?>  
     <div class="item1 latestBlog">
-      <?php
-        $args = array( 'numberposts' => 1 );
-        $lastposts = get_posts( $args );
-        foreach($lastposts as $post) : setup_postdata($post); ?>
-        <a href="<?php the_permalink(); ?>">
-          <?php if ( has_post_thumbnail() ) { $feat_image = wp_get_attachment_url( get_post_thumbnail_id($post->ID) ); } ?>
-          <div style="background-image: url('<?php echo $feat_image; ?>')"></div>
-          <h3>
-            Latest blog
-          </h3>
-          <span class="text">
-            <?php the_title(); ?>
-          </span>          
+      	<a href="<?php _e(get_permalink($item_post->ID)); ?>">
+			<?php $feat_image = wp_get_attachment_url( get_post_thumbnail_id($item_post->ID) );?>
+			<?php if($feat_image):?><div style="background-image: url('<?php echo $feat_image; ?>')"></div><?php endif;?>
+          	<h3><?php the_field('si_item_title_1');?></h3>
+          	<span class="text"><?php _e($item_post->post_title); ?></span>          
         </a>
-      <?php endforeach; ?>
-      <?php wp_reset_query(); ?>
-    </div><div class="item2 latestRSR">
+    </div>
+    <div class="item2 latestRSR">
       <a href="" class="update_url">
         <div class="update_img_url"></div>
         <h3>

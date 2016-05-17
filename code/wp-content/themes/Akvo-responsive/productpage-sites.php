@@ -9,7 +9,7 @@
 
 <div id="content" class="floats-in productPage withSubMenu akvoSitesProdPag">
   <hgroup>
-    <h1 class="akvoSitesLogo"> Akvo Sites </h1>
+    <?php akvo_page_logo('logo');?>
     <h2><?php the_field('subtitle'); ?></h2>
   </hgroup>
   <section class="figure marginVertical"> 
