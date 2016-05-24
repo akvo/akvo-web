@@ -23,7 +23,7 @@
 	
   	
   	<section>
-  		<div class='page-section full-width'>
+  		<div class='page-section full-width' id="tests-section">
   			<?php the_field('tests_section');?>
   			<br>
   			<ul>
@@ -53,7 +53,7 @@
   	</section>
   	
   	<section class="grey-bg">
-  		<div class='page-section'>
+  		<div class='page-section' id="about-section">
   			<?php the_field('about_section');?>
   		</div>
   	</section>

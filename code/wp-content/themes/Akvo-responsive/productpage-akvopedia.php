@@ -9,9 +9,7 @@
 
 <div id="content" class="floats-in productPage withSubMenu akvopediaProdPag">
 <hgroup>
-  <h1>
-    <?php the_field('akvopedia_name'); ?>
-  </h1>
+  <?php akvo_page_logo('logo');?>
   <h2>
     <?php the_field('akvopedia_tagline'); ?>
   </h2>
