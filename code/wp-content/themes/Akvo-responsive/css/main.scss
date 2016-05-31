@@ -8161,6 +8161,10 @@ a[href].button{
 .akvositesProduct{
 
 	$yellowBG: rgba(255, 210, 0, 0.8);
+	
+	.shallow-banner{
+		min-height: 200px;
+	}
 
 	#testimonials{
 		margin-top:7em;
