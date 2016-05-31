@@ -6503,6 +6503,8 @@ a[href].button {
   text-shadow: none; }
 
 /* AKVO SITES SPECIFIC STYLES */
+.akvositesProduct .shallow-banner {
+  min-height: 200px; }
 .akvositesProduct #testimonials {
   margin-top: 7em; }
 .akvositesProduct a[href].button {
