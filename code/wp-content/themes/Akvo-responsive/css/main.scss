@@ -7558,7 +7558,11 @@ $lightBlue: #72CDFF;
 	
 }
 
-
+.tab-inner-section{
+	padding: 1em;
+	margin: 1em auto;
+	max-width: 610px;
+}
 
 /* END OF TABULAR CONTENT STYLES */
 
@@ -7584,29 +7588,7 @@ $lightBlue: #72CDFF;
 		margin-top: 4em !important;
 	}
 	
-	.testimonials{
-		
-		
-		strong{
-			color: #2c2a74;
-			font-size: 1.2em;
-			line-height: 1.25em;
-			margin: 1.1em 0em 0.5em;
-			font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-			font-weight: normal;
-			
-		}
-		hr{
-			width:50%;
-		}
-		em{
-			color: #000;
-			font-size: 1em;
-		}
-		a[href]:hover{
-			color: inherit;
-		}
-	}
+	
 	#features_section{
 		margin-top: -2em;
 	}
@@ -7670,28 +7652,7 @@ $lightBlue: #72CDFF;
 			margin-top:0;
 		}
 	}
-	.threeColumns.wrapper{
-		min-height: 120px;
-		div{ 
-			border:none;
-			margin: 0 4%;
-			width: 21%;
-			
-			.fa-2x{
-				color: #2C2A74;
-			}
-		}
-		div:nth-child(3n+1){
-			margin: 0 4%;
-		}
-		
-		@media only screen and (max-width: 992px){
-			div{
-				width: 98% !important;
-				margin: 30px auto !important;
-			}
-		}
-	}
+	
 	
 	/* HELPER CLASSES */
 	.text-center{
@@ -7702,9 +7663,7 @@ $lightBlue: #72CDFF;
 	}
 	
 	
-	section:target{
-		background: #FFF;
-	}
+	
 	
 	
 	
@@ -8016,6 +7975,18 @@ $lightBlue: #72CDFF;
 }
 
 /* HELPER CLASSES */
+.col-title{
+	color: #2c2a74;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.25em;
+}
+.col-small-info{
+	font-size: 1em;
+	color: #000;
+}
+
 a[href].button{
 	background: $lightBlue;
 	color : #FFF !important;
@@ -8031,7 +8002,12 @@ a[href].button{
 .text-center{
 	text-align: center;
 }
-
+.list-inline{ 
+	li{
+		display:inline-block;
+		margin-right: 1em; /* for buttons in akvo-sites product page - overview tab */
+	}
+}	
 @media only screen and (max-width: $width-medium) {
 	.text-sm-center{
 		text-align:center;
@@ -8054,7 +8030,65 @@ a[href].button{
 }
 /* -------   */
 
-.dashProduct, .caddisflyProduct{
+
+.akvositesProduct, #content.rsrProdPag{
+	section:target{
+		background: #FFF;
+	}
+	
+	.testimonials{
+		
+		
+		strong{
+			@extend .col-title;
+			margin: 1.1em 0em 0.5em;
+		}
+		hr{
+			width:50%;
+		}
+		em{
+			@extend .col-small-info;
+		}
+		a[href], a[href]:hover{
+			color: inherit;
+		}
+	}
+	
+	.threeColumns.wrapper{
+		min-height: 120px;
+		div{ 
+			border:none;
+			margin: 0 4%;
+			width: 21%;
+			
+			.fa-2x{
+				color: #2C2A74;
+			}
+			
+			div{
+				width: 100%;
+			}
+			
+		}
+		div:nth-child(3n+1){
+			margin: 0 4%;
+		}
+		
+		@media only screen and (max-width: 992px){
+			div{
+				width: 94% !important;
+				margin: 1em auto !important;
+				
+				
+			}
+		}
+	}
+}
+
+
+
+
+.dashProduct, .caddisflyProduct, .akvositesProduct{
 
 	hgroup h1{
 		background: url("../images/logos/akvo-lumen.png") center center no-repeat;
@@ -8119,6 +8153,108 @@ a[href].button{
 	}
 	
 	
+}
+
+
+
+/* AKVO SITES SPECIFIC STYLES */
+.akvositesProduct{
+
+	$yellowBG: rgba(255, 210, 0, 0.8);
+
+	#testimonials{
+		margin-top:7em;
+	}
+	
+	a[href].button{
+		background: $yellowBG;
+	}
+	
+	[data-behaviour~=akvo-tabs]{
+		li{
+			
+			border-color: #2B2A75;
+			color: #2B2A75;
+			border-right: 0;
+			
+			a{
+				color: #2B2A75;
+				
+			}
+		}
+		li.active{
+			border-color: $yellowBG;
+			background: $yellowBG;
+			border-left:0;
+			border-right:0;
+		}
+		li:last-child{
+			border-right: #2B2A75 solid 1px;
+			
+			&.active{
+				border-right: 0;
+			}
+		}
+		
+		@media only screen and (max-width: 768px){
+			li{
+				border-right:#2B2A75 solid 1px;
+			}
+			li.active{
+				border-color: $yellowBG;
+			}
+		}
+	}
+	
+	
+	#section{
+		/* gallery section */
+		margin: 2em 0;
+		
+		.twoColumns a[href]{
+			color: inherit;
+		}
+		
+		strong{
+			@extend .col-title;
+		}
+		
+		.twoColumns > div:last-child, .twoColumns > li:last-child, .twoColumns > p:last-child, 
+		.twoColumns > div:first-child, .twoColumns > li:first-child, .twoColumns > p:first-child{
+			/* overriding two columns */
+			margin: 0em 0.5%;
+		}
+		
+		@media only screen and (max-width: 768px){
+			.twoColumns li{
+				margin: 2em auto !important;
+			}
+		}
+	}
+	
+	#features_columns .threeColumns.wrapper div{
+		@media only screen and (max-width: 992px){
+			margin: 0 auto !important;
+			padding: 0;
+		}	
+		
+		.box-col{
+			margin: 2em 0 !important;
+			min-height: 230px;
+			text-align: left;
+		
+			strong{
+				@extend .col-title;
+			}
+		
+			@media only screen and (max-width: 992px){
+				margin: 3em 0 !important;
+				min-height: auto;
+					
+			}
+		}	
+		
+	}
 }
 
 .caddisflyProduct #get-involved-section{
