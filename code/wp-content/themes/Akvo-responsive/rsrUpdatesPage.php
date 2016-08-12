@@ -37,7 +37,7 @@
   <section class="wrapper">
     <ul id="updates" class="floats-in">
       <?php
-      $shortcode = '[jsondata_feed slug="rsr-many-updates" limit="' . get_field('starting_number_of_updates') . '" offset="0" photo__gte="a"]';
+      $shortcode = '[jsondata_feed slug="rsr-many-updates" format="json" limit="' . get_field('starting_number_of_updates') . '" offset="0" photo__gte="a"]';
       do_shortcode($shortcode);
       ?>
     </ul>
