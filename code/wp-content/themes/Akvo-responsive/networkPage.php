@@ -20,7 +20,7 @@ Template Name: akvoNetwork
       
       <li class="dashSingle" id="rsrDash">
         <h2>Akvo RSR</h2>
-        <?php do_shortcode('[jsondata_feed slug="right-now-in-akvo"]'); ?>
+        <?php do_shortcode('[jsondata_feed slug="right-now-in-akvo" format="json"]'); ?>
         <div class="tooltipContainer">
           <a href="#" class="tooltipTrigger">info</a>
           <div class="tooltips">
