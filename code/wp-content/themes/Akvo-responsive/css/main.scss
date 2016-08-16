@@ -7542,7 +7542,7 @@ $lightBlue: #72CDFF;
 			border-radius: 0.4em;
 			margin:0.4em auto;
 			display: block;
-			width:95%;
+			width:90%;
 			padding: 0.5em;
 		}
 	}
@@ -7998,6 +7998,13 @@ a[href].button{
 	margin: 1em auto;
 	text-align:center;
 	min-width: 200px;
+	
+	@media only screen and (max-width: $width-small) {
+		min-width: 200px;
+		padding: 0.5em 1em;
+		display: block;
+		font-size: inherit;
+	}
 }
 .text-center{
 	text-align: center;
@@ -8006,6 +8013,13 @@ a[href].button{
 	li{
 		display:inline-block;
 		margin-right: 1em; /* for buttons in akvo-sites product page - overview tab */
+		margin-left: 1em;
+	}
+	@media only screen and (max-width: $width-small) {
+		li{
+			margin-right: 0em;
+			margin-left: 0em;
+		}
 	}
 }	
 @media only screen and (max-width: $width-medium) {
@@ -8110,10 +8124,22 @@ a[href].button{
 			height:100%;
 			width:300px;
 			background: rgba(255, 255, 255, 0.8);
-			padding:20px 25px;
+			
 			top:0;
 			left:10%;
 			color: #2c2a74;
+			
+			p{
+				padding:20px 25px;
+			}
+		}
+		
+		
+		@media only screen and (max-width: $width-small){
+			a[href]{
+				left:0%;
+				width: 100%;
+			}
 		}
 	}
 
