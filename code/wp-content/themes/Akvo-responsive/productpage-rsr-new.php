@@ -12,7 +12,7 @@
 			'title' => 'overview',
 			'tagline' => 'overview_tagline',
 			'elements' => array(
-				'overview_carousel1' => 'rsr_carousel',
+				'overview_carousel' => 'rsr_carousel',
 				'overview_columns' => 'rsr_overview_columns',
 				'overview_call_to_action' => 'rsr_overview_buttons',
 				'testimonials' => 'rsr_testimonials',
@@ -75,7 +75,7 @@
 
 	function rsr_content($el){
 	?>
-		<div id="<?php _e($el);?>" class="page-section"><?php the_field($el);?></div>
+		<div id="<?php _e($el);?>" class="tab-inner-section"><?php the_field($el);?></div>
 	<?php
 	}
 	
@@ -267,11 +267,11 @@
 		
 	?>
 		<div class='sub-section' id="<?php _e($el);?>">
-			<ul class='list-box'>
+			<ul class='text-center list-inline'>
 				<?php while(have_rows($el)): the_row();
 					$desc = get_sub_field('description');
 				?>
-				<li class="box">
+				<li>
 					<?php if($desc):?><h4><?php _e($desc);?></h4><br><?php endif;?>
       				<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
       			</li>
