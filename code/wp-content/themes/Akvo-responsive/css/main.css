@@ -6117,7 +6117,8 @@ div[id^="inline-"] {
   #content.rsrProdPag #pricing_description_2 {
     padding-top: 0; }
   #content.rsrProdPag #support_button_title {
-    padding: 0 2em; }
+    padding: 0 2em;
+    margin-top: 3em; }
   #content.rsrProdPag #support_buttons {
     margin-top: 0;
     padding-top: 0; }
@@ -6126,9 +6127,11 @@ div[id^="inline-"] {
   #content.rsrProdPag #support_content {
     padding-top: 4em; }
   #content.rsrProdPag #support_training_title {
+    margin-top: 3em;
     margin-bottom: 1em; }
   #content.rsrProdPag #support_testimonial_title {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    margin-top: 3em; }
   #content.rsrProdPag #support_testimonials {
     padding-top: 2em;
     /*
