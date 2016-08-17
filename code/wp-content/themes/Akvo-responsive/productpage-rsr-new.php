@@ -31,17 +31,6 @@
 				
 			)
 		),
-		'pricing' => array(
-			'title' => 'pricing',
-			'tagline' => 'pricing_tagline',
-			'elements' => array(
-				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'rsr_image',
-				'pricing_description' => 'rsr_content',
-				'pricing_buttons' => 'rsr_buttons',
-				'pricing_description_2' => 'rsr_content'
-			)
-		),
 		'support' => array(
 			'title' => 'support',
 			'tagline' => 'support_tagline',
@@ -57,7 +46,19 @@
 				'support_testimonials' => 'rsr_testimonials'
 				
 			)
+		),
+		'pricing' => array(
+			'title' => 'pricing',
+			'tagline' => 'pricing_tagline',
+			'elements' => array(
+				'pricing_banner' => 'rsr_banner',
+				'pricing_image' => 'rsr_image',
+				'pricing_description' => 'rsr_content',
+				'pricing_buttons' => 'rsr_buttons',
+				'pricing_description_2' => 'rsr_content'
+			)
 		)
+		
 	);
 	
 	function slugify($text){ 
@@ -74,7 +75,7 @@
 
 	function rsr_content($el){
 	?>
-		<div id="<?php _e($el);?>" class="page-section"><?php the_field($el);?></div>
+		<div id="<?php _e($el);?>" class="tab-inner-section"><?php the_field($el);?></div>
 	<?php
 	}
 	
@@ -96,11 +97,11 @@
 	function rsr_overview_buttons($el){
 	?>
 		<div class='sub-section'>
-			<ul class='list-box'>
-				<li class="box">
+			<ul class="text-center list-inline">
+				<li>
       				<a data-behaviour="show-video" href="#video" title="<?php the_field('video_link_text'); ?>" class="button"><?php the_field('video_link_text'); ?></a>
       			</li>
-      			<li class="box">
+      			<li>
       				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>
@@ -266,11 +267,11 @@
 		
 	?>
 		<div class='sub-section' id="<?php _e($el);?>">
-			<ul class='list-box'>
+			<ul class='text-center list-inline'>
 				<?php while(have_rows($el)): the_row();
 					$desc = get_sub_field('description');
 				?>
-				<li class="box">
+				<li>
 					<?php if($desc):?><h4><?php _e($desc);?></h4><br><?php endif;?>
       				<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
       			</li>

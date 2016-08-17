@@ -6130,10 +6130,17 @@ div[id^="inline-"] {
   #content.rsrProdPag #support_testimonial_title {
     margin-bottom: 0; }
   #content.rsrProdPag #support_testimonials {
-    padding-top: 2em; }
-    #content.rsrProdPag #support_testimonials .twoColumns div {
-      width: 30%;
-      padding: 1em 9%; }
+    padding-top: 2em;
+    /*
+    .twoColumns div{
+    	width: 30%;
+    	padding: 1em 9%;
+    }
+    */ }
+    #content.rsrProdPag #support_testimonials em {
+      max-width: 200px;
+      margin: 0 auto;
+      display: inline-block; }
   #content.rsrProdPag #support_columns {
     margin-top: 0;
     padding-top: 0; }
@@ -6154,13 +6161,17 @@ div[id^="inline-"] {
     #content.rsrProdPag .bxslider .image a[href] {
       position: absolute;
       height: 100%;
-      /*width:40%;*/
       width: 300px;
       background: rgba(255, 255, 255, 0.8);
-      padding: 20px 25px;
       top: 0;
       left: 10%;
       color: #2c2a74; }
+      #content.rsrProdPag .bxslider .image a[href] p {
+        padding: 20px 25px; }
+    @media only screen and (max-width: 768px) {
+      #content.rsrProdPag .bxslider .image a[href] {
+        left: 0%;
+        width: 100%; } }
   #content.rsrProdPag .sub-section {
     margin: 2em 0;
     padding: 1em; }
