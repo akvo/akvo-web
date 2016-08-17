@@ -141,7 +141,7 @@
 $(function() {
   var akvo_domain = 'http://rsr.akvo.org';
   $.ajax({
-    url: akvo_domain + '/api/v1/project_update/?limit=5',
+    url: akvo_domain + '/api/v1/project_update/?limit=5&format=json',
     dataType: "jsonp",
     jsonp: 'callback',
     jsonpCallback: 'callback',
