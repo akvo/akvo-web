@@ -55,7 +55,6 @@
 	}
 	
 	function inner_section_buttons($el){
-		
 	?>
 		<div class='' id="<?php _e($el);?>">
 			<ul class="text-center list-inline">

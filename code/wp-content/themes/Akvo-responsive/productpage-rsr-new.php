@@ -12,7 +12,7 @@
 			'title' => 'overview',
 			'tagline' => 'overview_tagline',
 			'elements' => array(
-				'overview_carousel' => 'rsr_carousel',
+				'overview_carousel1' => 'rsr_carousel',
 				'overview_columns' => 'rsr_overview_columns',
 				'overview_call_to_action' => 'rsr_overview_buttons',
 				'testimonials' => 'rsr_testimonials',
@@ -31,17 +31,6 @@
 				
 			)
 		),
-		'pricing' => array(
-			'title' => 'pricing',
-			'tagline' => 'pricing_tagline',
-			'elements' => array(
-				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'rsr_image',
-				'pricing_description' => 'rsr_content',
-				'pricing_buttons' => 'rsr_buttons',
-				'pricing_description_2' => 'rsr_content'
-			)
-		),
 		'support' => array(
 			'title' => 'support',
 			'tagline' => 'support_tagline',
@@ -57,7 +46,19 @@
 				'support_testimonials' => 'rsr_testimonials'
 				
 			)
+		),
+		'pricing' => array(
+			'title' => 'pricing',
+			'tagline' => 'pricing_tagline',
+			'elements' => array(
+				'pricing_banner' => 'rsr_banner',
+				'pricing_image' => 'rsr_image',
+				'pricing_description' => 'rsr_content',
+				'pricing_buttons' => 'rsr_buttons',
+				'pricing_description_2' => 'rsr_content'
+			)
 		)
+		
 	);
 	
 	function slugify($text){ 
@@ -96,11 +97,11 @@
 	function rsr_overview_buttons($el){
 	?>
 		<div class='sub-section'>
-			<ul class='list-box'>
-				<li class="box">
+			<ul class="text-center list-inline">
+				<li>
       				<a data-behaviour="show-video" href="#video" title="<?php the_field('video_link_text'); ?>" class="button"><?php the_field('video_link_text'); ?></a>
       			</li>
-      			<li class="box">
+      			<li>
       				<a href="<?php the_field('tour_link'); ?>" data-behaviour="anchor-reload" title="<?php the_field('tour_link_text'); ?>" class="button"><?php the_field('tour_link_text'); ?></a>
       			</li>
   			</ul>

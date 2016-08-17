@@ -7680,14 +7680,25 @@ $lightBlue: #72CDFF;
 			a[href]{
 				position:absolute;
 				height:100%;
-				/*width:40%;*/
 				width:300px;
 				background: rgba(255, 255, 255, 0.8);
-				padding:20px 25px;
 				top:0;
 				left:10%;
 				color: #2c2a74;
+			
+				p{
+					padding:20px 25px;
+				}
 			}
+		
+		
+			@media only screen and (max-width: $width-small){
+				a[href]{
+					left:0%;
+					width: 100%;
+				}
+			}
+			
 		}
 	}
 	
