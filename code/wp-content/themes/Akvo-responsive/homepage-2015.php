@@ -138,32 +138,35 @@
 <!-- end content -->
 
 <script type="text/javascript"> 
-$(function() {
-  var akvo_domain = 'http://rsr.akvo.org';
-  $.ajax({
-    url: akvo_domain + '/api/v1/project_update/?limit=5&format=json',
-    dataType: "jsonp",
-    jsonp: 'callback',
-    jsonpCallback: 'callback',
-    cache: true,
-    success: function(data) {
-      for (i=0; i<5; i++) {
-        if (data.objects[i].photo === '') {
-          continue;
-        } else {
-          var title, src, absolute_url;
-          src = data.objects[i].photo;
-          title = data.objects[i].title;
-          absolute_url = data.objects[i].absolute_url;
-          $('.update_url').attr('href', akvo_domain + absolute_url);
-          $('.update_img_url').css('background-image', 'url("' + akvo_domain + src + '")')
-          $('.update_title').text(title);
-          break;
-        }
-      }
-    }
-  });
-});   
+	$(function() {
+  		var akvo_domain = 'http://rsr.akvo.org';
+  		$.ajax({
+    		url: '<?php echo admin_url('admin-ajax.php'); ?>' + '?action=akvo_latest_rsr',
+    		dataType: "json",
+    		//jsonp: 'callback',
+    		//jsonpCallback: 'callback',
+    		cache: true,
+    		success: function(data) {
+    			//console.log(data);
+    		
+      			for (i=0; i<5; i++) {
+        			if (data.objects[i].photo === '') {
+          				continue;
+		        	} 
+		        	else {
+          				var title, src, absolute_url;
+          				src = data.objects[i].photo;
+          				title = data.objects[i].title;
+          				absolute_url = data.objects[i].absolute_url;
+          				$('.update_url').attr('href', akvo_domain + absolute_url);
+          				$('.update_img_url').css('background-image', 'url("' + akvo_domain + src + '")')
+          				$('.update_title').text(title);
+          				break;
+        			}
+      			}
+    		}
+  		});
+	});   
 $(document).ready(function() {
     $('.bxslider').bxSlider();
     respondToWidth();
