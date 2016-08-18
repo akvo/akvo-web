@@ -359,16 +359,29 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
   		$slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $text);
    		return strtolower($slug);
 	}
-// Added to extend allowed files types in Media upload
-add_filter('upload_mimes', 'custom_upload_mimes');
-function custom_upload_mimes ( $existing_mimes=array() ) {
+	
+	// Added to extend allowed files types in Media upload
+	add_filter('upload_mimes', 'custom_upload_mimes');
+	function custom_upload_mimes ( $existing_mimes=array() ) {
 
-// Add *.EPS files to Media upload
-$existing_mimes['eps'] = 'application/postscript';
+		// Add *.EPS files to Media upload
+		$existing_mimes['eps'] = 'application/postscript';
 
-// Add *.AI files to Media upload
-$existing_mimes['ai'] = 'application/postscript';
+		// Add *.AI files to Media upload
+		$existing_mimes['ai'] = 'application/postscript';
 
-return $existing_mimes;
-}	
+		return $existing_mimes;
+	}
+	
+	
+	function akvo_latest_rsr(){
+		$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
+		$str = file_get_contents($url);
+		print_r($str);
+		die();
+	}
+	
+	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
+	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
+	
 ?>
