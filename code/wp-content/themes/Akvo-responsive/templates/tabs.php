@@ -65,14 +65,15 @@
 			<h3 id='<?php _e($el.'_title');?>'><?php the_field($el.'_title');?></h3>
 			<div class="<?php _e($cols);?> wrapper">
 				<?php while(have_rows($el)): the_row();?>
-				<?php $desc = get_sub_field('description');if($desc):?>
 				<div class='col text-center'>
+					<?php $desc = get_sub_field('description');if($desc):?>
 					<a href="<?php the_sub_field('link');?>">
 						<img class='aligncenter' src="<?php the_sub_field('profile_picture');?>" />
 						<?php _e($desc);?>
 					</a>
+					<?php endif;?>
 				</div>	
-				<?php endif;endwhile;?>
+				<?php endwhile;?>
 			</div>
 		</div>	
 		<div class='clearfix'></div>
