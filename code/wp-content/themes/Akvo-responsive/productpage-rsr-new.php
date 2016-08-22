@@ -52,7 +52,7 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'rsr_image',
+				'pricing_image' => 'akvo_tab_image',
 				'pricing_description' => 'rsr_content',
 				'pricing_buttons' => 'rsr_buttons',
 				'pricing_description_2' => 'rsr_content'
@@ -69,9 +69,12 @@
 	function rsr_title($el){
 		_e("<h3 id=".$el.">".get_field($el)."</h3>");
 	}
+	
+	/*
 	function rsr_image($el){
 		echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
 	}
+	*/
 
 	function rsr_content($el){
 	?>
@@ -116,14 +119,7 @@
   	<?php	
   	}
 	
-	function rsr_tab_title($el){
-		$title = get_field($el['title']."_tab_title");
-		
-		if(!$title){
-			$title = $el['title'];
-		}
-		return $title;
-	}
+	
 	
 	
 	function rsr_json_counters($el){
@@ -365,348 +361,23 @@
 ?>
 
 <div id="content" class="floats-in productPage withSubMenu rsrProdPag">
-	
-	<!--div class="projectGateWay">
-    	<p>Already an RSR user?</p>
-    	<a href="http://rsr.akvo.org/sign_in" class="">Log in to Akvo RSR &rsaquo;</a>
-  	</div-->
-
-  	<hgroup>
-  		<?php akvo_page_logo('logo');?>
-		<h2 id="tagline"></h2>
-  	</hgroup>
-	
-	
-	
-	<section>
-  		<ul class="rsr-tabs" data-behaviour="rsr-tabs">	
-  			<?php foreach($tabs as $tab):?>
-      		<li class="rsr-tab" data-tagline="<?php the_field($tab['tagline']);?>">
-        		<a href="#<?php _e(slugify($tab['title'])); ?>"><?php _e(rsr_tab_title($tab));?></a>
-        	</li>
-        	<?php endforeach;?>	
-    	</ul>
-	</section>
-  	
-  	<?php foreach($tabs as $tab):?>
-  	<section class="tab-content" id="<?php _e(slugify($tab['title'])); ?>">
-  		<?php	
-  			/* Displaying the inline elements within the tab */ 
-  			$elements = $tab['elements'];
-  			if($elements){ 
-  				if(is_array($elements)){
-  					foreach($elements as $key=>$el){
-  						call_user_func($el, $key);
-  					}
-  				}
-  			}
-  			
-  		?>
-  		
-	</section>
-  	<?php endforeach;?>	
-  	
-  	
-  	
-  	
-  	
-  	
-  	<?php if(get_field('___get_in_touch_form')):?>
-  	<section id="modal-form" class="modal" data-behaviour="modal">
-  		<div class="backdrop"></div>
-  		<div class="modal-content">
-  			<a class="close-btn" href="#">&times;</a>
-  			<?php gravity_form(get_field('get_in_touch_form'), false, true, false, '', true); ?>
-  		</div>
-  		
-  	</section>
-  	<?php endif;?>
+	<?php akvo_tabs($tabs);?>
 </div>  
 
-<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+
 
 
 <?php get_footer(); ?>
+<script type="text/javascript" src="<?php bloginfo('template_url');?>/js/tabs.js"></script>
 <script type="text/javascript">
-	
-	
-	$(document).ready(function() {
-		/*
-    	var expectedVideoId = '<?php the_field('video_id'); ?>';
-    	var videoBlockMessageTimeout = 10000;
-
-    	// Check that vimeo isn't blocked
-    	$.ajax({
-      		url: 'https://vimeo.com/api/v2/video/' + expectedVideoId + '.json',
-      		context: document.body,
-      		timeout: videoBlockMessageTimeout
-    	}).done( function(response) {
-      		var urlFromAPI= response[0].url;
-			// Does the id returned by the api match the real id?
-      		if (urlFromAPI.indexOf(expectedVideoId) < 0) {
-        		vimeoIsBlocked();
-     		 }
-    	}).fail( function() {
-      		vimeoIsBlocked();
-    	});
-
-    	function vimeoIsBlocked() {
-      		$('.vimeoBlockedMessage').show();
-    	}
-		*/
-    	
-  	});
-
-
 	(function($){
-		
-		$.fn.rsr_modal = function(){
-			return this.each(function(){
-				var modal = $(this);
-				var backdrop = modal.find('.backdrop');
-				var close_btn = modal.find('.close-btn')
-				
-				modal.hide_now = function(){
-					modal.hide();
-				};
-				
-				close_btn.click(function(ev){
-					ev.preventDefault();
-					ev.stopPropagation();
-					modal.hide();
-				});
-				
-				backdrop.click(function(){
-					modal.hide();
-				});
-				
-			});
-		};
-		$.fn.rsr_modal_show = function(){
-			return this.each(function(){
-				var ahref = $(this);
-				
-				var modal = $(ahref.attr('href'));
-				
-				ahref.click(function(ev){
-					ev.preventDefault();
-					ev.stopPropagation();
-					modal.show();
-				});
-				
-				
-			});
-		};
-		
-		$.fn.rsr_anchor_reload = function(){
-			return this.each(function(){
-				var ahref = $(this);
-				
-				var href = ahref.attr('href');
-				
-				
-				if(href.substr(0, 1) == '#'){
-				
-					ahref.click(function(ev){
-						ev.preventDefault();
-						ev.stopPropagation();
-					
-					
-						var href = ahref.attr('href');
-					
-						$(href).rsr_scroll_to();
-					
-					
-						console.log('reload');
-					});
-				
-				
-				}
-				
-				
-			});
-		};
-		$.fn.rsr_time_ticker = function(){
-			return this.each(function(){
-				var el = $(this);
-				
-				
-				el.animate_counter = function(){
-					if(!el.attr('data-flag')){
-						console.log('animate counter');
-						el.find('.digit').each(function () {
-  							$(this).prop('Counter',0).animate({
-        						Counter: $(this).text()
-    						}, {
-      							duration: 2000,
-     							easing: 'swing',
-								step: function (now) {
-									$(this).text(Math.ceil(now));
-								}
-							});
-						});
-						el.attr('data-flag', 1);
-					}
-				};
-				
-				
-				
-				
-				var element_position = el.offset().top - el.outerHeight();
-				
-				
-				
-				$(window).on('scroll', function() {
-  					var y_scroll_pos = window.pageYOffset;
-					var scroll_pos_test = element_position;
-					//console.log(y_scroll_pos + " - " + scroll_pos_test);
-					if(y_scroll_pos > scroll_pos_test) {
-        				console.log('scroll found');
-  						el.animate_counter();	
-					}
-				});
-				
-				
-				
-				
-    			
-				
-       		});
-		};
-		
-		console.log('pre-tabs');	
-		
-		$.fn.rsr_scroll_to = function(){
-			return this.each(function(){
-			
-				var el = $(this);
-				
-				var section = el.closest('.tab-content');
-    			
-    			section.rsr_tab_activate();
-    			
-    			var scroll_el = $(el).attr('id') == $(section).attr('id') ? $('#mainbody') : $(el);
-  					
-  				$('html, body').animate({
-        			scrollTop: scroll_el.offset().top
-    			}, 500);
-    			
-    			window.location.hash = el.attr('id');
-			
-			});
-		};
-		
-		$.fn.rsr_tab_activate = function(){
-			return this.each(function(){
-				var section = $(this);
-				
-				
-				var ul = $('[data-behaviour~=rsr-tabs]');
-				
-				var li = ul.find('a[href=#' + section.attr('id') + ']').closest('li');
-				
-				
-				var old_li = ul.find('li.active');
-       			var old_tab = $(old_li.find('a[href]').attr('href'));
-       			
-       			if(section.attr('id') != old_tab.attr('id')){
-       				old_tab.hide();
-       				old_li.removeClass('active');
-       				
-       				li.addClass('active');
-       				
-       				$('#tagline').html(li.data('tagline'));
-       				
-       				
-       				section.show();	
-       				
-       				
-       						
-       			}
-				
-			});
-		};
-		
-    	$.fn.rsr_tabs = function(){
-       		return this.each(function(){
-       			console.log('tabs init');
-       			var ul = $(this);
-       			
-       			ul.activate = function(list){
-       				list.addClass('active');
-       				$('#tagline').html(list.data('tagline'));
-       				
-       				var section_id = list.find('a[href]').attr('href');
-       				
-       				
-       				
-       				$(section_id).show();	
-       				
-       				
-       			};
-       			
-       			ul.find('li').each(function(){
-       				
-       				var li = $(this);
-       				
-       				var tab = $(li.find('a[href]').attr('href'));
-       				
-       				var ahref = li.find('a[href]');
-       				
-       				/* hide all the tabs */
-       				tab.hide();
-       				
-       				
-       				li.click(function(ev){
-       					ev.preventDefault();
-       					ev.stopPropagation();
-       					
-       					var section = $(li.find('a[href]').attr('href'));
-       					section.rsr_tab_activate();
-       					
-       					$('html, body').animate({
-        					scrollTop: $('#mainbody').offset().top
-    					}, 500);
-       					
-    					if(history.pushState) {
-	 					 	history.pushState(null, null, '#' + section.attr('id'));
-						}
-						else {
-    						window.location.hash = section.attr('id');
-						}
-
-       					
-       					console.log('click');
-       				});
-       				
-       				
-       				
-       			});
-    			console.log('tabs');
-    			
-    			
-    			
-    			if(!window.location.hash){
-    				window.location.hash = 'overview';
-    			}
-    			
-    			
-    			var hash = window.location.hash;
-    			
-    			$(hash).rsr_scroll_to();
-    				
-    			
-    			
-    		});
-    	};
-    	
-    	console.log('init');
+		console.log('init');
 		$('.bxslider').bxSlider({
   			onSliderLoad: function(){
   				console.log('slider:after-load');
     			
-    			$('body').find('[data-behaviour~=rsr-tabs]').rsr_tabs();
+    			$('body').find('[data-behaviour~=akvo-tabs]').akvo_tabs();
     			
     			$('[data-behaviour~=show-video]').click( function(event) {
       				event.preventDefault();
@@ -717,30 +388,7 @@
     			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
     			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
     			
-    			//$('[data-behaviour~=modal]').rsr_modal();
-    			
-    			//$('[data-behaviour~=modal-show]').rsr_modal_show();
-    			
-    			
-    			
-    			
-    			
-    			
-    			
-  			}
+    		}
 		});
-    	
-    	
-    	
-  					
-    	
-    	
-	}(jQuery));  
-	
-	
-
-	
-	
-		
-	
+    }(jQuery));  
 </script>
