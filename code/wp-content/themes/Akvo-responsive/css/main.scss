@@ -4730,6 +4730,22 @@ section.rsrNuggetsSection li h3 {
     background-size: auto 40px;
 }
 
+.akvoSitesProdPag{
+	.videoContainer {
+        display: none;
+        .vimeoBlockedMessage {
+            display: none;
+            text-align: center;
+        }
+        div.videoContainer {
+            width: 1000px;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+    }
+} 
+    
+
 .pricingPage {
     position: relative;
     .engageBtn {
