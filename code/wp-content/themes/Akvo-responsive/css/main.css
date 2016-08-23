@@ -3995,6 +3995,16 @@ section.rsrNuggetsSection li h3 {
   background: url("../images/akvosites/akvosites_logo_yellow_400x75px.png") center center no-repeat;
   background-size: auto 40px; }
 
+.akvoSitesProdPag .videoContainer {
+  display: none; }
+  .akvoSitesProdPag .videoContainer .vimeoBlockedMessage {
+    display: none;
+    text-align: center; }
+  .akvoSitesProdPag .videoContainer div.videoContainer {
+    width: 1000px;
+    max-width: 90%;
+    margin: 0 auto; }
+
 .pricingPage {
   position: relative; }
   .pricingPage .engageBtn {
