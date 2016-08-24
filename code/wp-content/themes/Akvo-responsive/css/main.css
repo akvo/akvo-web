@@ -6522,7 +6522,7 @@ div[id^="inline-"] {
     .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href] {
       position: absolute;
       height: 100%;
-      width: 300px;
+      width: 350px;
       background: rgba(255, 255, 255, 0.8);
       top: 0;
       left: 10%;
