@@ -1,0 +1,116 @@
+/* HELPER CLASSES */
+.col-title{
+	color: #2c2a74;
+	font-size: 1.2em;
+	font-weight: normal;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	line-height: 1.25em;
+}
+.col-small-info{
+	font-size: 1em;
+	color: #000;
+}
+
+a[href].button{
+	background: $lightBlue;
+	color : #FFF !important;
+	padding: 0.5em 2em;
+	border-radius: 0.4em;
+	font-size: 1.5em;
+	font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	display: inline-block;
+	margin: 1em auto;
+	text-align:center;
+	min-width: 200px;
+	
+	@media only screen and (max-width: $width-small) {
+		min-width: 200px;
+		padding: 0.5em 1em;
+		display: block;
+		font-size: inherit;
+	}
+}
+.text-center{
+	text-align: center;
+}
+.list-inline{ 
+	li{
+		display:inline-block;
+		margin-right: 1em; /* for buttons in akvo-sites product page - overview tab */
+		margin-left: 1em;
+	}
+	@media only screen and (max-width: $width-small) {
+		li{
+			margin-right: 0em;
+			margin-left: 0em;
+		}
+	}
+}	
+@media only screen and (max-width: $width-medium) {
+	.text-sm-center{
+		text-align:center;
+	}
+}
+
+
+/* BG COLORS */
+.orange-bg{
+	background: $orange2015 !important;
+}
+.green-bg{
+	background: $green2015 !important;
+}
+.light-green-bg{
+	background: rgba(116, 182, 49, 0.3) !important;
+}
+.grey-bg{
+	background: rgb(241, 241, 241) !important; 
+}
+/* -------   */
+
+
+/* STYLES FOR TABULAR CONTENT */
+.akvo-tabs{
+	margin-top: 4em;
+	border-bottom:#ccc solid 1px;
+	list-style: none;
+	text-align:center;
+	
+	.akvo-tab{
+		border:$lightBlue solid 1px;
+		display: inline-block;
+		padding: 0.5em 25px;
+		border-radius: 0.4em 0.4em 0 0;
+		border-bottom: none;
+		text-transform: uppercase;
+		margin:10px -3px 0 -2px;
+		font-size: 1em;
+		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		
+		/*
+		@media only screen and (max-width: 550px){
+			padding: 5px 10px;
+			
+		}		
+		*/
+	}
+	.akvo-tab.active{
+		background: $lightBlue;
+		
+		
+		a[href]{
+			color: #FFF;
+		}
+	}
+	
+	@media only screen and (max-width: $width-small) {
+		.akvo-tab{
+			border-bottom:$lightBlue solid 1px;
+			border-radius: 0.4em;
+			margin:0.4em auto;
+			display: block;
+			width:90%;
+			padding: 0.5em;
+		}
+	}
+}

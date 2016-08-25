@@ -333,7 +333,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 			if (strpos($image_text, '<img') !== false) {$image_flag = true;}
 				$class = 'full-width-banner';
 				
-				if($shallow_banner || $row_i){ $class .= ' shallow-banner';}
+				if($shallow_banner || $row_i || !$image_text){ $class .= ' shallow-banner';}
 				if($image_flag){$class .= ' overlay-banner';}
 				
 		?>
@@ -345,15 +345,50 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
            			</a>
            			<?php endif;?>
     			</div>
-    			<?php $desc = get_sub_field('description');if($desc):?>
-    			<div class='page-section'><?php _e($desc);?></div>
-    	<?php endif;?>
-  	</section>
+    			<?php $desc = get_sub_field('description');
+    			if($desc):?><div class='page-section'><?php _e($desc);?></div><?php endif;?>
+  			</section>
   	<?php $row_i++;endwhile;
 	}
 	
 	function akvo_page_logo($field){
 		_e("<img class='prod-logo' src='".get_field($field)."' />");
 	}
+	
+	function akvo_slugify($text){ 
+  		$slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $text);
+   		return strtolower($slug);
+	}
+	
+	// Added to extend allowed files types in Media upload
+	add_filter('upload_mimes', 'custom_upload_mimes');
+	function custom_upload_mimes ( $existing_mimes=array() ) {
+
+		// Add *.EPS files to Media upload
+		$existing_mimes['eps'] = 'application/postscript';
+
+		// Add *.AI files to Media upload
+		$existing_mimes['ai'] = 'application/postscript';
+
+		return $existing_mimes;
+	}
+	
+	
+	function akvo_latest_rsr(){
+		$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
+		$str = file_get_contents($url);
+		print_r($str);
+		die();
+	}
+	
+	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
+	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
+	
+	
+	function akvo_tabs($tabs){
+		include "templates/tabs.php";
+	}
+	
+	
 	
 ?>
