@@ -396,6 +396,13 @@
 
     .timeSegment:last-child { margin-right: 0 }
     
+    .dot{
+    	float: left;
+    	margin: 0 2px 0;
+    	font-size: 24px;
+    	padding: 40px 0 0;
+    }
+    
     .digit {
     	/* Digit */
    		background-color: #FFF;
@@ -916,7 +923,7 @@ img.aligncenter{
 		margin-top: 3em;
 		
 		.orange-box{
-			background: rgba(222, 137, 41, 0.4);
+			background: rgba(222, 137, 41, 0.2);
 			border-radius: 15px;
 			
 			h3{
@@ -969,6 +976,16 @@ img.aligncenter{
 	#services_testimonials_title{
 		margin-bottom: 1em;
 	}
+	
+	#features_rows{
+		h3{
+			text-align: left;
+		}
+		h3.icon{
+			margin-bottom: 0em;
+		}
+	}
+	
 	#pricing_image{
 		max-width: 90%;
 		margin-top: 4em;

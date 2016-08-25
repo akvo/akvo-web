@@ -6388,6 +6388,11 @@ div[id^="inline-"] {
     padding: 5px; }
   .timeTicker .timeSegment:last-child {
     margin-right: 0; }
+  .timeTicker .dot {
+    float: left;
+    margin: 0 2px 0;
+    font-size: 24px;
+    padding: 40px 0 0; }
   .timeTicker .digit {
     /* Digit */
     background-color: #FFF;
@@ -6711,7 +6716,7 @@ img.aligncenter {
 .flowProduct #overview_columns {
   margin-top: 3em; }
   .flowProduct #overview_columns .orange-box {
-    background: rgba(222, 137, 41, 0.4);
+    background: rgba(222, 137, 41, 0.2);
     border-radius: 15px; }
     .flowProduct #overview_columns .orange-box h3 {
       color: #de8929;
@@ -6738,6 +6743,10 @@ img.aligncenter {
   margin-top: 6em; }
 .flowProduct #services_testimonials_title {
   margin-bottom: 1em; }
+.flowProduct #features_rows h3 {
+  text-align: left; }
+.flowProduct #features_rows h3.icon {
+  margin-bottom: 0em; }
 .flowProduct #pricing_image {
   max-width: 90%;
   margin-top: 4em; }

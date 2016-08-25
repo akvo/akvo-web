@@ -77,6 +77,9 @@
        						if(is_numeric($char)){
        							_e("<span class='digit'>". $char ."</span>");
        						}
+       						else{
+       							_e("<span class='dot'>". $char ."</span>");
+       						}
    						}
        				?>
    					</p>
@@ -146,7 +149,10 @@
 		<?php while( have_rows($el) ): the_row(); ?>
       	<ul class="wrapper threeColumns floats-in">
       		<?php while( have_rows('row_list') ): the_row(); ?>
-    		<li><div class='desc'><?php __col();?></div></li>
+    		<li>
+    			<h3 class='icon'><i class='fa <?php the_sub_field('icon');?>'></i></h3>
+    			<?php the_sub_field('content');?>
+    		</li>
     		<?php endwhile; ?>
     	</ul>
     	<?php endwhile; ?>
