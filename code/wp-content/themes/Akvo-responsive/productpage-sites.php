@@ -1,53 +1,108 @@
 <?php
 	/*
-		Template Name: product-akvosites
+		Template Name: product-akvosites v1.0
 	*/
 ?>
 <?php get_header(); ?>
+<!--Start of Akvo.org RSR Product Page-->
 
-<!--Start of Akvo.org akvo sites Product Page-->
+<?php
+	
+	$tabs = array(
+		'overview' => array(
+			'title' => 'overview',
+			'tagline' => 'overview_tagline',
+			'elements' => array(
+				'overview_cover' => 'akvo_page_section',
+				'overview_intro' => 'akvo_tab_inner_section',
+				'overview_buttons' => 'akvo_tab_buttons',
+				'testimonials' => 'testimonials'
+			)
+		),
+		'features' => array(
+			'title' => 'features',
+			'tagline' => 'features_tagline',
+			'elements' => array(
+				'features_cover' => 'akvo_page_section',
+				'features_columns' => 'features_columns'
+			)
+		),
+		'pricing' => array(
+			'title' => 'pricing',
+			'tagline' => 'pricing_tagline',
+			'elements' => array(
+				'pricing_cover' => 'akvo_page_section',
+				'pricing_intro' => 'akvo_tab_inner_section',
+				'pricing_buttons' => 'akvo_tab_buttons',
+				'pricing_ending' => 'akvo_tab_inner_section'
+			)
+		),
+		'gallery' => array(
+			'title' => 'gallery',
+			'tagline' => 'gallery_tagline',
+			'elements' => array(
+				'gallery_cover' => 'akvo_page_section',
+				'section' => 'gallery'
+				
+			)
+		)
+	);
+	
+	
+	
+	
+	
+	
+	
+	function features_columns($el){
+	?>
+		<div id="<?php _e($el);?>" class='sub-section'>
+		<div class='threeColumns wrapper'>
+		<?php while(have_rows($el)): the_row();?>
+			<div>
+				<?php
+					$boxes = get_sub_field('columns');
+					foreach($boxes as $box):
+				?>
+				<div class='box-col'>
+					<i class="fa fa-2x <?php _e($box['icon']);?>"></i>
+					<p><?php _e($box['description']);?></p>
+				</div>	
+				<?php endforeach;?>
+			<p><?php _e(get_sub_field('description'));?></p>
+			</div>
+		<?php endwhile;?>
+		</div>
+		<div class='clearfix'></div>
+		</div>
+	<?php }
+	
+	
+	function gallery($el){
+	?> 
+	<div class="sub-section" id="<?php _e($el);?>">
+		<ul class="wrapper twoColumns floats-in">
+    		<?php while( have_rows($el) ): the_row(); ?>
+      		<li>
+      			<a href="<?php the_sub_field('image_link'); ?>">
+      				<img src="<?php the_sub_field('image'); ?>" title="akvosites"/>
+      				<?php the_sub_field('description');?>
+      			</a>
+      		</li>
+    		<?php endwhile; ?>
+    	</ul>
+    </div>	
+    <?php
+    }
+?>
 
-<div id="content" class="floats-in productPage withSubMenu akvoSitesProdPag">
-  <hgroup>
-    <?php akvo_page_logo('logo');?>
-    <h2><?php the_field('subtitle'); ?></h2>
-  </hgroup>
-  <section class="figure marginVertical"> 
-    <img src="<?php the_field('hero_image'); ?>" title="akvosites image"/> 
-  </section>
-      <h2  style="background:rgb(248,248,248); padding:1em 0; font-size:1.8em;"><span class="wrapper centerED"><?php the_field('bigDescr'); ?></span></h2>      
-  <section class="akvositesDescr  marginVertical">
-    <div class="wrapper">
-      <p class="fullWidthParag centerED"><?php the_field('text'); ?></p>
- 
-    <a href="<?php the_field('descr_image_link'); ?>">
-      <img src="<?php the_field('descr_image'); ?>" title="akvosites description image" class="centerED"/> 
-    </a>
-
-    <p class="fullWidthParag centerED">
-      <?php the_field('text2'); ?>
-    </p>   </div>
-  </section>
-  
-  <section class="whoUseIt marginVertical" style="background:rgb(248,248,248);">
-    <h1><?php the_field('whouse_title'); ?></h1>
-    <p  class="fullWidthParag centerED"><?php the_field('whouse_text'); ?></p>
-    <ul class="wrapper twoColumns floats-in">
-    <?php while( have_rows('feature_images') ): the_row(); ?>
-      <li><a href="<?php the_sub_field('image_link'); ?>"><img src="<?php the_sub_field('image'); ?>" title="akvosites"/></a></li>
-    <?php endwhile; ?>
-    </ul>
-    </section>
-  
-  <section id="akvositesTech" class="marginVertical">
-    <h1><?php the_field('specifications_title'); ?></h1>
-    <ul class="floats-in wrapper fullWidthParag" style="list-style-type:disc;">
-    <?php while( have_rows('specifications') ): the_row(); ?>
-      <li><?php the_sub_field('text'); ?></li>
-    <?php endwhile; ?>
-    </ul>
-  </section>
-</div>
-<!-- end content -->
-
+<div id="content" class="floats-in productPage akvositesProduct">
+	<?php akvo_tabs($tabs);?>
+</div>  
 <?php get_footer(); ?>
+<script type="text/javascript" src="<?php bloginfo('template_url');?>/js/tabs.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('body').find('[data-behaviour~=akvo-tabs]').akvo_tabs();
+	}(jQuery));  
+</script>	
