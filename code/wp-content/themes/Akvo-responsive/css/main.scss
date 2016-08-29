@@ -7160,6 +7160,7 @@ div[id^="inline-"] {
     }    
     .row {
         margin-bottom: 1.5em;
+        padding: 0;
         @media only screen and (max-width: $width-med) {
             margin-top: 2em;
         }
@@ -7327,7 +7328,7 @@ div[id^="inline-"] {
                 }                
             }
             @media only screen and (max-width: $width-small) {
-                width: 48%;
+                width: 47.5%;
                 margin-top: 1em;
                 margin-bottom: 1em;
                 &:nth-child(odd) {
