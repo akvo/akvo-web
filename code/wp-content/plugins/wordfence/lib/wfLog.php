@@ -179,6 +179,9 @@ class wfLog {
 			);
 	}
 	private function getCurrentUserID(){
+		if (!function_exists('get_current_user_id') || !defined('AUTH_COOKIE')) { //If pluggable.php is loaded early by some other plugin on a multisite installation, it leads to an error because AUTH_COOKIE is undefined and WP doesn't check for it first
+			return 0;
+		}
 		$id = get_current_user_id();
 		return $id ? $id : 0;
 	}
@@ -200,7 +203,7 @@ class wfLog {
 			if ($type == '404') {
 				$allowed404s = wfConfig::get('allowed404s');
 				if (is_string($allowed404s)) {
-					$allowed404s = array_filter(explode("\n", $allowed404s));
+					$allowed404s = array_filter(preg_split("/[\r\n]+/", $allowed404s));
 					$allowed404sPattern = '';
 					foreach ($allowed404s as $allowed404) {
 						$allowed404sPattern .= preg_replace('/\\\\\*/', '.*?', preg_quote($allowed404, '/')) . '|';
@@ -570,7 +573,7 @@ class wfLog {
 			$res['browser'] = false;
 			if($res['UA']){
 				$b = $browscap->getBrowser($res['UA']);
-				if($b){
+				if ($b && $b['Parent'] != 'DefaultProperties') {
 					$res['browser'] = array(
 						'browser' => $b['Browser'],
 						'version' => $b['Version'],
@@ -578,6 +581,13 @@ class wfLog {
 						'isMobile' => $b['isMobileDevice'],
 						'isCrawler' => $b['Crawler']
 						);
+				}
+				else {
+					$log = new wfLog(wfConfig::get('apiKey'), wfUtils::getWPVersion());
+					$IP = wfUtils::getIP();
+					$res['browser'] = array(
+						'isCrawler' => !(isset($_COOKIE['wordfence_verifiedHuman']) && $log->validateVerifiedHumanCookie($_COOKIE['wordfence_verifiedHuman'], $res['UA'], $IP))
+					);
 				}
 			}
 			if($res['userID']){
@@ -728,13 +738,20 @@ class wfLog {
 			$res['browser'] = false;
 			if($res['UA']){
 				$b = $browscap->getBrowser($res['UA']);
-				if($b){
+				if($b && $b['Parent'] != 'DefaultProperties'){
 					$res['browser'] = array(
 						'browser'   => !empty($b['Browser']) ? $b['Browser'] : "",
 						'version'   => !empty($b['Version']) ? $b['Version'] : "",
 						'platform'  => !empty($b['Platform']) ? $b['Platform'] : "",
 						'isMobile'  => !empty($b['isMobileDevice']) ? $b['isMobileDevice'] : "",
 						'isCrawler' => !empty($b['Crawler']) ? $b['Crawler'] : "",
+					);
+				}
+				else {
+					$log = new wfLog(wfConfig::get('apiKey'), wfUtils::getWPVersion());
+					$IP = wfUtils::getIP();
+					$res['browser'] = array(
+						'isCrawler' => !(isset($_COOKIE['wordfence_verifiedHuman']) && $log->validateVerifiedHumanCookie($_COOKIE['wordfence_verifiedHuman'], $res['UA'], $IP)) ? 'true' : ''
 					);
 				}
 			}
@@ -935,44 +952,34 @@ class wfLog {
 				$skipCountryBlocking = true;
 			}
 
-			if((! $skipCountryBlocking) && $blockedCountries && (! self::isCBLBypassCookieSet()) ){
-				if(is_user_logged_in() && (! wfConfig::get('cbl_loggedInBlocked', false)) ){ //User is logged in and we're allowing logins
-					//Do nothing
-				} else if(strpos($_SERVER['REQUEST_URI'], '/wp-login.php') !== false && (! wfConfig::get('cbl_loginFormBlocked', false))  ){ //It's the login form and we're allowing that
-					//Do nothing
-				} else if(strpos($_SERVER['REQUEST_URI'], '/wp-login.php') === false && (! wfConfig::get('cbl_restOfSiteBlocked', false))  ){ //It's the rest of the site and we're allowing that
-					//Do nothing
-				} else {
-					if($country = wfUtils::IP2Country($IP) ){
-						foreach(explode(',', $blockedCountries) as $blocked){
-							if(strtoupper($blocked) == strtoupper($country)){ //At this point we know the user has been blocked
-								if(wfConfig::get('cbl_action') == 'redir'){
-									$redirURL = wfConfig::get('cbl_redirURL');
-									$eRedirHost = wfUtils::extractHostname($redirURL);
-									$isExternalRedir = false;
-									if($eRedirHost && $eRedirHost != wfUtils::extractHostname(home_url())){ //It's an external redirect...
-										$isExternalRedir = true;
-									}
-									if( (! $isExternalRedir) && wfUtils::extractBareURI($redirURL) == $bareRequestURI){ //Is this the URI we want to redirect to, then don't block it
-										//Do nothing
-										/* Uncomment the following if page components aren't loading for the page we redirect to.
-										   Uncommenting is not recommended because it means that anyone from a blocked country
-										   can crawl your site by sending the page blocked users are redirected to as the referer for every request.
-										   But it's your call.
-										} else if(wfUtils::extractBareURI($_SERVER['HTTP_REFERER']) == $redirURL){ //If the referer the page we want to redirect to? Then this might be loading as a component so don't block.
-											//Do nothing
-										*/
-									} else {
-										$this->redirect(wfConfig::get('cbl_redirURL'));
-									}
-								} else {
-									$this->currentRequest->actionDescription = 'blocked access via country blocking';
-									$this->do503(3600, "Access from your area has been temporarily limited for security reasons");
-									wfConfig::inc('totalCountryBlocked');
-								}
-							}
-						}
+			if (!$skipCountryBlocking && $blockedCountries && !self::isCBLBypassCookieSet()) {
+				// If everything is checked, make sure this always runs.
+				if (wfConfig::get('cbl_loggedInBlocked', false) &&
+					wfConfig::get('cbl_loginFormBlocked', false) &&
+					wfConfig::get('cbl_restOfSiteBlocked', false)) {
+					$this->checkForBlockedCountry();
+				}
+				// Block logged in users.
+				if (wfConfig::get('cbl_loggedInBlocked', false) && is_user_logged_in()) {
+					$this->checkForBlockedCountry();
+				}
+				// Block the login form itself and any attempt to authenticate.
+				if (wfConfig::get('cbl_loginFormBlocked', false)) {
+					if (self::isAuthRequest()) {
+						$this->checkForBlockedCountry();
 					}
+					add_filter('authenticate', array($this, 'checkForBlockedCountry'), 1, 0);
+				}
+				// Block requests that aren't to the login page, xmlrpc.php, or a user already logged in.
+				if (wfConfig::get('cbl_restOfSiteBlocked', false) &&
+					!self::isAuthRequest() && !defined('XMLRPC_REQUEST') && !is_user_logged_in()) {
+					$this->checkForBlockedCountry();
+				}
+				// XMLRPC is inaccesible when public portion of the site and auth is disabled.
+				if (wfConfig::get('cbl_loginFormBlocked', false) &&
+					wfConfig::get('cbl_restOfSiteBlocked', false) &&
+					defined('XMLRPC_REQUEST')) {
+					$this->checkForBlockedCountry();
 				}
 			}
 		}
@@ -981,7 +988,7 @@ class wfLog {
 			$this->getDB()->queryWrite("update " . $this->blocksTable . " set lastAttempt=unix_timestamp(), blockedHits = blockedHits + 1 where IP=%s", $IPnum);
 			$now = $this->getDB()->querySingle("select unix_timestamp()");
 			$secsToGo = ($rec['blockedTime'] + wfConfig::get('blockedTime')) - $now;
-			if(wfConfig::get('other_WFNet') && strpos($_SERVER['REQUEST_URI'], '/wp-login.php') !== false){ //We're on the login page and this IP has been blocked
+			if(wfConfig::get('other_WFNet') && self::isAuthRequest()){ //It's an auth request and this IP has been blocked
 				wordfence::wfsnReportBlockedAttempt($IP, 'login');
 			}
 			$this->do503($secsToGo, $rec['reason']); 
@@ -1004,6 +1011,49 @@ class wfLog {
 		}
 		return false;
 	}
+
+	public function checkForBlockedCountry() {
+		static $hasRun;
+		if (isset($hasRun)) {
+			return;
+		}
+		$hasRun = true;
+
+		$blockedCountries = wfConfig::get('cbl_countries', false);
+		$bareRequestURI = wfUtils::extractBareURI($_SERVER['REQUEST_URI']);
+		$IP = wfUtils::getIP();
+		if($country = wfUtils::IP2Country($IP) ){
+			foreach(explode(',', $blockedCountries) as $blocked){
+				if(strtoupper($blocked) == strtoupper($country)){ //At this point we know the user has been blocked
+					if(wfConfig::get('cbl_action') == 'redir'){
+						$redirURL = wfConfig::get('cbl_redirURL');
+						$eRedirHost = wfUtils::extractHostname($redirURL);
+						$isExternalRedir = false;
+						if($eRedirHost && $eRedirHost != wfUtils::extractHostname(home_url())){ //It's an external redirect...
+							$isExternalRedir = true;
+						}
+						if( (! $isExternalRedir) && wfUtils::extractBareURI($redirURL) == $bareRequestURI){ //Is this the URI we want to redirect to, then don't block it
+							//Do nothing
+							/* Uncomment the following if page components aren't loading for the page we redirect to.
+							   Uncommenting is not recommended because it means that anyone from a blocked country
+							   can crawl your site by sending the page blocked users are redirected to as the referer for every request.
+							   But it's your call.
+							} else if(wfUtils::extractBareURI($_SERVER['HTTP_REFERER']) == $redirURL){ //If the referer the page we want to redirect to? Then this might be loading as a component so don't block.
+								//Do nothing
+							*/
+						} else {
+							$this->redirect(wfConfig::get('cbl_redirURL'));
+						}
+					} else {
+						$this->currentRequest->actionDescription = 'blocked access via country blocking';
+						wfConfig::inc('totalCountryBlocked');
+						$this->do503(3600, "Access from your area has been temporarily limited for security reasons");
+					}
+				}
+			}
+		}
+	}
+
 	private function takeBlockingAction($configVar, $reason){
 		if($this->googleSafetyCheckOK()){
 			$action = wfConfig::get($configVar . '_action');
@@ -1033,6 +1083,19 @@ class wfLog {
 			return;
 		}
 	}
+	
+	/**
+	 * Test if the current request is for wp-login.php or xmlrpc.php
+	 *
+	 * @return boolean
+	 */
+	private static function isAuthRequest() {
+		if ((strpos($_SERVER['REQUEST_URI'], '/wp-login.php') !== false)) {
+			return true;
+		}
+		return false;
+	}
+	
 	public function do503($secsToGo, $reason){
 		$this->initLogRequest();
 		$this->currentRequest->statusCode = 403;
@@ -1445,9 +1508,16 @@ class wfAdminUserMonitor {
 	public function getCurrentAdmins() {
 		require_once ABSPATH . WPINC . '/user.php';
 		if (is_multisite()) {
-			$sites = wp_get_sites(array(
-				'network_id' => null,
-			));
+			if (function_exists("get_sites")) {
+				$sites = get_sites(array(
+					'network_id' => null,
+				));
+			}
+			else {
+				$sites = wp_get_sites(array(
+					'network_id' => null,
+				));
+			}
 		} else {
 			$sites = array(array(
 				'blog_id' => get_current_blog_id(),
@@ -1457,8 +1527,9 @@ class wfAdminUserMonitor {
 		// not very efficient, but the WordPress API doesn't provide a good way to do this.
 		$admins = array();
 		foreach ($sites as $siteRow) {
+			$siteRowArray = (array) $siteRow;
 			$user_query = new WP_User_Query(array(
-				'blog_id' => $siteRow['blog_id'],
+				'blog_id' => $siteRowArray['blog_id'],
 				'role'    => 'administrator',
 			));
 			$users = $user_query->get_results();
@@ -1707,7 +1778,7 @@ class wfLiveTrafficQuery {
 		$limit = absint($this->getLimit());
 		$offset = absint($this->getOffset());
 
-		$wheres = array();
+		$wheres = array("h.action != 'logged:waf'");
 		if ($startDate) {
 			$wheres[] = $wpdb->prepare('h.ctime > %f', $startDate);
 		}

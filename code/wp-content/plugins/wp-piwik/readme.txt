@@ -2,10 +2,10 @@
 
 Contributors: Braekling
 Requires at least: 4.0
-Tested up to: 4.4.2
-Stable tag: 1.0.8
+Tested up to: 4.6.0
+Stable tag: 1.0.11
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=6046779
-Tags: statistics, stats, analytics, piwik, wpmu
+Tags: piwik, tracking, statistics, stats, analytics
 
 This plugin adds a Piwik stats site to your WordPress or WordPress multisite dashboard.
 
@@ -40,7 +40,7 @@ is equal to *[wp-piwik module="overview" title="" period="day" date="yesterday"]
 
 * Graphs powered by [jqPlot](http://www.jqplot.com/) (GPL 2.0 and MIT) and  and [jQuery Sparklines](http://omnipotent.net/jquery.sparkline/) (New BSD License).
 * All translators at the [Transifex translation community](https://www.transifex.com/projects/p/wp-piwik/).
-* Donations: Marco L., Rolf W., Tobias U., Lars K., Donna F., Kevin D., Ramos S., Thomas M., John C., Andreas G., Ben M., Myra R. I., Carlos U. R.-S., Oleg I., M. N., Daniel K., James L., Jochen K., Cyril P., Thomas K., Patrik K., Zach, Sebastian W., Peakkom, Patrik K., Kati K., the Piwik team itself, and all people flattering this.
+* Donations: Marco L., Rolf W., Tobias U., Lars K., Donna F., Kevin D., Ramos S., Thomas M., John C., Andreas G., Ben M., Myra R. I., Carlos U. R.-S., Oleg I., M. N., Daniel K., James L., Jochen K., Cyril P., Thomas K., Patrik K., Zach, Sebastian W., Peakkom, Patrik K., Kati K., Helmut O., the Piwik team itself, and all people flattering this.
 * All users who send me mails containing criticism, commendation, feature requests and bug reports - you help me to make WP-Piwik much better!
 
 Thank you all!
@@ -116,6 +116,21 @@ Add WP-Piwik to your /wp-content/plugins folder and enable it as [Network Plugin
 5. Piwik: Here you'll find your auth token.
 
 == Changelog ==
+
+= 1.0.11 =
+* Security improvements
+* Removed some division by zero warnings
+* Option to disable SSL host verification (additional to peer verification)
+* Overview widget: Do not show unique visitors row if value is not available
+* Bugfix: Post shortcode is fixed and will work again
+
+= 1.0.10 =
+* Security fix
+
+= 1.0.9 =
+* Language updates
+* Bugfix: Deprecated get_currentuserinfo() replace. Thx to the infinity, see https://github.com/braekling/WP-Piwik/pull/21
+* Bugfix: Overview widget will show proper values even if a period > 1 day is selected, see https://wordpress.org/support/topic/weird-numbers-im-wp-piwik
 
 = 1.0.8 =
 * Feature: Show "per post stats" and the "custom variable meta box" also on page and custom post edit
