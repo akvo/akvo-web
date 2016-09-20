@@ -104,7 +104,7 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu
             {
                 $this->show_msg_updated(__('Settings were successfully saved', 'all-in-one-wp-security-and-firewall'));
             }
-            else if($res == -1)
+            else
             {
                 $this->show_msg_error(__('Could not write to the .htaccess file. Please check the file permissions.', 'all-in-one-wp-security-and-firewall'));
             }
@@ -306,7 +306,7 @@ class AIOWPSecurity_Spam_Menu extends AIOWPSecurity_Admin_Menu
                                 $total_count = count($total_res);
                                 $todays_blocked_count = 0;
                                 foreach($total_res as $blocked_item){
-                                    $now = current_time('mysql');
+                                    $now = date_i18n( 'Y-m-d H:i:s' );
                                     $now_date_time = new DateTime($now);
                                     $blocked_date = new DateTime($blocked_item->blocked_date);
                                     if($blocked_date->format('Y-m-d') == $now_date_time->format('Y-m-d')) {

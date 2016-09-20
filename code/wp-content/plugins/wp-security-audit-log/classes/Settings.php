@@ -513,7 +513,7 @@ class WSAL_Settings {
     public function SetExcludedMonitoringUsers($users)
     {
         $this->_excluded_users = $users;
-        $this->_plugin->SetGlobalOption('excluded-users', implode(',', $this->_excluded_users));
+        $this->_plugin->SetGlobalOption('excluded-users', esc_html(implode(',', $this->_excluded_users)));
     }
     public function GetExcludedMonitoringUsers()
     {
@@ -529,7 +529,7 @@ class WSAL_Settings {
     protected $_excluded_roles =  array();
     public function SetExcludedMonitoringRoles($roles){
         $this->_excluded_roles = $roles;
-        $this->_plugin->SetGlobalOption('excluded-roles', implode(',', $this->_excluded_roles));
+        $this->_plugin->SetGlobalOption('excluded-roles', esc_html(implode(',', $this->_excluded_roles)));
     }
     public function GetExcludedMonitoringRoles(){
         if(empty($this->_excluded_roles)){
@@ -544,7 +544,7 @@ class WSAL_Settings {
     protected $_excluded_custom = array();
     public function SetExcludedMonitoringCustom($custom){
         $this->_excluded_custom = $custom;
-        $this->_plugin->SetGlobalOption('excluded-custom', implode(',', $this->_excluded_custom));
+        $this->_plugin->SetGlobalOption('excluded-custom', esc_html(implode(',', $this->_excluded_custom)));
     }
     public function GetExcludedMonitoringCustom(){
         if(empty($this->_excluded_custom)){
@@ -560,7 +560,7 @@ class WSAL_Settings {
     protected $_excluded_ip = array();
     public function SetExcludedMonitoringIP($ip){
         $this->_excluded_ip = $ip;
-        $this->_plugin->SetGlobalOption('excluded-ip', implode(',', $this->_excluded_ip));
+        $this->_plugin->SetGlobalOption('excluded-ip', esc_html(implode(',', $this->_excluded_ip)));
     }
     public function GetExcludedMonitoringIP(){
         if(empty($this->_excluded_ip)){
@@ -634,6 +634,22 @@ class WSAL_Settings {
 
     public function SetWPBackend($enabled){
         return $this->_plugin->SetGlobalOption('wp-backend', $enabled);
+    }
+
+    public function SetFromEmail($email_address){
+        return $this->_plugin->SetGlobalOption('from-email', trim($email_address));
+    }
+
+    public function GetFromEmail(){
+        return $this->_plugin->GetGlobalOption('from-email');
+    }
+
+    public function SetDisplayName($display_name){
+        return $this->_plugin->SetGlobalOption('display-name', trim($display_name));
+    }
+
+    public function GetDisplayName(){
+        return $this->_plugin->GetGlobalOption('display-name');
     }
     // </editor-fold>
 }

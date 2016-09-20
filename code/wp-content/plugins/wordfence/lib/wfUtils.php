@@ -38,6 +38,26 @@ class wfUtils {
 			}
 		}
 	}
+	public static function makeDuration($secs) {
+		$months = floor($secs / (86400 * 30));
+		$days = floor($secs / 86400);
+		$hours = floor($secs / 3600);
+		$minutes = floor($secs / 60);
+		if($months) {
+			$days -= $months * 30;
+			return self::pluralize($months, 'month', $days, 'day');
+		} else if($days) {
+			$hours -= $days * 24;
+			return self::pluralize($days, 'day', $hours, 'hour');
+		} else if($hours) {
+			$minutes -= $hours * 60;
+			return self::pluralize($hours, 'hour', $minutes, 'minute');
+		} else if($minutes) {
+			return self::pluralize($minutes, 'minute');
+		} else {
+			return self::pluralize($secs, 'second');
+		}
+	}
 	public static function pluralize($m1, $t1, $m2 = false, $t2 = false) {
 		if($m1 != 1) {
 			$t1 = $t1 . 's';
@@ -348,7 +368,7 @@ class wfUtils {
 		if(isset($_COOKIE)){
 			if(is_array($_COOKIE)){
 				foreach($_COOKIE as $key => $val){
-					if(strpos($key, 'wordpress_logged_in') == 0){
+					if(strpos($key, 'wordpress_logged_in') === 0){
 						return true;
 					}
 				}
@@ -634,14 +654,17 @@ class wfUtils {
 	public static function isValidIP($IP){
 		return filter_var($IP, FILTER_VALIDATE_IP) !== false;
 	}
-	public static function getRequestedURL(){
-		if(isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST']){
+	public static function getRequestedURL() {
+		if (isset($_SERVER['HTTP_HOST']) && $_SERVER['HTTP_HOST']) {
 			$host = $_SERVER['HTTP_HOST'];
-		} else {
+		} else if (isset($_SERVER['SERVER_NAME']) && $_SERVER['SERVER_NAME']) {
 			$host = $_SERVER['SERVER_NAME'];
 		}
+		else {
+			return null;
+		}
 		$prefix = 'http';
-		if( isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] ){
+		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS']) {
 			$prefix = 'https';
 		}
 		return $prefix . '://' . $host . $_SERVER['REQUEST_URI'];
@@ -1008,10 +1031,11 @@ class wfUtils {
 		if(! (function_exists('geoip_open') && function_exists('geoip_country_code_by_addr') && function_exists('geoip_country_code_by_addr_v6'))){
 			require_once('wfGeoIP.php');
 		}
-		$gi = geoip_open(dirname(__FILE__) . "/GeoIP.dat",GEOIP_STANDARD);
 		if (filter_var($IP, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false) {
+			$gi = geoip_open(dirname(__FILE__) . "/GeoIPv6.dat", GEOIP_STANDARD);
 			$country = geoip_country_code_by_addr_v6($gi, $IP);
 		} else {
+			$gi = geoip_open(dirname(__FILE__) . "/GeoIP.dat", GEOIP_STANDARD);
 			$country = geoip_country_code_by_addr($gi, $IP);
 		}
 		geoip_close($gi);
@@ -1161,7 +1185,7 @@ class wfUtils {
 			return gethostbynamel($host);
 		}
 
-		$ips = array_merge((array) dns_get_record($host, DNS_AAAA), (array) dns_get_record($host, DNS_A));
+		$ips = array_merge((array) @dns_get_record($host, DNS_AAAA), (array) @dns_get_record($host, DNS_A));
 		$return = array();
 
 		foreach ($ips as $record) {
@@ -1271,7 +1295,6 @@ class wfUtils {
 		$keys[$index] = $newKey;
 		return array_combine($keys, array_values($array));
 	}
-
 }
 
 // GeoIP lib uses these as well
