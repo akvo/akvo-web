@@ -61,4 +61,79 @@
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF);
 }
 
+/* 
+    Enforce our styles over any theme styling
+*/
+#colorbox, #colorbox:before, #colorbox:after {
+	-webkit-box-sizing: content-box;
+	-moz-box-sizing: content-box;
+	box-sizing: content-box;
+}
 
+#colorbox h1, #colorbox h2, #colorbox h3, #colorbox h4, #colorbox h5, #colorbox h6 {
+	display: block;
+	font-weight: 600
+}
+
+#colorbox h1 {
+	font-size: 2em;
+	margin: .67em 0
+}
+
+#colorbox h2, #colorbox h3 {
+	font-size: 1.3em;
+	margin: 1em 0
+}
+
+#colorbox h1, #colorbox h2, #colorbox h3 {
+	color: #23282d
+}
+
+#colorbox p {
+	font-size: 13px;
+	line-height: 1.5;
+	margin: 1em 0
+}
+
+#colorbox .textright {
+	text-align: right;
+}
+
+#colorbox .button, #colorbox .button-primary, #colorbox .button-secondary {
+	display: inline-block;
+	text-decoration: none;
+	font-size: 13px;
+	line-height: 26px;
+	height: 28px;
+	margin: 0;
+	padding: 0 10px 1px;
+	cursor: pointer;
+	border-width: 1px;
+	border-style: solid;
+	-webkit-appearance: none;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	white-space: nowrap;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+#colorbox .button, #colorbox .button-secondary {
+	color: #555;
+	border-color: #ccc;
+	background: #f7f7f7;
+	-webkit-box-shadow: 0 1px 0 #ccc;
+	box-shadow: 0 1px 0 #ccc;
+	vertical-align: top
+}
+
+#colorbox p .button {
+	vertical-align: baseline
+}
+
+#colorbox .button-secondary:focus, #colorbox .button-secondary:hover, #colorbox .button.focus, #colorbox .button.hover, #colorbox .button:focus, #colorbox .button:hover {
+	background: #fafafa;
+	border-color: #999;
+	color: #23282d
+}

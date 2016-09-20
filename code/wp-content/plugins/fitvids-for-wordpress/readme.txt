@@ -1,9 +1,9 @@
 === FitVids for WordPress ===
 Contributors: kevindees
 Tags: videos, fitvids, responsive
-Requires at least: 3.2
-Tested up to: 3.4
-Stable Tag: 2.1
+Requires at least: 3.9
+Tested up to: 4.6
+Stable Tag: 3.0.3
 
 This plugin makes videos responsive using the FitVids jQuery plugin on WordPress.
 
@@ -11,19 +11,33 @@ This plugin makes videos responsive using the FitVids jQuery plugin on WordPress
 
 This plugin makes videos responsive using the FitVids jQuery plugin on WordPress.
 
-The options page is located on the dashboard menu under Appearance as "FitVids". From there you can add your selector and turn jQuery on and off.
+The options page is located on the dashboard menu under Appearance as "FitVids". FitVids always works with YouTube, Vimeo, Blip.tv, Viddler, and Kickstarter. Use simple jQuery selectors, on the admin page, like `body`, `article, aside` and `.post` to customize what videos become responsive.
+
+You can set custom selectors to include videos from any provider. You are not limited to the list that comes with FitVids by default.
 
 == Installation ==
 
 Upload the fitvids-for-wordpress plugin to your blog, Activate it!
 
-1, 2: You're done!
-
 == Screenshots ==
 
-1. screenshot-1.png
+1. If you need help understanding how FitVids works click the help tab.
 
 == Changelog ==
+
+= 3.0.3 =
+* Fix activation bug
+
+= 3.0.3 =
+* Add help tab
+* Make default selector visible
+
+= 3.0.1 =
+* Update FitVids Version
+* New admin settings page
+* Add FitVids ignore
+* Better security
+* Update selector input configuration. You might need to update your custom settings.
 
 = 2.1 =
 

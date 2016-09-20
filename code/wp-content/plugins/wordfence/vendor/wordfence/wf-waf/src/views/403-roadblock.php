@@ -3,6 +3,13 @@
 /** @var wfWAF $waf */
 /** @var wfWAFView $this */
 
+/*
+ * IMPORTANT:
+ * 
+ * If the form variables below change name or format, admin.ajaxWatcher.js in the main plugin also needs changed. It
+ * processes these to generate its whitelist button.
+ */
+
 $method = wfWAFUtils::strtolower($waf->getRequest()->getMethod());
 $urlParamsToWhitelist = array();
 foreach ($waf->getFailedRules() as $paramKey => $categories) {
