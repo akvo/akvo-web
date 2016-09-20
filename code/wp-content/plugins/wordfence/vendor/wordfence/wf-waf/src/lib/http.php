@@ -290,7 +290,7 @@ class wfWAFHTTPTransportCurl extends wfWAFHTTPTransport {
 		$url = $request->getUrl();
 		if ($queryString = $request->getQueryString()) {
 			if (is_array($queryString)) {
-				$queryString = http_build_query($queryString);
+				$queryString = http_build_query($queryString, null, '&');
 			}
 			$url .= (wfWAFUtils::strpos($url, '?') !== false ? '&' : '?') . $queryString;
 		}
@@ -325,7 +325,9 @@ class wfWAFHTTPTransportCurl extends wfWAFHTTPTransport {
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
 		curl_setopt($ch, CURLOPT_TIMEOUT, 5);
 		curl_setopt($ch, CURLOPT_HEADER, 1);
+		curl_setopt($ch, CURLOPT_CAINFO, WFWAF_PATH . 'cacert.pem'); //On some systems curl uses an outdated root certificate chain file
 		$curlResponse = curl_exec($ch);
+		
 		if ($curlResponse !== false) {
 			$headerSize = curl_getinfo($ch, CURLINFO_HEADER_SIZE);
 			$header = wfWAFUtils::substr($curlResponse, 0, $headerSize);
@@ -354,7 +356,7 @@ class wfWAFHTTPTransportStreams extends wfWAFHTTPTransport {
 		$url = $request->getUrl();
 		if ($queryString = $request->getQueryString()) {
 			if (is_array($queryString)) {
-				$queryString = http_build_query($queryString);
+				$queryString = http_build_query($queryString, null, '&');
 			}
 			$url .= (wfWAFUtils::strpos($url, '?') !== false ? '&' : '?') . $queryString;
 		}

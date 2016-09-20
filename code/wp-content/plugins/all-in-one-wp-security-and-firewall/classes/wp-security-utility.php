@@ -7,6 +7,16 @@ class AIOWPSecurity_Utility
         //NOP
     }
 
+    /**
+     * Explode $string with $delimiter, trim all lines and filter out empty ones.
+     * @param string $string
+     * @param string $delimiter
+     * @return array
+     */
+    static function explode_trim_filter_empty($string, $delimiter = PHP_EOL) {
+        return array_filter(array_map('trim', explode($delimiter, $string)), 'strlen');
+    }
+
     static function get_current_page_url()
     {
         $pageURL = 'http';
@@ -58,15 +68,13 @@ class AIOWPSecurity_Utility
         //If multisite 
         if (AIOWPSecurity_Utility::is_multisite_install()) {
             $blog_id = get_current_blog_id();
-            $admin_users = get_users('blog_id=' . $blog_id . 'orderby=login&role=administrator');
-            $acct_name_exists = false;
+            $admin_users = get_users('blog_id=' . $blog_id . '&orderby=login&role=administrator');
             foreach ($admin_users as $user) {
                 if ($user->user_login == $username) {
-                    $acct_name_exists = true;
-                    break;
+                    return true;
                 }
             }
-            return $acct_name_exists;
+            return false;
         }
 
         //check users table
@@ -74,20 +82,18 @@ class AIOWPSecurity_Utility
         $sql_1 = $wpdb->prepare("SELECT user_login FROM $wpdb->users WHERE user_login=%s", $sanitized_username);
         $user_login = $wpdb->get_var($sql_1);
         if ($user_login == $sanitized_username) {
-            $users_table_value_exists = true;
+            return true;
         } else {
             //make sure that the sanitized username is an integer before comparing it to the users table's ID column
-            $sanitized_username_is_an_integer = (1 === preg_match('/^\d+$/', $sanitized_username)) ? true : false;
+            $sanitized_username_is_an_integer = (1 === preg_match('/^\d+$/', $sanitized_username));
             if ($sanitized_username_is_an_integer) {
                 $sql_2 = $wpdb->prepare("SELECT ID FROM $wpdb->users WHERE ID=%d", intval($sanitized_username));
                 $userid = $wpdb->get_var($sql_2);
-                $users_table_value_exists = ($userid == $sanitized_username) ? true : false;
+                return ($userid == $sanitized_username);
             } else {
-                $users_table_value_exists = false;
+                return false;
             }
         }
-        return $users_table_value_exists;
-
     }
 
     /*
@@ -163,11 +169,7 @@ class AIOWPSecurity_Utility
 
     static function is_multisite_install()
     {
-        if (function_exists('is_multisite') && is_multisite()) {
-            return true;
-        } else {
-            return false;
-        }
+        return function_exists('is_multisite') && is_multisite();
     }
 
     //This is a general yellow box message for when we want to suppress a feature's config items because site is subsite of multi-site
@@ -305,9 +307,7 @@ class AIOWPSecurity_Utility
 
         //Some initialising
         $url = '';
-        $ip_or_host = '';
         $referer_info = '';
-        $event_data = '';
 
         $events_table_name = AIOWPSEC_TBL_EVENTS;
 
@@ -328,11 +328,12 @@ class AIOWPSecurity_Utility
             $referer_info = isset($_SERVER['HTTP_REFERER']) ? esc_attr($_SERVER['HTTP_REFERER']) : '';
         }
 
+        $current_time = date_i18n( 'Y-m-d H:i:s' );
         $data = array(
             'event_type' => $event_type,
             'username' => $username,
             'user_id' => $user_id,
-            'event_date' => current_time('mysql'),
+            'event_date' => $current_time,
             'ip_or_host' => $ip_or_host,
             'referer_info' => $referer_info,
             'url' => $url,
@@ -428,7 +429,7 @@ class AIOWPSecurity_Utility
      */
     static function get_blog_ids()
     {
-        global $wpdb, $aio_wp_security;
+        global $wpdb;
         if (AIOWPSecurity_Utility::is_multisite_install()) {
             global $wpdb;
             $blog_ids = $wpdb->get_col("SELECT blog_id FROM " . $wpdb->prefix . "blogs");
@@ -491,7 +492,7 @@ class AIOWPSecurity_Utility
     {
         $keys = array_keys($valid_values);
         $keys = array_map('strtolower', $keys);
-        if (in_array($to_check, $keys)) {
+        if (in_array(strtolower($to_check), $keys)) {
             return $to_check;
         }
         return reset($keys);//Return he first element from the valid values

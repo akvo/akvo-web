@@ -72,7 +72,8 @@ class AIOWPSecurity_Configure_Settings
 
         //Firewall features
         $aio_wp_security->configs->set_value('aiowps_enable_basic_firewall','');//Checkbox
-        $aio_wp_security->configs->set_value('aiowps_enable_pingback_firewall','');//Checkbox
+        $aio_wp_security->configs->set_value('aiowps_enable_pingback_firewall','');//Checkbox - blocks all access to XMLRPC
+        $aio_wp_security->configs->set_value('aiowps_disable_xmlrpc_pingback_methods','');//Checkbox - Disables only pingback methods in XMLRPC functionality
         $aio_wp_security->configs->set_value('aiowps_block_debug_log_file_access','');//Checkbox
         $aio_wp_security->configs->set_value('aiowps_disable_index_views','');//Checkbox
         $aio_wp_security->configs->set_value('aiowps_disable_trace_and_track','');//Checkbox
@@ -203,8 +204,9 @@ class AIOWPSecurity_Configure_Settings
 
         //Firewall features
         $aio_wp_security->configs->add_value('aiowps_enable_basic_firewall','');//Checkbox
-        $aio_wp_security->configs->add_value('aiowps_enable_pingback_firewall','');//Checkbox
-        $aio_wp_security->configs->set_value('aiowps_block_debug_log_file_access','');//Checkbox
+        $aio_wp_security->configs->add_value('aiowps_enable_pingback_firewall','');//Checkbox - blocks all access to XMLRPC
+        $aio_wp_security->configs->add_value('aiowps_disable_xmlrpc_pingback_methods','');//Checkbox - Disables only pingback methods in XMLRPC functionality
+        $aio_wp_security->configs->add_value('aiowps_block_debug_log_file_access','');//Checkbox
         $aio_wp_security->configs->add_value('aiowps_disable_index_views','');//Checkbox
         $aio_wp_security->configs->add_value('aiowps_disable_trace_and_track','');//Checkbox
         $aio_wp_security->configs->add_value('aiowps_forbid_proxy_comments','');//Checkbox
@@ -276,9 +278,9 @@ class AIOWPSecurity_Configure_Settings
         
         //Refresh the .htaccess file based on the new settings
         $res = AIOWPSecurity_Utility_Htaccess::write_to_htaccess();
-        if($res == -1)
+        if( !$res )
         {
-            $aio_wp_security->debug_logger->log_debug("AIOWPSecurity_Configure_Settings::turn_off_all_firewall_rules() - Could not write to the .htaccess file. Please check the file permissions.",4);
+            $aio_wp_security->debug_logger->log_debug(__METHOD__ . " - Could not write to the .htaccess file. Please check the file permissions.",4);
         }
     }
     
@@ -289,7 +291,8 @@ class AIOWPSecurity_Configure_Settings
         $aio_wp_security->configs->set_value('aiowps_enable_whitelisting','');//Checkbox
         
         $aio_wp_security->configs->set_value('aiowps_enable_basic_firewall','');//Checkbox
-        $aio_wp_security->configs->set_value('aiowps_enable_pingback_firewall','');//Checkbox
+        $aio_wp_security->configs->set_value('aiowps_enable_pingback_firewall','');//Checkbox - blocks all access to XMLRPC
+        $aio_wp_security->configs->set_value('aiowps_disable_xmlrpc_pingback_methods','');//Checkbox - Disables only pingback methods in XMLRPC functionality
         $aio_wp_security->configs->set_value('aiowps_block_debug_log_file_access','');//Checkbox
         $aio_wp_security->configs->set_value('aiowps_disable_index_views','');//Checkbox
         $aio_wp_security->configs->set_value('aiowps_disable_trace_and_track','');//Checkbox
@@ -318,9 +321,9 @@ class AIOWPSecurity_Configure_Settings
         //Refresh the .htaccess file based on the new settings
         $res = AIOWPSecurity_Utility_Htaccess::write_to_htaccess();
 
-        if($res == -1)
+        if( !$res )
         {
-            $aio_wp_security->debug_logger->log_debug("AIOWPSecurity_Configure_Settings::turn_off_all_firewall_rules() - Could not write to the .htaccess file. Please check the file permissions.",4);
+            $aio_wp_security->debug_logger->log_debug(__METHOD__ . " - Could not write to the .htaccess file. Please check the file permissions.",4);
         }
     }
 

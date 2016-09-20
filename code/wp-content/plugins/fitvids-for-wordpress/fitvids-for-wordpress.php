@@ -3,147 +3,169 @@
 Plugin Name: FitVids for WordPress
 Plugin URI: http://wordpress.org/extend/plugins/fitvids-for-wordpress/
 Description: This plugin makes videos responsive using the FitVids jQuery plugin on WordPress.
-Version: 2.1
+Version: 3.0.3
 Tags: videos, fitvids, responsive
-Author URI: http://kevindees.cc
-
-/--------------------------------------------------------------------\
-|                                                                    |
-| License: GPL                                                       |
-|                                                                    |
-| FitVids for WordPress - makes videos responsive.           |
-| Copyright (C) 2012, Kevin Dees,                                    |
-| http://kevindees.cc                                               |
-| All rights reserved.                                               |
-|                                                                    |
-| This program is free software; you can redistribute it and/or      |
-| modify it under the terms of the GNU General Public License        |
-| as published by the Free Software Foundation; either version 2     |
-| of the License, or (at your option) any later version.             |
-|                                                                    |
-| This program is distributed in the hope that it will be useful,    |
-| but WITHOUT ANY WARRANTY; without even the implied warranty of     |
-| MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the      |
-| GNU General Public License for more details.                       |
-|                                                                    |
-| You should have received a copy of the GNU General Public License  |
-| along with this program; if not, write to the                      |
-| Free Software Foundation, Inc.                                     |
-| 51 Franklin Street, Fifth Floor                                    |
-| Boston, MA  02110-1301, USA                                        |   
-|                                                                    |
-\--------------------------------------------------------------------/
+Author URI: http://php-built.com
 */
 
-// protect yourself
-if ( !function_exists( 'add_action') ) {
+if ( ! function_exists('add_action')) {
 	echo "Hi there! Nice try. Come again.";
 	exit;
 }
 
-class fitvids_wp {
-	// when object is created
-	function __construct() {
-		add_action('admin_menu', array($this, 'menu')); // add item to menu
-		add_action('wp_enqueue_scripts', array($this, 'fitvids_scripts')); // add fit vids to site
+class FitVidsWP
+{
+
+	public $path = null;
+	public $message = '';
+	public $request = array();
+	public $activating = false;
+	public $jquery_version = '1.12.4';
+	public $transient = 'fitvids-admin-notice';
+	public $id = 'fitvids-wp';
+
+	function __construct()
+	{
+		$this->path = plugin_dir_path(__FILE__);
+		$this->setup_request();
+		register_activation_hook( __FILE__, array($this, 'activation') );
+		add_action('admin_notices',  array($this, 'activation_notice') );
+		add_action('admin_menu', array($this, 'menu') );
+		add_action('wp_enqueue_scripts', array($this, 'scripts') );
 	}
 
-	// make menu
-	function menu() {
-		add_submenu_page('themes.php', 'FitVids for WordPress', 'FitVids', 'switch_themes', __FILE__,array($this, 'settings_page'), '', '');
+	function activation() {
+		$this->activating = true;
+		set_transient( $this->transient , true );
 	}
 
-	// create page for output and input
-	function settings_page() {
+	function activation_notice() {
+		if( get_transient( $this->transient ) && ! $this->activating ) {
+			?>
+			<div class="notice notice-warning is-dismissible">
+				<p>FitVids wants you to <a href="<?php menu_page_url($this->id, true); ?>">check your FitVids settings</a> to validate everything is correct.</p>
+			</div>
+			<?php
+			delete_transient( $this->transient );
+		}
+	}
+
+	function menu()
+	{
+		$page = add_submenu_page('themes.php', 'FitVids for WordPress', 'FitVids', 'switch_themes', $this->id, array($this, 'settings_page'));
+		add_action('load-' . $page, array($this, 'help_tab') );
+	}
+
+	function settings_page()
+	{
+		$post = $this->request['post'];
+
+		if (isset($post['submit']) && check_admin_referer('fitvids_action', 'fitvids_ref')) {
+			$this->save_option('fitvids_wp_jq');
+			$this->save_option('fitvids_wp_selector');
+			$this->save_option('fitvids_wp_custom_selector');
+			$this->save_option('fitvids_wp_ignore_selector');
+
+			if ( $post['fitvids_wp_jq'] == 'true' ) {
+				$this->message .= 'You have enabled Google CDN jQuery for your theme.';
+			}
+			$this->message = '<div id="message" class="updated notice is-dismissible"><p>Yay, FitVids is updated! ' . $this->message . '</p></div>';
+		}
+
+		require( $this->path . '/admin.php' );
+	}
+
+	function help_tab() {
+		$screen = get_current_screen();
+		$screen->add_help_tab( array(
+			'id' => $this->id,
+			'title' => 'Using FitVids',
+			'content' => '',
+			'callback' => array( $this, 'help_content')
+		) );
+	}
+
+	function help_content() {
+		require( $this->path . '/help.php' );
+	}
+
+	function scripts()
+	{
+		if ( get_option('fitvids_wp_jq') == 'true') {
+			$v = $this->jquery_version;
+			wp_deregister_script('jquery');
+			wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/'.$v.'/jquery.min.js', array(), $v );
+			wp_enqueue_script('jquery');
+		}
+
+		wp_register_script('fitvids', plugins_url('/jquery.fitvids.js', __FILE__), array('jquery'), '1.1', true);
+		wp_enqueue_script('fitvids');
+		add_action('wp_print_footer_scripts', array($this, 'generate_inline_js') );
+	}
+
+	function generate_inline_js()
+	{
+		$selector = get_option('fitvids_wp_selector');
+		$ignore = $this->prepare_field( get_option('fitvids_wp_ignore_selector') );
+		$custom = $this->prepare_field( get_option('fitvids_wp_custom_selector') );
+		$selector = $this->prepare_field( $selector ? $selector : 'body' );
+		$options = array();
+		$settings = '';
+
+		if ($custom) {
+			$options[] = 'customSelector: "' . $custom . '"';
+		}
+
+		if( $ignore ) {
+			$options[] = 'ignore: "' . $ignore . '"';
+		}
+
+		if($options) {
+			$settings = '{' . implode(',', $options) . '}';
+		}
 		?>
-	    <div class="icon32" id="icon-themes"><br></div>
-	    <div id="fitvids-wp-page" class="wrap">
-	    
-	    <h2>FitVids for WordPress</h2>
-	    
-	    <?php
-	    // $_POST needs to be sanitized by version 1.0
-	   	if( isset($_POST['submit']) && check_admin_referer('fitvids_action','fitvids_ref') ) {
-			  $fitvids_wp_message = '';
+		<script type="text/javascript">
+		jQuery(document).ready(function () {
+			jQuery('<?php echo $selector; ?>').fitVids(<?php echo $settings; ?>);
+		});
+		</script><?php
+	}
 
-	   		update_option('fitvids_wp_jq', addslashes($_POST['fitvids_wp_jq']));
-	   		update_option('fitvids_wp_selector', esc_js(trim($_POST['fitvids_wp_selector'])));
-			  update_option('fitvids_wp_custom_selector',  esc_js(trim($_POST['fitvids_wp_custom_selector'])));
-	   		
-	   		if($_POST['fitvids_wp_jq'] != '') { $fitvids_wp_message .= 'You have enabled jQuery for your theme.'; }
-	   		echo '<div id="message" class="updated below-h2"><p>FitVids is updated. ', $fitvids_wp_message ,'</p></div>';
-	   	}
-	    ?>
-	    
-	    <form method="post" action="<?php echo esc_attr($_SERVER["REQUEST_URI"]); ?>">
-		  <?php
-		  wp_nonce_field('fitvids_action','fitvids_ref');
-		  $checked = '';
-	    if(get_option('fitvids_wp_jq') == 'true') { $checked = 'checked="checked"'; }
-	    ?>
+	function prepare_field( $value, $sanitize = true ) {
 
-      <table class="form-table">
-	    <tbody>
-	    <tr>
-		  <td>
+		if($value) {
+			$value = trim( $value );
 
-		    <h3 style="font-weight: bold;">jQuery</h3>
-				<p>If you are already running jQuery 1.7+ you will not need to check the box. Note that some plugins require different versions of jQuery and may have conflicts with FitVids.</p>
-			  <label><input 	id="fitvids_wp_jq"
-			          value="true"
-			          name="fitvids_wp_jq"
-			          type="checkbox"
-			          <?php if(isset($checked)) echo $checked; ?>
-			      > Add jQuery 1.7.2 from Google CDN</label>
+			if($sanitize) {
+				$sanitized = wp_strip_all_tags( preg_replace('/"/', "'", $value), array() );
+				return $sanitized;
+			}
+		}
 
-		  </td>
-	    </tr>
-	    <tr>
-		  <td>
+		return $value;
+	}
 
-			<h3 style="font-weight: bold;"><label for="fitvids_wp_selector">Enter jQuery Selector</label></h3>
-			<p>Add a CSS selector for FitVids to work. <a href="http://www.w3schools.com/jquery/jquery_selectors.asp" target="_blank"> Need help?</a></p>
-			<p><em>jQuery(" <input id="fitvids_wp_selector" value="<?php echo get_option('fitvids_wp_selector'); ?>" name="fitvids_wp_selector" type="text"> ").fitVids();</em></p>
+	function setup_request()
+	{
+		$this->request['post'] = ! empty($_POST) ? array_map('wp_unslash', $_POST ) : array();
+		$this->request['get'] = ! empty($_GET) ? array_map('wp_unslash', $_GET ) : array();
+		$this->request['uri'] = $_SERVER['REQUEST_URI'];
+	}
 
-			<h3 style="font-weight: bold;"><label for="fitvids_wp_custom_selector">Enter FitVids Custom Selector</label></h3>
-			<p>Add a custom selector for FitVids if you are using videos that are not supported by default. <a href="https://github.com/davatron5000/FitVids.js#add-your-own-video-vendor" target="_blank"> Need help?</a></p>
-			<p><em>jQuery().fitVids({ customSelector: " <input id="fitvids_wp_custom_selector" value="<?php echo stripslashes(get_option('fitvids_wp_custom_selector')); ?>" name="fitvids_wp_custom_selector" type="text"> "});</em></p>
+	function print_cdn_field_checked() {
+		if (get_option('fitvids_wp_jq') == 'true') {
+			echo 'checked="checked"';
+		}
+	}
 
+	function save_option( $field ) {
+		if( !empty($this->request['post'][$field]) ) {
+			update_option($field, $this->prepare_field($this->request['post'][$field]) );
+		} else {
+			delete_option($field);
+		}
+	}
 
-			<p class="submit"><input type="submit" name="submit" class="button-primary" value="Save Changes" /></p>
+}
 
-		  </td>
-	    </tr>
-	    </tbody>
-      </table>
-	    </form>
-	    
-	    </div>
-	    
-	    <?php }
-    
-    // add FitVids to site
-    function fitvids_scripts() {
-    	if(get_option('fitvids_wp_jq') == 'true') {
-    	wp_deregister_script( 'jquery' );
-			wp_register_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js', '1.0');
-			wp_enqueue_script( 'jquery' );
-    	}
-    	
-    	// add fitvids
-    	wp_register_script( 'fitvids', plugins_url('/jquery.fitvids.js', __FILE__), array('jquery'), '1.0', true);    	
-    	wp_enqueue_script( 'fitvids');
-    	add_action('wp_print_footer_scripts', array($this, 'add_fitthem'));
-    } // end fitvids_scripts
-    
-    // slecetor script
-    function add_fitthem() { ?>
-    	<script type="text/javascript">
-    	jQuery(document).ready(function() {
-    		jQuery('<?php echo get_option('fitvids_wp_selector'); ?>').fitVids({ customSelector: "<?php echo stripslashes(get_option('fitvids_wp_custom_selector')); ?>"});
-    	});
-    	</script><?php
-    }    
-} // end fitvids_wp obj
-
-new fitvids_wp();
+new FitVidsWP();
