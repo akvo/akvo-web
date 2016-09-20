@@ -52,6 +52,10 @@ class WSAL_Views_Settings extends WSAL_AbstractView
         $this->_plugin->settings->SetPruningDate($_REQUEST['PruningDate']);
         $this->_plugin->settings->SetPruningLimitEnabled($_REQUEST['PruneBy'] == 'limit');
         $this->_plugin->settings->SetPruningLimit($_REQUEST['PruningLimit']);
+
+        $this->_plugin->settings->SetFromEmail($_REQUEST['FromEmail']);
+        $this->_plugin->settings->SetDisplayName($_REQUEST['DisplayName']);
+
         $this->_plugin->settings->SetWidgetsEnabled($_REQUEST['EnableDashboardWidgets']);
         $this->_plugin->settings->SetAllowedPluginViewers(isset($_REQUEST['Viewers']) ? $_REQUEST['Viewers'] : array());
         $this->_plugin->settings->SetAllowedPluginEditors(isset($_REQUEST['Editors']) ? $_REQUEST['Editors'] : array());
@@ -150,15 +154,6 @@ class WSAL_Views_Settings extends WSAL_AbstractView
             <?php wp_nonce_field('wsal-settings'); ?>
             
             <div id="audit-log-adverts">
-                <a href="http://www.wpsecurityauditlog.com/extensions/wordpress-email-notifications-add-on/?utm_source=plugin&utm_medium=settingspage&utm_campaign=notifications">
-                    <img src="<?php echo $this->_plugin->GetBaseUrl(); ?>/img/notifications_250x150.gif" width="250" height="150" alt=""/>
-                </a>
-                <a href="http://www.wpsecurityauditlog.com/extensions/search-add-on-for-wordpress-security-audit-log/?utm_source=plugin&utm_medium=settingspage&utm_campaign=search">
-                    <img src="<?php echo $this->_plugin->GetBaseUrl(); ?>/img/search_250x150.gif" width="250" height="150" alt=""/>
-                </a>
-                <a href="http://www.wpsecurityauditlog.com/extensions/compliance-reports-add-on-for-wordpress/?utm_source=plugin&utm_medium=settingspage&utm_campaign=reports">
-                    <img src="<?php echo $this->_plugin->GetBaseUrl(); ?>/img/reporting_250x150.gif" width="250" height="150" alt=""/>
-                </a>
             </div>
             <div class="nav-tabs">
                 <table class="form-table wsal-tab widefat" id="tab-general">
@@ -208,6 +203,26 @@ class WSAL_Views_Settings extends WSAL_AbstractView
                                             '<a href="' . admin_url('admin-ajax.php?action=AjaxRunCleanup') . '">' . __('Run Manually', 'wp-security-audit-log') . '</a>'
                                         );
                                 ?></p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><label for="FromEmail"><?php _e('From Email & Name', 'wp-security-audit-log'); ?></label></th>
+                            <td>
+                                <fieldset>
+                                    <label for="FromEmail"><?php _e('Email Address', 'wp-security-audit-log'); ?></label>
+                                    <input type="email" id="FromEmail" name="FromEmail" value="<?php echo esc_attr($this->_plugin->settings->GetFromEmail()); ?>" />
+                                    &nbsp;
+                                    <label for="DisplayName"><?php _e('Display Name', 'wp-security-audit-log'); ?></label>
+                                    <input type="text" id="DisplayName" name="DisplayName" value="<?php echo esc_attr($this->_plugin->settings->GetDisplayName()); ?>" />
+                                </fieldset>
+                                <p class="description">
+                                    <?php
+                                        echo sprintf(
+                                            __('These email address and display name will be used as From details in the emails sent by the %s . Please ensure the mail server can relay emails with the domain of the specified email address.', 'wp-security-audit-log'),
+                                            '<a target="_blank" href="https://www.wpsecurityauditlog.com/plugin-extensions/">' . __('(premium add-ons)', 'wp-security-audit-log') . '</a>'
+                                        );
+                                    ?>
+                                </p>
                             </td>
                         </tr>
                         <tr>
@@ -527,7 +542,8 @@ viewer though the plugin will still record such information in the database.', '
                             <th><h2>Custom Fields</h2></th>
                         </tr>
                         <tr>
-                            <td colspan="2">Any of the custom fields listed below will be excluded from monitoring. This means that if they are changed or updated the plugin will not log such activity.</td>
+                            <td colspan="2">All of the custom fields listed below will be excluded from monitoring. This means that if they are changed or updated the plugin will not log such activity.<br>
+                            You can use the * wildcard to exclude more than one Custom Field. For example to exclude all the Custom Fields that start with wp123 specify wp123*.</td>
                         </tr>
                         <tr>
                             <th><label for="CustomQueryBox"><?php _e('Excluded Custom Fields', 'wp-security-audit-log'); ?></label></th>

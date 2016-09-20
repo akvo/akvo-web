@@ -86,6 +86,10 @@ class wfDB {
 		$rec = $this->querySingleRec("show variables like 'max_allowed_packet'");
 		return $rec['Value'];
 	}
+	public function getMaxLongDataSizeBytes() {
+		$rec = $this->querySingleRec("show variables like 'max_long_data_size'");
+		return $rec['Value'];
+	}
 	public function prefix(){
 		global $wpdb;
 		return $wpdb->base_prefix;

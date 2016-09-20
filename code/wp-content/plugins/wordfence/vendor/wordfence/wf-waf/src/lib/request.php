@@ -3,8 +3,12 @@
 interface wfWAFRequestInterface {
 
 	public function getBody();
+	
+	public function getMd5Body();
 
 	public function getQueryString();
+	
+	public function getMd5QueryString();
 
 	public function getHeaders();
 
@@ -55,6 +59,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 
 		$request->setAuth(array());
 		$request->setBody(array());
+		$request->setMd5Body(array());
 		$request->setCookies(array());
 		$request->setFileNames(array());
 		$request->setFiles(array());
@@ -65,6 +70,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 		$request->setPath('');
 		$request->setProtocol('');
 		$request->setQueryString(array());
+		$request->setMd5QueryString(array());
 		$request->setTimestamp('');
 		$request->setURI('');
 
@@ -112,13 +118,9 @@ class wfWAFRequest implements wfWAFRequestInterface {
 
 				case 'cookie':
 					$cookieArray = array();
-					$cookies = explode(';', $headerValue);
-					foreach ($cookies as $cookie) {
-						if (wfWAFUtils::strpos($cookie, '=') !== false) {
-							list($cookieName, $cookieValue) = explode('=', $cookie, 2);
-							$cookieArray[trim($cookieName)] = urldecode(trim($cookieValue));
-						}
-					}
+					$cookies = str_replace('&', '%26', $headerValue);
+					$cookies = preg_replace('/\s*;\s*/', '&', $cookies);
+					parse_str($cookies, $cookieArray);
 					$request->setCookies($cookieArray);
 					break;
 			}
@@ -316,6 +318,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 
 	private $auth;
 	private $body;
+	private $md5Body;
 	private $cookies;
 	private $fileNames;
 	private $files;
@@ -326,6 +329,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 	private $path;
 	private $protocol;
 	private $queryString;
+	private $md5QueryString;
 	private $timestamp;
 	private $uri;
 
@@ -360,6 +364,14 @@ class wfWAFRequest implements wfWAFRequestInterface {
 		}
 		return $this->body;
 	}
+	
+	public function getMd5Body() {
+		if (func_num_args() > 0) {
+			$args = func_get_args();
+			return $this->_arrayValueByKeys($this->md5Body, $args);
+		}
+		return $this->md5Body;
+	}
 
 	public function getQueryString() {
 		if (func_num_args() > 0) {
@@ -367,6 +379,14 @@ class wfWAFRequest implements wfWAFRequestInterface {
 			return $this->_arrayValueByKeys($this->queryString, $args);
 		}
 		return $this->queryString;
+	}
+	
+	public function getMd5QueryString() {
+		if (func_num_args() > 0) {
+			$args = func_get_args();
+			return $this->_arrayValueByKeys($this->md5QueryString, $args);
+		}
+		return $this->md5QueryString;
 	}
 
 	public function getHeaders() {
@@ -383,6 +403,45 @@ class wfWAFRequest implements wfWAFRequestInterface {
 			return $this->_arrayValueByKeys($this->cookies, $args);
 		}
 		return $this->cookies;
+	}
+
+	/*
+	 * Formats the provided cookie array (or $this->getCookies() if null) into a string
+	 * and preserves arrays.
+	 *
+	 * The format is in "cookie1=value; cookie2=value, ..."
+	 *
+	 * @param array|null $cookies
+	 * @param string|null $baseKey The base key used when recursing.
+	 * @return string
+	 */
+	public function getCookieString($cookies = null, $baseKey = null) {
+		if ($cookies == null) {
+			$cookies = $this->getCookies();
+		}
+		$isAssoc = (array_keys($cookies) !== range(0, count($cookies) - 1));
+		$cookieString = '';
+		foreach ($cookies as $cookieName => $cookieValue) {
+			$resolvedName = $cookieName;
+			if ($baseKey !== null) {
+				if ($isAssoc) {
+					$resolvedName = $baseKey . '[' . $cookieName . ']';
+				}
+				else {
+					$resolvedName = $baseKey . '[]';
+				}
+			}
+
+			if (is_array($cookieValue)) {
+				$nestedCookies = $this->getCookieString($cookieValue, $resolvedName);
+				$cookieString .= $nestedCookies;
+			}
+			else
+			{
+				$cookieString .= $resolvedName . '=' . urlencode($cookieValue) . '; ';
+			}
+		}
+		return $cookieString;
 	}
 
 	public function getFiles() {
@@ -453,8 +512,8 @@ class wfWAFRequest implements wfWAFRequestInterface {
 	                                      $highlightMatchFormat = '[match]%s[/match]') {
 		$highlights = array();
 
-		// Cap at 50kb
-		$maxRequestLen = 1024 * 50;
+		// Cap at 47.5kb
+		$maxRequestLen = 1024 * 47.5;
 
 		$this->highlightParamFormat = $highlightParamFormat;
 		$this->highlightMatchFormat = $highlightMatchFormat;
@@ -493,7 +552,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 		}
 		$queryString = $this->getQueryString();
 		if ($queryString) {
-			$uri .= '?' . http_build_query($queryString);
+			$uri .= '?' . http_build_query($queryString, null, '&');
 		}
 		if (!empty($highlights['queryString'])) {
 			foreach ($highlights['queryString'] as $matches) {
@@ -524,11 +583,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 				switch (wfWAFUtils::strtolower($header)) {
 					case 'cookie':
 						// TODO: Hook up highlights to cookies
-						$cookies = '';
-						foreach ($this->getCookies() as $cookieName => $cookieValue) {
-							$cookies .= $cookieName . '=' . urlencode($cookieValue) . '; ';
-						}
-						$request .= 'Cookie: ' . trim($cookies) . "\n";
+						$request .= 'Cookie: ' . trim($this->getCookieString()) . "\n";
 						break;
 
 					case 'host':
@@ -556,19 +611,7 @@ class wfWAFRequest implements wfWAFRequestInterface {
 		$body = $this->getBody();
 		$contentType = $this->getHeaders('Content-Type');
 		if (is_array($body)) {
-			if (wfWAFUtils::stripos($contentType, 'application/x-www-form-urlencoded') === 0) {
-				$body = http_build_query($body);
-				if (!empty($highlights['body'])) {
-					foreach ($highlights['body'] as $matches) {
-						if (!empty($matches['param'])) {
-							$this->highlightMatches = $matches['match'];
-							$body = preg_replace_callback('/(&|^)(' . preg_quote(urlencode($matches['param']), '/') . ')=(.*?)(&|$)/', array(
-								$this, 'highlightParam',
-							), $body);
-						}
-					}
-				}
-			} else if (preg_match('/^multipart\/form\-data; boundary=(.*?)$/i', $contentType, $boundaryMatches)) {
+			if (preg_match('/^multipart\/form\-data;(?:\s*(?!boundary)(?:[^\x00-\x20\(\)<>@,;:\\"\/\[\]\?\.=]+)=[^;]+;)*\s*boundary=([^;]*)(?:;\s*(?:[^\x00-\x20\(\)<>@,;:\\"\/\[\]\?\.=]+)=[^;]+)*$/i', $contentType, $boundaryMatches)) {
 				$boundary = $boundaryMatches[1];
 				$bodyArray = array();
 				foreach ($body as $key => $value) {
@@ -646,6 +689,19 @@ FORM;
 					$body .= "--$boundary--\n";
 				}
 			}
+			else { //Assume application/x-www-form-urlencoded and re-encode the body
+				$body = http_build_query($body, null, '&');
+				if (!empty($highlights['body'])) {
+					foreach ($highlights['body'] as $matches) {
+						if (!empty($matches['param'])) {
+							$this->highlightMatches = $matches['match'];
+							$body = preg_replace_callback('/(&|^)(' . preg_quote(urlencode($matches['param']), '/') . ')=(.*?)(&|$)/', array(
+								$this, 'highlightParam',
+							), $body);
+						}
+					}
+				}
+			}
 		}
 		if (!is_string($body)) {
 			$body = '';
@@ -697,6 +753,30 @@ FORM;
 	private function callHighlightMatchFilter($match) {
 		return is_callable($this->highlightMatchFilter) ? call_user_func($this->highlightMatchFilter, $match) : $match;
 	}
+	
+	/**
+	 * Encodes all of the keys with the MD5 hash.
+	 * 
+	 * @param array|string $value
+	 * @return array|string
+	 */
+	private function md5EncodeKeys($value) {
+		if (!is_array($value)) {
+			return md5($value);
+		}
+		
+		$result = array();
+		foreach ($value as $k => $v) {
+			$md5Key = md5($k);
+			if (is_array($v)) {
+				$result[$md5Key] = $this->md5EncodeKeys($v);
+			}
+			else {
+				$result[$md5Key] = $v;
+			}
+		}
+		return $result;
+	}
 
 	/**
 	 * @param string $key
@@ -728,6 +808,14 @@ FORM;
 	 */
 	public function setBody($body) {
 		$this->body = $body;
+		$this->setMd5Body($this->md5EncodeKeys($body));
+	}
+	
+	/**
+	 * @param mixed $md5Body
+	 */
+	public function setMd5Body($md5Body) {
+		$this->md5Body = $md5Body;
 	}
 
 	/**
@@ -798,6 +886,14 @@ FORM;
 	 */
 	public function setQueryString($queryString) {
 		$this->queryString = $queryString;
+		$this->setMd5QueryString($this->md5EncodeKeys($queryString));
+	}
+	
+	/**
+	 * @param mixed $md5QueryString
+	 */
+	public function setMd5QueryString($md5QueryString) {
+		$this->md5QueryString = $md5QueryString;
 	}
 
 	/**
