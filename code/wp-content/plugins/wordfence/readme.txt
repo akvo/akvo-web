@@ -1,15 +1,16 @@
 === Wordfence Security ===
 Contributors: mmaunder 
-Tags: wordpress, security, web application firewall, waf, performance, speed, caching, cache, caching plugin, wordpress cache, wordpress caching, wordpress security, security plugin, secure, anti-virus, malware, firewall, antivirus, virus, google safe browsing, phishing, scrapers, hacking, wordfence, securty, secrity, secure, two factor, cellphone sign-in, cellphone signin, cellphone, twofactor, security, secure, htaccess, login, log, users, login alerts, lock, chmod, maintenance, plugin, private, privacy, protection, permissions, 503, base64, injection, code, encode, script, attack, hack, hackers, block, blocked, prevent, prevention, RFI, XSS, CRLF, CSRF, SQL Injection, vulnerability, website security, WordPress security, security log, logging, HTTP log, error log, login security, personal security, infrastructure security, firewall security, front-end security, web server security, proxy security, reverse proxy security, secure website, secure login, two factor security, two factor authentication, maximum login security, heartbleed, heart bleed, heartbleed vulnerability, openssl vulnerability, nginx, litespeed, php5-fpm, woocommerce support, woocommerce caching, IPv6, IP version 6
+Tags: security, secure, security plugin, wordpress security, login security, firewall, malware, antivirus, web application firewall, block hackers, country blocking, block hackers
 Requires at least: 3.9
-Tested up to: 4.5.2
-Stable tag: 6.1.7
+Tested up to: 4.6.1
+Stable tag: 6.1.17
 
-The Wordfence WordPress security plugin provides free enterprise-class WordPress security, protecting your website from hacks and malware.
+Secure your website with the Wordfence security plugin for WordPress.  Wordfence provides free enterprise-class WordPress security, protecting your website from hacks and malware.
+
 == Description ==
 = THE MOST DOWNLOADED WORDPRESS SECURITY PLUGIN =
 
-Wordfence provides the best protection available for your website. Powered by the constantly updated Threat Defense Feed, our Web Application Firewall stops you from getting hacked. Wordfence Scan leverages the same proprietary feed, alerting you quickly in the event your site is compromised. Our Live Traffic view gives you real-time visibility into traffic and hack attempts on your website. A deep set of addtional tools round out the most complete WordPress security solution available.
+Secure your website with Wordfence. Powered by the constantly updated Threat Defense Feed, our Web Application Firewall stops you from getting hacked. Wordfence Scan leverages the same proprietary feed, alerting you quickly in the event your site is compromised. Our Live Traffic view gives you real-time visibility into traffic and hack attempts on your website. A deep set of addtional tools round out the most complete WordPress security solution available.
 
 Wordfence Security is 100% free and open source. We also offer a Premium API key that gives you Premium Support, Country Blocking, Scheduled Scans, Password Auditing and we even check if your website IP address is being used to Spamvertize. [Click here to sign-up for Wordfence Premium now](http://www.wordfence.com/?utm_source=repo&utm_medium=web&utm_campaign=pluginDescCTA) or simply install Wordfence free and start protecting your website.
 
@@ -82,7 +83,7 @@ The Wordfence WordPress security plugin is full-featured and constantly updated 
 
 == Installation ==
 
-To install the Wordfence WordPress security plugin and start protecting your WordPress website:
+Secure your website using the following steps to install Wordfence:
 
 1. Install Wordfence Security automatically or by uploading the ZIP file. 
 1. Activate the security plugin through the 'Plugins' menu in WordPress.
@@ -103,6 +104,8 @@ To install the Wordfence WordPress security plugin on WordPress Multi-Site insta
 1. Firewall rules and login rules apply to the WHOLE system. So if you fail a login on site1.example.com and site2.example.com it counts as 2 failures. Crawler traffic is counted between blogs, so if you hit three sites in the network, all the hits are totalled and that counts as the rate you're accessing the system.
 
 == Frequently Asked Questions ==
+
+Secure your website with Wordfence. 
 
 [Visit our support website which contains a FAQ and knowledgebase which is more comprehensive and updated frequently.](http://support.wordfence.com/?utm_source=repo&utm_medium=web&utm_campaign=pluginDesc)
 
@@ -187,6 +190,8 @@ Designed for every skill level, [The WordPress Security Learning Center](https:/
 
 == Screenshots ==
 
+Secure your website with Wordfence. 
+
 1. The home screen of Wordfence Security where you can see a summary, manage security issues and do a manual security scan. 
 2. The Live Traffic view of Wordfence Security where you can see real-time activity on your site.
 3. The "Blocked IPs" page where you can manage blocked IP's, locked out IP's and see recently throttled IPs that violated security rules.
@@ -194,6 +199,87 @@ Designed for every skill level, [The WordPress Security Learning Center](https:/
 5. If you're technically minded, this is the under-the-hood view of Wordfence Security options where you can fine-tune your security settings.
 
 == Changelog ==
+
+= 6.1.17 =
+* Fix: Replaced calls to json_decode with our own implentation for hosts without the JSON extension enabled.
+
+= 6.1.16 =
+* Improvement: Now performing malware scanning on all uploaded files in real-time.
+* Improvement: Added Web Application Firewall activity to Wordfence summary email.
+* Fix: Now using 503 response code in the page displayed when an IP is locked out.
+* Fix: `wflogs` directory is now correctly removed on uninstall.
+* Fix: Fixed recently introduced bug which caused the Whitelisted 404 URLs feature to no longer work.
+* Fix: Added try/catch to uncaught exception thrown when pinging the API key.
+* Improvement: Improved performance of the Live Traffic page in Firefox.
+* Improvement: Updated GeoIP database.
+
+= 6.1.15 =
+* Improvement: Removed file-based config caching, added support for caching via WordPress's object cache.
+* Improvement: Whitelisted Uptime Robot's IP range.
+* Fix: Notify users if suPHP_ConfigPath is in their WAF setup, and prompt to update Extended Protection.
+* Fix: Fixed bug with allowing logins on admin accounts that are not fully activated with invalid 2FA codes when 2FA is required for all admins.
+* Fix: Removed usage of `wp_get_sites()` which was deprecated in WordPress 4.6.
+* Fix: Fixed PHP notice from `Undefined index: url` with custom/premium plugins.
+* Improvement: Converted the banned URLs input to a textarea.
+
+= 6.1.14 =
+* Improvement: Support downloading a file of 2FA recovery codes.
+* Fix: Fixed PHP Notice: Undefined index: coreUnknown during scans.
+* Improvement: Add note to options page that login security is necessary for 2FA to work.
+* Fix: Fixed WAF false positives introduced with WordPress 4.6.
+* Improvement: Update Geo IP database.
+
+= 6.1.12 =
+* Fix: Fixed fatal error on sites running Wordfence 6.1.11 in subdirectory and 6.1.10 or lower in parent directory.
+* Fix: Added a few common files to be excluded from unknown WordPress core file scan.
+
+= 6.1.11 =
+* Improvement: Alert on added files to wp-admin, wp-includes.
+* Improvement: 2FA is now available via any authenticator program that accepts TOTP secrets.
+* Fix: Fixed bug with specific Advanced Blocking user-agent patterns causing 500 errors.
+* Improvement: Plugin updates are now only a critical issue if there is a security related fix, and a warning otherwise. A link to the changelog is included.
+* Fix: Added group writable permissions to Firewall's configuration files.
+* Improvement: Changed whitelist entry area to textbox on options page.
+* Fix: Move flags and logo served from wordfence.com over to locally hosted files.
+* Fix: Fixed issues with scan in WordPress 4.6 beta.
+* Fix: Fixed bug where Firewall rules could be missing on some sites running IIS.
+* Improvement: Added browser-based malware signatures for .js, .html files in the malware scan.
+* Fix: Added error suppression to `dns_get_record`.
+
+= 6.1.10 =
+* Fix: Fixed fatal error in the event wflogs is not writable.
+
+= 6.1.9 =
+* Fix: Using WP-CLI causes error Undefined index: SERVER_NAME.
+* Improvement: Hooked up restore/delete file scan tools to Filesystem API.
+* Fix: Reworked country blocking authentication check for access to XMLRPC.
+* Improvement: Added option to require cellphone sign-in on all admin accounts.
+* Improvement: Updated IPv6 GeoIP lite data.
+* Fix: Removed suPHP_ConfigPath from WAF installation process.
+* Fix: Prevent author names from being found through /wp-json/oembed.
+* Improvement: Added better solutions for fixing wordfence-waf.php, .user.ini, or .htaccess in scan.
+* Improvement: Added a method to view which files are currently used for WAF and to remove without reinstalling Wordfence.
+* Improvement: Changed rule compilation to use atomic writes.
+* Improvement: Removed security levels from Options page.
+* Improvement: Added option to disable ajaxwatcher (for whitelisting only for Admins) on the front end.
+
+= 6.1.8 =
+* Fix: Change wfConfig::set_ser to split large objects into multiple queries.
+* Fix: Fixed bug in multisite with "You do not have sufficient permissions to access this page" error after logging in.
+* Improvement: Update Geo IP database.
+* Fix: Fixed deadlock when NFS is used for WAF file storage, in wfWAFAttackDataStorageFileEngine::addRow().
+* Fix: Added third param to http_build_query for hosts with arg_separator.output set.
+* Improvement: Show admin notice if WAF blocks an admin (mainly needed for ajax requests).
+* Improvement: Clarify error message "Error reading config data, configuration file could be corrupted."
+* Improvement: Added better crawler detection.
+* Improvement: Add currentUserIsNot('administrator') to any generic firewall rules that are not XSS based.
+* Improvement: Update URLs in Wordfence for documentation about LiteSpeed and lockouts.
+* Improvement: Show message on scan results when a result is caused by enabling "Scan images and binary files as if they were executable" or...
+* Fix: Suppressed warning: dns_get_record(): DNS Query failed.
+* Fix: Suppressed warning gzinflate() error in scan logs.
+* Fix: On WAF roadblock page: Warning: urlencode() expects parameter 1 to be string, array given ...
+* Fix: Scheduled update for WAF rules doesn't decrease from 7 days, to 12 hours, when upgrading to a premium account.
+* Improvement: Better message for dashboard widget when no failed logins.
 
 = 6.1.7 =
 * Security Fix: Fixed reflected XSS vulnerability: CVSS 6.1 (Medium). Thanks Kacper Szurek.

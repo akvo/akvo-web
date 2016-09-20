@@ -285,6 +285,9 @@ table.wfConfigForm th {
 table.wfConfigForm td {
 	vertical-align: middle;
 }
+table.wfConfigForm td.align-top {
+	vertical-align: top;
+}
 table th.wfConfigEnable { font-weight: bold; }
 .wfSavedMsg { display: none; color: #A00; }
 table th.wfSubheading { font-weight: bold; padding-top: 10px; }
@@ -1008,6 +1011,15 @@ table.whitelist-table .edit-mode input.whitelist-edit {
 	font-size: 14px;
 	line-height: 1.3;
 }
+.wordfence-waiting {
+	line-height: 32px;
+}
+.wordfence-waiting img {
+	vertical-align: middle;
+}
+.wordfence-waiting span {
+	
+}
 
 pre.wf-pre {
 	margin:8px 0 20px;
@@ -1017,6 +1029,10 @@ pre.wf-pre {
 	background: #ffffff;
 	border: 1px solid #999999;
 	overflow: auto;
+}
+
+.wf-center {
+	text-align: center;
 }
 
 
@@ -1041,4 +1057,23 @@ tr.wf-table-filters input {
 	margin-bottom: 12px;
 	padding: 1px 13px;
 	max-width: 900px;
+}
+
+#wfTwoFactorQRCodeTable {
+	width: 256px;
+	height: 256px;
+	margin: 0 auto;
+}
+
+#wfTwoFactorRecoveryCodes {
+	list-style-type: none;
+}
+
+#wfTwoFactorRecoveryCodes li {
+	font-family: monospace;
+	text-align: center;
+}
+
+#wfTwoFactorDownload .dashicons {
+	line-height: 26px;
 }

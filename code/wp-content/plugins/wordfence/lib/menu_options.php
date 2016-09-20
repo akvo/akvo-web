@@ -1,9 +1,6 @@
 <?php
 $w = new wfConfig();
 ?>
-<script type="text/javascript">
-	var WFSLevels = <?php echo json_encode(wfConfig::$securityLevels); ?>;
-</script>
 <div class="wordfenceModeElem" id="wordfenceMode_options"></div>
 <div class="wrap">
 	<?php require( 'menuHeader.php' ); ?>
@@ -58,7 +55,7 @@ $w = new wfConfig();
 						</table>
 					<?php else: ?>
 						<div class="wf-premium-callout">
-							<h3>Upgrade to Wordfence Premium today for less than $5 per month</h3>
+							<h3>Upgrade to Wordfence Premium today for just $8.25 per month:</h3>
 							<ul>
 								<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
 								<li>Advanced features like IP reputation monitoring, country blocking, an advanced comment spam filter and cell phone sign-in give you the best protection available</li>
@@ -97,7 +94,7 @@ $w = new wfConfig();
 						class="wfhelp"></a></th>
 				<td><input type="checkbox" id="loginSecurityEnabled" class="wfConfigElem" name="loginSecurityEnabled"
 				           value="1" <?php $w->cb( 'loginSecurityEnabled' ); ?> />&nbsp;This option enables all "Login
-					Security" options. You can modify individual options further down this page.
+					Security" options, including two-factor authentication, strong password enforcement, and invalid login throttling. You can modify individual options further down this page.
 				</td>
 			</tr>
 			<tr>
@@ -179,7 +176,7 @@ $w = new wfConfig();
 					<?php if (getenv( 'noabort' ) != '1' && stristr( $_SERVER['SERVER_SOFTWARE'], 'litespeed' ) !== false){ ?>
 					<span style="color: #F00;">Warning: </span>You are running LiteSpeed web server and you don't have
 					the "noabort" variable set in your .htaccess.<br/>
-					<a href="https://support.wordfence.com/solution/articles/1000129050-running-wordfence-under-litespeed-web-server-and-preventing-process-killing-or"
+					<a href="https://docs.wordfence.com/en/LiteSpeed_aborts_Wordfence_scans_and_updates._How_do_I_prevent_that%3F"
 					   target="_blank">Please read this article in our FAQ to make an important change that will ensure
 						your site stability during an update.<br/>
 						<?php } ?>
@@ -197,30 +194,6 @@ $w = new wfConfig();
 			</tr>
 			<tr>
 				<th colspan="2">&nbsp;</th>
-			</tr>
-			<tr>
-				<th>Security Level:<a href="http://docs.wordfence.com/en/Wordfence_options#Security_Level"
-				                      target="_blank" class="wfhelp"></a></th>
-				<td>
-					<select id="securityLevel" name="securityLevel" onchange="WFAD.changeSecurityLevel(); return true;">
-						<option value="0"<?php $w->sel( 'securityLevel', '0' ); ?>>Level 0: Disable all Wordfence
-							security measures
-						</option>
-						<option value="1"<?php $w->sel( 'securityLevel', '1' ); ?>>Level 1: Light protection. Just the
-							basics
-						</option>
-						<option value="2"<?php $w->sel( 'securityLevel', '2' ); ?>>Level 2: Medium protection. Suitable
-							for most sites
-						</option>
-						<option value="3"<?php $w->sel( 'securityLevel', '3' ); ?>>Level 3: High security. Use this when
-							an attack is imminent
-						</option>
-						<option value="4"<?php $w->sel( 'securityLevel', '4' ); ?>>Level 4: Lockdown. Protect the site
-							against an attack in progress at the cost of inconveniencing some users
-						</option>
-						<option value="CUSTOM"<?php $w->sel( 'securityLevel', 'CUSTOM' ); ?>>Custom settings</option>
-					</select>
-				</td>
 			</tr>
 			<tr>
 				<th>How does Wordfence get IPs:<a
@@ -327,6 +300,11 @@ $w = new wfConfig();
 					           name="alertOn_nonAdminLogin" value="1" <?php $w->cb( 'alertOn_nonAdminLogin' ); ?>/></td>
 				</tr>
 				<tr>
+					<th>Alert me when there's a large increase in attacks detected on my site</th>
+					<td><input type="checkbox" id="wafAlertOnAttacks" class="wfConfigElem"
+							   name="wafAlertOnAttacks" value="1" <?php $w->cb( 'wafAlertOnAttacks' ); ?>/></td>
+				</tr>
+				<tr>
 					<th>Maximum email alerts to send per hour</th>
 					<td>&nbsp;<input type="text" id="alert_maxHourly" name="alert_maxHourly"
 					                 value="<?php $w->f( 'alert_maxHourly' ); ?>" size="4"/>0 or empty means unlimited
@@ -351,8 +329,8 @@ $w = new wfConfig();
 					<th>Email summary frequency:</th>
 					<td>
 						<select id="email_summary_interval" class="wfConfigElem" name="email_summary_interval">
+							<option value="daily"<?php $w->sel( 'email_summary_interval', 'daily' ); ?>>Once a day</option>
 							<option value="weekly"<?php $w->sel( 'email_summary_interval', 'weekly' ); ?>>Once a week</option>
-							<option value="biweekly"<?php $w->sel( 'email_summary_interval', 'biweekly' ); ?>>Once every 2 weeks</option>
 							<option value="monthly"<?php $w->sel( 'email_summary_interval', 'monthly' ); ?>>Once a month</option>
 						</select>
 					</td>
@@ -492,6 +470,13 @@ $w = new wfConfig();
 					           name="scansEnabled_plugins" value="1" <?php $w->cb( 'scansEnabled_plugins' ); ?>/></td>
 				</tr>
 				<tr>
+					<th>Scan wp-admin and wp-includes for files not bundled with WordPress<a
+							href="http://docs.wordfence.com/en/Wordfence_options#Scan_wordpress_core_for_unknown_files"
+							target="_blank" class="wfhelp"></a></th>
+					<td><input type="checkbox" id="scansEnabled_coreUnknown" class="wfConfigElem"
+					           name="scansEnabled_coreUnknown" value="1" <?php $w->cb( 'scansEnabled_coreUnknown' ); ?>/></td>
+				</tr>
+				<tr>
 					<th>Scan for signatures of known malicious files<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Scan_for_signatures_of_known_malicious_files"
 							target="_blank" class="wfhelp"></a></th>
@@ -574,7 +559,7 @@ $w = new wfConfig();
 					           value="1" <?php $w->cb( 'other_scanOutside' ); ?> /></td>
 				</tr>
 				<tr>
-					<th>Scan images and binary files as if they were executable<a
+					<th>Scan images, binary, and other files as if they were executable<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Scan_image_files_as_if_they_were_executable"
 							target="_blank" class="wfhelp"></a></th>
 					<td><input type="checkbox" id="scansEnabled_scanImages" class="wfConfigElem"
@@ -836,7 +821,7 @@ $w = new wfConfig();
 					           name="loginSec_blockAdminReg" <?php $w->cb( 'loginSec_blockAdminReg' ); ?> /></td>
 				</tr>
 				<tr>
-					<th>Prevent discovery of usernames through '/?author=N' scans<a
+					<th>Prevent discovery of usernames through '/?author=N' scans and the oEmbed API<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Prevent_discovery_of_usernames_through_.27.3F.2Fauthor.3DN.27_scans"
 							target="_blank" class="wfhelp"></a></th>
 					<td><input type="checkbox" id="loginSec_disableAuthorScan" class="wfConfigElem"
@@ -844,7 +829,7 @@ $w = new wfConfig();
 					</td>
 				</tr>
 				<tr>
-					<th>Immediately block the IP of users who try to sign in as these usernames<a
+					<th style="vertical-align: top;">Immediately block the IP of users who try to sign in as these usernames<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Immediately_block_the_IP_of_users_who_try_to_sign_in_as_these_usernames"
 							target="_blank" class="wfhelp"></a></th>
 					<td>
@@ -864,30 +849,28 @@ $w = new wfConfig();
 				</tr>
 
 				<tr>
-					<th>Whitelisted IP addresses that bypass all rules:<a
+					<th style="vertical-align: top;">Whitelisted IP addresses that bypass all rules:<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Whitelisted_IP_addresses_that_bypass_all_rules"
 							target="_blank" class="wfhelp"></a></th>
-					<td><input type="text" name="whitelisted" id="whitelisted"
-					           value="<?php $w->f( 'whitelisted' ); ?>" size="40"/></td>
+					<td><textarea name="whitelisted" id="whitelisted" cols="40" rows="4"><?php echo esc_html(preg_replace('/,/', "\n", $w->get('whitelisted'))); ?></textarea></td>
 				</tr>
 				<tr>
-					<th colspan="2" style="color: #999;">Whitelisted IP's must be separated by commas. You can specify
+					<th colspan="2" style="color: #999;">Whitelisted IPs must be separated by commas or placed on separate lines. You can specify
 						ranges using the following format: 123.23.34.[1-50]<br/>Wordfence automatically whitelists <a
 							href="http://en.wikipedia.org/wiki/Private_network" target="_blank">private networks</a>
 						because these are not routable on the public Internet.<br/><br/></th>
 				</tr>
 
 				<tr>
-					<th>Immediately block IP's that access these URLs:<a
+					<th style="vertical-align: top;">Immediately block IPs that access these URLs:<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Immediately_block_IP.27s_that_access_these_URLs"
 							target="_blank" class="wfhelp"></a></th>
-					<td><input type="text" name="bannedURLs" id="bannedURLs"
-					           value="<?php $w->f( 'bannedURLs' ); ?>" size="40"/></td>
+					<td><textarea type="text" name="bannedURLs" id="bannedURLs" cols="40" rows="4"><?php echo esc_html(preg_replace('/,/', "\n", $w->get('bannedURLs'))); ?></textarea></td>
 				</tr>
 				<tr>
-					<th colspan="2" style="color: #999;">Separate multiple URL's with commas. Asterisks are wildcards,
+					<th colspan="2" style="color: #999;">Separate multiple URLs with commas or place them on separate lines. Asterisks are wildcards,
 						but use with care. If you see an attacker repeatedly probing your site for a known vulnerability
-						you can use this to immediately block them. All URL's must start with a '/' without quotes and
+						you can use this to immediately block them. All URLs must start with a '/' without quotes and
 						must be relative. e.g. /badURLone/, /bannedPage.html, /dont-access/this/URL/, /starts/with-*
 						<br/><br/></th>
 				</tr>
@@ -900,6 +883,22 @@ $w = new wfConfig();
 					<th colspan="2" style="color: #999;">These URL patterns will be excluded from
 						the throttling rules used to limit crawlers.
 						<br/><br/></th>
+				</tr>
+				
+				<tr>
+					<th style="vertical-align: top;">Whitelisted IP addresses for Wordfence Web Application Firewall alerting:</th>
+					<td><textarea name="wafAlertWhitelist" id="wafAlertWhitelist" cols="40" rows="4"><?php echo esc_html(preg_replace('/,/', "\n", $w->get('wafAlertWhitelist'))); ?></textarea></td>
+				</tr>
+				<tr>
+					<th colspan="2" style="color: #999;">Whitelisted IPs must be separated by commas or placed on separate lines. These addresses will be ignored from any alerts about increased attacks and can be used to ignore things like standalone website security scanners.<br/><br/></th>
+				</tr>
+				<tr class="hidden">
+					<th style="vertical-align: top;">Minimum number of blocked attacks before sending an alert</th>
+					<td><input type="text" name="wafAlertThreshold" id=""wafAlertThreshold" value="<?php $w->f( 'wafAlertThreshold' ); ?>"></td>
+				</tr>
+				<tr class="hidden">
+					<th style="vertical-align: top;">Number of seconds to count the attacks over</th>
+					<td><input type="text" name="wafAlertInterval" id=""wafAlertInterval" value="<?php $w->f( 'wafAlertInterval' ); ?>"></td>
 				</tr>
 
 				<tr>
