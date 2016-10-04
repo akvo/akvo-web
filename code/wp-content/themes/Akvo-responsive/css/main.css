@@ -6754,4 +6754,23 @@ img.aligncenter {
 .flowProduct #pricing_intro {
   margin-top: 4em; }
 
+.media-and-press .col-logo {
+  text-align: center;
+  padding-top: 30px !important;
+  padding-bottom: 30px !important;
+  margin-bottom: 20px !important;
+  border: none !important; }
+.media-and-press .col-logo.is-colored a[href] {
+  color: #2C2A74; }
+@media only screen and (max-width: 992px) {
+  .media-and-press .col-logo.is-empty {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important; } }
+@media only screen and (min-width: 769px) {
+  .media-and-press .col-logo {
+    min-height: 70px; }
+  .media-and-press .twoColumns .col-logo {
+    width: 49% !important; } }
+
 /*# sourceMappingURL=main.css.map */
