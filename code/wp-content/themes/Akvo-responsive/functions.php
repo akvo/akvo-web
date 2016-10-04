@@ -389,6 +389,29 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		include "templates/tabs.php";
 	}
 	
-	
+	function akvo_staff_list($staff_type, $new_staff_flag = true){
+		$args = array(
+			'post_type' => 'new_staffs',
+			'showposts' => '40',
+			'tax_query' => array(
+        		array(
+					'taxonomy' => 'new_staffs_team',
+					'field' => 'slug', //can be set to ID
+					'terms' => $staff_type //if field is ID you can reference by cat/term number
+        		)
+			)
+		);
+		_e('<ul class="staff floats-in">');
+		$the_query = new WP_Query( $args );
+		if( $the_query->have_posts() ):
+			while( $the_query->have_posts() ) : $the_query->the_post();
+				get_template_part('templates/staff');
+			endwhile;
+		endif;
+		if($new_staff_flag){
+			get_template_part('templates/new_staff');		
+		}	
+		_e('</ul>');
+	}
 	
 ?>
