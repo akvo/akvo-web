@@ -47,7 +47,7 @@ footer{
 		#menu-footer-menu {
         	margin-top: 20px;
         	width: 96%;
-        	
+        	display: block;
     	}
 		
 	    .menu {
@@ -60,7 +60,8 @@ footer{
 	        margin: 5px 0px;
         	width: 100%;
     	    padding: 0em 0em 0em 0;
-    	    
+    	    display: block;
+    	    text-align: center;
     	}
 	}
 	
