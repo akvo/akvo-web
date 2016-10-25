@@ -6362,7 +6362,8 @@ footer .menu > li {
 @media only screen and (max-width: 768px) {
   footer #menu-footer-menu {
     margin-top: 20px;
-    width: 96%; }
+    width: 96%;
+    display: block; }
   footer .menu {
     margin: 0px 15px;
     display: block;
@@ -6370,7 +6371,9 @@ footer .menu > li {
   footer .menu > li {
     margin: 5px 0px;
     width: 100%;
-    padding: 0em 0em 0em 0; } }
+    padding: 0em 0em 0em 0;
+    display: block;
+    text-align: center; } }
 footer.bottomPage {
   background: #fcfcfc;
   border-top: 1px solid #ebebeb;
