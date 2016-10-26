@@ -17,6 +17,11 @@ $w = new wfConfig();
 		Diagnostics
 	</h2>
 	<br clear="both"/>
+	
+	<?php
+	$rightRail = new wfView('marketing/rightrail', array('additionalClasses' => 'wordfenceRightRailDiagnostics'));
+	echo $rightRail;
+	?>
 
 	<form id="wfConfigForm">
 		<table class="wf-table"<?php echo !empty($inEmail) ? ' border=1' : '' ?>>

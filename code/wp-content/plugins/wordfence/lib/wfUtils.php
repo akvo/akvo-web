@@ -38,25 +38,40 @@ class wfUtils {
 			}
 		}
 	}
-	public static function makeDuration($secs) {
-		$months = floor($secs / (86400 * 30));
-		$days = floor($secs / 86400);
-		$hours = floor($secs / 3600);
-		$minutes = floor($secs / 60);
-		if($months) {
-			$days -= $months * 30;
-			return self::pluralize($months, 'month', $days, 'day');
-		} else if($days) {
-			$hours -= $days * 24;
-			return self::pluralize($days, 'day', $hours, 'hour');
-		} else if($hours) {
-			$minutes -= $hours * 60;
-			return self::pluralize($hours, 'hour', $minutes, 'minute');
-		} else if($minutes) {
-			return self::pluralize($minutes, 'minute');
-		} else {
-			return self::pluralize($secs, 'second');
+	public static function makeDuration($secs, $createExact = false) {
+		$components = array();
+		
+		$months = floor($secs / (86400 * 30)); $secs -= $months * 86400 * 30;
+		$days = floor($secs / 86400); $secs -= $days * 86400;
+		$hours = floor($secs / 3600); $secs -= $hours * 3600;
+		$minutes = floor($secs / 60); $secs -= $minutes * 60;
+		
+		if ($months) {
+			$components[] = self::pluralize($months, 'month');
+			if (!$createExact) {
+				$hours = $minutes = $secs = 0;
+			}
 		}
+		if ($days) {
+			$components[] = self::pluralize($days, 'day');
+			if (!$createExact) {
+				$minutes = $secs = 0;
+			}
+		}
+		if ($hours) {
+			$components[] = self::pluralize($hours, 'hour');
+			if (!$createExact) {
+				$secs = 0;
+			}
+		}
+		if ($minutes) {
+			$components[] = self::pluralize($minutes, 'minute');
+		}
+		if ($secs) {
+			$components[] = self::pluralize($secs, 'second');
+		}
+		
+		return implode(' ', $components);
 	}
 	public static function pluralize($m1, $t1, $m2 = false, $t2 = false) {
 		if($m1 != 1) {
@@ -818,6 +833,9 @@ class wfUtils {
 
 	public static function endProcessingFile() {
 		wfConfig::set('scanFileProcessing', null);
+		if (wfConfig::get('lowResourceScansEnabled')) {
+			usleep(10000); //10 ms
+		}
 	}
 
 	public static function getScanLock(){
@@ -942,7 +960,7 @@ class wfUtils {
 		if (!$host) {
 			// This function works for IPv4 or IPv6
 			if (function_exists('gethostbyaddr')) {
-				$host = gethostbyaddr($IP);
+				$host = @gethostbyaddr($IP);
 			}
 			if (!$host) {
 				$ptr = false;
@@ -1259,7 +1277,7 @@ class wfUtils {
 
 	public static function htaccessAppend($code)
 	{
-		$htaccess = ABSPATH . '/.htaccess';
+		$htaccess = wfCache::getHtaccessPath();
 		$content  = self::htaccess();
 		if (wfUtils::isNginx() || !is_writable($htaccess)) {
 			return false;
@@ -1272,10 +1290,27 @@ class wfUtils {
 
 		return true;
 	}
+	
+	public static function htaccessPrepend($code)
+	{
+		$htaccess = wfCache::getHtaccessPath();
+		$content  = self::htaccess();
+		if (wfUtils::isNginx() || !is_writable($htaccess)) {
+			return false;
+		}
+		
+		if (strpos($content, $code) === false) {
+			// make sure we write this once
+			file_put_contents($htaccess, trim($code) . "\n" . $content, LOCK_EX);
+		}
+		
+		return true;
+	}
 
 	public static function htaccess() {
-		if (is_readable(ABSPATH . '/.htaccess') && !wfUtils::isNginx()) {
-			return file_get_contents(ABSPATH . '/.htaccess');
+		$htaccess = wfCache::getHtaccessPath();
+		if (is_readable($htaccess) && !wfUtils::isNginx()) {
+			return file_get_contents($htaccess);
 		}
 		return "";
 	}

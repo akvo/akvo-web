@@ -44,14 +44,14 @@
 
 
 <?php if(! $isPaid){ ?>
-	<p>NOTE: You are using the free version of Wordfence. Upgrade to Premium today for just $8.25 per month!</p>
+	<p>NOTE: You are using the free version of Wordfence. Upgrade today:</p>
 
 	<ul>
 		<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
 		<li>Other advanced features like IP reputation monitoring, country blocking, an advanced comment spam filter and cell phone sign-in give you the best protection available</li>
 		<li>Remote, frequent and scheduled scans</li>
 		<li>Access to Premium Support</li>
-		<li>Discounts of up to 75% for multiyear and multi-license purchases</li>
+		<li>Discounts of up to 90% for multiyear and multi-license purchases</li>
 	</ul>
 
 	<p>
