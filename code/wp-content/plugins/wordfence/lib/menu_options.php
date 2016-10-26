@@ -9,14 +9,22 @@ $w = new wfConfig();
 	$pageTitle      = "Wordfence Options";
 	include( 'pageTitle.php' ); ?>
 	<div class="wordfenceLive">
-		<table border="0" cellpadding="0" cellspacing="0">
+		<table border="0" cellpadding="0" cellspacing="0" class="wordfenceLiveActivity">
 			<tr>
 				<td><h2>Wordfence Live Activity:</h2></td>
 				<td id="wfLiveStatus"></td>
 			</tr>
 		</table>
+		<table border="0" cellpadding="0" cellspacing="0" class="wordfenceLiveStateMessage">
+			<tr>
+				<td>Live Updates Paused &mdash; Click inside window to resume</td>
+			</tr>
+		</table>
 	</div>
-
+	<?php
+	$rightRail = new wfView('marketing/rightrail', array('additionalClasses' => 'wordfenceRightRailOptions'));
+	echo $rightRail;
+	?>
 	<form id="wfConfigForm">
 		<table class="wfConfigForm">
 			<tr>
@@ -55,17 +63,17 @@ $w = new wfConfig();
 						</table>
 					<?php else: ?>
 						<div class="wf-premium-callout">
-							<h3>Upgrade to Wordfence Premium today for just $8.25 per month:</h3>
+							<h3>Upgrade today:</h3>
 							<ul>
 								<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
 								<li>Advanced features like IP reputation monitoring, country blocking, an advanced comment spam filter and cell phone sign-in give you the best protection available</li>
 								<li>Remote, frequent and scheduled scans</li>
 								<li>Access to Premium Support</li>
-								<li>Discounts of up to 75% for multiyear and multi-license purchases</li>
+								<li>Discounts of up to 90% for multiyear and multi-license purchases</li>
 							</ul>
 							<p class="center">
 								<a class="button button-primary"
-								   href="https://www.wordfence.com/gnl1optCallout1/wordfence-signup/">
+								   href="https://www.wordfence.com/gnl1optCallout1/wordfence-signup/" target="_blank">
 									Get Premium</a></p>
 						</div>
 					<?php endif ?>
@@ -295,9 +303,19 @@ $w = new wfConfig();
 					           value="1" <?php $w->cb( 'alertOn_adminLogin' ); ?>/></td>
 				</tr>
 				<tr>
+					<th style="color: #666666;padding-left: 20px;">Only alert me when that administrator signs in from a new device or location</th>
+					<td><input type="checkbox" id="alertOn_firstAdminLoginOnly" class="wfConfigElem" name="alertOn_firstAdminLoginOnly"
+							   value="1" <?php $w->cb( 'alertOn_firstAdminLoginOnly' ); ?>/></td>
+				</tr>
+				<tr>
 					<th>Alert me when a non-admin user signs in</th>
 					<td><input type="checkbox" id="alertOn_nonAdminLogin" class="wfConfigElem"
 					           name="alertOn_nonAdminLogin" value="1" <?php $w->cb( 'alertOn_nonAdminLogin' ); ?>/></td>
+				</tr>
+				<tr>
+					<th style="color: #666666;padding-left: 20px;">Only alert me when that user signs in from a new device or location</th>
+					<td><input type="checkbox" id="alertOn_firstNonAdminLoginOnly" class="wfConfigElem" name="alertOn_firstNonAdminLoginOnly"
+							   value="1" <?php $w->cb( 'alertOn_firstNonAdminLoginOnly' ); ?>/></td>  
 				</tr>
 				<tr>
 					<th>Alert me when there's a large increase in attacks detected on my site</th>
@@ -429,6 +447,15 @@ $w = new wfConfig();
 							target="_blank" class="wfhelp"></a></th>
 					<td><input type="checkbox" id="scansEnabled_checkReadableConfig" class="wfConfigElem"
 					           name="scansEnabled_checkReadableConfig" value="1" <?php $w->cb( 'scansEnabled_checkReadableConfig' ); ?> />
+					</td>
+				</tr>
+				<tr>
+					<th>Scan for publicly accessible quarantined files<a
+							href="http://docs.wordfence.com/en/Wordfence_options#Scan_for_publicly_accessible_quarantined_files"
+							target="_blank" class="wfhelp"></a></th>
+					<td><input type="checkbox" id="scansEnabled_suspectedFiles" class="wfConfigElem"
+							   name="scansEnabled_suspectedFiles"
+							   value="1" <?php $w->cb( 'scansEnabled_suspectedFiles' ); ?>/>
 					</td>
 				</tr>
 <!--				<tr>-->
@@ -572,6 +599,14 @@ $w = new wfConfig();
 							target="_blank" class="wfhelp"></a></th>
 					<td><input type="checkbox" id="scansEnabled_highSense" class="wfConfigElem"
 					           name="scansEnabled_highSense" value="1" <?php $w->cb( 'scansEnabled_highSense' ); ?> />
+					</td>
+				</tr>
+				<tr>
+					<th>Use low resource scanning. Reduces server load by lengthening the scan duration.<a
+							href="http://docs.wordfence.com/en/Wordfence_options#Use_low_resource_scanning"
+							target="_blank" class="wfhelp"></a></th>
+					<td><input type="checkbox" id="lowResourceScansEnabled" class="wfConfigElem"
+							   name="lowResourceScansEnabled" value="1" <?php $w->cb( 'lowResourceScansEnabled' ); ?> />
 					</td>
 				</tr>
 				<tr>
@@ -909,7 +944,7 @@ $w = new wfConfig();
 					           value="1" <?php $w->cb( 'other_hideWPVersion' ); ?> /></td>
 				</tr>
 				<tr>
-					<th>Block IP's who send POST requests with blank User-Agent and Referer<a
+					<th>Block IPs who send POST requests with blank User-Agent and Referer<a
 							href="http://docs.wordfence.com/en/Wordfence_options#Block_IP.27s_who_send_POST_requests_with_blank_User-Agent_and_Referer" target="_blank"
 							class="wfhelp"></a></th>
 					<td><input type="checkbox" id="other_blockBadPOST" class="wfConfigElem" name="other_blockBadPOST"

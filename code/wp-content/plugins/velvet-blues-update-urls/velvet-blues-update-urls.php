@@ -6,11 +6,11 @@ Description: This plugin <strong>updates all urls in your website</strong> by re
 Author: VelvetBlues.com
 Author URI: http://www.velvetblues.com/
 Author Email: info@velvetblues.com
-Version: 3.2.4
+Version: 3.2.7
 License: GPLv2 or later
 Text Domain: velvet-blues-update-urls
 */
-/*  Copyright 2015  Velvet Blues Web Design  (email : info@velvetblues.com)
+/*  Copyright 2016  Velvet Blues Web Design  (email : info@velvetblues.com)
 
 This program is free software; you can redistribute it and/or
 modify it under the terms of the GNU General Public License
@@ -26,13 +26,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 */
-if ( !function_exists( 'add_action' ) ) {
-?>
-<h3>Oops! This page cannot be accessed directly.</h3>
-<p>For support using the Velvet Blues Update URLs plugin, <a href="http://www.velvetblues.com/web-development-blog/wordpress-plugin-update-urls/" title="Velvet Blues Update URLs WordPress plugin">click here</a>.</p>
-<p>If you are looking for general WordPress assistance, <a href="http://www.velvetblues.com/" title="WordPress Web Development and Services">Velvet Blues can help with that too</a>.</p>
-<?php
-	exit;
+if ( !function_exists( 'add_action' ) ) { exit; 
 }
 function VelvetBluesUU_add_management_page(){
 	add_management_page("Velvet Blues Update URLs", "Update URLs", "manage_options", basename(__FILE__), "VelvetBluesUU_management_page");
@@ -93,7 +87,8 @@ function VelvetBluesUU_management_page(){
 	if ( !function_exists( 'VB_unserialize_replace' ) ) {
 		function VB_unserialize_replace( $from = '', $to = '', $data = '', $serialised = false ) {
 			try {
-				if ( is_string( $data ) && ( $unserialized = @unserialize( $data ) ) !== false ) {
+				if ( false !== is_serialized( $data ) ) {
+					$unserialized = unserialize( $data );
 					$data = VB_unserialize_replace( $from, $to, $unserialized, true );
 				}
 				elseif ( is_array( $data ) ) {
@@ -255,34 +250,34 @@ function VelvetBluesUU_management_page(){
 								<?php _e('posts, pages, custom post types, revisions','velvet-blues-update-urls'); ?>
 								)</label>
 							<br/>
-							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true" value="excerpts" />
-							<label for="VBUU_update_true"><strong>
+							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true1" value="excerpts" />
+							<label for="VBUU_update_true1"><strong>
 								<?php _e('URLs in excerpts','velvet-blues-update-urls'); ?>
 								</strong></label>
 							<br/>
-							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true" value="links" />
-							<label for="VBUU_update_true"><strong>
+							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true2" value="links" />
+							<label for="VBUU_update_true2"><strong>
 								<?php _e('URLs in links','velvet-blues-update-urls'); ?>
 								</strong></label>
 							<br/>
-							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true" value="attachments" />
-							<label for="VBUU_update_true"><strong>
+							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true3" value="attachments" />
+							<label for="VBUU_update_true3"><strong>
 								<?php _e('URLs for attachments','velvet-blues-update-urls'); ?>
 								</strong> (
 								<?php _e('images, documents, general media','velvet-blues-update-urls'); ?>
 								)</label>
 							<br/>
-							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true" value="custom" />
-							<label for="VBUU_update_true"><strong>
+							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true4" value="custom" />
+							<label for="VBUU_update_true4"><strong>
 								<?php _e('URLs in custom fields and meta boxes','velvet-blues-update-urls'); ?>
 								</strong></label>
 							<br/>
-							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true" value="guids" />
-							<label for="VBUU_update_true"><strong>
+							<input name="VBUU_update_links[]" type="checkbox" id="VBUU_update_true5" value="guids" />
+							<label for="VBUU_update_true5"><strong>
 								<?php _e('Update ALL GUIDs','velvet-blues-update-urls'); ?>
 								</strong> <span class="description" style="color:#f00;">
 								<?php _e('GUIDs for posts should only be changed on development sites.','velvet-blues-update-urls'); ?>
-								</span> <a href="http://www.velvetblues.com/go/guids/" target="_blank">
+								</span> <a href="http://codex.wordpress.org/Changing_The_Site_URL#Important_GUID_Note" target="_blank">
 								<?php _e('Learn More.','velvet-blues-update-urls'); ?>
 								</a></label>
 						</p></td>

@@ -3,8 +3,9 @@ Contributors: nsp-code
 Donate link: http://www.nsp-code.com/donate.php
 Tags: post order, posts order, sort, post sort, posts sort, post type order, custom order, admin posts order
 Requires at least: 2.8
-Tested up to: 4.5.2
-Stable tag: 1.8.9.2
+Tested up to: 4.6.1
+Stable tag: 1.9
+.
 License: GPLv2 or later
 
 Post Order and custom Post Type Objects (custom post types) using a Drag and Drop Sortable JavaScript AJAX interface or default WordPress dashboard. 
@@ -94,9 +95,12 @@ Consider upgrading to our advanced version of this plugin at a very resonable pr
 
 == Change Log ==
 
-= 1.8.9.3 =
+= 1.9 =
   - Remove translations from the package
-  - Updated link for donate
+  - Remove link for donate
+  - Wp Hide plugin availability notification
+  - New Filter pto/get_options to allow to chaneg default options; Custom capability can be set for 'capability'
+  - New Filter pto/admin/plugin_options/capability to allow custom capability option to be inserted within html
 
 = 1.8.9.2 =
   - WPDB Prepare argument fix

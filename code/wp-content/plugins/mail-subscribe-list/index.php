@@ -1,8 +1,8 @@
 <div class="wrap">
 	
 	<?php screen_icon( 'themes' ); ?>
-	<h2>Your Subscribers</h2>
-	<p>To grow your email list even faster, check out the <a target="_blank" href="https://wordpress.org/plugins/sumome">SumoMe plugin</p>
+	<h2>Subscribers</h2>
+	
 	<div id="poststuff">
 	
 		<div id="post-body" class="metabox-holder columns-2">
@@ -63,7 +63,6 @@
 						
             			?>
 					
-	
 						<table cellspacing="0" class="wp-list-table widefat fixed subscribers">
                           <thead>
                             <tr>
@@ -130,33 +129,6 @@
                 <p class="submit"><input type="submit" value="Upload and Import CSV File" class="button-secondary" id="submit" name="submit"></p></form>
                 </div></div></div>
                 
-					<div class="meta-box-sortables">
-			               <div class="postbox">
-
-			                     	  <h3><span>How to setup</span></h3>
-			                        <div class="inside">
-										<p>You can use this to subscribe readers from any email service you like. Just export the subscribers whenever you want and import them at your convenience. </p>
-										<p>1- <a target="_blank" href="../wp-admin/widgets.php">Click here</a> to add the Subscribe Form Widget</p>
-										
-										
-										<p>2- Add [smlsubform] on any page / post you'd like</p>
-										<p>3- Add &lt;?php echo smlsubform(); ?&gt; in any template to show the form</P>
-										<p>There are extra options you can add. Such as: [smlsubform nametxt="Name:" nameholder="Name..."] Below is an explanation of what each option does:</p>
-				                            <ul>
-				                              <li><strong>&quot;prepend&quot;	</strong>-&gt;	Adds a paragraph of text just inside the top of the form.</li>
-				                              <li> <strong>&quot;showname&quot;	</strong>-&gt;	If true, this with show the name label and input field for capturing the users name.</li>
-				                              <li> <strong>&quot;nametxt&quot;	</strong>-&gt;	Text that is displayed to the left of the name input field.</li>
-				                              <li> <strong>&quot;nameholder&quot;	</strong>-&gt;	Text that is displayed inside the name input box as a place holder.</li>
-				                              <li> <strong>&quot;emailtxt&quot;	</strong>-&gt;	Text that is displayed to the left of the email input field.</li>
-				                              <li> <strong>&quot;emailholder&quot;	</strong>-&gt;	Text that is displayed inside the email input box as a place holder.</li>
-				                              <li> <strong>&quot;submittxt&quot;</strong>	-&gt;	Text/value that will be displayed on the form submit button.</li>
-				                              <li> <strong>&quot;jsthanks&quot;</strong>	-&gt;	If true, this will display a JavaScript Alert Thank You message instead of a paragraph above the form.</li>
-				                              <li> <strong>&quot;thankyou&quot;	</strong>-&gt;	Thank you message that will be displayed when someone subscribes. (Will not show if blank)</li>
-				                            </ul>
-									</div>
-							</div>
-			  		</div>
-
          
                 
 			</div> 
@@ -166,12 +138,21 @@
                     <div class="meta-box-sortables">
                         <div class="postbox">
                         	
-                       	  <h3><span>Support Us</span></h3>
+                       	  <h3><span>Plugin Author</span></h3>
                             <div class="inside">
                             	
-                                <p>We are a small company who makes useful software.<br /><br />
-	1- <a style="font-weight:bold;font-size:20px" target="_blank" href="https://wordpress.org/plugins/sumome">Check out our Amazing SumoMe plugin</a>!</p>
-								<p>2- <a target="_blank" href="https://wordpress.org/plugins/mail-subscribe-list">Please leave a :) review</a></p>
+                                <p><a target="_blank" href="http://www.webfwd.co.uk/packages/wordpress-hosting/"><img style="margin-top:15px" src="<?php echo plugins_url( 'webfwdlogo.png', __FILE__ ); ?>"></a></p>
+
+                                
+                                
+                                <p><em><strong style="color: #21759B">We are WordPress specialists!</strong> <br />
+                                We help small and medium size businesses by developing bespoke web based applications  that improve efficiency, reduce costs and eliminate non-value added  processes. </em></p>
+                                <p><em>We also have our own WordPress optimised servers and offer <strong style="color: #21759B">super fast reliable WordPress hosting just £6.00 per month.</strong></em></p>
+                                <p class="voucher" style="background:#21759B; border-radius: 5px; padding:10px; text-align:center; color:#FFF; line-height:15px;"><strong style="font-size:16px">50% OFF ALL<br />WordPress Hosting Packages</strong><br />
+                                Your Promotional Code:<strong style="font-size:32px; background:#FFF; color:#21759B; line-height: 38px; display:block; padding: 2px 0">2YH6EJIN4Z</strong>Discount can be applied on Checkout<a class="button" href="http://www.webfwd.co.uk/packages/wordpress-hosting/" target="_blank">Click Here to Purchase</a></p>
+<p><a class="button" href="http://www.webfwd.co.uk/packages/wordpress-hosting/" target="_blank">Visit our Website</a></p>
+                                
+                                <p>Please follow us on - <a class="button" target="_blank" href="https://twitter.com/webfwd">Twitter</a> <a class="button" target="_blank" href="https://www.facebook.com/pages/Webforward/208823852487018">Facebook</a></p>
                             </div>
                       </div> 
                     </div> 

@@ -5,7 +5,7 @@
 ?>
 <a class="wf-logo" href="//www.wordfence.com/zz8/"><img src="<?php echo wfUtils::getBaseURL(); ?>images/logo.png" alt=""/></a>
 
-<h2>Top <?php echo (int) $limit; ?> IP's Blocked</h2>
+<h2>Top <?php echo (int) $limit; ?> IPs Blocked</h2>
 
 <?php wfHelperString::cycle(); ?>
 

@@ -22,7 +22,9 @@ class wfConfig {
 			"alertOn_loginLockout" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"alertOn_lostPasswdForm" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"alertOn_adminLogin" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"alertOn_firstAdminLoginOnly" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"alertOn_nonAdminLogin" => array('value' => false, 'autoload' => self::AUTOLOAD),
+			"alertOn_firstNonAdminLoginOnly" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"liveTrafficEnabled" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_checkReadableConfig" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"advancedCommentScanning" => array('value' => false, 'autoload' => self::AUTOLOAD),
@@ -31,6 +33,7 @@ class wfConfig {
 			"liveTraf_ignorePublishers" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			//"perfLoggingEnabled" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scheduledScansEnabled" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"lowResourceScansEnabled" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_public" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_heartbleed" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_core" => array('value' => true, 'autoload' => self::AUTOLOAD),
@@ -39,6 +42,7 @@ class wfConfig {
 			"scansEnabled_coreUnknown" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_malware" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_fileContents" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"scansEnabled_suspectedFiles" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_posts" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_comments" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_passwds" => array('value' => true, 'autoload' => self::AUTOLOAD),
@@ -60,7 +64,7 @@ class wfConfig {
 			"loginSec_blockAdminReg" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"loginSec_disableAuthorScan" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"loginSec_disableOEmbedAuthor" => array('value' => false, 'autoload' => self::AUTOLOAD),
-			"other_hideWPVersion" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"other_hideWPVersion" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"other_noAnonMemberComments" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"other_blockBadPOST" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"other_scanComments" => array('value' => true, 'autoload' => self::AUTOLOAD),
@@ -657,11 +661,15 @@ class wfConfig {
 <IfModule mod_php5.c>
 php_flag engine 0
 </IfModule>
+<IfModule mod_php7.c>
+php_flag engine 0
+</IfModule>
 
 AddHandler cgi-script .php .phtml .php3 .pl .py .jsp .asp .htm .shtml .sh .cgi
 Options -ExecCGI
 # END Wordfence code execution protection
 ';
+	private static $_disable_scripts_regex = '/# BEGIN Wordfence code execution protection.+?# END Wordfence code execution protection/s';
 	
 	private static function _uploadsHtaccessFilePath() {
 		$upload_dir = wp_upload_dir();
@@ -689,7 +697,24 @@ Options -ExecCGI
 		if (@file_put_contents($uploads_htaccess_file_path, ($uploads_htaccess_has_content ? "\n\n" : "") . self::$_disable_scripts_htaccess, FILE_APPEND | LOCK_EX) === false) {
 			throw new wfConfigException("Unable to save the .htaccess file needed to disable script execution in the uploads directory.  Please check your permissions on that directory.");
 		}
+		self::set('disableCodeExecutionUploadsPHP7Migrated', true);
 		return true;
+	}
+	
+	public static function migrateCodeExecutionForUploadsPHP7() {
+		if (self::get('disableCodeExecutionUploads')) {
+			if (!self::get('disableCodeExecutionUploadsPHP7Migrated')) {
+				$uploads_htaccess_file_path = self::_uploadsHtaccessFilePath();
+				if (file_exists($uploads_htaccess_file_path)) {
+					$htaccess_contents = file_get_contents($uploads_htaccess_file_path);
+					if (preg_match(self::$_disable_scripts_regex, $htaccess_contents)) {
+						$htaccess_contents = preg_replace(self::$_disable_scripts_regex, self::$_disable_scripts_htaccess, $htaccess_contents); 
+						@file_put_contents($uploads_htaccess_file_path, $htaccess_contents);
+						self::set('disableCodeExecutionUploadsPHP7Migrated', true);
+					}
+				}
+			}
+		}
 	}
 
 	/**
@@ -704,8 +729,8 @@ Options -ExecCGI
 			$htaccess_contents = file_get_contents($uploads_htaccess_file_path);
 
 			// Check that it is in the file
-			if (strpos($htaccess_contents, self::$_disable_scripts_htaccess) !== false) {
-				$htaccess_contents = str_replace(self::$_disable_scripts_htaccess, '', $htaccess_contents);
+			if (preg_match(self::$_disable_scripts_regex, $htaccess_contents)) {
+				$htaccess_contents = preg_replace(self::$_disable_scripts_regex, '', $htaccess_contents);
 
 				$error_message = "Unable to remove code execution protections applied to the .htaccess file in the uploads directory.  Please check your permissions on that file.";
 				if (strlen(trim($htaccess_contents)) === 0) {

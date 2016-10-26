@@ -75,7 +75,9 @@ class wordfenceScanner {
 			throw new Exception("Wordfence could not get the attack signature patterns from the scanning server.");
 		}
 		
-		try { wfWAF::getInstance()->setMalwareSignatures(array()); } catch (Exception $e) { /* Ignore */ }
+		if (wfWAF::getInstance() && method_exists(wfWAF::getInstance(), 'setMalwareSignatures')) {
+			try { wfWAF::getInstance()->setMalwareSignatures(array()); } catch (Exception $e) { /* Ignore */ }
+		}
 
 		if (is_array($sigData['rules'])) {
 			$wafPatterns = array();
@@ -91,7 +93,9 @@ class wordfenceScanner {
 				}
 			}
 			
-			try { wfWAF::getInstance()->setMalwareSignatures($wafPatterns); } catch (Exception $e) { /* Ignore */ }
+			if (wfWAF::getInstance() && method_exists(wfWAF::getInstance(), 'setMalwareSignatures')) {
+				try { wfWAF::getInstance()->setMalwareSignatures($wafPatterns); } catch (Exception $e) { /* Ignore */ }
+			}
 		}
 
 		$extra = wfConfig::get('scan_include_extra');
@@ -192,10 +196,7 @@ class wordfenceScanner {
 					continue;
 				}
 				$fileSum = $rec1['newMD5'];
-
-				if(! file_exists($this->path . $file)){
-					continue;
-				}
+				
 				$fileExt = '';
 				if(preg_match('/\.([a-zA-Z\d\-]{1,7})$/', $file, $matches)){
 					$fileExt = strtolower($matches[1]);
@@ -318,7 +319,7 @@ class wordfenceScanner {
 											'ignoreP' => $this->path . $file,
 											'ignoreC' => $fileSum,
 											'shortMsg' => "File appears to be malicious: " . esc_html($file),
-											'longMsg' => "This file appears to be installed by a hacker to perform malicious activity. If you know about this file you can choose to ignore it to exclude it from future scans. The text we found in this file that matches a known malicious file is: <strong style=\"color: #F00;\">\"" . esc_html((strlen($matchString) > 200 ? substr($matchString, 0, 200) . '...' : $matchString)) . "\"</strong>. The infection type is: <strong>" . esc_html($rule[3]) . '</strong>' . $extraMsg,
+											'longMsg' => "This file appears to be installed by a hacker to perform malicious activity. If you know about this file you can choose to ignore it to exclude it from future scans. The text we found in this file that matches a known malicious file is: <strong style=\"color: #F00;\">\"" . esc_html((strlen($matchString) > 200 ? substr($matchString, 0, 200) . '...' : $matchString)) . "\"</strong>. The infection type is: <strong>" . esc_html($rule[3]) . '</strong>.' . $extraMsg,
 											'data' => array_merge(array(
 												'file' => $file,
 											), $dataForFile),
