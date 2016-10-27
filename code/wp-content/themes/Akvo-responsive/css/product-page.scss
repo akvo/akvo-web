@@ -658,13 +658,17 @@
 	}
 }	
 
-.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
 	.text-center{
 		text-align:center !important;
 		p{
 			text-align:center !important;
 		}
 	}
+}
+
+.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+	
 	
 	hgroup h1{
 		background: url("../images/logos/akvo-lumen.png") center center no-repeat;
