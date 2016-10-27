@@ -6114,10 +6114,11 @@ div[id^="inline-"] {
         left: 0%;
         width: 100%; } }
 
-.dashProduct .text-center, .caddisflyProduct .text-center, .akvositesProduct .text-center, .flowProduct .text-center {
+.rsrProdPag .text-center, .dashProduct .text-center, .caddisflyProduct .text-center, .akvositesProduct .text-center, .flowProduct .text-center {
   text-align: center !important; }
-  .dashProduct .text-center p, .caddisflyProduct .text-center p, .akvositesProduct .text-center p, .flowProduct .text-center p {
+  .rsrProdPag .text-center p, .dashProduct .text-center p, .caddisflyProduct .text-center p, .akvositesProduct .text-center p, .flowProduct .text-center p {
     text-align: center !important; }
+
 .dashProduct hgroup h1, .caddisflyProduct hgroup h1, .akvositesProduct hgroup h1, .flowProduct hgroup h1 {
   background: url("../images/logos/akvo-lumen.png") center center no-repeat; }
 .dashProduct hgroup h2, .caddisflyProduct hgroup h2, .akvositesProduct hgroup h2, .flowProduct hgroup h2 {
