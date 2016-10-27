@@ -457,6 +457,7 @@ class wfWAFRuleComparison implements wfWAFRuleInterface {
 		'currentuserisnot',
 		'md5equals',
 		'filepatternsmatch',
+		'filehasphp',
 	);
 
 	/**
@@ -711,7 +712,7 @@ class wfWAFRuleComparison implements wfWAFRuleInterface {
 			if ($file['name'] == (string) $subject) {
 				$fh = @fopen($file['tmp_name'], 'r');
 				if (!$fh) {
-					return false;
+					continue;
 				}
 				$totalRead = 0;
 				
@@ -733,6 +734,198 @@ class wfWAFRuleComparison implements wfWAFRuleInterface {
 		}
 		
 		return false;
+	}
+	
+	public function fileHasPHP($subject) {
+		$request = $this->getWAF()->getRequest();
+		$files = $request->getFiles();
+		if (!is_array($files)) {
+			return false;
+		}
+		
+		foreach ($files as $file) {
+			if ($file['name'] == (string) $subject) {
+				$fh = @fopen($file['tmp_name'], 'r');
+				if (!$fh) {
+					continue;
+				}
+				
+				$totalRead = 0;
+				$insideOpenTag = false;
+				$hasExecutablePHP = false;
+				$possiblyHasExecutablePHP = false;
+				$hasOpenParen = false;
+				$hasCloseParen = false;
+				$backtickCount = 0;
+				$wrappedTokenCheckBytes = '';
+				$maxTokenSize = 15; //__halt_compiler
+				$possibleWrappedTokens = array('<?php', '<?=', '<?', '?>', 'exit', 'new', 'clone', 'echo', 'print', 'require', 'include', 'require_once', 'include_once', '__halt_compiler');
+				
+				$readsize = 100 * 1024; //100k at a time
+				while (!feof($fh)) {
+					$data = fread($fh, $readsize);
+					$actualReadsize = strlen($data);
+					$totalRead += $actualReadsize;
+					if ($totalRead < 1) {
+						break;
+					}
+					
+					//Make sure we didn't miss PHP split over a chunking boundary
+					$wrappedCheckLength = strlen($wrappedTokenCheckBytes);
+					if ($wrappedCheckLength > 0) {
+						$testBytes = $wrappedTokenCheckBytes . substr($data, 0, min($maxTokenSize, $actualReadsize));
+						foreach ($possibleWrappedTokens as $t) {
+							$position = strpos($testBytes, $t);
+							if ($position !== false && $position < $wrappedCheckLength && $position + strlen($t) >= $wrappedCheckLength) { //Found a token that starts before this segment of data and ends within it
+								$data = substr($wrappedTokenCheckBytes, $position) . $data;
+								break;
+							}
+						}
+					}
+					
+					//Make sure it tokenizes correctly if chunked
+					if ($insideOpenTag) {
+						if ($possiblyHasExecutablePHP) {
+							$data = '<?= ' . $data; 
+						}
+						else {
+							$data = '<?php ' . $data;
+						}
+					}
+					
+					//Tokenize the data and check for PHP
+					$this->_resetErrors();
+					$tokens = @token_get_all($data);
+					$error = error_get_last();
+					if ($error !== null && stripos($error['message'], 'Unexpected character in input') !== false) {
+						break;
+					}
+					
+					if ($error !== null && feof($fh) && stripos($error['message'], 'Unterminated comment') !== false) {
+						break;
+					}
+					
+					$offset = 0;
+					foreach ($tokens as $token) {
+						if (is_array($token)) {
+							$offset += strlen($token[1]);
+							switch ($token[0]) {
+								case T_OPEN_TAG:
+									$insideOpenTag = true;
+									$hasOpenParen = false;
+									$hasCloseParen = false;
+									$backtickCount = 0;
+									$possiblyHasExecutablePHP = false;
+									
+									if ($error !== null && stripos($error['message'], 'Unterminated comment') !== false) {
+										$testOffset = $offset - strlen($token[1]);
+										$commentStart = strpos($data, '/*', $testOffset);
+										if ($commentStart !== false) {
+											$testBytes = substr($data, $testOffset, $commentStart - $testOffset);
+											$this->_resetErrors();
+											@token_get_all($testBytes);
+											$error = error_get_last();
+											if ($error !== null && stripos($error['message'], 'Unexpected character in input') !== false) {
+												break 3;
+											}
+										}
+									}
+									
+									break;
+								
+								case T_OPEN_TAG_WITH_ECHO:
+									$insideOpenTag = true;
+									$hasOpenParen = false;
+									$hasCloseParen = false;
+									$backtickCount = 0;
+									$possiblyHasExecutablePHP = true;
+									
+									if ($error !== null && stripos($error['message'], 'Unterminated comment') !== false) {
+										$testOffset = $offset - strlen($token[1]);
+										$commentStart = strpos($data, '/*', $testOffset);
+										if ($commentStart !== false) {
+											$testBytes = substr($data, $testOffset, $commentStart - $testOffset);
+											$this->_resetErrors();
+											@token_get_all($testBytes);
+											$error = error_get_last();
+											if ($error !== null && stripos($error['message'], 'Unexpected character in input') !== false) {
+												break 3;
+											}
+										}
+									}
+									
+									break;
+								
+								case T_CLOSE_TAG:
+									$insideOpenTag = false;
+									if ($possiblyHasExecutablePHP) {
+										$hasExecutablePHP = true; //Assume the echo short tag outputted something useful
+									}
+									break 2;
+									
+								case T_NEW:
+								case T_CLONE:
+								case T_ECHO:
+								case T_PRINT:
+								case T_REQUIRE:
+								case T_INCLUDE:
+								case T_REQUIRE_ONCE:
+								case T_INCLUDE_ONCE:
+								case T_HALT_COMPILER:
+								case T_EXIT:
+									$hasExecutablePHP = true;
+									break 2;
+							}
+						}
+						else {
+							$offset += strlen($token);
+							switch ($token) {
+								case '(':
+									$hasOpenParen = true;
+									break;
+								case ')':
+									$hasCloseParen = true;
+									break;
+								case '`':
+									$backtickCount++;
+									break;
+							}
+						}
+						if (!$hasExecutablePHP && (($hasOpenParen && $hasCloseParen) || ($backtickCount > 1 && $backtickCount % 2 === 0))) {
+							$hasExecutablePHP = true;
+							break;
+						}
+					}
+					
+					if ($hasExecutablePHP) {
+						fclose($fh);
+						return true;
+					}
+					
+					$wrappedTokenCheckBytes = substr($data, - min($maxTokenSize, $actualReadsize)); 
+				}
+				
+				fclose($fh);
+			}
+		}
+		
+		return false;
+	}
+	
+	private function _resetErrors() {
+		if (function_exists('error_clear_last')) {
+			error_clear_last();
+		}
+		else {
+			// set error_get_last() to defined state by forcing an undefined variable error
+			set_error_handler(array($this, '_resetErrorsHandler'), 0);
+			@$undefinedVariable;
+			restore_error_handler();
+		}
+	}
+	
+	public function _resetErrorsHandler($errno, $errstr, $errfile, $errline) {
+		//Do nothing
 	}
 
 	/**

@@ -2,9 +2,9 @@
 /*
 Plugin Name: Mail Subscribe List
 Plugin URI: http://www.webfwd.co.uk/packages/wordpress-hosting/
-Description: Simple customizable plugin that displays a name/email form where visitors can submit their information, managable in the WordPress admin.
-Version: 2.1.2
-Author: Webforward
+Description: Simple customisable plugin that displays a name/email form where visitors can submit their information, managable in the WordPress admin.
+Version: 2.1.3
+Author: Richard Leishman t/a Webforward
 Author URI: http://www.webfwd.co.uk/
 License: GPL
 
@@ -72,7 +72,7 @@ function smlsubform($atts=array()){
 	
 	if ($prepend) $return .= '<p class="prepend">'.$prepend.'</p>';
 	
-	if ($_POST['sml_subscribe'] && $thankyou) { 
+	if (array_key_exists('sml_subscribe', $_POST) && $_POST['sml_subscribe'] && $thankyou) { 
 		if ($jsthanks) {
 			$return .= "<script>window.onload = function() { alert('".$thankyou."'); }</script>";
 		} else {
@@ -259,19 +259,18 @@ wp_register_sidebar_widget(
     )
 );
 
-
-
 /////////
 
 // Handle form Post
-if ($_POST['sml_subscribe']) {
+if (array_key_exists('sml_subscribe', $_POST) && $_POST['sml_subscribe']) {
 	$name = $_POST['sml_name'];
 	$email = $_POST['sml_email'];
+
 	if (is_email($email)) {
-		
-		$exists = mysql_query("SELECT * FROM ".$wpdb->prefix."sml where sml_email like '".$wpdb->escape($email)."' limit 1");
-		if (mysql_num_rows($exists) <1) {
-			$wpdb->query("insert into ".$wpdb->prefix."sml (sml_name, sml_email) values ('".$wpdb->escape($name)."', '".$wpdb->escape($email)."')");
+		$exists = $wpdb->get_row($wpdb->prepare("SELECT COUNT(`id`) as 'count' FROM ".$wpdb->prefix."sml WHERE sml_email = %s LIMIT 1", $email));
+
+		if ((int) $exists->count === 0) {
+			$wpdb->query($wpdb->prepare("INSERT INTO ".$wpdb->prefix."sml (sml_name, sml_email) VALUES (%s, %s)", $name, $email));
 		}
 	}
 }
@@ -282,4 +281,3 @@ function plugin_get_version() {
 	return $plugin_version;
 }
 
-?>

@@ -10,8 +10,6 @@ class wordfenceHash {
 	public $totalFiles = 0;
 	public $totalDirs = 0;
 	public $totalData = 0; //To do a sanity check, don't use 'du' because it gets sparse files wrong and reports blocks used on disk. Use : find . -type f -ls | awk '{total += $7} END {print total}'
-	public $linesOfPHP = 0;
-	public $linesOfJCH = 0; //lines of HTML, CSS and javascript
 	public $stoppedOnFile = false;
 	private $coreEnabled = false;
 	private $pluginsEnabled = false;
@@ -27,6 +25,9 @@ class wordfenceHash {
 	private $only = false;
 	private $totalForks = 0;
 	private $alertedOnUnknownWordPressVersion = false;
+	private $foldersProcessed = array();
+	private $filesProcessedBloomFilter = false;
+	private $suspectedFiles = array();
 
 	/**
 	 * @param string $striplen
@@ -60,6 +61,8 @@ class wordfenceHash {
 		if(wfConfig::get('scansEnabled_coreUnknown')){
 			$this->coreUnknownEnabled = true;
 		}
+		
+		$this->filesProcessedBloomFilter = new wfMD5BloomFilter(65536, 8); //65536,8 produces the lowest miss probability. Uses approximately 8 KB of memory + PHP object overhead
 
 		$this->db = new wfDB();
 
@@ -113,12 +116,15 @@ class wordfenceHash {
 		if($this->coreUnknownEnabled){ $this->status['coreUnknown'] = wordfence::statusStart("Scanning for unknown files in wp-admin and wp-includes"); } else { wordfence::statusDisabled("Skipping unknown core file scan"); }
 	}
 	public function __sleep(){
-		return array('striplen', 'totalFiles', 'totalDirs', 'totalData', 'linesOfPHP', 'linesOfJCH', 'stoppedOnFile', 'coreEnabled', 'pluginsEnabled', 'themesEnabled', 'malwareEnabled', 'coreUnknownEnabled', 'knownFiles', 'malwareData', 'haveIssues', 'status', 'possibleMalware', 'path', 'only', 'totalForks', 'alertedOnUnknownWordPressVersion');
+		return array('striplen', 'totalFiles', 'totalDirs', 'totalData', 'stoppedOnFile', 'coreEnabled', 'pluginsEnabled', 'themesEnabled', 'malwareEnabled', 'coreUnknownEnabled', 'knownFiles', 'malwareData', 'haveIssues', 'status', 'possibleMalware', 'path', 'only', 'totalForks', 'alertedOnUnknownWordPressVersion', 'foldersProcessed', 'filesProcessedBloomFilter', 'suspectedFiles');
 	}
 	public function __wakeup(){
 		$this->db = new wfDB();
 		$this->startTime = microtime(true);
 		$this->totalForks++;
+	}
+	public function getSuspectedFiles() {
+		return array_keys($this->suspectedFiles);
 	}
 	public function run($engine){ //base path and 'only' is a list of files and dirs in the bast that are the only ones that should be processed. Everything else in base is ignored. If only is empty then everything is processed.
 		if($this->totalForks > 1000){
@@ -178,6 +184,8 @@ class wordfenceHash {
 			return;
 		}
 		if(! is_readable($path)){ return; } //Applies to files and dirs
+		if (!$this->_shouldProcessPath($path)) { return; }
+		$this->_checkForTimeout($path);
 		if(is_dir($path)){
 			$this->totalDirs++;
 			if($path[strlen($path) - 1] != '/'){
@@ -188,38 +196,65 @@ class wordfenceHash {
 				if($cont[$i] == '.' || $cont[$i] == '..'){ continue; }
 				$file = $path . $cont[$i];
 				if(is_file($file)){
+					$this->_checkForTimeout($file);
 					$this->processFile($file);
 				} else if(is_dir($file)) {
 					$this->_dirHash($file);
 				}
 			}
+			
+			$realPath = realpath($path);
+			$this->foldersProcessed[$realPath] = 1; 
 		} else {
 			if(is_file($path)){
 				$this->processFile($path);
 			}
 		}
 	}
-	private function processFile($realFile){
-		$file = substr($realFile, $this->striplen);
-		if( (! $this->stoppedOnFile) && microtime(true) - $this->startTime > $this->engine->maxExecTime){ //max X seconds but don't allow fork if we're looking for the file we stopped on. Search mode is VERY fast.
+	private function _checkForTimeout($path) {
+		$file = substr($path, $this->striplen);
+		if ((!$this->stoppedOnFile) && microtime(true) - $this->startTime > $this->engine->maxExecTime) { //max X seconds but don't allow fork if we're looking for the file we stopped on. Search mode is VERY fast.
 			$this->stoppedOnFile = $file;
 			wordfence::status(4, 'info', "Calling fork() from wordfenceHash::processFile with maxExecTime: " . $this->engine->maxExecTime);
 			$this->engine->fork();
 			//exits
 		}
-
-		$exclude = wordfenceScanner::getExcludeFilePattern(wordfenceScanner::EXCLUSION_PATTERNS_USER);
-		if ($exclude && preg_match($exclude, $realFile)) {
+		
+		//Put this after the fork, that way we will at least scan one more file after we fork if it takes us more than 10 seconds to search for the stoppedOnFile
+		if ($this->stoppedOnFile && $file != $this->stoppedOnFile) {
 			return;
 		}
-
-		//Put this after the fork, that way we will at least scan one more file after we fork if it takes us more than 10 seconds to search for the stoppedOnFile
-		if($this->stoppedOnFile && $file != $this->stoppedOnFile){
-			return;
-		} else if($this->stoppedOnFile && $file == $this->stoppedOnFile){
+		else if ($this->stoppedOnFile && $file == $this->stoppedOnFile) {
 			$this->stoppedOnFile = false; //Continue scanning
 		}
-
+	}
+	private function _shouldProcessPath($path) {
+		$file = substr($path, $this->striplen);
+		$exclude = wordfenceScanner::getExcludeFilePattern(wordfenceScanner::EXCLUSION_PATTERNS_USER);
+		if ($exclude && preg_match($exclude, $file)) {
+			return false;
+		}
+		
+		$realPath = realpath($path);
+		if (isset($this->foldersProcessed[$realPath])) {
+			return false;
+		}
+		
+		return true;
+	}
+	private function processFile($realFile){
+		$file = substr($realFile, $this->striplen);
+		
+		if (preg_match('/\.suspected$/i', $file)) { //Already iterating over all files in the search areas so generate this list here
+			wordfence::status(4, 'info', "Found .suspected file: $file");
+			$this->suspectedFiles[$file] = 1;
+		}
+		
+		if (!$this->_shouldHashFile($realFile)) {
+			wordfence::status(4, 'info', "Skipping unneeded hash: {$realFile}");
+			return;
+		}
+		
 		if(wfUtils::fileTooBig($realFile)){
 			wordfence::status(4, 'info', "Skipping file larger than max size: $realFile");
 			return;
@@ -229,6 +264,7 @@ class wordfenceHash {
 		} else {
 			wordfence::status(4, 'info', "Scanning: $realFile");
 		}
+		
 		wfUtils::beginProcessingFile($file);
 		$wfHash = self::wfHash($realFile); 
 		if($wfHash){
@@ -280,7 +316,7 @@ class wordfenceHash {
 									
 									$this->haveIssues['core'] = true;
 									$this->engine->addIssue(
-										'file',
+										'knownfile',
 										1,
 										'coreModified' . $file . $md5,
 										'coreModified' . $file,
@@ -314,7 +350,7 @@ class wordfenceHash {
 								$cKey = $this->knownFiles['plugins'][$file][2];
 								$this->haveIssues['plugins'] = true;
 								$this->engine->addIssue(
-									'file',
+									'knownfile',
 									2,
 									'modifiedplugin' . $file . $md5,
 									'modifiedplugin' . $file,
@@ -351,7 +387,7 @@ class wordfenceHash {
 								$cKey = $this->knownFiles['themes'][$file][2];
 								$this->haveIssues['themes'] = true;
 								$this->engine->addIssue(
-									'file',
+									'knownfile',
 									2,
 									'modifiedtheme' . $file . $md5,
 									'modifiedtheme' . $file,
@@ -379,7 +415,7 @@ class wordfenceHash {
 						if (strpos($realFile, $path) === 0) {
 							$this->haveIssues['coreUnknown'] = true;
 							$this->engine->addIssue(
-								'file',
+								'knownfile',
 								2, 
 								'coreUnknown' . $file . $md5,
 								'coreUnknown' . $file,
@@ -401,13 +437,9 @@ class wordfenceHash {
 			// we could split this into files who's path we recognize and file's who's path we recognize AND who have a valid sig.
 			// But because we want to scan files who's sig we don't recognize, regardless of known path or not, we only need one "knownFile" field.
 			$this->db->queryWrite("insert into " . $this->db->prefix() . "wfFileMods (filename, filenameMD5, knownFile, oldMD5, newMD5) values ('%s', unhex(md5('%s')), %d, '', unhex('%s')) ON DUPLICATE KEY UPDATE newMD5=unhex('%s'), knownFile=%d", $file, $file, $knownFile, $md5, $md5, $knownFile);
+			
+			$this->filesProcessedBloomFilter->add($file);
 
-			//Now that we know we can open the file, lets update stats
-			if(preg_match('/\.(?:js|html|htm|css)$/i', $realFile)){
-				$this->linesOfJCH += sizeof(file($realFile));
-			} else if(preg_match('/\.php$/i', $realFile)){
-				$this->linesOfPHP += sizeof(file($realFile));
-			}
 			$this->totalFiles++;
 			$this->totalData += filesize($realFile); //We already checked if file overflows int in the fileTooBig routine above
 			if($this->totalFiles % 100 === 0){
@@ -419,21 +451,93 @@ class wordfenceHash {
 		wfUtils::endProcessingFile();
 	}
 	public static function wfHash($file){
-		wfUtils::errorsOff();
-		$md5 = @md5_file($file, false);
-		wfUtils::errorsOn();
-
-		if(! $md5){ return false; }
 		$fp = @fopen($file, "rb");
-		if(! $fp){
+		if (!$fp) {
 			return false;
 		}
-		$ctx = hash_init('sha256');
+		$md5Context = hash_init('md5');
+		$sha256Context = hash_init('sha256');
 		while (!feof($fp)) {
-			hash_update($ctx, str_replace( array("\n","\r","\t"," ") ,"",fread($fp, 65536)));
+			$data = fread($fp, 65536);
+			if ($data === false) {
+				return false;
+			}
+			hash_update($md5Context, $data);
+			hash_update($sha256Context, str_replace(array("\n","\r","\t"," "),"", $data));
 		}
-		$shac = hash_final($ctx, false);
+		$md5 = hash_final($md5Context, false);
+		$shac = hash_final($sha256Context, false);
 		return array($md5, $shac);
+	}
+	private function _shouldHashFile($fullPath) {
+		$file = substr($fullPath, $this->striplen);
+		
+		//Already hashed and processed, return false
+		if ($this->filesProcessedBloomFilter->contains($file)) { //Might have hashed it, verify
+			$rec = $this->db->querySingleRec("SELECT * FROM " . $this->db->prefix() . "wfFileMods WHERE filename = '%s'", $file);
+			if ($rec !== null) {
+				wordfence::status(4, 'info', "Already hashed: {$file}");
+				return false;
+			}
+		}
+		
+		//Core File, return true
+		if ((isset($this->knownFiles['core']) && isset($this->knownFiles['core'][$file])) ||
+			(isset($this->knownFiles['plugins']) && isset($this->knownFiles['plugins'][$file])) ||
+			(isset($this->knownFiles['themes']) && isset($this->knownFiles['themes'][$file]))) {
+			return true;
+		}
+		
+		//Excluded file, return false
+		$excludePattern = wordfenceScanner::getExcludeFilePattern(wordfenceScanner::EXCLUSION_PATTERNS_USER & wordfenceScanner::EXCLUSION_PATTERNS_MALWARE);
+		if ($excludePattern && preg_match($excludePattern, $file)) {
+			return false;
+		}
+		
+		//Determine treatment
+		$fileExt = '';
+		if (preg_match('/\.([a-zA-Z\d\-]{1,7})$/', $file, $matches)) {
+			$fileExt = strtolower($matches[1]);
+		}
+		$isPHP = false;
+		if (preg_match('/\.(?:php(?:\d+)?|phtml)(\.|$)/i', $file)) {
+			$isPHP = true;
+		}
+		$isHTML = false;
+		if (preg_match('/\.(?:html?)(\.|$)/i', $file)) {
+			$isHTML = true;
+		}
+		$isJS = false;
+		if (preg_match('/\.(?:js)(\.|$)/i', $file)) {
+			$isJS = true;
+		}
+		
+		//If scan images is disabled, only allow .js through
+		if (!$isPHP && preg_match('/^(?:jpg|jpeg|mp3|avi|m4v|mov|mp4|gif|png|tiff?|svg|sql|js|tbz2?|bz2?|xz|zip|tgz|gz|tar|log|err\d+)$/', $fileExt)) {
+			if (!wfConfig::get('scansEnabled_scanImages') && !$isJS) {
+				return false;
+			}
+		}
+		
+		//If high sensitivity is disabled, don't allow .sql
+		if (strtolower($fileExt) == 'sql') {
+			if (!wfConfig::get('scansEnabled_highSense')) {
+				return false;
+			}
+		}
+		
+		//Treating as binary, return true
+		$treatAsBinary = ($isPHP || $isHTML || wfConfig::get('scansEnabled_scanImages'));
+		if ($treatAsBinary) {
+			return true;
+		}
+		
+		//Will be malware scanned, return true
+		if (strpos($file, 'lib/wordfenceScanner.php') === false && ($fileExt == 'js')) {
+			return true;
+		}
+		
+		return false;
 	}
 	private function isMalwarePrefix($hexMD5){
 		$binPrefix = pack("H*", substr($hexMD5, 0, 8));

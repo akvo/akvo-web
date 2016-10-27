@@ -38,25 +38,40 @@ class wfUtils {
 			}
 		}
 	}
-	public static function makeDuration($secs) {
-		$months = floor($secs / (86400 * 30));
-		$days = floor($secs / 86400);
-		$hours = floor($secs / 3600);
-		$minutes = floor($secs / 60);
-		if($months) {
-			$days -= $months * 30;
-			return self::pluralize($months, 'month', $days, 'day');
-		} else if($days) {
-			$hours -= $days * 24;
-			return self::pluralize($days, 'day', $hours, 'hour');
-		} else if($hours) {
-			$minutes -= $hours * 60;
-			return self::pluralize($hours, 'hour', $minutes, 'minute');
-		} else if($minutes) {
-			return self::pluralize($minutes, 'minute');
-		} else {
-			return self::pluralize($secs, 'second');
+	public static function makeDuration($secs, $createExact = false) {
+		$components = array();
+		
+		$months = floor($secs / (86400 * 30)); $secs -= $months * 86400 * 30;
+		$days = floor($secs / 86400); $secs -= $days * 86400;
+		$hours = floor($secs / 3600); $secs -= $hours * 3600;
+		$minutes = floor($secs / 60); $secs -= $minutes * 60;
+		
+		if ($months) {
+			$components[] = self::pluralize($months, 'month');
+			if (!$createExact) {
+				$hours = $minutes = $secs = 0;
+			}
 		}
+		if ($days) {
+			$components[] = self::pluralize($days, 'day');
+			if (!$createExact) {
+				$minutes = $secs = 0;
+			}
+		}
+		if ($hours) {
+			$components[] = self::pluralize($hours, 'hour');
+			if (!$createExact) {
+				$secs = 0;
+			}
+		}
+		if ($minutes) {
+			$components[] = self::pluralize($minutes, 'minute');
+		}
+		if ($secs) {
+			$components[] = self::pluralize($secs, 'second');
+		}
+		
+		return implode(' ', $components);
 	}
 	public static function pluralize($m1, $t1, $m2 = false, $t2 = false) {
 		if($m1 != 1) {
@@ -119,13 +134,17 @@ class wfUtils {
 				return false;
 			}
 		}
-
-		// Convert human readable addresses to 128 bit (IPv6) binary strings
-		// Note: self::inet_pton converts IPv4 addresses to IPv6 compatible versions
-		$binary_network = str_pad(wfHelperBin::bin2str(self::inet_pton($network)), 128, '0', STR_PAD_LEFT);
-		$binary_ip = str_pad(wfHelperBin::bin2str(self::inet_pton($ip)), 128, '0', STR_PAD_LEFT);
-
-		return 0 === substr_compare($binary_ip, $binary_network, 0, $prefix);
+		
+		$bin_network = substr(self::inet_pton($network), 0, ceil($prefix / 8));
+		$bin_ip = substr(self::inet_pton($ip), 0, ceil($prefix / 8));
+		if ($prefix % 8 != 0) { //Adjust the last relevant character to fit the mask length since the character's bits are split over it
+			$pos = intval($prefix / 8);
+			$adjustment = chr(((0xff << (8 - ($prefix % 8))) & 0xff));
+			$bin_network[$pos] = ($bin_network[$pos] & $adjustment);
+			$bin_ip[$pos] = ($bin_ip[$pos] & $adjustment);
+		}
+		
+		return ($bin_network === $bin_ip);
 	}
 
 	/**
@@ -632,7 +651,7 @@ class wfUtils {
 				return self::getCleanIPAndServerVar(array($connectionIP));
 			} else {
 				$ipsToCheck = array(
-					array($_SERVER[$howGet], $howGet),
+					array((isset($_SERVER[$howGet]) ? $_SERVER[$howGet] : ''), $howGet),
 					$connectionIP,
 				);
 				return self::getCleanIPAndServerVar($ipsToCheck);
@@ -818,6 +837,9 @@ class wfUtils {
 
 	public static function endProcessingFile() {
 		wfConfig::set('scanFileProcessing', null);
+		if (wfConfig::get('lowResourceScansEnabled')) {
+			usleep(10000); //10 ms
+		}
 	}
 
 	public static function getScanLock(){
@@ -942,7 +964,7 @@ class wfUtils {
 		if (!$host) {
 			// This function works for IPv4 or IPv6
 			if (function_exists('gethostbyaddr')) {
-				$host = gethostbyaddr($IP);
+				$host = @gethostbyaddr($IP);
 			}
 			if (!$host) {
 				$ptr = false;
@@ -1259,7 +1281,7 @@ class wfUtils {
 
 	public static function htaccessAppend($code)
 	{
-		$htaccess = ABSPATH . '/.htaccess';
+		$htaccess = wfCache::getHtaccessPath();
 		$content  = self::htaccess();
 		if (wfUtils::isNginx() || !is_writable($htaccess)) {
 			return false;
@@ -1272,10 +1294,27 @@ class wfUtils {
 
 		return true;
 	}
+	
+	public static function htaccessPrepend($code)
+	{
+		$htaccess = wfCache::getHtaccessPath();
+		$content  = self::htaccess();
+		if (wfUtils::isNginx() || !is_writable($htaccess)) {
+			return false;
+		}
+		
+		if (strpos($content, $code) === false) {
+			// make sure we write this once
+			file_put_contents($htaccess, trim($code) . "\n" . $content, LOCK_EX);
+		}
+		
+		return true;
+	}
 
 	public static function htaccess() {
-		if (is_readable(ABSPATH . '/.htaccess') && !wfUtils::isNginx()) {
-			return file_get_contents(ABSPATH . '/.htaccess');
+		$htaccess = wfCache::getHtaccessPath();
+		if (is_readable($htaccess) && !wfUtils::isNginx()) {
+			return file_get_contents($htaccess);
 		}
 		return "";
 	}

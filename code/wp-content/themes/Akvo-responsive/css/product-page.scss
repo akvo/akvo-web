@@ -1,4 +1,96 @@
+.productPage-2015 {
+    .topIcons {
+        background-color: rgb(247, 244, 234);
+        padding: 2em 0;
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    .orange {
+        border-bottom: 12px solid $orange2015;
+    }
+    .yellow {
+        border-bottom: 12px solid $yellow2015;
+    }
+    .green {
+        border-bottom: 12px solid $green2015;
+    }
+    .pink {
+        border-bottom: 12px solid $pink2015;
+    }
+    .lightblue {
+        border-bottom: 12px solid $lightblue2015;
+    }
+    .darkblue {
+        border-bottom: 12px solid $darkblue2015;
+    }
+    .none {
+        border-bottom: 12px solid rgba(0,0,0,0);
+    }
+    .bigImage {
+        margin-top: 1em;
+        margin-bottom: 1em;
+        img {
+            width: 100%;
+        }
+        &:hover {
+            @include transition(opacity 200ms ease-in-out);
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }        
+    }
+    .products {
+        * {
+            box-sizing: border-box;
+        }
+        a {
+            display: inline-block;
+            width: 40.175%;
+            vertical-align: top;
+            padding-top: 1em;
+            &:nth-child(1),
+            &:nth-child(4n),
+            &:nth-child(4n+1) {
+                width: 59.825%;
+            }
+            &:nth-child(odd) {
+                padding-right: 1%;
+            }
+            &:nth-child(even) {
+                padding-left: 1%;
+            }
+            &:hover {
+                @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
+            @media only screen and (max-width: 600px) {
+                &:nth-child(n) {
+                    display: block;
+                    width: 100%;
+                    padding-left: 0;
+                    padding-right: 0;
+                    padding-top: 1em;
+                    padding-bottom: 0;
+                    margin: 0;
+                }
+            }
+        }
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+/* Apply list styles to custom form content, overriding resets */
+.fullWidthParag {
 
+}
+
+/* for the new product pages */
 .row{
 	display: block;
 	
@@ -8,10 +100,8 @@
 	padding: 0 15px;
 	position: relative;
 	
+	/* for four columns */
 	.col-3{
-		
-		
-		
 		padding: 15px;
 		
 		/*
@@ -20,28 +110,18 @@
 		*/
 		
 		position: relative;
-		
 		margin: 0;
-		
 		width:25%;
-		
 		float:left;
-		
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
-		
 		min-height: 1px;
-		
 		
 		@media only screen and (max-width: 992px){
 			width: 100%;
 		}
-		
 	}
-	
-	
-	
 }
 
 .row:before, .row:after{
@@ -53,11 +133,7 @@
 	clear: both;
 }
 
-
-
-
-
-
+/* START OF TABULAR CONTENT */
 .tab-content{
 	.tab-desc{
 		margin:3em 0;
@@ -65,8 +141,6 @@
 	.tab-desc, .tab-desc p{
 		text-align: center;
 	}
-	
-	
 }
 
 .tab-inner-section{
@@ -90,9 +164,6 @@
 		margin-right:1em;
 	}
 
-
-	
-	
 	#testimonials{
 		margin-top: 4em !important;
 	}
@@ -164,6 +235,7 @@
 		padding-top:0;
 	}
 	
+	/*
 	#features .media-box{
 		background: none;
 		
@@ -171,18 +243,7 @@
 			margin-top:0;
 		}
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	*/
 	
 	.sub-section{
 		margin:2em 0;
@@ -190,9 +251,6 @@
 		.threeColumns.wrapper h3{
 			margin-bottom:2em;
 		}
-		
-		
-		
 	}
 	
 	.box-col{
@@ -235,9 +293,6 @@
 	.big-box-wrapper .box{
 		height: 560px;
 		overflow:hidden;
-		
-		
-		
 	}
 	section.rsrNuggetsSection li{
 		background: rgba(87, 193, 232, 0.1);
@@ -260,6 +315,7 @@
 		margin: 0;
 	}
 	
+	/* IS NOT IN USE
 	.modal{
 		position: fixed;
 		width: 100%;
@@ -294,10 +350,10 @@
 			right: 20px;
 		}
 	}
-	
-	
+	*/
 }	
 
+/* ONLY USED IN THE RSR PAGE - NOW BEING UNUSED - TO BE REMOVED 
 .media-box{
 	background: rgba(114, 205, 255, 0.3);
 	margin:5em auto;
@@ -369,7 +425,7 @@
 
 	
 
-
+/* STYLES FOR COUNTER */
 .timeTicker {
     margin: 0 auto;
     min-width: 152px;
@@ -478,10 +534,6 @@
 
 
 .akvositesProduct, #content.rsrProdPag{
-	
-	
-	
-	
 	.threeColumns.wrapper{
 		min-height: 120px;
 		div{ 
@@ -519,12 +571,7 @@
 .rsrProdPag, .flowProduct, .akvositesProduct{
 	
 	/* HELPER CLASSES */
-	.text-center{
-		text-align:center !important;
-		p{
-			text-align:center !important;
-		}
-	}
+	
 	
 	.testimonials{
 		
@@ -611,8 +658,18 @@
 	}
 }	
 
-.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+	.text-center{
+		text-align:center !important;
+		p{
+			text-align:center !important;
+		}
+	}
+}
 
+.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+	
+	
 	hgroup h1{
 		background: url("../images/logos/akvo-lumen.png") center center no-repeat;
 	}
@@ -701,8 +758,6 @@
 
 	$yellowBG: rgba(255, 210, 0, 0.8);
 	
-	
-
 	#testimonials{
 		margin-top:7em;
 	}
@@ -720,7 +775,6 @@
 			
 			a{
 				color: #2B2A75;
-				
 			}
 		}
 		li.active{
@@ -794,20 +848,22 @@
 					
 			}
 		}	
-		
 	}
 }
 
-.caddisflyProduct #get-involved-section{
-	padding-top: 0;
+/* CADDISFLY PRODUCT PAGE */
+.caddisflyProduct{
+	#get-involved-section{
+		padding-top: 0;
+	}
+	@media only screen and (min-width: 993px){
+		li.box{
+			padding: 0 6%;
+		}
+	}
+}
+
 	
-}
-
-@media only screen and (min-width: 993px){
-	.caddisflyProduct li.box{
-		padding: 0 6%;
-	}
-}
 .box-btn{
 	width: 320px;
 	display: inline-block;
@@ -874,7 +930,7 @@ img.aligncenter{
 
 
 
-
+/* FLOW PRODUCT PAGE */
 .flowProduct{
 	
 	$orangeBG: rgba(222, 137, 41, 0.8);

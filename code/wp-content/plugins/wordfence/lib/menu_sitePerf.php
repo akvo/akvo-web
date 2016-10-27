@@ -2,10 +2,19 @@
 $w = new wfConfig(); 
 ?>
 <div class="wordfenceModeElem" id="wordfenceMode_caching"></div>
-<div class="wrap">
+<div class="wrap wordfence">
 	<?php require('menuHeader.php'); ?>
 	<?php $pageTitle = "Your Site Performance"; $helpLink="http://docs.wordfence.com/en/Falcon_Cache"; $helpLabel="Learn more about Wordfence Caching"; include('pageTitle.php'); ?>
-	<div class="wordfenceWrap" style="margin: 20px 20px 20px 30px;">
+	<?php
+	$rightRail = new wfView('marketing/rightrail');
+	echo $rightRail;
+	?>
+	<div class="wordfenceWrap" style="margin: 20px 20px 20px 30px; max-width: 800px;">
+		<?php if (wfConfig::get('cacheType') == 'php' || wfConfig::get('cacheType') == 'falcon') { ?>
+			<div id="wordfenceFalconDeprecationWarning" class="wf-notice"><p><strong>Support for the Falcon and Basic cache will be removed.</strong> This site currently has the <?php echo (wfConfig::get('cacheType') == 'php' ? 'Basic' : 'Falcon'); ?> cache enabled, and it is scheduled to be removed in an upcoming release. Please investigate other caching options and then manually disable it below. It will be disabled automatically when support is removed. <a href="http://docs.wordfence.com/en/Falcon_Cache" target="_blank">More information.</a></p></div>
+		<?php } else { ?>
+			<div id="wordfenceFalconDeprecationWarning" class="wf-notice"><p><strong>Support for the Falcon and Basic cache will be removed.</strong> It is scheduled to be removed in an upcoming release and should not be enabled. If enabled, it will be disabled automatically when support is removed. <a href="http://docs.wordfence.com/en/Falcon_Cache" target="_blank">More information.</a></p></div>
+		<?php } ?>
 		<h2>Caching</h2>
 		<table border="0">
 		<tr><td>Disable all performance enhancements:</td><td><input type="radio" name="cacheType" id="cacheType_disable" value="disable" <?php if(! wfConfig::get('cacheType')){ echo 'checked="checked"'; } ?> /></td><td>No performance improvement</td></tr>
@@ -45,7 +54,7 @@ $w = new wfConfig();
 				<option value="uaeq">User-Agent Exactly Matches</option>
 				<option value="cc">Cookie Name Contains</option>
 			</select>
-			this value then don't cache it:
+			this value<br>then don't cache it:
 			<input type="text" id="wfPattern" value="" size="20" maxlength="1000" />e.g. /my/dynamic/page/
 			<input type="button" class="button-primary" value="Add exclusion" onclick="WFAD.addCacheExclusion(jQuery('#wfPatternType').val(), jQuery('#wfPattern').val()); return false;" />
 		</p>
