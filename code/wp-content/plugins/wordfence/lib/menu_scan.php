@@ -163,7 +163,7 @@ $sigUpdateTime = wfConfig::get('signatureUpdateTime');
 
 
 		</div>
-		<div style="margin-top: 20px;">
+		<div id="wfScanIssuesWrapper" style="margin-top: 20px;">
 			<div id="wfTabs">
 				<a href="#" id="wfNewIssuesTab" class="wfTab2 wfTabSwitch selected" onclick="wordfenceAdmin.switchIssuesTab(this, 'new'); return false;">New Issues</a>
 				<a href="#" class="wfTab2 wfTabSwitch"          onclick="wordfenceAdmin.switchIssuesTab(this, 'ignored'); return false;">Ignored Issues</a>

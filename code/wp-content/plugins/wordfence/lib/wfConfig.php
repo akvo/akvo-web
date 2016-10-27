@@ -25,8 +25,8 @@ class wfConfig {
 			"alertOn_firstAdminLoginOnly" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"alertOn_nonAdminLogin" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"alertOn_firstNonAdminLoginOnly" => array('value' => false, 'autoload' => self::AUTOLOAD),
+			"alertOn_wordfenceDeactivated" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"liveTrafficEnabled" => array('value' => true, 'autoload' => self::AUTOLOAD),
-			"scansEnabled_checkReadableConfig" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"advancedCommentScanning" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"checkSpamIP" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"spamvertizeCheck" => array('value' => false, 'autoload' => self::AUTOLOAD),
@@ -42,6 +42,7 @@ class wfConfig {
 			"scansEnabled_coreUnknown" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_malware" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_fileContents" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"scansEnabled_checkReadableConfig" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_suspectedFiles" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_posts" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_comments" => array('value' => true, 'autoload' => self::AUTOLOAD),
@@ -86,11 +87,12 @@ class wfConfig {
 			'ajaxWatcherDisabled_front' => array('value' => false, 'autoload' => self::AUTOLOAD),
 			'ajaxWatcherDisabled_admin' => array('value' => false, 'autoload' => self::AUTOLOAD),
 			'wafAlertOnAttacks' => array('value' => true, 'autoload' => self::AUTOLOAD),
+			'disableWAFIPBlocking' => array('value' => false, 'autoload' => self::AUTOLOAD),
 		),
 		"otherParams" => array(
 			"scan_include_extra" => "",
 			// 'securityLevel' => '2',
-			"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+			"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'scan_maxIssues' => 1000, 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
 			'liveTraf_maxRows' => 2000,
 			"neverBlockBG" => "neverBlockVerified",
 			"loginSec_countFailMins" => "240",
@@ -282,12 +284,16 @@ class wfConfig {
 		
 		if (!self::$tableExists) {
 			return;
-		}
 		
+		}
 		$table = self::table();
 		if ($wpdb->query($wpdb->prepare("INSERT INTO {$table} (name, val, autoload) values (%s, %s, %s) ON DUPLICATE KEY UPDATE val = %s, autoload = %s", $key, $val, $autoload, $val, $autoload)) !== false && $autoload != self::DONT_AUTOLOAD) {
 			self::updateCachedOption($key, $val);
 		}
+		
+		if (!WFWAF_SUBDIRECTORY_INSTALL && class_exists('wfWAFIPBlocksController') && (substr($key, 0, 4) == 'cbl_' || $key == 'blockedTime' || $key == 'disableWAFIPBlocking')) {
+			wfWAFIPBlocksController::synchronizeConfigSettings();
+		} 
 	}
 	public static function get($key, $default = false) {
 		global $wpdb;
