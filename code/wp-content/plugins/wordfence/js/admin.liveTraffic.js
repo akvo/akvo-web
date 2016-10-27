@@ -356,7 +356,9 @@
 				case 'lockedOut':
 					return 'locked out from logging in';
 
+				case 'blocked:waf-always':
 				case 'blocked:wordfence':
+				case 'blocked:wfsnrepeat': 
 					desc = self.actionDescription();
 					if (desc && desc.toLowerCase().indexOf('block') === 0) {
 						return 'b' + desc.substring(1);
@@ -403,7 +405,7 @@
 
 		self.cssClasses = ko.pureComputed(function() {
 			var classes = 'wfActEvent';
-			if (self.statusCode() == 403) {
+			if (self.statusCode() == 403 || self.statusCode() == 503) {
 				classes += ' wfActionBlocked';
 			}
 			if (self.statusCode() == 404) {

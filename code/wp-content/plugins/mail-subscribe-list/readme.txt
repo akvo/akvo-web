@@ -1,8 +1,9 @@
 === Mail Subscribe List ===
 Contributors: webfwd
-Tags: mail, email, newsletter, subscribe, list, mailinglist, mail list, mailing list, campaignmonitor, mailchimp, aweber, constant contact, vertical response,madmimi,myemma, subscriber, subscribers, email marketing, marketing, widget, post, plugin, admin, posts, 
+Tags: mail, email, newsletter, subscribe, list, mailinglist, mail list, mailing list, campaignmonitor, mailchimp, constant contact, subscriber, subscribers, email marketing, marketing, widget, post, plugin, admin, posts, sidebar, page, pages
 Requires at least: 3.0
-Tested up to: 4.2
+Tested up to: 4.6.1
+Stable tag: 2.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,24 +17,10 @@ This is a **simple plugin** that allows visitors to enter their name and email a
 
 This plugin can be used not only for Mailing List subscriptions but can be used generally for collecting email address and/or peoples names that are visiting your website.
 
-The name/email form can not only be customized but can also be displayed on any WordPress page by using either the 'Subscribe Widget', WordPress shortcode [smlsubform] or from your WordPress theme by calling the php function.
+The name/email form can not only be customised but can also be displayed on any WordPress page by using either the 'Subscribe Widget', WordPress shortcode [smlsubform] or from your WordPress theme by calling the php function.
 
 I developed this plugin as I could not find any plugin that simply allows users to submit their name and email address to a simple list viewable in the WordPress admin, all the plugins that I found had lots of extra features such as 3rd party integration, mass emailing and double opt-in, my clients do not need any of these features.
 
-= Works with every email service provider =
-
-Fortunately you can use this to export your subscribers to ANY email providers. Some of the most popular email providers we recommend:
-
-* MailChimp
-* Aweber
-* Constant Contact
-* Vertical Response
-* iContact
-* MyEmma
-* MadMimi
-* GetResponse
-* Infusionsoft
-* Ontraport
 
 
 = Extra Options  =
@@ -100,6 +87,11 @@ echo smlsubform($args);</code>
 No, this plugin was designed to collect email addresses from visitors. This plugin does not send emails at all.
 
 == Changelog ==
+
+= 2.1.3
+
+* Fixed some index notices.
+* Fix mysql_query issues by replacing with safer prepared statements.
 
 = 2.1.1
 
@@ -170,7 +162,7 @@ No, this plugin was designed to collect email addresses from visitors. This plug
 
 * Created a few extra options to customise the form.
 * Check to see if the email address is already in the database.
-* customizable thank you for subscribing message.
+* Customisable thank you for subscribing message.
 * Ability to choose between a paragraph or JavaScript Alert based thank you message.
 * Extended documentation.
         

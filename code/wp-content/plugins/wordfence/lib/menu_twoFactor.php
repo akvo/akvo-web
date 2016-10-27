@@ -1,7 +1,11 @@
 <div class="wordfenceModeElem" id="wordfenceMode_twoFactor"></div>
-<div class="wrap" id="paidWrap">
+<div class="wrap wordfence" id="paidWrap">
 	<?php require('menuHeader.php'); ?>
 	<?php $pageTitle = "Cellphone Sign-in"; $helpLink="http://docs.wordfence.com/en/Cellphone_sign-in"; $helpLabel="Learn more about Cellphone Sign-in"; include('pageTitle.php'); ?>
+	<?php
+	$rightRail = new wfView('marketing/rightrail');
+	echo $rightRail;
+	?>
 <?php if(! wfConfig::get('isPaid')){ ?>
 	<div class="wf-premium-callout" style="margin: 20px 0 20px 20px; width: 700px;">
 		<h3>Cellphone Sign-in is only available to Premium Members</h3>
@@ -10,18 +14,18 @@
 			available from Wordfence for your WordPress website. We recommend you enable Cellphone Sign-in for all
 			Administrator level accounts.</p>
 
-		<p>Upgrade to Premium today for just $8.25 per month:</p>
+		<p>Upgrade today:</p>
 		<ul>
 			<li>Receive real-time Firewall and Scan engine rule updates for protection as threats emerge</li>
 			<li>Other advanced features like IP reputation monitoring, an advanced comment spam filter, advanced
 				scanning options and country blocking give you the best protection available
 			</li>
 			<li>Access to Premium Support</li>
-			<li>Discounts of up to 75% available for multiyear and multi-license purchases</li>
+			<li>Discounts of up to 90% available for multiyear and multi-license purchases</li>
 		</ul>
 
 		<p class="center"><a class="button button-primary"
-		                     href="https://www.wordfence.com/gnl1twoFac1/wordfence-signup/">Get Premium</a></p>
+		                     href="https://www.wordfence.com/gnl1twoFac1/wordfence-signup/" target="_blank">Get Premium</a></p>
 	</div>
 
 <?php } ?>
@@ -34,7 +38,7 @@
 		<?php
 	}
 	?>
-	<div class="wordfenceWrap" style="margin: 20px 20px 20px 30px;">
+	<div class="wordfenceWrap" style="margin: 20px 20px 20px 30px; max-width: 800px;">
 		<h2>Enable Cellphone Sign-in</h2>
 		<p><em>Our Cellphone Sign-in uses a technique called "Two Factor Authentication" which is used by banks, government agencies and military world-wide as one of the most secure forms of remote system authentication. We recommend you enable Cellphone Sign-in for all Administrator level accounts.</em></p>
 		<table class="wfConfigForm">
@@ -42,7 +46,7 @@
 			<tr><td class="align-top">Code generation mode:</td><td>
 					<table class="wfConfigForm">
 						<tr><td><input type="radio" name="wf2faMode" value="authenticator" checked></td><td>Use authenticator app</td></tr>
-						<tr><td><input type="radio" name="wf2faMode" value="phone"></td><td>Send code to a phone number: <input type="text" id="wfPhone" value="" size="20" disabled> Format: +1-123-555-5034</td></tr>
+						<tr><td><input type="radio" name="wf2faMode" value="phone"></td><td>Send code to a phone number: <input type="text" id="wfPhone" value="" size="20" disabled><br><em>Format: +1-123-555-5034</em></td></tr>
 					</table>
 			</td></tr>
 			<tr><td colspan="2"><input type="button" class="button button-primary" value="Enable Cellphone Sign-in" onclick="WFAD.addTwoFactor(jQuery('#wfUsername').val(), jQuery('#wfPhone').val(), jQuery('input[name=wf2faMode]:checked').val());" /></td></tr>

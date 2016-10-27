@@ -1,8 +1,12 @@
 <div class="wordfenceModeElem" id="wordfenceMode_rangeBlocking"></div>
-<div class="wrap" id="paidWrap">
+<div class="wrap wordfence" id="paidWrap">
 	<?php require('menuHeader.php'); ?>
 	<?php $helpLink="http://docs.wordfence.com/en/Advanced_Blocking"; $helpLabel="Learn more about Advanced Blocking"; $pageTitle = "Advanced Blocking"; include('pageTitle.php'); ?>
-	<div class="wordfenceWrap" style="margin: 20px 20px 20px 30px;">
+	<?php
+	$rightRail = new wfView('marketing/rightrail');
+	echo $rightRail;
+	?>
+	<div class="wordfenceWrap<?php if (!wfConfig::get('isPaid')) { echo " wordfence-community"; }?>" style="margin: 20px 20px 20px 30px; max-width: 800px;">
 		<p>
 			<?php if(! wfConfig::get('firewallEnabled')){ ?><div style="color: #F00; font-weight: bold;">Rate limiting rules and advanced blocking are disabled. You can enable it on the <a href="admin.php?page=WordfenceSecOpt">Wordfence Options page</a> at the top.</div><br /><?php } ?>
 			<table class="wfConfigForm">

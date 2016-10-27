@@ -89,8 +89,8 @@ a.comment-edit-link:hover { color: #21759b !important; }
 @viewport { width: device-width !important; }
 .main-navigation li a:hover { color: #000 !important; }
 .main-navigation li a:focus { color: #000 !important; }
-.main-navigation ul li:hover &gt; ul { border-left: 0 !important; clip: inherit !important; overflow: inherit !important; height: inherit !important; width: inherit !important; }
-.main-navigation ul li:focus &gt; ul { border-left: 0 !important; clip: inherit !important; overflow: inherit !important; height: inherit !important; width: inherit !important; }
+.main-navigation ul li:hover > ul { border-left: 0 !important; clip: inherit !important; overflow: inherit !important; height: inherit !important; width: inherit !important; }
+.main-navigation ul li:focus > ul { border-left: 0 !important; clip: inherit !important; overflow: inherit !important; height: inherit !important; width: inherit !important; }
 .main-navigation li ul li a:hover { background: #e3e3e3 !important; color: #444 !important; }
 .main-navigation li ul li a:focus { background: #e3e3e3 !important; color: #444 !important; }
 footer a[rel=bookmark]:after { content: " [" attr(href) "] " !important; }
@@ -126,7 +126,7 @@ h6 a:visited { color: purple !important; }
 				</p>
 
 				<h2 style="font-size: 20px; vertical-align: baseline; clear: both; color: #222 !important; margin: 20px 0 4px; padding: 0; border: 0;">
-					Top 10 IP's Blocked
+					Top 10 IPs Blocked
 				</h2>
 
 				<?php wfHelperString::cycle(); ?>

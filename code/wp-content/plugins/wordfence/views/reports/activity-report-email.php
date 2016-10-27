@@ -297,7 +297,7 @@ $title = 'Wordfence Activity for the week of ' . date_i18n(get_option('date_form
 				</div>
 				<a href="http://www.wordfence.com/zz7/"><img src="<?php echo wfUtils::getBaseURL(); ?>images/logo.png" alt=""/></a>
 
-				<h2>Top 10 IP's Blocked</h2>
+				<h2>Top 10 IPs Blocked</h2>
 
 				<?php wfHelperString::cycle(); ?>
 
