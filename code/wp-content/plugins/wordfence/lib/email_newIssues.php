@@ -42,6 +42,10 @@
 
 <?php } } } ?>
 
+<?php if ($issuesNotShown > 0) { ?>
+<p><?php echo wfUtils::pluralize($issuesNotShown, 'issue'); ?> were omitted from this email. View every issue: <a href="<?php echo $adminURL; ?>admin.php?page=Wordfence"><?php echo $adminURL; ?>admin.php?page=Wordfence</a></p>
+<?php } ?>
+
 
 <?php if(! $isPaid){ ?>
 	<p>NOTE: You are using the free version of Wordfence. Upgrade today:</p>
