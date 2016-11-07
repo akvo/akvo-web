@@ -15,7 +15,7 @@
 				'overview_carousel' => 'rsr_carousel',
 				'overview_columns' => 'rsr_overview_columns',
 				'overview_call_to_action' => 'rsr_overview_buttons',
-				'testimonials' => 'rsr_testimonials',
+				'testimonials' => 'testimonials',
 				'counters'=> 'rsr_overview_counters',
 				'overview_buttons' => 'rsr_buttons'
 			)

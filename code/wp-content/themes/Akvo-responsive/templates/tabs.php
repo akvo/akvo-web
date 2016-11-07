@@ -58,11 +58,11 @@
 	}
 	
 	function testimonials($el){
-		$cols = 'threeColumns';
+		$cols = 'col-4';
 		$section = 'sub-section';
 		
 		if(count(get_field($el)) == 2){
-			$cols = 'twoColumns';
+			$cols = 'col-6';
 		}
 		
 		
@@ -70,9 +70,9 @@
 	?>
 		<div class="<?php _e($section);?> testimonials" id="<?php _e($el);?>">	
 			<h3 id='<?php _e($el.'_title');?>'><?php the_field($el.'_title');?></h3>
-			<div class="<?php _e($cols);?> wrapper">
+			<div class="row">
 				<?php while(have_rows($el)): the_row();?>
-				<div class='col text-center'>
+				<div class='<?php _e($cols);?> text-center'>
 					<?php $desc = get_sub_field('description');if($desc):?>
 					<a href="<?php the_sub_field('link');?>">
 						<img class='aligncenter' src="<?php the_sub_field('profile_picture');?>" />
