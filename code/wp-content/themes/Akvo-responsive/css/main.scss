@@ -6799,6 +6799,12 @@ div[id^="inline-"] {
 @import "footer";
 
 .media-and-press{
+
+	.list-inline li{
+		margin-left: 2px;
+		margin-right: 2px;
+	}
+
 	.col-logo{
 		text-align: center;
 		padding-top: 30px !important;

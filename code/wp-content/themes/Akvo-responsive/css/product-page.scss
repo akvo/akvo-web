@@ -101,23 +101,26 @@
 	position: relative;
 	
 	/* for four columns */
-	.col-3{
-		padding: 15px;
-		
-		/*
-		padding-left: 15px;
-		padding-right: 15px;
-		*/
-		
+	
+	.col-3, .col-4{
+		padding: 15px;	
 		position: relative;
 		margin: 0;
-		width:25%;
 		float:left;
 		-webkit-box-sizing: border-box;
 		-moz-box-sizing: border-box;
 		box-sizing: border-box;
 		min-height: 1px;
-		
+	}
+	
+	.col-3{
+		width:25%;
+		@media only screen and (max-width: 992px){
+			width: 100%;
+		}
+	}
+	.col-4{
+		width: 33.333333%;
 		@media only screen and (max-width: 992px){
 			width: 100%;
 		}
