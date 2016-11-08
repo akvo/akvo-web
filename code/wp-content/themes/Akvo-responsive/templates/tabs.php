@@ -59,9 +59,9 @@
 	
 	function testimonials($el){
 		$cols = 'col-4';
-		$section = 'sub-section';
-		
+		$section = 'wrapper';
 		if(count(get_field($el)) == 2){
+			$section = 'page-section';
 			$cols = 'col-6';
 		}
 		
