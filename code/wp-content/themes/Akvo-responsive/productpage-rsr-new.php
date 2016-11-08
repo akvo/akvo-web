@@ -43,7 +43,7 @@
 				//'support_section' => 'rsr_media_section',
 				'support_buttons' => 'rsr_buttons',
 				'support_testimonial_title' => 'rsr_title',
-				'support_testimonials' => 'rsr_testimonials'
+				'support_testimonials' => 'testimonials'
 				
 			)
 		),
@@ -191,6 +191,7 @@
 		</div>
 	<?php }
 	
+	/*
 	function rsr_testimonials($el){
 		$cols = 'threeColumns';
 		$section = 'sub-section';
@@ -219,6 +220,7 @@
 		
 	<?php	
 	}
+	*/
 	
 	function rsr_tour(){
 		_e("<div class='sub-section'>");
