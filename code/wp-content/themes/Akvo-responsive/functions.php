@@ -392,7 +392,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	function akvo_staff_list($staff_type, $new_staff_flag = true){
 		$args = array(
 			'post_type' => 'new_staffs',
-			'showposts' => '40',
+			'showposts' => '100',
 			'tax_query' => array(
         		array(
 					'taxonomy' => 'new_staffs_team',
