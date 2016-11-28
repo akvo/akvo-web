@@ -31,7 +31,7 @@
           </div-->
         </div>
       </div>
-        <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu' ) ); ?>
+        <?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'theme_location' => 'footer-menu', 'container_class' => 'menu-footer-menu-container', 'menu_id' => 'menu-footer-menu' ) ); ?>
 
     </section>
     <section id="aboutAkvo hidden">

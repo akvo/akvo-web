@@ -6,6 +6,7 @@
 // Loads advancedcustomfields fields required for FAQ and pricing page
 $includes_path = get_template_directory() . '/inc/';
 require_once($includes_path . 'acf-functions.php');
+require_once($includes_path . 'custom-post-types.php');
 
 add_theme_support( 'post-thumbnails' );
 register_nav_menus(array(
@@ -413,5 +414,9 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		}	
 		_e('</ul>');
 	}
+	
+	
+	
+	
 	
 ?>
