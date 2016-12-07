@@ -120,7 +120,7 @@ Template Name: akvoNetwork
                     </ul>
                   </nav>
                   <ul id="updatesWrapperJS" class="floats-in wrapper">
-                    <?php do_shortcode('[jsondata_feed slug="rsr-updates" limit="3" photo__gte="a"]'); ?>
+                    <?php do_shortcode('[jsondata_feed slug="rsr-updates-new" limit="3" photo__gte="a" format="json"]'); ?>
                   </ul>
                 </section>
               </div>
