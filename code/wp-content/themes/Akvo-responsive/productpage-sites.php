@@ -81,16 +81,16 @@
 	function gallery($el){
 	?> 
 	<div class="sub-section" id="<?php _e($el);?>">
-		<ul class="wrapper twoColumns floats-in">
+		<div class="row">
     		<?php while( have_rows($el) ): the_row(); ?>
-      		<li>
+      		<div class='col-6'>
       			<a href="<?php the_sub_field('image_link'); ?>">
       				<img src="<?php the_sub_field('image'); ?>" title="akvosites"/>
       				<?php the_sub_field('description');?>
       			</a>
-      		</li>
+      		</div>
     		<?php endwhile; ?>
-    	</ul>
+    	</div>
     </div>	
     <?php
     }
