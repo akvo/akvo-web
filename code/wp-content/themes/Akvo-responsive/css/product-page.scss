@@ -583,7 +583,7 @@
 
 
 
-.rsrProdPag, .flowProduct, .akvositesProduct{
+.rsrProdPag, .flowProduct, .lumenProduct, .akvositesProduct{
 	
 	/* HELPER CLASSES */
 	
@@ -674,7 +674,7 @@
 	}
 }	
 
-.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct{
 	.text-center{
 		text-align:center !important;
 		p{
@@ -683,7 +683,7 @@
 	}
 }
 
-.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct{
+.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct{
 	
 	
 	hgroup h1{
@@ -763,7 +763,7 @@
 	
 }
 
-.akvositesProduct, .flowProduct{
+.akvositesProduct, .flowProduct, .lumenProduct{
 	.shallow-banner{
 		min-height: 200px;
 	}
@@ -946,8 +946,8 @@ img.aligncenter{
 
 
 
-/* FLOW PRODUCT PAGE */
-.flowProduct{
+/* FLOW, LUMEN PRODUCT PAGE */
+.flowProduct, .lumenProduct{
 	
 	$orangeBG: rgba(222, 137, 41, 0.8);
 	

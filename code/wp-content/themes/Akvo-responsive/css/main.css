@@ -38,14 +38,14 @@
 /* Placeholder
   ========================================================================== */
 /* HELPER CLASSES */
-.col-title, .rsrProdPag .testimonials strong, .flowProduct .testimonials strong, .akvositesProduct .testimonials strong, .akvositesProduct #section strong, .akvositesProduct #features_columns .threeColumns.wrapper div .box-col strong, .flowProduct #services_list strong {
+.col-title, .rsrProdPag .testimonials strong, .flowProduct .testimonials strong, .lumenProduct .testimonials strong, .akvositesProduct .testimonials strong, .akvositesProduct #section strong, .akvositesProduct #features_columns .threeColumns.wrapper div .box-col strong, .flowProduct #services_list strong, .lumenProduct #services_list strong {
   color: #2c2a74;
   font-size: 1.2em;
   font-weight: normal;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   line-height: 1.25em; }
 
-.col-small-info, .rsrProdPag .testimonials em, .flowProduct .testimonials em, .akvositesProduct .testimonials em {
+.col-small-info, .rsrProdPag .testimonials em, .flowProduct .testimonials em, .lumenProduct .testimonials em, .akvositesProduct .testimonials em {
   font-size: 1em;
   color: #000; }
 
@@ -6073,45 +6073,45 @@ div[id^="inline-"] {
       width: 94% !important;
       margin: 1em auto !important; } }
 
-.rsrProdPag, .flowProduct, .akvositesProduct {
+.rsrProdPag, .flowProduct, .lumenProduct, .akvositesProduct {
   /* HELPER CLASSES */ }
-  .rsrProdPag .testimonials, .flowProduct .testimonials, .akvositesProduct .testimonials {
+  .rsrProdPag .testimonials, .flowProduct .testimonials, .lumenProduct .testimonials, .akvositesProduct .testimonials {
     margin-left: auto;
     margin-right: auto; }
-    .rsrProdPag .testimonials p, .flowProduct .testimonials p, .akvositesProduct .testimonials p {
+    .rsrProdPag .testimonials p, .flowProduct .testimonials p, .lumenProduct .testimonials p, .akvositesProduct .testimonials p {
       max-width: 230px;
       margin-left: auto;
       margin-right: auto; }
-    .rsrProdPag .testimonials strong, .flowProduct .testimonials strong, .akvositesProduct .testimonials strong {
+    .rsrProdPag .testimonials strong, .flowProduct .testimonials strong, .lumenProduct .testimonials strong, .akvositesProduct .testimonials strong {
       margin: 1.1em 0em 0.5em; }
-    .rsrProdPag .testimonials hr, .flowProduct .testimonials hr, .akvositesProduct .testimonials hr {
+    .rsrProdPag .testimonials hr, .flowProduct .testimonials hr, .lumenProduct .testimonials hr, .akvositesProduct .testimonials hr {
       width: 50%;
       max-width: 150px; }
-    .rsrProdPag .testimonials a[href], .rsrProdPag .testimonials a[href]:hover, .flowProduct .testimonials a[href], .flowProduct .testimonials a[href]:hover, .akvositesProduct .testimonials a[href], .akvositesProduct .testimonials a[href]:hover {
+    .rsrProdPag .testimonials a[href], .rsrProdPag .testimonials a[href]:hover, .flowProduct .testimonials a[href], .flowProduct .testimonials a[href]:hover, .lumenProduct .testimonials a[href], .lumenProduct .testimonials a[href]:hover, .akvositesProduct .testimonials a[href], .akvositesProduct .testimonials a[href]:hover {
       color: inherit; }
     @media only screen and (max-width: 992px) {
-      .rsrProdPag .testimonials .threeColumns > div, .flowProduct .testimonials .threeColumns > div, .akvositesProduct .testimonials .threeColumns > div {
+      .rsrProdPag .testimonials .threeColumns > div, .flowProduct .testimonials .threeColumns > div, .lumenProduct .testimonials .threeColumns > div, .akvositesProduct .testimonials .threeColumns > div {
         border: none; } }
-  .rsrProdPag .videoContainer, .flowProduct .videoContainer, .akvositesProduct .videoContainer {
+  .rsrProdPag .videoContainer, .flowProduct .videoContainer, .lumenProduct .videoContainer, .akvositesProduct .videoContainer {
     display: none; }
-    .rsrProdPag .videoContainer .vimeoBlockedMessage, .flowProduct .videoContainer .vimeoBlockedMessage, .akvositesProduct .videoContainer .vimeoBlockedMessage {
+    .rsrProdPag .videoContainer .vimeoBlockedMessage, .flowProduct .videoContainer .vimeoBlockedMessage, .lumenProduct .videoContainer .vimeoBlockedMessage, .akvositesProduct .videoContainer .vimeoBlockedMessage {
       display: none;
       text-align: center; }
-    .rsrProdPag .videoContainer div.videoContainer, .flowProduct .videoContainer div.videoContainer, .akvositesProduct .videoContainer div.videoContainer {
+    .rsrProdPag .videoContainer div.videoContainer, .flowProduct .videoContainer div.videoContainer, .lumenProduct .videoContainer div.videoContainer, .akvositesProduct .videoContainer div.videoContainer {
       width: 1000px;
       max-width: 90%;
       margin: 0 auto; }
-  .rsrProdPag section:target, .flowProduct section:target, .akvositesProduct section:target {
+  .rsrProdPag section:target, .flowProduct section:target, .lumenProduct section:target, .akvositesProduct section:target {
     background: #FFF; }
-  .rsrProdPag #video, .flowProduct #video, .akvositesProduct #video {
+  .rsrProdPag #video, .flowProduct #video, .lumenProduct #video, .akvositesProduct #video {
     max-width: 600px; }
-  .rsrProdPag .bxslider .image, .flowProduct .bxslider .image, .akvositesProduct .bxslider .image {
+  .rsrProdPag .bxslider .image, .flowProduct .bxslider .image, .lumenProduct .bxslider .image, .akvositesProduct .bxslider .image {
     width: 100%;
     min-height: 400px;
     position: relative;
     background-position: center;
     background-size: cover; }
-    .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href] {
+    .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .lumenProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href] {
       position: absolute;
       height: 100%;
       width: 350px;
@@ -6119,29 +6119,29 @@ div[id^="inline-"] {
       top: 0;
       left: 10%;
       color: #2c2a74; }
-      .rsrProdPag .bxslider .image a[href] p, .rsrProdPag .bxslider .image a[href] h3, .flowProduct .bxslider .image a[href] p, .flowProduct .bxslider .image a[href] h3, .akvositesProduct .bxslider .image a[href] p, .akvositesProduct .bxslider .image a[href] h3 {
+      .rsrProdPag .bxslider .image a[href] p, .rsrProdPag .bxslider .image a[href] h3, .flowProduct .bxslider .image a[href] p, .flowProduct .bxslider .image a[href] h3, .lumenProduct .bxslider .image a[href] p, .lumenProduct .bxslider .image a[href] h3, .akvositesProduct .bxslider .image a[href] p, .akvositesProduct .bxslider .image a[href] h3 {
         padding: 0px 15px; }
     @media only screen and (max-width: 768px) {
-      .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href] {
+      .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .lumenProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href] {
         left: 0%;
         width: 100%; } }
 
-.rsrProdPag .text-center, .dashProduct .text-center, .caddisflyProduct .text-center, .akvositesProduct .text-center, .flowProduct .text-center {
+.rsrProdPag .text-center, .dashProduct .text-center, .caddisflyProduct .text-center, .akvositesProduct .text-center, .flowProduct .text-center, .lumenProduct .text-center {
   text-align: center !important; }
-  .rsrProdPag .text-center p, .dashProduct .text-center p, .caddisflyProduct .text-center p, .akvositesProduct .text-center p, .flowProduct .text-center p {
+  .rsrProdPag .text-center p, .dashProduct .text-center p, .caddisflyProduct .text-center p, .akvositesProduct .text-center p, .flowProduct .text-center p, .lumenProduct .text-center p {
     text-align: center !important; }
 
-.dashProduct hgroup h1, .caddisflyProduct hgroup h1, .akvositesProduct hgroup h1, .flowProduct hgroup h1 {
+.dashProduct hgroup h1, .caddisflyProduct hgroup h1, .akvositesProduct hgroup h1, .flowProduct hgroup h1, .lumenProduct hgroup h1 {
   background: url("../images/logos/akvo-lumen.png") center center no-repeat; }
-.dashProduct hgroup h2, .caddisflyProduct hgroup h2, .akvositesProduct hgroup h2, .flowProduct hgroup h2 {
+.dashProduct hgroup h2, .caddisflyProduct hgroup h2, .akvositesProduct hgroup h2, .flowProduct hgroup h2, .lumenProduct hgroup h2 {
   margin-bottom: 3em; }
-.dashProduct .full-width-banner, .caddisflyProduct .full-width-banner, .akvositesProduct .full-width-banner, .flowProduct .full-width-banner {
+.dashProduct .full-width-banner, .caddisflyProduct .full-width-banner, .akvositesProduct .full-width-banner, .flowProduct .full-width-banner, .lumenProduct .full-width-banner {
   width: 100%;
   min-height: 400px;
   position: relative;
   background-position: center;
   background-size: cover; }
-  .dashProduct .full-width-banner a[href], .caddisflyProduct .full-width-banner a[href], .akvositesProduct .full-width-banner a[href], .flowProduct .full-width-banner a[href] {
+  .dashProduct .full-width-banner a[href], .caddisflyProduct .full-width-banner a[href], .akvositesProduct .full-width-banner a[href], .flowProduct .full-width-banner a[href], .lumenProduct .full-width-banner a[href] {
     position: absolute;
     height: 100%;
     width: 300px;
@@ -6149,17 +6149,17 @@ div[id^="inline-"] {
     top: 0;
     left: 10%;
     color: #2c2a74; }
-    .dashProduct .full-width-banner a[href] p, .caddisflyProduct .full-width-banner a[href] p, .akvositesProduct .full-width-banner a[href] p, .flowProduct .full-width-banner a[href] p {
+    .dashProduct .full-width-banner a[href] p, .caddisflyProduct .full-width-banner a[href] p, .akvositesProduct .full-width-banner a[href] p, .flowProduct .full-width-banner a[href] p, .lumenProduct .full-width-banner a[href] p {
       padding: 20px 25px; }
   @media only screen and (max-width: 768px) {
-    .dashProduct .full-width-banner a[href], .caddisflyProduct .full-width-banner a[href], .akvositesProduct .full-width-banner a[href], .flowProduct .full-width-banner a[href] {
+    .dashProduct .full-width-banner a[href], .caddisflyProduct .full-width-banner a[href], .akvositesProduct .full-width-banner a[href], .flowProduct .full-width-banner a[href], .lumenProduct .full-width-banner a[href] {
       left: 0%;
       width: 100%; } }
-.dashProduct .shallow-banner, .caddisflyProduct .shallow-banner, .akvositesProduct .shallow-banner, .flowProduct .shallow-banner {
+.dashProduct .shallow-banner, .caddisflyProduct .shallow-banner, .akvositesProduct .shallow-banner, .flowProduct .shallow-banner, .lumenProduct .shallow-banner {
   min-height: 280px; }
-.dashProduct .overlay-banner, .caddisflyProduct .overlay-banner, .akvositesProduct .overlay-banner, .flowProduct .overlay-banner {
+.dashProduct .overlay-banner, .caddisflyProduct .overlay-banner, .akvositesProduct .overlay-banner, .flowProduct .overlay-banner, .lumenProduct .overlay-banner {
   min-height: 0; }
-  .dashProduct .overlay-banner a[href], .caddisflyProduct .overlay-banner a[href], .akvositesProduct .overlay-banner a[href], .flowProduct .overlay-banner a[href] {
+  .dashProduct .overlay-banner a[href], .caddisflyProduct .overlay-banner a[href], .akvositesProduct .overlay-banner a[href], .flowProduct .overlay-banner a[href], .lumenProduct .overlay-banner a[href] {
     position: relative;
     height: auto;
     width: auto;
@@ -6167,7 +6167,7 @@ div[id^="inline-"] {
     left: 0;
     top: 0;
     cursor: default; }
-.dashProduct li.box, .caddisflyProduct li.box, .akvositesProduct li.box, .flowProduct li.box {
+.dashProduct li.box, .caddisflyProduct li.box, .akvositesProduct li.box, .flowProduct li.box, .lumenProduct li.box {
   display: inline-block;
   width: 21%;
   float: left;
@@ -6175,12 +6175,12 @@ div[id^="inline-"] {
   margin-bottom: 2em;
   margin: 0; }
   @media only screen and (max-width: 992px) {
-    .dashProduct li.box, .caddisflyProduct li.box, .akvositesProduct li.box, .flowProduct li.box {
+    .dashProduct li.box, .caddisflyProduct li.box, .akvositesProduct li.box, .flowProduct li.box, .lumenProduct li.box {
       width: 100%; } }
-.dashProduct h3, .caddisflyProduct h3, .akvositesProduct h3, .flowProduct h3 {
+.dashProduct h3, .caddisflyProduct h3, .akvositesProduct h3, .flowProduct h3, .lumenProduct h3 {
   text-shadow: none; }
 
-.akvositesProduct .shallow-banner, .flowProduct .shallow-banner {
+.akvositesProduct .shallow-banner, .flowProduct .shallow-banner, .lumenProduct .shallow-banner {
   min-height: 200px; }
 
 /* AKVO SITES SPECIFIC STYLES */
@@ -6284,67 +6284,67 @@ img.aligncenter {
   .box .box-text {
     margin-top: 0.25em; }
 
-/* FLOW PRODUCT PAGE */
-.flowProduct a[href].button {
+/* FLOW, LUMEN PRODUCT PAGE */
+.flowProduct a[href].button, .lumenProduct a[href].button {
   background: rgba(222, 137, 41, 0.8); }
-.flowProduct [data-behaviour~=akvo-tabs] li {
+.flowProduct [data-behaviour~=akvo-tabs] li, .lumenProduct [data-behaviour~=akvo-tabs] li {
   border-color: #2B2A75;
   color: #2B2A75;
   border-right: 0; }
-  .flowProduct [data-behaviour~=akvo-tabs] li a {
+  .flowProduct [data-behaviour~=akvo-tabs] li a, .lumenProduct [data-behaviour~=akvo-tabs] li a {
     color: #2B2A75; }
-.flowProduct [data-behaviour~=akvo-tabs] li.active {
+.flowProduct [data-behaviour~=akvo-tabs] li.active, .lumenProduct [data-behaviour~=akvo-tabs] li.active {
   border-color: rgba(222, 137, 41, 0.8);
   background: rgba(222, 137, 41, 0.8);
   border-left: 0;
   border-right: 0; }
-.flowProduct [data-behaviour~=akvo-tabs] li:last-child {
+.flowProduct [data-behaviour~=akvo-tabs] li:last-child, .lumenProduct [data-behaviour~=akvo-tabs] li:last-child {
   border-right: #2B2A75 solid 1px; }
-  .flowProduct [data-behaviour~=akvo-tabs] li:last-child.active {
+  .flowProduct [data-behaviour~=akvo-tabs] li:last-child.active, .lumenProduct [data-behaviour~=akvo-tabs] li:last-child.active {
     border-right: 0; }
 @media only screen and (max-width: 768px) {
-  .flowProduct [data-behaviour~=akvo-tabs] li {
+  .flowProduct [data-behaviour~=akvo-tabs] li, .lumenProduct [data-behaviour~=akvo-tabs] li {
     border-right: #2B2A75 solid 1px; }
-  .flowProduct [data-behaviour~=akvo-tabs] li.active {
+  .flowProduct [data-behaviour~=akvo-tabs] li.active, .lumenProduct [data-behaviour~=akvo-tabs] li.active {
     border-color: rgba(222, 137, 41, 0.8); } }
-.flowProduct #overview_columns {
+.flowProduct #overview_columns, .lumenProduct #overview_columns {
   margin-top: 3em; }
-  .flowProduct #overview_columns .orange-box {
+  .flowProduct #overview_columns .orange-box, .lumenProduct #overview_columns .orange-box {
     background: rgba(222, 137, 41, 0.2);
     border-radius: 15px; }
-    .flowProduct #overview_columns .orange-box h3 {
+    .flowProduct #overview_columns .orange-box h3, .lumenProduct #overview_columns .orange-box h3 {
       color: #de8929;
       text-shadow: none;
       border-radius: 15px; }
-.flowProduct #overview_buttons {
+.flowProduct #overview_buttons, .lumenProduct #overview_buttons {
   margin-top: 3em; }
-.flowProduct #overview_testimonials {
+.flowProduct #overview_testimonials, .lumenProduct #overview_testimonials {
   margin-top: 8em; }
-.flowProduct #overview_counter {
+.flowProduct #overview_counter, .lumenProduct #overview_counter {
   margin-top: 6em; }
-  .flowProduct #overview_counter h4 a[href] {
+  .flowProduct #overview_counter h4 a[href], .lumenProduct #overview_counter h4 a[href] {
     color: inherit; }
-.flowProduct #services_list {
+.flowProduct #services_list, .lumenProduct #services_list {
   margin-top: 4em; }
-  .flowProduct #services_list .desc {
+  .flowProduct #services_list .desc, .lumenProduct #services_list .desc {
     min-height: 180px;
     max-width: 300px;
     margin-left: auto;
     margin-right: auto; }
-.flowProduct #services_buttons {
+.flowProduct #services_buttons, .lumenProduct #services_buttons {
   margin-top: 4em; }
-.flowProduct #services_testimonials {
+.flowProduct #services_testimonials, .lumenProduct #services_testimonials {
   margin-top: 6em; }
-.flowProduct #services_testimonials_title {
+.flowProduct #services_testimonials_title, .lumenProduct #services_testimonials_title {
   margin-bottom: 1em; }
-.flowProduct #features_rows h3 {
+.flowProduct #features_rows h3, .lumenProduct #features_rows h3 {
   text-align: left; }
-.flowProduct #features_rows h3.icon {
+.flowProduct #features_rows h3.icon, .lumenProduct #features_rows h3.icon {
   margin-bottom: 0em; }
-.flowProduct #pricing_image {
+.flowProduct #pricing_image, .lumenProduct #pricing_image {
   max-width: 90%;
   margin-top: 4em; }
-.flowProduct #pricing_intro {
+.flowProduct #pricing_intro, .lumenProduct #pricing_intro {
   margin-top: 4em; }
 
 /*----------------------------------------------------------------------
