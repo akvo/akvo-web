@@ -1,6 +1,6 @@
 <?php
 	/*
-		Template Name: product-akvoflow v1.0
+		Template Name: product-caddisfly v2.0
 	*/
 ?>
 <?php get_header(); ?>
@@ -9,8 +9,8 @@
 	
 	$tabs = array(
 		'overview' => array(
-			'title' => 'overview',
-			'tagline' => 'overview_tagline',
+			'title' => 'overview',   // tab title, 2nd field is the acf id
+			'tagline' => 'overview_tagline',  // tagline for the particular tab
 			'elements' => array(
 				'overview_carousel' => 'carousel',
 				'overview_columns' => 'overview_columns',
@@ -36,8 +36,6 @@
 			'elements' => array(
 				'features_cover' => 'page_section',
 				'features_rows' => 'features_rows'
-				//'pricing_buttons' => 'inner_section_buttons',
-				//'pricing_ending' => 'inner_section'
 			)
 		),
 		'pricing' => array(
@@ -55,7 +53,7 @@
 	);
 	
 	
-	class flowTab extends akvoTab{
+	class caddisflyTab extends akvoTab{
 		function overview_columns($el){
 		?>
 			<div class='row' id="<?php _e($el);?>">
@@ -128,9 +126,9 @@
 	
 ?>
 
-<div id="content" class="floats-in productPage flowProduct">
+<div id="content" class="floats-in productPage lumenProduct">
 	<?php
-		$akvo_tab = new flowTab;
+		$akvo_tab = new caddisflyTab;
 		$akvo_tab->display_tabs($tabs);
 	?>
 </div>
