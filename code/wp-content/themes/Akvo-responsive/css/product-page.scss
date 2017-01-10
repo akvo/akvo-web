@@ -583,7 +583,7 @@
 
 
 
-.rsrProdPag, .flowProduct, .lumenProduct, .akvositesProduct{
+.rsrProdPag, .flowProduct, .lumenProduct, .akvositesProduct, .tabsProduct{
 	
 	/* HELPER CLASSES */
 	
@@ -674,7 +674,7 @@
 	}
 }	
 
-.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct{
+.rsrProdPag, .dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct, .tabsProduct{
 	.text-center{
 		text-align:center !important;
 		p{
@@ -683,7 +683,7 @@
 	}
 }
 
-.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct{
+.dashProduct, .caddisflyProduct, .akvositesProduct, .flowProduct, .lumenProduct, .tabsProduct{
 	
 	
 	hgroup h1{
@@ -763,7 +763,7 @@
 	
 }
 
-.akvositesProduct, .flowProduct, .lumenProduct{
+.akvositesProduct, .flowProduct, .lumenProduct, .tabsProduct{
 	.shallow-banner{
 		min-height: 200px;
 	}
@@ -946,9 +946,8 @@ img.aligncenter{
 
 
 
-/* FLOW, LUMEN PRODUCT PAGE */
-.flowProduct, .lumenProduct{
-	
+/* FLOW, LUMEN & CADDISFLY PRODUCT PAGE */
+.tabsProduct{
 	$orangeBG: rgba(222, 137, 41, 0.8);
 	
 	a[href].button{

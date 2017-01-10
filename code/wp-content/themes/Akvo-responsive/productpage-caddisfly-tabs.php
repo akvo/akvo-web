@@ -126,7 +126,7 @@
 	
 ?>
 
-<div id="content" class="floats-in productPage lumenProduct">
+<div id="content" class="floats-in productPage tabsProduct caddisflyProduct">
 	<?php
 		$akvo_tab = new caddisflyTab;
 		$akvo_tab->display_tabs($tabs);
