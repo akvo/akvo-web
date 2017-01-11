@@ -377,12 +377,19 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	
 	
 	function akvo_latest_rsr(){
-		$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
-		$str = file_get_contents($url);
+		$str = get_transient('akvo_latest_rsr');
+		if(!$str){
+			print_r('from server');
+			/* not in the cache, fetch from the server */
+			$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
+			$str = file_get_contents($url);
+			set_transient('akvo_latest_rsr', $str, 60 * 60 * 24);
+		}
+		
 		print_r($str);
-		die();
+		wp_die();
 	}
-	
+	add_action( 'akvo_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
 	
