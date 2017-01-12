@@ -379,7 +379,6 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	function akvo_latest_rsr(){
 		$str = get_transient('akvo_latest_rsr');
 		if(!$str){
-			print_r('from server');
 			/* not in the cache, fetch from the server */
 			$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
 			$str = file_get_contents($url);
