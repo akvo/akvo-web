@@ -432,6 +432,13 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	// Disable REST API link in HTTP headers
 	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 	
+	// Diable wp emoji
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	
-	
+	/* load javascript */
+	function akvo_js() {
+		wp_deregister_script('wp-embed');
+	}
+	add_action('wp_enqueue_scripts', 'akvo_js');
 ?>
