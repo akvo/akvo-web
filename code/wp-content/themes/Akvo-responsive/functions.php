@@ -376,7 +376,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	
 	
-	function akvo_latest_rsr(){wp_die();
+	function akvo_latest_rsr(){
 		$str = get_transient('akvo_latest_rsr');
 		if(!$str){
 			/* not in the cache, fetch from the server */
