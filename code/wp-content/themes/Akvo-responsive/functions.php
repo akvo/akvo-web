@@ -376,7 +376,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	
 	
-	function akvo_latest_rsr(){
+	function akvo_latest_rsr(){wp_die();
 		$str = get_transient('akvo_latest_rsr');
 		if(!$str){
 			/* not in the cache, fetch from the server */
@@ -422,7 +422,15 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		_e('</ul>');
 	}
 	
-	
+	/* remove unnecessary code */
+	// Disable REST API link tag
+	remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+	// Disable oEmbed Discovery Links
+	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+	// Disable REST API link in HTTP headers
+	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
 	
 	
 	
