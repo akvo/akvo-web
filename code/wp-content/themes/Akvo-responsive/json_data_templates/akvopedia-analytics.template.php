@@ -4,7 +4,7 @@
 * Template for the "Akvopedia analytics" plugin used on networkPage.php
 * Feed name: Akvopedia analytics
 * Slug: akvopedia-analytics
-* JSON feed URL: http://analytics.akvo.org/index.php?module=API&method=API.get&idSite=9&period=range&date=2013-04-01,today&format=json&token_auth=1d1b520b11bea9a3b525b99531ec171a
+* JSON feed URL: https://analytics.akvo.org/index.php?module=API&method=API.get&idSite=9&period=range&date=2013-04-01,today&format=json&token_auth=1d1b520b11bea9a3b525b99531ec171a
 * Resulting shortcode: [jsondata_feed slug="akvopedia-analytics" module="API" method="API.get" idSite="9" period="range" date="2013-04-01,today" format="json" token_auth="1d1b520b11bea9a3b525b99531ec171a"]
 * NOTE: this template includes a call to the "Akvopedia articles" feed which must also be set up.
 */
