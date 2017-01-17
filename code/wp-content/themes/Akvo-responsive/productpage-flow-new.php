@@ -128,7 +128,7 @@
 	
 ?>
 
-<div id="content" class="floats-in productPage flowProduct">
+<div id="content" class="floats-in productPage flowProduct tabsProduct">
 	<?php
 		$akvo_tab = new flowTab;
 		$akvo_tab->display_tabs($tabs);
