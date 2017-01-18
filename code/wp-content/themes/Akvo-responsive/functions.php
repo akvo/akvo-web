@@ -441,4 +441,74 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		wp_deregister_script('wp-embed');
 	}
 	add_action('wp_enqueue_scripts', 'akvo_js');
+	
+	
+	function casestudy_list() {
+		ob_start();
+		
+		
+		$tax_query = array();
+		
+		$filters = ['region', 'sector'];
+		
+		$i = 0;
+		foreach($filters as $filter){
+			$r_slug = 'akvo_'.$filter;
+			
+			$taxonomy = get_taxonomy($filter);
+			
+			if($taxonomy && isset($taxonomy->labels->name)){
+				$filters[$filter] = array(
+					'slug' 	=> $filter,
+					'label' => $taxonomy->labels->name
+				);
+				if(isset($_GET[$r_slug]) && $_GET[$r_slug]){
+					array_push($tax_query, array(
+						'taxonomy' 	=> $filter,
+						'field' 	=>	'id',
+						'terms'		=> $_GET[$r_slug]
+					));
+				
+					$filters[$filter]['id'] = $_GET[$r_slug];
+				}
+				
+			}
+			
+			unset($filters[$i]);
+			$i++;
+		}
+		
+		$args = array(
+			'post_type' 		=> 'case-study', 
+			'posts_per_page' 	=> 5,
+			'tax_query' 		=> $tax_query
+		);
+		
+		$the_query = new WP_Query( $args );
+		include("templates/card-form.php");
+		echo '<div class="page-section">';
+		if ( $the_query->have_posts() ) {
+			echo '<div class="row">';
+			while ( $the_query->have_posts() ):
+				$the_query->the_post();
+				include("templates/card.php");
+			endwhile;
+			echo '</div>';
+			/* Restore original Post Data */
+			wp_reset_postdata();
+		} else {
+			echo "<div>No Items were found.</div>";
+		}
+		echo '</div>';
+		return ob_get_clean();
+	}
+	add_shortcode( 'casestudy-list', 'casestudy_list' );
+	
+	function akvo_dropdown_filters($arr){	
+		$terms = get_terms(array('taxonomy' => $arr['slug'], 'hide_empty' => false));
+		if($terms){
+			include "templates/card-filter.php";
+		}	
+	}
+	
 ?>
