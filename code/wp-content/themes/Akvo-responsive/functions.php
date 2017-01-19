@@ -480,18 +480,24 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		
 		$args = array(
 			'post_type' 		=> 'case-study', 
-			'posts_per_page' 	=> 5,
+			'posts_per_page' 	=> 10,
 			'tax_query' 		=> $tax_query
 		);
 		
 		$the_query = new WP_Query( $args );
 		include("templates/card-form.php");
-		echo '<div class="page-section">';
+		echo '<div class="">';
+		$i = 0;
 		if ( $the_query->have_posts() ) {
-			echo '<div class="row">';
+			
+			
 			while ( $the_query->have_posts() ):
 				$the_query->the_post();
+				global $post_id;
+				if($i % 3 == 0 || $i == 0) {echo "<div class='row'>";}
 				include("templates/card.php");
+				$i++;
+				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
 			endwhile;
 			echo '</div>';
 			/* Restore original Post Data */
@@ -509,6 +515,15 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		if($terms){
 			include "templates/card-filter.php";
 		}	
+	}
+	
+	function akvo_card_taxonomy($post_id, $slug){
+		$terms = wp_get_post_terms( $post_id, $slug);
+		
+		if(is_array($terms) && count($terms)){
+			return $terms[0]->name;
+		}
+		return '';
 	}
 	
 ?>

@@ -1,6 +1,7 @@
 <div class='form-group'>
+	<label><?php _e($arr['label']);?>:</label>
 	<select name="akvo_<?php _e($arr['slug']);?>" onchange="this.form.submit()">
-		<option value='0'><?php _e($arr['label']);?></option>
+		<option value='0'>All</option>
 		<?php foreach($terms as $term):
 			$is_selected = false;
 			if($arr['id'] == $term->term_id){
