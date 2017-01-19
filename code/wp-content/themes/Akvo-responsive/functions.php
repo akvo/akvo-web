@@ -526,4 +526,5 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		return '';
 	}
 	
+	
 ?>
