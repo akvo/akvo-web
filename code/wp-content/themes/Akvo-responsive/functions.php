@@ -6,7 +6,7 @@
 // Loads advancedcustomfields fields required for FAQ and pricing page
 $includes_path = get_template_directory() . '/inc/';
 require_once($includes_path . 'acf-functions.php');
-require_once($includes_path . 'custom-post-types.php');
+//require_once($includes_path . 'custom-post-types.php');
 require_once($includes_path . 'class-akvo-tabs.php');
 
 add_theme_support( 'post-thumbnails' );
@@ -442,7 +442,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	add_action('wp_enqueue_scripts', 'akvo_js');
 	
-	
+	/*
 	function casestudy_list() {
 		ob_start();
 		
@@ -500,7 +500,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
 			endwhile;
 			echo '</div>';
-			/* Restore original Post Data */
+			
 			wp_reset_postdata();
 		} else {
 			echo "<div>No Items were found.</div>";
@@ -525,4 +525,5 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		}
 		return '';
 	}
+	*/
 ?>
