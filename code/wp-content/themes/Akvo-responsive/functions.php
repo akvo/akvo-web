@@ -6,7 +6,7 @@
 // Loads advancedcustomfields fields required for FAQ and pricing page
 $includes_path = get_template_directory() . '/inc/';
 require_once($includes_path . 'acf-functions.php');
-//require_once($includes_path . 'custom-post-types.php');
+require_once($includes_path . 'custom-post-types.php');
 require_once($includes_path . 'class-akvo-tabs.php');
 
 add_theme_support( 'post-thumbnails' );
