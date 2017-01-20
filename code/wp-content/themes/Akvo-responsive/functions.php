@@ -445,12 +445,8 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	
 	function casestudy_list() {
 		ob_start();
-		
-		
 		$tax_query = array();
-		
-		
-		$filters = ['region', 'sector'];
+		//$filters = ['region', 'sector'];
 		
 		$i = 0;
 		/*
