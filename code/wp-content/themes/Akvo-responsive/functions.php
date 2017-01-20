@@ -446,10 +446,10 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	function casestudy_list() {
 		ob_start();
 		$tax_query = array();
-		//$filters = ['region', 'sector'];
+		$filters = array('region', 'sector');
 		
 		$i = 0;
-		/*
+		
 		foreach($filters as $filter){
 			$r_slug = 'akvo_'.$filter;
 			
@@ -475,7 +475,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 			unset($filters[$i]);
 			$i++;
 		}
-		*/
+		
 		
 		$args = array(
 			'post_type' 		=> 'case-study', 
@@ -484,7 +484,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		);
 		
 		$the_query = new WP_Query( $args );
-		//include("templates/card-form.php");
+		include("templates/card-form.php");
 		echo '<div class="">';
 		$i = 0;
 		if ( $the_query->have_posts() ) {
