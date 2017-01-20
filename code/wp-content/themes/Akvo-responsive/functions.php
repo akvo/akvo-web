@@ -449,10 +449,11 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		
 		$tax_query = array();
 		
-		/*
+		
 		$filters = ['region', 'sector'];
 		
 		$i = 0;
+		/*
 		foreach($filters as $filter){
 			$r_slug = 'akvo_'.$filter;
 			
@@ -497,7 +498,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 				$the_query->the_post();
 				global $post_id;
 				if($i % 3 == 0 || $i == 0) {echo "<div class='row'>";}
-				//include("templates/card.php");
+				include("templates/card.php");
 				$i++;
 				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
 			endwhile;
