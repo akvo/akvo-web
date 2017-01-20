@@ -442,13 +442,14 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	add_action('wp_enqueue_scripts', 'akvo_js');
 	
-	/*
+	
 	function casestudy_list() {
 		ob_start();
 		
 		
 		$tax_query = array();
 		
+		/*
 		$filters = ['region', 'sector'];
 		
 		$i = 0;
@@ -477,6 +478,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 			unset($filters[$i]);
 			$i++;
 		}
+		*/
 		
 		$args = array(
 			'post_type' 		=> 'case-study', 
@@ -509,7 +511,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		return ob_get_clean();
 	}
 	add_shortcode( 'casestudy-list', 'casestudy_list' );
-	*/
+	
 	function akvo_dropdown_filters($arr){	
 		$terms = get_terms(array('taxonomy' => $arr['slug'], 'hide_empty' => false));
 		if($terms){
