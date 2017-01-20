@@ -442,7 +442,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	add_action('wp_enqueue_scripts', 'akvo_js');
 	
-	/*
+	
 	function casestudy_list() {
 		ob_start();
 		
@@ -485,7 +485,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		);
 		
 		$the_query = new WP_Query( $args );
-		include("templates/card-form.php");
+		//include("templates/card-form.php");
 		echo '<div class="">';
 		$i = 0;
 		if ( $the_query->have_posts() ) {
@@ -495,7 +495,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 				$the_query->the_post();
 				global $post_id;
 				if($i % 3 == 0 || $i == 0) {echo "<div class='row'>";}
-				include("templates/card.php");
+				//include("templates/card.php");
 				$i++;
 				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
 			endwhile;
@@ -525,5 +525,4 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		}
 		return '';
 	}
-	*/
 ?>
