@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the WP Security Audit Log package.
 msgid ""
 msgstr ""
-"Project-Id-Version: WP Security Audit Log 2.5.5\n"
+"Project-Id-Version: WP Security Audit Log 2.5.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-security-audit-"
 "log\n"
-"POT-Creation-Date: 2016-09-28 06:25:56+00:00\n"
+"POT-Creation-Date: 2016-11-09 06:32:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -63,35 +63,35 @@ msgstr ""
 msgid "Message"
 msgstr ""
 
-#: classes/AuditLogListView.php:197
+#: classes/AuditLogListView.php:196
 msgid "Click to toggle."
 msgstr ""
 
-#: classes/AuditLogListView.php:203
+#: classes/AuditLogListView.php:202
 msgid "Unknown error code."
 msgstr ""
 
-#: classes/AuditLogListView.php:227
+#: classes/AuditLogListView.php:226
 msgid "Unknown"
 msgstr ""
 
-#: classes/AuditLogListView.php:231
+#: classes/AuditLogListView.php:230
 msgid "Plugin"
 msgstr ""
 
-#: classes/AuditLogListView.php:235
+#: classes/AuditLogListView.php:234
 msgid "Plugins"
 msgstr ""
 
-#: classes/AuditLogListView.php:239
+#: classes/AuditLogListView.php:238
 msgid "Website Visitor"
 msgstr ""
 
-#: classes/AuditLogListView.php:243
+#: classes/AuditLogListView.php:242
 msgid "System"
 msgstr ""
 
-#: classes/AuditLogListView.php:271
+#: classes/AuditLogListView.php:270
 msgid "Alert Data Inspector"
 msgstr ""
 
@@ -237,7 +237,7 @@ msgid "Audit Log Viewer"
 msgstr ""
 
 #: classes/Views/AuditLog.php:74 classes/Views/Licensing.php:34
-#: classes/Views/Settings.php:112 classes/Views/ToggleAlerts.php:30
+#: classes/Views/Settings.php:111 classes/Views/ToggleAlerts.php:30
 msgid "You do not have sufficient permissions to access this page."
 msgstr ""
 
@@ -464,12 +464,12 @@ msgstr ""
 msgid "Licensing"
 msgstr ""
 
-#: classes/Views/Licensing.php:39 classes/Views/Settings.php:118
+#: classes/Views/Licensing.php:39 classes/Views/Settings.php:117
 #: classes/Views/ToggleAlerts.php:45
 msgid "Settings have been saved."
 msgstr ""
 
-#: classes/Views/Licensing.php:41 classes/Views/Settings.php:121
+#: classes/Views/Licensing.php:41 classes/Views/Settings.php:120
 #: classes/Views/ToggleAlerts.php:47
 msgid "Error: "
 msgstr ""
@@ -529,66 +529,66 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: classes/Views/Settings.php:126
+#: classes/Views/Settings.php:125
 msgid "General"
 msgstr ""
 
-#: classes/Views/Settings.php:127
+#: classes/Views/Settings.php:126
 msgid "Audit Log"
 msgstr ""
 
-#: classes/Views/Settings.php:128
+#: classes/Views/Settings.php:127
 msgid "Exclude Objects"
 msgstr ""
 
-#: classes/Views/Settings.php:144
+#: classes/Views/Settings.php:143
 msgid "From Email & Name"
 msgstr ""
 
-#: classes/Views/Settings.php:147
+#: classes/Views/Settings.php:146
 msgid "Email Address"
 msgstr ""
 
-#: classes/Views/Settings.php:150
+#: classes/Views/Settings.php:149
 msgid "Display Name"
 msgstr ""
 
-#: classes/Views/Settings.php:156
+#: classes/Views/Settings.php:155
 msgid ""
 "These email address and display name will be used as From details in the "
 "emails sent by the %s . Please ensure the mail server can relay emails with "
 "the domain of the specified email address."
 msgstr ""
 
-#: classes/Views/Settings.php:157
+#: classes/Views/Settings.php:156
 msgid "(premium add-ons)"
 msgstr ""
 
-#: classes/Views/Settings.php:165
+#: classes/Views/Settings.php:164
 msgid "Alerts Dashboard Widget"
 msgstr ""
 
-#: classes/Views/Settings.php:171
+#: classes/Views/Settings.php:170
 msgid "On"
 msgstr ""
 
-#: classes/Views/Settings.php:176
+#: classes/Views/Settings.php:175
 msgid "Off"
 msgstr ""
 
-#: classes/Views/Settings.php:181
+#: classes/Views/Settings.php:180
 msgid "Display a dashboard widget with the latest %d security alerts."
 msgstr ""
 
-#: classes/Views/Settings.php:190
+#: classes/Views/Settings.php:189
 msgid "Reverse Proxy / Firewall Options"
 msgstr ""
 
-#: classes/Views/Settings.php:196
+#: classes/Views/Settings.php:195
 msgid "WordPress running behind firewall or proxy"
 msgstr ""
 
-#: classes/Views/Settings.php:197
+#: classes/Views/Settings.php:198
 msgid ""
 "Enable this option if your WordPress is running behind a firewall or reverse "
 "proxy. When this option is enabled the plugin will retrieve the user's IP "
@@ -599,193 +599,186 @@ msgstr ""
 msgid "Filter Internal IP Addresses"
 msgstr ""
 
-#: classes/Views/Settings.php:204
+#: classes/Views/Settings.php:206
 msgid ""
 "Enable this option to filter internal IP addresses from the proxy headers."
 msgstr ""
 
-#: classes/Views/Settings.php:211
+#: classes/Views/Settings.php:212
 msgid "Can Manage Plugin"
 msgstr ""
 
-#: classes/Views/Settings.php:218
+#: classes/Views/Settings.php:219
 msgid "Users and Roles in this list can manage the plugin settings"
 msgstr ""
 
-#: classes/Views/Settings.php:234
+#: classes/Views/Settings.php:237
 msgid "Restrict Plugin Access"
 msgstr ""
 
-#: classes/Views/Settings.php:242
+#: classes/Views/Settings.php:247
 msgid ""
-"By default all the administrators on this WordPress have access to manage "
-"this plugin.<br/>By enabling this option only the users specified in the two "
-"options above and your username will have access to view alerts and manage "
-"this plugin."
+"If this option is disabled all the administrators on this WordPress have "
+"access to manage this plugin."
 msgstr ""
 
-#: classes/Views/Settings.php:250
+#: classes/Views/Settings.php:248
+msgid ""
+"By enabling this option only <strong>You</strong> and the users specified in "
+"the <strong>Can Manage Plugin</strong> and <strong>Can View Alerts</strong> "
+"can configure this plugin or view the alerts in the WordPress audit trail."
+msgstr ""
+
+#: classes/Views/Settings.php:255
 msgid "Developer Options"
 msgstr ""
 
-#: classes/Views/Settings.php:258
+#: classes/Views/Settings.php:263
 msgid ""
 "Only enable these options on testing, staging and development websites. "
 "Enabling any of the settings below on LIVE websites may cause unintended "
 "side-effects including degraded performance."
 msgstr ""
 
-#: classes/Views/Settings.php:263
+#: classes/Views/Settings.php:268
 msgid "Data Inspector"
 msgstr ""
 
-#: classes/Views/Settings.php:264
+#: classes/Views/Settings.php:269
 msgid "View data logged for each triggered alert."
 msgstr ""
 
-#: classes/Views/Settings.php:271
+#: classes/Views/Settings.php:276
 msgid "Request Log"
 msgstr ""
 
-#: classes/Views/Settings.php:272
+#: classes/Views/Settings.php:277
 msgid "Enables logging request to file."
 msgstr ""
 
-#: classes/Views/Settings.php:290
+#: classes/Views/Settings.php:295
 msgid ""
 "The request log file is saved in the /wp-content/uploads/wp-security-audit-"
 "log/ directory."
 msgstr ""
 
-#: classes/Views/Settings.php:298
+#: classes/Views/Settings.php:303
 msgid "Hide Plugin in Plugins Page"
 msgstr ""
 
-#: classes/Views/Settings.php:304
+#: classes/Views/Settings.php:309
 msgid "Hide"
 msgstr ""
 
-#: classes/Views/Settings.php:308
+#: classes/Views/Settings.php:313
 msgid ""
 "To manually revert this setting set the value of option wsal-hide-plugin to "
 "0 in the wp_options table."
 msgstr ""
 
-#: classes/Views/Settings.php:315
+#: classes/Views/Settings.php:320
 msgid "Logging"
 msgstr ""
 
-#: classes/Views/Settings.php:329
+#: classes/Views/Settings.php:334
 msgid "Disable all plugin logging."
 msgstr ""
 
-#: classes/Views/Settings.php:336
+#: classes/Views/Settings.php:341
 msgid "Remove Data on Uninstall"
 msgstr ""
 
-#: classes/Views/Settings.php:354
+#: classes/Views/Settings.php:359
 msgid "Security Alerts Pruning"
 msgstr ""
 
-#: classes/Views/Settings.php:357 classes/Views/Settings.php:365
+#: classes/Views/Settings.php:362 classes/Views/Settings.php:370
 msgid "(eg: 1 month)"
 msgstr ""
 
-#: classes/Views/Settings.php:361
+#: classes/Views/Settings.php:366
 msgid "None"
 msgstr ""
 
-#: classes/Views/Settings.php:369
+#: classes/Views/Settings.php:374
 msgid "Delete alerts older than"
 msgstr ""
 
-#: classes/Views/Settings.php:377
+#: classes/Views/Settings.php:382
 msgid "(eg: 80)"
 msgstr ""
 
-#: classes/Views/Settings.php:381
+#: classes/Views/Settings.php:386
 msgid "Keep up to"
 msgstr ""
 
-#: classes/Views/Settings.php:386
+#: classes/Views/Settings.php:391
 msgid "alerts"
 msgstr ""
 
-#: classes/Views/Settings.php:390
+#: classes/Views/Settings.php:395
 msgid "Next Scheduled Cleanup is in "
 msgstr ""
 
-#: classes/Views/Settings.php:394
+#: classes/Views/Settings.php:399
 msgid "(or %s)"
 msgstr ""
 
-#: classes/Views/Settings.php:395
+#: classes/Views/Settings.php:400
 msgid "Run Manually"
 msgstr ""
 
-#: classes/Views/Settings.php:402
+#: classes/Views/Settings.php:407
 msgid "Can View Alerts"
 msgstr ""
 
-#: classes/Views/Settings.php:409
+#: classes/Views/Settings.php:414
 msgid "Users and Roles in this list can view the security alerts"
 msgstr ""
 
-#: classes/Views/Settings.php:425
+#: classes/Views/Settings.php:430
 msgid "Refresh Audit Log Viewer"
 msgstr ""
 
-#: classes/Views/Settings.php:431
+#: classes/Views/Settings.php:436
 msgid "Automatic"
 msgstr ""
 
-#: classes/Views/Settings.php:433
+#: classes/Views/Settings.php:438
 msgid "Refresh Audit Log Viewer as soon as there are new alerts."
 msgstr ""
 
-#: classes/Views/Settings.php:437
+#: classes/Views/Settings.php:442
 msgid "Manual"
 msgstr ""
 
-#: classes/Views/Settings.php:439
+#: classes/Views/Settings.php:444
 msgid "Refresh Audit Log Viewer only when the page is reloaded."
 msgstr ""
 
-#: classes/Views/Settings.php:446
-msgid "Alerts Time Format"
-msgstr ""
-
-#: classes/Views/Settings.php:452
-msgid "24 hours"
-msgstr ""
-
-#: classes/Views/Settings.php:457
-msgid "AM/PM"
-msgstr ""
-
-#: classes/Views/Settings.php:465
+#: classes/Views/Settings.php:451
 msgid "Alerts Timestamp"
 msgstr ""
 
-#: classes/Views/Settings.php:471
+#: classes/Views/Settings.php:457
 msgid "UTC"
 msgstr ""
 
-#: classes/Views/Settings.php:476
+#: classes/Views/Settings.php:462
 msgid "WordPress' timezone"
 msgstr ""
 
-#: classes/Views/Settings.php:479
+#: classes/Views/Settings.php:465
 msgid ""
 "Select which timestamp should the alerts have in the Audit Log viewer. Note "
 "that the WordPress' timezone might be different from that of the server."
 msgstr ""
 
-#: classes/Views/Settings.php:485
+#: classes/Views/Settings.php:471
 msgid "Audit Log Columns Selection"
 msgstr ""
 
-#: classes/Views/Settings.php:496
+#: classes/Views/Settings.php:482
 msgid ""
 "When you disable any of the above such details won’t be shown in the Audit "
 "Log\n"
@@ -793,49 +786,49 @@ msgid ""
 "database."
 msgstr ""
 
-#: classes/Views/Settings.php:503
+#: classes/Views/Settings.php:489
 msgid "Disable Alerts for WordPress Background Activity"
 msgstr ""
 
-#: classes/Views/Settings.php:509
+#: classes/Views/Settings.php:495
 msgid "Hide activity"
 msgstr ""
 
-#: classes/Views/Settings.php:513
+#: classes/Views/Settings.php:499
 msgid ""
 "For example do not raise an alert when WordPress deletes the auto drafts."
 msgstr ""
 
-#: classes/Views/Settings.php:520
+#: classes/Views/Settings.php:506
 msgid "Number of 404 Requests to Log"
 msgstr ""
 
-#: classes/Views/Settings.php:526
+#: classes/Views/Settings.php:512
 msgid ""
 "By default the plugin keeps up to 99 requests to non-existing pages from the "
 "same IP address. Increase the value in this setting to the desired amount to "
 "keep a log of more or less requests."
 msgstr ""
 
-#: classes/Views/Settings.php:527
+#: classes/Views/Settings.php:513
 msgid ""
 "Note that by increasing this value to a high number, should your website be "
 "scanned the plugin will consume more resources to log all the requests."
 msgstr ""
 
-#: classes/Views/Settings.php:544
+#: classes/Views/Settings.php:530
 msgid "Excluded Users"
 msgstr ""
 
-#: classes/Views/Settings.php:564
+#: classes/Views/Settings.php:550
 msgid "Excluded Roles"
 msgstr ""
 
-#: classes/Views/Settings.php:591
+#: classes/Views/Settings.php:577
 msgid "Excluded Custom Fields"
 msgstr ""
 
-#: classes/Views/Settings.php:617
+#: classes/Views/Settings.php:603
 msgid "Excluded IP Addresses"
 msgstr ""
 
@@ -2570,9 +2563,9 @@ msgstr ""
 msgid "WP Security Audit Log"
 msgstr ""
 
-#. #-#-#-#-#  plugin.pot (WP Security Audit Log 2.5.5)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (WP Security Audit Log 2.5.8)  #-#-#-#-#
 #. Plugin URI of the plugin/theme
-#. #-#-#-#-#  plugin.pot (WP Security Audit Log 2.5.5)  #-#-#-#-#
+#. #-#-#-#-#  plugin.pot (WP Security Audit Log 2.5.8)  #-#-#-#-#
 #. Author URI of the plugin/theme
 msgid "http://www.wpsecurityauditlog.com/"
 msgstr ""

@@ -12,7 +12,7 @@ class WP_Piwik {
 	 *
 	 * @var Runtime environment variables
 	 */
-	private static $revisionId = 2016090101, $version = '1.0.11', $blog_id, $pluginBasename = NULL, $logger, $settings, $request, $optionsPageId;
+	private static $revisionId = 2016120301, $version = '1.0.14', $blog_id, $pluginBasename = NULL, $logger, $settings, $request, $optionsPageId;
 
 	/**
 	 * Constructor class to configure and register all WP-Piwik components
@@ -490,7 +490,7 @@ class WP_Piwik {
 	 * @return array complete list of plugin meta data
 	 */
 	public function setPluginMeta($links, $file) {
-		if ($file == 'wp-piwik/wp-piwik.php')
+		if ($file == 'wp-piwik/wp-piwik.php' && (!$this->isNetworkMode () || is_network_admin()) )
 			return array_merge ( $links, array (
 					sprintf ( '<a href="%s">%s</a>', self::getSettingsURL (), __ ( 'Settings', 'wp-piwik' ) )
 			) );
@@ -987,7 +987,8 @@ class WP_Piwik {
 		if (! $blogId && $this->isNetworkMode ())
 			$blogId = get_current_blog_id ();
 		$result = self::$settings->getOption ( 'site_id', $blogId );
-		return (! empty ( $result ) ? $result : $this->requestPiwikSiteId ( $blogId ));
+        self::$logger->log ( 'Database result: ' . $result );
+        return (! empty ( $result ) ? $result : $this->requestPiwikSiteId ( $blogId ));
 	}
 
 	/**
@@ -1020,8 +1021,7 @@ class WP_Piwik {
 				$result = $this->addPiwikSite ( $blogId );
 			elseif ( $result != 'n/a' )
 				$result = $result [0] ['idsite'];
-		} else
-			$result = null;
+		} else $result = null;
 		self::$logger->log ( 'Get Piwik ID: WordPress site ' . ($isCurrent ? get_bloginfo ( 'url' ) : get_blog_details ( $blogId )->siteurl) . ' = Piwik ID ' . $result );
 		if ($result !== null) {
 			self::$settings->setOption ( 'site_id', $result, $blogId );
@@ -1050,12 +1050,14 @@ class WP_Piwik {
 				'urls' => $isCurrent ? get_bloginfo ( 'url' ) : get_blog_details ( $blogId )->siteurl,
 				'siteName' => urlencode( $isCurrent ? get_bloginfo ( 'name' ) : get_blog_details ( $blogId )->blogname )
 		) );
-		$result = $this->request ( $id );
-		self::$logger->log ( 'Get Piwik ID: WordPress site ' . ($isCurrent ? get_bloginfo ( 'url' ) : get_blog_details ( $blogId )->siteurl) . ' = Piwik ID ' . ( int ) $result );
-		if (empty ( $result ) || ! isset ( $result [0] ))
+		$result = (int) $this->request ( $id );
+		self::$logger->log ( 'Create Piwik ID: WordPress site ' . ($isCurrent ? get_bloginfo ( 'url' ) : get_blog_details ( $blogId )->siteurl) . ' = Piwik ID ' . $result );
+		if (empty ( $result ))
 			return null;
-		else
-			return $result [0] ['idsite'];
+		else {
+            do_action('wp-piwik_site_created', $result);
+            return $result;
+        }
 	}
 
 	/**

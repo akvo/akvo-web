@@ -24,8 +24,10 @@ class wfSchema {
 	KEY k1(wfsn)
 ) default charset=utf8",
 "wfConfig" => "(
-	name varchar(100) PRIMARY KEY NOT NULL,
-	val longblob
+  `name` varchar(100) NOT NULL,
+  `val` longblob,
+  `autoload` enum('no','yes') NOT NULL DEFAULT 'yes',
+  PRIMARY KEY (`name`)
 ) default charset=utf8",
 "wfCrawlers" => "(
 	IP INT UNSIGNED NOT NULL,
@@ -173,10 +175,17 @@ class wfSchema {
   `expiration` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `body` varchar(255) NOT NULL DEFAULT '',
   `count` int(10) unsigned NOT NULL DEFAULT '0',
+  `type` int(10) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `expiration` (`expiration`),
-  KEY `IP` (`IP`)
-) DEFAULT CHARSET=utf8;",
+  KEY `IP` (`IP`),
+  KEY `type` (`type`)
+) DEFAULT CHARSET=utf8",
+'wfKnownFileList' => "(
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `path` text NOT NULL,
+  PRIMARY KEY (`id`)
+) DEFAULT CHARSET=utf8",
 /*
 'wfPerfLog' => "(
 	id int UNSIGNED NOT NULL auto_increment PRIMARY KEY,
