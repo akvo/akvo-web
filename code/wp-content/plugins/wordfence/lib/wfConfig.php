@@ -36,6 +36,7 @@ class wfConfig {
 			"lowResourceScansEnabled" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_public" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_heartbleed" => array('value' => true, 'autoload' => self::AUTOLOAD),
+			"scansEnabled_checkHowGetIPs" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_core" => array('value' => true, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_themes" => array('value' => false, 'autoload' => self::AUTOLOAD),
 			"scansEnabled_plugins" => array('value' => false, 'autoload' => self::AUTOLOAD),
@@ -92,7 +93,7 @@ class wfConfig {
 		"otherParams" => array(
 			"scan_include_extra" => "",
 			// 'securityLevel' => '2',
-			"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'scan_maxIssues' => 1000, 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
+			"alertEmails" => "", "liveTraf_ignoreUsers" => "", "liveTraf_ignoreIPs" => "", "liveTraf_ignoreUA" => "",  "apiKey" => "", "maxMem" => '256', 'scan_exclude' => '', 'scan_maxIssues' => 1000, 'scan_maxDuration' => '', 'whitelisted' => '', 'bannedURLs' => '', 'maxExecutionTime' => '', 'howGetIPs' => '', 'actUpdateInterval' => '', 'alert_maxHourly' => 0, 'loginSec_userBlacklist' => '',
 			'liveTraf_maxRows' => 2000,
 			"neverBlockBG" => "neverBlockVerified",
 			"loginSec_countFailMins" => "240",
@@ -114,14 +115,14 @@ class wfConfig {
 			'maxScanHits_action' => "throttle",
 			'blockedTime' => "300",
 			'email_summary_interval' => 'weekly',
-			'email_summary_excluded_directories' => 'wp-content/cache,wp-content/wfcache,wp-content/plugins/wordfence/tmp',
+			'email_summary_excluded_directories' => 'wp-content/cache,wp-content/plugins/wordfence/tmp',
 			'allowed404s' => "/favicon.ico\n/apple-touch-icon*.png\n/*@2x.png\n/browserconfig.xml",
 			'wafAlertWhitelist' => '',
 			'wafAlertInterval' => 600,
 			'wafAlertThreshold' => 100,
 		)
 	);
-	public static $serializedOptions = array('lastAdminLogin', 'scanSched', 'emailedIssuesList', 'wf_summaryItems', 'adminUserList', 'twoFactorUsers', 'alertFreqTrack', 'wfStatusStartMsgs');
+	public static $serializedOptions = array('lastAdminLogin', 'scanSched', 'emailedIssuesList', 'wf_summaryItems', 'adminUserList', 'twoFactorUsers', 'alertFreqTrack', 'wfStatusStartMsgs', 'vulnerabilities_plugin', 'vulnerabilities_theme');
 	public static function setDefaults() {
 		foreach (self::$defaultConfig['checkboxes'] as $key => $config) {
 			$val = $config['value'];
@@ -429,6 +430,7 @@ class wfConfig {
 		
 		global $wpdb;
 		$dbh = $wpdb->dbh;
+		$useMySQLi = (is_object($dbh) && $wpdb->use_mysqli);
 		
 		if (!self::$tableExists) {
 			return;
@@ -443,21 +445,26 @@ class wfConfig {
 			$data = serialize($val);
 		}
 		
-		if (!$wpdb->use_mysqli) {
+		if (!$useMySQLi) {
 			$data = bin2hex($data);
 		}
 		
 		$dataLength = strlen($data);
-		$chunkSize = intval((self::getDB()->getMaxAllowedPacketBytes() - 50) / 1.2); //Based on max_allowed_packet + 20% for escaping and SQL
+		$maxAllowedPacketBytes = self::getDB()->getMaxAllowedPacketBytes();
+		$chunkSize = intval((($maxAllowedPacketBytes < 1024 /* MySQL minimum, probably failure to fetch it */ ? 1024 * 1024 /* MySQL default */ : $maxAllowedPacketBytes) - 50) / 1.2); //Based on max_allowed_packet + 20% for escaping and SQL
 		$chunkSize = $chunkSize - ($chunkSize % 2); //Ensure it's even
 		$chunkedValueKey = self::ser_chunked_key($key);
 		if ($dataLength > $chunkSize) {
 			$chunks = 0;
 			while (($chunks * $chunkSize) < $dataLength) {
 				$dataChunk = substr($data, $chunks * $chunkSize, $chunkSize);
-				if ($wpdb->use_mysqli) {
+				if ($useMySQLi) {
 					$chunkKey = $chunkedValueKey . $chunks;
 					$stmt = $dbh->prepare("INSERT IGNORE INTO " . self::table() . " (name, val, autoload) VALUES (?, ?, 'no')");
+					if ($stmt === false) {
+						wordfence::status(2, 'error', "Error writing value chunk for {$key} (MySQLi error: [{$dbh->errno}] {$dbh->error})");
+						return false;
+					}
 					$null = NULL;
 					$stmt->bind_param("sb", $chunkKey, $null);
 					
@@ -489,14 +496,22 @@ class wfConfig {
 		else {
 			$exists = self::getDB()->querySingle("select name from " . self::table() . " where name='%s'", $key);
 			
-			if ($wpdb->use_mysqli) {
+			if ($useMySQLi) {
 				if ($exists) {
 					$stmt = $dbh->prepare("UPDATE " . self::table() . " SET val=? WHERE name=?");
+					if ($stmt === false) {
+						wordfence::status(2, 'error', "Error writing value for {$key} (MySQLi error: [{$dbh->errno}] {$dbh->error})");
+						return false;
+					}
 					$null = NULL;
 					$stmt->bind_param("bs", $null, $key);
 				}
 				else {
 					$stmt = $dbh->prepare("INSERT IGNORE INTO " . self::table() . " (val, name, autoload) VALUES (?, ?, ?)");
+					if ($stmt === false) {
+						wordfence::status(2, 'error', "Error writing value for {$key} (MySQLi error: [{$dbh->errno}] {$dbh->error})");
+						return false;
+					}
 					$null = NULL;
 					$stmt->bind_param("bss", $null, $key, $autoload);
 				}
@@ -602,8 +617,7 @@ class wfConfig {
 		}
 	}
 	public static function liveTrafficEnabled(){
-		if( (! self::get('liveTrafficEnabled')) || self::get('cacheType') == 'falcon' || self::get('cacheType') == 'php'){ return false; }
-		return true;
+		return self::get('liveTrafficEnabled');
 	}
 	public static function enableAutoUpdate(){
 		wfConfig::set('autoUpdate', '1');

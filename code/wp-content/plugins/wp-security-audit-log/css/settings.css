@@ -46,7 +46,7 @@
 	display: inline-block;
 	width: 14px;
 	text-align: center;
-	line-height: 16px;
+	line-height: 12px;
 }
 
 .sectoken-user a:hover,
@@ -138,4 +138,9 @@ input.switch[type="radio"]:disabled:checked + label {
     border-color: #ecf0f1;
     box-shadow: none;
     cursor: default;
+}
+a.disabled {
+    pointer-events: none;
+    cursor: default;
+    opacity: 0.6;
 }

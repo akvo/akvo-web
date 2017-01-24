@@ -29,6 +29,10 @@ class WSAL_AuditLogListView extends WP_List_Table
             'ajax'      => true,
             'screen'    => 'interval-list',
         ));
+
+        if (!session_id()) {
+            @session_start();
+        }
     }
 
     public function no_items()
@@ -80,6 +84,20 @@ class WSAL_AuditLogListView extends WP_List_Table
                 <?php } ?>
             </div><?php
         }
+
+        // switch to live or archive DB
+        if ($this->_plugin->settings->IsArchivingEnabled()) {
+            $selected = 'live';
+            if (isset($_SESSION['selected_db']) && $_SESSION['selected_db'] == 'archive') {
+                $selected = 'archive';
+            }
+            ?><div class="wsal-ssa wsal-db">
+                <select class="wsal-db" onchange="WsalDBChange(value);">
+                    <option value="live" <?php if ($selected == 'live') echo 'selected="selected"'; ?>><?php _e('Live Database', 'wp-security-audit-log'); ?></option>
+                    <option value="archive" <?php if ($selected == 'archive') echo 'selected="selected"'; ?>><?php _e('Archive Database', 'wp-security-audit-log'); ?></option>
+                </select>
+            </div><?php
+        }
     }
     
     /**
@@ -89,14 +107,11 @@ class WSAL_AuditLogListView extends WP_List_Table
     public function get_sites($limit = null)
     {
         global $wpdb;
-        
         // build query
         $sql = 'SELECT blog_id, domain FROM ' . $wpdb->blogs;
         if (!is_null($limit)) $sql .= ' LIMIT ' . $limit;
-        
         // execute query
         $res = $wpdb->get_results($sql);
-        
         // modify result
         foreach ($res as $row) {
             $row->blogname = get_blog_option($row->blog_id, 'blogname');
@@ -187,9 +202,8 @@ class WSAL_AuditLogListView extends WP_List_Table
     public function column_default($item, $column_name)
     {
         //example: $item->getMetaValue('CurrentUserID')
-
-        if (!$this->_plugin->settings->GetDatetimeFormat()) $datetimeFormat = 'h:i:s.$$$&\n\b\s\p;A';
-        else $datetimeFormat = 'H:i:s.$$$';
+        $datetimeFormat = $this->_plugin->settings->GetDatetimeFormat();
+        
         switch ($column_name) {
             case 'read':
                 return '<span class="log-read log-read-'
@@ -209,7 +223,7 @@ class WSAL_AuditLogListView extends WP_List_Table
                         str_replace(
                             '$$$',
                             substr(number_format(fmod($item->created_on + $this->_gmt_offset_sec, 1), 3), 2),
-                            date('Y-m-d<\b\r>'.$datetimeFormat, $item->created_on + $this->_gmt_offset_sec)
+                            date($datetimeFormat, $item->created_on + $this->_gmt_offset_sec)
                         )
                     ) : '<i>unknown</i>';
             case 'user':
@@ -397,6 +411,13 @@ class WSAL_AuditLogListView extends WP_List_Table
     
     public function prepare_items()
     {
+        if ($this->_plugin->settings->IsArchivingEnabled()) {
+            // Switch to Archive DB
+            if (isset($_SESSION['selected_db']) && $_SESSION['selected_db'] == 'archive') {
+                $this->_plugin->settings->SwitchToArchiveDB();
+            }
+        }
+
         $per_page = $this->_plugin->settings->GetViewPerPage();
 
         $columns = $this->get_columns();

@@ -1,4 +1,5 @@
 <?php
+
 	function akvo_create_post_type() {
 		
   		register_post_type( 'case-study',
@@ -18,12 +19,14 @@
         			'thumbnail', 
         			'excerpt', 
         			'comments', 
+					'custom-fields'
       			),
     		)
   		);
   		
   		akvo_create_taxonomy('region', 'Regions', 'Region');
   		akvo_create_taxonomy('sector', 'Sectors', 'Sector');
+		akvo_create_taxonomy('product', 'Products', 'Product');
 		
   	}
   	add_action('init', 'akvo_create_post_type');
@@ -59,3 +62,83 @@
 		);
 		register_taxonomy($slug, array( 'case-study' ), $args );
   	}
+	
+	
+	
+	function casestudy_add_meta_box() {
+		//this will add the metabox for the member post type
+		$screens = array( 'case-study' );
+
+		foreach ( $screens as $screen ) {
+			add_meta_box('casestudy_meta_box',__( 'Project Information', 'member_textdomain' ), 'casestudy_meta_box_callback', $screen);
+		}
+	}
+	add_action( 'add_meta_boxes', 'casestudy_add_meta_box' );
+	
+	
+	
+	/**
+	 * Prints the box content.
+	 *
+	 * @param WP_Post $post The object for the current post/page.
+	 */
+	function casestudy_meta_box_callback( $post ) {
+
+		// Add a nonce field so we can check for it later.
+		wp_nonce_field( 'casestudy_save_meta_box_data', 'casestudy_meta_box_nonce' );
+		
+		$fields_arr = array('partner-name' => 'Partner');
+
+		foreach($fields_arr as $key => $label):?>
+			<input type="text" name="<?php _e($key);?>" placeholder="<?php _e($label);?>" style="width:100%;" value="<?php _e(get_post_meta( $post->ID, $key, true ));?>">
+		<?php endforeach;
+		
+	}
+
+	/**
+	 * When the post is saved, saves our custom data.
+	 *
+	 * @param int $post_id The ID of the post being saved.
+	 */
+	 function casestudy_save_meta_box_data( $post_id ) {
+
+		if ( ! isset( $_POST['casestudy_meta_box_nonce'] ) ) {return;}
+
+		if ( ! wp_verify_nonce( $_POST['casestudy_meta_box_nonce'], 'casestudy_save_meta_box_data' ) ) {return;}
+
+		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return;}
+/*
+	 // Check the user's permissions.
+	 if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
+
+		if ( ! current_user_can( 'edit_page', $post_id ) ) {
+			return;
+		}
+
+	 } else {
+
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	 }
+
+	 if ( ! isset( $_POST['member_new_field'] ) ) {
+		return;
+	 }
+	 
+	 */
+		$fields_arr = array('partner-name' => 'Partner');
+	 
+		foreach($fields_arr as $key => $label){
+			if(isset($_POST[$key])){
+				$my_data = sanitize_text_field( $_POST[$key] );
+				update_post_meta( $post_id, $key, $my_data );
+			}
+		}
+
+	 
+
+	 
+	}
+	add_action( 'save_post', 'casestudy_save_meta_box_data' );
+?>

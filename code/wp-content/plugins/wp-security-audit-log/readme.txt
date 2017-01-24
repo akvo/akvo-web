@@ -6,8 +6,8 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: wordpress security plugin, wordpress security audit log, audit log, wordpress log, event log wordpress, wordpress user tracking, wordpress activity log, wordpress audit, security event log, audit trail, security audit trail, wordpress security alerts, wordpress monitor, wordpress security monitor, wordpress admin, wordpress admin monitoring, analytics, activity, admin, multisite, wordpress multisite, actions, dashboard, log, notification, wordpress monitoring, email notification, wordpress email alerts, tracking, user tracking, user activity report, wordpress audit trail
 Requires at least: 3.6
-Tested up to: 4.6.1
-Stable tag: 2.5.7
+Tested up to: 4.7.1
+Stable tag: 2.5.9.2
 
 Keep an audit trail of all changes and under the hood WordPress activity to ensure productivity and thwart possible WordPress hacker attacks.
 
@@ -15,7 +15,7 @@ Keep an audit trail of all changes and under the hood WordPress activity to ensu
 
 <strong>THE MOST COMPREHENSIVE & EASY TO USE WORDPRESS AUDIT TRAIL PLUGIN</strong><br />
 
-Keep an audit log of everything that is happening on your WordPress and [WordPress multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/) with WP Security Audit Log to ensure user productivity and identify WordPress security issues before they become a security problem. [WP Security Audit Log](http://www.wpsecurityauditlog.com), WordPress' most comprehensive user monitoring and audit log plugin already helps thousands of WordPress administrators, owners and security professionals ensure the security of their websites and blogs. Ensure the security of your WordPress too by installing WP Security Audit Log. The community's favourite WordPress user monitoring monitoring and security auditing plugin is developed by WordPress Security Consultants and Professionals [WP White Security](http://www.wpwhitesecurity.com/). 
+Keep an audit log of everything that is happening on your WordPress and [WordPress multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/) with WP Security Audit Log to ensure user productivity and identify WordPress security issues before they become a security problem. [WP Security Audit Log](http://www.wpsecurityauditlog.com), WordPress' most comprehensive user monitoring and audit log plugin already helps thousands of WordPress administrators, owners and security professionals ensure the security of their websites and blogs. Ensure the security of your WordPress too by installing WP Security Audit Log. The community's favourite WordPress user monitoring and security auditing plugin is developed by WordPress Security Consultants and Professionals [WP White Security](http://www.wpwhitesecurity.com/). 
 
 [youtube https://www.youtube.com/watch?v=1nopATCS-CQ]
 
@@ -113,6 +113,7 @@ WP Security Audit Log plugin also has a number of features that make WordPress a
 
 = As Featured On: =
 
+* [WPLift](http://wplift.com/audit-wordpress-security-logs) - Review by Ahmad Awais
 * [WP SmackDown](https://wpsmackdown.com/wp-plugins/wp-security-audit-log/)
 * [WPKube](http://www.wpkube.com/improve-wordpress-security-wp-security-audit-log/)
 * [ManageWP Plugins of the month](https://managewp.com/free-wordpress-plugins-june-2014)
@@ -122,13 +123,14 @@ WP Security Audit Log plugin also has a number of features that make WordPress a
 * [Pagely](https://pagely.com/blog/2015/01/log-wordpress-dashboard-activity-improved-security-auditing/)
 * [Design Wall](http://www.designwall.com/blog/10-wordpress-multisite-plugins-you-shouldnt-live-without/)
 * [WP Mayor](http://www.wpmayor.com/wp-security-audit-log-plugin-review-user-activity-logging-wordpress/)
-* [WPLift](http://wplift.com/wordpress-event-tracking)
 * [Tourqe News](http://torquemag.io/5-awesome-wordpress-plugins-you-may-not-have-heard-of/)
 * [Shout Me Loud](http://www.shoutmeloud.com/how-to-monitor-user-activities-wordpress-dashboard.html)
 * [Monster Post](http://blog.templatemonster.com/2015/12/15/wp-security-audit-log-plugin-review/)
 * [Templatic](https://templatic.com/tips-tricks/improve-wordpress-security-posture/)
 * [Make a Website Hub](http://makeawebsitehub.com/wordpress-security/)
 * [The Darknet](http://www.darknet.org.uk/2015/10/wp-security-audit-log-a-complete-audit-log-plugin-for-wordpress/)
+* [WebEmpresa](https://www.webempresa.com/blog/auditando-cambios-en-wordpress.html)
+* [KitPloit](http://www.kitploit.com/2016/10/wp-security-audit-log-ultimate.html)
 
 = WordPress Security Audit Log in your Language! =
 We need help translating the plugin and the WordPress Security Alerts. Please visit the [WordPress Translate Project](https://translate.wordpress.org/projects/wp-plugins/wp-security-audit-log) to translate the plugin and drop us an email on support@wpwhitesecurity.com to get mentioned in the list of translators below.
@@ -177,8 +179,32 @@ Please refer to the [FAQs page](https://www.wpsecurityauditlog.com/documentation
 8. The Audit Log Viewer of a Super Admin in a WordPress multisite network installation with the Site selection drop down menu.
 9. If there are more than 15 sites in a multisite, an auto complete site search shows up instead of the drop down menu (see [screenshots](https://wordpress.org/plugins/wp-security-audit-log/screenshots/) for reference)
 10. WP Security Audit Log is integrated with the built-in revision system of WordPress, thus allowing you to see what content changes users make on your WordPress posts, pages and custom post types. For more information read [Keep Record of All WordPress Content Changes with WP Security Audit Log Plugin](http://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-releases/record-all-wordpress-content-changes-wp-security-audit-log-plugin/)
+11. Mirror the WordPress audit trail to an external solution such as Syslog or Papertrail to centralize logging, ensure logs are always available and cannot be tampered with in the unfortunate case of a hack attack.
 
 == Changelog ==
+
+= 2.5.9.2 (2017-01-11) =
+
+* **Bug Fix**
+	* Updated store URL so [premium add-ons](https://www.wpsecurityauditlog.com/extensions/all-add-ons-60-off/) can be updated.	
+	
+= 2.5.9 (2017-01-03) =
+
+* **Support for new features in External DB Add-on:**
+	* [Mirroring of audit trail to Syslog](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-documentation/faq-mirroring-wordpress-audit-trail-syslog/)
+	* [Mirroring  of audit trail to Papertrail](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-documentation/faq-mirroring-wordpress-audit-trail-papertrail/)
+	* Support for [archiving alerts from the audit trail in an external database](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-documentation/faq-archiving-wordpress-audit-trail/).	
+	
+= 2.5.8 (2016-11-09) =
+
+* **Plugin Improvement (Standardized all date & time formats and timezone)**
+	* Plugin now uses the time & date format configured in WordPress (removed the option from plugin that override this).
+	* Updated all the [Premium Add-Ons](https://www.wpsecurityauditlog.com/extensions/all-add-ons-60-off/) to use the time & date format configured in WordPress.
+	* Changed the Request Log file extension to php and disabled execution (before it was log, hence users could guess it)
+
+* **Bug Fixes**
+  * Fixed a problem with restricting users' access to the plugin ([support ticket](https://wordpress.org/support/topic/sorry-you-are-not-allowed-to-access-this-page-9/)).
+  * Fixed a bug in the custom alerts - previously custom alerts were overwritten during upgrade. Updated [custom alerts documentation](https://www.wpsecurityauditlog.com/documentation/create-custom-alerts-wordpress-audit-trail/) as well. 
 
 = 2.5.7 (2016-10-05) =
 

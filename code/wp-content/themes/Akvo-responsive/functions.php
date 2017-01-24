@@ -7,6 +7,7 @@
 $includes_path = get_template_directory() . '/inc/';
 require_once($includes_path . 'acf-functions.php');
 require_once($includes_path . 'custom-post-types.php');
+require_once($includes_path . 'class-akvo-tabs.php');
 
 add_theme_support( 'post-thumbnails' );
 register_nav_menus(array(
@@ -376,12 +377,18 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	
 	
 	function akvo_latest_rsr(){
-		$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
-		$str = file_get_contents($url);
+		$str = get_transient('akvo_latest_rsr');
+		if(!$str){
+			/* not in the cache, fetch from the server */
+			$url = 'http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json';
+			$str = file_get_contents($url);
+			set_transient('akvo_latest_rsr', $str, 60 * 60 * 24);
+		}
+		
 		print_r($str);
-		die();
+		wp_die();
 	}
-	
+	add_action( 'akvo_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
 	
@@ -415,8 +422,106 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		_e('</ul>');
 	}
 	
+	/* remove unnecessary code */
+	// Disable REST API link tag
+	remove_action('wp_head', 'rest_output_link_wp_head', 10);
+
+	// Disable oEmbed Discovery Links
+	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
+
+	// Disable REST API link in HTTP headers
+	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
+	
+	// Diable wp emoji
+	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
+	remove_action( 'wp_print_styles', 'print_emoji_styles' );
+	
+	/* load javascript */
+	function akvo_js() {
+		wp_deregister_script('wp-embed');
+	}
+	add_action('wp_enqueue_scripts', 'akvo_js');
 	
 	
+	function casestudy_list() {
+		ob_start();
+		$tax_query = array();
+		$filters = array('region', 'sector');
+		
+		$i = 0;
+		
+		foreach($filters as $filter){
+			$r_slug = 'akvo_'.$filter;
+			
+			$taxonomy = get_taxonomy($filter);
+			
+			if($taxonomy && isset($taxonomy->labels->name)){
+				$filters[$filter] = array(
+					'slug' 	=> $filter,
+					'label' => $taxonomy->labels->name
+				);
+				if(isset($_GET[$r_slug]) && $_GET[$r_slug]){
+					array_push($tax_query, array(
+						'taxonomy' 	=> $filter,
+						'field' 	=>	'id',
+						'terms'		=> $_GET[$r_slug]
+					));
+				
+					$filters[$filter]['id'] = $_GET[$r_slug];
+				}
+				
+			}
+			
+			unset($filters[$i]);
+			$i++;
+		}
+		
+		
+		$args = array(
+			'post_type' 		=> 'case-study', 
+			'posts_per_page' 	=> 10,
+			'tax_query' 		=> $tax_query
+		);
+		
+		$the_query = new WP_Query( $args );
+		include("templates/card-form.php");
+		echo '<div class="">';
+		$i = 0;
+		if ( $the_query->have_posts() ) {
+			
+			
+			while ( $the_query->have_posts() ):
+				$the_query->the_post();
+				global $post_id;
+				if($i % 3 == 0 || $i == 0) {echo "<div class='row'>";}
+				include("templates/card.php");
+				$i++;
+				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
+			endwhile;
+			echo '</div>';
+			
+			wp_reset_postdata();
+		} else {
+			echo "<div>No Items were found.</div>";
+		}
+		echo '</div>';
+		return ob_get_clean();
+	}
+	add_shortcode( 'casestudy-list', 'casestudy_list' );
 	
+	function akvo_dropdown_filters($arr){	
+		$terms = get_terms(array('taxonomy' => $arr['slug'], 'hide_empty' => false));
+		if($terms){
+			include "templates/card-filter.php";
+		}	
+	}
 	
+	function akvo_card_taxonomy($post_id, $slug){
+		$terms = wp_get_post_terms( $post_id, $slug);
+		
+		if(is_array($terms) && count($terms)){
+			return $terms[0]->name;
+		}
+		return '';
+	}
 ?>

@@ -61,7 +61,7 @@
   _paq.push(["enableLinkTracking"]);
 
   (function() {
-    var u=(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.akvo.org/";
+    var u = 'https://analytics.akvo.org/';   //(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.akvo.org/";
     _paq.push(["setTrackerUrl", u+"piwik.php"]);
     _paq.push(["setSiteId", "<?=PIWIK_ID?>"]);
     var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
