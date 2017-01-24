@@ -84,7 +84,7 @@ class wfIssues {
 	public function ignoreAllNew(){
 		$this->getDB()->queryWrite("update " . $this->issuesTable . " set status='ignoreC' where status='new'");
 	}
-	public function emailNewIssues(){
+	public function emailNewIssues($timeLimitReached = false){
 		$level = wfConfig::getAlertLevel();
 		$emails = wfConfig::getAlertEmails();
 		$shortSiteURL = preg_replace('/^https?:\/\//i', '', site_url());
@@ -141,6 +141,7 @@ class wfIssues {
 			'level' => $level,
 			'issuesNotShown' => $overflowCount,
 			'adminURL' => get_admin_url(),
+			'timeLimitReached' => $timeLimitReached,
 			));
 		
 		wp_mail(implode(',', $emails), $subject, $content, 'Content-type: text/html');
@@ -184,7 +185,7 @@ class wfIssues {
 		}
 		foreach($ret as $status => &$issueList){
 			for($i = 0; $i < sizeof($issueList); $i++){
-				if($issueList[$i]['type'] == 'file'){
+				if ($issueList[$i]['type'] == 'file' || $issueList[$i]['type'] == 'knownfile') {
 					$localFile = $issueList[$i]['data']['file'];
 					if ($localFile != '.htaccess' && $localFile != $userIni) {
 						$localFile = ABSPATH . '/' . preg_replace('/^[\.\/]+/', '', $localFile);
