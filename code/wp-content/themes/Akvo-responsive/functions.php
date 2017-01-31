@@ -479,7 +479,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		
 		$args = array(
 			'post_type' 		=> 'case-study', 
-			'posts_per_page' 	=> 10,
+			'posts_per_page' 	=> get_option( 'posts_per_page' ),
 			'tax_query' 		=> $tax_query
 		);
 		
