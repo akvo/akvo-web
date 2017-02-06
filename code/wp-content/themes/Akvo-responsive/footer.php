@@ -76,7 +76,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 
 <script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js"></script>
+<script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js?v=1.2.0"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
 <script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script>
