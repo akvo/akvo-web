@@ -13,8 +13,6 @@
  *
  * @since 1.0.0
  */
- 
- 
 define( 'WPINC', 'wp-includes' );
 
 // Include files required for initialization.
