@@ -476,16 +476,21 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 			$i++;
 		}
 		
+		$paged = 1;
+		if(isset($_REQUEST['akvo-paged'])){
+			$paged = $_REQUEST['akvo-paged'];
+		}
 		
 		$args = array(
 			'post_type' 		=> 'case-study', 
-			'posts_per_page' 	=> 10,
+			'posts_per_page' 	=> get_option( 'posts_per_page' ),
+			'paged'				=> $paged,
 			'tax_query' 		=> $tax_query
 		);
 		
 		$the_query = new WP_Query( $args );
 		include("templates/card-form.php");
-		echo '<div class="">';
+		echo '<div id="index-list" data-target="#index-list .row" class="">';
 		$i = 0;
 		if ( $the_query->have_posts() ) {
 			
@@ -499,6 +504,16 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
 			endwhile;
 			echo '</div>';
+			
+			
+			if ($the_query->max_num_pages > 1):?>
+            <div class="text-center">
+            	<a data-behaviour='ajax-loading' data-list="#index-list" id="loadMore" class="btn btn-primary loadMore" data-paged-attr="akvo-paged" href="#">
+            		Load More
+				</a>
+            </div>  
+			<?php endif;
+			
 			
 			wp_reset_postdata();
 		} else {
