@@ -51,7 +51,7 @@
 <?php } } } ?>
 
 <?php if ($issuesNotShown > 0) { ?>
-<p><?php echo wfUtils::pluralize($issuesNotShown, 'issue'); ?> were omitted from this email. View every issue: <a href="<?php echo esc_attr(network_admin_url('admin.php?page=Wordfence')); ?>"><?php echo esc_html(network_admin_url('admin.php?page=Wordfence')); ?></a></p>
+<p><?php echo wfUtils::pluralize($issuesNotShown, 'issue'); ?> were omitted from this email. View every issue: <a href="<?php echo esc_attr(network_admin_url('admin.php?page=WordfenceScan')); ?>"><?php echo esc_html(network_admin_url('admin.php?page=WordfenceScan')); ?></a></p>
 <?php } ?>
 
 

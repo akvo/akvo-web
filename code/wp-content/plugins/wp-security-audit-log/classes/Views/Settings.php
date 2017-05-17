@@ -310,7 +310,7 @@ class WSAL_Views_Settings extends WSAL_AbstractView
                                     </label>
                                     <br/>
                                     <span class="description">
-                                        <?php _e('To manually revert this setting set the value of option wsal-hide-plugin to 0 in the wp_options table.', 'wp-security-audit-log'); ?>
+                                        <?php _e('To manually revert this setting set the value of option wsal-hide-plugin to 0 in the wp_wsal_options table.', 'wp-security-audit-log'); ?>
                                     </span>
                                 </fieldset>
                             </td>
@@ -473,7 +473,7 @@ class WSAL_Views_Settings extends WSAL_AbstractView
                                         <span><?php _e('WordPress\' timezone', 'wp-security-audit-log'); ?></span>
                                     </label>
                                     <br/>
-                                    <span class="description"><?php _e('Select which timestamp should the alerts have in the Audit Log viewer. Note that the WordPress\' timezone might be different from that of the server.', 'wp-security-audit-log'); ?></span>
+                                    <span class="description"><?php _e('Select which timestamp the alerts should have in the Audit Log viewer. Note that the WordPress\' timezone might be different from that of the server.', 'wp-security-audit-log'); ?></span>
                                 </fieldset>
                             </td>
                         </tr>

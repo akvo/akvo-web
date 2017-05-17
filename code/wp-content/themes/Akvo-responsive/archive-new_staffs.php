@@ -16,7 +16,7 @@
     	<div class="mShownCollapse"><a></a></div>
     	<ul>
       		<li><a href="#partnershipGroup" class="pStaff">Partnerships</a></li>
-      		<li><a href="#communicationGroup" class="cStaff">Communication &amp; PR</a></li>
+      		<li><a href="#communicationGroup" class="cStaff">Marketing and Communications</a></li>
       		<li><a href="#engineeringGroup" class="eStaff">Engineering &amp; design</a></li>
       		<li><a href="#contractorsGroup" class="oStaff">Extended team</a></li>
     	</ul>
@@ -30,7 +30,7 @@
       	</div>
     	<hr class="delicate" />
     	<div id="communicationGroup">
-      		<h2 class="cStaffHead">Communication and PR</h2>
+      		<h2 class="cStaffHead">Marketing and Communications</h2>
       		<?php akvo_staff_list('communication-pr');?>
       	</div>
     	<hr class="delicate" />

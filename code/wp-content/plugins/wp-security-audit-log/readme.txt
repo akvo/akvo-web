@@ -6,8 +6,8 @@ License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: wordpress security plugin, wordpress security audit log, audit log, wordpress log, event log wordpress, wordpress user tracking, wordpress activity log, wordpress audit, security event log, audit trail, security audit trail, wordpress security alerts, wordpress monitor, wordpress security monitor, wordpress admin, wordpress admin monitoring, analytics, activity, admin, multisite, wordpress multisite, actions, dashboard, log, notification, wordpress monitoring, email notification, wordpress email alerts, tracking, user tracking, user activity report, wordpress audit trail
 Requires at least: 3.6
-Tested up to: 4.7.1
-Stable tag: 2.5.9.2
+Tested up to: 4.7.4
+Stable tag: 2.6.3
 
 Keep an audit trail of all changes and under the hood WordPress activity to ensure productivity and thwart possible WordPress hacker attacks.
 
@@ -15,13 +15,15 @@ Keep an audit trail of all changes and under the hood WordPress activity to ensu
 
 <strong>THE MOST COMPREHENSIVE & EASY TO USE WORDPRESS AUDIT TRAIL PLUGIN</strong><br />
 
-Keep an audit log of everything that is happening on your WordPress and [WordPress multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/) with WP Security Audit Log to ensure user productivity and identify WordPress security issues before they become a security problem. [WP Security Audit Log](http://www.wpsecurityauditlog.com), WordPress' most comprehensive user monitoring and audit log plugin already helps thousands of WordPress administrators, owners and security professionals ensure the security of their websites and blogs. Ensure the security of your WordPress too by installing WP Security Audit Log. The community's favourite WordPress user monitoring and security auditing plugin is developed by WordPress Security Consultants and Professionals [WP White Security](http://www.wpwhitesecurity.com/). 
+Keep an audit log of everything that happens on your WordPress and [WordPress multisite](http://www.wpsecurityauditlog.com/documentation/wordpress-multisite-plugin-features-support/) with WP Security Audit Log to ensure user productivity and identify WordPress security issues before they become a security problem.
+
+[WP Security Audit Log](http://www.wpsecurityauditlog.com) is WordPress' most comprehensive user monitoring and audit log plugin and is used by thousands of WordPress administrators, owners and security professionals. The plugin can also be used to [keep an audit trail of WooCommerce store and product changes](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-releases/audit-trail-woocommerce-store-products). 
 
 [youtube https://www.youtube.com/watch?v=1nopATCS-CQ]
 
 > <strong>Free and Premium Support</strong><br>
 > 
-> WP White Security provides support for the WP Security Audit Log plugin on the WordPress forums for free. Since it is free support it is not always possible to answer all questions on a timely manner, although we do try our best.
+> Support for the WP Security Audit Log plugin on the WordPress forums is free. Since it is free support it is not always possible to answer all questions on a timely manner, although we do try our best.
 >
 > Premium world-class support is available via email to anyone who purchases any of the [Premium Add-Ons](http://www.wpsecurityauditlog.com/plugin-extensions/) listed below:
 >
@@ -137,6 +139,7 @@ We need help translating the plugin and the WordPress Security Alerts. Please vi
 
 * Italian translation by [Leonardo Musumeci](http://leonardomusumeci.net/)
 * German translation by [Mourad Louha](http://excel-translator.de)
+* Spanish translation by the [WP Body team](https://wpbody.com/)
 
 = Related Links and Documentation =
 For more information and to get started with WordPress Security, check out the following:
@@ -183,11 +186,76 @@ Please refer to the [FAQs page](https://www.wpsecurityauditlog.com/documentation
 
 == Changelog ==
 
+= 2.6.3 (2017-05-03) =
+
+* **Security Update**
+	* Updated third party session libraries to a more secure version
+
+= 2.6.2 (2017-04-22) =
+
+* **New alerts to record actions & profile changes**
+	* 1006: User logged out all other sessions with the same username
+	* 4014: User opened the profile page of another user
+	
+* **New alerts to record post and page specific settings changes**
+	* 2111: Disabled Comments / Trackbacks and Pingbacks on a published post
+	* 2112: Enabled Comments / Trackbacks and Pingbacks on a published post
+	* 2113: Disabled Comments / Trackbacks and Pingbacks on a draft post
+	* 2114: Enabled Comments / Trackbacks and Pingbacks on a draft post
+	* 2115: Disabled Comments / Trackbacks and Pingbacks on a published page
+	* 2116: Enabled Comments / Trackbacks and Pingbacks on a published page
+	* 2117: Disabled Comments / Trackbacks and Pingbacks on a draft page
+	* 2118: Enabled Comments / Trackbacks and Pingbacks on a draft page
+	
+* **New alerts to record WordPress site-wide settings changes**
+	* 6008: User enabled / disabled the option Discourage search engines from indexing this site
+	* 6009: User enabled / disabled comments on all the website
+	* 6010: User enabled / disabled the option Comment author must fill out name and email
+	* 6011: User enabled / disabled the option Users must be logged in and registered to comment
+	* 6012: User enabled / disabled the option to automatically close comments after [X] days
+	* 6013: User changed the value of the option Automatically close comments from [X] to [X] days
+	* 6014: User enabled / disabled the option for comments to be manually approved
+	* 6015: User enabled / disabled the option for an author to have previously approved comments for the comments to appear
+	* 6016: User changed the number of links from [X] to [X] that a comment must have to be held in the queue
+	* 6017: User modified the list of keywords for comments moderation
+	* 6018: User modified the list of keywords for comments blacklisting
+
+* **Plugin Improvements**
+	* URL of content in alert is no longer truncated. Now it will be reported in full
+	* Organised the alerts in Enable/Disable Alerts section in categories and sub categories, thus they are easier to find
+	* Plugin no longer links to a non-existing log file when 404 logging is switched off
+	* Added additional checks for when using the function wp_Sessions_register_garbage_collection, which was causing a conflict with another plugin
+
+* **Bug Fixes**
+	* Fixed an issue in which the plugin was changing the titles of WooCommerce product pages for logged in users [Ticket](https://wordpress.org/support/topic/woocommerce-product-name-missing-from-page-titles-after-v2-6/)
+	* Fixed an issue in which plugin was unable to handle automated generated content with author 0 [Ticket](https://github.com/WPWhiteSecurity/WP-Security-Audit-Log/issues/378)
+
+= 2.6.1 (2017-03-09) =
+
+* **Bug Fixes**
+	* Removed the PHP Session ID cookie created by mistake for non logged in users.
+
+= 2.6 (2017-02-08) =
+
+* **New Features**
+	* [Audit trail for WooCommerce Store and Products](https://www.wpsecurityauditlog.com/wordpress-user-monitoring-plugin-releases/audit-trail-woocommerce-store-products).
+	* New Hover over functionality to disable alerts with a single click.
+	
+* **New WooCommerce Audit Trail Alerts**
+	* Refer to the [Audit trail WooCommerce Alerts List](https://www.wpsecurityauditlog.com/documentation/list-monitoring-wordpress-security-alerts-audit-log/#woocommerce) for a complete list of alerts the plugin uses to keep a record of changes in the WooCommerce store and products.
+
+* **Plugin Improvements**
+	* Improved severity of alerts and added severity description on hover over.
+	* Removed all code related to PHP error monitoring, which is no longer used (code spring cleaning).
+
+* **Bug Fixes**
+	* Fixed an issue in which 404 logs where still being generated when the logs option was disabled but alert 6007 was enabled.
+
 = 2.5.9.2 (2017-01-11) =
 
 * **Bug Fix**
 	* Updated store URL so [premium add-ons](https://www.wpsecurityauditlog.com/extensions/all-add-ons-60-off/) can be updated.	
-	
+
 = 2.5.9 (2017-01-03) =
 
 * **Support for new features in External DB Add-on:**

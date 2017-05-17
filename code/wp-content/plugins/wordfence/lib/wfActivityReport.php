@@ -184,16 +184,59 @@ class wfActivityReport {
 			'microseconds'          => microtime(true) - $start_time,
 		);
 	}
+	
+	public function getBlockedCount($maxAgeDays = null) {
+		$maxAgeDays = (int) $maxAgeDays;
+		if ($maxAgeDays <= 0) {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 7 day)) / 86400)';
+			switch (wfConfig::get('email_summary_interval', 'weekly')) {
+				case 'daily':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 day)) / 86400)';
+					break;
+				case 'monthly':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 month)) / 86400)';
+					break;
+			}
+		}
+		else {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval ' . $maxAgeDays . ' day)) / 86400)';
+		}
+		
+		$count = $this->db->get_var(<<<SQL
+SELECT SUM(blockCount) as blockCount
+FROM {$this->db->prefix}wfBlockedIPLog
+WHERE unixday >= {$interval}
+SQL
+			);
+		return $count;
+	}
 
 	/**
 	 * @param int $limit
 	 * @return mixed
 	 */
-	public function getTopIPsBlocked($limit = 10) {
+	public function getTopIPsBlocked($limit = 10, $maxAgeDays = null) {
+		$maxAgeDays = (int) $maxAgeDays;
+		if ($maxAgeDays <= 0) {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 7 day)) / 86400)';
+			switch (wfConfig::get('email_summary_interval', 'weekly')) {
+				case 'daily':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 day)) / 86400)';
+					break;
+				case 'monthly':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 month)) / 86400)';
+					break;
+			}
+		}
+		else {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval ' . $maxAgeDays . ' day)) / 86400)';
+		}
+		
 		$results = $this->db->get_results($this->db->prepare(<<<SQL
 SELECT *,
 SUM(blockCount) as blockCount
 FROM {$this->db->prefix}wfBlockedIPLog
+WHERE unixday >= {$interval}
 GROUP BY IP
 ORDER BY blockCount DESC
 LIMIT %d
@@ -211,10 +254,27 @@ SQL
 	 * @param int $limit
 	 * @return array
 	 */
-	public function getTopCountriesBlocked($limit = 10) {
+	public function getTopCountriesBlocked($limit = 10, $maxAgeDays = null) {
+		$maxAgeDays = (int) $maxAgeDays;
+		if ($maxAgeDays <= 0) {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 7 day)) / 86400)';
+			switch (wfConfig::get('email_summary_interval', 'weekly')) {
+				case 'daily':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 day)) / 86400)';
+					break;
+				case 'monthly':
+					$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 month)) / 86400)';
+					break;
+			}
+		}
+		else {
+			$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval ' . $maxAgeDays . ' day)) / 86400)';
+		}
+		
 		$results = $this->db->get_results($this->db->prepare(<<<SQL
 SELECT *, COUNT(IP) as totalIPs, SUM(blockCount) as totalBlockCount
 FROM {$this->db->base_prefix}wfBlockedIPLog
+WHERE unixday >= {$interval}
 GROUP BY countryCode
 ORDER BY totalBlockCount DESC
 LIMIT %d
@@ -303,9 +363,9 @@ SQL
 	 *
 	 * @return array|bool
 	 */
-	public function getUpdatesNeeded() {
+	public function getUpdatesNeeded($useCachedValued = true) {
 		$update_check = new wfUpdateCheck();
-		$needs_update = $update_check->checkAllUpdates()
+		$needs_update = $update_check->checkAllUpdates($useCachedValued)
 			->needsAnyUpdates();
 		if ($needs_update) {
 			return array(
@@ -352,19 +412,9 @@ SQL
 	 * Remove entries older than a week in the IP log.
 	 */
 	public function rotateIPLog() {
-		// default to weekly
-		$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 7 day)) / 86400)';
-		switch (wfConfig::get('email_summary_interval', 'weekly')) {
-			case 'daily':
-				$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 day)) / 86400)';
-				break;
-			case 'monthly':
-				$interval = 'FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 month)) / 86400)';
-				break;
-		}
 		$this->db->query(<<<SQL
 DELETE FROM {$this->db->base_prefix}wfBlockedIPLog
-WHERE unixday < $interval
+WHERE unixday < FLOOR(UNIX_TIMESTAMP(DATE_SUB(NOW(), interval 1 month)) / 86400)
 SQL
 		);
 	}
@@ -373,9 +423,11 @@ SQL
 	 * @param mixed $ip_address
 	 * @param int|null $unixday
 	 */
-	public static function logBlockedIP($ip_address, $unixday = null) {
+	public static function logBlockedIP($ip_address, $unixday = null, $type = null) {
 		/** @var wpdb $wpdb */
 		global $wpdb;
+		
+		//Possible values for $type: throttle, manual, brute, fakegoogle, badpost, country, advanced, blacklist, waf
 
 		if (wfUtils::isValidIP($ip_address)) {
 			$ip_bin = wfUtils::inet_pton($ip_address);
@@ -390,15 +442,19 @@ SQL
 		if (is_int($unixday)) {
 			$unixday_insert = absint($unixday);
 		}
+		
+		if ($type === null) {
+			$type = 'generic';
+		}
 
 		$country = wfUtils::IP2Country($ip_address);
 
 		$wpdb->query($wpdb->prepare(<<<SQL
-INSERT INTO $blocked_table (IP, countryCode, blockCount, unixday)
-VALUES (%s, %s, 1, $unixday_insert)
+INSERT INTO $blocked_table (IP, countryCode, blockCount, unixday, blockType)
+VALUES (%s, %s, 1, $unixday_insert, %s)
 ON DUPLICATE KEY UPDATE blockCount = blockCount + 1
 SQL
-			, $ip_bin, $country));
+			, $ip_bin, $country, $type));
 	}
 
 	/**
@@ -508,11 +564,16 @@ SQL
 			, $this->time_range, $this->max_fetch));
 		if ($results) {
 			foreach ($results as &$row) {
-				$row->longDescription = "Blocked for " . $row->actionDescription;
-				
 				$actionData = json_decode($row->actionData, true);
 				if (!is_array($actionData) || !isset($actionData['paramKey']) || !isset($actionData['paramValue'])) {
 					continue;
+				}
+				
+				if (isset($actionData['failedRules']) && $actionData['failedRules'] == 'blocked') {
+					$row->longDescription = "Blocked because the IP is blacklisted";
+				}
+				else {
+					$row->longDescription = "Blocked for " . $row->actionDescription;
 				}
 				
 				$paramKey = base64_decode($actionData['paramKey']);
