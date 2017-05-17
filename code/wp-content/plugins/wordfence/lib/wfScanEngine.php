@@ -73,6 +73,36 @@ class wfScanEngine {
 		return !is_wp_error($response) && ($responseBody = wp_remote_retrieve_body($response)) &&
 			stripos($responseBody, '<title>Index of') !== false;
 	}
+	
+	public static function refreshScanNotification($issuesInstance = null) {
+		if ($issuesInstance === null) {
+			$issuesInstance = new wfIssues();
+		}
+		
+		$message = wfConfig::get('lastScanCompleted', '');
+		if ($message == 'ok') {
+			$issueCount = $issuesInstance->getIssueCount();
+			if ($issueCount) {
+				new wfNotification(null, wfNotification::PRIORITY_HIGH, "<a href=\"" . network_admin_url('admin.php?page=WordfenceScan') . "\">{$issueCount} issue" . ($issueCount == 1 ? '' : 's') . ' found in most recent scan</a>', 'wfplugin_scan');
+			}
+			else {
+				$n = wfNotification::getNotificationForCategory('wfplugin_scan');
+				if ($n !== null) {
+					$n->markAsRead();
+				}
+			}
+		}
+		else {
+			$failureType = wfConfig::get('lastScanFailureType');
+			if ($failureType == 'duration') {
+				new wfNotification(null, wfNotification::PRIORITY_HIGH, '<a href="' . network_admin_url('admin.php?page=WordfenceScan') . '">Scan aborted due to duration limit</a>', 'wfplugin_scan');
+			}
+			else {
+				$trimmedError = substr($message, 0, 100) . (strlen($message) > 100 ? '...' : '');
+				new wfNotification(null, wfNotification::PRIORITY_HIGH, '<a href="' . network_admin_url('admin.php?page=WordfenceScan') . '">Scan failed: ' . esc_html($trimmedError) . '</a>', 'wfplugin_scan');
+			}
+		}
+	}
 
 	public function __sleep(){ //Same order here as above for properties that are included in serialization
 		return array('hasher', 'jobList', 'i', 'wp_version', 'apiKey', 'startTime', 'maxExecTime', 'publicScanEnabled', 'fileContentsResults', 'scanner', 'scanQueue', 'hoover', 'scanData', 'statusIDX', 'userPasswdQueue', 'passwdHasIssues', 'suspectedFiles', 'dbScanner', 'knownFilesLoader', 'metrics', 'checkHowGetIPsRequestTime');
@@ -92,7 +122,6 @@ class wfScanEngine {
 		$this->jobList[] = 'checkSpamvertized';
 		$this->jobList[] = 'checkSpamIP';
 		$this->jobList[] = 'checkGSB';
-		$this->jobList[] = 'heartbleed';
 		$this->jobList[] = 'checkHowGetIPs_init';
 		$this->jobList[] = 'checkHowGetIPs_main';
 		$this->jobList[] = 'knownFiles_init';
@@ -126,6 +155,7 @@ class wfScanEngine {
 			self::checkForKill();
 			$this->doScan();
 			wfConfig::set('lastScanCompleted', 'ok');
+			wfConfig::set('lastScanFailureType', false);
 			self::checkForKill();
 			//updating this scan ID will trigger the scan page to load/reload the results.
 			$this->i->setScanTimeNow();
@@ -134,23 +164,31 @@ class wfScanEngine {
 			$this->recordMetric('scan', 'duration', (time() - $this->startTime));
 			$this->recordMetric('scan', 'memory', wfConfig::get('wfPeakMemory', 0));
 			$this->submitMetrics();
+			
+			wfScanEngine::refreshScanNotification($this->i);
 		}
 		catch (wfScanEngineDurationLimitException $e) {
 			wfConfig::set('lastScanCompleted', $e->getMessage());
+			wfConfig::set('lastScanFailureType', 'duration');
 			$this->i->setScanTimeNow();
 			
 			$this->emailNewIssues(true);
 			$this->recordMetric('scan', 'duration', (time() - $this->startTime));
 			$this->recordMetric('scan', 'memory', wfConfig::get('wfPeakMemory', 0));
 			$this->submitMetrics();
+			
+			wfScanEngine::refreshScanNotification($this->i);
 			throw $e;
 		}
 		catch(Exception $e) {
 			wfConfig::set('lastScanCompleted', $e->getMessage());
+			wfConfig::set('lastScanFailureType', 'general');
 			$this->recordMetric('scan', 'duration', (time() - $this->startTime));
 			$this->recordMetric('scan', 'memory', wfConfig::get('wfPeakMemory', 0));
 			$this->recordMetric('scan', 'failure', $e->getMessage());
 			$this->submitMetrics();
+			
+			wfScanEngine::refreshScanNotification($this->i);
 			throw $e;
 		}
 	}
@@ -167,12 +205,15 @@ class wfScanEngine {
 			$this->status(1, 'info', '-------------------');
 			$this->status(1, 'info', "Scan interrupted. Scanned " . $summary['totalFiles'] . " files, " . $summary['totalPlugins'] . " plugins, " . $summary['totalThemes'] . " themes, " . ($summary['totalPages'] + $summary['totalPosts']) . " pages, " . $summary['totalComments'] . " comments and " . $summary['totalRows'] . " records in " . wfUtils::makeDuration(time() - $this->startTime, true) . ".");
 			if($this->i->totalIssues  > 0){
-				$this->status(10, 'info', "SUM_FINAL:Scan interrupted. You have " . $this->i->totalIssues . " new issues to fix. See below.");
+				$this->status(10, 'info', "SUM_FINAL:Scan interrupted. You have " . $this->i->totalIssues . " new issue" . ($this->i->totalIssues == 1 ? "" : "s") . " to fix. See below.");
 			} else {
 				$this->status(10, 'info', "SUM_FINAL:Scan interrupted. No problems found prior to stopping.");
 			}
 			throw new wfScanEngineDurationLimitException($error);
 		}
+	}
+	public function shouldFork() {
+		return (time() - $this->cycleStartTime > $this->maxExecTime);
 	}
 	public function forkIfNeeded(){
 		self::checkForKill();
@@ -227,7 +268,7 @@ class wfScanEngine {
 		$this->status(1, 'info', '-------------------');
 		$this->status(1, 'info', "Scan Complete. Scanned " . $summary['totalFiles'] . " files, " . $summary['totalPlugins'] . " plugins, " . $summary['totalThemes'] . " themes, " . ($summary['totalPages'] + $summary['totalPosts']) . " pages, " . $summary['totalComments'] . " comments and " . $summary['totalRows'] . " records in " . wfUtils::makeDuration(time() - $this->startTime, true) . ".");
 		if($this->i->totalIssues  > 0){
-			$this->status(10, 'info', "SUM_FINAL:Scan complete. You have " . $this->i->totalIssues . " new issues to fix. See below.");
+			$this->status(10, 'info', "SUM_FINAL:Scan complete. You have " . $this->i->totalIssues . " new issue" . ($this->i->totalIssues == 1 ? "" : "s") . " to fix. See below.");
 		} else {
 			$this->status(10, 'info', "SUM_FINAL:Scan complete. Congratulations, no problems found.");
 		}
@@ -235,24 +276,6 @@ class wfScanEngine {
 	}
 	public function getCurrentJob(){
 		return $this->jobList[0];
-	}
-	private function scan_heartbleed(){
-		if(wfConfig::get('scansEnabled_heartbleed')){
-			$this->statusIDX['heartbleed'] = wordfence::statusStart("Scanning your site for the HeartBleed vulnerability");
-			$result = $this->api->call('scan_heartbleed', array(), array(
-				'siteURL' => site_url()
-				));
-			$haveIssues = false;
-			if($result['haveIssues'] && is_array($result['issues']) ){
-				foreach($result['issues'] as $issue){
-					$this->addIssue($issue['type'], $issue['level'], $issue['ignoreP'], $issue['ignoreC'], $issue['shortMsg'], $issue['longMsg'], $issue['data']);
-					$haveIssues = true;
-				}
-			}
-			wordfence::statusEnd($this->statusIDX['heartbleed'], $haveIssues);
-		} else {
-			wordfence::statusDisabled("Skipping HeartBleed scan");
-		}
 	}
 	private function scan_publicSite(){
 		if(wfConfig::get('isPaid')){
@@ -305,7 +328,7 @@ class wfScanEngine {
 	
 	private function scan_checkGSB(){
 		if(wfConfig::get('isPaid')){
-			$this->statusIDX['checkGSB'] = wordfence::statusStart("Checking if your site is on the Google Safe Browsing list");
+			$this->statusIDX['checkGSB'] = wordfence::statusStart("Checking if your site is on a domain blacklist");
 			
 			$urlsToCheck = array(array(get_site_url()));
 			$haveIssues = false;
@@ -326,9 +349,14 @@ class wfScanEngine {
 							$longMsg = "The URL " . esc_html($url) . " is on the phishing list. More info available at <a href=\"http://safebrowsing.clients.google.com/safebrowsing/diagnostic?site=" . urlencode($url) . "&client=googlechrome&hl=en-US\" target=\"_blank\">Google Safe Browsing diagnostic page</a>.";
 							$gsb = $badList;
 						}
+						else if ($badList == 'wordfence-dbl') {
+							$shortMsg = 'Your site is listed on the Wordfence domain blacklist.';
+							$longMsg = "The URL " . esc_html($url) . " is on the blacklist.";
+							$gsb = $badList;
+						}
 						else {
-							$shortMsg = 'Your site is listed on Google\'s Safe Browsing list.';
-							$longMsg = "The URL is: " . esc_html($url) . ". More info available at <a href=\"http://safebrowsing.clients.google.com/safebrowsing/diagnostic?site=" . urlencode($url) . "&client=googlechrome&hl=en-US\" target=\"_blank\">Google Safe Browsing diagnostic page</a>.";
+							$shortMsg = 'Your site is listed on a domain blacklist.';
+							$longMsg = "The URL is: " . esc_html($url);
 							$gsb = 'unknown';
 						}
 						
@@ -340,7 +368,7 @@ class wfScanEngine {
 			
 			wordfence::statusEnd($this->statusIDX['checkGSB'], $haveIssues);
 		} else {
-			wordfence::statusPaidOnly("Checking if your site is on the Google Safe Browsing list is for paid members only");
+			wordfence::statusPaidOnly("Checking if your site is on a domain blacklist is for paid members only");
 			sleep(2);
 		}
 	}
@@ -552,7 +580,7 @@ class wfScanEngine {
 	}
 	private function scan_knownFiles_init(){
 		$this->status(1, 'info', "Contacting Wordfence to initiate scan");
-		$this->api->call('log_scan', array(), array());
+		$response = $this->api->call('log_scan', array(), array());
 		$baseWPStuff = array( '.htaccess', 'index.php', 'license.txt', 'readme.html', 'wp-activate.php', 'wp-admin', 'wp-app.php', 'wp-blog-header.php', 'wp-comments-post.php', 'wp-config-sample.php', 'wp-content', 'wp-cron.php', 'wp-includes', 'wp-links-opml.php', 'wp-load.php', 'wp-login.php', 'wp-mail.php', 'wp-pass.php', 'wp-register.php', 'wp-settings.php', 'wp-signup.php', 'wp-trackback.php', 'xmlrpc.php');
 		$baseContents = scandir(ABSPATH);
 		if(! is_array($baseContents)){
@@ -585,7 +613,8 @@ class wfScanEngine {
 		$this->status(2, 'info', "Found " . sizeof($knownFilesThemes) . " themes");
 		$this->i->updateSummaryItem('totalThemes', sizeof($knownFilesThemes));
 
-		$this->hasher = new wordfenceHash(strlen(ABSPATH), ABSPATH, $includeInKnownFilesScan, $knownFilesThemes, $knownFilesPlugins, $this);
+		$malwarePrefixesHash = (isset($response['malwarePrefixes']) ? wfUtils::hex2bin($response['malwarePrefixes']) : '');
+		$this->hasher = new wordfenceHash(strlen(ABSPATH), ABSPATH, $includeInKnownFilesScan, $knownFilesThemes, $knownFilesPlugins, $this, $malwarePrefixesHash);
 	}
 	private function scan_knownFiles_main(){
 		$this->hasher->run($this); //Include this so we can call addIssue and ->api->
@@ -599,7 +628,7 @@ class wfScanEngine {
 	}
 	private function scan_fileContents_init(){
 		$this->statusIDX['infect'] = wordfence::statusStart('Scanning file contents for infections and vulnerabilities');
-		$this->statusIDX['GSB'] = wordfence::statusStart('Scanning files for URLs in Google\'s Safe Browsing List');
+		$this->statusIDX['GSB'] = wordfence::statusStart('Scanning files for URLs on a domain blacklists');
 		$this->scanner = new wordfenceScanner($this->apiKey, $this->wp_version, ABSPATH);
 		$this->status(2, 'info', "Starting scan of file contents");
 	}
@@ -616,10 +645,11 @@ class wfScanEngine {
 		$haveIssuesGSB = false;
 		foreach($this->fileContentsResults as $issue){
 			$this->status(2, 'info', "Adding issue: " . $issue['shortMsg']);
-			if($this->addIssue($issue['type'], $issue['severity'], $issue['ignoreP'], $issue['ignoreC'], $issue['shortMsg'], $issue['longMsg'], $issue['data'])){
-				if(empty($issue['data']['gsb']) === false){
+			if ($this->addIssue($issue['type'], $issue['severity'], $issue['ignoreP'], $issue['ignoreC'], $issue['shortMsg'], $issue['longMsg'], $issue['data'])) {
+				if (isset($issue['data']['gsb'])) {
 					$haveIssuesGSB = true;
-				} else {
+				}
+				else {
 					$haveIssues = true;
 				}
 			}
@@ -664,7 +694,7 @@ class wfScanEngine {
 	}
 
 	private function scan_posts_init(){
-		$this->statusIDX['posts'] = wordfence::statusStart('Scanning posts for URLs in Google\'s Safe Browsing List');
+		$this->statusIDX['posts'] = wordfence::statusStart('Scanning posts for URLs on a domain blacklist');
 		$blogsToScan = self::getBlogsToScan('posts');
 		$wfdb = new wfDB();
 		$this->hoover = new wordfenceURLHoover($this->apiKey, $this->wp_version);
@@ -733,10 +763,16 @@ class wfScanEngine {
 				if($result['badList'] == 'goog-malware-shavar'){
 					$shortMsg = "$uctype contains a suspected malware URL: " . esc_html($this->scanData[$idString]['title']);
 					$longMsg = "This $type contains a suspected malware URL listed on Google's list of malware sites. The URL is: " . esc_html($result['URL']) . " - More info available at <a href=\"http://safebrowsing.clients.google.com/safebrowsing/diagnostic?site=" . urlencode($result['URL']) . "&client=googlechrome&hl=en-US\" target=\"_blank\">Google Safe Browsing diagnostic page</a>.";
-				} else if($result['badList'] == 'googpub-phish-shavar'){
+				}
+				else if($result['badList'] == 'googpub-phish-shavar') {
 					$shortMsg = "$uctype contains a suspected phishing site URL: " . esc_html($this->scanData[$idString]['title']);
 					$longMsg = "This $type contains a URL that is a suspected phishing site that is currently listed on Google's list of known phishing sites. The URL is: " . esc_html($result['URL']);
-				} else {
+				}
+				else if ($result['badList'] == 'wordfence-dbl') {
+					$shortMsg = "$uctype contains a suspected malware URL: " . esc_html($this->scanData[$idString]['title']);
+					$longMsg = "This $type contains a URL that is currently listed on Wordfence's domain blacklist. The URL is: " . esc_html($result['URL']);
+				}
+				else {
 					//A list type that may be new and the plugin has not been upgraded yet.
 					continue;
 				}
@@ -771,7 +807,7 @@ class wfScanEngine {
 		wordfence::statusEnd($this->statusIDX['posts'], $haveIssues);
 	}
 	private function scan_comments_init(){
-		$this->statusIDX['comments'] = wordfence::statusStart('Scanning comments for URLs in Google\'s Safe Browsing List');
+		$this->statusIDX['comments'] = wordfence::statusStart('Scanning comments for URLs on a domain blacklist');
 		$this->scanData = array();
 		$this->scanQueue = '';
 		$this->hoover = new wordfenceURLHoover($this->apiKey, $this->wp_version);
@@ -828,7 +864,7 @@ class wfScanEngine {
 			$blog = null;
 			$comment = null;
 			foreach ($hresults as $result) {
-				if ($result['badList'] != 'goog-malware-shavar' && $result['badList'] != 'googpub-phish-shavar') { 
+				if ($result['badList'] != 'goog-malware-shavar' && $result['badList'] != 'googpub-phish-shavar' && $result['badList'] != 'wordfence-dbl') { 
 					continue; //A list type that may be new and the plugin has not been upgraded yet.
 				}
 				
@@ -853,6 +889,10 @@ class wfScanEngine {
 				else if ($result['badList'] == 'googpub-phish-shavar') {
 					$shortMsg = "$uctype contains a suspected phishing site URL.";
 					$longMsg = "This $type contains a URL that is a suspected phishing site that is currently listed on Google's list of known phishing sites. The URL is: " . esc_html($result['URL']);
+				}
+				else if ($result['badList'] == 'wordfence-dbl') {
+					$shortMsg = "$uctype contains a suspected malware URL.";
+					$longMsg = "This $type contains a URL that is currently listed on Wordfence's domain blacklist. The URL is: " . esc_html($result['URL']);
 				}
 				
 				if(is_multisite()){
@@ -908,10 +948,15 @@ class wfScanEngine {
 				if($result['badList'] == 'goog-malware-shavar'){
 					$this->status(2, 'info', "Marking comment as spam for containing a malware URL. Comment has $cDesc");
 					return true;
-				} else if($result['badList'] == 'googpub-phish-shavar'){
+				}
+				else if($result['badList'] == 'googpub-phish-shavar'){
 					$this->status(2, 'info', "Marking comment as spam for containing a phishing URL. Comment has $cDesc");
 					return true;
-				} else {
+				}
+				else if ($result['badList'] == 'wordfence-dbl') {
+					$this->status(2, 'info', "Marking comment as spam for containing a malware URL. Comment has $cDesc");
+				}
+				else {
 					//A list type that may be new and the plugin has not been upgraded yet.
 					continue;
 				}
@@ -1295,8 +1340,17 @@ class wfScanEngine {
 	public function status($level, $type, $msg){
 		wordfence::status($level, $type, $msg);
 	}
-	public function addIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData){
-		return $this->i->addIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData);
+	public function addIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData, $alreadyHashed = false) {
+		return $this->i->addIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData, $alreadyHashed);
+	}
+	public function addPendingIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData){
+		return $this->i->addPendingIssue($type, $severity, $ignoreP, $ignoreC, $shortMsg, $longMsg, $templateData);
+	}
+	public function getPendingIssueCount() {
+		return $this->i->getPendingIssueCount();
+	}
+	public function getPendingIssues($offset = 0, $limit = 100) {
+		return $this->i->getPendingIssues($offset, $limit);
 	}
 	public static function requestKill(){
 		wfConfig::set('wfKillRequested', time(), wfConfig::DONT_AUTOLOAD);
