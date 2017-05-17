@@ -4,7 +4,7 @@ Plugin Name: WP Security Audit Log
 Plugin URI: http://www.wpsecurityauditlog.com/
 Description: Identify WordPress security issues before they become a problem. Keep track of everything happening on your WordPress including WordPress users activity. Similar to Windows Event Log and Linux Syslog, WP Security Audit Log generates a security alert for everything that happens on your WordPress blogs and websites. Use the Audit Log Viewer included in the plugin to see all the security alerts.
 Author: WP White Security
-Version: 2.5.9.2
+Version: 2.6.3
 Text Domain: wp-security-audit-log
 Author URI: http://www.wpsecurityauditlog.com/
 License: GPL2
@@ -125,6 +125,23 @@ class WpSecurityAuditLog {
         require_once('classes/Models/Query.php');
         require_once('classes/Models/OccurrenceQuery.php');
         require_once('classes/Models/Option.php');
+
+        // Use WP_Session (default)
+        if (!defined('WP_SESSION_COOKIE')) {
+            define('WP_SESSION_COOKIE', 'wsal_wp_session');
+        }
+        if (!class_exists('Recursive_ArrayAccess')) {
+            require_once('classes/Lib/class-recursive-arrayaccess.php');
+        }
+        if (!class_exists('WP_Session')) {
+            require_once('classes/Lib/class-wp-session.php');
+            require_once('classes/Lib/wp-session.php');
+        }
+
+        if (!class_exists('WP_Session_Utils')) {
+            require_once('classes/Lib/class-wp-session-utils.php');
+        }
+
         
         // load autoloader and register base paths
         require_once('classes/Autoloader.php');
@@ -157,6 +174,9 @@ class WpSecurityAuditLog {
 
         // handle admin Disable Custom Field
         add_action('wp_ajax_AjaxDisableCustomField', array($this, 'AjaxDisableCustomField'));
+
+        // handle admin Disable Alerts
+        add_action('wp_ajax_AjaxDisableByCode', array($this, 'AjaxDisableByCode'));
     }
 
     /**
@@ -186,7 +206,24 @@ class WpSecurityAuditLog {
             $fields = esc_html($_POST['notice']);
         }
         $this->SetGlobalOption('excluded-custom', $fields);
-        echo 'Custom Field '.esc_html($_POST['notice']).' is no longer being monitored.<br />Enable the monitoring of this custom field again from the <a href="admin.php?page=wsal-settings#tab-exclude"> Excluded Objects </a> tab in the plugin settings';
+        echo '<p>Custom Field '.esc_html($_POST['notice']).' is no longer being monitored.<br />Enable the monitoring of this custom field again from the <a href="admin.php?page=wsal-settings#tab-exclude"> Excluded Objects </a> tab in the plugin settings</p>';
+        die;
+    }
+
+    /**
+     * Disable Alert through ajax.
+     * @internal
+     */
+    public function AjaxDisableByCode(){
+        $sAlerts = $this->GetGlobalOption('disabled-alerts');
+        if (isset($sAlerts) && $sAlerts != "") {
+            $sAlerts .= "," . esc_html($_POST['code']);
+        } else {
+            $sAlerts = esc_html($_POST['code']);
+        }
+        $this->SetGlobalOption('disabled-alerts', $sAlerts);
+        echo '<p>Alert '.esc_html($_POST['code']).' is no longer being monitored.<br />';
+        echo 'You can enable this alert again from the Enable/Disable Alerts node in the plugin menu.</p>';
         die;
     }
     
@@ -664,6 +701,7 @@ class WpSecurityAuditLog {
         $this->options = new WSAL_Models_Option();
         return $this->options->SetOptionValue($option, $value);
     }
+
     // </editor-fold>
 }
 
