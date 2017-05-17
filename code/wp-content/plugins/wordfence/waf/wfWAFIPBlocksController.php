@@ -6,6 +6,18 @@ class wfWAFIPBlocksController
 	const WFWAF_BLOCK_COUNTRY_REDIR = 'blocked access via country blocking and redirected to URL';
 	const WFWAF_BLOCK_COUNTRY_BYPASS_REDIR = 'redirected to bypass URL';
 	const WFWAF_BLOCK_WFSN = 'Blocked by Wordfence Security Network';
+	const WFWAF_BLOCK_BADPOST = 'POST received with blank user-agent and referer';
+	const WFWAF_BLOCK_BANNEDURL = 'Accessed a banned URL.';
+	const WFWAF_BLOCK_FAKEGOOGLE = 'Fake Google crawler automatically blocked';
+	const WFWAF_BLOCK_LOGINSEC = 'Blocked by login security setting.';
+	const WFWAF_BLOCK_LOGINSEC_FORGOTPASSWD = 'Exceeded the maximum number of tries to recover their password'; //substring search
+	const WFWAF_BLOCK_LOGINSEC_FAILURES = 'Exceeded the maximum number of login failures'; //substring search
+	const WFWAF_BLOCK_THROTTLEGLOBAL = 'Exceeded the maximum global requests per minute for crawlers or humans.';
+	const WFWAF_BLOCK_THROTTLESCAN = 'Exceeded the maximum number of 404 requests per minute for a known security vulnerability.';
+	const WFWAF_BLOCK_THROTTLECRAWLER = 'Exceeded the maximum number of requests per minute for crawlers.';
+	const WFWAF_BLOCK_THROTTLECRAWLERNOTFOUND = 'Exceeded the maximum number of page not found errors per minute for a crawler.';
+	const WFWAF_BLOCK_THROTTLEHUMAN = 'Exceeded the maximum number of page requests per minute for humans.';
+	const WFWAF_BLOCK_THROTTLEHUMANNOTFOUND = 'Exceeded the maximum number of page not found errors per minute for humans.';
 	
 	protected static $_currentController = null;
 
@@ -73,6 +85,15 @@ class wfWAFIPBlocksController
 			$b['IP'] = base64_encode($b['IP']);
 		}
 		
+		//Lockouts
+		$lockoutSecs = wfConfig::get('loginSec_lockoutMins') * 60;
+		$lockouts = array('lockedOutTime' => $lockoutSecs);
+		$lockoutEntries = $db->querySelect("SELECT IP, blockedTime, reason FROM {$wpdb->base_prefix}wfLockedOut WHERE (blockedTime + %d) > UNIX_TIMESTAMP() ORDER BY blockedTime DESC, IP DESC", $lockoutSecs);
+		$lockouts['lockouts'] = (is_array($lockoutEntries) ? $lockoutEntries : array());
+		foreach ($lockouts['lockouts'] as &$l) {
+			$l['IP'] = base64_encode($l['IP']);
+		}
+		
 		// Save it
 		try {
 			$patternBlocksJSON = wfWAFUtils::json_encode($patternBlocks);
@@ -81,6 +102,8 @@ class wfWAFIPBlocksController
 			wfWAF::getInstance()->getStorageEngine()->setConfig('countryBlocks', $countryBlocksJSON);
 			$otherBlocksJSON = wfWAFUtils::json_encode($otherBlocks);
 			wfWAF::getInstance()->getStorageEngine()->setConfig('otherBlocks', $otherBlocksJSON);
+			$lockoutsJSON = wfWAFUtils::json_encode($lockouts);
+			wfWAF::getInstance()->getStorageEngine()->setConfig('lockouts', $lockoutsJSON);
 			
 			wfWAF::getInstance()->getStorageEngine()->setConfig('advancedBlockingEnabled', wfConfig::get('firewallEnabled'));
 			wfWAF::getInstance()->getStorageEngine()->setConfig('disableWAFIPBlocking', wfConfig::get('disableWAFIPBlocking'));
@@ -130,6 +153,7 @@ class wfWAFIPBlocksController
 			$patternBlocksJSON = wfWAF::getInstance()->getStorageEngine()->getConfig('patternBlocks');
 			$countryBlocksJSON = wfWAF::getInstance()->getStorageEngine()->getConfig('countryBlocks');
 			$otherBlocksJSON = wfWAF::getInstance()->getStorageEngine()->getConfig('otherBlocks');
+			$lockoutsJSON = wfWAF::getInstance()->getStorageEngine()->getConfig('lockouts');
 		}
 		catch (Exception $e) {
 			// Do nothing
@@ -264,7 +288,7 @@ class wfWAFIPBlocksController
 			$blockedTime = $otherBlocks['blockedTime'];
 			$blocks = $otherBlocks['blocks'];
 			$bareRequestURI = wfWAFUtils::extractBareURI($request->getURI());
-			$isAuthRequest = (strpos($bareRequestURI, '/wp-login.php') !== false);
+			$isAuthRequest = (stripos($bareRequestURI, '/wp-login.php') !== false);
 			foreach ($blocks as $b) {
 				if (!$b['permanent'] && ($b['blockedTime'] + $blockedTime) < time()) {
 					continue;
@@ -274,14 +298,38 @@ class wfWAFIPBlocksController
 					continue;
 				}
 				
-				if ($isAuthRequest) {
+				if ($isAuthRequest && isset($b['wfsn']) && $b['wfsn']) {
 					return array('action' => self::WFWAF_BLOCK_WFSN);
 				}
 				
-				return array('action' => (empty($b['reason']) ? '' : $b['reason']));
+				return array('action' => (empty($b['reason']) ? '' : $b['reason']), 'block' => true);
 			}
 		}
 		// End Other Blocks
+		
+		// Lockouts
+		$lockouts = @wfWAFUtils::json_decode($lockoutsJSON, true);
+		if (is_array($lockouts)) {
+			$lockedOutTime = $lockouts['lockedOutTime'];
+			$lockouts = $lockouts['lockouts'];
+			foreach ($lockouts as $l) {
+				if ($l['blockedTime'] + $lockedOutTime < time()) {
+					continue;
+				}
+				
+				if (base64_decode($l['IP']) != $ipNum) {
+					continue;
+				}
+				
+				$isAuthRequest = (stripos($bareRequestURI, '/wp-login.php') !== false) || (stripos($bareRequestURI, '/xmlrpc.php') !== false);
+				if (!$isAuthRequest) {
+					continue;
+				}
+				
+				return array('action' => (empty($l['reason']) ? '' : $l['reason']), 'lockout' => true);
+			}
+		}
+		// End Lockouts
 		
 		return false;
 	}
@@ -378,14 +426,12 @@ class wfWAFIPBlocksController
 	
 	protected function ip2Country($ip){
 		$wordfenceLib = realpath(dirname(__FILE__) . '/../lib');
-		if (!(function_exists('geoip_open') && function_exists('geoip_country_code_by_addr') && function_exists('geoip_country_code_by_addr_v6'))) {
-			require_once(dirname(__FILE__) . '/wfWAFGeoIP.php');
-		}
+		require_once(dirname(__FILE__) . '/wfWAFGeoIP.php');
 		if (filter_var($ip, FILTER_VALIDATE_IP, FILTER_FLAG_IPV6) !== false) {
-			$gi = geoip_open($wordfenceLib . "/GeoIPv6.dat", GEOIP_STANDARD);
+			$gi = geoip_open($wordfenceLib . "/GeoIPv6.dat", WF_GEOIP_STANDARD);
 			$country = geoip_country_code_by_addr_v6($gi, $ip);
 		} else {
-			$gi = geoip_open($wordfenceLib . "/GeoIP.dat", GEOIP_STANDARD);
+			$gi = geoip_open($wordfenceLib . "/GeoIP.dat", WF_GEOIP_STANDARD);
 			$country = geoip_country_code_by_addr($gi, $ip);
 		}
 		geoip_close($gi);
