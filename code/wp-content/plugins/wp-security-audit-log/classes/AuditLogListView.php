@@ -29,10 +29,6 @@ class WSAL_AuditLogListView extends WP_List_Table
             'ajax'      => true,
             'screen'    => 'interval-list',
         ));
-
-        if (!session_id()) {
-            @session_start();
-        }
     }
 
     public function no_items()
@@ -88,7 +84,8 @@ class WSAL_AuditLogListView extends WP_List_Table
         // switch to live or archive DB
         if ($this->_plugin->settings->IsArchivingEnabled()) {
             $selected = 'live';
-            if (isset($_SESSION['selected_db']) && $_SESSION['selected_db'] == 'archive') {
+            $wp_session = WP_Session::get_instance();
+            if (isset($wp_session['selected_db']) && $wp_session['selected_db'] == 'archive') {
                 $selected = 'archive';
             }
             ?><div class="wsal-ssa wsal-db">
@@ -210,14 +207,23 @@ class WSAL_AuditLogListView extends WP_List_Table
                     . ($item->is_read ? 'old' : 'new')
                     . '" title="' . __('Click to toggle.', 'wp-security-audit-log') . '"></span>';
             case 'type':
-                return str_pad($item->alert_id, 4, '0', STR_PAD_LEFT);
+                $code = $this->_plugin->alerts->GetAlert($item->alert_id);
+                return '<span class="log-disable" data-tooltip="'. __('Disable this type of alerts.', 'wp-security-audit-log').'<br>'.$item->alert_id.' - '.esc_html($code->desc).'" data-alert-id="'.$item->alert_id.'">'
+                    . str_pad($item->alert_id, 4, '0', STR_PAD_LEFT) . ' </span>';
             case 'code':
                 $code = $this->_plugin->alerts->GetAlert($item->alert_id);
                 $code = $code ? $code->code : 0;
                 $const = (object)array('name' => 'E_UNKNOWN', 'value' => 0, 'description' => __('Unknown error code.', 'wp-security-audit-log'));
                 $const = $this->_plugin->constants->GetConstantBy('value', $code, $const);
-                return '<span class="log-type log-type-' . $const->value
-                    . '" title="' . esc_html($const->name . ': ' . $const->description) . '"></span>';
+                if ($const->name == 'E_CRITICAL') {
+                    $const->name = 'Critical';
+                } else if ($const->name == 'E_WARNING') {
+                    $const->name = 'Warning';
+                } else if ($const->name == 'E_NOTICE') {
+                    $const->name = 'Notification';
+                }
+                return '<a class="tooltip" href="#" data-tooltip="'. esc_html($const->name) .'"><span class="log-type log-type-'. $const->value
+                    .'"></span></a>';
             case 'crtd':
                 return $item->created_on ? (
                         str_replace(
@@ -355,16 +361,15 @@ class WSAL_AuditLogListView extends WP_List_Table
                 }
 
             case $name == '%LinkFile%':
-                return '<a href="'.esc_url($value).'" download>Download the Log file</a>';
+                if ($value != 'NULL') {
+                    return '<a href="'.esc_url($value).'" download>Download the Log file</a>';
+                } else {
+                    return 'Click <a href="'.esc_url(admin_url("admin.php?page=wsal-togglealerts#tab-system-activity")).'">here</a> to log such requests to file';
+                }
 
             case strncmp($value, 'http://', 7) === 0:
             case strncmp($value, 'https://', 7) === 0:
-                return '<a href="' . esc_html($value) . '"'
-                    . ' title="' . esc_html($value) . '"'
-                    . ' target="_blank">'
-                        . esc_html(parse_url($value, PHP_URL_HOST)) . '/&hellip;/'
-                        . esc_html(basename(parse_url($value, PHP_URL_PATH)))
-                    . '</a>';
+                return '<a href="' . esc_html($value) . '"' . ' title="' . esc_html($value) . '"' . ' target="_blank">' . esc_html($value) . '</a>';
                 
             default:
                 return '<strong>' . esc_html($value) . '</strong>';
@@ -413,7 +418,8 @@ class WSAL_AuditLogListView extends WP_List_Table
     {
         if ($this->_plugin->settings->IsArchivingEnabled()) {
             // Switch to Archive DB
-            if (isset($_SESSION['selected_db']) && $_SESSION['selected_db'] == 'archive') {
+            $wp_session = WP_Session::get_instance();
+            if (isset($wp_session['selected_db']) && $wp_session['selected_db'] == 'archive') {
                 $this->_plugin->settings->SwitchToArchiveDB();
             }
         }
