@@ -1,3 +1,44 @@
+Wednesday 17 May 2017, @lynngre
+
+--------
+Akvo.org v1.2.13 WordPress security & plugins update
+---
+
+## Bug fixes & changes
+
+### Wordpress 4.7.5
+
+WordPress security update.
+
+Github issue: #1149 #1153 #1156 
+
+### Robots.txt & sitemap.xml
+
+Added plugin to allow setting of text in Robots.txt
+Added plugin to allow creation of a sitemap.xml for Google search engine
+
+Github issue: #1150 #1135 
+
+### Small change to team page
+
+Team page header updated.
+
+Github issue: #1147 
+
+###  Backend code for the new Akvo Sites page
+
+Bring layout inline with other product pages
+
+Github issue:  #1002 
+
+### New partner page
+
+Beginnings of the new partner page area in the backend.
+
+Github issue: #1086 
+
+
+
 Thursday 28 April 2016, @lynngre
 
 --------
