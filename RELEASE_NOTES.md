@@ -1,3 +1,25 @@
+
+Tuesday, 27 June @lynngre
+
+--------
+Akvo.org v1.2.14 WordPress update & Page Builder addition
+---
+
+## Bug fixes & changes
+
+### Wordpress 4.8
+
+WordPress update.
+
+Github issue: #1164 
+
+### SiteOrigin page builder & widget plugins
+
+Page builder & widget plugins added, code for support for page builder use.
+
+Github issue: #1160 
+
+
 Wednesday 17 May 2017, @lynngre
 
 --------
