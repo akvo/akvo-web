@@ -157,10 +157,10 @@
 	function rsr_overview_counters($el){
 		echo "<div class='sub-section' data-behaviour='time-ticker'>";
 		if(shortcode_exists('jsondata_feed')){
-			do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
+			//do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
 		}
 		else{
-			//rsr_json_counters($el);
+			rsr_json_counters($el);
 		}	
 		echo "</div>";
 	}
