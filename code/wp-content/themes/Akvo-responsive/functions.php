@@ -16,14 +16,13 @@ function akvo_json($url){
 		$json = get_transient( $cache_key ); 
 		
 		// if no value in the cache
-		if ( $count === false ) {
+		if ( $json === false ) {
 			
-			$response = wp_remote_get($remote_url);
-			//print_r($response);
+			$response = wp_remote_get($url);
 			
 			if (! is_wp_error( $response ) ) {
 				$json = json_decode( $response['body'] );
-				set_transient( $cache_key, $json, 3600 * 4 ); // store value in cache for a 1 hour
+				set_transient( $cache_key, $json, 3600 * 4 * 12 ); // store value in cache for a 12 hours
 			}
 			
 		}

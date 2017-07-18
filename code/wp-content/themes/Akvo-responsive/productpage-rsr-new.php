@@ -153,15 +153,40 @@
   		
   		<?php	
 	}
-	
+	function rsr_digit_css($str){
+		for( $i = 0; $i <= strlen($str); $i++ ) {
+       					$char = substr( $str, $i, 1 );
+       					if(is_numeric($char)){
+       						_e("<span class='digit'>". $char ."</span>");
+       					}
+   				}
+	}
 	function rsr_overview_counters($el){
 		echo "<div class='sub-section' data-behaviour='time-ticker'>";
-		if(shortcode_exists('jsondata_feed')){
-			//do_shortcode('[jsondata_feed slug="rsr-counters" format="json"]');
-		}
-		else{
-			rsr_json_counters($el);
-		}	
+		
+		$json = akvo_json('http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json');
+		
+		?>
+		<ul class="list-box">
+			<li class="box">
+				<a href="http://rsr.akvo.org/en/organisations/">      		
+					<h4>Organisation(s)<br></h4>
+					<div class="timeTicker">            
+						<p class="timeSegment clear"><?php rsr_digit_css($json->number_of_organisations);?></p>
+					</div>
+				</a>
+			</li>
+			<li class="box">
+				<a href="http://rsr.akvo.org/en/projects/">
+					<h4>Projects<br></h4>
+					<div class="timeTicker">            
+						<p class="timeSegment clear"><?php rsr_digit_css($ajson->number_of_projects);?></p>
+					</div>
+				</a>
+			</li>
+		</ul>
+			<?php
+		
 		echo "</div>";
 	}
 	
