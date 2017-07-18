@@ -180,7 +180,7 @@
 				<a href="http://rsr.akvo.org/en/projects/">
 					<h4>Projects<br></h4>
 					<div class="timeTicker">            
-						<p class="timeSegment clear"><?php rsr_digit_css($ajson->number_of_projects);?></p>
+						<p class="timeSegment clear"><?php rsr_digit_css($json->number_of_projects);?></p>
 					</div>
 				</a>
 			</li>
