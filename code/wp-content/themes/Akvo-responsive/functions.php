@@ -9,6 +9,26 @@ require_once($includes_path . 'acf-functions.php');
 require_once($includes_path . 'custom-post-types.php');
 require_once($includes_path . 'class-akvo-tabs.php');
 
+function akvo_json($url){
+		$cache_key = 'akvo_' . $url;
+		
+		// try to get value from Wordpress cache
+		$json = get_transient( $cache_key ); 
+		
+		// if no value in the cache
+		if ( $json === false ) {
+			
+			$response = wp_remote_get($url);
+			
+			if (! is_wp_error( $response ) ) {
+				$json = json_decode( $response['body'] );
+				set_transient( $cache_key, $json, 3600 * 4 * 12 ); // store value in cache for a 12 hours
+			}
+			
+		}
+		return $json;
+	}
+
 add_theme_support( 'post-thumbnails' );
 register_nav_menus(array(
     'header-menu' => 'Header Menu',
