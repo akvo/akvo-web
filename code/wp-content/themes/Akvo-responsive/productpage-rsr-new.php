@@ -170,7 +170,7 @@
 		<ul class="list-box">
 			<li class="box">
 				<a href="http://rsr.akvo.org/en/organisations/">      		
-					<h4>Organisation(s)<br></h4>
+					<h4>Organisations<br></h4>
 					<div class="timeTicker">            
 						<p class="timeSegment clear"><?php rsr_digit_css($json->number_of_organisations);?></p>
 					</div>
