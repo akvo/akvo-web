@@ -1,0 +1,11 @@
+// IMPORT SCRIPTS FROM THE PLUGIN 
+// THE FILE VARIABLE PASSES THE SDK URL
+
+// THIS FILE HAS TO BE UPLOADED IN THE WORDPRESS ROOT
+
+importScripts(new URL(location).searchParams.get('file'));
+
+
+
+
+
