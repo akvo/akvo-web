@@ -137,7 +137,7 @@
 <script type="text/javascript" src="<?php bloginfo('template_url');?>/js/tabs.js"></script>
 <script type="text/javascript">
 	(function($){
-		console.log('init');
+		
 		$('.bxslider').bxSlider({
   			onSliderLoad: function(){
   				console.log('slider:after-load');

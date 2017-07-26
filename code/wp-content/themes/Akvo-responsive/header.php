@@ -35,7 +35,7 @@
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
 <!--link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen" /-->
-<link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/main.min.css?v=1.2.2" type="text/css" media="screen" />
+<link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/main.min.css?v=2.2" type="text/css" media="screen" />
 
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quando">
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
