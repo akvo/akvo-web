@@ -94,7 +94,7 @@
 		?> 
 		<div id="<?php _e($el);?>">
 			<?php while( have_rows($el) ): the_row(); ?>
-			<ul class="wrapper twoColumns floats-in">
+			<ul class="wrapper threeColumns floats-in">
 				<?php while( have_rows('row_list') ): the_row(); ?>
 				<li><div class='desc'><?php the_sub_field('description');?></div></li>
 				<?php endwhile; ?>
