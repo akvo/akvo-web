@@ -39,7 +39,7 @@
 			)
 		),
 		'pricing' => array(
-			'title' => 'pricing',
+			'title' => 'GET LUMEN',
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_cover' => 'page_section',
