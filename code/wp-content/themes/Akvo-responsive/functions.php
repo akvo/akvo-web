@@ -9,6 +9,8 @@ require_once($includes_path . 'acf-functions.php');
 require_once($includes_path . 'custom-post-types.php');
 require_once($includes_path . 'class-akvo-tabs.php');
 
+
+
 function akvo_json($url){
 		$cache_key = 'akvo_' . $url;
 		

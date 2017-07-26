@@ -68,6 +68,14 @@
 			echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
 		}
 		
+		/* TITLE BUTTON BEFORE THE TABS: AS OF NOW ONLY USED IN LUMEN TABS PAGE */
+		function title_button(){
+			
+			if( get_field('title_button') ):?>
+			<div class="text-center"><a style="margin:0;" href="<?php the_field('title_button_link');?>" title="Watch the video" class="button"><?php the_field('title_button');?></a></div>
+			<?php endif;
+		}
+		
 		/* list of inline buttons stacked horizontally */
 		function buttons($el){
 		?>
@@ -161,6 +169,7 @@
 			<hgroup>
 				<?php akvo_page_logo('logo');?>
 				<h2 id="tagline"></h2>
+				<?php $this->title_button(); ?>
 			</hgroup>	
 			<!-- END of HEADER Section -->
 
@@ -193,7 +202,10 @@
 				</section>
 			<?php endforeach;?>	
 			<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
-			<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+			<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"-->
+			
+			<script src="https://use.fontawesome.com/641b62259f.js"></script>
+			
 			<?php
 		}
 		
