@@ -1066,3 +1066,23 @@ img.aligncenter{
 		margin-top: 4em;
 	}
 }	
+
+
+/* LUMEN PRODUCT TAB */
+.lumenProduct{
+	
+	[data-behaviour~=akvo-tabs] li.active{
+		
+		background: $green2015;
+		
+		border-color: $green2015;
+		
+	}
+	
+	a[href].button{
+		
+		background: $green2015;
+	
+	}
+
+}

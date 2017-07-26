@@ -33,7 +33,10 @@
 <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-180x180.png">
 <link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-120x120.png">
 <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-<link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen" />
+
+<!--link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); echo '?' . filemtime( get_stylesheet_directory() . '/style.css'); ?>" type="text/css" media="screen" /-->
+<link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/main.min.css?v=1.2.2" type="text/css" media="screen" />
+
 <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Quando">
 <!-- Grab Google CDN's jQuery. fall back to local if necessary -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
