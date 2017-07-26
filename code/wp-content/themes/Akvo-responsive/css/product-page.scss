@@ -1079,6 +1079,12 @@ img.aligncenter{
 		
 	}
 	
+	[data-behaviour~=akvo-tabs] li:last-child a{
+		
+		color: $green2015;
+		
+	}
+	
 	a[href].button{
 		
 		background: $green2015;
