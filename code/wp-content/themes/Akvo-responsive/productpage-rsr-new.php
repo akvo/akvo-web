@@ -13,7 +13,7 @@
 			'tagline' => 'overview_tagline',
 			'elements' => array(
 				'overview_carousel' 		=> 'carousel',
-				'overview_columns' 			=> 'rsr_overview_columns',
+				'overview_columns' 			=> 'overview_columns3',
 				'overview_call_to_action' 	=> 'rsr_overview_buttons',
 				'testimonials' 				=> 'testimonials',
 				'counters'					=> 'rsr_overview_counters',
@@ -38,7 +38,7 @@
 				'support_banner' 			=> 'rsr_banner',
 				'support_content' 			=> 'inner_section',
 				'support_training_title' 	=> 'rsr_title',
-				'support_columns' 			=> 'rsr_overview_columns',
+				'support_columns' 			=> 'overview_columns3',
 				'support_button_title' 		=> 'inner_section',
 				'support_buttons' 			=> 'buttons',
 				'support_testimonial_title' => 'rsr_title',
@@ -67,7 +67,7 @@
 			_e("<h3 id=".$el.">".get_field($el)."</h3>");
 		}
 		
-		
+		/*
 		function rsr_overview_columns($el){
 			_e("<div class='sub-section' id='".$el."'>");
 			_e("<div class='threeColumns wrapper'>");
@@ -82,6 +82,7 @@
 			_e("</div><div class='clearfix'></div>");
 			_e("</div>");
 		}
+		*/
 		
 		function rsr_overview_buttons($el){
 		?>
