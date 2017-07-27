@@ -121,6 +121,8 @@
 			
 		}
 		
+		
+		
 		/* gets the title of the tab */
 		function title($el){
 			$title = get_field($el['title']."_tab_title");
