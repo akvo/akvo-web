@@ -52,7 +52,7 @@
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
 				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'akvo_tab_image',
+				'pricing_image' => 'image',
 				'pricing_description' => 'rsr_content',
 				'pricing_buttons' => 'rsr_buttons',
 				'pricing_description_2' => 'rsr_content'
