@@ -56,6 +56,8 @@
 	
 	
 	class flowTab extends akvoTab{
+		
+		/*
 		function overview_columns($el){
 		?>
 			<div class='row' id="<?php _e($el);?>">
@@ -68,6 +70,7 @@
 			</div>
 		<?php	
 		}
+		*/
 		
 		function overview_buttons($el){
 		?>
