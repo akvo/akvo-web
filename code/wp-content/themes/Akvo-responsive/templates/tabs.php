@@ -1,5 +1,11 @@
 <?php
 	
+	/*
+		
+		This can be removed soon
+		
+	*/
+	
 	function akvo_tab_title($el){
 		$title = get_field($el['title']."_tab_title");
 		
