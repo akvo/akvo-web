@@ -28,6 +28,25 @@
 		<?php $row_i++;endwhile;
 		}
 		
+		function counter_css($str){
+			
+			for( $i = 0; $i <= strlen($str); $i++ ) {
+				
+				$char = substr( $str, $i, 1 );
+					
+				if(is_numeric($char)){
+					
+					_e("<span class='digit'>". $char ."</span>");
+				
+				}
+				else{
+					
+					_e("<span class='dot'>". $char ."</span>");
+				
+				}
+			}
+		}
+		
 		function time_ticker($el){
 		?>	
 			<ul class='list-inline text-center' id="<?php _e($el);?>">
@@ -38,6 +57,10 @@
 						<p class="timeSegment clear">
 						<?php 
 							$str = get_sub_field('count');
+							
+							$this->counter_css($str);
+							
+							/*
 							for( $i = 0; $i <= strlen($str); $i++ ) {
 								$char = substr( $str, $i, 1 );
 								if(is_numeric($char)){
@@ -47,6 +70,7 @@
 									_e("<span class='dot'>". $char ."</span>");
 								}
 							}
+							*/
 						?>
 						</p>
 					</div>

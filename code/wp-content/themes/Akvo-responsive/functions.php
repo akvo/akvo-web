@@ -408,10 +408,11 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
 	
-	
+	/*
 	function akvo_tabs($tabs){
 		include "templates/tabs.php";
 	}
+	*/
 	
 	function akvo_staff_list($staff_type, $new_staff_flag = true){
 		$args = array(
