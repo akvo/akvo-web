@@ -121,6 +121,8 @@
 			
 		}
 		
+		
+		
 		/* gets the title of the tab */
 		function title($el){
 			$title = get_field($el['title']."_tab_title");
@@ -184,6 +186,36 @@
 			<div class='clearfix'></div>
 			
 		<?php	
+		}
+		
+		/* OVERVIEW COLUMNS OF 4 */
+		function overview_columns($el){
+		?>
+			<div class='row' id="<?php _e($el);?>">
+				<?php while(have_rows($el)): the_row();?>
+				<div class='col-3 <?php if(get_sub_field('orange_box')){ _e("orange-box");}?>'>
+					<img class='aligncenter' src="<?php the_sub_field('icon');?>" />
+					<?php the_sub_field('content');?>
+				</div>
+				<?php endwhile;?>
+			</div>
+		<?php	
+		}
+		
+		/* OVERVIEW COLUMNS OF 3 */
+		function overview_columns3($el){
+			_e("<div class='sub-section' id='".$el."'>");
+			_e("<div class='threeColumns wrapper'>");
+			while(have_rows($el)): the_row();?>
+				<div>
+					<img src="<?php the_sub_field('icon');?>" />
+					<h3><?php the_sub_field('title');?></h3>
+					<p><?php the_sub_field('description');?></p>
+				</div>
+				
+			<?php endwhile;
+			_e("</div><div class='clearfix'></div>");
+			_e("</div>");
 		}
 		
 		/* main function that displays the tabs */

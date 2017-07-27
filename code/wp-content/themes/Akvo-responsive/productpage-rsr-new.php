@@ -12,22 +12,22 @@
 			'title' => 'overview',
 			'tagline' => 'overview_tagline',
 			'elements' => array(
-				'overview_carousel' => 'carousel',
-				'overview_columns' => 'rsr_overview_columns',
-				'overview_call_to_action' => 'rsr_overview_buttons',
-				'testimonials' => 'testimonials',
-				'counters'=> 'rsr_overview_counters',
-				'overview_buttons' => 'rsr_buttons'
+				'overview_carousel' 		=> 'carousel',
+				'overview_columns' 			=> 'overview_columns3',
+				'overview_call_to_action' 	=> 'rsr_overview_buttons',
+				'testimonials' 				=> 'testimonials',
+				'counters'					=> 'rsr_overview_counters',
+				'overview_buttons' 			=> 'buttons'
 			)
 		),
 		'features' => array(
 			'title' => 'features',
 			'tagline' => 'feature_tagline',
 			'elements' => array(
-				'feature_banner' => 'rsr_banner',
-				'feature_columns' => 'rsr_feature_columns',
-				'tour' => 'rsr_tour',
-				'features_section' => 'rsr_features_section'
+				'feature_banner' 	=> 'rsr_banner',
+				'feature_columns' 	=> 'rsr_feature_columns',
+				'tour' 				=> 'rsr_tour',
+				'features_section' 	=> 'rsr_features_section'
 				
 			)
 		),
@@ -35,15 +35,14 @@
 			'title' => 'support',
 			'tagline' => 'support_tagline',
 			'elements' => array(
-				'support_banner' => 'rsr_banner',
-				'support_content' => 'rsr_content',
-				'support_training_title' => 'rsr_title',
-				'support_columns' => 'rsr_overview_columns',
-				'support_button_title' => 'rsr_content',
-				//'support_section' => 'rsr_media_section',
-				'support_buttons' => 'rsr_buttons',
+				'support_banner' 			=> 'rsr_banner',
+				'support_content' 			=> 'inner_section',
+				'support_training_title' 	=> 'rsr_title',
+				'support_columns' 			=> 'overview_columns3',
+				'support_button_title' 		=> 'inner_section',
+				'support_buttons' 			=> 'buttons',
 				'support_testimonial_title' => 'rsr_title',
-				'support_testimonials' => 'testimonials'
+				'support_testimonials' 		=> 'testimonials'
 				
 			)
 		),
@@ -51,11 +50,11 @@
 			'title' => 'pricing',
 			'tagline' => 'pricing_tagline',
 			'elements' => array(
-				'pricing_banner' => 'rsr_banner',
-				'pricing_image' => 'image',
-				'pricing_description' => 'rsr_content',
-				'pricing_buttons' => 'rsr_buttons',
-				'pricing_description_2' => 'rsr_content'
+				'pricing_banner' 		=> 'rsr_banner',
+				'pricing_image' 		=> 'image',
+				'pricing_description' 	=> 'inner_section',
+				'pricing_buttons' 		=> 'buttons',
+				'pricing_description_2' => 'inner_section'
 			)
 		)
 		
@@ -64,21 +63,11 @@
 	
 	class rsrTab extends akvoTab{
 	
-		function slugify($text){ 
-			$slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $text);
-			return strtolower($slug);
-		}
-		
 		function rsr_title($el){
 			_e("<h3 id=".$el.">".get_field($el)."</h3>");
 		}
 		
-		function rsr_content($el){
-		?>
-			<div id="<?php _e($el);?>" class="tab-inner-section"><?php the_field($el);?></div>
-		<?php
-		}
-		
+		/*
 		function rsr_overview_columns($el){
 			_e("<div class='sub-section' id='".$el."'>");
 			_e("<div class='threeColumns wrapper'>");
@@ -93,6 +82,7 @@
 			_e("</div><div class='clearfix'></div>");
 			_e("</div>");
 		}
+		*/
 		
 		function rsr_overview_buttons($el){
 		?>
@@ -114,41 +104,6 @@
 			</div>	
 			
 		<?php	
-		}
-		
-		
-		
-		
-		function rsr_json_counters($el){
-			$url = 'http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json';
-			$str = file_get_contents($url);
-			$json = json_decode($str, true); 
-			?>	
-				
-				<ul class='list-box'>
-					<?php while(have_rows($el)): the_row();?>
-					<li class="box">
-						<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
-						<div class="timeTicker">            
-							<p class="timeSegment clear">
-								<?php 
-									$str = $json[get_sub_field('json_slug')];
-									for( $i = 0; $i <= strlen($str); $i++ ) {
-										$char = substr( $str, $i, 1 );
-										if(is_numeric($char)){
-											_e("<span class='digit'>". $char ."</span>");
-										}
-										
-									}
-								
-								?>
-							</p>
-						</div>
-					</li>
-					<?php endwhile;?>
-				</ul>
-			
-			<?php	
 		}
 		
 		
@@ -223,33 +178,12 @@
 			_e("</div>");
 		}
 		
-		/*
-		function rsr_carousel($el){
-			_e("<ul class='bxslider'>");
-			while(have_rows($el)): the_row();?>
-				<li>
-					<div class="borderTop"></div>
-					<div class="image" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
-						<?php if(get_sub_field('image_text')):?>
-						<a data-behaviour="anchor-reload" href="<?php _e(get_sub_field('image_link'));?>">
-							<?php _e(get_sub_field('image_text'));?>
-						</a>
-						<?php endif;?>
-					</div>
-					<div class="borderBottom"></div>
-				</li>
-			<?php endwhile;
-			_e("</ul>");
-			
-		}
-		*/
-		
 		function rsr_banner($el){
 		?>
 			<div class="banner" style="background-image:url('<?php the_field($el);?>');"></div>
 		<?php	
 		}
-		
+		/*
 		function rsr_buttons($el){
 			
 		?>
@@ -270,6 +204,7 @@
 		<?php
 			
 		}
+		*/
 		
 		function rsr_media_section($el){
 		
@@ -277,12 +212,7 @@
 			<div class="sub-section">
 				<div class="wrapper">
 					
-					<?php
-					
-						$sections = get_field($el);
-						
-					
-					?>
+					<?php $sections = get_field($el);?>
 					
 					<ul>
 						<?php foreach($sections as $section):?>
@@ -317,12 +247,7 @@
 			<div class="sub-section" id="<?php _e($el);?>">
 				<div class="wrapper">
 					
-					<?php
-					
-						$sections = get_field($el);
-						
-					
-					?>
+					<?php $sections = get_field($el);?>
 					<ul>
 						<?php foreach($sections as $section):?>
 						<li class="media-box">
