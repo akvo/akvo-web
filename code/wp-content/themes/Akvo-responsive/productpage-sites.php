@@ -14,7 +14,8 @@
 			'tagline' => 'overview_tagline',
 			'elements' => array(
 				'overview_cover' => 'carousel',
-				'overview_intro' => 'inner_section',
+				//'overview_intro' => 'inner_section',
+				'overview_columns' => 'overview_columns3',
 				'overview_buttons' => 'buttons',
 				'testimonials' => 'testimonials'
 			)
