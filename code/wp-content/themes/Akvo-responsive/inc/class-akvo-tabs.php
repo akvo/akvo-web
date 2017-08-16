@@ -92,11 +92,11 @@
 			echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
 		}
 		
-		/* TITLE BUTTON BEFORE THE TABS: AS OF NOW ONLY USED IN LUMEN TABS PAGE */
+		/* TITLE BUTTON BEFORE THE TABS: AS OF NOW ONLY USED IN LUMEN TABS PAGE - NOT BEING USED ANYWHERE
 		function title_button(){
 			
 			if( get_field('title_button') ):?>
-			<div class="text-center"><a style="margin:0;" href="<?php the_field('title_button_link');?>" title="Watch the video" class="button"><?php the_field('title_button');?></a></div>
+			<div class="text-center"><a style="margin:0 auto;max-width:200px;" href="<?php the_field('title_button_link');?>" title="Watch the video" class="button"><?php the_field('title_button');?></a></div>
 			<?php endif;
 		}
 		
@@ -225,7 +225,7 @@
 			<hgroup>
 				<?php akvo_page_logo('logo');?>
 				<h2 id="tagline"></h2>
-				<?php $this->title_button(); ?>
+				<?php //$this->title_button(); ?>
 			</hgroup>	
 			<!-- END of HEADER Section -->
 
