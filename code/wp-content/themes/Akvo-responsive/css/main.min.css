@@ -6350,13 +6350,46 @@ img.aligncenter {
   margin-top: 4em; }
 
 /* LUMEN PRODUCT TAB */
-.lumenProduct [data-behaviour~=akvo-tabs] li.active {
-  background: #74b631;
+.tabsProduct.lumenProduct {
+  /* CONTACT FORM */ }
+  .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li.active {
+    background: #74b631;
+    border-color: #74b631; }
+  .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child a {
+    color: #74b631; }
+  .tabsProduct.lumenProduct a[href].button {
+    background: #74b631; }
+  .tabsProduct.lumenProduct input[type="submit"] {
+    background: #74b631;
+    padding: 0.5em 1em !important;
+    font-size: 1.5em !important;
+    font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    text-transform: initial; }
+  .tabsProduct.lumenProduct #pricing_intro {
+    margin-top: 0em; }
+  .tabsProduct.lumenProduct .testimonials p {
+    max-width: 500px; }
+  .tabsProduct.lumenProduct .testimonials.page-section img.aligncenter {
+    margin-bottom: 1em; }
+  .tabsProduct.lumenProduct .gform_wrapper li.gsection.form-title {
+    margin-top: 1.5em;
+    margin-bottom: 0em; }
+    .tabsProduct.lumenProduct .gform_wrapper li.gsection.form-title h2 {
+      font-size: 2em; }
+  .tabsProduct.lumenProduct .gform_wrapper ul li.gfield.form-checkbox {
+    margin-top: 0; }
+    .tabsProduct.lumenProduct .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
+      margin-top: 0; }
+  .tabsProduct.lumenProduct .gform_wrapper li.gfield.field_description_below + li.gsection.form-title {
+    margin-top: 2.5em !important; }
+  .tabsProduct.lumenProduct .gform_wrapper .gform_footer {
+    text-align: center; }
+  .tabsProduct.lumenProduct #field_6_8 label.gfield_label {
+    font-size: 14px;
+    font-weight: normal; }
+
+.tabsProduct [data-behaviour~=akvo-tabs] li:last-child {
   border-color: #74b631; }
-.lumenProduct [data-behaviour~=akvo-tabs] li:last-child a {
-  color: #74b631; }
-.lumenProduct a[href].button {
-  background: #74b631; }
 
 /*----------------------------------------------------------------------
                                 Footer

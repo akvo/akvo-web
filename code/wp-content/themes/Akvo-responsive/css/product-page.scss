@@ -1070,7 +1070,7 @@ img.aligncenter{
 
 
 /* LUMEN PRODUCT TAB */
-.lumenProduct{
+.tabsProduct.lumenProduct{
 	
 	[data-behaviour~=akvo-tabs] li.active{
 		
@@ -1091,5 +1091,70 @@ img.aligncenter{
 		background: $green2015;
 	
 	}
+	
+	input[type="submit"]{
+		background: #74b631;
+		padding: 0.5em 1em !important;
+		font-size: 1.5em !important;
+		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+		text-transform: initial;
+	}
+	
+	#pricing_intro{
+		margin-top: 0em;
+	}
+	
+	.testimonials p{
+		max-width: 500px;
+	}
+	
+	.testimonials.page-section img.aligncenter{
+		margin-bottom: 1em;
+	}
+
+	
+	/* CONTACT FORM */
+	.gform_wrapper{
+	
+		li.gsection.form-title{
+			margin-top: 1.5em;
+			margin-bottom: 0em;
+			
+			h2{
+				font-size: 2em;
+			}
+			
+		}
+		
+		ul li.gfield.form-checkbox{
+			margin-top: 0;
+			
+			div.ginput_container_checkbox{
+				margin-top: 0;
+			}
+			
+		}
+		
+		li.gfield.field_description_below+li.gsection.form-title{
+			margin-top: 2.5em !important;
+		}
+		
+		.gform_footer{
+			text-align: center;
+		}
+		
+	}
+	
+	#field_6_8 label.gfield_label{
+		font-size: 14px;
+		font-weight: normal;
+	}
+	
 
 }
+
+
+.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
+	border-color: #74b631;
+}
+
