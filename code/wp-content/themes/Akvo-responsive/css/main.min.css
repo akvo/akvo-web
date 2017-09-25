@@ -6122,7 +6122,7 @@ div[id^="inline-"] {
       left: 10%;
       color: #2c2a74; }
       .rsrProdPag .bxslider .image a[href] p, .rsrProdPag .bxslider .image a[href] h3, .flowProduct .bxslider .image a[href] p, .flowProduct .bxslider .image a[href] h3, .lumenProduct .bxslider .image a[href] p, .lumenProduct .bxslider .image a[href] h3, .akvositesProduct .bxslider .image a[href] p, .akvositesProduct .bxslider .image a[href] h3, .tabsProduct .bxslider .image a[href] p, .tabsProduct .bxslider .image a[href] h3 {
-        padding: 0px 15px; }
+        padding: 10px 15px; }
     @media only screen and (max-width: 768px) {
       .rsrProdPag .bxslider .image a[href], .flowProduct .bxslider .image a[href], .lumenProduct .bxslider .image a[href], .akvositesProduct .bxslider .image a[href], .tabsProduct .bxslider .image a[href] {
         left: 0%;
