@@ -142,8 +142,7 @@
 		
 		$('.bxslider').bxSlider({
   			onSliderLoad: function(){
-  				console.log('slider:after-load');
-    			
+  				
     			$('body').find('[data-behaviour~=akvo-tabs]').akvo_tabs();
     			
     			$('[data-behaviour~=show-video]').click( function(event) {
