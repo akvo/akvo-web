@@ -33,25 +33,11 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-180x180.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-120x120.png">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-
-
-		<!--link rel="stylesheet" href="<?php bloginfo('template_url');?>/css/main.min.css?v=2.6" type="text/css" media="screen" /-->
-
 		<?php wp_head(); ?>
-
 		<!--[if lt IE 9]>
 		  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
-
-		<?php //if ( is_singular() ) wp_enqueue_script( 'comment-reply' );?>
-
-		<!--
-
-		<link href='//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic' rel='stylesheet' type='text/css'>
-
-		-->
 	</head>
-
 	<body <?php my_bodyclass(); ?>>
 		<div id="fb-root"></div>
 		<script>

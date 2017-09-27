@@ -33,8 +33,6 @@
 </div>
 <!-- end mainbody -->
 <!-- Piwik -->
-
-
 <script type="text/javascript">
   var _paq = _paq || [];
   _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
@@ -52,29 +50,11 @@
     g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
   })();
 </script>
-
-
 <!-- End Piwik Code -->
-
-<!--
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-
-<script src="<?php bloginfo('template_directory'); ?>/js/common-js.js"></script>
-<script src="<?php bloginfo('template_directory'); ?>/js/akvo-jquery.js?v=1.2.0"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jquery.fitvids.js"></script>
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/script.js"></script>
-<script type="text/javascript" src="<?php bloginfo('template_directory'); ?>/js/jquery.bxslider.min.js"></script>
-
--->
-
 <?php wp_footer(); ?>
-
-
 <script type="text/javascript">
 	$( document ).ready(function() {
 		// footer menu headings
-
 		$("#content").fitVids();
 		
 		function adjustImage() {
@@ -94,5 +74,4 @@
 
 	});
 </script>
-
 </body></html>
