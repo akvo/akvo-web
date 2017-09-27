@@ -128,33 +128,10 @@
 	
 ?>
 
-<div id="content" class="floats-in productPage tabsProduct lumenProduct">
+<div id="content" class="floats-in productPage tabsProduct lumenProduct" data-behaviour="tabs-page">
 	<?php
 		$akvo_tab = new lumenTab;
 		$akvo_tab->display_tabs($tabs);
 	?>
 </div>
-	
 <?php get_footer(); ?>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/js/tabs.js"></script>
-<script type="text/javascript">
-	(function($){
-		
-		$('.bxslider').bxSlider({
-  			onSliderLoad: function(){
-  				
-    			$('body').find('[data-behaviour~=akvo-tabs]').akvo_tabs();
-    			
-    			$('[data-behaviour~=show-video]').click( function(event) {
-      				event.preventDefault();
-      				$('.videoContainer').fadeToggle();
-    			});
-    			
-    			
-    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
-    			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
-    			
-    		}
-		});
-    }(jQuery));  
-</script>
