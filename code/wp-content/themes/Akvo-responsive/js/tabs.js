@@ -159,4 +159,33 @@
     		$(hash).rsr_scroll_to();
     	});
     };
+	
+	$.fn.tabs_page = function(){
+		return this.each(function(){
+			var el = $(this);
+			
+			el.find('.bxslider').bxSlider({
+				
+				onSliderLoad: function(){
+  				
+					el.find('[data-behaviour~=akvo-tabs]').akvo_tabs();
+    			
+					el.find('[data-behaviour~=show-video]').click( function(event) {
+						event.preventDefault();
+						el.find('.videoContainer').fadeToggle();
+					});
+    			
+    			
+					el.find('[data-behaviour~=time-ticker]').rsr_time_ticker();
+					el.find('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
+    			
+				}
+			});
+			
+		});
+	
+	};
+	
+	$('[data-behaviour~=tabs-page]').tabs_page();
+	
 }(jQuery));  

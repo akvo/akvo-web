@@ -1072,6 +1072,8 @@ img.aligncenter{
 /* LUMEN PRODUCT TAB */
 .tabsProduct.lumenProduct{
 	
+	
+	
 	[data-behaviour~=akvo-tabs] li.active{
 		
 		background: $green2015;
@@ -1080,11 +1082,17 @@ img.aligncenter{
 		
 	}
 	
+	
 	[data-behaviour~=akvo-tabs] li:last-child a{
 		
 		color: $green2015;
 		
 	}
+	
+	[data-behaviour~=akvo-tabs] li:last-child{
+		border-color: #74b631;
+	}
+
 	
 	a[href].button{
 		
@@ -1154,7 +1162,4 @@ img.aligncenter{
 }
 
 
-.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
-	border-color: #74b631;
-}
 

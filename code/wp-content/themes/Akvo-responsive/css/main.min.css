@@ -6357,6 +6357,8 @@ img.aligncenter {
     border-color: #74b631; }
   .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child a {
     color: #74b631; }
+  .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child {
+    border-color: #74b631; }
   .tabsProduct.lumenProduct a[href].button {
     background: #74b631; }
   .tabsProduct.lumenProduct input[type="submit"] {
@@ -6387,9 +6389,6 @@ img.aligncenter {
   .tabsProduct.lumenProduct #field_6_8 label.gfield_label {
     font-size: 14px;
     font-weight: normal; }
-
-.tabsProduct [data-behaviour~=akvo-tabs] li:last-child {
-  border-color: #74b631; }
 
 /*----------------------------------------------------------------------
                                 Footer
