@@ -60,10 +60,5 @@
     	</div>
   	</section>
 </div>
-<script>
-$("document").ready(function () {
-
-})
-</script>
 <?php wp_reset_query(); ?>
 <?php get_footer(); ?>

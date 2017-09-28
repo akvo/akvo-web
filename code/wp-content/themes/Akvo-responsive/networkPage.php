@@ -8,9 +8,7 @@ Template Name: akvoNetwork
 <div id="content" class="floats-in networkPage">
 	<h1 class="backLined">See it happen</h1>
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
-	<div class="fullWidthParag wrapper">
-		<?php the_content(); ?>
-	</div>
+	<div class="fullWidthParag wrapper"><?php the_content(); ?></div>
 	<?php endwhile; // end of the loop. ?>
   
 	<section id="akvoDashboard">
@@ -20,7 +18,7 @@ Template Name: akvoNetwork
 		  
 			<li class="dashSingle" id="rsrDash">
 				<h2>Akvo RSR</h2>
-				<?php $json = akvo_json('http://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json');?>
+				<?php $json = akvo_json('https://rsr.akvo.org/api/v1/right_now_in_akvo/?format=json');?>
 				
 				<ul class="rsrData dashData">
 					<li>
@@ -85,15 +83,15 @@ Template Name: akvoNetwork
 		<nav class="anchorNav2 wrapper">
 			<ul class>
 				<li><a href="/seeithappen/all-rsr-project-updates/">Browse all latest project updates</a> </li>
-				<li  class="rss"><a href="http://rsr.akvo.org/rss/all-updates" rel="alternate" type="application/rss+xml">RSS link for all RSR updates</a></li>
+				<li  class="rss"><a href="https://rsr.akvo.org/rss/all-updates" rel="alternate" type="application/rss+xml">RSS link for all RSR updates</a></li>
 			</ul>
 		</nav>
 				  
 		<?php
-			$json = akvo_json('http://rsr.akvo.org/rest/v1/project_update_extra/?limit=3&photo__gte=a&format=json');
+			$json = akvo_json('https://rsr.akvo.org/rest/v1/project_update_extra/?limit=3&photo__gte=a&format=json');
 	
 			$updates = $json->results;
-			$rsr_domain = "http://rsr.akvo.org";
+			$rsr_domain = "https://rsr.akvo.org";
 		?>
 				  
 		<ul id="updatesWrapperJS" class="floats-in wrapper">
