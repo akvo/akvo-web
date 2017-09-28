@@ -8,11 +8,7 @@
 
 <div id="content" class="floats-in productPage withSubMenu dashProduct">
 	
-	<!--div class="projectGateWay">
-    	<p>Already an RSR user?</p>
-    	<a href="http://rsr.akvo.org/sign_in" class="">Log in to Akvo RSR &rsaquo;</a>
-  	</div-->
-
+	
   	<hgroup>
   		<img class='prod-logo' src="<?php the_field('logo');?>" />
     	<!--h1><?php the_field('rsr_name'); ?></h1-->
