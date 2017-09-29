@@ -23,51 +23,34 @@ get_header(); ?>
 		</ul>
 	</nav>
 	<section class="wrapper">
-		<?php query_posts(array('post_type'=>'new_partners')); ?>
-		<?php $mypost = array( 'post_type' => 'new_partners' );$loop = new WP_Query( $mypost ); ?>
-		<!-- Cycle through all posts -->
-		<ul class="staff floats-in">
-			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
-			<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-				<!-- Display featured image in right-aligned floating div -->
-				<div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
-				<!-- Display Title and Name -->
-				<div class="staffName"> <a href="#"><?php echo esc_html( get_post_meta( get_the_ID(), 'partner_name', true ) ); ?></a> </div>
-				<p class="staffTitle"><?php echo esc_html( get_post_meta( get_the_ID(), 'partner_tagline', true ) ); ?></p>
-				<span class="akvoTeam"><?php the_terms( $post->ID, 'new_partners_team' ,  ' ' ); ?></span>
-				<div class="staffBiog"><?php the_content(); ?></div>
-				<small>Click for more details.</small> 
-			</li>
-			<?php endwhile; ?>
-		</ul>
 		<div id="govGroup">
 			<h2 class="pStaffHead">Governments</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('governments');?>
 		</div>
 		<hr class="delicate" />
 		<div id="compsGroup">
 			<h2 class="cStaffHead">Companies</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('companies');?>
 		</div>
 		<hr class="delicate" />
 		<div id="founGroup">
 			<h2 class="eStaffHead">Foundations</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('foundations');?>
 		</div>
 		<hr class="delicate" />
 		<div id="intGovGroup">
 			<h2 class="eStaffHead">Inter-governmental</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('inter-governmental');?>
 		</div>
 		<hr class="delicate" />
 		<div id="ngoGroup">
 			<h2 class="eStaffHead">NGOs</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('ngos');?>
 		</div>
 		<hr class="delicate" />
 		<div id="knowledgeGroup">
 			<h2 class="eStaffHead">Knowledge institutes</h2>
-			<ul class="staff floats-in"></ul>
+			<?php akvo_partner_list('knowledge-institutes');?>
 		</div>
 		<hr class="delicate" />
 		<div id="overlay">

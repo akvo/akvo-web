@@ -37,7 +37,7 @@ require_once($includes_path . 'class-akvo-tabs.php');
 	
 	
 	
-function akvo_json($url){
+	function akvo_json($url){
 		$cache_key = 'akvo_' . $url;
 		
 		// try to get value from Wordpress cache
@@ -440,15 +440,15 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	*/
 	
-	function akvo_staff_list($staff_type, $new_staff_flag = true){
+	function akvo_post_type_list( $post_type, $tax, $tax_slug, $template = 'staff', $new = true ){
 		$args = array(
-			'post_type' => 'new_staffs',
+			'post_type' => $post_type,
 			'showposts' => '100',
 			'tax_query' => array(
         		array(
-					'taxonomy' => 'new_staffs_team',
+					'taxonomy' => $tax,
 					'field' => 'slug', //can be set to ID
-					'terms' => $staff_type //if field is ID you can reference by cat/term number
+					'terms' => $tax_slug //if field is ID you can reference by cat/term number
         		)
 			)
 		);
@@ -456,13 +456,21 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 		$the_query = new WP_Query( $args );
 		if( $the_query->have_posts() ):
 			while( $the_query->have_posts() ) : $the_query->the_post();
-				get_template_part('templates/staff');
+				get_template_part('templates/'.$template);
 			endwhile;
-		endif;
-		if($new_staff_flag){
-			get_template_part('templates/new_staff');		
-		}	
+		endif;	
+		if($new){
+			get_template_part('templates/new_'.$template);	
+		}
 		_e('</ul>');
+	}
+	
+	function akvo_staff_list($staff_type, $new_staff_flag = true){
+		akvo_post_type_list( 'new_staffs', 'new_staffs_team', $staff_type, 'staff', $new_staff_flag );
+	}
+	
+	function akvo_partner_list($partner_type){
+		akvo_post_type_list( 'new_partners', 'new_partners_category', $partner_type, 'partner', false);
 	}
 	
 	/* remove unnecessary code */
