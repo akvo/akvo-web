@@ -25,7 +25,7 @@ require_once($includes_path . 'class-akvo-tabs.php');
 		wp_enqueue_script('akvo-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true );
 		wp_enqueue_script('jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
 		wp_enqueue_script('akvo-tabs', get_template_directory_uri() . '/js/tabs.js', array('jquery-bxslider'), "1.0.0", true );
-		wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/641b62259f.js', array('akvo-tabs'), null );	
+		wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/641b62259f.js', array('akvo-tabs'), null, true );	
 		
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
