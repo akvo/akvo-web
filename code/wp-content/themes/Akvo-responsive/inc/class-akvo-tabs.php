@@ -256,13 +256,7 @@
 					}
 				?>
 				</section>
-			<?php endforeach;?>	
-			<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri(); ?>/css/jquery.bxslider.css">
-			<!--link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"-->
-			
-			<script src="https://use.fontawesome.com/641b62259f.js"></script>
-			
-			<?php
+			<?php endforeach;
 		}
 		
 

@@ -129,7 +129,7 @@
 	
 ?>
 
-<div id="content" class="floats-in productPage tabsProduct caddisflyProduct">
+<div id="content" class="floats-in productPage tabsProduct caddisflyProduct" data-behaviour="tabs-page">
 	<?php
 		$akvo_tab = new caddisflyTab;
 		$akvo_tab->display_tabs($tabs);
@@ -137,26 +137,3 @@
 </div>
 	
 <?php get_footer(); ?>
-<script type="text/javascript" src="<?php bloginfo('template_url');?>/js/tabs.js"></script>
-<script type="text/javascript">
-	(function($){
-		console.log('init');
-		$('.bxslider').bxSlider({
-  			onSliderLoad: function(){
-  				console.log('slider:after-load');
-    			
-    			$('body').find('[data-behaviour~=akvo-tabs]').akvo_tabs();
-    			
-    			$('[data-behaviour~=show-video]').click( function(event) {
-      				event.preventDefault();
-      				$('.videoContainer').fadeToggle();
-    			});
-    			
-    			
-    			$('[data-behaviour~=time-ticker]').rsr_time_ticker();
-    			$('[data-behaviour~=anchor-reload]').rsr_anchor_reload();
-    			
-    		}
-		});
-    }(jQuery));  
-</script>

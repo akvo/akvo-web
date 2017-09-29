@@ -25,13 +25,14 @@ require_once($includes_path . 'class-akvo-tabs.php');
 		wp_enqueue_script('akvo-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true );
 		wp_enqueue_script('jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
 		wp_enqueue_script('akvo-tabs', get_template_directory_uri() . '/js/tabs.js', array('jquery-bxslider'), "1.0.0", true );
+		wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/641b62259f.js', array('akvo-tabs'), null );	
 		
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
 		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.min.css', false, '2.6.1' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
-		
+		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
 	});
 	
 	
