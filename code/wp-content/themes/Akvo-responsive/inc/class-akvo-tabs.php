@@ -167,6 +167,9 @@
 				$section = 'page-section';
 				$cols = 'col-6';
 			}
+			elseif(count(get_field($el)) == 1){
+				$cols = 'col-12';
+			}
 		?>
 			<div class="<?php _e($section);?> testimonials" id="<?php _e($el);?>">	
 				<h3 id='<?php _e($el.'_title');?>'><?php the_field($el.'_title');?></h3>
