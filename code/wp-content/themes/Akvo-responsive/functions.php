@@ -30,7 +30,7 @@ require_once($includes_path . 'class-akvo-tabs.php');
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.min.css', false, '2.6.1' );
+		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.0' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
 		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
 	});
@@ -184,23 +184,48 @@ function remove_more_jump($link)
 }
 add_filter('the_content_more_link', 'remove_more_jump');
 
+
+function is_akvo_regional_page(){
+	global $post;
+	$template_slug = get_page_template_slug( $post->ID );
+		
+	if( 'regionalPage.php' == $template_slug ){
+		return true;
+	}
+	
+	return false;
+	
+}
+
+
 //ADD PAGES NAME AS A BODY CLASS
 
-function my_bodyclass() // add pagename as class to <body> tag
-{
-    global $wp_query;
+// add pagename as class to <body> tag
+function akvo_bodyclass() {
+	
+	global $wp_query;
     $page = '';
     if (is_front_page()) {
         $page = 'home';
     } elseif (is_page()) {
         $page = $wp_query->query_vars["pagename"] . ' Page';
-    }
-    if ($page) {
+		
+		if( is_akvo_regional_page() ){
+			$page = "fullBlack";
+		}
+		
+	}
+	
+	if ($page) {
         echo ' class= "' . $page, '"';
     }
     if ($page = 'blog') {
         echo ' class= "' . $page, ' ' . '"';
     }
+	
+	
+	
+	
 }
 
 //LIMITS NUMBER OF WORDS WHEN USING THE EXcerpt FUNCTION
