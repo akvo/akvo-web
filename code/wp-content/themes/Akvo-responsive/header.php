@@ -38,7 +38,7 @@
 		  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 	</head>
-	<body <?php my_bodyclass(); ?>>
+	<body <?php akvo_bodyclass(); ?>>
 		<div id="fb-root"></div>
 		<script>
 			(function(d, s, id) {
@@ -61,4 +61,4 @@
 					<a href="/blog/open-data-content-and-software-at-akvo/"><h2>We love Open Source!</h2></a> 
 				</div>
 			</header>
-			<div class="breadCrumb"><?php the_breadcrumb() ?></div>
+			<?php if( !is_akvo_regional_page() ):?><div class="breadCrumb"><?php the_breadcrumb() ?></div><?php endif;?>
