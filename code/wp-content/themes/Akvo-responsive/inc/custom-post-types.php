@@ -1,5 +1,5 @@
 <?php
-
+	/*
 	function akvo_create_post_type() {
 		
   		register_post_type( 'case-study',
@@ -81,7 +81,7 @@
 	 * Prints the box content.
 	 *
 	 * @param WP_Post $post The object for the current post/page.
-	 */
+	 *
 	function casestudy_meta_box_callback( $post ) {
 
 		// Add a nonce field so we can check for it later.
@@ -99,7 +99,7 @@
 	 * When the post is saved, saves our custom data.
 	 *
 	 * @param int $post_id The ID of the post being saved.
-	 */
+	 *
 	 function casestudy_save_meta_box_data( $post_id ) {
 
 		if ( ! isset( $_POST['casestudy_meta_box_nonce'] ) ) {return;}
@@ -107,26 +107,7 @@
 		if ( ! wp_verify_nonce( $_POST['casestudy_meta_box_nonce'], 'casestudy_save_meta_box_data' ) ) {return;}
 
 		if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) { return;}
-/*
-	 // Check the user's permissions.
-	 if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
 
-		if ( ! current_user_can( 'edit_page', $post_id ) ) {
-			return;
-		}
-
-	 } else {
-
-		if ( ! current_user_can( 'edit_post', $post_id ) ) {
-			return;
-		}
-	 }
-
-	 if ( ! isset( $_POST['member_new_field'] ) ) {
-		return;
-	 }
-	 
-	 */
 		$fields_arr = array('partner-name' => 'Partner');
 	 
 		foreach($fields_arr as $key => $label){
@@ -141,4 +122,4 @@
 	 
 	}
 	add_action( 'save_post', 'casestudy_save_meta_box_data' );
-?>
+	*/
