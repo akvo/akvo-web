@@ -79,8 +79,20 @@
 	</section>
 </div>
 <?php get_footer();?>
-<!--style>
-	.list-inline .logo img{
-		height: 100px;
+<style>
+	.hubContact h1{
+		color: #000;
 	}
-</style-->
+	.hubContact label{
+		display: none;
+	}
+	.hubContact input, .hubContact textarea{
+		background: #fff;
+		padding: 10px;
+	}
+	
+	.hubContact input:hover, .hubContact textarea:hover{
+		border: 1px solid #AAA;
+	}
+	
+</style>
