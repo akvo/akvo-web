@@ -84,11 +84,11 @@
 		color: #000;
 	}
 	.hubContact label{
-		display: none;
+		display: none !important;
 	}
 	.hubContact input, .hubContact textarea{
 		background: #fff;
-		padding: 10px;
+		padding: 10px !important;
 	}
 	
 	.hubContact input:hover, .hubContact textarea:hover{
