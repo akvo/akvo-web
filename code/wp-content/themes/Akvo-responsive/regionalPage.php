@@ -94,5 +94,22 @@
 	.hubContact input:hover, .hubContact textarea:hover{
 		border: 1px solid #AAA;
 	}
-	
+	.hubContact .gform_footer{
+		text-align: center;
+	}
+	.hubContact input[type=submit]{
+		background: transparent;
+		color: #202024;
+		border: 3px solid #202024;
+		font-weight: bold;
+		padding: 10px;
+		border-radius: 0px;
+	}
+	.hubContact input[type=submit]:hover{
+		background: #202024;
+		color: white;
+		-webkit-transition: background-color 0.3s ease-in-out;
+		-moz-transition: background-color 0.3s ease-in-out;
+		transition: background-color 0.3s ease-in-out;
+	}
 </style>
