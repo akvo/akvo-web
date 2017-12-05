@@ -121,9 +121,7 @@
 	.hubFeature li{
 		margin-bottom: 20px;
 	}
-	.hubFeature li img{
-		max-width: 350px;
-	}
+	
 	.fullBlack .hubAdress > ul > li{
 		min-height: 220px;	
 	}
@@ -216,5 +214,8 @@
 		.fullBlack .allHubBlock ul{
 			padding-bottom: 30px;
 		}	
+		.hubFeature li img{
+			max-width: 350px;
+		}
 	}
 </style>
