@@ -102,6 +102,7 @@
 	}
 	.fullBlack .hubFeature{
 		padding: 50px 20px;
+		background-size: contain;
 	}
 	.list-scroll{
 		padding-left:0;
