@@ -6,14 +6,14 @@
 <?php get_header();?>
 <div id="content" class="floats-in hubPage">
 	<section class="topMsg hubEA" style="background-image:url('<?php the_field('cover_image');?>');">
-		<div class="swooch hubEA" style="background-image:url('<?php bloginfo('template_url');?>/images/Squiggle-Yellow.png');"></div>
+		<div class="swooch hubEA" style="background-image:url('<?php the_field('overlay_image');?>"></div>
 		<div class="hubIntro"><?php the_field('cover_content');?></div>
 		<a href="#hub-marketing-intro" class="nxtSection"></a>
 	</section>
 	<section id="hub-marketing-intro" class="hubMarketing wrapper">
 		<div class=""><?php the_field('intro_content');?></div>
 	</section>
-	<section class="hubFeature">
+	<section class="hubFeature" style="background-image:url('<?php the_field('feature_image');?>');">
 		<div class="wrapper">
 			<ul class="list-inline text-center">
 				<?php while(have_rows('projects')): the_row();?>
@@ -90,6 +90,9 @@
 </div>
 <?php get_footer();?>
 <style>
+	.fullBlack .topMsg .swooch.hubEA{
+		background-size: cover;
+	}
 	.fullBlack .hubMarketing, .fullBlack .hubTrustBlock, .fullBlack .hubContact, .fullBlack .allHubBlock{
 		padding: 75px 20px;
 	}
@@ -195,7 +198,10 @@
 		.fullBlack .allHubBlock ul li a:hover{
 			transform: scale(1);
 		}
-		
+		.fullBlack .allHubBlock ul li a{
+			width: 100px;
+			height: 120px;
+		}
 	}
 	@media(max-width:500px){
 		.fullBlack .map-icon{
