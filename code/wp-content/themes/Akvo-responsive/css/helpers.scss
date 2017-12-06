@@ -115,3 +115,15 @@ a[href].button{
 	}
 }
 
+.list-scroll{
+	padding-left:0;
+	text-align: center;
+	white-space: nowrap;
+	overflow: auto;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
+}
+.list-scroll li{
+	display: inline-block;
+	position: relative;
+}
