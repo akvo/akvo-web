@@ -6919,6 +6919,7 @@ div[id^="inline-"] {
             left: 0;
             width:100%;
             height: 100%;
+			background-size: cover;
             &.hubEA {
                 opacity: 0.5;
                 background: rgba($akvoBlack, 0.9) url("../images/Squiggle - Yellow.png") no-repeat center top;
@@ -6945,16 +6946,20 @@ div[id^="inline-"] {
         }
     }
     .hubMarketing {
-        padding: 75px 0;
+        padding: 75px 20px;
         p {
             font-size: 2.2em;
         }
     }
     .hubFeature {
-        padding: 50px 0;
+        padding: 50px 20px;
         background: url("../images/hub_EA_pattern.png") repeat;
+		background-size: contain;
         position: relative;
         overflow: auto;
+		li{
+			margin-bottom: 20px;
+		}
         figure {
             position: relative;
 
@@ -6988,7 +6993,7 @@ div[id^="inline-"] {
         }
     }
     .hubTrustBlock {
-        padding: 75px 0;
+        padding: 75px 20px;
         h1 {
             text-align: center;
             color: $akvoBlack;
@@ -6998,11 +7003,49 @@ div[id^="inline-"] {
             li {
 
             }
+			
         }
+		.list-scroll li.logo{
+			width: 220px;
+		}
+		
     }
     .hubContact {
-        padding: 75px 0;
+        padding: 75px 20px;
         background: rgba(#ffd200, 0.2);
+		
+		h1{
+			color: #000;
+		}
+		label{
+			display: none !important;
+		}
+		input, textarea{
+			background: #fff;
+			padding: 10px !important;
+		}
+		input:hover, textarea:hover{
+			border: 1px solid #AAA;
+		}
+		.gform_footer{
+			text-align: center;
+		}
+		input[type=submit]{
+			background: transparent;
+			color: #202024;
+			border: 3px solid #202024;
+			font-weight: bold;
+			padding: 10px;
+			border-radius: 0px;
+		}
+		input[type=submit]:hover{
+			background: #202024;
+			color: white;
+			-webkit-transition: background-color 0.3s ease-in-out;
+			-moz-transition: background-color 0.3s ease-in-out;
+			transition: background-color 0.3s ease-in-out;
+		}
+		/*
         #contact {
             h1 {
                 margin:5px 0 15px;
@@ -7057,6 +7100,7 @@ div[id^="inline-"] {
             }
 
         }
+		*/
 
         ::-webkit-input-placeholder {
          color:#888;
@@ -7080,8 +7124,28 @@ div[id^="inline-"] {
         }
     }
     .hubAdress {
-        padding: 75px 0;
+        padding: 75px 20px;
+		
+		.map-icon{
+			background-image: url("../images/hubBKO.png");
+			background-size: contain;
+			background-position: center;
+			background-repeat: no-repeat;
+			width: 120px;
+			height: 180px;
+			float: left;
+			margin-right: 20px;
+		}
+		
+		.map-addr p{
+			margin-top: 0;
+			font-size: 1.2em;
+			line-height: 1.2em;
+		}
+		
         h1 {
+			padding: 0 20px;
+			margin-bottom: 45px;
             text-align: center;
             color: $akvoBlack;
         }
@@ -7090,7 +7154,8 @@ div[id^="inline-"] {
            > li {
                box-sizing: border-box;
                 padding-left: 155px;
-                min-height: 200px;
+                
+				min-height: 220px;	
                 li {
                     font-size: 1.2em;
                 }
@@ -7204,4 +7269,47 @@ div[id^="inline-"] {
             }
         }
     }
+	
+	@media(max-width:768px){
+		h1{
+			font-size: 2.2em;
+		}
+		.topMsg .hubIntro p{
+			font-size: 2.2em;
+		}
+		.topMsg .hubIntro{
+			width: 90%;
+		}
+		.hubMarketing p{
+			font-size: 1.7em;
+		}
+		.allHubBlock ul{
+			padding: 0 10px 0;
+		}
+		.allHubBlock ul li a:hover{
+			transform: scale(1);
+		}
+		.allHubBlock ul li a{
+			width: 100px;
+			height: 120px;
+		}
+	}
+	@media(max-width:500px){
+		.map-icon{
+			width: 90px;
+			height: 135px;
+		}
+	}
+	@media(min-width:769px){
+		.allHubBlock ul li{
+			width: 195px;
+		}
+		.allHubBlock ul{
+			padding-bottom: 30px;
+		}	
+		.hubFeature li img{
+			max-width: 350px;
+		}
+	}
+	
 }
