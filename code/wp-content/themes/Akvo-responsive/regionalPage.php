@@ -47,7 +47,7 @@
 			<div class="row">
 				<?php while(have_rows('contacts')): the_row();?>
 				<div class="col-6">
-					<div class="map-icon" style="background-image:url('<?php the_sub_field('contact_image');?>');"></div>
+					<div class="map-icon"></div>
 					<div class="map-addr"><?php the_sub_field('contact_address');?></div>
 					<div style="clear:both"></div>
 				</div>
@@ -88,4 +88,14 @@
 		</div>
 	</section>
 </div>
+<style>
+	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
+	.hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon{
+		background-image:url('<?php the_sub_field('contact_image');?>');
+	}
+	.hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon:hover{
+		background-image:url('<?php the_sub_field('contact_image_hover');?>');
+	}
+	<?php endwhile;?>
+</style>
 <?php get_footer();?>
