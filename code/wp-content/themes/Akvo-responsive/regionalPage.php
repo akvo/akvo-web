@@ -89,6 +89,10 @@
 	</section>
 </div>
 <style>
+	.fullBlack .hubTrustBlock .list-scroll li.logo{
+		width: 185px;
+		margin: 0 25px;
+	}
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
 	.hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon{
 		background-image:url('<?php the_sub_field('contact_image');?>');
