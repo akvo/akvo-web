@@ -89,7 +89,10 @@
 		
 		/* display an image with center aligned */
 		function image($el){
-			echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
+			$image_src = get_field($el);
+			if( $image_src ){
+				echo "<img id='".$el."' class='aligncenter' src='".get_field($el)."' />";
+			}
 		}
 		
 		/* TITLE BUTTON BEFORE THE TABS: AS OF NOW ONLY USED IN LUMEN TABS PAGE - NOT BEING USED ANYWHERE

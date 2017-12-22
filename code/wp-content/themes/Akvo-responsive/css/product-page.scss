@@ -250,15 +250,7 @@
 		padding-top:0;
 	}
 	
-	/*
-	#features .media-box{
-		background: none;
-		
-		.media-right img{
-			margin-top:0;
-		}
-	}
-	*/
+	
 	
 	.sub-section{
 		margin:2em 0;
@@ -330,42 +322,7 @@
 		margin: 0;
 	}
 	
-	/* IS NOT IN USE
-	.modal{
-		position: fixed;
-		width: 100%;
-		height: 100%;
-		top:0;
-		left:0;
-		z-index:3;
-		display: none;
-		.backdrop{
-			background: rgba(255, 255, 255, 0.9);
-			position: absolute;
-			width: 100%;
-			height:100%;
-			top:0;
-			left:0;
-		}
-		.modal-content{
-			top: 20%;
-			left: 8%;
-			position: absolute;
-			background: #FFF;
-			width: 80%;
-			min-height: 200px;
-			padding: 20px;
-			border: #ccc solid 1px;
-			border-radius: 5px;
-		}	
-		.close-btn{
-			font-size: 4em;
-			position:absolute;
-			top: 20px;
-			right: 20px;
-		}
-	}
-	*/
+	
 }	
 
 /* ONLY USED IN THE RSR PAGE - NOW BEING UNUSED - TO BE REMOVED 
@@ -1075,38 +1032,33 @@ img.aligncenter{
 	
 	
 	[data-behaviour~=akvo-tabs] li.active{
-		
 		background: $green2015;
-		
 		border-color: $green2015;
-		
 	}
 	
-	
+	/* LAST TAB - GREEN COLOR */
 	[data-behaviour~=akvo-tabs] li:last-child a{
-		
 		color: $green2015;
-		
 	}
-	
 	[data-behaviour~=akvo-tabs] li:last-child{
-		border-color: #74b631;
+		border-color: $green2015;
 	}
+	/* END OF LAST TAB */
 
 	
 	a[href].button{
-		
 		background: $green2015;
-	
 	}
 	
+	/* FORM SUBMIT BUTTON */
 	input[type="submit"]{
-		background: #74b631;
+		background: $green2015;
 		padding: 0.5em 1em !important;
 		font-size: 1.5em !important;
 		font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
 		text-transform: initial;
 	}
+	/* END OF FORM BUTTON */
 	
 	#pricing_intro{
 		margin-top: 0em;
@@ -1162,4 +1114,18 @@ img.aligncenter{
 }
 
 
-
+.tabsProduct.caddisflyProduct{
+	[data-behaviour~=akvo-tabs] li.active{
+		background: #DE8929;
+		border-color: #DE8929;
+	}
+	
+	/* LAST TAB - ORANGE COLOR */
+	[data-behaviour~=akvo-tabs] li:last-child a{
+		color: #DE8929;
+	}
+	[data-behaviour~=akvo-tabs] li:last-child{
+		border-color: #DE8929;
+	}
+	/* END OF LAST TAB */
+}
