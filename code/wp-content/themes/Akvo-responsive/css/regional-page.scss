@@ -413,17 +413,16 @@
         }
     }
     @media (max-width: 768px) {
-        h1 {
+        h1, .topMsg .hubIntro p{
             font-size: 2.2em;
         }
-        .topMsg .hubIntro p {
-            font-size: 2.2em;
-        }
+         
         .topMsg .hubIntro {
             width: 90%;
         }
         .hubMarketing p {
-            font-size: 1.7em;
+            font-size: 1.6em;
+			line-height: 1.3em;
         }
         .allHubBlock ul {
             padding: 0 10px 0;
@@ -437,6 +436,10 @@
         }
     }
     @media (max-width: 500px) {
+		h1, .topMsg .hubIntro p{
+            font-size: 2.0em;
+			line-height: 1.4em;
+        }
         .map-icon {
             width: 90px;
             height: 135px;

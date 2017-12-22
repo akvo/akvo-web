@@ -7192,14 +7192,13 @@ a.helpIcon:hover {
       .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
         display: block; }
 @media (max-width: 768px) {
-  .fullBlack h1 {
-    font-size: 2.2em; }
-  .fullBlack .topMsg .hubIntro p {
+  .fullBlack h1, .fullBlack .topMsg .hubIntro p {
     font-size: 2.2em; }
   .fullBlack .topMsg .hubIntro {
     width: 90%; }
   .fullBlack .hubMarketing p {
-    font-size: 1.7em; }
+    font-size: 1.6em;
+    line-height: 1.3em; }
   .fullBlack .allHubBlock ul {
     padding: 0 10px 0; }
   .fullBlack .allHubBlock ul li a:hover {
@@ -7208,6 +7207,9 @@ a.helpIcon:hover {
     width: 100px;
     height: 120px; } }
 @media (max-width: 500px) {
+  .fullBlack h1, .fullBlack .topMsg .hubIntro p {
+    font-size: 2.0em;
+    line-height: 1.4em; }
   .fullBlack .map-icon {
     width: 90px;
     height: 135px; } }
