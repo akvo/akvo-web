@@ -48,6 +48,7 @@
 		}
 		
 		function time_ticker($el){
+			if( have_rows( $el ) ):	
 		?>	
 			<ul class='list-inline text-center' id="<?php _e($el);?>">
 				<?php while(have_rows($el)): the_row();?>
@@ -55,36 +56,26 @@
 					<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
 					<div class="timeTicker">            
 						<p class="timeSegment clear">
-						<?php 
-							$str = get_sub_field('count');
-							
-							$this->counter_css($str);
-							
-							/*
-							for( $i = 0; $i <= strlen($str); $i++ ) {
-								$char = substr( $str, $i, 1 );
-								if(is_numeric($char)){
-									_e("<span class='digit'>". $char ."</span>");
-								}
-								else{
-									_e("<span class='dot'>". $char ."</span>");
-								}
-							}
-							*/
-						?>
+						<?php $str = get_sub_field('count'); $this->counter_css($str); ?>
 						</p>
 					</div>
 				</li>
 				<?php endwhile;?>
 			</ul>
 			<?php	
+			endif;
 		}
 		
 		/* well padded content */
 		function inner_section($el){
-			_e("<div class='tab-inner-section' id='".$el."'>");
-			the_field($el);
-			_e("</div>");
+			
+			$section_content = get_field( $el );
+			
+			if( $section_content ){
+			
+				_e("<div class='tab-inner-section' id='".$el."'>".$section_content."</div>");
+				
+			}
 		}
 		
 		/* display an image with center aligned */
@@ -95,32 +86,39 @@
 			}
 		}
 		
-		/* TITLE BUTTON BEFORE THE TABS: AS OF NOW ONLY USED IN LUMEN TABS PAGE - NOT BEING USED ANYWHERE
-		function title_button(){
-			
-			if( get_field('title_button') ):?>
-			<div class="text-center"><a style="margin:0 auto;max-width:200px;" href="<?php the_field('title_button_link');?>" title="Watch the video" class="button"><?php the_field('title_button');?></a></div>
-			<?php endif;
-		}
-		
 		/* list of inline buttons stacked horizontally */
 		function buttons($el){
+			
+			if( have_rows( $el ) ): 
+			
+				$video_link = get_field( $el.'_video_link' );
 		?>
-			<div class='' id="<?php _e($el);?>">
+			<div id="<?php _e($el);?>">
 				<ul class="text-center list-inline">
-					<?php while(have_rows($el)): the_row();
+					<?php while( have_rows( $el ) ): the_row();
+						
 						$desc = get_sub_field('description');
+						
+						$type = get_sub_field('type');
+						
 					?>
 					<li>
 						<?php if($desc):?><h4><?php _e($desc);?></h4><br><?php endif;?>
-						<a href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
+						<a <?php if( $type ):?>data-behaviour="<?php _e( $type );?>"<?php endif;?> href="<?php the_sub_field('link');?>" title="<?php the_sub_field('text'); ?>" class="button"><?php the_sub_field('text'); ?></a>
 					</li>
 					<?php endwhile;?>
 				</ul>
+				<?php if( $video_link ): ?>
+				<div id="video" class="videoContainer wrapper">
+					<iframe width="600" height="300" frameborder="0" allowfullscreen="" mozallowfullscreen="" webkitallowfullscreen="" src="<?php _e( $video_link );?>"></iframe>
+				</div>
+				<?php endif;?>
 			</div>	
 			
 			
 		<?php
+			
+			endif;
 			
 		}
 		
@@ -144,9 +142,9 @@
 		
 		/* carousel of multiple images */
 		function carousel($el){
-			
+			if( have_rows($el) ):
 			_e("<ul class='bxslider'>");
-			while(have_rows($el)): the_row();?>
+			while( have_rows($el) ): the_row();?>
 				<li>
 					<div class="borderTop"></div>
 					<div class="image" style="background-image:url(<?php _e(get_sub_field('image'));?>);">
@@ -160,26 +158,46 @@
 				</li>
 			<?php endwhile;
 			_e("</ul>");
+			endif;
+		}
+		
+		function get_col_class( $cols ){
+			
+			if( $cols == 2 ){
+				return 'col-6';
+			}
+			
+			if( $cols == 3 ){
+				return 'col-4';
+			}
+			
+			if( $cols == 4 ){
+				return 'col-3';
+			}
+			
+			return 'col-12';
+			
 		}
 		
 		/* testimonials in either 2 cols or 3 cols */
 		function testimonials($el){
-			$cols = 'col-4';
-			$section = 'wrapper';
-			if(count(get_field($el)) == 2){
-				$section = 'page-section';
-				$cols = 'col-6';
-			}
-			elseif(count(get_field($el)) == 1){
-				$cols = 'col-12';
-			}
+			
+			if( have_rows($el) ):
+				
+				$col_class = $this->get_col_class( count(get_field( $el ) ) );
+				
+				$section = 'wrapper';
+				if(count(get_field($el)) == 2){
+					$section = 'page-section';
+				}
+				
 		?>
 			<div class="<?php _e($section);?> testimonials" id="<?php _e($el);?>">	
 				<h3 id='<?php _e($el.'_title');?>'><?php the_field($el.'_title');?></h3>
 				<div class="row">
-					<?php while(have_rows($el)): the_row();?>
-					<div class='<?php _e($cols);?> text-center'>
-						<?php $desc = get_sub_field('description');if($desc):?>
+					<?php while(have_rows($el)): the_row();$desc = get_sub_field('description');?>
+					<div class='<?php _e($col_class);?> text-center'>
+						<?php if($desc):?>
 						<a href="<?php the_sub_field('link');?>">
 							<img class='aligncenter' src="<?php the_sub_field('profile_picture');?>" />
 							<?php _e($desc);?>
@@ -192,10 +210,72 @@
 			<div class='clearfix'></div>
 			
 		<?php	
+			endif;
+		}
+		
+		
+		function services_list( $el ){
+			
+			if( have_rows($el) ):
+				
+				// get the number of columns selected in the dashboard
+				$col_class = $this->get_col_class( get_field( $el.'_columns' ) );
+				
+		?> 
+			<div id="<?php _e($el);?>" class="wrapper">
+				
+				<?php while( have_rows( $el ) ): the_row(); ?>
+				<div class="row">
+					
+					<?php while( have_rows('row_list') ): the_row(); ?>
+					<div class="<?php _e( $col_class );?>">
+						
+						<!-- ICON FROM FONTAWESOME -->
+						<?php $icon = get_sub_field('icon'); if( $icon ):?><h3 class='icon'><i class='fa <?php _e( $icon );?>'></i></h3><?php endif;?>
+						<!-- END OF ICON -->
+						
+						<div class="desc"><?php the_sub_field('content');?></div>
+						
+					</div>
+					<?php endwhile; ?>
+					
+				</div>
+				<?php endwhile; ?>
+				
+			</div>	
+		<?php
+		
+			endif;
+		}
+		
+		/* OVERVIEW COLUMNS NEW of 4 */
+		function overview_columns_new($el){
+			
+			// CHECK IF THE ELEMENT HAS DATA INPUT
+			if( have_rows( $el ) ):
+				
+				$col_class = $this->get_col_class( count(get_field( $el ) ) );
+		?>
+			<div class="row overview-columns" id="<?php _e( $el );?>">
+			
+				<?php while( have_rows( $el ) ): the_row();?>
+				
+				<div class='<?php _e( $col_class );?> <?php if( get_sub_field('colored_box') ){ _e("colored-box"); }?>'>
+					<?php the_sub_field('content');?>
+				</div>
+				
+				<?php endwhile;?>
+				
+			</div>
+		<?php
+			endif;
 		}
 		
 		/* OVERVIEW COLUMNS OF 4 */
 		function overview_columns($el){
+			
+			// CHECK IF THE ELEMENT HAS DATA INPUT
+			if( have_rows( $el ) ):
 		?>
 			<div class='row' id="<?php _e($el);?>">
 				<?php while(have_rows($el)): the_row();?>
@@ -205,7 +285,8 @@
 				</div>
 				<?php endwhile;?>
 			</div>
-		<?php	
+		<?php
+			endif;
 		}
 		
 		/* OVERVIEW COLUMNS OF 3 */
