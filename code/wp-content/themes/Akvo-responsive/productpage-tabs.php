@@ -35,6 +35,7 @@
 			'tagline' => 'feat_tag',
 			'elements' => array(
 				'feat_img' 		=> 'cover',
+				'feat_intro' 	=> 'inner_section',
 				'feat_rows' 	=> 'services_list'
 			)
 		),
@@ -63,6 +64,11 @@
 		color: #FFF !important;
 	}
 	
+	.tabsProduct .shallow-banner{
+		background-size: cover;
+		min-height: 200;
+	}
+	
 	.tabsProduct h3.icon{
 		text-align: left;
 	}
@@ -89,14 +95,30 @@
 	}
 	/* BLUE COLOR SCHEMES */
 	
+	/* ORANGE COLOR SCHEMES */
+	.caddisflyProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
+		border-color: rgba(222, 137, 41, 0.8);
+	}
+	.caddisflyProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child a{
+		color: rgba(222, 137, 41, 0.8);
+	}
+	/* ORANGE COLOR SCHEMES */
+	
 	/* OVERVIEW TAB */
-	#over_cols{
+	.tabsProduct #over_cols{
 		margin-top: 3em;
 	}
-	#over_cols h3{
+	.tabsProduct #over_cols h3{
 		margin: 1.25em auto 1em;
 	}
-	.colored-box{
+	
+	/* IMAGES WITHIN THE OVERVIEW COLUMNS */
+	@media( max-width: 768px ){
+		.tabsProduct #over_cols img.aligncenter{
+			max-width: 300px;
+		}
+	}
+	.tabsProduct .colored-box{
 		border-radius: 15px;
 		background: rgba(0, 0, 0, 0.2);
 	}

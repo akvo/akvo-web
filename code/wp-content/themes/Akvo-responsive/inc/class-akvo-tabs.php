@@ -256,11 +256,15 @@
 					
 					<div class="<?php _e( $col_class );?>">
 						
-						<!-- ICON FROM FONTAWESOME -->
-						<?php $icon = get_sub_field('icon'); if( $icon ):?><h3 class='icon'><i class='fa <?php _e( $icon );?>'></i></h3><?php endif;?>
-						<!-- END OF ICON -->
 						
-						<div class="narrow-col"><?php the_sub_field('content');?></div>
+						<div class="narrow-col">
+							
+							<!-- ICON FROM FONTAWESOME -->
+							<?php $icon = get_sub_field('icon'); if( $icon ):?><h3 class='icon'><i class='fa <?php _e( $icon );?>'></i></h3><?php endif;?>
+							<!-- END OF ICON -->
+						
+							<?php the_sub_field('content');?>
+						</div>
 						
 					</div>
 					<?php endwhile; ?>
