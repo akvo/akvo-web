@@ -65,7 +65,10 @@
 			<ul class='list-inline text-center' id="<?php _e($el);?>">
 				<?php while(have_rows($el)): the_row();?>
 				<li>
-					<h4><a href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></h4>
+					<?php
+						$link = get_sub_field('link');
+					?>
+					<h4><?php if( $link ):?><a href="<?php _e( $link );?>"><?php endif;?><?php the_sub_field('text');?><?php if( $link ):?></a><?php endif;?></h4>
 					<div class="timeTicker">            
 						<p class="timeSegment clear">
 						<?php $str = get_sub_field('count'); $this->counter_css($str); ?>
@@ -257,7 +260,7 @@
 						<?php $icon = get_sub_field('icon'); if( $icon ):?><h3 class='icon'><i class='fa <?php _e( $icon );?>'></i></h3><?php endif;?>
 						<!-- END OF ICON -->
 						
-						<div class="desc"><?php the_sub_field('content');?></div>
+						<div class="narrow-col"><?php the_sub_field('content');?></div>
 						
 					</div>
 					<?php endwhile; ?>

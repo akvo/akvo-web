@@ -59,9 +59,35 @@
 	?>
 </div>
 <style>
-	.akvo-tabs .akvo-tab.active a[href]{
+	.tabsProduct .akvo-tabs .akvo-tab.active a[href]{
 		color: #FFF !important;
 	}
+	
+	.tabsProduct h3.icon{
+		text-align: left;
+	}
+	
+	.tabsProduct .narrow-col{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		min-height: 180px;
+	}
+	
+	/* BLUE COLOR SCHEMES */
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li{
+		border: #72CDFF solid 1px;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
+		border-color: #72CDFF;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child a{
+		color: #72CDFF;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li.active, .rsrProduct.tabsProduct a[href].button{
+		background: #72CDFF;
+	}
+	/* BLUE COLOR SCHEMES */
 	
 	/* OVERVIEW TAB */
 	#over_cols{
@@ -105,20 +131,12 @@
 	.tabsProduct #serv_test{
 		margin-top: 6em;
 	}
-	
 	#serv_list strong{
 		color: #2c2a74;
 		font-size: 1.2em;
 		font-weight: normal;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		line-height: 1.25em;
-	}
-	
-	#serv_list .desc{
-		max-width: 300px;
-		margin-left: auto;
-		margin-right: auto;
-		min-height: 180px;
 	}
 	
 	/* SERVICES TAB */
