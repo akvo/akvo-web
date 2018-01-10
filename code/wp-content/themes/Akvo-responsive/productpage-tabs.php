@@ -10,43 +10,42 @@
 	$tabs = array(
 		'overview' => array(
 			'title' => 'overview',   			// tab title, 2nd field is the acf id
-			'tagline' => 'overview_tagline',  	// tagline for the particular tab
+			'tagline' => 'over_tag',  			// tagline for the particular tab
 			'elements' => array(
-				'overview_carousel' 	=> 'carousel',
-				'overview_columns' 		=> 'overview_columns_new',
-				'overview_buttons' 		=> 'buttons',
-				'overview_testimonials' => 'testimonials',
-				'overview_counter' 		=> 'time_ticker'
+				'over_images' 	=> 'carousel',
+				'over_cols' 	=> 'overview_columns',
+				'over_btns' 	=> 'buttons',
+				'over_test' 	=> 'testimonials',
+				'over_count'	=> 'time_ticker'
 			)
 		),
 		'services' => array(
 			'title' => 'services',
-			'tagline' => 'services_tagline',
+			'tagline' => 'serv_tag',
 			'elements' => array(
-				'services_cover' 		=> 'page_section',
-				'services_intro' 		=> 'inner_section',
-				'services_list' 		=> 'services_list',
-				'services_buttons' 		=> 'buttons',
-				'services_testimonials' => 'testimonials'
+				'serv_img' 			=> 'cover',
+				'serv_intro' 		=> 'inner_section',
+				'serv_list' 		=> 'services_list',
+				'serv_btns' 		=> 'buttons',
+				'serv_test' 		=> 'testimonials'
 			)
 		),
 		'features' => array(
 			'title' => 'features',
-			'tagline' => 'features_tagline',
+			'tagline' => 'feat_tag',
 			'elements' => array(
-				'features_cover' 	=> 'page_section',
-				'features_rows' 	=> 'services_list'
+				'feat_img' 		=> 'cover',
+				'feat_rows' 	=> 'services_list'
 			)
 		),
 		'pricing' => array(
 			'title' => 'pricing',
-			'tagline' => 'pricing_tagline',
+			'tagline' => 'pric_tag',
 			'elements' => array(
-				'pricing_cover' 	=> 'page_section',
-				'pricing_image' 	=> 'image',
-				'pricing_intro' 	=> 'inner_section',
-				'pricing_buttons' 	=> 'buttons',
-				'pricing_ending' 	=> 'inner_section'
+				'pric_img' 		=> 'cover',
+				'pric_intro' 	=> 'inner_section',
+				'pric_btns' 	=> 'buttons',
+				'pric_ending' 	=> 'inner_section'
 				
 			)
 		)
@@ -60,21 +59,68 @@
 	?>
 </div>
 <style>
-	.overview-columns h3{
+	.akvo-tabs .akvo-tab.active a[href]{
+		color: #FFF !important;
+	}
+	
+	/* OVERVIEW TAB */
+	#over_cols{
+		margin-top: 3em;
+	}
+	#over_cols h3{
 		margin: 1.25em auto 1em;
 	}
-	.overview-columns .colored-box{
+	.colored-box{
 		border-radius: 15px;
 		background: rgba(0, 0, 0, 0.2);
 	}
-	.caddisflyProduct .overview-columns .colored-box, .flowProduct .overview-columns .colored-box{
+	.caddisflyProduct .colored-box, .flowProduct .colored-box{
 		background: rgba(222, 137, 41, 0.2);
 	}
-	.lumenProduct .overview-columns .colored-box{
+	.lumenProduct .colored-box{
 		background: rgba(116, 182, 49, 0.5);
 	}
-	.rsrProduct .overview-columns .colored-box{
+	.rsrProduct .colored-box{
 		background: rgba(114, 205, 255, 0.2);
 	}
+	
+	.tabsProduct #over_test{
+		margin-top: 8em;
+	}
+	.tabsProduct #over_btns{
+		margin-top: 3em;
+	}
+	.tabsProduct #over_count{
+		margin-top: 6em;
+	}
+	.tabsProduct #over_count h4 a[href]{
+		color: inherit;
+	}
+	/* OVERVIEW TAB */
+	
+	/* SERVICES TAB */
+	.tabsProduct #serv_list, .tabsProduct #serv_btns{
+		margin-top: 4em;
+	}
+	.tabsProduct #serv_test{
+		margin-top: 6em;
+	}
+	
+	#serv_list strong{
+		color: #2c2a74;
+		font-size: 1.2em;
+		font-weight: normal;
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+		line-height: 1.25em;
+	}
+	
+	#serv_list .desc{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		min-height: 180px;
+	}
+	
+	/* SERVICES TAB */
 </style>
 <?php get_footer(); ?>

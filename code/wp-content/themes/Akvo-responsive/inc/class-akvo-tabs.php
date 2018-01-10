@@ -1,6 +1,18 @@
 <?php
 	class akvoTab{
 		
+		// SHALLOW IMAGE - NEW
+		function cover($field){
+			$img_src = get_field( $field );
+			if( $img_src ):
+		?>
+			<section>
+				<div class="shallow-banner" style="background-image:url(<?php _e( $img_src );?>);"></div>
+			</section>
+		<?php
+			endif;
+		}
+		
 		/* text with shallow or featured image on top */
 		function page_section($field, $shallow_banner = false){
 			$row_i = 0;
@@ -199,7 +211,10 @@
 					<div class='<?php _e($col_class);?> text-center'>
 						<?php if($desc):?>
 						<a href="<?php the_sub_field('link');?>">
-							<img class='aligncenter' src="<?php the_sub_field('profile_picture');?>" />
+							<?php $profile = get_sub_field('profile_picture'); if($profile):?>
+							<img class='aligncenter' src="<?php _e( $profile );?>" />
+							<?php endif;?>
+							
 							<?php _e($desc);?>
 						</a>
 						<?php endif;?>
@@ -213,13 +228,11 @@
 			endif;
 		}
 		
-		
 		function services_list( $el ){
 			
 			if( have_rows($el) ):
 				
-				// get the number of columns selected in the dashboard
-				$col_class = $this->get_col_class( get_field( $el.'_columns' ) );
+				
 				
 		?> 
 			<div id="<?php _e($el);?>" class="wrapper">
@@ -227,7 +240,17 @@
 				<?php while( have_rows( $el ) ): the_row(); ?>
 				<div class="row">
 					
+					<?php 
+						// get the number of columns selected in the dashboard
+						$col_class = $this->get_col_class( count( get_sub_field( 'row_list' ) ) );
+						
+						
+					?>
+					
 					<?php while( have_rows('row_list') ): the_row(); ?>
+					
+					
+					
 					<div class="<?php _e( $col_class );?>">
 						
 						<!-- ICON FROM FONTAWESOME -->
@@ -248,7 +271,7 @@
 			endif;
 		}
 		
-		/* OVERVIEW COLUMNS NEW of 4 */
+		/* OVERVIEW COLUMNS NEW of 4 *
 		function overview_columns_new($el){
 			
 			// CHECK IF THE ELEMENT HAS DATA INPUT
@@ -271,16 +294,21 @@
 			endif;
 		}
 		
-		/* OVERVIEW COLUMNS OF 4 */
+		/* OVERVIEW COLUMNS */
 		function overview_columns($el){
 			
 			// CHECK IF THE ELEMENT HAS DATA INPUT
 			if( have_rows( $el ) ):
+				$col_class = $this->get_col_class( count( get_field( $el ) ) );
 		?>
 			<div class='row' id="<?php _e($el);?>">
 				<?php while(have_rows($el)): the_row();?>
-				<div class='col-3 <?php if(get_sub_field('orange_box')){ _e("orange-box");}?>'>
-					<img class='aligncenter' src="<?php the_sub_field('icon');?>" />
+				<div class='<?php _e( $col_class );?> <?php if(get_sub_field('orange_box')){ _e("orange-box");}?> <?php if( get_sub_field('box') ){ _e("colored-box"); }?>'>
+					
+					<?php $icon = get_sub_field('icon'); if( $icon ):?>
+					<img class='aligncenter' src="<?php _e( $icon );?>" />
+					<?php endif;?>
+					
 					<?php the_sub_field('content');?>
 				</div>
 				<?php endwhile;?>
