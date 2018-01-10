@@ -35,6 +35,7 @@
 			'tagline' => 'feat_tag',
 			'elements' => array(
 				'feat_img' 		=> 'cover',
+				'feat_intro' 	=> 'inner_section',
 				'feat_rows' 	=> 'services_list'
 			)
 		),
@@ -59,18 +60,65 @@
 	?>
 </div>
 <style>
-	.akvo-tabs .akvo-tab.active a[href]{
+	.tabsProduct .akvo-tabs .akvo-tab.active a[href]{
 		color: #FFF !important;
 	}
 	
+	.tabsProduct .shallow-banner{
+		background-size: cover;
+		min-height: 200;
+	}
+	
+	.tabsProduct h3.icon{
+		text-align: left;
+	}
+	
+	.tabsProduct .narrow-col{
+		max-width: 300px;
+		margin-left: auto;
+		margin-right: auto;
+		min-height: 180px;
+	}
+	
+	/* BLUE COLOR SCHEMES */
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li{
+		border: #72CDFF solid 1px;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
+		border-color: #72CDFF;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child a{
+		color: #72CDFF;
+	}
+	.rsrProduct.tabsProduct [data-behaviour~=akvo-tabs] li.active, .rsrProduct.tabsProduct a[href].button{
+		background: #72CDFF;
+	}
+	/* BLUE COLOR SCHEMES */
+	
+	/* ORANGE COLOR SCHEMES */
+	.caddisflyProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child{
+		border-color: rgba(222, 137, 41, 0.8);
+	}
+	.caddisflyProduct.tabsProduct [data-behaviour~=akvo-tabs] li:last-child a{
+		color: rgba(222, 137, 41, 0.8);
+	}
+	/* ORANGE COLOR SCHEMES */
+	
 	/* OVERVIEW TAB */
-	#over_cols{
+	.tabsProduct #over_cols{
 		margin-top: 3em;
 	}
-	#over_cols h3{
+	.tabsProduct #over_cols h3{
 		margin: 1.25em auto 1em;
 	}
-	.colored-box{
+	
+	/* IMAGES WITHIN THE OVERVIEW COLUMNS */
+	@media( max-width: 768px ){
+		.tabsProduct #over_cols img.aligncenter{
+			max-width: 300px;
+		}
+	}
+	.tabsProduct .colored-box{
 		border-radius: 15px;
 		background: rgba(0, 0, 0, 0.2);
 	}
@@ -105,20 +153,12 @@
 	.tabsProduct #serv_test{
 		margin-top: 6em;
 	}
-	
 	#serv_list strong{
 		color: #2c2a74;
 		font-size: 1.2em;
 		font-weight: normal;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		line-height: 1.25em;
-	}
-	
-	#serv_list .desc{
-		max-width: 300px;
-		margin-left: auto;
-		margin-right: auto;
-		min-height: 180px;
 	}
 	
 	/* SERVICES TAB */

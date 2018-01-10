@@ -21,7 +21,7 @@
       		<li><a href="#contractorsGroup" class="oStaff">Extended team</a></li>
     	</ul>
   	</nav>
-  	<p>Are you looking for our <a href="../foundations/" class="board">Board Members</a>?</p>
+  	<p>Are you looking for our <a href="../organisations/" class="board">Board Members</a>?</p>
   	
   	<section class="wrapper">
   		<div id="partnershipGroup">
