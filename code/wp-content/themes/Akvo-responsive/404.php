@@ -6,7 +6,7 @@
 		</header>
 		<section class="post-content twoColumns floats-in">
 			<div>
-				<img src="<?php bloginfo('template_directory'); ?>/images/Surprise-polaroid-L.png" alt="Products"  style="max-height:450px;margin-left:20%;"/>
+				<img class="aligncenter" src="<?php bloginfo('template_directory'); ?>/images/Surprise-polaroid-L.png" alt="Products"  style="max-height:450px;"/>
 			</div>
 			<div style="margin-top:2em;">
 				<p class="strongType">
