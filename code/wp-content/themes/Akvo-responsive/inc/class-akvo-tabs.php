@@ -70,9 +70,7 @@
 					?>
 					<h4><?php if( $link ):?><a href="<?php _e( $link );?>"><?php endif;?><?php the_sub_field('text');?><?php if( $link ):?></a><?php endif;?></h4>
 					<div class="timeTicker">            
-						<p class="timeSegment clear">
-						<?php $str = get_sub_field('count'); $this->counter_css($str); ?>
-						</p>
+						<p class="timeSegment clear"><?php $str = get_sub_field('count'); $this->counter_css($str); ?></p>
 					</div>
 				</li>
 				<?php endwhile;?>
@@ -176,19 +174,14 @@
 			endif;
 		}
 		
+		/* GIVEN THE NUMBER OF COLUMNS IN THE ROW, RETURN THE COLUMN CLASS THAT WOULD ADJUST TO THE ROW */
 		function get_col_class( $cols ){
 			
-			if( $cols == 2 ){
-				return 'col-6';
-			}
+			if( $cols == 2 ){ return 'col-6';}
 			
-			if( $cols == 3 ){
-				return 'col-4';
-			}
+			if( $cols == 3 ){ return 'col-4';}
 			
-			if( $cols == 4 ){
-				return 'col-3';
-			}
+			if( $cols == 4 ){ return 'col-3';}
 			
 			return 'col-12';
 			
@@ -278,28 +271,7 @@
 			endif;
 		}
 		
-		/* OVERVIEW COLUMNS NEW of 4 *
-		function overview_columns_new($el){
-			
-			// CHECK IF THE ELEMENT HAS DATA INPUT
-			if( have_rows( $el ) ):
-				
-				$col_class = $this->get_col_class( count(get_field( $el ) ) );
-		?>
-			<div class="row overview-columns" id="<?php _e( $el );?>">
-			
-				<?php while( have_rows( $el ) ): the_row();?>
-				
-				<div class='<?php _e( $col_class );?> <?php if( get_sub_field('colored_box') ){ _e("colored-box"); }?>'>
-					<?php the_sub_field('content');?>
-				</div>
-				
-				<?php endwhile;?>
-				
-			</div>
-		<?php
-			endif;
-		}
+		
 		
 		/* OVERVIEW COLUMNS */
 		function overview_columns($el){
@@ -324,7 +296,7 @@
 			endif;
 		}
 		
-		/* OVERVIEW COLUMNS OF 3 */
+		/* OVERVIEW COLUMNS OF 3 - can be removed once all the product pages are standardised */
 		function overview_columns3($el){
 			_e("<div class='sub-section' id='".$el."'>");
 			_e("<div class='threeColumns wrapper'>");
