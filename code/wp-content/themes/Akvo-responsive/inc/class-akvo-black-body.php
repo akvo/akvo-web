@@ -87,38 +87,54 @@
 		}
 		
 		function hubs_list( $el ){
-		?>	
-			<div class="wrapper">
-				<h1>Looking for one of our other offices?</h1>
-				<ul class="list-scroll">
-					<li class="EU">
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_Europe.png');">Netherlands, Amsterdam</a>
-						<div class="helloMsg"><h2>Welkom</h2></div>
-					</li>
-					<li class="WA">						
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_WestAfrica.png');">Mali, Bamako</a>
-						<div class="helloMsg"><h2>Bienvenue</h2></div>
-					</li>
-					<li class="EA">						
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_EastAfrica.png');">Kenya, Nairobi</a>
-						<div class="helloMsg"><h2>Karibu</h2></div>
-					</li>
-					<li class="IN">							
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_SEAsia_SEAP.png');">Indonesia, Bali</a>
-						<div class="helloMsg"><h2>Selamat datang</h2></div>
-					</li>
-					<li class="SA">							
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_SouthAsia.png');">India, Delhi</a>
-						<div class="helloMsg"><h2>Welcome</h2></div>
-					</li>
-					<li class="US">							
-						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_Americas.png');">USA, Washington</a>
-						<div class="helloMsg"><h2>Welcome</h2></div>
-					</li>
-				</ul>
-			</div>
+			$hubs = array(
+				array(
+					'class'		=> 'EU',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Europe.png',
+					'text'		=> 'Netherlands, Amsterdam',
+					'helloMsg'	=> 'Welkom'
+				),
+				array(
+					'class'		=> 'WA',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_WestAfrica.png',
+					'text'		=> 'Mali, Bamako',
+					'helloMsg'	=> 'Bienvenue'
+				),
+				array(
+					'class'		=> 'EA',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_EastAfrica.png',
+					'text'		=> 'Kenya, Nairobi',
+					'helloMsg'	=> 'Karibu'
+				),
+				array(
+					'class'		=> 'IN',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SEAsia_SEAP.png',
+					'text'		=> 'Indonesia, Bali',
+					'helloMsg'	=> 'Selamat datang'
+				),
+				array(
+					'class'		=> 'SA',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SouthAsia.png',
+					'text'		=> 'India, Delhi',
+					'helloMsg'	=> 'Welcome'
+				),
+				array(
+					'class'		=> 'US',
+					'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Americas.png',
+					'text'		=> 'USA, Washington',
+					'helloMsg'	=> 'Welcome'
+				),
+			);
+			_e("<h1>Looking for one of our other offices?</h1>");
+			_e('<ul class="list-scroll">');
+			foreach( $hubs as $hub ){
+				_e('<li class="'.$hub['class'].'">');
+				_e('<a href="#" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
+				_e('<div class="helloMsg"><h2>'.$hub['helloMsg'].'</h2></div>');
+				_e('</li>');
+			}
+			_e('</ul>');
 			
-		<?php	
 			
 		}
 		

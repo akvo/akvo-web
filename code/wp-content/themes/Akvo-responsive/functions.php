@@ -190,7 +190,7 @@ function is_akvo_full_black_body(){
 	global $post;
 	$template_slug = get_page_template_slug( $post->ID );
 		
-	if( 'regionalPage.php' == $template_slug || 'homepage-2017.php' == $template_slug ){
+	if( 'regionalPage.php' == $template_slug || 'homepage-2018.php' == $template_slug ){
 		return true;
 	}
 	

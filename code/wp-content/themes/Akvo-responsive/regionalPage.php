@@ -45,7 +45,8 @@
 		),
 		'hubs_list'	=> array(
 			'class'	=> 'allHubBlock floats-in',
-			'fn'	=> 'hubs_list'
+			'fn'	=> 'hubs_list',
+			'wrapper'	=> true
 		)
 	);
 ?>
