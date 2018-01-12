@@ -61,4 +61,4 @@
 					<a href="/blog/open-data-content-and-software-at-akvo/"><h2>We love Open Source!</h2></a> 
 				</div>
 			</header>
-			<?php if( !is_akvo_regional_page() ):?><div class="breadCrumb"><?php the_breadcrumb() ?></div><?php endif;?>
+			<?php if( !is_akvo_full_black_body() ):?><div class="breadCrumb"><?php the_breadcrumb() ?></div><?php endif;?>

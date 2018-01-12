@@ -8,6 +8,7 @@ $includes_path = get_template_directory() . '/inc/';
 require_once($includes_path . 'acf-functions.php');
 require_once($includes_path . 'custom-post-types.php');
 require_once($includes_path . 'class-akvo-tabs.php');
+require_once($includes_path . 'class-akvo-black-body.php');
 
 	
 	/* ENQUEUE STYLES AND SCRIPTS */
@@ -185,11 +186,11 @@ function remove_more_jump($link)
 add_filter('the_content_more_link', 'remove_more_jump');
 
 
-function is_akvo_regional_page(){
+function is_akvo_full_black_body(){
 	global $post;
 	$template_slug = get_page_template_slug( $post->ID );
 		
-	if( 'regionalPage.php' == $template_slug ){
+	if( 'regionalPage.php' == $template_slug || 'homepage-2017.php' == $template_slug ){
 		return true;
 	}
 	
@@ -210,7 +211,7 @@ function akvo_bodyclass() {
     } elseif (is_page()) {
         $page = $wp_query->query_vars["pagename"] . ' Page';
 		
-		if( is_akvo_regional_page() ){
+		if( is_akvo_full_black_body() ){
 			$page = "fullBlack";
 		}
 		
