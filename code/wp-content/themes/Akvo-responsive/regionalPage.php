@@ -71,5 +71,8 @@
 		background-image:url('<?php the_sub_field('contact_image_hover');?>');
 	}
 	<?php endwhile;?>
+	.fullBlack .allHubBlock ul li.IN:hover > .helloMsg{
+		left: -40px;
+	}
 </style>
 <?php get_footer();?>

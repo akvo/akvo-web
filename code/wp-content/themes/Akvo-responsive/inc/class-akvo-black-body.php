@@ -105,7 +105,7 @@
 					</li>
 					<li class="IN">							
 						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_SEAsia_SEAP.png');">Indonesia, Bali</a>
-						<div class="helloMsg"><h2>SELAMAT DATANG</h2></div>
+						<div class="helloMsg"><h2>Selamat datang</h2></div>
 					</li>
 					<li class="SA">							
 						<a href="#" style="background-image:url('<?php bloginfo('template_url');?>/images/location-hexagons_SouthAsia.png');">India, Delhi</a>
