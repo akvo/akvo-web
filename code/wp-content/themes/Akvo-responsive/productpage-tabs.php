@@ -67,6 +67,7 @@
 	.tabsProduct .shallow-banner{
 		background-size: cover;
 		min-height: 200;
+		background-position: center;
 	}
 	
 	.tabsProduct h3.icon{
