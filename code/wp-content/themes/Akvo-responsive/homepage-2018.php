@@ -14,7 +14,7 @@
 		'funnel'	=> array(
 			'id'				=> 'assessFunel',
 			'class'				=> 'assessFunel',
-			'fn'				=> 'funnel_section',
+			'fn'				=> 'content_section',
 			'next_link'			=> '#vidBlock',
 			'next_link_class'	=> 'nxtSection'
 		),
@@ -73,10 +73,12 @@ $('[data-behaviour~=fnl-nxt-btn]').each( function(){
 		ev.preventDefault();
 		
 		var next_section = $(btn.attr('href'));
-		var prev_section = btn.closest('section.funelContainer');
+		//var prev_section = btn.closest('section.funelContainer');
+		
+		$('section.funelContainer').addClass('hidden');
 		
 		// HIDE THE CURRENT SECTION
-		prev_section.addClass('hidden');
+		//prev_section.addClass('hidden');
 		
 		// SHOW THE NEXT SECTION
 		next_section.removeClass('hidden');

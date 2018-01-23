@@ -1,5 +1,11 @@
 <?php
 	
+	class AKVO_POST_TYPE{
+		
+		
+		
+	}
+	
 	function akvo_create_post_type() {
 		
   		register_post_type( 'case-study',

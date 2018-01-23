@@ -8,6 +8,7 @@
 	$includes_path = get_template_directory() . '/inc/';
 	require_once($includes_path . 'acf-functions.php');
 	//require_once($includes_path . 'custom-post-types.php');  /* CASE STUDIES - THAT ARE NO LONGER USED */
+	require_once($includes_path . 'class-akvo-post-type.php');  
 	require_once($includes_path . 'class-akvo-tabs.php');
 	require_once($includes_path . 'class-akvo-black-body.php');
 
@@ -433,6 +434,9 @@
 
 		// Add *.AI files to Media upload
 		$existing_mimes['ai'] = 'application/postscript';
+		
+		// Add *.svg files to Media upload
+		$existing_mimes['svg'] = 'image/svg+xml';
 
 		return $existing_mimes;
 	});
@@ -500,5 +504,32 @@
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	
 	
-	
+	add_shortcode('funnel', function( $atts ){
+		ob_start();
+		
+		$atts = shortcode_atts( array('id' => 0), $atts, 'funnel' );
+		
+		
+		
+		$query = new WP_Query( array(
+			'post_type'	=> 'funnel',
+			'post__in'	=> array( $atts['id'] )
+		) );
+			
+		if( $query->have_posts() ){
+			
+			while( $query->have_posts() ){
+				$query->the_post();
+				
+				include("inc/funnel.php");
+				
+				
+			}
+			
+			wp_reset_postdata();
+			
+		}
+		
+		return ob_get_contents();
+	});
 	
