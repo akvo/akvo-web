@@ -17,7 +17,7 @@
 	add_action('wp_enqueue_scripts', function(){
 		
 		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), null, true);
+		wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), null);
 		
 		wp_deregister_script('jquery-ui');
 		wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), null, true);
@@ -219,7 +219,7 @@
 			
 			/* CHECK FOR NEW TEMPLATE */
 			if( is_akvo_full_black_body() ){
-				$page = "fullBlack";
+				$page .= " fullBlack";
 			}
 			
 		}
@@ -238,6 +238,8 @@
 		return 20;
 	}, 999 );
 
+	
+	
 	
 	//WILL add CATEGORY NAME AS CLASS TO THE ELEMENT
 	function the_category_unlinked($separator = ' ') {

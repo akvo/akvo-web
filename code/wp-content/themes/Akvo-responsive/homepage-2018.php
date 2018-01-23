@@ -41,6 +41,7 @@
 		$akvo_page = new akvoBlackBody;
 		$akvo_page->display_sections( $sections );
 	?>
+	<?php //echo do_shortcode('[gravityform id="1" title="true" description="true" ajax="true"]');?>
 </div>
 <?php get_footer();?>
 <style>
@@ -54,6 +55,10 @@
 	}
 </style>
 <script>
+
+
+
+
 $("a.nxtSection[href^='#']").click(function(e) {
 	e.preventDefault();
 	
@@ -61,9 +66,9 @@ $("a.nxtSection[href^='#']").click(function(e) {
 
 	$("body, html").animate({
 		scrollTop: position
-	} /* speed */ );
+	}  );
 });
-//# sourceURL=pen.js
+
 
 
 $('[data-behaviour~=fnl-nxt-btn]').each( function(){
@@ -73,17 +78,28 @@ $('[data-behaviour~=fnl-nxt-btn]').each( function(){
 		ev.preventDefault();
 		
 		var next_section = $(btn.attr('href'));
-		//var prev_section = btn.closest('section.funelContainer');
 		
+		// HIDE ALL FUNNEL SECTIONS
 		$('section.funelContainer').addClass('hidden');
 		
-		// HIDE THE CURRENT SECTION
-		//prev_section.addClass('hidden');
-		
-		// SHOW THE NEXT SECTION
+		// SHOW THE NEXT SECTION ONLY
 		next_section.removeClass('hidden');
+		
+		var question = btn.attr('data-q');
+		if( question ){
+			
+			var ans = btn.html();
+			
+			var textarea = $('#funnel-form .funnel-msg textarea');
+			
+			var text = textarea.val() + question + " " + ans + "\r\n";
+			
+			textarea.val( text );
+			
+		}
 		
 	});
 	
 });
+
 </script>
