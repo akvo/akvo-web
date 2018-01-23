@@ -1,6 +1,14 @@
 <?php
 	class akvoBlackBody{
 		
+		function get_templates(){
+			return array('regionalPage.php', 'homepage-2018.php');
+		}
+		
+		function funnel_section(){
+			include("funnel.php");
+		}
+		
 		function projects( $el ){
 			if( have_rows( $el ) ){
 				_e('<ul class="list-inline text-center">');

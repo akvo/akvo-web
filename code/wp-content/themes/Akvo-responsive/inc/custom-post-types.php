@@ -1,5 +1,11 @@
 <?php
-	/*
+	
+	class AKVO_POST_TYPE{
+		
+		
+		
+	}
+	
 	function akvo_create_post_type() {
 		
   		register_post_type( 'case-study',
@@ -81,7 +87,7 @@
 	 * Prints the box content.
 	 *
 	 * @param WP_Post $post The object for the current post/page.
-	 *
+	 */
 	function casestudy_meta_box_callback( $post ) {
 
 		// Add a nonce field so we can check for it later.
@@ -99,7 +105,7 @@
 	 * When the post is saved, saves our custom data.
 	 *
 	 * @param int $post_id The ID of the post being saved.
-	 *
+	 */
 	 function casestudy_save_meta_box_data( $post_id ) {
 
 		if ( ! isset( $_POST['casestudy_meta_box_nonce'] ) ) {return;}
@@ -122,4 +128,4 @@
 	 
 	}
 	add_action( 'save_post', 'casestudy_save_meta_box_data' );
-	*/
+	

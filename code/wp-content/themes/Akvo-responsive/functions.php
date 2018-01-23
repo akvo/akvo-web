@@ -1,21 +1,23 @@
 <?php
-/*
-	Custom functions designed specifically for Akvo Responsive theme.
-*/
+	
+	/*
+		Custom functions designed specifically for Akvo Responsive theme.
+	*/
 
-// Loads advancedcustomfields fields required for FAQ and pricing page
-$includes_path = get_template_directory() . '/inc/';
-require_once($includes_path . 'acf-functions.php');
-require_once($includes_path . 'custom-post-types.php');
-require_once($includes_path . 'class-akvo-tabs.php');
-require_once($includes_path . 'class-akvo-black-body.php');
+	// Loads advancedcustomfields fields required for FAQ and pricing page
+	$includes_path = get_template_directory() . '/inc/';
+	require_once($includes_path . 'acf-functions.php');
+	//require_once($includes_path . 'custom-post-types.php');  /* CASE STUDIES - THAT ARE NO LONGER USED */
+	require_once($includes_path . 'class-akvo-post-type.php');  
+	require_once($includes_path . 'class-akvo-tabs.php');
+	require_once($includes_path . 'class-akvo-black-body.php');
 
 	
 	/* ENQUEUE STYLES AND SCRIPTS */
 	add_action('wp_enqueue_scripts', function(){
 		
 		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), null, true);
+		wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), null);
 		
 		wp_deregister_script('jquery-ui');
 		wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), null, true);
@@ -31,9 +33,11 @@ require_once($includes_path . 'class-akvo-black-body.php');
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.3.1' );
+		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.3.2' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
 		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
+		
+		wp_deregister_script('wp-embed');
 	});
 	
 	
@@ -58,273 +62,262 @@ require_once($includes_path . 'class-akvo-black-body.php');
 		return $json;
 	}
 
-add_theme_support( 'post-thumbnails' );
-register_nav_menus(array(
-    'header-menu' => 'Header Menu',
-	'footer-menu' => 'Footer Menu'
-));
-/**
- * Setting up custom sidebars
- *
- */
-if (function_exists('register_sidebar')) {
-    register_sidebar(array(
-        'name' => 'Main Sidebar',
-        'id' => 'main',
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="wtitle">',
-        'after_title' => '</h3>'
-    ));
-    
-    register_sidebar(array(
-        'name' => 'Responsive Sidebar',
-        'id' => 'responsive',
-        'before_widget' => '<div class="widget">',
-        'after_widget' => '</div>',
-        'before_title' => '<h3 class="wtitle">',
-        'after_title' => '</h3>'
-    ));
-    register_sidebar(array(
-        'name' => 'Homepage box Sidebar',
-        'id' => 'sidebar-homepagebox-1',
-        'before_widget' => '',
-        'after_widget' => '',
-        'before_title' => '<h3 class="wtitle">',
-        'after_title' => '</h3>'
-    ));
-    
-}
-function new_excerpt_more($more)
-{
-    global $post;
-    return '... <a href="' . get_permalink($post->ID) . '" class="moreLink">Read more</a>';
-}
-add_filter('excerpt_more', 'new_excerpt_more');
+	add_theme_support( 'post-thumbnails' );
+	register_nav_menus(array(
+		'header-menu' => 'Header Menu',
+		'footer-menu' => 'Footer Menu'
+	));
 
-
-function the_breadcrumb(){
-	global $post_type;
-    $sep = '   &rsaquo;  ';
-    if (!is_front_page()) {
-        echo '<div class="breadcrumbs wrapper">';
-        echo '<a href="';
-        echo get_option('home');
-        echo '">';
-        bloginfo('name');
-        echo '</a>' . $sep;
-        if (is_category() || is_single()) {
-            the_category(', ');
-        } elseif (is_archive() || is_single()) {
-            if (is_day()) {
-                printf(__('%s', 'text_domain'), get_the_date());
-            } elseif (is_month()) {
-                printf(__('%s', 'text_domain'), get_the_date(_x('F Y', 'monthly archives date format', 'text_domain')));
-            } elseif (is_year()) {
-                printf(__('%s', 'text_domain'), get_the_date(_x('Y', 'yearly archives date format', 'text_domain')));
-            } elseif($post_type == 'tribe_events'){
-				_e('Events');
-			} else {
-				_e('Blog Archives', 'text_domain');	
-			}
-        }
-        
-        if (is_single()) {
-			if($post_type == 'tribe_events'){
-				_e('Events');
-			}
-            echo $sep;
-            the_title();
-        }
-        
-        if (is_page()) {
-            echo the_title();
-        }
-        
-        if (is_home()) {
-            global $post;
-            $page_for_posts_id = get_option('page_for_posts');
-            if ($page_for_posts_id) {
-                $post = get_page($page_for_posts_id);
-                setup_postdata($post);
-                the_title();
-                rewind_posts();
-            }
-        }
-        
-        echo '</div>';
-    }
-}
-
-
-/**
- * Customize the 'Read More' link text
- *
- */
-function custom_more_link($link, $link_text)
-{
-    return str_replace($link_text, 'Read More &raquo;', $link);
-}
-add_filter('the_content_more_link', 'custom_more_link', 10, 2);
-
-
-/**
- * Remove the hash(#) from all 'Read More' links
- *
- */
-function remove_more_jump($link)
-{
-    $offset = strpos($link, '#more-');
-    if ($offset) {
-        $end = strpos($link, '"', $offset);
-    }
-    if ($end) {
-        $link = substr_replace($link, '', $offset, $end - $offset);
-    }
-    return $link;
-}
-add_filter('the_content_more_link', 'remove_more_jump');
-
-
-function is_akvo_full_black_body(){
-	global $post;
-	$template_slug = get_page_template_slug( $post->ID );
+	/**
+	 * Setting up custom sidebars
+	 *
+	 */
+	if (function_exists('register_sidebar')) {
+		register_sidebar(array(
+			'name' => 'Main Sidebar',
+			'id' => 'main',
+			'before_widget' => '<div class="widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="wtitle">',
+			'after_title' => '</h3>'
+		));
 		
-	if( 'regionalPage.php' == $template_slug || 'homepage-2018.php' == $template_slug ){
-		return true;
+		register_sidebar(array(
+			'name' => 'Responsive Sidebar',
+			'id' => 'responsive',
+			'before_widget' => '<div class="widget">',
+			'after_widget' => '</div>',
+			'before_title' => '<h3 class="wtitle">',
+			'after_title' => '</h3>'
+		));
+		register_sidebar(array(
+			'name' => 'Homepage box Sidebar',
+			'id' => 'sidebar-homepagebox-1',
+			'before_widget' => '',
+			'after_widget' => '',
+			'before_title' => '<h3 class="wtitle">',
+			'after_title' => '</h3>'
+		));
+		
 	}
-	
-	return false;
-	
-}
+
+	add_filter('excerpt_more', function( $more ){
+		global $post; return '... <a href="' . get_permalink($post->ID) . '" class="moreLink">Read more</a>';
+	});
 
 
-//ADD PAGES NAME AS A BODY CLASS
+	function the_breadcrumb(){
+		global $post_type;
+		$sep = '   &rsaquo;  ';
+		if (!is_front_page()) {
+			echo '<div class="breadcrumbs wrapper">';
+			echo '<a href="';
+			echo get_option('home');
+			echo '">';
+			bloginfo('name');
+			echo '</a>' . $sep;
+			if (is_category() || is_single()) {
+				the_category(', ');
+			} elseif (is_archive() || is_single()) {
+				if (is_day()) {
+					printf(__('%s', 'text_domain'), get_the_date());
+				} elseif (is_month()) {
+					printf(__('%s', 'text_domain'), get_the_date(_x('F Y', 'monthly archives date format', 'text_domain')));
+				} elseif (is_year()) {
+					printf(__('%s', 'text_domain'), get_the_date(_x('Y', 'yearly archives date format', 'text_domain')));
+				} elseif($post_type == 'tribe_events'){
+					_e('Events');
+				} else {
+					_e('Blog Archives', 'text_domain');	
+				}
+			}
+			
+			if (is_single()) {
+				if($post_type == 'tribe_events'){
+					_e('Events');
+				}
+				echo $sep;
+				the_title();
+			}
+			
+			if ( is_page() ) {
+				the_title();
+			}
+			
+			if (is_home()) {
+				global $post;
+				$page_for_posts_id = get_option('page_for_posts');
+				if ($page_for_posts_id) {
+					$post = get_page($page_for_posts_id);
+					setup_postdata($post);
+					the_title();
+					rewind_posts();
+				}
+			}
+			
+			echo '</div>';
+		}
+	}
 
-// add pagename as class to <body> tag
-function akvo_bodyclass() {
-	
-	global $wp_query;
-    $page = '';
-    if (is_front_page()) {
-        $page = 'home';
-    } elseif (is_page()) {
-        $page = $wp_query->query_vars["pagename"] . ' Page';
+
+	/**
+	 * Customize the 'Read More' link text
+	 *
+	 */
+	add_filter('the_content_more_link', function($link, $link_text){
+		return str_replace($link_text, 'Read More &raquo;', $link);
+	}, 10, 2);
+
+
+	/**
+	 * Remove the hash(#) from all 'Read More' links
+	 *
+	 */
+
+	add_filter('the_content_more_link', function( $link ){
+		$offset = strpos($link, '#more-');
+		if ($offset) {
+			$end = strpos($link, '"', $offset);
+		}
+		if ($end) {
+			$link = substr_replace($link, '', $offset, $end - $offset);
+		}
+		return $link;
+	});
+
+	/* CHECK IF THE CURRENT PAGE IS USING THE NEW TEMPLATE */
+	function is_akvo_full_black_body(){
 		
-		if( is_akvo_full_black_body() ){
-			$page = "fullBlack";
+		$akvo_page = new akvoBlackBody;
+		$new_templates = $akvo_page->get_templates();
+		
+		global $post;
+		$template_slug = get_page_template_slug( $post->ID );
+			
+		if( in_array( $template_slug, $new_templates ) ){
+			return true;
+		}
+		
+		return false;
+		
+	}
+
+
+	
+
+	// add pagename as class to <body> tag
+	function akvo_bodyclass() {
+		
+		global $wp_query;
+		$page = '';
+		if (is_front_page()) {
+			$page = 'home';
+		} elseif (is_page()) {
+			
+			//ADD PAGES NAME AS A BODY CLASS
+			$page = $wp_query->query_vars["pagename"] . ' Page';
+			
+			/* CHECK FOR NEW TEMPLATE */
+			if( is_akvo_full_black_body() ){
+				$page .= " fullBlack";
+			}
+			
+		}
+		
+		if ($page) {
+			echo ' class= "' . $page, '"';
+		}
+		if ($page = 'blog') {
+			echo ' class= "' . $page, ' ' . '"';
 		}
 		
 	}
-	
-	if ($page) {
-        echo ' class= "' . $page, '"';
-    }
-    if ($page = 'blog') {
-        echo ' class= "' . $page, ' ' . '"';
-    }
-	
-	
-	
-	
-}
 
-//LIMITS NUMBER OF WORDS WHEN USING THE EXcerpt FUNCTION
+	//LIMITS NUMBER OF WORDS WHEN USING THE EXCERPT FUNCTION
+	add_filter( 'excerpt_length', function( $length ){
+		return 20;
+	}, 999 );
 
-function custom_excerpt_length( $length ) {
-	return 20;
-}
-add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
+	
+	
+	
+	//WILL add CATEGORY NAME AS CLASS TO THE ELEMENT
+	function the_category_unlinked($separator = ' ') {
+		$categories = (array) get_the_category();
+		
+		$thelist = '';
+		foreach($categories as $category) {    // concate
+			$thelist .= $separator . $category->category_nicename;
+		}
+		
+		echo $thelist;
+	}
 
-//WILL add CATEGORY NAME AS CLASS TO THE ELEMENT
-
-function the_category_unlinked($separator = ' ') {
-    $categories = (array) get_the_category();
+	// Add corresponding class (
+	add_filter( 'post_class', function($classes, $class, $ID){
+		$taxonomy = array('new_staffs_team','new_partners_category','staff_hub','new_foundation_team');
+		$terms = get_the_terms( (int) $ID, $taxonomy);
+		if( !empty( $terms ) ) {
+			foreach( (array) $terms as $order => $term ) {
+				if( !in_array( $term->slug, $classes ) ) {
+					$classes[] = $term->slug;
+				}
+			}
+		}
+		return $classes;
+	}, 10, 3 );
     
-    $thelist = '';
-    foreach($categories as $category) {    // concate
-        $thelist .= $separator . $category->category_nicename;
-    }
-    
-    echo $thelist;
-}
-
-// Add corresponding class (
-add_filter( 'post_class', 'custom_taxonomy_post_class', 10, 3 );
-    if( !function_exists( 'custom_taxonomy_post_class' ) ) {
-        function custom_taxonomy_post_class( $classes, $class, $ID ) {
-            $taxonomy = array('new_staffs_team','new_partners_category','staff_hub','new_foundation_team');
-            $terms = get_the_terms( (int) $ID, $taxonomy);
-            if( !empty( $terms ) ) {
-                foreach( (array) $terms as $order => $term ) {
-                    if( !in_array( $term->slug, $classes ) ) {
-                        $classes[] = $term->slug;
-                    }
-                }
-            }
-            return $classes;
-        }
-    }
 	
-function post_type_pagesize( $query ) {
-	$postTypes = array('new_staffs', 'new_partners','foundation_member');
-    if ( is_post_type_archive( $postTypes ) ) {
-        // Display 120 posts per page (archive page) for a custom post type called 'new_staffs' & 'new_partners'
-        $query->set( 'posts_per_page', 120 );
-        return;
-    }
-}
-add_action( 'pre_get_posts', 'post_type_pagesize', 1);
-add_filter('show_admin_bar', '__return_false');
+	
+	
+	// REMOVE THE ADMIN BAR FROM THE FRONT END
+	add_filter('show_admin_bar', '__return_false');
 
-// Events listing thumbnail to sidebar widget
+	// Events listing thumbnail to sidebar widget
+	add_action( 'tribe_events_list_widget_before_the_event_title', function(){
+		global $post;
+		echo tribe_event_featured_image( $post->ID, 'thumbnail' );
+	} );
 
-function custom_widget_featured_image() {
-global $post;
+	
+	// JSON plugin support
 
-echo tribe_event_featured_image( $post->ID, 'thumbnail' );
-
-}
-add_action( 'tribe_events_list_widget_before_the_event_title', 'custom_widget_featured_image' );
-
-// JSON plugin support
-
-function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country_and_city, $text)
-{ ?>
-  <li id="updateTemplate" class="rsrUpdate">
-    <span>RSR Update</span>
-    <h2>
-      <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><?= $title ?></a>
-    </h2>
-    <ul class="floats-in">
-      <li class="upImag">
-        <div class="imgWrap">
-            <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= $rsr_domain.$imgSrc ?>"/></a>
-        </div>
-      </li>
-      <li class="upInfo">
-        <div class="authorTime floats-in">
-          <time datetime="" class=""><?= $createdAt ?></time>
-          <em class="">by&nbsp;</em>
-          <span class="userName"><?= $userName ?></span>
-        </div>
-        <div class="orgAndPlace">
-          <span class="org"><a href="<?= $rsr_domain ?><?= $organisationUrl ?>"><?= $organisation ?></a></span>
-          <span class="place" title="<?= $country_and_city ?>"><?= $country_and_city ?></span>
-        </div>
-      </li>
-      <li class="upTxt">
-        <p><?= $text ?></p>
-      </li>
-      <li class="upMore">
-        <a href="<?= $rsr_domain ?><?= $updateUrl ?>" class="">
-          <span>Read more ></span>
-        </a>
-      </li>
-    </ul>
-  </li>
-<?php
-}
+	function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $createdAt, $userName, $organisation, $organisationUrl, $country_and_city, $text)
+	{ ?>
+	  <li id="updateTemplate" class="rsrUpdate">
+		<span>RSR Update</span>
+		<h2>
+		  <a href="<?= $rsr_domain ?><?= $updateUrl ?>"><?= $title ?></a>
+		</h2>
+		<ul class="floats-in">
+		  <li class="upImag">
+			<div class="imgWrap">
+				<a href="<?= $rsr_domain ?><?= $updateUrl ?>"><img src="<?= $rsr_domain.$imgSrc ?>"/></a>
+			</div>
+		  </li>
+		  <li class="upInfo">
+			<div class="authorTime floats-in">
+			  <time datetime="" class=""><?= $createdAt ?></time>
+			  <em class="">by&nbsp;</em>
+			  <span class="userName"><?= $userName ?></span>
+			</div>
+			<div class="orgAndPlace">
+			  <span class="org"><a href="<?= $rsr_domain ?><?= $organisationUrl ?>"><?= $organisation ?></a></span>
+			  <span class="place" title="<?= $country_and_city ?>"><?= $country_and_city ?></span>
+			</div>
+		  </li>
+		  <li class="upTxt">
+			<p><?= $text ?></p>
+		  </li>
+		  <li class="upMore">
+			<a href="<?= $rsr_domain ?><?= $updateUrl ?>" class="">
+			  <span>Read more ></span>
+			</a>
+		  </li>
+		</ul>
+	  </li>
+	<?php
+	}
 
 	/* custom schedule details for events */
 	function tribe_events_event_schedule_details_2( $event = null, $before = '', $after = '' ) {
@@ -437,22 +430,21 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	}
 	
 	// Added to extend allowed files types in Media upload
-	add_filter('upload_mimes', 'custom_upload_mimes');
-	function custom_upload_mimes ( $existing_mimes=array() ) {
-
+	add_filter('upload_mimes', function( $existing_mimes = array() ){
 		// Add *.EPS files to Media upload
 		$existing_mimes['eps'] = 'application/postscript';
 
 		// Add *.AI files to Media upload
 		$existing_mimes['ai'] = 'application/postscript';
+		
+		// Add *.svg files to Media upload
+		$existing_mimes['svg'] = 'image/svg+xml';
 
 		return $existing_mimes;
-	}
-	
+	});
 	
 	function akvo_latest_rsr(){
 		$json = akvo_json('http://rsr.akvo.org/api/v1/project_update/?limit=5&format=json');
-		
 		print_r(json_encode($json));
 		wp_die();
 	}
@@ -460,11 +452,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
 	
-	/*
-	function akvo_tabs($tabs){
-		include "templates/tabs.php";
-	}
-	*/
+	
 	
 	function akvo_post_type_list( $post_type, $tax, $tax_slug, $template = 'staff', $new = true ){
 		$args = array(
@@ -489,6 +477,7 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 			get_template_part('templates/new_'.$template);	
 		}
 		_e('</ul>');
+		wp_reset_query();
 	}
 	
 	function akvo_staff_list($staff_type, $new_staff_flag = true){
@@ -497,6 +486,9 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	
 	function akvo_partner_list($partner_type){
 		akvo_post_type_list( 'new_partners', 'new_partners_category', $partner_type, 'partner', false);
+	}
+	function akvo_foundation_list( $partner_type ){
+		akvo_post_type_list( 'foundation_member', 'new_foundation_team', $partner_type, 'foundation', false);
 	}
 	
 	/* remove unnecessary code */
@@ -513,109 +505,33 @@ function json_data_render_update($rsr_domain, $updateUrl, $title, $imgSrc, $crea
 	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
 	remove_action( 'wp_print_styles', 'print_emoji_styles' );
 	
-	/* load javascript */
-	function akvo_js() {
-		wp_deregister_script('wp-embed');
-	}
-	add_action('wp_enqueue_scripts', 'akvo_js');
 	
-	
-	function casestudy_list() {
+	add_shortcode('funnel', function( $atts ){
 		ob_start();
-		$tax_query = array();
-		$filters = array('region', 'sector');
 		
-		$i = 0;
+		$atts = shortcode_atts( array('id' => 0), $atts, 'funnel' );
 		
-		foreach($filters as $filter){
-			$r_slug = 'akvo_'.$filter;
+		
+		
+		$query = new WP_Query( array(
+			'post_type'	=> 'funnel',
+			'post__in'	=> array( $atts['id'] )
+		) );
 			
-			$taxonomy = get_taxonomy($filter);
+		if( $query->have_posts() ){
 			
-			if($taxonomy && isset($taxonomy->labels->name)){
-				$filters[$filter] = array(
-					'slug' 	=> $filter,
-					'label' => $taxonomy->labels->name
-				);
-				if(isset($_GET[$r_slug]) && $_GET[$r_slug]){
-					array_push($tax_query, array(
-						'taxonomy' 	=> $filter,
-						'field' 	=>	'id',
-						'terms'		=> $_GET[$r_slug]
-					));
+			while( $query->have_posts() ){
+				$query->the_post();
 				
-					$filters[$filter]['id'] = $_GET[$r_slug];
-				}
+				include("inc/funnel.php");
+				
 				
 			}
 			
-			unset($filters[$i]);
-			$i++;
-		}
-		
-		$paged = 1;
-		if(isset($_REQUEST['akvo-paged'])){
-			$paged = $_REQUEST['akvo-paged'];
-		}
-		
-		$args = array(
-			'post_type' 		=> 'case-study', 
-			'posts_per_page' 	=> get_option( 'posts_per_page' ),
-			'paged'				=> $paged,
-			'tax_query' 		=> $tax_query
-		);
-		
-		$the_query = new WP_Query( $args );
-		include("templates/card-form.php");
-		echo '<div id="index-list" data-target="#index-list .row" class="">';
-		$i = 0;
-		if ( $the_query->have_posts() ) {
-			
-			
-			while ( $the_query->have_posts() ):
-				$the_query->the_post();
-				global $post_id;
-				if($i % 3 == 0 || $i == 0) {echo "<div class='row'>";}
-				include("templates/card.php");
-				$i++;
-				if(($i % 3 == 0) || ($i == $the_query->post_count)) echo "</div>";
-			endwhile;
-			echo '</div>';
-			
-			
-			if ($the_query->max_num_pages > 1):?>
-            <div class="text-center">
-            	<a data-behaviour='ajax-loading' data-list="#index-list" id="loadMore" class="btn btn-primary loadMore" data-paged-attr="akvo-paged" href="#">
-            		Load More
-				</a>
-            </div>  
-			<?php endif;
-			
-			
 			wp_reset_postdata();
-		} else {
-			echo "<div>No Items were found.</div>";
+			
 		}
-		echo '</div>';
-		return ob_get_clean();
-	}
-	add_shortcode( 'casestudy-list', 'casestudy_list' );
-	
-	function akvo_dropdown_filters($arr){	
-		$terms = get_terms(array('taxonomy' => $arr['slug'], 'hide_empty' => false));
-		if($terms){
-			include "templates/card-filter.php";
-		}	
-	}
-	
-	function akvo_card_taxonomy($post_id, $slug){
-		$terms = wp_get_post_terms( $post_id, $slug);
 		
-		if(is_array($terms) && count($terms)){
-			return $terms[0]->name;
-		}
-		return '';
-	}
+		return ob_get_contents();
+	});
 	
-	
-?>

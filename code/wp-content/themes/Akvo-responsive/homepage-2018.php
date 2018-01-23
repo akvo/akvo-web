@@ -41,6 +41,7 @@
 		$akvo_page = new akvoBlackBody;
 		$akvo_page->display_sections( $sections );
 	?>
+	<?php //echo do_shortcode('[gravityform id="1" title="true" description="true" ajax="true"]');?>
 </div>
 <?php get_footer();?>
 <style>
@@ -53,3 +54,52 @@
 		padding: 0 25px;
 	}
 </style>
+<script>
+
+
+
+
+$("a.nxtSection[href^='#']").click(function(e) {
+	e.preventDefault();
+	
+	var position = $($(this).attr("href")).offset().top;
+
+	$("body, html").animate({
+		scrollTop: position
+	}  );
+});
+
+
+
+$('[data-behaviour~=fnl-nxt-btn]').each( function(){
+	var btn = $(this);
+	
+	btn.click( function(ev){
+		ev.preventDefault();
+		
+		var next_section = $(btn.attr('href'));
+		
+		// HIDE ALL FUNNEL SECTIONS
+		$('section.funelContainer').addClass('hidden');
+		
+		// SHOW THE NEXT SECTION ONLY
+		next_section.removeClass('hidden');
+		
+		var question = btn.attr('data-q');
+		if( question ){
+			
+			var ans = btn.html();
+			
+			var textarea = $('#funnel-form .funnel-msg textarea');
+			
+			var text = textarea.val() + question + " " + ans + "\r\n";
+			
+			textarea.val( text );
+			
+		}
+		
+	});
+	
+});
+
+</script>
