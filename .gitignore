@@ -35,3 +35,4 @@ vagrant/.vagrant
 
 *.codekit
 *.codekit
+code/wp-content/plugins/*

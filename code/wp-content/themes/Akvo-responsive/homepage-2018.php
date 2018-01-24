@@ -44,20 +44,9 @@
 	<?php //echo do_shortcode('[gravityform id="1" title="true" description="true" ajax="true"]');?>
 </div>
 <?php get_footer();?>
-<style>
-	.fullBlack .homePage .vidBlock{
-		height: auto;
-		padding-bottom: 70px;
-	}
-	.fullBlack .homePage .topMsg .hubIntro p .btnOutline{
-		font-size: 0.7em;
-		padding: 0 25px;
-	}
-</style>
+
 <script>
-
-
-
+$( "body" ).addClass( "fullBlack" );
 
 $("a.nxtSection[href^='#']").click(function(e) {
 	e.preventDefault();
