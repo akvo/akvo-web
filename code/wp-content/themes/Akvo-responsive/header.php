@@ -50,13 +50,15 @@
 			}(document, 'script', 'facebook-jssdk'));
 		</script>
 		<div id="mainbody">
-			<header id="top" role="banner">
-				<div class="wrapperHead">
-					<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
-					<div id="navbar"><a href="#">Nav Menu</a></div>
-					<nav id="n"><?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container' => false, 'theme_location' => 'header-menu' ) ); ?></nav>
-					<?php get_search_form(); ?>
-				</div>
+			<header id="top" role="banner" class="topbar">
+				<nav class="navbar-fixed-top">
+					<div class="wrapperHead">
+						<h1><a href="<?php echo home_url(); ?>"><?php bloginfo('name'); ?></a></h1>
+						<div id="navbar"><a href="#">Nav Menu</a></div>
+						<nav id="n"><?php wp_nav_menu( array( 'sort_column' => 'menu_order', 'container' => false, 'theme_location' => 'header-menu' ) ); ?></nav>
+						<?php get_search_form(); ?>
+					</div>
+				</nav>
 				<div id="openSource"> 
 					<a href="/blog/open-data-content-and-software-at-akvo/"><h2>We love Open Source!</h2></a> 
 				</div>

@@ -12,7 +12,7 @@
 			'next_link'			=> '#assessFunel',
 		),
 		'funnel'	=> array(
-			'id'				=> 'assessFunel',
+			'id'				=> 'assessFunel',	
 			'class'				=> 'assessFunel',
 			'fn'				=> 'content_section',
 			'next_link'			=> '#vidBlock',
@@ -47,7 +47,16 @@
 
 <script>
 $( "body" ).addClass( "fullBlack" );
-
+//jQuery to collapse the navbar on scroll
+$(window).scroll(function() {
+    if ($(".topbar").offset().top > 200) {
+    	$(".topbar").css("background", "transparent");
+        $(".navbar-fixed-top").addClass("top-nav-collapse");
+    } else {
+        $(".navbar-fixed-top").removeClass("top-nav-collapse");
+        $(".topbar").css("background", "rgba(32, 32, 36, 0.2)");
+    }
+});
 $("a.nxtSection[href^='#']").click(function(e) {
 	e.preventDefault();
 	
