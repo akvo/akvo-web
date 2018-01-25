@@ -8076,16 +8076,20 @@ a.helpIcon:hover {
 .fullBlack header#top {
   background: rgba(32, 32, 36, 0.2);
   -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in; }
-  /* line 6874, main.scss */
+  transition: all 0.2s ease-in;
+  z-index: 199999; }
+  /* line 6875, main.scss */
   .fullBlack header#top .navbar-fixed-top.top-nav-collapse {
     -webkit-transform: translateY(-52px);
             transform: translateY(-52px); }
-  /* line 6880, main.scss */
-  .fullBlack header#top:hover .navbar-fixed-top.top-nav-collapse {
-    -webkit-transform: translateY(0);
-            transform: translateY(0); }
-  /* line 6885, main.scss */
+  /* line 6879, main.scss */
+  .fullBlack header#top:hover {
+    background: rgba(32, 32, 36, 0.4) !important; }
+    /* line 6882, main.scss */
+    .fullBlack header#top:hover .navbar-fixed-top.top-nav-collapse {
+      -webkit-transform: translateY(0);
+              transform: translateY(0); }
+  /* line 6887, main.scss */
   .fullBlack header#top h1 a {
     background: url("../images/Akvo_RGB-WHITE_logo.png") no-repeat center top;
     display: block;
@@ -8093,26 +8097,26 @@ a.helpIcon:hover {
     text-indent: -9999px;
     width: 169px;
     background-size: contain; }
-/* line 6894, main.scss */
+/* line 6896, main.scss */
 .fullBlack #n ul li {
   background: none;
   display: inline-block;
   font-size: 1.2em;
   margin-right: -3px;
   position: relative; }
-/* line 6901, main.scss */
+/* line 6903, main.scss */
 .fullBlack #openSource {
   display: none; }
-/* line 6904, main.scss */
+/* line 6906, main.scss */
 .fullBlack .wrapperHead {
   margin: 0em auto;
   max-width: 100%;
   position: relative; }
-/* line 6910, main.scss */
+/* line 6912, main.scss */
 .fullBlack .homePage .topMsg {
   background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
   height: calc(100vh + 10px); }
-  /* line 6913, main.scss */
+  /* line 6915, main.scss */
   .fullBlack .homePage .topMsg .hubIntro {
     position: absolute;
     width: 60%;
@@ -8121,7 +8125,7 @@ a.helpIcon:hover {
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%);
     /*FadeIn Animation*/ }
-    /* line 6919, main.scss */
+    /* line 6921, main.scss */
     .fullBlack .homePage .topMsg .hubIntro .btnOutline {
       border: 1px solid white;
       color: white;
@@ -8240,7 +8244,7 @@ a.helpIcon:hover {
   to {
     -webkit-transform: none;
             transform: none; } }
-    /* line 6999, main.scss */
+    /* line 7001, main.scss */
     .fullBlack .homePage .topMsg .hubIntro .bounceInLeft {
       -webkit-animation-name: bounceInLeft;
               animation-name: bounceInLeft; }
@@ -8286,7 +8290,7 @@ a.helpIcon:hover {
   to {
     -webkit-transform: none;
             transform: none; } }
-    /* line 7025, main.scss */
+    /* line 7027, main.scss */
     .fullBlack .homePage .topMsg .hubIntro .bounceInRight {
       -webkit-animation-name: bounceInRight;
               animation-name: bounceInRight; }
@@ -8328,37 +8332,37 @@ a.helpIcon:hover {
     opacity: 0; }
   100% {
     opacity: 0; } }
-    /* line 7057, main.scss */
+    /* line 7059, main.scss */
     .fullBlack .homePage .topMsg .hubIntro p {
       font-family: helvetica;
       font-weight: bold;
       color: white;
       font-size: 4em; }
       @media (max-width: 2000px) {
-        /* line 7057, main.scss */
+        /* line 7059, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 3.5em; } }
       @media (max-width: 1900px) {
-        /* line 7057, main.scss */
+        /* line 7059, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 3.25em; } }
       @media (max-width: 1700px) {
-        /* line 7057, main.scss */
+        /* line 7059, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 3em; } }
       @media (max-width: 1600px) {
-        /* line 7057, main.scss */
+        /* line 7059, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 2.75em; } }
       @media (max-width: 1500px) {
-        /* line 7057, main.scss */
+        /* line 7059, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 2.25em; } }
-      /* line 7078, main.scss */
+      /* line 7080, main.scss */
       .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
         display: inline;
         text-indent: 15px; }
-        /* line 7081, main.scss */
+        /* line 7083, main.scss */
         .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
           color: #69c3ee;
           -webkit-animation: fadeEffect 9s linear infinite 0s;
@@ -8367,22 +8371,22 @@ a.helpIcon:hover {
           display: inline;
           position: absolute;
           white-space: nowrap; }
-          /* line 7088, main.scss */
+          /* line 7090, main.scss */
           .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2) {
             -webkit-animation-delay: 3s;
                     animation-delay: 3s; }
-          /* line 7091, main.scss */
+          /* line 7093, main.scss */
           .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3) {
             -webkit-animation-delay: 6s;
                     animation-delay: 6s; }
-      /* line 7097, main.scss */
+      /* line 7099, main.scss */
       .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2) {
         color: #69c3ee;
         -webkit-animation: bounceInRight 1s;
                 animation: bounceInRight 1s;
         -webkit-animation-fill-mode: forwards;
                 animation-fill-mode: forwards; }
-/* line 7105, main.scss */
+/* line 7107, main.scss */
 .fullBlack .homePage .bgEaseIn {
   -webkit-animation: bgEaseIn 0.5s ease-in forwards;
           animation: bgEaseIn 0.5s ease-in forwards; }
@@ -8400,7 +8404,7 @@ a.helpIcon:hover {
   100% {
     opacity: 0;
     display: none; } }
-/* line 7119, main.scss */
+/* line 7121, main.scss */
 .fullBlack .homePage .bgEaseInTwo {
   -webkit-animation: bgEaseInTwo ease-in forwards;
           animation: bgEaseInTwo ease-in forwards; }
@@ -8424,7 +8428,7 @@ a.helpIcon:hover {
   100% {
     opacity: 0.7;
     display: block; } }
-/* line 7137, main.scss */
+/* line 7139, main.scss */
 .fullBlack .homePage .assessFunel {
   background-color: #e2e3ea;
   position: relative;
@@ -8432,7 +8436,7 @@ a.helpIcon:hover {
   top: -10px;
   padding: 70px 0 20px 0;
   height: calc(100vh - 70px); }
-  /* line 7144, main.scss */
+  /* line 7146, main.scss */
   .fullBlack .homePage .assessFunel .funelContainer {
     height: 100%;
     width: 100%;
@@ -8443,7 +8447,7 @@ a.helpIcon:hover {
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain; }
-    /* line 7153, main.scss */
+    /* line 7155, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer:before {
       -webkit-animation-name: bgEaseIn;
               animation-name: bgEaseIn;
@@ -8468,7 +8472,7 @@ a.helpIcon:hover {
       z-index: 1;
       background-color: #E3E1EF;
       z-index: 2; }
-    /* line 7172, main.scss */
+    /* line 7174, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer div.funnelContent {
       text-align: center;
       position: absolute;
@@ -8477,50 +8481,50 @@ a.helpIcon:hover {
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%);
       z-index: 99999; }
-    /* line 7180, main.scss */
+    /* line 7182, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer div img {
       display: block;
       margin: 0 auto; }
-    /* line 7185, main.scss */
+    /* line 7187, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer .subFunHeader {
       font-size: 2.25em;
       color: white;
       text-transform: uppercase; }
-    /* line 7191, main.scss */
+    /* line 7193, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer .inlined * {
       display: inline; }
-    /* line 7195, main.scss */
+    /* line 7197, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer h1 {
       font-size: 3.5em; }
-    /* line 7198, main.scss */
+    /* line 7200, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer .infoHover {
       margin-bottom: 40px;
       width: 100%;
       padding: 15px; }
-      /* line 7202, main.scss */
+      /* line 7204, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer .infoHover + .moreInfo {
         opacity: 0;
         -webkit-transition: opacity 0.2s ease-in;
         transition: opacity 0.2s ease-in; }
-      /* line 7206, main.scss */
+      /* line 7208, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer .infoHover:hover {
         margin-bottom: 40px; }
-        /* line 7208, main.scss */
+        /* line 7210, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer .infoHover:hover + .moreInfo {
           opacity: 1; }
-    /* line 7213, main.scss */
+    /* line 7215, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer .moreInfo {
       text-align: center;
       font-size: 1em;
       margin-bottom: 60px;
       color: rgba(32, 32, 36, 0.7); }
-    /* line 7221, main.scss */
+    /* line 7223, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer ul li {
       margin-bottom: 20px; }
-      /* line 7223, main.scss */
+      /* line 7225, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer ul li:last-child {
         margin-bottom: 0; }
-      /* line 7226, main.scss */
+      /* line 7228, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer ul li a.bouton {
         width: 25%;
         border: 1px solid #2c2a74;
@@ -8535,15 +8539,15 @@ a.helpIcon:hover {
         .fullBlack .homePage .assessFunel .funelContainer ul li a.bouton:hover {
           border: 1px solid #2c2a74;
           color: #2c2a74; }
-        /* line 7233, main.scss */
+        /* line 7235, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer ul li a.bouton:hover {
           background: #ffd200;
           font-size: 2.5em;
           border-width: 3px; }
-    /* line 7241, main.scss */
+    /* line 7243, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#assess01 {
       background-image: url(../images/funelIcons-01.svg); }
-      /* line 7243, main.scss */
+      /* line 7245, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#assess01 .funnelContent {
         text-align: inherit;
         position: absolute;
@@ -8551,7 +8555,7 @@ a.helpIcon:hover {
         left: inherit;
         -webkit-transform: none;
                 transform: none; }
-        /* line 7249, main.scss */
+        /* line 7251, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#assess01 .funnelContent p {
           top: 0;
           text-align: left;
@@ -8561,7 +8565,7 @@ a.helpIcon:hover {
           color: #2c2a74;
           max-width: 70%;
           margin: 0 auto; }
-      /* line 7261, main.scss */
+      /* line 7263, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#assess01 .funnelStart a {
         display: block;
         width: 15%;
@@ -8578,13 +8582,13 @@ a.helpIcon:hover {
         opacity: 1;
         -webkit-transition: opacity 0.2s ease-in;
         transition: opacity 0.2s ease-in; }
-        /* line 7275, main.scss */
+        /* line 7277, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#assess01 .funnelStart a:hover {
           opacity: 0.5; }
-    /* line 7281, main.scss */
+    /* line 7283, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-1 {
       background-image: url(../images/funelIcons-02.svg); }
-      /* line 7282, main.scss */
+      /* line 7284, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-1:before {
         -webkit-animation-name: bgEaseInTwo;
                 animation-name: bgEaseInTwo;
@@ -8608,31 +8612,31 @@ a.helpIcon:hover {
         height: 100%;
         z-index: 1;
         background-color: #e9e7f2; }
-      /* line 7301, main.scss */
+      /* line 7303, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-1 ul li {
         margin-bottom: 70px; }
-        /* line 7303, main.scss */
+        /* line 7305, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#funnel-1 ul li:first-child {
           margin-top: 50px; }
-    /* line 7309, main.scss */
+    /* line 7311, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-2 {
       background-image: url(../images/funelIcons-03.svg); }
-    /* line 7312, main.scss */
+    /* line 7314, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-3 {
       background-image: url(../images/funelIcons-04.svg); }
-    /* line 7315, main.scss */
+    /* line 7317, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-4 {
       background-image: url(../images/funelIcons-05.svg); }
-    /* line 7318, main.scss */
+    /* line 7320, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-5 {
       background-image: url(../images/funelIcons-05.svg); }
-    /* line 7321, main.scss */
+    /* line 7323, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-6 {
       background-image: url(../images/funelIcons-06.svg); }
-    /* line 7324, main.scss */
+    /* line 7326, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-7 {
       background-image: url(../images/funelIcons-07.svg); }
-      /* line 7327, main.scss */
+      /* line 7329, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-7 .funnelContent p {
         font-size: 1.5em;
         padding-right: 50px;
@@ -8640,7 +8644,7 @@ a.helpIcon:hover {
         color: #2c2a74;
         max-width: 60%;
         margin: 050px auto 0; }
-    /* line 7337, main.scss */
+    /* line 7339, main.scss */
     .fullBlack .homePage .assessFunel .funelContainer#funnel-form {
       background-image: url(../images/funelIcons-06.svg);
       /*------------------------------------------------------------------
@@ -8652,7 +8656,7 @@ a.helpIcon:hover {
       [ Responsive ]*/
       /*==================================================================
       [ Contact more ]*/ }
-      /* line 7339, main.scss */
+      /* line 7341, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .contact100-form {
         width: 90%;
         display: -webkit-box;
@@ -8666,32 +8670,32 @@ a.helpIcon:hover {
             -ms-flex-pack: justify;
                 justify-content: space-between;
         margin: 0 auto; }
-      /* line 7346, main.scss */
+      /* line 7348, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .contact100-form-title {
         display: block;
         width: 100%;
         line-height: 1.2;
         text-transform: uppercase;
         text-align: left; }
-      /* line 7355, main.scss */
+      /* line 7357, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .wrap-input100 {
         width: 100%;
         position: relative;
         background-color: transparent;
         margin-bottom: 15px;
         text-align: left; }
-      /* line 7362, main.scss */
+      /* line 7364, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .rs1-wrap-input100 {
         width: calc((100% - 150px) / 2); }
-      /* line 7365, main.scss */
+      /* line 7367, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .label-input100 {
         color: #555555;
         line-height: 1.5; }
-      /* line 7369, main.scss */
+      /* line 7371, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form select {
         height: 40px;
         padding: 0 15px; }
-      /* line 7373, main.scss */
+      /* line 7375, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .input100 {
         display: block;
         width: 100%;
@@ -8703,18 +8707,18 @@ a.helpIcon:hover {
         transition: all 0.4s;
         margin-top: 5px;
         padding: 0 15px; }
-      /* line 7385, main.scss */
+      /* line 7387, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form input.input100, .fullBlack .homePage .assessFunel .funelContainer#funnel-form select.input100 {
         min-height: 40px; }
-      /* line 7388, main.scss */
+      /* line 7390, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form textarea.input100 {
         min-height: 162px;
         padding-top: 19px;
         padding-bottom: 13px; }
-      /* line 7393, main.scss */
+      /* line 7395, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .input100:focus {
         background: #e6e6e6; }
-      /* line 7398, main.scss */
+      /* line 7400, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .container-contact100-form-btn {
         width: 100%;
         display: -webkit-box;
@@ -8728,14 +8732,14 @@ a.helpIcon:hover {
             -ms-flex-pack: center;
                 justify-content: center;
         margin-top: 5px; }
-      /* line 7405, main.scss */
+      /* line 7407, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .wrap-contact100-form-btn {
         display: block;
         position: relative;
         z-index: 1;
         border-radius: 2px;
         overflow: hidden; }
-      /* line 7412, main.scss */
+      /* line 7414, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .contact100-form-bgbtn {
         position: absolute;
         z-index: -1;
@@ -8744,7 +8748,7 @@ a.helpIcon:hover {
         left: -100%;
         -webkit-transition: all 0.4s;
         transition: all 0.4s; }
-      /* line 7420, main.scss */
+      /* line 7422, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .contact100-form-btn {
         display: -webkit-box;
         display: -moz-box;
@@ -8788,22 +8792,22 @@ a.helpIcon:hover {
             background-color: rgba(128, 128, 128, 0.1) !important;
             color: rgba(128, 128, 128, 0.4) !important;
             border: 1px solid transparent; }
-      /* line 7430, main.scss */
+      /* line 7432, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .wrap-contact100-form-btn:hover .contact100-form-bgbtn {
         left: 0; }
       @media (max-width: 992px) {
-        /* line 7436, main.scss */
+        /* line 7438, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#funnel-form .wrap-contact100 {
           padding: 66px 80px 59px 80px; } }
       @media (max-width: 768px) {
-        /* line 7441, main.scss */
+        /* line 7443, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#funnel-form .rs1-wrap-input100 {
           width: 100%; } }
       @media (max-width: 576px) {
-        /* line 7446, main.scss */
+        /* line 7448, main.scss */
         .fullBlack .homePage .assessFunel .funelContainer#funnel-form .wrap-contact100 {
           padding: 66px 15px 59px 15px; } }
-      /* line 7452, main.scss */
+      /* line 7454, main.scss */
       .fullBlack .homePage .assessFunel .funelContainer#funnel-form .contact100-more {
         display: block;
         max-width: 960px;
@@ -8813,7 +8817,7 @@ a.helpIcon:hover {
         line-height: 1.4;
         text-align: center;
         padding: 40px 0 10px 0; }
-/* line 7465, main.scss */
+/* line 7467, main.scss */
 .fullBlack .homePage .vidBlock {
   position: relative;
   width: 100%;
@@ -8821,50 +8825,50 @@ a.helpIcon:hover {
   padding: 70px 0 20px 0;
   height: calc(100vh - 70px);
   background: #ffd200 url("../images/Transparent white large.png") repeat; }
-/* line 7474, main.scss */
+/* line 7476, main.scss */
 .fullBlack .topMsg {
   position: relative;
   width: 100%;
   height: calc(100vh + 70px);
   margin-top: -70px;
   background-size: cover !important; }
-  /* line 7480, main.scss */
+  /* line 7482, main.scss */
   .fullBlack .topMsg.hubEA {
     background: url("../images/hub_EA.jpg") no-repeat center top; }
-  /* line 7483, main.scss */
+  /* line 7485, main.scss */
   .fullBlack .topMsg .swooch {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-    /* line 7489, main.scss */
+    /* line 7491, main.scss */
     .fullBlack .topMsg .swooch.hubEA {
       opacity: 0.5;
       background: rgba(32, 32, 36, 0.9) url("../images/Squiggle - Yellow.png");
       background-position: center center !important;
       background-repeat: no-repeat !important; }
       @media (min-width: 1px) and (max-width: 598px) {
-        /* line 7489, main.scss */
+        /* line 7491, main.scss */
         .fullBlack .topMsg .swooch.hubEA {
           background-size: 120%; } }
       @media (min-width: 599px) and (max-width: 748px) {
-        /* line 7489, main.scss */
+        /* line 7491, main.scss */
         .fullBlack .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 747px) and (max-width: 998px) {
-        /* line 7489, main.scss */
+        /* line 7491, main.scss */
         .fullBlack .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 999px) and (max-width: 1198px) {
-        /* line 7489, main.scss */
+        /* line 7491, main.scss */
         .fullBlack .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 1199px) {
-        /* line 7489, main.scss */
+        /* line 7491, main.scss */
         .fullBlack .topMsg .swooch.hubEA {
           background-size: 90%; } }
-  /* line 7511, main.scss */
+  /* line 7513, main.scss */
   .fullBlack .topMsg .hubIntro {
     position: absolute;
     width: 60%;
@@ -8872,23 +8876,23 @@ a.helpIcon:hover {
     left: 50%;
     -webkit-transform: translate(-50%, -50%);
             transform: translate(-50%, -50%); }
-    /* line 7517, main.scss */
+    /* line 7519, main.scss */
     .fullBlack .topMsg .hubIntro p {
       font-family: helvetica;
       font-weight: bold;
       color: white;
       font-size: 2.5em; }
-      /* line 7523, main.scss */
+      /* line 7525, main.scss */
       .fullBlack .topMsg .hubIntro p .hubName.hubEA {
         color: yellow; }
-/* line 7530, main.scss */
+/* line 7532, main.scss */
 .fullBlack .hubMarketing {
   height: calc(100vh + 70px);
   padding: 75px 20px; }
-  /* line 7533, main.scss */
+  /* line 7535, main.scss */
   .fullBlack .hubMarketing p {
     font-size: 2.2em; }
-/* line 7537, main.scss */
+/* line 7539, main.scss */
 .fullBlack .hubFeature {
   padding: 50px 20px;
   background: url("../images/hub_EA_pattern.png") repeat;
@@ -8896,16 +8900,16 @@ a.helpIcon:hover {
   position: relative;
   overflow: auto;
   height: calc(100vh + 70px); }
-  /* line 7544, main.scss */
+  /* line 7546, main.scss */
   .fullBlack .hubFeature li {
     margin-bottom: 20px; }
-  /* line 7547, main.scss */
+  /* line 7549, main.scss */
   .fullBlack .hubFeature figure {
     position: relative; }
-    /* line 7549, main.scss */
+    /* line 7551, main.scss */
     .fullBlack .hubFeature figure p {
       display: none; }
-    /* line 7552, main.scss */
+    /* line 7554, main.scss */
     .fullBlack .hubFeature figure figcaption {
       display: inline-block;
       color: white;
@@ -8914,10 +8918,10 @@ a.helpIcon:hover {
       left: 50%;
       -webkit-transform: translate(-50%, -50%);
               transform: translate(-50%, -50%); }
-    /* line 7560, main.scss */
+    /* line 7562, main.scss */
     .fullBlack .hubFeature figure:hover {
       cursor: pointer; }
-      /* line 7562, main.scss */
+      /* line 7564, main.scss */
       .fullBlack .hubFeature figure:hover p {
         display: inline-block;
         color: white;
@@ -8928,21 +8932,21 @@ a.helpIcon:hover {
         -webkit-transform: translate(-50%, -50%);
                 transform: translate(-50%, -50%);
         text-align: center; }
-      /* line 7572, main.scss */
+      /* line 7574, main.scss */
       .fullBlack .hubFeature figure:hover figcaption {
         display: none; }
-/* line 7578, main.scss */
+/* line 7580, main.scss */
 .fullBlack .hubTrustBlock {
   position: relative;
   padding: 75px 20px; }
-  /* line 7581, main.scss */
+  /* line 7583, main.scss */
   .fullBlack .hubTrustBlock h1 {
     text-align: center;
     color: #202024; }
-  /* line 7588, main.scss */
+  /* line 7590, main.scss */
   .fullBlack .hubTrustBlock .list-scroll li.logo {
     width: 220px; }
-/* line 7592, main.scss */
+/* line 7594, main.scss */
 .fullBlack .hubContact {
   padding: 75px 20px;
   background: rgba(255, 210, 0, 0.2);
@@ -9002,23 +9006,23 @@ a.helpIcon:hover {
 
         }
         */ }
-  /* line 7595, main.scss */
+  /* line 7597, main.scss */
   .fullBlack .hubContact h1 {
     color: #000; }
-  /* line 7598, main.scss */
+  /* line 7600, main.scss */
   .fullBlack .hubContact label {
     display: none !important; }
-  /* line 7601, main.scss */
+  /* line 7603, main.scss */
   .fullBlack .hubContact input, .fullBlack .hubContact textarea {
     background: #fff;
     padding: 10px !important; }
-  /* line 7605, main.scss */
+  /* line 7607, main.scss */
   .fullBlack .hubContact input:hover, .fullBlack .hubContact textarea:hover {
     border: 1px solid #AAA; }
-  /* line 7608, main.scss */
+  /* line 7610, main.scss */
   .fullBlack .hubContact .gform_footer {
     text-align: center; }
-  /* line 7611, main.scss */
+  /* line 7613, main.scss */
   .fullBlack .hubContact input[type=submit] {
     background: transparent;
     color: #202024;
@@ -9026,36 +9030,36 @@ a.helpIcon:hover {
     font-weight: bold;
     padding: 10px;
     border-radius: 0px; }
-  /* line 7619, main.scss */
+  /* line 7621, main.scss */
   .fullBlack .hubContact input[type=submit]:hover {
     background: #202024;
     color: white;
     -webkit-transition: background-color 0.3s ease-in-out;
     transition: background-color 0.3s ease-in-out; }
-  /* line 7682, main.scss */
+  /* line 7684, main.scss */
   .fullBlack .hubContact ::-webkit-input-placeholder {
     color: #888; }
-  /* line 7685, main.scss */
+  /* line 7687, main.scss */
   .fullBlack .hubContact :-moz-placeholder {
     color: #888; }
-  /* line 7688, main.scss */
+  /* line 7690, main.scss */
   .fullBlack .hubContact ::-moz-placeholder {
     color: #888; }
-  /* line 7691, main.scss */
+  /* line 7693, main.scss */
   .fullBlack .hubContact :-ms-input-placeholder {
     color: #888; }
-  /* line 7694, main.scss */
+  /* line 7696, main.scss */
   .fullBlack .hubContact .assessmentLink {
     padding: 75px 0 0 0; }
-    /* line 7696, main.scss */
+    /* line 7698, main.scss */
     .fullBlack .hubContact .assessmentLink a {
       font-size: 2em;
       color: #00b6ff;
       font-weight: normal; }
-/* line 7703, main.scss */
+/* line 7705, main.scss */
 .fullBlack .hubAdress {
   padding: 75px 20px; }
-  /* line 7705, main.scss */
+  /* line 7707, main.scss */
   .fullBlack .hubAdress .map-icon {
     background-image: url("../images/hubBKO.png");
     background-size: contain;
@@ -9065,62 +9069,62 @@ a.helpIcon:hover {
     height: 180px;
     float: left;
     margin-right: 20px; }
-  /* line 7715, main.scss */
+  /* line 7717, main.scss */
   .fullBlack .hubAdress .map-addr p {
     margin-top: 0;
     font-size: 1.2em;
     line-height: 1.2em; }
-  /* line 7720, main.scss */
+  /* line 7722, main.scss */
   .fullBlack .hubAdress h1 {
     padding: 0 20px;
     margin-bottom: 45px;
     text-align: center;
     color: #202024; }
-  /* line 7726, main.scss */
+  /* line 7728, main.scss */
   .fullBlack .hubAdress > ul {
     margin-top: 45px; }
-    /* line 7728, main.scss */
+    /* line 7730, main.scss */
     .fullBlack .hubAdress > ul > li {
       -moz-box-sizing: border-box;
            box-sizing: border-box;
       padding-left: 155px;
       min-height: 220px; }
-      /* line 7732, main.scss */
+      /* line 7734, main.scss */
       .fullBlack .hubAdress > ul > li li {
         font-size: 1.2em; }
-      /* line 7735, main.scss */
+      /* line 7737, main.scss */
       .fullBlack .hubAdress > ul > li.bko {
         background: url("../images/hubBKO.png") no-repeat left 25px; }
-      /* line 7738, main.scss */
+      /* line 7740, main.scss */
       .fullBlack .hubAdress > ul > li.oua {
         background: url("../images/hubOUA.png") no-repeat left 25px; }
-/* line 7744, main.scss */
+/* line 7746, main.scss */
 .fullBlack .allHubBlock {
   padding: 75px 0; }
-  /* line 7746, main.scss */
+  /* line 7748, main.scss */
   .fullBlack .allHubBlock h1 {
     text-align: center;
     color: #202024; }
-  /* line 7750, main.scss */
+  /* line 7752, main.scss */
   .fullBlack .allHubBlock ul {
     margin-top: 25px;
     position: relative;
     padding-top: 120px; }
-    /* line 7754, main.scss */
+    /* line 7756, main.scss */
     .fullBlack .allHubBlock ul li {
       min-height: 100px; }
-      /* line 7757, main.scss */
+      /* line 7759, main.scss */
       .fullBlack .allHubBlock ul li div.helloMsg {
         position: absolute;
         display: none;
         top: -120px; }
-        /* line 7761, main.scss */
+        /* line 7763, main.scss */
         .fullBlack .allHubBlock ul li div.helloMsg h2 {
           text-align: center;
           font-family: helvetica;
           font-weight: bold;
           white-space: nowrap; }
-      /* line 7769, main.scss */
+      /* line 7771, main.scss */
       .fullBlack .allHubBlock ul li a {
         display: block;
         width: 150px;
@@ -9131,82 +9135,82 @@ a.helpIcon:hover {
         transition: -webkit-transform 0.2s ease-in;
         transition: transform 0.2s ease-in;
         transition: transform 0.2s ease-in, -webkit-transform 0.2s ease-in; }
-        /* line 7776, main.scss */
+        /* line 7778, main.scss */
         .fullBlack .allHubBlock ul li a:hover {
           -webkit-transform: scale(1.5);
                   transform: scale(1.5); }
-      /* line 7781, main.scss */
+      /* line 7783, main.scss */
       .fullBlack .allHubBlock ul li.EU a {
         background: url("../images/Location hexagons_Europe.png") no-repeat center center; }
-      /* line 7785, main.scss */
+      /* line 7787, main.scss */
       .fullBlack .allHubBlock ul li.EU:hover > .helloMsg {
         display: block; }
-      /* line 7791, main.scss */
+      /* line 7793, main.scss */
       .fullBlack .allHubBlock ul li.WA a {
         background: url("../images/Location hexagons_West Africa.png") no-repeat center center; }
-      /* line 7795, main.scss */
+      /* line 7797, main.scss */
       .fullBlack .allHubBlock ul li.WA:hover > .helloMsg {
         display: block; }
-      /* line 7801, main.scss */
+      /* line 7803, main.scss */
       .fullBlack .allHubBlock ul li.IN a {
         background: url("../images/Location hexagons_SE Asia_SEAP.png") no-repeat center center; }
-      /* line 7805, main.scss */
+      /* line 7807, main.scss */
       .fullBlack .allHubBlock ul li.IN:hover > .helloMsg {
         display: block; }
-      /* line 7811, main.scss */
+      /* line 7813, main.scss */
       .fullBlack .allHubBlock ul li.EA a {
         background: url("../images/Location hexagons_East Africa.png") no-repeat center center; }
-      /* line 7815, main.scss */
+      /* line 7817, main.scss */
       .fullBlack .allHubBlock ul li.EA:hover > .helloMsg {
         display: block; }
-      /* line 7821, main.scss */
+      /* line 7823, main.scss */
       .fullBlack .allHubBlock ul li.SA a {
         background: url("../images/Location hexagons_South Asia.png") no-repeat center center; }
-      /* line 7825, main.scss */
+      /* line 7827, main.scss */
       .fullBlack .allHubBlock ul li.SA:hover > .helloMsg {
         display: block; }
-      /* line 7831, main.scss */
+      /* line 7833, main.scss */
       .fullBlack .allHubBlock ul li.US a {
         background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
-      /* line 7835, main.scss */
+      /* line 7837, main.scss */
       .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
         display: block; }
 @media (max-width: 768px) {
-  /* line 7844, main.scss */
+  /* line 7846, main.scss */
   .fullBlack h1 {
     font-size: 2.2em; }
-  /* line 7847, main.scss */
+  /* line 7849, main.scss */
   .fullBlack .topMsg .hubIntro p {
     font-size: 2.2em; }
-  /* line 7850, main.scss */
+  /* line 7852, main.scss */
   .fullBlack .topMsg .hubIntro {
     width: 90%; }
-  /* line 7853, main.scss */
+  /* line 7855, main.scss */
   .fullBlack .hubMarketing p {
     font-size: 1.7em; }
-  /* line 7856, main.scss */
+  /* line 7858, main.scss */
   .fullBlack .allHubBlock ul {
     padding: 0 10px 0; }
-  /* line 7859, main.scss */
+  /* line 7861, main.scss */
   .fullBlack .allHubBlock ul li a:hover {
     -webkit-transform: scale(1);
             transform: scale(1); }
-  /* line 7862, main.scss */
+  /* line 7864, main.scss */
   .fullBlack .allHubBlock ul li a {
     width: 100px;
     height: 120px; } }
 @media (max-width: 500px) {
-  /* line 7868, main.scss */
+  /* line 7870, main.scss */
   .fullBlack .map-icon {
     width: 90px;
     height: 135px; } }
 @media (min-width: 769px) {
-  /* line 7874, main.scss */
+  /* line 7876, main.scss */
   .fullBlack .allHubBlock ul li {
     width: 195px; }
-  /* line 7877, main.scss */
+  /* line 7879, main.scss */
   .fullBlack .allHubBlock ul {
     padding-bottom: 30px; }
-  /* line 7880, main.scss */
+  /* line 7882, main.scss */
   .fullBlack .hubFeature li img {
     max-width: 350px; } }

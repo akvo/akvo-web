@@ -54,7 +54,7 @@ $(window).scroll(function() {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
-        $(".topbar").css("background", "rgba(32, 32, 36, 0.2)");
+        $(".topbar").css("background", "rgba(32, 32, 36, 0.3)");
     }
 });
 $("a.nxtSection[href^='#']").click(function(e) {

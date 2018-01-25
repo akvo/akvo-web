@@ -6870,12 +6870,14 @@ div[id^="inline-"] {
     header#top {
         background: rgba($akvoBlack, 0.2);
         transition: all 0.2s ease-in;
+        z-index: 199999;
         .navbar-fixed-top {
             &.top-nav-collapse {
                 transform: translateY(-52px);
             }
         }
         &:hover {
+            background: rgba($akvoBlack, 0.4) !important;
             .navbar-fixed-top {
                 &.top-nav-collapse {
                     transform: translateY(0);
