@@ -18,6 +18,7 @@
 					_e('<img src="'. get_sub_field('image') .'">');
 					_e('<figcaption>'. get_sub_field('title') .'</figcaption>');
 					_e('<p>'. get_sub_field('description') .'</p>');
+					_e('<a href="'. get_sub_field('link') .'"></a>');
 					_e('</figure></li>');
 				endwhile;
 				_e('</ul>');
@@ -35,7 +36,7 @@
 			while(have_rows('contacts')){ 
 				the_row();
 				_e('<div class="col-6">');
-				_e('<div class="map-icon"></div>');
+				_e('<div class="map-icon"><a href="'.get_sub_field( $el.'_link' ).'"></a></div>');
 				_e('<div class="map-addr">'.get_sub_field( $el.'_address' ).'</div>');
 				_e('<div style="clear:both"></div>');
 				_e('</div>');

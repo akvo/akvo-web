@@ -78,18 +78,30 @@
 	.fullBlack .hubMarketing, .fullBlack .hubFeature{
 		height: auto;
 	}
+	
+	
 	.fullBlack .hubTrustBlock .list-scroll li.logo{
 		width: 185px;
 		margin: 0 25px;
 	}
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
-	.hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon{
+	.fullBlack .hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon{
 		background-image:url('<?php the_sub_field('contact_image');?>');
 	}
-	.hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon:hover{
+	.fullBlack .hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon:hover{
 		background-image:url('<?php the_sub_field('contact_image_hover');?>');
 	}
 	<?php endwhile;?>
+	.fullBlack .hubAdress .map-icon{
+		position: relative;
+	}
+	.fullBlack .hubAdress .map-icon a[href], .fullBlack .hubMarketing, .fullBlack .hubFeature a[href]{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left:0;
+	}
 	.fullBlack .allHubBlock ul li.IN:hover > .helloMsg{
 		left: -40px;
 	}
