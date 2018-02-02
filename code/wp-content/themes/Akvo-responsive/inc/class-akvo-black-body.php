@@ -45,6 +45,7 @@
 		
 		function intro_section( $el ){
 			
+			
 			$overlay_image = get_field('overlay_image');
 			if( $overlay_image ){
 				_e('<div class="swooch hubEA" style="background-image:url(\''.$overlay_image.'\');"></div>');		
@@ -52,7 +53,16 @@
 			
 			_e('<div class="hubIntro">');
 			
-			
+			/* LANGUAGES */
+			if( have_rows('languages') ){
+				$num_languages = count( get_field('languages') );
+				_e('<ul class="list-inline text-center">');
+				$language_i = 1; while( have_rows('languages') ): the_row();?>
+					<li><a <?php if( get_sub_field('is_active') ){ _e("class='active'");} ?> href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></li>
+					<?php if( $language_i < $num_languages ):?><li>/</li><?php endif;?>
+				<?php $language_i++;endwhile;
+				_e('</ul>');
+			}
 			
 			$this->content_section( $el );
 			_e('</div>');
