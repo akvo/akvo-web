@@ -33,7 +33,7 @@
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.3.2' );
+		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.4.5' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
 		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
 		
@@ -514,8 +514,9 @@
 		
 		
 		$query = new WP_Query( array(
-			'post_type'	=> 'funnel',
-			'post__in'	=> array( $atts['id'] )
+			'posts_per_page'	=> 1,
+			'post_type'			=> 'funnel',
+			'post__in'			=> array( $atts['id'] )
 		) );
 			
 		if( $query->have_posts() ){
@@ -525,13 +526,12 @@
 				
 				include("inc/funnel.php");
 				
-				
 			}
 			
 			wp_reset_postdata();
 			
 		}
 		
-		return ob_get_contents();
+		return ob_get_clean();
 	});
 	

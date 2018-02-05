@@ -6913,11 +6913,14 @@ div[id^="inline-"] {
             background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
             height: calc(100vh + 10px);
             .hubIntro {
+				/*
                 position: absolute;
                 width: 60%;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
+				*/	
+				
                 .btnOutline {
                     @include btnOutline(white, #69c3ee);
                     display: table;
@@ -7076,10 +7079,23 @@ div[id^="inline-"] {
                     @media (max-width: 1500px) {
                         font-size: 2.25em;
                     }
+					@media (max-width: 768px) {
+						font-size: 2.20em;
+					}
                     &:first-of-type {
                         .fadeIn {
-                            display: inline;
-                            text-indent: 15px;
+							
+							display: inline;
+							text-indent: 15px;
+							
+							@media (max-width: 768px){
+								display: block;
+								text-indent: 0;
+								position: relative;
+								width: 100%;
+								min-height: 60px;
+								overflow: hidden;
+							}
                             span {
                                 color: #69c3ee;
                                 animation: fadeEffect 9s linear infinite 0s;
@@ -7136,334 +7152,7 @@ div[id^="inline-"] {
             }
         }
 
-        .assessFunel {
-            background-color: #e2e3ea;
-            position: relative;
-            width: 100%;
-            top: -10px;
-            padding: 70px 0 20px 0;
-            height: calc(100vh - 70px);
-            .funelContainer {
-                height: 100%;
-                width: 100%;
-                background: none;
-                transition: all 0.4s ease-in;
-                background-color: #E3E1EF;
-                background-repeat: no-repeat;
-                background-position: center center;
-                background-size: contain;
-                &:before {
-                    animation-name: bgEaseIn;
-                    animation-duration: 1s;
-                    animation-timing-function: ease-in;
-                    animation-delay: 0s;
-                    animation-direction: normal;
-                    animation-iteration-count: 1;
-                    animation-fill-mode: forwards;
-                    content: ' ';
-                    position: absolute;
-                    left: 0;
-                    top: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 1;
-                    background-color: #E3E1EF;
-                    z-index: 2;
-                }
-                div {
-                    &.funnelContent {
-                        text-align: center;
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        z-index: 99999;
-                    }
-                    img {
-                        display: block;
-                        margin: 0 auto;
-                    }
-                }
-                .subFunHeader {
-                    font-size: 2.25em;
-                    color: white;
-                    text-transform: uppercase;
-                }
-                .inlined {
-                    * {
-                        display: inline;
-                    }
-                }
-                h1 {
-                    font-size: 3.5em;
-                }
-                .infoHover {
-                    margin-bottom: 40px;
-                    width: 100%;
-                    padding: 15px;
-                    & + .moreInfo {
-                        opacity: 0;
-                        transition: opacity 0.2s ease-in;
-                    }
-                    &:hover {
-                        margin-bottom: 40px;
-                        & + .moreInfo {
-                            opacity: 1;
-                        }
-                    }
-                }
-                .moreInfo {
-                    text-align: center;
-                    font-size: 1em;
-                    margin-bottom: 60px;
-                    color: rgba($akvoBlack, 0.7);
-                }
-                form {}
-                ul {
-                    li {
-                        margin-bottom: 20px;
-                        &:last-child {
-                            margin-bottom: 0;
-                        }
-                        a.bouton {
-                            width: 25%;
-                            @include btnOutline($akvoPurple, $akvoPurple);
-                            background: transparent;
-                            font-size: 2.5em;
-                            border-width: 3px;
-                            @include border-radius(5px);
-                            &:hover {
-                                background: #ffd200;
-                                font-size: 2.5em;
-                                border-width: 3px;
-                            }
-                        }
-                    }
-                }
-                &#assess01 {
-                    background-image: url(../images/funelIcons-01.svg);
-                    .funnelContent {
-                        text-align: inherit;
-                        position: absolute;
-                        top: 10px;
-                        left: inherit;
-                        transform: none;
-                        p {
-                            top: 0;
-                            text-align: left;
-                            font-size: 2em;
-                            padding-right: 50px;
-                            padding-left: 50px;
-                            color: $akvoPurple;
-                            max-width: 70%;
-                            margin: 0 auto;
-                        }
-                    }
-                    .funnelStart {
-                        a {
-                            display: block;
-                            width: 15%;
-                            height: 15%;
-                            background: url("../images/funnelStart.svg") no-repeat center center;
-                            background-size: contain;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            text-indent: -9999px;
-                            z-index: 99999;
-                            opacity: 1;
-                            transition: opacity 0.2s ease-in;
-                            &:hover {
-                                opacity: 0.5;
-                            }
-                        }
-                    }
-                }
-                &#funnel-1 {
-                    &:before {
-                        animation-name: bgEaseInTwo;
-                        animation-duration: 2s;
-                        animation-timing-function: ease-in;
-                        animation-delay: 0s;
-                        animation-direction: normal;
-                        animation-iteration-count: 1;
-                        animation-fill-mode: forwards;
-                        content: ' ';
-                        position: absolute;
-                        left: 0;
-                        top: 0;
-                        width: 100%;
-                        height: 100%;
-                        z-index: 1;
-                        background-color: #e9e7f2;
-                    }
-                    background-image: url(../images/funelIcons-02.svg);
-                    ul {
-                        li {
-                            margin-bottom: 70px;
-                            &:first-child {
-                                margin-top: 50px;
-                            }
-                        }
-                    }
-                }
-                &#funnel-2 {
-                    background-image: url(../images/funelIcons-03.svg);
-                }
-                &#funnel-3 {
-                    background-image: url(../images/funelIcons-04.svg);
-                }
-                &#funnel-4 {
-                    background-image: url(../images/funelIcons-05.svg);
-                }
-                &#funnel-5 {
-                    background-image: url(../images/funelIcons-05.svg);
-                }
-                &#funnel-6 {
-                    background-image: url(../images/funelIcons-06.svg);
-                }
-                &#funnel-7 {
-                    background-image: url(../images/funelIcons-07.svg);
-                    .funnelContent {
-                        p {
-                            font-size: 1.5em;
-                            padding-right: 50px;
-                            padding-left: 50px;
-                            color: $akvoPurple;
-                            max-width: 60%;
-                            margin: 050px auto 0;
-                        }
-                    }
-                }
-                &#funnel-form {
-                    background-image: url(../images/funelIcons-06.svg);
-                    .contact100-form {
-                        width: 90%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: space-between;
-                        margin: 0 auto;
-                    }
-                    .contact100-form-title {
-                        display: block;
-                        width: 100%;
-                        line-height: 1.2;
-                        text-transform: uppercase;
-                        text-align: left;
-                    }
-                    /*------------------------------------------------------------------
-                    [ Input ]*/
-                    .wrap-input100 {
-                        width: 100%;
-                        position: relative;
-                        background-color: transparent;
-                        margin-bottom: 15px;
-                        text-align: left;
-                    }
-                    .rs1-wrap-input100 {
-                        width: calc((100% - 150px) / 2);
-                    }
-                    .label-input100 {
-                        color: #555555;
-                        line-height: 1.5;
-                    }
-                    select {
-                        height: 40px;
-                        padding: 0 15px;
-                    }
-                    .input100 {
-                        display: block;
-                        width: 100%;
-                        background: #f2f2f2;
-                        border-radius: 2px;
-                        color: #686868;
-                        line-height: 1.2;
-                        transition: all 0.4s;
-                        margin-top: 5px;
-                        padding: 0 15px;
-                    }
-                    /*---------------------------------------------*/
-                    input.input100, select.input100 {
-                        min-height: 40px;
-                    }
-                    textarea.input100 {
-                        min-height: 162px;
-                        padding-top: 19px;
-                        padding-bottom: 13px;
-                    }
-                    .input100:focus {
-                        background: #e6e6e6;
-                    }
-                    /*------------------------------------------------------------------
-                    [ Button ]*/
-                    .container-contact100-form-btn {
-                        width: 100%;
-                        display: flex;
-                        flex-wrap: wrap;
-                        justify-content: center;
-                        margin-top: 5px;
-                    }
-                    .wrap-contact100-form-btn {
-                        display: block;
-                        position: relative;
-                        z-index: 1;
-                        border-radius: 2px;
-                        overflow: hidden;
-                    }
-                    .contact100-form-bgbtn {
-                        position: absolute;
-                        z-index: -1;
-                        width: 300%;
-                        height: 100%;
-                        left: -100%;
-                        transition: all 0.4s;
-                    }
-                    .contact100-form-btn {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        @include button($akvoPurple, white);
-                        font-weight: normal;
-                        font-size: 2.25em;
-                        padding: 5px 10px;
-                        @include border-radius(5px);
-                    }
-                    .wrap-contact100-form-btn:hover .contact100-form-bgbtn {
-                        left: 0;
-                    }
-                    /*------------------------------------------------------------------
-                    [ Responsive ]*/
-                    @media (max-width: 992px) {
-                        .wrap-contact100 {
-                            padding: 66px 80px 59px 80px;
-                        }
-                    }
-                    @media (max-width: 768px) {
-                        .rs1-wrap-input100 {
-                            width: 100%;
-                        }
-                    }
-                    @media (max-width: 576px) {
-                        .wrap-contact100 {
-                            padding: 66px 15px 59px 15px;
-                        }
-                    }
-                    /*==================================================================
-                    [ Contact more ]*/
-                    .contact100-more {
-                        display: block;
-                        max-width: 960px;
-                        font-family: Raleway-SemiBold;
-                        font-size: 20px;
-                        color: #fff;
-                        line-height: 1.4;
-                        text-align: center;
-                        padding: 40px 0 10px 0;
-                    }
-                }
-            }
-        }
+        
         .vidBlock {
             position: relative;
             width: 100%;
@@ -7473,6 +7162,350 @@ div[id^="inline-"] {
             background: #ffd200 url("../images/Transparent white large.png") repeat;
         }
     }
+	.assessFunel {
+		background-color: #e2e3ea;
+		position: relative;
+		width: 100%;
+		top: -10px;
+		padding: 70px 0 20px 0;
+		height: calc(100vh - 70px);
+		.funelContainer {
+			height: 100%;
+			width: 100%;
+			background: none;
+			transition: all 0.4s ease-in;
+			background-color: #E3E1EF;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-size: contain;
+			
+			@media (max-width: 768px) {
+				background-image: none !important;
+			}
+			
+			&:before {
+				animation-name: bgEaseIn;
+				animation-duration: 1s;
+				animation-timing-function: ease-in;
+				animation-delay: 0s;
+				animation-direction: normal;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				background-color: #E3E1EF;
+				z-index: 2;
+			}
+			div {
+				&.funnelContent {
+					text-align: center;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					z-index: 99999;
+					
+					@media (max-width: 768px) {
+						position: relative;
+						top: 0;
+						left: 0;
+						transform: none;
+						width: 90%;
+						margin-left: auto;
+						margin-right: auto;
+					}
+					
+				}
+				img {
+					display: block;
+					margin: 0 auto;
+				}
+			}
+			.subFunHeader {
+				font-size: 2.25em;
+				color: white;
+				text-transform: uppercase;
+			}
+			.inlined {
+				* {
+					display: inline;
+				}
+			}
+			h1 {
+				font-size: 3.5em;
+				@media (max-width: 1500px) {
+					font-size: 3.0em;
+				}
+				
+				@media (max-width: 768px) {
+					font-size: 2.8em;
+				}
+				
+			}
+			.infoHover {
+				margin-bottom: 40px;
+				width: 100%;
+				padding: 15px;
+				& + .moreInfo {
+					opacity: 0;
+					transition: opacity 0.2s ease-in;
+				}
+				&:hover {
+					margin-bottom: 40px;
+					& + .moreInfo {
+						opacity: 1;
+					}
+				}
+			}
+			.moreInfo {
+				text-align: center;
+				font-size: 1em;
+				margin-bottom: 60px;
+				color: rgba($akvoBlack, 0.7);
+			}
+			form {}
+			ul {
+				li {
+					margin-bottom: 20px;
+					&:last-child {
+						margin-bottom: 0;
+					}
+					a.bouton {
+						width: 25%;
+						@include btnOutline($akvoPurple, $akvoPurple);
+						background: transparent;
+						font-size: 2.5em;
+						border-width: 3px;
+						@include border-radius(5px);
+						&:hover {
+							background: #ffd200;
+							font-size: 2.5em;
+							border-width: 3px;
+						}
+					}
+				}
+			}
+			&#assess01 {
+				
+				.funnelContent {
+					text-align: inherit;
+					/* position: absolute; */
+					top: 10px;
+					left: inherit;
+					transform: none;
+					p {
+						top: 0;
+						text-align: left;
+						font-size: 2em;
+						padding-right: 50px;
+						padding-left: 50px;
+						color: $akvoPurple;
+						max-width: 70%;
+						margin: 0 auto;
+						
+						@media( max-width: 1200px ){
+							max-width: 100%;
+							padding-right: 0;
+							padding-left: 0;
+						}
+					
+						
+					}
+				}
+				.funnelStart {
+					a {
+						display: block;
+						width: 15%;
+						height: 15%;
+						background: url("../images/funnelStart.svg") no-repeat center center;
+						background-size: contain;
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						transform: translate(-50%, -50%);
+						text-indent: -9999px;
+						z-index: 99999;
+						opacity: 1;
+						transition: opacity 0.2s ease-in;
+						&:hover {
+							opacity: 0.5;
+						}
+					}
+				}
+			}
+			&#funnel-1 {
+				&:before {
+					animation-name: bgEaseInTwo;
+					animation-duration: 2s;
+					animation-timing-function: ease-in;
+					animation-delay: 0s;
+					animation-direction: normal;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+					content: ' ';
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					z-index: 1;
+					background-color: #e9e7f2;
+				}
+				
+				ul {
+					li {
+						margin-bottom: 70px;
+						&:first-child {
+							margin-top: 50px;
+						}
+					}
+				}
+			}
+            &#funnel-7 {
+				background-image: url(../images/funelIcons-07.svg);
+				.funnelContent {
+					p {
+						font-size: 1.5em;
+						padding-right: 50px;
+						padding-left: 50px;
+						color: $akvoPurple;
+						max-width: 60%;
+						margin: 050px auto 0;
+					}
+				}
+			}
+			&#funnel-form {
+				background-image: url(../images/funelIcons-06.svg);
+				.contact100-form {
+					width: 90%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					margin: 0 auto;
+				}
+				.contact100-form-title {
+					display: block;
+					width: 100%;
+					line-height: 1.2;
+					text-transform: uppercase;
+					text-align: left;
+				}
+				/*------------------------------------------------------------------
+				[ Input ]*/
+				.wrap-input100 {
+					width: 100%;
+					position: relative;
+					background-color: transparent;
+					margin-bottom: 15px;
+					text-align: left;
+				}
+				.rs1-wrap-input100 {
+					width: calc((100% - 150px) / 2);
+				}
+				.label-input100 {
+					color: #555555;
+					line-height: 1.5;
+				}
+				select {
+					height: 40px;
+					padding: 0 15px;
+				}
+				.input100 {
+					display: block;
+					width: 100%;
+					background: #f2f2f2;
+					border-radius: 2px;
+					color: #686868;
+					line-height: 1.2;
+					transition: all 0.4s;
+					margin-top: 5px;
+					padding: 0 15px;
+				}
+				/*---------------------------------------------*/
+				input.input100, select.input100 {
+					min-height: 40px;
+				}
+				textarea.input100 {
+					min-height: 162px;
+					padding-top: 19px;
+					padding-bottom: 13px;
+				}
+				.input100:focus {
+					background: #e6e6e6;
+				}
+				/*------------------------------------------------------------------
+				[ Button ]*/
+				.container-contact100-form-btn {
+					width: 100%;
+					display: flex;
+					flex-wrap: wrap;
+					justify-content: center;
+					margin-top: 5px;
+				}
+				.wrap-contact100-form-btn {
+					display: block;
+					position: relative;
+					z-index: 1;
+					border-radius: 2px;
+					overflow: hidden;
+				}
+				.contact100-form-bgbtn {
+					position: absolute;
+					z-index: -1;
+					width: 300%;
+					height: 100%;
+					left: -100%;
+					transition: all 0.4s;
+				}
+				.contact100-form-btn {
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					@include button($akvoPurple, white);
+					font-weight: normal;
+					font-size: 2.25em;
+					padding: 5px 10px;
+					@include border-radius(5px);
+				}
+				.wrap-contact100-form-btn:hover .contact100-form-bgbtn {
+					left: 0;
+				}
+				/*------------------------------------------------------------------
+				[ Responsive ]*/
+				@media (max-width: 992px) {
+					.wrap-contact100 {
+						padding: 66px 80px 59px 80px;
+					}
+				}
+				@media (max-width: 768px) {
+					.rs1-wrap-input100 {
+						width: 100%;
+					}
+				}
+				@media (max-width: 576px) {
+					.wrap-contact100 {
+						padding: 66px 15px 59px 15px;
+					}
+				}
+				/*==================================================================
+				[ Contact more ]*/
+				.contact100-more {
+					display: block;
+					max-width: 960px;
+					font-family: Raleway-SemiBold;
+					font-size: 20px;
+					color: #fff;
+					line-height: 1.4;
+					text-align: center;
+					padding: 40px 0 10px 0;
+				}
+			}
+		}
+	}
     .topMsg {
         position: relative;
         width: 100%;
