@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 <!--Start of Akvo.org helpPage-->
 <div id="content" class="floats-in helpSupport">
-	<h1 class="backLined">Help & support</h1>
+	<h1 class="backLined"><?php the_title();?></h1>
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
 	<div class="centerED wrapper">
 		<?php the_content(); ?>
@@ -16,21 +16,13 @@
 	<section>
 		<nav>
 			<ul class="wrapper threeColumns floats-in">
-				<li class="bgDeco">
-					<a href="//rsrsupport.akvo.org/" class="rsrHelp">RSR Help</a>
-					<p class="centerED fullWidthParag">Do you need some help with Akvo RSR? We can throw you a life line.</p>
-					<a href="//rsrsupport.akvo.org/" class="moreHelp rsrH">Get Help</a>
+				<?php while( have_rows('products') ): the_row();?>
+				<li class="bgDeco text-center" style="min-height: 120px;margin-bottom: 5px;padding-top: 40px;">
+					<a href="<?php the_sub_field( 'link' );?>">
+						<img style="max-height: 40px;" src="<?php the_sub_field('logo');?>" />
+					</a>
 				</li>
-				<li class="bgDeco">
-					<a href="//flowsupport.akvo.org/" class="flowHelp">Flow Help</a>
-					<p class="centerED fullWidthParag">Are you feeling a bit lost in Akvo FLOW? We can show you the way.</p>
-					<a href="//flowsupport.akvo.org/" class="moreHelp flowH">Get Help</a>
-				</li>
-				<li class="bgDeco">
-					<a href="akvopedia-help" class="akvopediaHelp">Akvopedia Help</a>
-					<p class="centerED fullWidthParag">Do you need help with Akvopedia? Have a look in our first aid kit.</p>
-					<a href="akvopedia-help" class="moreHelp pediaH">Get Help</a>
-				</li>
+				<?php endwhile;?>
 			</ul>
 		</nav>	
 	</section>
