@@ -7082,6 +7082,9 @@ div[id^="inline-"] {
 					@media (max-width: 768px) {
 						font-size: 2.20em;
 					}
+					@media (max-width: 400px) {
+						font-size: 2.0em;
+					}
                     &:first-of-type {
                         .fadeIn {
 							
@@ -7096,6 +7099,9 @@ div[id^="inline-"] {
 								min-height: 60px;
 								overflow: hidden;
 							}
+							@media (max-width: 500px){
+								min-height: 120px;
+							}
                             span {
                                 color: #69c3ee;
                                 animation: fadeEffect 9s linear infinite 0s;
@@ -7103,6 +7109,9 @@ div[id^="inline-"] {
                                 display: inline;
                                 position: absolute;
                                 white-space: nowrap;
+								@media (max-width: 500px){
+									white-space: normal;
+								}
                                 &:nth-child(2) {
                                     animation-delay: 3s;
                                 }
@@ -7281,9 +7290,14 @@ div[id^="inline-"] {
 						font-size: 2.5em;
 						border-width: 3px;
 						@include border-radius(5px);
+						@media( max-width: 768px ){
+							font-size: 2.0em;
+						}
+						@media( max-width: 500px ){
+							font-size: 1.7em;
+						}
 						&:hover {
 							background: #ffd200;
-							font-size: 2.5em;
 							border-width: 3px;
 						}
 					}
@@ -7331,6 +7345,16 @@ div[id^="inline-"] {
 						z-index: 99999;
 						opacity: 1;
 						transition: opacity 0.2s ease-in;
+						@media( max-width: 768px ){
+							position: relative;
+							width: 200px;
+							height: 200px;
+							top: 0;
+							left: 0;
+							margin-left: auto;
+							margin-right: auto;
+							transform: none;
+						}
 						&:hover {
 							opacity: 0.5;
 						}

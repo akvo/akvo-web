@@ -7060,6 +7060,9 @@ a.helpIcon:hover {
       @media (max-width: 768px) {
         .fullBlack .homePage .topMsg .hubIntro p {
           font-size: 2.20em; } }
+      @media (max-width: 400px) {
+        .fullBlack .homePage .topMsg .hubIntro p {
+          font-size: 2.0em; } }
       .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
         display: inline;
         text-indent: 15px; }
@@ -7071,6 +7074,9 @@ a.helpIcon:hover {
             width: 100%;
             min-height: 60px;
             overflow: hidden; } }
+        @media (max-width: 500px) {
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+            min-height: 120px; } }
         .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
           color: #69c3ee;
           animation: fadeEffect 9s linear infinite 0s;
@@ -7078,6 +7084,9 @@ a.helpIcon:hover {
           display: inline;
           position: absolute;
           white-space: nowrap; }
+          @media (max-width: 500px) {
+            .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
+              white-space: normal; } }
           .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2) {
             animation-delay: 3s; }
           .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3) {
@@ -7218,9 +7227,14 @@ a.helpIcon:hover {
         .fullBlack .assessFunel .funelContainer ul li a.bouton:hover {
           border: 1px solid #2c2a74;
           color: #2c2a74; }
+        @media (max-width: 768px) {
+          .fullBlack .assessFunel .funelContainer ul li a.bouton {
+            font-size: 2.0em; } }
+        @media (max-width: 500px) {
+          .fullBlack .assessFunel .funelContainer ul li a.bouton {
+            font-size: 1.7em; } }
         .fullBlack .assessFunel .funelContainer ul li a.bouton:hover {
           background: #ffd200;
-          font-size: 2.5em;
           border-width: 3px; }
     .fullBlack .assessFunel .funelContainer#assess01 .funnelContent {
       text-align: inherit;
@@ -7256,6 +7270,16 @@ a.helpIcon:hover {
       z-index: 99999;
       opacity: 1;
       transition: opacity 0.2s ease-in; }
+      @media (max-width: 768px) {
+        .fullBlack .assessFunel .funelContainer#assess01 .funnelStart a {
+          position: relative;
+          width: 200px;
+          height: 200px;
+          top: 0;
+          left: 0;
+          margin-left: auto;
+          margin-right: auto;
+          transform: none; } }
       .fullBlack .assessFunel .funelContainer#assess01 .funnelStart a:hover {
         opacity: 0.5; }
     .fullBlack .assessFunel .funelContainer#funnel-1:before {
