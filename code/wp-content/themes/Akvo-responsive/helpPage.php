@@ -13,6 +13,7 @@
 	</div>
 	<?php endwhile; // end of the loop. ?>
 	<hr class="delicate" /> 
+	<?php if( have_rows('products') ):?>
 	<section>
 		<nav>
 			<ul class="wrapper threeColumns floats-in">
@@ -26,6 +27,7 @@
 			</ul>
 		</nav>	
 	</section>
+	<?php endif;?>
 </div>
 
 <!-- end content -->
