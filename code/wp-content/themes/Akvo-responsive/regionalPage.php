@@ -95,7 +95,7 @@
 	.fullBlack .hubAdress .map-icon{
 		position: relative;
 	}
-	.fullBlack .hubAdress .map-icon a[href], .fullBlack .hubMarketing, .fullBlack .hubFeature a[href]{
+	.fullBlack .hubAdress .map-icon a[href], .fullBlack .hubFeature a[href]{
 		position: absolute;
 		width: 100%;
 		height: 100%;

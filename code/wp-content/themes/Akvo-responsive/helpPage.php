@@ -16,8 +16,8 @@
 	<?php if( have_rows('products') ):?>
 	<section><nav><ul class="wrapper threeColumns floats-in">
 		<?php while( have_rows('products') ): the_row();?>
-		<li class="bgDeco text-center" style="min-height: 120px;margin-bottom: 5px;padding-top: 40px;">
-			<a href="<?php the_sub_field( 'link' );?>">
+		<li class="bgDeco text-center" style="min-height: 0px;margin-bottom: 5px;padding-top: 40px;padding-bottom:40px;">
+			<a href="<?php the_sub_field( 'link' );?>" style="height:auto;">
 				<img style="max-height: 40px;" src="<?php the_sub_field('logo');?>" />
 			</a>
 		</li>
