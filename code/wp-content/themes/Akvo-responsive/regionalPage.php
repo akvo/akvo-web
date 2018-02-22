@@ -79,8 +79,15 @@
 		height: auto;
 	}
 	
-	.fullBlack .hubFeature li{
+	
+	.fullBlack .hubFeature figure{
 		min-width: 350px;
+		overflow: hidden;
+	}
+	.fullBlack .hubFeature figure figcaption, .fullBlack .hubFeature figure p{
+		padding: 10px;
+		background: rgba(0, 0, 0, 0.7);
+		width: 80%;
 	}
 	
 	.fullBlack .hubTrustBlock .list-scroll li.logo{
