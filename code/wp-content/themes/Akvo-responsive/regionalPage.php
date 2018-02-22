@@ -79,6 +79,9 @@
 		height: auto;
 	}
 	
+	.fullBlack .hubFeature li{
+		min-width: 350px;
+	}
 	
 	.fullBlack .hubTrustBlock .list-scroll li.logo{
 		width: 185px;
