@@ -16,10 +16,26 @@
 			
 				while(have_rows('projects')): the_row();
 					_e('<li><figure>');
-					_e('<img src="'. get_sub_field('image') .'">');
-					_e('<figcaption>'. get_sub_field('title') .'</figcaption>');
-					_e('<p>'. get_sub_field('description') .'</p>');
-					_e('<a href="'. get_sub_field('link') .'"></a>');
+					
+					$image = get_sub_field('image');
+					if( $image ){
+						_e('<img src="'. $image .'" />');
+					}
+					
+					$caption = get_sub_field('title');
+					if( $caption ){
+						_e('<figcaption>'. $caption .'</figcaption>');
+					}
+					
+					$desc = get_sub_field('description');
+					if( $desc ){
+						_e('<p>'. $desc .'</p>');
+					}
+					
+					$link = get_sub_field('link');
+					if( $link ){
+						_e('<a href="'. $link .'"></a>');
+					}
 					_e('</figure></li>');
 				endwhile;
 				_e('</ul>');
