@@ -328,7 +328,7 @@
 				<ul class="akvo-tabs" data-behaviour="akvo-tabs">	
 					<?php foreach($tabs as $tab):?>
 					<li class="akvo-tab" data-tagline="<?php the_field($tab['tagline']);?>">
-						<a href="#<?php _e($this->slugify($tab['title'])); ?>"><?php _e($this->title($tab));?></a>
+						<a href="#<?php _e($this->slugify( $this->title($tab) )); ?>"><?php _e( $this->title($tab) );?></a>
 					</li>
 					<?php endforeach;?>	
 				</ul>
@@ -337,7 +337,7 @@
 					
 			<!-- Tab Content Section -->
 			<?php foreach($tabs as $tab):?>
-				<section class="tab-content" id="<?php _e($this->slugify($tab['title'])); ?>">
+				<section class="tab-content" id="<?php _e( $this->slugify( $this->title($tab) ) ); ?>">
 				<?php	
 					/* Displaying the inline elements within the tab */ 
 					$elements = $tab['elements'];

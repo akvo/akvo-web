@@ -143,19 +143,25 @@
     		}
   		});
 	});   
+	
 $(document).ready(function() {
     $('.bxslider').bxSlider();
     respondToWidth();
 
     function respondToWidth() {
-      var vid = $('video');
-      if ($(document).width() >= 768) {
-        vid.attr('preload', 'auto');
-        vid[0].load();
-        vid[0].play();
-      } else {
-        vid.attr('preload', 'none');
-      }      
+		var vid = $('video');
+		
+		// CHECK IF THE ELEMENT EXISTS
+		if( vid.length ){
+			if ($(document).width() >= 768) {
+				vid.attr('preload', 'auto');
+				vid[0].load();
+				vid[0].play();
+			} 
+			else {
+				vid.attr('preload', 'none');
+			}
+		}
     }
 
     // Hide the video overlay when the video is ready to play

@@ -1,8 +1,9 @@
 <?php
+	
 	class akvoBlackBody{
 		
 		function get_templates(){
-			return array('regionalPage.php', 'homepage-2018.php');
+			return array('regionalPage.php', 'homepage-2018.php', 'microStoryPage.php');
 		}
 		
 		function funnel_section(){
@@ -18,6 +19,7 @@
 					_e('<img src="'. get_sub_field('image') .'">');
 					_e('<figcaption>'. get_sub_field('title') .'</figcaption>');
 					_e('<p>'. get_sub_field('description') .'</p>');
+					_e('<a href="'. get_sub_field('link') .'"></a>');
 					_e('</figure></li>');
 				endwhile;
 				_e('</ul>');
@@ -31,19 +33,29 @@
 		function contacts_section( $el ){
 			
 			_e('<h1>'.get_field( $el.'_heading' ).'</h1>');
+			
+			
+			$col_class = 'col-12';
+			
+			$col_count = count( get_field('contacts') );
+			
+			if( $col_count == 2 ){ $col_class = 'col-6';}
+			if( $col_count == 3 ){ $col_class = 'col-4';}
+			
 			_e('<div class="row">');
 			while(have_rows('contacts')){ 
 				the_row();
-				_e('<div class="col-6">');
-				_e('<div class="map-icon"></div>');
+				_e('<div class="'.$col_class.' col-contact"><div class="contact">');
+				_e('<div class="map-icon"><a href="'.get_sub_field( $el.'_link' ).'"></a></div>');
 				_e('<div class="map-addr">'.get_sub_field( $el.'_address' ).'</div>');
 				_e('<div style="clear:both"></div>');
-				_e('</div>');
+				_e('</div></div>');
 			}
 			_e('</div>');	
 		}
 		
 		function intro_section( $el ){
+			
 			
 			$overlay_image = get_field('overlay_image');
 			if( $overlay_image ){
@@ -52,7 +64,16 @@
 			
 			_e('<div class="hubIntro">');
 			
-			
+			/* LANGUAGES */
+			if( have_rows('languages') ){
+				$num_languages = count( get_field('languages') );
+				_e('<ul class="list-inline text-center">');
+				$language_i = 1; while( have_rows('languages') ): the_row();?>
+					<li><a <?php if( get_sub_field('is_active') ){ _e("class='active'");} ?> href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></li>
+					<?php if( $language_i < $num_languages ):?><li>/</li><?php endif;?>
+				<?php $language_i++;endwhile;
+				_e('</ul>');
+			}
 			
 			$this->content_section( $el );
 			_e('</div>');
