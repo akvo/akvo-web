@@ -87,11 +87,18 @@
 		width: 185px;
 		margin: 0 25px;
 	}
+	
+	.fullBlack .hubAdress .col-contact .contact{
+		width: 350px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
-	.fullBlack .hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon{
+	.fullBlack .hubAdress .col-contact:nth-child(<?php _e($i);?>) .map-icon{
 		background-image:url('<?php the_sub_field('contact_image');?>');
 	}
-	.fullBlack .hubAdress .col-6:nth-child(<?php _e($i);?>) .map-icon:hover{
+	.fullBlack .hubAdress .col-contact:nth-child(<?php _e($i);?>) .map-icon:hover{
 		background-image:url('<?php the_sub_field('contact_image_hover');?>');
 	}
 	<?php endwhile;?>
