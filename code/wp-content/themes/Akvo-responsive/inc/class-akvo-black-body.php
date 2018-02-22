@@ -1,8 +1,9 @@
 <?php
+	
 	class akvoBlackBody{
 		
 		function get_templates(){
-			return array('regionalPage.php', 'homepage-2018.php');
+			return array('regionalPage.php', 'homepage-2018.php', 'microStoryPage.php');
 		}
 		
 		function funnel_section(){
