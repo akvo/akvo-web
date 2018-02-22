@@ -6882,6 +6882,10 @@ a.helpIcon:hover {
     width: 49% !important; } }
 
 /************************************** NEW STYLES **************************************/
+@media only screen and (max-width: 768px) {
+  .fullBlack #content {
+    padding: 0;
+    width: 100%; } }
 .fullBlack .nxtSection {
   display: block;
   width: 50px;
@@ -6901,11 +6905,21 @@ a.helpIcon:hover {
   border: none;
   color: white; }
 .fullBlack header#top {
-  background: rgba(32, 32, 36, 0.2);
   transition: all 0.2s ease-in;
   z-index: 199999; }
+  @media (min-width: 769px) {
+    .fullBlack header#top {
+      background: rgba(32, 32, 36, 0.2); } }
   .fullBlack header#top .navbar-fixed-top.top-nav-collapse {
     transform: translateY(-52px); }
+  @media (max-width: 768px) {
+    .fullBlack header#top {
+      border: #202024 solid 1px;
+      box-sizing: border-box; }
+      .fullBlack header#top h1 {
+        width: 170px;
+        margin-left: auto;
+        margin-right: auto; } }
   .fullBlack header#top:hover {
     background: rgba(32, 32, 36, 0.4) !important; }
     .fullBlack header#top:hover .navbar-fixed-top.top-nav-collapse {
@@ -7442,52 +7456,56 @@ a.helpIcon:hover {
         line-height: 1.4;
         text-align: center;
         padding: 40px 0 10px 0; }
-.fullBlack .topMsg {
+.fullBlack .hubPage .topMsg {
   position: relative;
   width: 100%;
-  height: calc(100vh + 70px);
-  margin-top: -70px;
+  height: 100vh;
   background-size: cover !important; }
-  .fullBlack .topMsg.hubEA {
+  @media (max-width: 768px) {
+    .fullBlack .hubPage .topMsg {
+      height: calc( 100vh + 70px ); } }
+  .fullBlack .hubPage .topMsg.hubEA {
     background: url("../images/hub_EA.jpg") no-repeat center top; }
-  .fullBlack .topMsg .swooch {
+  .fullBlack .hubPage .topMsg .swooch {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%; }
-    .fullBlack .topMsg .swooch.hubEA {
+    .fullBlack .hubPage .topMsg .swooch.hubEA {
       opacity: 0.5;
       background: rgba(32, 32, 36, 0.9) url("../images/Squiggle - Yellow.png");
       background-position: center center !important;
       background-repeat: no-repeat !important; }
       @media (min-width: 1px) and (max-width: 598px) {
-        .fullBlack .topMsg .swooch.hubEA {
+        .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 120%; } }
       @media (min-width: 599px) and (max-width: 748px) {
-        .fullBlack .topMsg .swooch.hubEA {
+        .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 747px) and (max-width: 998px) {
-        .fullBlack .topMsg .swooch.hubEA {
+        .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 999px) and (max-width: 1198px) {
-        .fullBlack .topMsg .swooch.hubEA {
+        .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 90%; } }
       @media (min-width: 1199px) {
-        .fullBlack .topMsg .swooch.hubEA {
+        .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 90%; } }
-  .fullBlack .topMsg .hubIntro {
+  .fullBlack .hubPage .topMsg .hubIntro {
     position: absolute;
     width: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    .fullBlack .topMsg .hubIntro p {
+    bottom: 70px;
+    left: 20%; }
+    @media (max-width: 992px) {
+      .fullBlack .hubPage .topMsg .hubIntro {
+        width: 90%;
+        left: 5%; } }
+    .fullBlack .hubPage .topMsg .hubIntro p {
       font-family: helvetica;
       font-weight: bold;
-      color: white;
-      font-size: 2.5em; }
-      .fullBlack .topMsg .hubIntro p .hubName.hubEA {
+      color: white; }
+      .fullBlack .hubPage .topMsg .hubIntro p .hubName.hubEA {
         color: yellow; }
 .fullBlack .hubMarketing {
   height: calc(100vh + 70px);
@@ -7717,13 +7735,28 @@ a.helpIcon:hover {
         background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
       .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
         display: block; }
+.fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
+  font-size: 2.5em; }
+  @media (max-width: 768px) {
+    .fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
+      font-size: 2.2em; } }
+  @media (max-width: 500px) {
+    .fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
+      font-size: 2.0em; } }
+.fullBlack .hubIntro ul.list-inline.text-center {
+  color: #fff;
+  margin-bottom: 1em; }
+  .fullBlack .hubIntro ul.list-inline.text-center li {
+    margin-right: 0em;
+    margin-left: 0em; }
+  .fullBlack .hubIntro ul.list-inline.text-center a[href] {
+    color: inherit; }
+  .fullBlack .hubIntro ul.list-inline.text-center a[href].active {
+    font-weight: bold;
+    font-size: 1.1em; }
 @media (max-width: 768px) {
   .fullBlack h1 {
     font-size: 2.2em; }
-  .fullBlack .topMsg .hubIntro p {
-    font-size: 2.2em; }
-  .fullBlack .topMsg .hubIntro {
-    width: 90%; }
   .fullBlack .hubMarketing p {
     font-size: 1.7em; }
   .fullBlack .allHubBlock ul {
@@ -7734,7 +7767,7 @@ a.helpIcon:hover {
     width: 100px;
     height: 120px; } }
 @media (max-width: 500px) {
-  .fullBlack .map-icon {
+  .fullBlack .hubAdress .map-icon {
     width: 90px;
     height: 135px; } }
 @media (min-width: 769px) {

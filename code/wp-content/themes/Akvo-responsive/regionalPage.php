@@ -58,22 +58,7 @@
 </div>
 <style>
 	/* LANGUAGE TOGGLE */
-	.fullBlack .topMsg .hubIntro ul.list-inline.text-center{
-		color: #fff;
-		font-size: 2.5em;
-		margin-bottom: 2em;
-	}
-	.fullBlack .topMsg .hubIntro ul.list-inline.text-center li{
-		margin-right: 0em;
-		margin-left: 0em;
-	}
-	.fullBlack .topMsg .hubIntro ul.list-inline.text-center a[href]{
-		color: inherit;
-	}
-	.fullBlack .topMsg .hubIntro ul.list-inline.text-center a[href].active{
-		font-weight: bold;
-		font-size: 1.1em;
-	}
+	
 	/* LANGUAGE TOGGLE */
 	.fullBlack .hubMarketing, .fullBlack .hubFeature{
 		height: auto;
@@ -83,6 +68,12 @@
 	.fullBlack .hubFeature figure{
 		min-width: 350px;
 		overflow: hidden;
+	}
+	@media( max-width: 768px){
+		.fullBlack .hubFeature figure{
+			min-width: auto;
+			
+		}
 	}
 	.fullBlack .hubFeature figure figcaption, .fullBlack .hubFeature figure p{
 		padding: 10px;
@@ -96,10 +87,11 @@
 	}
 	
 	.fullBlack .hubAdress .col-contact .contact{
-		width: 350px;
+		max-width: 350px;
 		margin-left: auto;
 		margin-right: auto;
 	}
+	
 	
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
 	.fullBlack .hubAdress .col-contact:nth-child(<?php _e($i);?>) .map-icon{
