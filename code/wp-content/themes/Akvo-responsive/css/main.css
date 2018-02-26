@@ -6938,10 +6938,15 @@ a.helpIcon:hover {
   position: relative; }
 .fullBlack .homePage .topMsg {
   background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
-  height: calc(100vh + 10px); }
+  height: calc(100vh - 100px);
+  padding-top: 100px; }
   .fullBlack .homePage .topMsg .hubIntro {
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
     				/*
-                    position: absolute;
+    				position: absolute;
                     width: 60%;
                     top: 50%;
                     left: 50%;
@@ -7134,7 +7139,7 @@ a.helpIcon:hover {
   background-color: #e2e3ea;
   position: relative;
   width: 100%;
-  top: -10px;
+  /*top: -10px;*/
   padding: 70px 0 70px 0;
   height: calc(100vh - 70px); }
   .fullBlack .assessFunel .funelContainer {
@@ -7248,7 +7253,8 @@ a.helpIcon:hover {
       /* position: absolute; */
       top: 10px;
       left: inherit;
-      transform: none; }
+      transform: none;
+      padding: 20px; }
       .fullBlack .assessFunel .funelContainer#assess01 .funnelContent p {
         top: 0;
         text-align: left;
@@ -7257,7 +7263,8 @@ a.helpIcon:hover {
         padding-left: 50px;
         color: #2c2a74;
         max-width: 70%;
-        margin: 0 auto; }
+        margin: 0 auto;
+        line-height: 1.2em; }
         @media (max-width: 1200px) {
           .fullBlack .assessFunel .funelContainer#assess01 .funnelContent p {
             max-width: 100%;

@@ -77,15 +77,24 @@
     .homePage {
         .topMsg {
             background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
-            height: calc(100vh + 10px);
+            height: calc(100vh - 100px);
+			padding-top: 100px;
+			
             .hubIntro {
+				padding: 20px;
+				max-width: 800px;
+				margin-left: auto;
+				margin-right: auto;
+				
+				
 				/*
-                position: absolute;
+				position: absolute;
                 width: 60%;
                 top: 50%;
                 left: 50%;
                 transform: translate(-50%, -50%);
-				*/	
+				*/
+				
 				
                 .btnOutline {
                     @include btnOutline(white, #69c3ee);
@@ -341,7 +350,7 @@
 		background-color: #e2e3ea;
 		position: relative;
 		width: 100%;
-		top: -10px;
+		/*top: -10px;*/
 		padding: 70px 0 70px 0;
 		height: calc(100vh - 70px);
 		.funelContainer {
@@ -477,6 +486,7 @@
 					top: 10px;
 					left: inherit;
 					transform: none;
+					padding: 20px;
 					p {
 						top: 0;
 						text-align: left;
@@ -486,6 +496,7 @@
 						color: $akvoPurple;
 						max-width: 70%;
 						margin: 0 auto;
+						line-height: 1.2em;
 						
 						@media( max-width: 1200px ){
 							max-width: 100%;

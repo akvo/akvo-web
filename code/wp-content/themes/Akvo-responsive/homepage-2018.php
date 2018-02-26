@@ -26,9 +26,10 @@
 			'next_link_class'	=> 'nxtSection'
 		),
 		'clients'	=> array(
-			'id'	=> 'hubTrustBlock',
-			'class'	=> 'hubTrustBlock floats-in',
-			'fn'	=> 'logos'
+			'id'		=> 'hubTrustBlock',
+			'class'		=> 'hubTrustBlock floats-in',
+			'fn'		=> 'logos',
+			'wrapper'	=> true
 		),
 		'hubs_list'	=> array(
 			'class'	=> 'allHubBlock floats-in',
@@ -63,7 +64,7 @@ $(window).scroll(function() {
         $(".navbar-fixed-top").addClass("top-nav-collapse");
     } else {
         $(".navbar-fixed-top").removeClass("top-nav-collapse");
-        $(".topbar").css("background", "rgba(32, 32, 36, 0.3)");
+        //$(".topbar").css("background", "rgba(32, 32, 36, 0.3)");
     }
 });
 $("a.nxtSection[href^='#']").click(function(e) {
