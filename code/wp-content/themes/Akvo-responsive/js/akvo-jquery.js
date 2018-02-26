@@ -197,10 +197,84 @@ $.fn.ajax_loading = function(){
 	});
 };
 
+$.fn.fullBlackMenu = function(){
+	return this.each(function(){
+		
+		if ($(window).width() > 960) {
+			$(window).scroll(function() {
+				if ($(".topbar").offset().top > 200) {
+					$(".topbar").css("background", "transparent");
+					$(".navbar-fixed-top").addClass("top-nav-collapse");
+				} else {
+					$(".navbar-fixed-top").removeClass("top-nav-collapse");
+					$(".topbar").css("background", "rgba(32, 32, 36, 0.3)");
+				}
+			});
+		}
+		
+	});
+}
+
+$.fn.next = function(){
+	return this.each(function(){
+		
+		var el = $(this);
+		
+		el.click( function( e ){
+			e.preventDefault();
+			
+			var position = $(el.attr("href")).offset().top;
+
+			$("body, html").animate({
+				scrollTop: position
+			}  );
+		});
+		
+	});
+}
+
+$.fn.funnel_next = function(){
+	return this.each(function(){
+		
+		var btn = $(this);
+	
+		btn.click( function(ev){
+			ev.preventDefault();
+			
+			var next_section = $(btn.attr('href'));
+			
+			// HIDE ALL FUNNEL SECTIONS
+			$('section.funelContainer').addClass('hidden');
+			
+			// SHOW THE NEXT SECTION ONLY
+			next_section.removeClass('hidden');
+			
+			var question = btn.attr('data-q');
+			if( question ){
+				
+				var ans = btn.html();
+				
+				var textarea = $('#funnel-form .funnel-msg textarea');
+				
+				var text = textarea.val() + question + " " + ans + "\r\n";
+				
+				textarea.val( text );
+				
+			}
+			
+		});
+		
+	});
+}
+
 $("document").ready(function() {
 	
+	/* NEW TRANSPARENT MENU */
+	$('body.fullBlack').fullBlackMenu();
     
 	$("[data-behaviour~=ajax-loading]").ajax_loading();
-        
 	
+	$("[data-behaviour~=next]").next();
+        
+	$('[data-behaviour~=fnl-nxt-btn]').funnel_next();
 });
