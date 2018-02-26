@@ -6937,21 +6937,8 @@ a.helpIcon:hover {
   max-width: 100%;
   position: relative; }
 .fullBlack .homePage .topMsg {
-  background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
-  height: calc(100vh - 100px);
-  padding-top: 100px; }
+  background: #2c2a74 url("../images/Transparent_black_large.png") repeat; }
   .fullBlack .homePage .topMsg .hubIntro {
-    padding: 20px;
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
-    				/*
-    				position: absolute;
-                    width: 60%;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-    				*/
     /*FadeIn Animation*/ }
     .fullBlack .homePage .topMsg .hubIntro .btnOutline {
       border: 1px solid white;
@@ -6960,7 +6947,8 @@ a.helpIcon:hover {
       font-weight: normal;
       display: table;
       margin: 20px auto;
-      font-size: 1.5em; }
+      font-size: 0.7em;
+      padding: 0 25px; }
       .fullBlack .homePage .topMsg .hubIntro .btnOutline:hover {
         border: 1px solid #69c3ee;
         color: #69c3ee; }
@@ -7049,64 +7037,38 @@ a.helpIcon:hover {
     opacity: 0; }
   100% {
     opacity: 0; } }
-    .fullBlack .homePage .topMsg .hubIntro p {
-      font-family: helvetica;
-      font-weight: bold;
-      color: white;
-      font-size: 4em; }
-      @media (max-width: 2000px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 3.5em; } }
-      @media (max-width: 1900px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 3.25em; } }
-      @media (max-width: 1700px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 3em; } }
-      @media (max-width: 1600px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 2.75em; } }
-      @media (max-width: 1500px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 2.25em; } }
+    .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+      display: inline;
+      text-indent: 15px; }
       @media (max-width: 768px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 2.20em; } }
-      @media (max-width: 400px) {
-        .fullBlack .homePage .topMsg .hubIntro p {
-          font-size: 2.0em; } }
-      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
-        display: inline;
-        text-indent: 15px; }
-        @media (max-width: 768px) {
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
-            display: block;
-            text-indent: 0;
-            position: relative;
-            width: 100%;
-            min-height: 60px;
-            overflow: hidden; } }
-        @media (max-width: 500px) {
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
-            min-height: 120px; } }
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
-          color: #69c3ee;
-          animation: fadeEffect 9s linear infinite 0s;
-          opacity: 0;
-          display: inline;
-          position: absolute;
-          white-space: nowrap; }
-          @media (max-width: 500px) {
-            .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
-              white-space: normal; } }
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2) {
-            animation-delay: 3s; }
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3) {
-            animation-delay: 6s; }
-      .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2) {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+          display: block;
+          text-indent: 0;
+          position: relative;
+          width: 100%;
+          min-height: 60px;
+          overflow: hidden; } }
+      @media (max-width: 500px) {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+          min-height: 120px; } }
+      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
         color: #69c3ee;
-        animation: bounceInRight 1s;
-        animation-fill-mode: forwards; }
+        animation: fadeEffect 9s linear infinite 0s;
+        opacity: 0;
+        display: inline;
+        position: absolute;
+        white-space: nowrap; }
+        @media (max-width: 500px) {
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
+            white-space: normal; } }
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2) {
+          animation-delay: 3s; }
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3) {
+          animation-delay: 6s; }
+    .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2) {
+      color: #69c3ee;
+      animation: bounceInRight 1s;
+      animation-fill-mode: forwards; }
 .fullBlack .homePage .bgEaseIn {
   animation: bgEaseIn 0.5s ease-in forwards; }
 @keyframes bgEaseIn {
@@ -7131,15 +7093,13 @@ a.helpIcon:hover {
 .fullBlack .homePage .vidBlock {
   position: relative;
   width: 100%;
-  top: -10px;
-  padding: 70px 0 20px 0;
-  height: calc(100vh - 70px);
+  padding: 70px 0 70px 0;
+  height: calc(100vh - 140px);
   background: #ffd200 url("../images/Transparent white large.png") repeat; }
 .fullBlack .assessFunel {
   background-color: #e2e3ea;
   position: relative;
   width: 100%;
-  /*top: -10px;*/
   padding: 70px 0 70px 0;
   height: calc(100vh - 70px); }
   .fullBlack .assessFunel .funelContainer {
@@ -7456,16 +7416,50 @@ a.helpIcon:hover {
         line-height: 1.4;
         text-align: center;
         padding: 40px 0 10px 0; }
-.fullBlack .hubPage .topMsg {
+.fullBlack .topMsg {
   position: relative;
   width: 100%;
-  height: 100vh;
-  background-size: cover !important; }
-  @media (max-width: 768px) {
-    .fullBlack .hubPage .topMsg {
-      height: calc( 100vh + 70px ); } }
-  .fullBlack .hubPage .topMsg.hubEA {
-    background: url("../images/hub_EA.jpg") no-repeat center top; }
+  height: 100vh; }
+  .fullBlack .topMsg .hubIntro {
+    position: absolute;
+    width: 60%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); }
+    @media (max-width: 992px) {
+      .fullBlack .topMsg .hubIntro {
+        width: 90%; } }
+    .fullBlack .topMsg .hubIntro p {
+      font-family: helvetica;
+      font-weight: bold;
+      color: white; }
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+      font-size: 4em; }
+      @media (max-width: 2000px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 3.5em; } }
+      @media (max-width: 1900px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 3.25em; } }
+      @media (max-width: 1700px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 3em; } }
+      @media (max-width: 1600px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 2.75em; } }
+      @media (max-width: 1500px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 2.50em; } }
+      @media (max-width: 768px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 2.20em; } }
+      @media (max-width: 500px) {
+        .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center {
+          font-size: 2.0em; } }
+.fullBlack .hubPage .topMsg {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center top; }
   .fullBlack .hubPage .topMsg .swooch {
     position: absolute;
     top: 0;
@@ -7492,22 +7486,6 @@ a.helpIcon:hover {
       @media (min-width: 1199px) {
         .fullBlack .hubPage .topMsg .swooch.hubEA {
           background-size: 90%; } }
-  .fullBlack .hubPage .topMsg .hubIntro {
-    position: absolute;
-    width: 60%;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 20%; }
-    @media (max-width: 992px) {
-      .fullBlack .hubPage .topMsg .hubIntro {
-        width: 90%;
-        left: 5%; } }
-    .fullBlack .hubPage .topMsg .hubIntro p {
-      font-family: helvetica;
-      font-weight: bold;
-      color: white; }
-      .fullBlack .hubPage .topMsg .hubIntro p .hubName.hubEA {
-        color: yellow; }
 .fullBlack .hubMarketing {
   padding: 75px 0px; }
   .fullBlack .hubMarketing p {
@@ -7521,9 +7499,12 @@ a.helpIcon:hover {
   .fullBlack .hubFeature li {
     margin-bottom: 20px; }
   .fullBlack .hubFeature figure {
-    min-width: 350px;
     overflow: hidden;
-    position: relative; }
+    position: relative;
+    min-width: 350px; }
+    @media (max-width: 768px) {
+      .fullBlack .hubFeature figure {
+        min-width: 0; } }
     .fullBlack .hubFeature figure figcaption, .fullBlack .hubFeature figure p {
       padding: 10px;
       background: rgba(0, 0, 0, 0.7);
@@ -7688,14 +7669,6 @@ a.helpIcon:hover {
         background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
       .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
         display: block; }
-.fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
-  font-size: 2.5em; }
-  @media (max-width: 768px) {
-    .fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
-      font-size: 2.2em; } }
-  @media (max-width: 500px) {
-    .fullBlack .hubIntro p, .fullBlack .hubIntro ul.list-inline.text-center {
-      font-size: 2.0em; } }
 .fullBlack .hubIntro ul.list-inline.text-center {
   color: #fff;
   margin-bottom: 1em; }

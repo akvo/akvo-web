@@ -76,31 +76,16 @@
     }
     .homePage {
         .topMsg {
-            background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
-            height: calc(100vh - 100px);
-			padding-top: 100px;
-			
+			background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
+            
             .hubIntro {
-				padding: 20px;
-				max-width: 800px;
-				margin-left: auto;
-				margin-right: auto;
 				
-				
-				/*
-				position: absolute;
-                width: 60%;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-				*/
-				
-				
-                .btnOutline {
+				.btnOutline {
                     @include btnOutline(white, #69c3ee);
                     display: table;
                     margin: 20px auto;
-                    font-size: 1.5em;
+                    font-size: 0.7em;
+					padding: 0 25px;
                 }
                 @keyframes showup {
                     0% {
@@ -235,31 +220,8 @@
                 }
 
                 p {
-                    font-family: helvetica;
-                    font-weight: bold;
-                    color: white;
-                    font-size: 4em;
-                    @media (max-width: 2000px) {
-                        font-size: 3.5em;
-                    }
-                    @media (max-width: 1900px) {
-                        font-size: 3.25em;
-                    }
-                    @media (max-width: 1700px) {
-                        font-size: 3em;
-                    }
-                    @media (max-width: 1600px) {
-                        font-size: 2.75em;
-                    }
-                    @media (max-width: 1500px) {
-                        font-size: 2.25em;
-                    }
-					@media (max-width: 768px) {
-						font-size: 2.20em;
-					}
-					@media (max-width: 400px) {
-						font-size: 2.0em;
-					}
+                    
+                    
                     &:first-of-type {
                         .fadeIn {
 							
@@ -340,9 +302,8 @@
         .vidBlock {
             position: relative;
             width: 100%;
-            top: -10px;
-            padding: 70px 0 20px 0;
-            height: calc(100vh - 70px);
+            padding: 70px 0 70px 0;
+            height: calc(100vh - 140px);
             background: #ffd200 url("../images/Transparent white large.png") repeat;
         }
     }
@@ -350,9 +311,9 @@
 		background-color: #e2e3ea;
 		position: relative;
 		width: 100%;
-		/*top: -10px;*/
+		
 		padding: 70px 0 70px 0;
-		height: calc(100vh - 70px);
+		height: calc(100vh - 140px);
 		.funelContainer {
 			height: 100%;
 			width: 100%;
@@ -707,19 +668,64 @@
 			}
 		}
 	}
-    .hubPage .topMsg {
-        position: relative;
+	.topMsg{
+		position: relative;
         width: 100%;
 		height: 100vh;
 		
-		@media(max-width: 768px){
-			height: calc( 100vh + 70px );
+		.hubIntro{
+			position: absolute;
+            width: 60%;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			
+			@media (max-width: 992px) {
+				width: 90%;
+			}
+			
+			p {
+                font-family: helvetica;
+                font-weight: bold;
+                color: white;
+			
+			}
+			
+			p, ul.list-inline.text-center{
+				
+				font-size: 4em;
+				@media (max-width: 2000px) {
+					font-size: 3.5em;
+				}
+				@media (max-width: 1900px) {
+					font-size: 3.25em;
+				}
+				@media (max-width: 1700px) {
+					font-size: 3em;
+				}
+				@media (max-width: 1600px) {
+					font-size: 2.75em;
+				}
+				@media (max-width: 1500px) {
+					font-size: 2.50em;
+				}
+				@media (max-width: 768px) {
+					font-size: 2.20em;
+				}
+				@media (max-width: 500px) {
+					font-size: 2.0em;
+				}
+				
+			}
+			
 		}
+	}
+    .hubPage .topMsg {
+        
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center top;
 		
-        background-size: cover !important;
-        &.hubEA {
-			background: url("../images/hub_EA.jpg") no-repeat center top;
-        }
         .swooch {
             position: absolute;
             top: 0;
@@ -748,30 +754,7 @@
                 }
             }
         }
-        .hubIntro {
-            position: absolute;
-            width: 60%;
-			top: 50%;
-			transform: translateY(-50%);
-			left: 20%;
-			
-			@media (max-width: 992px) {
-				width: 90%;
-				left: 5%;
-			}
-			
-            p {
-                font-family: helvetica;
-                font-weight: bold;
-                color: white;
-                
-                .hubName {
-                    &.hubEA {
-                        color: yellow;
-                    }
-                }
-            }
-        }
+        
     }
     .hubMarketing {
         
@@ -791,10 +774,15 @@
             margin-bottom: 20px;
         }
         figure {
-			min-width: 350px;
 			overflow: hidden;
             position: relative;
-            figcaption, p{
+			min-width: 350px;
+			
+			@media( max-width: 768px ){
+				min-width: 0;
+			}
+			
+			figcaption, p{
 				padding: 10px;
 				background: rgba(0, 0, 0, 0.7);
 				width: 100%;
@@ -806,20 +794,12 @@
 				text-align: center;
 				margin: 0;
 			}
-			p {
-                display: none;
-            }
-            figcaption {
-                display: inline-block;
-            }
+			p { display: none; }
+            figcaption { display: inline-block;}
             &:hover {
                 cursor: pointer;
-                p {
-                    display: inline-block;
-				}
-                figcaption {
-                    display: none;
-                }
+                p { display: inline-block;}
+                figcaption { display: none;}
             }
         }
     }
@@ -1045,15 +1025,7 @@
             }
         }
     }
-	.hubIntro p, .hubIntro ul.list-inline.text-center{
-		font-size: 2.5em;
-		@media (max-width: 768px) {
-			font-size: 2.2em;
-		}
-		@media (max-width: 500px) {
-			font-size: 2.0em;
-		}
-	}
+	
 	.hubIntro ul.list-inline.text-center{
 		color: #fff;
 		margin-bottom: 1em;

@@ -108,8 +108,8 @@
 			
 			if( $video ):
 			?>
-			<div style="width: 75%;height: 75%;margin: 0 auto;">
-				<iframe width="75%" height="75%" src="https://www.youtube.com/embed/IfgbExC1UV4?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
+			<div style="width: 85%;max-height: 500px;top: 50%;left: 50%;transform: translate(-50%, -50%);position: absolute;">
+				<iframe style="max-height: 70vh;" width="75%" height="75%" src="<?php echo $video;?>" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
 			</div>
 			<?php
 			endif;
@@ -222,7 +222,7 @@
 							
 							if( !isset( $el['next_link_class'] ) ){ $el['next_link_class'] = 'nxtSection'; }
 							
-							_e('<a href="'.$el['next_link'].'" class="'.$el['next_link_class'].'"></a>');
+							_e('<a data-behaviour="next" href="'.$el['next_link'].'" class="'.$el['next_link_class'].'"></a>');
 						}
 						
 						if( isset( $el['wrapper'] ) && $el['wrapper'] ){
