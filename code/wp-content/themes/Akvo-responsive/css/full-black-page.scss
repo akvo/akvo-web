@@ -1,6 +1,36 @@
 /************************************** NEW STYLES **************************************/
 .fullBlack {
 	
+	%paragraph{
+		font-size: 4em;
+		@media (max-width: 2000px) {
+			font-size: 3.5em;
+		}
+		@media (max-width: 1900px) {
+			font-size: 3.25em;
+		}
+		@media (max-width: 1700px) {
+			font-size: 3em;
+		}
+		@media (max-width: 1600px) {
+			font-size: 2.75em;
+		}
+		@media (max-width: 1500px) {
+			font-size: 2.50em;
+		}
+		@media (max-width: 768px) {
+			font-size: 2.20em;
+		}
+		@media (max-width: 500px) {
+			font-size: 2.0em;
+			line-height: 1.4em;
+		}
+		@media (max-width: 430px) {
+			font-size: 1.7em;
+		}
+	}
+	
+	
     .nxtSection {
         display: block;
         width: 50px;
@@ -305,7 +335,7 @@
             padding: 70px 0 70px 0;
             height: calc(100vh - 140px);
             background: #ffd200 url("../images/Transparent white large.png") repeat;
-        }
+		}
     }
 	.assessFunel {
 		background-color: #e2e3ea;
@@ -355,13 +385,16 @@
 					z-index: 99999;
 					
 					@media (max-width: 768px) {
+						/*
 						position: relative;
 						top: 0;
 						left: 0;
 						transform: none;
-						width: 90%;
 						margin-left: auto;
 						margin-right: auto;
+						*/
+						width: 90%;
+						
 					}
 					
 				}
@@ -443,11 +476,15 @@
 				
 				.funnelContent {
 					text-align: inherit;
-					/* position: absolute; */
+					
 					top: 10px;
 					left: inherit;
 					transform: none;
 					padding: 20px;
+					@media (max-width: 768px) {
+						position: relative;
+					}	
+					
 					p {
 						top: 0;
 						text-align: left;
@@ -693,28 +730,7 @@
 			
 			p, ul.list-inline.text-center{
 				
-				font-size: 4em;
-				@media (max-width: 2000px) {
-					font-size: 3.5em;
-				}
-				@media (max-width: 1900px) {
-					font-size: 3.25em;
-				}
-				@media (max-width: 1700px) {
-					font-size: 3em;
-				}
-				@media (max-width: 1600px) {
-					font-size: 2.75em;
-				}
-				@media (max-width: 1500px) {
-					font-size: 2.50em;
-				}
-				@media (max-width: 768px) {
-					font-size: 2.20em;
-				}
-				@media (max-width: 500px) {
-					font-size: 2.0em;
-				}
+				@extend %paragraph;
 				
 			}
 			
@@ -760,7 +776,7 @@
         
         padding: 75px 0px;
         p {
-            font-size: 2.2em;
+            @extend %paragraph;
         }
     }
     .hubFeature {
@@ -893,8 +909,9 @@
 		}
         .map-addr p {
             margin-top: 0;
-            font-size: 1.2em;
+			font-size: 1.2em;
             line-height: 1.2em;
+			
         }
         h1 {
             padding: 0 20px;
@@ -1028,7 +1045,7 @@
 	
 	.hubIntro ul.list-inline.text-center{
 		color: #fff;
-		margin-bottom: 1em;
+		margin-bottom: 1.2em;
 		
 		li{
 			margin-right: 0em;
@@ -1068,9 +1085,7 @@
 			min-width: auto;
 			
 		}
-        .hubMarketing p {
-            font-size: 1.7em;
-        }
+        
         .allHubBlock ul {
             padding: 0 10px 0;
         }

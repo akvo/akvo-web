@@ -31,6 +31,9 @@
 			'fn'		=> 'logos',
 			'wrapper'	=> true
 		),
+		'hubs_section_break' => array(
+			'fn'	=> 'section_break'
+		),
 		'hubs_list'	=> array(
 			'class'	=> 'allHubBlock floats-in',
 			'fn'	=> 'hubs_list'
