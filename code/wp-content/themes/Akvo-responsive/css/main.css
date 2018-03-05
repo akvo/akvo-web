@@ -7546,6 +7546,16 @@ a.helpIcon:hover {
 .fullBlack .hubContact {
   padding: 75px 0px;
   background: rgba(255, 210, 0, 0.2); }
+  .fullBlack .hubContact.purple {
+    background: rgba(219, 135, 201, 0.2); }
+  .fullBlack .hubContact.green {
+    background: rgba(117, 182, 45, 0.2); }
+  .fullBlack .hubContact.orange {
+    background: rgba(222, 137, 41, 0.2); }
+  .fullBlack .hubContact.blue {
+    background: rgba(114, 205, 255, 0.2); }
+  .fullBlack .hubContact.red {
+    background: rgba(227, 27, 35, 0.2); }
   .fullBlack .hubContact h1 {
     color: #000; }
   .fullBlack .hubContact label {

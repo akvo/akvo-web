@@ -32,7 +32,7 @@
 		),
 		'form_content' => array(
 			'fn'	=> 'content_section',
-			'class'	=> 'hubContact',
+			'class'	=> 'hubContact '.get_field('form_bg'),
 			'wrapper'	=> true
 		),
 		'contact' => array(
@@ -49,6 +49,9 @@
 			'wrapper'	=> true
 		)
 	);
+	
+	
+	
 ?>
 <div id="content" class="floats-in hubPage">
 	<?php

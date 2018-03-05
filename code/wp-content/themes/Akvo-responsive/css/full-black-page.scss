@@ -841,6 +841,23 @@
     .hubContact {
         padding: 75px 0px;
         background: rgba(#ffd200, 0.2);
+		
+		&.purple{
+			background: rgba(#DB87C9, 0.2);
+		}
+		&.green{
+			background: rgba(#75B62D, 0.2);
+		}
+		&.orange{
+			background: rgba(#DE8929, 0.2);
+		}
+		&.blue{
+			background: rgba(#72CDFF, 0.2);
+		}
+		&.red{
+			background: rgba(#E31B23, 0.2);
+		}
+		
         h1 {
             color: #000;
         }
