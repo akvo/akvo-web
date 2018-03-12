@@ -41,10 +41,10 @@
 				_e('</ul>');
 			}
 		}
-		
 		function section_break( $el ){
 			echo '<hr class="delicate">';
 		}
+		
 		
 		function contacts_section( $el ){
 			
@@ -130,7 +130,7 @@
 				_e( '</ul>' );
 			}
 		}
-		
+		/*
 		function hubs_list( $el ){
 			$hubs = array(
 				array(

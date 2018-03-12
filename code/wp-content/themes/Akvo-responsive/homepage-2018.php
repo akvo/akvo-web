@@ -31,19 +31,15 @@
 			'fn'		=> 'logos',
 			'wrapper'	=> true
 		),
-		'hubs_section_break' => array(
-			'fn'	=> 'section_break'
-		),
-		'hubs_list'	=> array(
-			'class'	=> 'allHubBlock floats-in',
-			'fn'	=> 'hubs_list'
-		)
+		
 	);
 ?>
 <div id="content" class="floats-in homePage">
 	<?php
 		$akvo_page = new akvoBlackBody;
 		$akvo_page->display_sections( $sections );
+		
+		the_hubs_list();
 	?>	
 </div>
 <?php get_footer();?>

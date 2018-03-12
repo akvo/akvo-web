@@ -40,14 +40,6 @@
 			'class'	=> 'hubAdress',
 			'wrapper'	=> true
 		),
-		'hubs_section_break' => array(
-			'fn'	=> 'section_break'
-		),
-		'hubs_list'	=> array(
-			'class'	=> 'allHubBlock floats-in',
-			'fn'	=> 'hubs_list',
-			'wrapper'	=> true
-		)
 	);
 	
 	
@@ -57,6 +49,8 @@
 	<?php
 		$akvo_page = new akvoBlackBody;
 		$akvo_page->display_sections( $sections );
+		
+		the_hubs_list();
 	?>
 </div>
 <style>

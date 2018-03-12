@@ -6,13 +6,14 @@
 <?php get_header(); ?>
 
 <div id="content" class="floats-in micro-story">
-  
-    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	
+    <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>
    
     <?php the_content(); ?>
     <?php endwhile; // end of the loop. ?>
   
-  
+	<?php endif;?>
+	<?php the_hubs_list();?>
 </div>
 
 
@@ -43,7 +44,12 @@
 		padding:0 !important;
 		margin: 0 !important;
 	}
-	.cover-row .so-panel.widget_sow-editor{
+	.cover-row .so-panel.widget_sow-image{
+		max-height: 100vh;
+		overflow: hidden;
+	}
+	
+	.cover-row .caption{
 		bottom: 30px;
 		position: absolute;
 		background: rgba(0, 0, 0, 0.6);
@@ -52,10 +58,29 @@
 		width: 100%;
 		box-sizing: border-box;
 	}
-	.cover-row .so-panel.widget_sow-image{
-		max-height: 100vh;
-		overflow: hidden;
+	.cover-row .widget_sow-editor{
+		margin-bottom: 0 !important;
 	}
+	
+	.language{
+		position: absolute;
+		top: 100px;
+		z-index: 120;
+		font-size: 2.5em;
+		width: 100%;
+	}
+	.language a[href]{
+		color: inherit;
+	} 
+	.language a[href].active{
+		font-size: 1.1em;
+	}
+	.language li{
+		margin-right: 0;
+		margin-left: 0;
+		color: #fff;
+	}
+	
 	.quote-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce, .cover-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce{
 		max-width: 920px;
 		margin-left: auto;
