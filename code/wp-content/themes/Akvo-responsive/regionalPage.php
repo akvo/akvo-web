@@ -54,6 +54,7 @@
 	?>
 </div>
 <style>
+	.hubContact .wrapper{ max-width: 800px; }
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
 	.fullBlack .hubAdress .col-contact:nth-child(<?php _e($i);?>) .map-icon{
 		background-image:url('<?php the_sub_field('contact_image');?>');
