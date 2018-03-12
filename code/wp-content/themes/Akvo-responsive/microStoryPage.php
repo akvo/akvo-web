@@ -80,6 +80,55 @@
 	.quote-row, .quote-row p{
 		text-align: center;
 	}
+	.quote-row{
+		position: relative;
+		z-index: 0;
+	}
+	.quote-row .panel-grid-cell{
+		z-index: 2;
+	}
+	.quote-row::before, .quote-row::after{
+		position: absolute;
+		top: 15%;
+		left: 18%;
+		width: 200px;
+		height: 200px;
+		content: " ";
+		background-image: url('<?php bloginfo('template_url');?>/images/quote_mark_start.png');
+		background-position: center;
+		background-size: cover;
+		z-index: 1;
+	}
+	.quote-row::after{
+		bottom: 5%;
+		right: 18%;
+		top: auto;
+		left: auto;
+		background-image: url('<?php bloginfo('template_url');?>/images/quote_mark_end.png');
+	}
+	@media( max-width: 992px ){
+		.quote-row::before{
+			top: 20%;
+			left: 10%;
+		}
+		.quote-row::after{
+			right: 10%;
+		}
+	}
+	@media( max-width: 768px ){
+		.quote-row::before,.quote-row::after{
+			width: 150px;
+			height: 150px;
+		}
+		.quote-row::before{
+			top: 25%;
+			left: 5%;
+			
+		}
+		.quote-row::after{
+			right: 5%;
+		}
+	}
 	.quote-row img{
 		margin-left: auto;
 		margin-right: auto;
