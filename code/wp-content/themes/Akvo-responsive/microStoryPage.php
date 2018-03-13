@@ -6,13 +6,14 @@
 <?php get_header(); ?>
 
 <div id="content" class="floats-in micro-story">
-  
-    <?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
+	
+    <?php if ( have_posts() ): while ( have_posts() ) : the_post(); ?>
    
     <?php the_content(); ?>
     <?php endwhile; // end of the loop. ?>
   
-  
+	<?php endif;?>
+	<?php the_hubs_list();?>
 </div>
 
 
@@ -43,7 +44,12 @@
 		padding:0 !important;
 		margin: 0 !important;
 	}
-	.cover-row .so-panel.widget_sow-editor{
+	.cover-row .so-panel.widget_sow-image{
+		max-height: 100vh;
+		overflow: hidden;
+	}
+	
+	.cover-row .caption{
 		bottom: 30px;
 		position: absolute;
 		background: rgba(0, 0, 0, 0.6);
@@ -52,10 +58,29 @@
 		width: 100%;
 		box-sizing: border-box;
 	}
-	.cover-row .so-panel.widget_sow-image{
-		max-height: 100vh;
-		overflow: hidden;
+	.cover-row .widget_sow-editor{
+		margin-bottom: 0 !important;
 	}
+	
+	.language{
+		position: absolute;
+		top: 80px;
+		z-index: 120;
+		font-size: 1em;
+		width: 100%;
+	}
+	.language a[href]{
+		color: inherit;
+	} 
+	.language a[href].active{
+		font-size: 1.1em;
+	}
+	.language li{
+		margin-right: 0;
+		margin-left: 0;
+		color: #fff;
+	}
+	
 	.quote-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce, .cover-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce{
 		max-width: 920px;
 		margin-left: auto;
@@ -79,6 +104,64 @@
 	/* QUOTE ROW */
 	.quote-row, .quote-row p{
 		text-align: center;
+	}
+	.quote-row{
+		position: relative;
+		z-index: 0;
+	}
+	.quote-row .panel-grid-cell{
+		z-index: 2;
+	}
+	.quote-row::before, .quote-row::after{
+		position: absolute;
+		top: 15%;
+		left: 18%;
+		width: 200px;
+		height: 200px;
+		content: " ";
+		background-image: url('<?php bloginfo('template_url');?>/images/quote_mark_start.png');
+		background-position: center;
+		background-size: cover;
+		z-index: 1;
+	}
+	.quote-row::after{
+		bottom: 5%;
+		right: 18%;
+		top: auto;
+		left: auto;
+		background-image: url('<?php bloginfo('template_url');?>/images/quote_mark_end.png');
+	}
+	@media( max-width: 992px ){
+		.quote-row::before{
+			top: 20%;
+			left: 10%;
+		}
+		.quote-row::after{
+			right: 10%;
+		}
+	}
+	@media( max-width: 768px ){
+		.micro-story h3{
+			font-size: 2em;
+		}
+		.micro-story p{
+			font-size: 1.4em;
+		}
+		.language{
+			top: 30px;
+		}
+		.quote-row::before,.quote-row::after{
+			width: 150px;
+			height: 150px;
+		}
+		.quote-row::before{
+			top: 25%;
+			left: 5%;
+			
+		}
+		.quote-row::after{
+			right: 5%;
+		}
 	}
 	.quote-row img{
 		margin-left: auto;

@@ -32,7 +32,7 @@
 		),
 		'form_content' => array(
 			'fn'	=> 'content_section',
-			'class'	=> 'hubContact',
+			'class'	=> 'hubContact '.get_field('form_bg'),
 			'wrapper'	=> true
 		),
 		'contact' => array(
@@ -40,23 +40,21 @@
 			'class'	=> 'hubAdress',
 			'wrapper'	=> true
 		),
-		'hubs_section_break' => array(
-			'fn'	=> 'section_break'
-		),
-		'hubs_list'	=> array(
-			'class'	=> 'allHubBlock floats-in',
-			'fn'	=> 'hubs_list',
-			'wrapper'	=> true
-		)
 	);
+	
+	
+	
 ?>
 <div id="content" class="floats-in hubPage">
 	<?php
 		$akvo_page = new akvoBlackBody;
 		$akvo_page->display_sections( $sections );
+		
+		the_hubs_list();
 	?>
 </div>
 <style>
+	.hubContact .wrapper{ max-width: 800px; }
 	<?php $i = 0;while(have_rows('contacts')): the_row(); $i++;?>
 	.fullBlack .hubAdress .col-contact:nth-child(<?php _e($i);?>) .map-icon{
 		background-image:url('<?php the_sub_field('contact_image');?>');

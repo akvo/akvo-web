@@ -201,6 +201,7 @@ $.fn.fullBlackMenu = function(){
 	return this.each(function(){
 		
 		if ($(window).width() > 960) {
+			
 			$(window).scroll(function() {
 				if ($(".topbar").offset().top > 200) {
 					$(".topbar").css("background", "transparent");

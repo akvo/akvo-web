@@ -23,7 +23,7 @@
 		wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), null, true);
 		
 		wp_enqueue_script('akvo-common', get_template_directory_uri() . '/js/common-js.js', array('jquery'), null, true );
-		wp_enqueue_script('akvo-jquery', get_template_directory_uri() . '/js/akvo-jquery.js', array('jquery'), '1.0', true );
+		wp_enqueue_script('akvo-jquery', get_template_directory_uri() . '/js/akvo-jquery.js', array('jquery'), '1.0.2', true );
 		wp_enqueue_script('jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), null, true );
 		wp_enqueue_script('akvo-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true );
 		wp_enqueue_script('jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
@@ -33,7 +33,7 @@
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.7.8' );
+		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.8.8' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
 		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
 		
@@ -534,4 +534,58 @@
 		
 		return ob_get_clean();
 	});
+	
+	function the_hubs_list(){
+		
+		$hubs = array(
+			array(
+				'class'		=> 'EU',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Europe.png',
+				'text'		=> 'Netherlands, Amsterdam',
+				'helloMsg'	=> 'Welkom'
+			),
+			array(
+				'class'		=> 'WA',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_WestAfrica.png',
+				'text'		=> 'Mali, Bamako',
+				'helloMsg'	=> 'Bienvenue'
+			),
+			array(
+				'class'		=> 'EA',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_EastAfrica.png',
+				'text'		=> 'Kenya, Nairobi',
+				'helloMsg'	=> 'Karibu'
+			),
+			array(
+				'class'		=> 'SA',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SouthAsia.png',
+				'text'		=> 'India, Delhi',
+				'helloMsg'	=> 'Welcome'
+			),
+			array(
+				'class'		=> 'IN',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SEAsia_SEAP.png',
+				'text'		=> 'Indonesia, Bali',
+				'helloMsg'	=> 'Selamat datang'
+			),
+			array(
+				'class'		=> 'US',
+				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Americas.png',
+				'text'		=> 'USA, Washington',
+				'helloMsg'	=> 'Welcome'
+			),
+		);
+		echo '<hr class="delicate">';
+		_e('<section class="allHubBlock floats-in"><div class="wrapper">');
+		_e("<h1>Looking for one of our other offices?</h1>");
+		_e('<ul class="list-scroll">');
+		foreach( $hubs as $hub ){
+			_e('<li class="'.$hub['class'].'">');
+			_e('<a href="#" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
+			_e('<div class="helloMsg"><h2>'.$hub['helloMsg'].'</h2></div>');
+			_e('</li>');
+		}
+		_e('</ul>');
+		_e('</div></section>');
+	}
 	
