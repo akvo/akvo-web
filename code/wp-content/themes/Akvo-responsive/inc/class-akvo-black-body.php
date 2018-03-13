@@ -83,10 +83,9 @@
 			/* LANGUAGES */
 			if( have_rows('languages') ){
 				$num_languages = count( get_field('languages') );
-				_e('<ul class="list-inline text-center">');
+				_e('<ul class="lang-list">');
 				$language_i = 1; while( have_rows('languages') ): the_row();?>
 					<li><a <?php if( get_sub_field('is_active') ){ _e("class='active'");} ?> href="<?php the_sub_field('link');?>"><?php the_sub_field('text');?></a></li>
-					<?php if( $language_i < $num_languages ):?><li>/</li><?php endif;?>
 				<?php $language_i++;endwhile;
 				_e('</ul>');
 			}

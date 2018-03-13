@@ -7685,6 +7685,23 @@ a.helpIcon:hover {
         background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
       .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
         display: block; }
+.fullBlack .lang-list {
+  font-size: 2em;
+  text-align: center; }
+  .fullBlack .lang-list li {
+    margin: 0 5px;
+    display: inline-block; }
+    .fullBlack .lang-list li a[href] {
+      display: block;
+      background: #3792b3;
+      color: #fff;
+      padding: 10px 5px;
+      min-width: 50px;
+      border: #fff solid 1px; }
+      .fullBlack .lang-list li a[href].active, .fullBlack .lang-list li a[href]:hover {
+        background: rgba(255, 255, 255, 0.2); }
+.fullBlack .language .lang-list a[href].active, .fullBlack .language .lang-list a[href]:hover {
+  background: rgba(0, 0, 0, 0.2); }
 .fullBlack .hubIntro ul.list-inline.text-center {
   color: #fff;
   margin-bottom: 1.2em; }

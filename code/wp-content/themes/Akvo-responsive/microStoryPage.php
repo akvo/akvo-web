@@ -64,9 +64,9 @@
 	
 	.language{
 		position: absolute;
-		top: 100px;
+		top: 80px;
 		z-index: 120;
-		font-size: 2.5em;
+		font-size: 1em;
 		width: 100%;
 	}
 	.language a[href]{
@@ -141,6 +141,15 @@
 		}
 	}
 	@media( max-width: 768px ){
+		.micro-story h3{
+			font-size: 2em;
+		}
+		.micro-story p{
+			font-size: 1.4em;
+		}
+		.language{
+			top: 30px;
+		}
 		.quote-row::before,.quote-row::after{
 			width: 150px;
 			height: 150px;

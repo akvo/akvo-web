@@ -1060,6 +1060,35 @@
         }
     }
 	
+	.lang-list{
+		font-size: 2em;
+		text-align: center;
+		
+		
+		li{
+			margin: 0 5px;
+			display: inline-block;
+			
+			a[href]{
+				display: block;
+				background: #3792b3;
+				color: #fff;
+				padding: 10px 5px;
+				min-width:50px;
+				border: #fff solid 1px;
+				
+				&.active, &:hover{
+					background: rgba(#fff, 0.2);
+					
+				}
+			}
+		}
+	}
+	
+	.language .lang-list a[href].active, .language .lang-list a[href]:hover{
+		background: rgba(#000, 0.2);
+	}
+	
 	.hubIntro ul.list-inline.text-center{
 		color: #fff;
 		margin-bottom: 1.2em;
