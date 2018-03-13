@@ -7687,7 +7687,8 @@ a.helpIcon:hover {
         display: block; }
 .fullBlack .lang-list {
   font-size: 2em;
-  text-align: center; }
+  text-align: center;
+  margin-bottom: 21.9em; }
   .fullBlack .lang-list li {
     margin: 0 5px;
     display: inline-block; }
