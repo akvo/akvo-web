@@ -6882,33 +6882,42 @@ a.helpIcon:hover {
     width: 49% !important; } }
 
 /************************************** NEW STYLES **************************************/
-.fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+.fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
   font-size: 4em; }
   @media (max-width: 2000px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 3.5em; } }
   @media (max-width: 1900px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 3.25em; } }
   @media (max-width: 1700px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 3em; } }
   @media (max-width: 1600px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 2.75em; } }
   @media (max-width: 1500px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 2.50em; } }
   @media (max-width: 768px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
       font-size: 2.20em; } }
   @media (max-width: 500px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 2.0em;
-      line-height: 1.4em; } }
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
+      font-size: 1.8em;
+      line-height: 1.2em; } }
   @media (max-width: 430px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 1.7em; } }
+    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .micro-story h3 {
+      font-size: 1.6em; } }
+.fullBlack .hubMarketing p, .fullBlack .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+  font-size: 1.5em; }
+  @media (max-width: 1500px) {
+    .fullBlack .hubMarketing p, .fullBlack .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      font-size: 1.3em;
+      line-height: 1.3em; } }
+  @media (max-width: 768px) {
+    .fullBlack .hubMarketing p, .fullBlack .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      font-size: 1.2em; } }
 .fullBlack .nxtSection {
   display: block;
   width: 50px;
@@ -6927,6 +6936,10 @@ a.helpIcon:hover {
   background: rgba(255, 255, 255, 0.2);
   border: none;
   color: white; }
+.fullBlack input[type="search"]::placeholder {
+  color: #ccc;
+  opacity: 1;
+  /* Firefox */ }
 .fullBlack header#top {
   transition: all 0.2s ease-in;
   z-index: 199999; }
@@ -7128,9 +7141,11 @@ a.helpIcon:hover {
   position: relative;
   width: 100%;
   padding: 70px 0 70px 0;
-  height: calc(100vh - 140px); }
+  /*
+  height: calc(100vh - 140px);
+  */ }
   .fullBlack .assessFunel .funelContainer {
-    height: 100%;
+    min-height: calc(100vh - 140px);
     width: 100%;
     background: none;
     transition: all 0.4s ease-in;
@@ -7318,8 +7333,7 @@ a.helpIcon:hover {
         margin: 050px auto 0; }
     .fullBlack .assessFunel .funelContainer#funnel-form {
       background-image: url(../images/funelIcons-06.svg);
-      /*------------------------------------------------------------------
-      [ Input ]*/
+      /*------------------------------------------------------------------[ Input ]*/
       /*---------------------------------------------*/
       /*------------------------------------------------------------------
       [ Button ]*/
@@ -7327,6 +7341,14 @@ a.helpIcon:hover {
       [ Responsive ]*/
       /*==================================================================
       [ Contact more ]*/ }
+      .fullBlack .assessFunel .funelContainer#funnel-form .funnelContent {
+        position: relative;
+        top: 0;
+        left: 0;
+        transform: none;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto; }
       .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form {
         width: 90%;
         display: flex;
@@ -7468,6 +7490,19 @@ a.helpIcon:hover {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top; }
+  @media (max-width: 768px) {
+    .fullBlack .hubPage .topMsg {
+      height: auto; } }
+  .fullBlack .hubPage .topMsg .hubIntro {
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 100px 0;
+    z-index: 2;
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
+    width: 90%; }
   .fullBlack .hubPage .topMsg .swooch {
     position: absolute;
     top: 0;
@@ -7545,7 +7580,12 @@ a.helpIcon:hover {
       margin: 0 25px; }
 .fullBlack .hubContact {
   padding: 75px 0px;
-  background: rgba(255, 210, 0, 0.2); }
+  background: rgba(255, 210, 0, 0.2);
+  		/*
+          label {
+              display: none !important;
+          }
+  		*/ }
   .fullBlack .hubContact.purple {
     background: rgba(219, 135, 201, 0.2); }
   .fullBlack .hubContact.green {
@@ -7558,8 +7598,6 @@ a.helpIcon:hover {
     background: rgba(227, 27, 35, 0.2); }
   .fullBlack .hubContact h1 {
     color: #000; }
-  .fullBlack .hubContact label {
-    display: none !important; }
   .fullBlack .hubContact input, .fullBlack .hubContact textarea {
     background: #fff;
     padding: 10px !important; }
@@ -7607,9 +7645,7 @@ a.helpIcon:hover {
     margin-right: 20px;
     position: relative; }
   .fullBlack .hubAdress .map-addr p {
-    margin-top: 0;
-    font-size: 1.2em;
-    line-height: 1.2em; }
+    margin-top: 0; }
   .fullBlack .hubAdress h1 {
     padding: 0 20px;
     margin-bottom: 45px;
@@ -7688,7 +7724,7 @@ a.helpIcon:hover {
 .fullBlack .lang-list {
   font-size: 2em;
   text-align: center;
-  margin-bottom: 21.9em; }
+  margin-bottom: 1.5em; }
   .fullBlack .lang-list li {
     margin: 0 5px;
     display: inline-block; }
@@ -7699,21 +7735,132 @@ a.helpIcon:hover {
       padding: 10px 5px;
       min-width: 50px;
       border: #fff solid 1px; }
+      @media (max-width: 768px) {
+        .fullBlack .lang-list li a[href] {
+          padding: 7px 5px;
+          min-width: 40px; } }
       .fullBlack .lang-list li a[href].active, .fullBlack .lang-list li a[href]:hover {
         background: rgba(255, 255, 255, 0.2); }
-.fullBlack .language .lang-list a[href].active, .fullBlack .language .lang-list a[href]:hover {
-  background: rgba(0, 0, 0, 0.2); }
-.fullBlack .hubIntro ul.list-inline.text-center {
-  color: #fff;
-  margin-bottom: 1.2em; }
-  .fullBlack .hubIntro ul.list-inline.text-center li {
-    margin-right: 0em;
-    margin-left: 0em; }
-  .fullBlack .hubIntro ul.list-inline.text-center a[href] {
-    color: inherit; }
-  .fullBlack .hubIntro ul.list-inline.text-center a[href].active {
-    font-weight: bold;
-    font-size: 1.1em; }
+.fullBlack .micro-story {
+  /* IFRAME ROW */
+  /* QUOTE ROW - TO BE REMOVED LATER */ }
+  .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
+    background: rgba(0, 0, 0, 0.2); }
+  .fullBlack .micro-story h3 {
+    color: inherit;
+    margin: 0;
+    font-weight: bold; }
+  .fullBlack .micro-story .language {
+    position: absolute;
+    top: 80px;
+    z-index: 120;
+    width: 100%;
+    height: 70px; }
+  .fullBlack .micro-story .cover-row {
+    width: 100%;
+    position: relative;
+    padding: 0 !important;
+    margin: 0 !important; }
+    .fullBlack .micro-story .cover-row .so-panel.widget_sow-image {
+      max-height: 100vh;
+      overflow: hidden; }
+    .fullBlack .micro-story .cover-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce {
+      max-width: 850px; }
+  .fullBlack .micro-story .cover-row .caption, .fullBlack .micro-story .iframe-row .caption {
+    bottom: 30px;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box; }
+  .fullBlack .micro-story .cover-row .widget_sow-editor, .fullBlack .micro-story .iframe-row .so-panel {
+    margin-bottom: 0 !important; }
+  .fullBlack .micro-story .iframe-row, .fullBlack .micro-story .quote-row {
+    position: relative;
+    margin-top: -30px; }
+  .fullBlack .micro-story .iframe-row p, .fullBlack .micro-story .iframe-row iframe {
+    margin: 0;
+    line-height: 0; }
+  .fullBlack .micro-story .iframe-row .caption {
+    bottom: 0; }
+  .fullBlack .micro-story .testimonial-widget {
+    max-width: 900px;
+    padding: 10px;
+    z-index: 0;
+    position: relative; }
+    .fullBlack .micro-story .testimonial-widget .testimonial-widget-image, .fullBlack .micro-story .testimonial-widget .testimonial-text, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      z-index: 2;
+      position: relative;
+      margin: 40px auto; }
+    .fullBlack .micro-story .testimonial-widget .testimonial-widget-image {
+      max-height: 200px;
+      overflow: hidden; }
+    .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      margin-bottom: 0;
+      padding-bottom: 40px; }
+    .fullBlack .micro-story .testimonial-widget::before, .fullBlack .micro-story .testimonial-widget::after {
+      position: absolute;
+      top: 100px;
+      left: 0%;
+      width: 200px;
+      height: 200px;
+      content: " ";
+      background-image: url("../images/quote_mark_start.png");
+      background-position: center;
+      background-size: cover;
+      z-index: 1; }
+    .fullBlack .micro-story .testimonial-widget::after {
+      bottom: -10px;
+      right: 0%;
+      top: auto;
+      left: auto;
+      background-image: url("../images/quote_mark_end.png"); }
+    @media (max-width: 768px) {
+      .fullBlack .micro-story .testimonial-widget::before, .fullBlack .micro-story .testimonial-widget::after {
+        width: 150px;
+        height: 150px; }
+      .fullBlack .micro-story .testimonial-widget::before {
+        top: 150px; } }
+  .fullBlack .micro-story .quote-row {
+    position: relative;
+    z-index: 0;
+    text-align: center; }
+    .fullBlack .micro-story .quote-row .panel-grid-cell {
+      z-index: 2; }
+    .fullBlack .micro-story .quote-row p {
+      text-align: center; }
+    .fullBlack .micro-story .quote-row img {
+      margin-left: auto;
+      margin-right: auto; }
+    .fullBlack .micro-story .quote-row::before, .fullBlack .micro-story .quote-row::after {
+      position: absolute;
+      top: 15%;
+      left: 18%;
+      width: 200px;
+      height: 200px;
+      content: " ";
+      background-image: url("../images/quote_mark_start.png");
+      background-position: center;
+      background-size: cover;
+      z-index: 1; }
+    .fullBlack .micro-story .quote-row::after {
+      bottom: 5%;
+      right: 18%;
+      top: auto;
+      left: auto;
+      background-image: url("../images/quote_mark_end.png"); }
+    @media (max-width: 992px) {
+      .fullBlack .micro-story .quote-row::before {
+        top: 20%;
+        left: 10%; }
+      .fullBlack .micro-story .quote-row::after {
+        right: 10%; } }
+  @media (max-width: 768px) {
+    .fullBlack .micro-story .cover-row .caption, .fullBlack .micro-story .iframe-row .caption, .fullBlack .micro-story .text-row .so-panel.widget_sow-editor {
+      padding: 15px; }
+    .fullBlack .micro-story .language {
+      top: 30px; } }
 .fullBlack .hubAdress .map-icon a[href], .fullBlack .hubFeature a[href] {
   position: absolute;
   width: 100%;
@@ -7724,6 +7871,8 @@ a.helpIcon:hover {
   padding-left: 20px;
   padding-right: 20px; }
 @media (max-width: 768px) {
+  .fullBlack .lang-list {
+    font-size: 1.6em; }
   .fullBlack #content {
     padding: 0;
     width: 100%; }
