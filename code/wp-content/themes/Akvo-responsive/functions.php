@@ -11,6 +11,7 @@
 	require_once($includes_path . 'class-akvo-post-type.php');  
 	require_once($includes_path . 'class-akvo-tabs.php');
 	require_once($includes_path . 'class-akvo-black-body.php');
+	require_once($includes_path . 'widgets.php');
 
 	
 	/* ENQUEUE STYLES AND SCRIPTS */
@@ -33,7 +34,7 @@
 		if ( is_singular() ) wp_enqueue_script('comment-reply');
 		
 		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '1.8.8' );
+		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '2.2.7' );
 		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
 		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
 		
@@ -589,3 +590,9 @@
 		_e('</div></section>');
 	}
 	
+	function akvo_slug_show_all_parents( $args ) {
+		$args['post_status'] = array( 'publish', 'pending', 'draft', 'private' );
+		return $args;
+	}
+	add_filter( 'page_attributes_dropdown_pages_args', 'akvo_slug_show_all_parents' );
+	add_filter( 'quick_edit_dropdown_pages_args', 'akvo_slug_show_all_parents' );

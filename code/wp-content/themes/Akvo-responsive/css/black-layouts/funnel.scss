@@ -1,0 +1,194 @@
+/* FUNNEL */
+.bgEaseIn { animation: bgEaseIn 0.5s ease-in forwards;}
+@keyframes bgEaseIn {
+	0% { opacity: 1; display: block; }
+	100% { opacity: 0; display: none; }
+}
+.bgEaseInTwo { animation: bgEaseInTwo ease-in forwards; }
+@keyframes bgEaseInTwo {
+	0% { opacity: 1; display: block; }
+	50% { opacity: 0; display: block; }
+	100% { opacity: 0.7; display: block; }
+}
+
+
+#assessFunel{
+	box-sizing: border-box;
+	background-color: #e2e3ea;
+	position: relative;
+	padding: 70px 20px 70px 20px;
+	
+	%bgCover{
+		background-repeat: no-repeat;
+		background-position: center center;
+		min-height: calc(100vh - 180px);
+		@media (max-width: 768px) { 
+			min-height: auto;
+			background-image: none !important; 
+		}
+	}
+	
+	.funelContainer {
+		text-align: center;
+		
+		@extend %bgCover;
+		@extend %wrapper;
+		
+		.funnelContent{
+			@extend %wrapper;
+			position: relative;
+			z-index: 3;
+			max-width: 450px;
+		}
+		
+		&:before {
+			animation-name: bgEaseIn;
+			animation-duration: 1s;
+			animation-timing-function: ease-in;
+			animation-delay: 0s;
+			animation-direction: normal;
+			animation-iteration-count: 1;
+			animation-fill-mode: forwards;
+			content: ' ';
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 100%;
+			background-color: #E3E1EF;
+			z-index: 2;
+		}
+		.subFunHeader {
+			font-size: 2.25em;
+			color: white;
+			text-transform: uppercase;
+		}
+		.inlined *{ display: inline; }
+			
+		h1 { 
+			
+			@extend %paragraph; 
+		}
+		.infoHover {
+			margin-bottom: 40px;
+			width: 100%;
+			padding: 15px;
+			& + .moreInfo {
+				opacity: 0;
+				transition: opacity 0.2s ease-in;
+			}
+			&:hover {
+				margin-bottom: 40px;
+				& + .moreInfo { opacity: 1; }
+			}
+		}
+		.moreInfo {
+			text-align: center;
+			font-size: 1em;
+			margin-bottom: 60px;
+			color: rgba($akvoBlack, 0.7);
+		}
+		
+		ul {
+			margin: 20px auto;
+			
+		
+			li {
+				margin-bottom: 20px;
+				&:last-child { margin-bottom: 0; }
+				a.bouton {
+					
+					@include btnOutline($akvoPurple, $akvoPurple);
+					@include border-radius(5px);
+					
+					background: transparent;
+					display: inline-block;
+					font-size: 2.5em;
+					
+					border-width: 3px;
+					
+					@media( max-width: 768px ){ font-size: 2.0em; }
+					@media( max-width: 500px ){ font-size: 1.7em; }
+					
+					&:hover {
+						background: #ffd200;
+						border-width: 3px;
+					}
+				}
+			}
+		}
+		
+		/* FIRST INTRO SLIDE */
+		&#assess01 {
+			.funnelContent{ @extend %smallParagraph; max-width: none; }
+			.funnelStart{
+				
+				@extend %bgCover;
+				
+				position: relative;
+				background-size: cover;
+				
+				/* START BUTTON */
+				a {
+					display: block;
+					width: 15%;
+					height: 15%;
+					background: url("../images/funnelStart.svg") no-repeat center center;
+					background-size: contain;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					text-indent: -9999px;
+					z-index: 99999;
+					opacity: 1;
+					transition: opacity 0.2s ease-in;
+						
+					@media( max-width: 768px ){
+						position: relative;
+						width: 200px;
+						height: 200px;
+						top: 0;
+						left: 0;
+						margin-left: auto;
+						margin-right: auto;
+						transform: none;
+					}
+						
+					&:hover { opacity: 0.5; }
+				}
+				/* END OF START BUTTON */
+				
+			}
+		}
+		/* FIRST INTRO SLIDE */
+		
+		/* FIRST FUNNEL FORM */
+		&#funnel-1 {
+			&:before {
+				animation-name: bgEaseInTwo;
+				animation-duration: 2s;
+				animation-timing-function: ease-in;
+				animation-delay: 0s;
+				animation-direction: normal;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+				content: ' ';
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				z-index: 1;
+				background-color: #e9e7f2;
+			}
+		}
+		/* FIRST FUNNEL FORM */
+		
+	}
+	
+}
+
+
+
+/* FUNNEL */

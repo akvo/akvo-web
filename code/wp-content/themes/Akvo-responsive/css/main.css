@@ -6882,92 +6882,56 @@ a.helpIcon:hover {
     width: 49% !important; } }
 
 /************************************** NEW STYLES **************************************/
-.fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-  font-size: 4em; }
-  @media (max-width: 2000px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 3.5em; } }
-  @media (max-width: 1900px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 3.25em; } }
-  @media (max-width: 1700px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 3em; } }
-  @media (max-width: 1600px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 2.75em; } }
-  @media (max-width: 1500px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 2.50em; } }
-  @media (max-width: 768px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 2.20em; } }
-  @media (max-width: 500px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 2.0em;
-      line-height: 1.4em; } }
-  @media (max-width: 430px) {
-    .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack .hubMarketing p {
-      font-size: 1.7em; } }
-.fullBlack .nxtSection {
-  display: block;
-  width: 50px;
-  height: 50px;
-  background: url("../images/arrowDown.png") no-repeat center center;
-  background-size: contain;
-  position: absolute;
-  bottom: 25px;
-  left: calc(50% - 25px);
-  z-index: 99999; }
-  .fullBlack .nxtSection.blueFill {
-    background: url("../images/arrowDownBlue.png") no-repeat center center;
-    background-size: contain; }
-.fullBlack input[type="search"] {
-  right: 10px;
-  background: rgba(255, 255, 255, 0.2);
-  border: none;
-  color: white; }
-.fullBlack header#top {
-  transition: all 0.2s ease-in;
-  z-index: 199999; }
-  .fullBlack header#top .navbar-fixed-top.top-nav-collapse {
-    transform: translateY(-52px); }
-  @media (max-width: 768px) {
-    .fullBlack header#top {
-      border: #202024 solid 1px;
-      box-sizing: border-box; }
-      .fullBlack header#top h1 {
-        width: 170px;
-        margin-left: auto;
-        margin-right: auto; } }
-  .fullBlack header#top:hover {
-    background: rgba(32, 32, 36, 0.4) !important; }
-    .fullBlack header#top:hover .navbar-fixed-top.top-nav-collapse {
-      transform: translateY(0); }
-  .fullBlack header#top h1 a {
-    background: url("../images/Akvo_RGB-WHITE_logo.png") no-repeat center top;
-    display: block;
-    height: 35px;
-    text-indent: -9999px;
-    width: 169px;
-    background-size: contain; }
-.fullBlack #n ul li {
-  background: none;
-  display: inline-block;
-  font-size: 1.2em;
-  margin-right: -3px;
-  position: relative; }
-.fullBlack #openSource {
-  display: none; }
-.fullBlack .wrapperHead {
-  margin: 0em auto;
-  max-width: 100%;
-  position: relative; }
-.fullBlack .homePage .topMsg {
-  background: #2c2a74 url("../images/Transparent_black_large.png") repeat; }
-  .fullBlack .homePage .topMsg .hubIntro {
+.fullBlack {
+  /* LIST OF HUBS */
+  /* LANGUGAE TOGGLE */
+  /* HOMEPAGE */
+  /* FUNNEL */
+  /* FUNNEL */
+  /* MICROSTORY */ }
+  .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+    font-size: 4em; }
+    @media (max-width: 2000px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 3.5em; } }
+    @media (max-width: 1900px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 3.25em; } }
+    @media (max-width: 1700px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 3em; } }
+    @media (max-width: 1600px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 2.75em; } }
+    @media (max-width: 1500px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 2.50em; } }
+    @media (max-width: 768px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 2.20em; } }
+    @media (max-width: 500px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 1.8em;
+        line-height: 1.2em; } }
+    @media (max-width: 430px) {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+        font-size: 1.6em; } }
+  .fullBlack #assessFunel .funelContainer, .fullBlack #assessFunel .funelContainer .funnelContent {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto; }
+  .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+    font-size: 1.5em; }
+    @media (max-width: 1500px) {
+      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+        font-size: 1.3em;
+        line-height: 1.3em; } }
+    @media (max-width: 768px) {
+      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+        font-size: 1.2em; } }
+  .fullBlack .homePage .topMsg .hubIntro, .fullBlack .homePage #intro {
     /*FadeIn Animation*/ }
-    .fullBlack .homePage .topMsg .hubIntro .btnOutline {
+    .fullBlack .homePage .topMsg .hubIntro .btnOutline, .fullBlack .homePage #intro .btnOutline {
       border: 1px solid white;
       color: white;
       padding: 15px 25px;
@@ -6976,7 +6940,7 @@ a.helpIcon:hover {
       margin: 20px auto;
       font-size: 0.7em;
       padding: 0 25px; }
-      .fullBlack .homePage .topMsg .hubIntro .btnOutline:hover {
+      .fullBlack .homePage .topMsg .hubIntro .btnOutline:hover, .fullBlack .homePage #intro .btnOutline:hover {
         border: 1px solid #69c3ee;
         color: #69c3ee; }
 @keyframes showup {
@@ -7026,7 +6990,7 @@ a.helpIcon:hover {
     transform: translate3d(5px, 0, 0); }
   to {
     transform: none; } }
-    .fullBlack .homePage .topMsg .hubIntro .bounceInLeft {
+    .fullBlack .homePage .topMsg .hubIntro .bounceInLeft, .fullBlack .homePage #intro .bounceInLeft {
       animation-name: bounceInLeft; }
 @keyframes bounceInRight {
   from, 60%, 75%, 90%, to {
@@ -7043,7 +7007,7 @@ a.helpIcon:hover {
     transform: translate3d(-5px, 0, 0); }
   to {
     transform: none; } }
-    .fullBlack .homePage .topMsg .hubIntro .bounceInRight {
+    .fullBlack .homePage .topMsg .hubIntro .bounceInRight, .fullBlack .homePage #intro .bounceInRight {
       animation-name: bounceInRight; }
 @keyframes fadeEffect {
   0% {
@@ -7064,11 +7028,11 @@ a.helpIcon:hover {
     opacity: 0; }
   100% {
     opacity: 0; } }
-    .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+    .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
       display: inline;
       text-indent: 15px; }
       @media (max-width: 768px) {
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
           display: block;
           text-indent: 0;
           position: relative;
@@ -7076,9 +7040,9 @@ a.helpIcon:hover {
           min-height: 60px;
           overflow: hidden; } }
       @media (max-width: 500px) {
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
           min-height: 120px; } }
-      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
+      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
         color: #69c3ee;
         animation: fadeEffect 9s linear infinite 0s;
         opacity: 0;
@@ -7086,18 +7050,236 @@ a.helpIcon:hover {
         position: absolute;
         white-space: nowrap; }
         @media (max-width: 500px) {
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span {
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
             white-space: normal; } }
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2) {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(2) {
           animation-delay: 3s; }
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3) {
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(3) {
           animation-delay: 6s; }
-    .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2) {
+    .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2), .fullBlack .homePage #intro p:nth-of-type(2) {
       color: #69c3ee;
       animation: bounceInRight 1s;
       animation-fill-mode: forwards; }
-.fullBlack .homePage .bgEaseIn {
-  animation: bgEaseIn 0.5s ease-in forwards; }
+  .fullBlack .nxtSection {
+    display: block;
+    width: 50px;
+    height: 50px;
+    background: url("../images/arrowDown.png") no-repeat center center;
+    background-size: contain;
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 25px);
+    z-index: 99999; }
+    .fullBlack .nxtSection.blueFill {
+      background: url("../images/arrowDownBlue.png") no-repeat center center;
+      background-size: contain; }
+  .fullBlack input[type="search"] {
+    right: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: white; }
+  .fullBlack input[type="search"]::placeholder {
+    color: #ccc;
+    opacity: 1;
+    /* Firefox */ }
+  .fullBlack header#top {
+    transition: all 0.2s ease-in;
+    z-index: 199999; }
+    .fullBlack header#top .navbar-fixed-top.top-nav-collapse {
+      transform: translateY(-52px); }
+    @media (max-width: 768px) {
+      .fullBlack header#top {
+        border: #202024 solid 1px;
+        box-sizing: border-box; }
+        .fullBlack header#top h1 {
+          width: 170px;
+          margin-left: auto;
+          margin-right: auto; } }
+    .fullBlack header#top:hover {
+      background: rgba(32, 32, 36, 0.4) !important; }
+      .fullBlack header#top:hover .navbar-fixed-top.top-nav-collapse {
+        transform: translateY(0); }
+    .fullBlack header#top h1 a {
+      background: url("../images/Akvo_RGB-WHITE_logo.png") no-repeat center top;
+      display: block;
+      height: 35px;
+      text-indent: -9999px;
+      width: 169px;
+      background-size: contain; }
+  .fullBlack #n ul li {
+    background: none;
+    display: inline-block;
+    font-size: 1.2em;
+    margin-right: -3px;
+    position: relative; }
+  .fullBlack #openSource {
+    display: none; }
+  .fullBlack .wrapperHead {
+    margin: 0em auto;
+    max-width: 100%;
+    position: relative; }
+  .fullBlack .topMsg {
+    position: relative;
+    width: 100%;
+    height: 100vh; }
+    .fullBlack .topMsg .hubIntro {
+      position: absolute;
+      width: 60%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%); }
+      @media (max-width: 992px) {
+        .fullBlack .topMsg .hubIntro {
+          width: 90%; } }
+      .fullBlack .topMsg .hubIntro p {
+        font-family: helvetica;
+        font-weight: bold;
+        color: white; }
+  .fullBlack .allHubBlock {
+    padding: 75px 0; }
+    .fullBlack .allHubBlock h1 {
+      text-align: center;
+      color: #202024; }
+    .fullBlack .allHubBlock ul {
+      margin-top: 25px;
+      position: relative;
+      padding-top: 120px; }
+      .fullBlack .allHubBlock ul li {
+        min-height: 100px; }
+        .fullBlack .allHubBlock ul li div.helloMsg {
+          position: absolute;
+          display: none;
+          top: -120px; }
+          .fullBlack .allHubBlock ul li div.helloMsg h2 {
+            text-align: center;
+            font-family: helvetica;
+            font-weight: bold;
+            white-space: nowrap; }
+        .fullBlack .allHubBlock ul li a {
+          display: block;
+          width: 150px;
+          height: 150px;
+          background-size: contain !important;
+          text-indent: -9999px;
+          transition: transform 0.2s ease-in; }
+          .fullBlack .allHubBlock ul li a:hover {
+            transform: scale(1.5); }
+        .fullBlack .allHubBlock ul li.EU a {
+          background: url("../images/Location hexagons_Europe.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.EU:hover > .helloMsg {
+          display: block; }
+        .fullBlack .allHubBlock ul li.WA a {
+          background: url("../images/Location hexagons_West Africa.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.WA:hover > .helloMsg {
+          display: block; }
+        .fullBlack .allHubBlock ul li.IN a {
+          background: url("../images/Location hexagons_SE Asia_SEAP.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.IN:hover > .helloMsg {
+          display: block;
+          left: -40px; }
+        .fullBlack .allHubBlock ul li.EA a {
+          background: url("../images/Location hexagons_East Africa.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.EA:hover > .helloMsg {
+          display: block; }
+        .fullBlack .allHubBlock ul li.SA a {
+          background: url("../images/Location hexagons_South Asia.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.SA:hover > .helloMsg {
+          display: block; }
+        .fullBlack .allHubBlock ul li.US a {
+          background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
+        .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
+          display: block; }
+      @media (max-width: 768px) {
+        .fullBlack .allHubBlock ul {
+          padding: 0 10px 0; }
+          .fullBlack .allHubBlock ul li a:hover {
+            transform: scale(1); }
+          .fullBlack .allHubBlock ul li a {
+            width: 100px;
+            height: 120px; } }
+  .fullBlack .lang-list {
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1.5em; }
+    @media (max-width: 768px) {
+      .fullBlack .lang-list {
+        font-size: 1.6em; } }
+    .fullBlack .lang-list li {
+      margin: 0 5px;
+      display: inline-block; }
+      .fullBlack .lang-list li a[href] {
+        display: block;
+        background: #3792b3;
+        color: #fff;
+        padding: 10px 5px;
+        min-width: 50px;
+        border: #fff solid 1px; }
+        @media (max-width: 768px) {
+          .fullBlack .lang-list li a[href] {
+            padding: 7px 5px;
+            min-width: 40px; } }
+        .fullBlack .lang-list li a[href].active, .fullBlack .lang-list li a[href]:hover {
+          background: rgba(255, 255, 255, 0.2); }
+  .fullBlack .hubTrustBlock {
+    position: relative;
+    padding: 75px 0px; }
+    .fullBlack .hubTrustBlock h1 {
+      text-align: center;
+      color: #202024; }
+    .fullBlack .hubTrustBlock .list-scroll {
+      margin-top: 20px; }
+      .fullBlack .hubTrustBlock .list-scroll li.logo {
+        width: 185px;
+        margin: 0 25px; }
+  .fullBlack .wrapper {
+    padding-left: 20px;
+    padding-right: 20px; }
+  @media (max-width: 768px) {
+    .fullBlack #content {
+      padding: 0;
+      width: 100%; }
+    .fullBlack h1 {
+      font-size: 2.2em; } }
+  @media (min-width: 769px) {
+    .fullBlack {
+      /* LIST OF HUBS */
+      /* REGIONAL PAGES */ }
+      .fullBlack header#top {
+        background: rgba(32, 32, 36, 0.2); }
+      .fullBlack .allHubBlock ul {
+        padding-bottom: 30px; }
+        .fullBlack .allHubBlock ul li {
+          width: 195px; }
+      .fullBlack .hubFeature li img {
+        max-width: 350px; } }
+  .fullBlack .homePage {
+    /* HOMEPAGE - SITEORIGIN PAGE BUILDER */
+    /* HOMEPAGE - SITEORIGIN PAGE BUILDER */
+    /* VIDEO BLOCK */ }
+    .fullBlack .homePage .topMsg {
+      background: #2c2a74 url("../images/Transparent_black_large.png") repeat; }
+    .fullBlack .homePage #intro {
+      position: relative;
+      height: 100vh; }
+      .fullBlack .homePage #intro .siteorigin-widget-tinymce {
+        position: absolute;
+        width: 90%;
+        max-width: 800px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); }
+        .fullBlack .homePage #intro .siteorigin-widget-tinymce p {
+          font-family: helvetica;
+          font-weight: bold;
+          color: white; }
+    .fullBlack .homePage .vidBlock {
+      position: relative;
+      width: 100%;
+      padding: 70px 0 70px 0;
+      height: calc(100vh - 140px);
+      background: #ffd200 url("../images/Transparent white large.png") repeat; }
+  .fullBlack .bgEaseIn {
+    animation: bgEaseIn 0.5s ease-in forwards; }
 @keyframes bgEaseIn {
   0% {
     opacity: 1;
@@ -7105,8 +7287,8 @@ a.helpIcon:hover {
   100% {
     opacity: 0;
     display: none; } }
-.fullBlack .homePage .bgEaseInTwo {
-  animation: bgEaseInTwo ease-in forwards; }
+  .fullBlack .bgEaseInTwo {
+    animation: bgEaseInTwo ease-in forwards; }
 @keyframes bgEaseInTwo {
   0% {
     opacity: 1;
@@ -7117,638 +7299,386 @@ a.helpIcon:hover {
   100% {
     opacity: 0.7;
     display: block; } }
-.fullBlack .homePage .vidBlock {
-  position: relative;
-  width: 100%;
-  padding: 70px 0 70px 0;
-  height: calc(100vh - 140px);
-  background: #ffd200 url("../images/Transparent white large.png") repeat; }
-.fullBlack .assessFunel {
-  background-color: #e2e3ea;
-  position: relative;
-  width: 100%;
-  padding: 70px 0 70px 0;
-  height: calc(100vh - 140px); }
-  .fullBlack .assessFunel .funelContainer {
-    height: 100%;
-    width: 100%;
-    background: none;
-    transition: all 0.4s ease-in;
-    background-color: #E3E1EF;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain; }
-    @media (max-width: 768px) {
-      .fullBlack .assessFunel .funelContainer {
-        background-image: none !important; } }
-    .fullBlack .assessFunel .funelContainer:before {
-      animation-name: bgEaseIn;
-      animation-duration: 1s;
-      animation-timing-function: ease-in;
-      animation-delay: 0s;
-      animation-direction: normal;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      content: ' ';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: #E3E1EF;
-      z-index: 2; }
-    .fullBlack .assessFunel .funelContainer div.funnelContent {
+  .fullBlack #assessFunel {
+    box-sizing: border-box;
+    background-color: #e2e3ea;
+    position: relative;
+    padding: 70px 20px 70px 20px; }
+    .fullBlack #assessFunel .funelContainer, .fullBlack #assessFunel .funelContainer#assess01 .funnelStart {
+      background-repeat: no-repeat;
+      background-position: center center;
+      min-height: calc(100vh - 180px); }
+      @media (max-width: 768px) {
+        .fullBlack #assessFunel .funelContainer, .fullBlack #assessFunel .funelContainer#assess01 .funnelStart {
+          min-height: auto;
+          background-image: none !important; } }
+    .fullBlack #assessFunel .funelContainer {
       text-align: center;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      z-index: 99999; }
-      @media (max-width: 768px) {
-        .fullBlack .assessFunel .funelContainer div.funnelContent {
-          /*
-          position: relative;
-          top: 0;
-          left: 0;
-          transform: none;
-          margin-left: auto;
-          margin-right: auto;
-          */
-          width: 90%; } }
-    .fullBlack .assessFunel .funelContainer div img {
-      display: block;
-      margin: 0 auto; }
-    .fullBlack .assessFunel .funelContainer .subFunHeader {
-      font-size: 2.25em;
-      color: white;
-      text-transform: uppercase; }
-    .fullBlack .assessFunel .funelContainer .inlined * {
-      display: inline; }
-    .fullBlack .assessFunel .funelContainer h1 {
-      font-size: 3.5em; }
-      @media (max-width: 1500px) {
-        .fullBlack .assessFunel .funelContainer h1 {
-          font-size: 3.0em; } }
-      @media (max-width: 768px) {
-        .fullBlack .assessFunel .funelContainer h1 {
-          font-size: 2.8em; } }
-    .fullBlack .assessFunel .funelContainer .infoHover {
-      margin-bottom: 40px;
-      width: 100%;
-      padding: 15px; }
-      .fullBlack .assessFunel .funelContainer .infoHover + .moreInfo {
-        opacity: 0;
-        transition: opacity 0.2s ease-in; }
-      .fullBlack .assessFunel .funelContainer .infoHover:hover {
-        margin-bottom: 40px; }
-        .fullBlack .assessFunel .funelContainer .infoHover:hover + .moreInfo {
-          opacity: 1; }
-    .fullBlack .assessFunel .funelContainer .moreInfo {
-      text-align: center;
-      font-size: 1em;
-      margin-bottom: 60px;
-      color: rgba(32, 32, 36, 0.7); }
-    .fullBlack .assessFunel .funelContainer ul li {
-      margin-bottom: 20px; }
-      .fullBlack .assessFunel .funelContainer ul li:last-child {
-        margin-bottom: 0; }
-      .fullBlack .assessFunel .funelContainer ul li a.bouton {
-        width: 25%;
-        border: 1px solid #2c2a74;
-        color: #2c2a74;
-        padding: 15px 25px;
-        font-weight: normal;
-        background: transparent;
-        font-size: 2.5em;
-        border-width: 3px;
-        -moz-border-radius: 5px;
-        -o-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px; }
-        .fullBlack .assessFunel .funelContainer ul li a.bouton:hover {
-          border: 1px solid #2c2a74;
-          color: #2c2a74; }
-        @media (max-width: 768px) {
-          .fullBlack .assessFunel .funelContainer ul li a.bouton {
-            font-size: 2.0em; } }
-        @media (max-width: 500px) {
-          .fullBlack .assessFunel .funelContainer ul li a.bouton {
-            font-size: 1.7em; } }
-        .fullBlack .assessFunel .funelContainer ul li a.bouton:hover {
-          background: #ffd200;
-          border-width: 3px; }
-    .fullBlack .assessFunel .funelContainer#assess01 .funnelContent {
-      text-align: inherit;
-      top: 10px;
-      left: inherit;
-      transform: none;
-      padding: 20px; }
-      @media (max-width: 768px) {
-        .fullBlack .assessFunel .funelContainer#assess01 .funnelContent {
-          position: relative; } }
-      .fullBlack .assessFunel .funelContainer#assess01 .funnelContent p {
+      /* FIRST INTRO SLIDE */
+      /* FIRST INTRO SLIDE */
+      /* FIRST FUNNEL FORM */
+      /* FIRST FUNNEL FORM */ }
+      .fullBlack #assessFunel .funelContainer .funnelContent {
+        position: relative;
+        z-index: 3;
+        max-width: 450px; }
+      .fullBlack #assessFunel .funelContainer:before {
+        animation-name: bgEaseIn;
+        animation-duration: 1s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        content: ' ';
+        position: absolute;
+        left: 0;
         top: 0;
-        text-align: left;
-        font-size: 2em;
-        padding-right: 50px;
-        padding-left: 50px;
-        color: #2c2a74;
-        max-width: 70%;
-        margin: 0 auto;
-        line-height: 1.2em; }
-        @media (max-width: 1200px) {
-          .fullBlack .assessFunel .funelContainer#assess01 .funnelContent p {
-            max-width: 100%;
-            padding-right: 0;
-            padding-left: 0; } }
-    .fullBlack .assessFunel .funelContainer#assess01 .funnelStart a {
-      display: block;
-      width: 15%;
-      height: 15%;
-      background: url("../images/funnelStart.svg") no-repeat center center;
-      background-size: contain;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-indent: -9999px;
-      z-index: 99999;
-      opacity: 1;
-      transition: opacity 0.2s ease-in; }
-      @media (max-width: 768px) {
-        .fullBlack .assessFunel .funelContainer#assess01 .funnelStart a {
-          position: relative;
-          width: 200px;
-          height: 200px;
-          top: 0;
-          left: 0;
-          margin-left: auto;
-          margin-right: auto;
-          transform: none; } }
-      .fullBlack .assessFunel .funelContainer#assess01 .funnelStart a:hover {
-        opacity: 0.5; }
-    .fullBlack .assessFunel .funelContainer#funnel-1:before {
-      animation-name: bgEaseInTwo;
-      animation-duration: 2s;
-      animation-timing-function: ease-in;
-      animation-delay: 0s;
-      animation-direction: normal;
-      animation-iteration-count: 1;
-      animation-fill-mode: forwards;
-      content: ' ';
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 1;
-      background-color: #e9e7f2; }
-    .fullBlack .assessFunel .funelContainer#funnel-1 ul li {
-      margin-bottom: 70px; }
-      .fullBlack .assessFunel .funelContainer#funnel-1 ul li:first-child {
-        margin-top: 50px; }
-    .fullBlack .assessFunel .funelContainer#funnel-7 {
-      background-image: url(../images/funelIcons-07.svg); }
-      .fullBlack .assessFunel .funelContainer#funnel-7 .funnelContent p {
-        font-size: 1.5em;
-        padding-right: 50px;
-        padding-left: 50px;
-        color: #2c2a74;
-        max-width: 60%;
-        margin: 050px auto 0; }
-    .fullBlack .assessFunel .funelContainer#funnel-form {
-      background-image: url(../images/funelIcons-06.svg);
-      /*------------------------------------------------------------------
-      [ Input ]*/
-      /*---------------------------------------------*/
-      /*------------------------------------------------------------------
-      [ Button ]*/
-      /*------------------------------------------------------------------
-      [ Responsive ]*/
-      /*==================================================================
-      [ Contact more ]*/ }
-      .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form {
-        width: 90%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        margin: 0 auto; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-title {
-        display: block;
         width: 100%;
-        line-height: 1.2;
-        text-transform: uppercase;
-        text-align: left; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .wrap-input100 {
-        width: 100%;
-        position: relative;
-        background-color: transparent;
-        margin-bottom: 15px;
-        text-align: left; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .rs1-wrap-input100 {
-        width: calc((100% - 150px) / 2); }
-      .fullBlack .assessFunel .funelContainer#funnel-form .label-input100 {
-        color: #555555;
-        line-height: 1.5; }
-      .fullBlack .assessFunel .funelContainer#funnel-form select {
-        height: 40px;
-        padding: 0 15px; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .input100 {
-        display: block;
-        width: 100%;
-        background: #f2f2f2;
-        border-radius: 2px;
-        color: #686868;
-        line-height: 1.2;
-        transition: all 0.4s;
-        margin-top: 5px;
-        padding: 0 15px; }
-      .fullBlack .assessFunel .funelContainer#funnel-form input.input100, .fullBlack .assessFunel .funelContainer#funnel-form select.input100 {
-        min-height: 40px; }
-      .fullBlack .assessFunel .funelContainer#funnel-form textarea.input100 {
-        min-height: 162px;
-        padding-top: 19px;
-        padding-bottom: 13px; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .input100:focus {
-        background: #e6e6e6; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .container-contact100-form-btn {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 5px; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .wrap-contact100-form-btn {
-        display: block;
-        position: relative;
-        z-index: 1;
-        border-radius: 2px;
-        overflow: hidden; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-bgbtn {
-        position: absolute;
-        z-index: -1;
-        width: 300%;
         height: 100%;
-        left: -100%;
-        transition: all 0.4s; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-btn {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        /* use @extend .button on any element (a or button) or use directly in markup class="button" */
-        display: inline-block;
-        padding: 5px 8px;
-        background-color: #2c2a74;
-        color: white !important;
-        text-decoration: none;
-        cursor: pointer;
-        -moz-border-radius: 3px;
-        -o-border-radius: 3px;
-        -webkit-border-radius: 3px;
-        border-radius: 3px;
-        border: 1px solid transparent;
-        text-align: center;
-        font-weight: normal;
+        background-color: #E3E1EF;
+        z-index: 2; }
+      .fullBlack #assessFunel .funelContainer .subFunHeader {
         font-size: 2.25em;
-        padding: 5px 10px;
-        -moz-border-radius: 5px;
-        -o-border-radius: 5px;
-        -webkit-border-radius: 5px;
-        border-radius: 5px; }
-        .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-btn:hover {
-          background: #1e1c4f;
-          color: white; }
-        .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-btn.disabled {
-          cursor: not-allowed;
-          background-color: rgba(128, 128, 128, 0.1) !important;
-          color: rgba(128, 128, 128, 0.4) !important;
-          border: 1px solid transparent; }
-          .fullBlack .assessFunel .funelContainer#funnel-form .contact100-form-btn.disabled:hover {
-            cursor: not-allowed;
-            background-color: rgba(128, 128, 128, 0.1) !important;
-            color: rgba(128, 128, 128, 0.4) !important;
-            border: 1px solid transparent; }
-      .fullBlack .assessFunel .funelContainer#funnel-form .wrap-contact100-form-btn:hover .contact100-form-bgbtn {
-        left: 0; }
-      @media (max-width: 992px) {
-        .fullBlack .assessFunel .funelContainer#funnel-form .wrap-contact100 {
-          padding: 66px 80px 59px 80px; } }
-      @media (max-width: 768px) {
-        .fullBlack .assessFunel .funelContainer#funnel-form .rs1-wrap-input100 {
-          width: 100%; } }
-      @media (max-width: 576px) {
-        .fullBlack .assessFunel .funelContainer#funnel-form .wrap-contact100 {
-          padding: 66px 15px 59px 15px; } }
-      .fullBlack .assessFunel .funelContainer#funnel-form .contact100-more {
-        display: block;
-        max-width: 960px;
-        font-family: Raleway-SemiBold;
-        font-size: 20px;
-        color: #fff;
-        line-height: 1.4;
+        color: white;
+        text-transform: uppercase; }
+      .fullBlack #assessFunel .funelContainer .inlined * {
+        display: inline; }
+      .fullBlack #assessFunel .funelContainer .infoHover {
+        margin-bottom: 40px;
+        width: 100%;
+        padding: 15px; }
+        .fullBlack #assessFunel .funelContainer .infoHover + .moreInfo {
+          opacity: 0;
+          transition: opacity 0.2s ease-in; }
+        .fullBlack #assessFunel .funelContainer .infoHover:hover {
+          margin-bottom: 40px; }
+          .fullBlack #assessFunel .funelContainer .infoHover:hover + .moreInfo {
+            opacity: 1; }
+      .fullBlack #assessFunel .funelContainer .moreInfo {
         text-align: center;
-        padding: 40px 0 10px 0; }
-.fullBlack .topMsg {
-  position: relative;
-  width: 100%;
-  height: 100vh; }
-  .fullBlack .topMsg .hubIntro {
-    position: absolute;
-    width: 60%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%); }
-    @media (max-width: 992px) {
-      .fullBlack .topMsg .hubIntro {
-        width: 90%; } }
-    .fullBlack .topMsg .hubIntro p {
-      font-family: helvetica;
-      font-weight: bold;
-      color: white; }
-.fullBlack .hubPage .topMsg {
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center top; }
-  .fullBlack .hubPage .topMsg .swooch {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%; }
-    .fullBlack .hubPage .topMsg .swooch.hubEA {
-      opacity: 0.5;
-      background: rgba(32, 32, 36, 0.9) url("../images/Squiggle - Yellow.png");
-      background-position: center center !important;
-      background-repeat: no-repeat !important; }
-      @media (min-width: 1px) and (max-width: 598px) {
-        .fullBlack .hubPage .topMsg .swooch.hubEA {
-          background-size: 120%; } }
-      @media (min-width: 599px) and (max-width: 748px) {
-        .fullBlack .hubPage .topMsg .swooch.hubEA {
-          background-size: 90%; } }
-      @media (min-width: 747px) and (max-width: 998px) {
-        .fullBlack .hubPage .topMsg .swooch.hubEA {
-          background-size: 90%; } }
-      @media (min-width: 999px) and (max-width: 1198px) {
-        .fullBlack .hubPage .topMsg .swooch.hubEA {
-          background-size: 90%; } }
-      @media (min-width: 1199px) {
-        .fullBlack .hubPage .topMsg .swooch.hubEA {
-          background-size: 90%; } }
-.fullBlack .hubMarketing {
-  padding: 75px 0px; }
-.fullBlack .hubFeature {
-  padding: 50px 20px;
-  background: url("../images/hub_EA_pattern.png") repeat;
-  background-size: contain;
-  position: relative;
-  overflow: auto; }
-  .fullBlack .hubFeature li {
-    margin-bottom: 20px; }
-  .fullBlack .hubFeature figure {
-    overflow: hidden;
-    position: relative;
-    min-width: 350px; }
-    @media (max-width: 768px) {
-      .fullBlack .hubFeature figure {
-        min-width: 0; } }
-    .fullBlack .hubFeature figure figcaption, .fullBlack .hubFeature figure p {
-      padding: 10px;
-      background: rgba(0, 0, 0, 0.7);
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      text-align: center;
-      margin: 0; }
-    .fullBlack .hubFeature figure p {
-      display: none; }
-    .fullBlack .hubFeature figure figcaption {
-      display: inline-block; }
-    .fullBlack .hubFeature figure:hover {
-      cursor: pointer; }
-      .fullBlack .hubFeature figure:hover p {
-        display: inline-block; }
-      .fullBlack .hubFeature figure:hover figcaption {
-        display: none; }
-.fullBlack .hubTrustBlock {
-  position: relative;
-  padding: 75px 0px; }
-  .fullBlack .hubTrustBlock h1 {
-    text-align: center;
-    color: #202024; }
-  .fullBlack .hubTrustBlock .list-scroll {
-    margin-top: 20px; }
-    .fullBlack .hubTrustBlock .list-scroll li.logo {
-      width: 185px;
-      margin: 0 25px; }
-.fullBlack .hubContact {
-  padding: 75px 0px;
-  background: rgba(255, 210, 0, 0.2); }
-  .fullBlack .hubContact.purple {
-    background: rgba(219, 135, 201, 0.2); }
-  .fullBlack .hubContact.green {
-    background: rgba(117, 182, 45, 0.2); }
-  .fullBlack .hubContact.orange {
-    background: rgba(222, 137, 41, 0.2); }
-  .fullBlack .hubContact.blue {
-    background: rgba(114, 205, 255, 0.2); }
-  .fullBlack .hubContact.red {
-    background: rgba(227, 27, 35, 0.2); }
-  .fullBlack .hubContact h1 {
-    color: #000; }
-  .fullBlack .hubContact label {
-    display: none !important; }
-  .fullBlack .hubContact input, .fullBlack .hubContact textarea {
-    background: #fff;
-    padding: 10px !important; }
-  .fullBlack .hubContact input:hover, .fullBlack .hubContact textarea:hover {
-    border: 1px solid #AAA; }
-  .fullBlack .hubContact .gform_footer {
-    text-align: center; }
-  .fullBlack .hubContact input[type=submit] {
-    background: transparent;
-    color: #202024;
-    border: 3px solid #202024;
-    font-weight: bold;
-    padding: 10px;
-    border-radius: 0px; }
-  .fullBlack .hubContact input[type=submit]:hover {
-    background: #202024;
-    color: white;
-    -webkit-transition: background-color 0.3s ease-in-out;
-    -moz-transition: background-color 0.3s ease-in-out;
-    transition: background-color 0.3s ease-in-out; }
-  .fullBlack .hubContact ::-webkit-input-placeholder {
-    color: #888; }
-  .fullBlack .hubContact :-moz-placeholder {
-    color: #888; }
-  .fullBlack .hubContact ::-moz-placeholder {
-    color: #888; }
-  .fullBlack .hubContact :-ms-input-placeholder {
-    color: #888; }
-  .fullBlack .hubContact .assessmentLink {
-    padding: 75px 0 0 0; }
-    .fullBlack .hubContact .assessmentLink a {
-      font-size: 2em;
-      color: #00b6ff;
-      font-weight: normal; }
-.fullBlack .hubAdress {
-  padding: 75px 0px; }
-  .fullBlack .hubAdress .map-icon {
-    background-image: url("../images/hubBKO.png");
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 120px;
-    height: 180px;
-    float: left;
-    margin-right: 20px;
-    position: relative; }
-  .fullBlack .hubAdress .map-addr p {
-    margin-top: 0;
-    font-size: 1.2em;
-    line-height: 1.2em; }
-  .fullBlack .hubAdress h1 {
-    padding: 0 20px;
-    margin-bottom: 45px;
-    text-align: center;
-    color: #202024; }
-  .fullBlack .hubAdress .col-contact .contact {
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto; }
-  .fullBlack .hubAdress > ul {
-    margin-top: 45px; }
-    .fullBlack .hubAdress > ul > li {
-      box-sizing: border-box;
-      padding-left: 155px;
-      min-height: 220px; }
-      .fullBlack .hubAdress > ul > li li {
-        font-size: 1.2em; }
-      .fullBlack .hubAdress > ul > li.bko {
-        background: url("../images/hubBKO.png") no-repeat left 25px; }
-      .fullBlack .hubAdress > ul > li.oua {
-        background: url("../images/hubOUA.png") no-repeat left 25px; }
-.fullBlack .allHubBlock {
-  padding: 75px 0; }
-  .fullBlack .allHubBlock h1 {
-    text-align: center;
-    color: #202024; }
-  .fullBlack .allHubBlock ul {
-    margin-top: 25px;
-    position: relative;
-    padding-top: 120px; }
-    .fullBlack .allHubBlock ul li {
-      min-height: 100px; }
-      .fullBlack .allHubBlock ul li div.helloMsg {
+        font-size: 1em;
+        margin-bottom: 60px;
+        color: rgba(32, 32, 36, 0.7); }
+      .fullBlack #assessFunel .funelContainer ul {
+        margin: 20px auto; }
+        .fullBlack #assessFunel .funelContainer ul li {
+          margin-bottom: 20px; }
+          .fullBlack #assessFunel .funelContainer ul li:last-child {
+            margin-bottom: 0; }
+          .fullBlack #assessFunel .funelContainer ul li a.bouton {
+            border: 1px solid #2c2a74;
+            color: #2c2a74;
+            padding: 15px 25px;
+            font-weight: normal;
+            -moz-border-radius: 5px;
+            -o-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            background: transparent;
+            display: inline-block;
+            font-size: 2.5em;
+            border-width: 3px; }
+            .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
+              border: 1px solid #2c2a74;
+              color: #2c2a74; }
+            @media (max-width: 768px) {
+              .fullBlack #assessFunel .funelContainer ul li a.bouton {
+                font-size: 2.0em; } }
+            @media (max-width: 500px) {
+              .fullBlack #assessFunel .funelContainer ul li a.bouton {
+                font-size: 1.7em; } }
+            .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
+              background: #ffd200;
+              border-width: 3px; }
+      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent {
+        max-width: none; }
+      .fullBlack #assessFunel .funelContainer#assess01 .funnelStart {
+        position: relative;
+        background-size: cover;
+        /* START BUTTON */
+        /* END OF START BUTTON */ }
+        .fullBlack #assessFunel .funelContainer#assess01 .funnelStart a {
+          display: block;
+          width: 15%;
+          height: 15%;
+          background: url("../images/funnelStart.svg") no-repeat center center;
+          background-size: contain;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          text-indent: -9999px;
+          z-index: 99999;
+          opacity: 1;
+          transition: opacity 0.2s ease-in; }
+          @media (max-width: 768px) {
+            .fullBlack #assessFunel .funelContainer#assess01 .funnelStart a {
+              position: relative;
+              width: 200px;
+              height: 200px;
+              top: 0;
+              left: 0;
+              margin-left: auto;
+              margin-right: auto;
+              transform: none; } }
+          .fullBlack #assessFunel .funelContainer#assess01 .funnelStart a:hover {
+            opacity: 0.5; }
+      .fullBlack #assessFunel .funelContainer#funnel-1:before {
+        animation-name: bgEaseInTwo;
+        animation-duration: 2s;
+        animation-timing-function: ease-in;
+        animation-delay: 0s;
+        animation-direction: normal;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        content: ' ';
         position: absolute;
-        display: none;
-        top: -120px; }
-        .fullBlack .allHubBlock ul li div.helloMsg h2 {
-          text-align: center;
-          font-family: helvetica;
-          font-weight: bold;
-          white-space: nowrap; }
-      .fullBlack .allHubBlock ul li a {
-        display: block;
-        width: 150px;
-        height: 150px;
-        background-size: contain !important;
-        text-indent: -9999px;
-        transition: transform 0.2s ease-in; }
-        .fullBlack .allHubBlock ul li a:hover {
-          transform: scale(1.5); }
-      .fullBlack .allHubBlock ul li.EU a {
-        background: url("../images/Location hexagons_Europe.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.EU:hover > .helloMsg {
-        display: block; }
-      .fullBlack .allHubBlock ul li.WA a {
-        background: url("../images/Location hexagons_West Africa.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.WA:hover > .helloMsg {
-        display: block; }
-      .fullBlack .allHubBlock ul li.IN a {
-        background: url("../images/Location hexagons_SE Asia_SEAP.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.IN:hover > .helloMsg {
-        display: block;
-        left: -40px; }
-      .fullBlack .allHubBlock ul li.EA a {
-        background: url("../images/Location hexagons_East Africa.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.EA:hover > .helloMsg {
-        display: block; }
-      .fullBlack .allHubBlock ul li.SA a {
-        background: url("../images/Location hexagons_South Asia.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.SA:hover > .helloMsg {
-        display: block; }
-      .fullBlack .allHubBlock ul li.US a {
-        background: url("../images/Location hexagons_Americas.png") no-repeat center center; }
-      .fullBlack .allHubBlock ul li.US:hover > .helloMsg {
-        display: block; }
-.fullBlack .lang-list {
-  font-size: 2em;
-  text-align: center; }
-  .fullBlack .lang-list li {
-    margin: 0 5px;
-    display: inline-block; }
-    .fullBlack .lang-list li a[href] {
-      display: block;
-      background: #3792b3;
-      color: #fff;
-      padding: 10px 5px;
-      min-width: 50px;
-      border: #fff solid 1px; }
-      .fullBlack .lang-list li a[href].active, .fullBlack .lang-list li a[href]:hover {
-        background: rgba(255, 255, 255, 0.2); }
-.fullBlack .language .lang-list a[href].active, .fullBlack .language .lang-list a[href]:hover {
-  background: rgba(0, 0, 0, 0.2); }
-.fullBlack .hubIntro ul.list-inline.text-center {
-  color: #fff;
-  margin-bottom: 1.2em; }
-  .fullBlack .hubIntro ul.list-inline.text-center li {
-    margin-right: 0em;
-    margin-left: 0em; }
-  .fullBlack .hubIntro ul.list-inline.text-center a[href] {
-    color: inherit; }
-  .fullBlack .hubIntro ul.list-inline.text-center a[href].active {
-    font-weight: bold;
-    font-size: 1.1em; }
-.fullBlack .hubAdress .map-icon a[href], .fullBlack .hubFeature a[href] {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0; }
-.fullBlack .wrapper {
-  padding-left: 20px;
-  padding-right: 20px; }
-@media (max-width: 768px) {
-  .fullBlack #content {
-    padding: 0;
-    width: 100%; }
-  .fullBlack h1 {
-    font-size: 2.2em; }
-  .fullBlack .fullBlack .hubFeature figure {
-    min-width: auto; }
-  .fullBlack .allHubBlock ul {
-    padding: 0 10px 0; }
-  .fullBlack .allHubBlock ul li a:hover {
-    transform: scale(1); }
-  .fullBlack .allHubBlock ul li a {
-    width: 100px;
-    height: 120px; } }
-@media (max-width: 500px) {
-  .fullBlack .hubAdress .map-icon {
-    width: 90px;
-    height: 135px; } }
-@media (min-width: 769px) {
-  .fullBlack header#top {
-    background: rgba(32, 32, 36, 0.2); }
-  .fullBlack .allHubBlock ul li {
-    width: 195px; }
-  .fullBlack .allHubBlock ul {
-    padding-bottom: 30px; }
-  .fullBlack .hubFeature li img {
-    max-width: 350px; } }
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        background-color: #e9e7f2; }
+  .fullBlack .hubPage .topMsg {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center top; }
+    @media (max-width: 768px) {
+      .fullBlack .hubPage .topMsg {
+        height: auto; } }
+    .fullBlack .hubPage .topMsg .hubIntro {
+      max-width: 800px;
+      margin: 0px auto;
+      padding: 100px 0;
+      z-index: 2;
+      position: relative;
+      transform: none;
+      top: auto;
+      left: auto;
+      width: 90%; }
+    .fullBlack .hubPage .topMsg .swooch {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; }
+      .fullBlack .hubPage .topMsg .swooch.hubEA {
+        opacity: 0.5;
+        background: rgba(32, 32, 36, 0.9) url("../images/Squiggle - Yellow.png");
+        background-position: center center !important;
+        background-repeat: no-repeat !important; }
+        @media (min-width: 1px) and (max-width: 598px) {
+          .fullBlack .hubPage .topMsg .swooch.hubEA {
+            background-size: 120%; } }
+        @media (min-width: 599px) and (max-width: 748px) {
+          .fullBlack .hubPage .topMsg .swooch.hubEA {
+            background-size: 90%; } }
+        @media (min-width: 747px) and (max-width: 998px) {
+          .fullBlack .hubPage .topMsg .swooch.hubEA {
+            background-size: 90%; } }
+        @media (min-width: 999px) and (max-width: 1198px) {
+          .fullBlack .hubPage .topMsg .swooch.hubEA {
+            background-size: 90%; } }
+        @media (min-width: 1199px) {
+          .fullBlack .hubPage .topMsg .swooch.hubEA {
+            background-size: 90%; } }
+  .fullBlack .hubPage .hubMarketing {
+    padding: 75px 0px; }
+  .fullBlack .hubPage .hubFeature {
+    padding: 50px 20px;
+    background: url("../images/hub_EA_pattern.png") repeat;
+    background-size: contain;
+    position: relative;
+    overflow: auto; }
+    .fullBlack .hubPage .hubFeature li {
+      margin-bottom: 20px; }
+    .fullBlack .hubPage .hubFeature figure {
+      overflow: hidden;
+      position: relative;
+      min-width: 350px; }
+      @media (max-width: 768px) {
+        .fullBlack .hubPage .hubFeature figure {
+          min-width: 0; } }
+      .fullBlack .hubPage .hubFeature figure figcaption, .fullBlack .hubPage .hubFeature figure p {
+        padding: 10px;
+        background: rgba(0, 0, 0, 0.7);
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        margin: 0; }
+      .fullBlack .hubPage .hubFeature figure p {
+        display: none; }
+      .fullBlack .hubPage .hubFeature figure figcaption {
+        display: inline-block; }
+      .fullBlack .hubPage .hubFeature figure:hover {
+        cursor: pointer; }
+        .fullBlack .hubPage .hubFeature figure:hover p {
+          display: inline-block; }
+        .fullBlack .hubPage .hubFeature figure:hover figcaption {
+          display: none; }
+  .fullBlack .hubPage .hubContact {
+    padding: 75px 0px;
+    background: rgba(255, 210, 0, 0.2); }
+    .fullBlack .hubPage .hubContact.purple {
+      background: rgba(219, 135, 201, 0.2); }
+    .fullBlack .hubPage .hubContact.green {
+      background: rgba(117, 182, 45, 0.2); }
+    .fullBlack .hubPage .hubContact.orange {
+      background: rgba(222, 137, 41, 0.2); }
+    .fullBlack .hubPage .hubContact.blue {
+      background: rgba(114, 205, 255, 0.2); }
+    .fullBlack .hubPage .hubContact.red {
+      background: rgba(227, 27, 35, 0.2); }
+    .fullBlack .hubPage .hubContact h1 {
+      color: #000; }
+    .fullBlack .hubPage .hubContact input, .fullBlack .hubPage .hubContact textarea {
+      background: #fff;
+      padding: 10px !important; }
+    .fullBlack .hubPage .hubContact input:hover, .fullBlack .hubPage .hubContact textarea:hover {
+      border: 1px solid #AAA; }
+    .fullBlack .hubPage .hubContact .gform_footer {
+      text-align: center; }
+    .fullBlack .hubPage .hubContact input[type=submit] {
+      background: transparent;
+      color: #202024;
+      border: 3px solid #202024;
+      font-weight: bold;
+      padding: 10px;
+      border-radius: 0px; }
+    .fullBlack .hubPage .hubContact input[type=submit]:hover {
+      background: #202024;
+      color: white;
+      -webkit-transition: background-color 0.3s ease-in-out;
+      -moz-transition: background-color 0.3s ease-in-out;
+      transition: background-color 0.3s ease-in-out; }
+    .fullBlack .hubPage .hubContact ::-webkit-input-placeholder {
+      color: #888; }
+    .fullBlack .hubPage .hubContact :-moz-placeholder {
+      color: #888; }
+    .fullBlack .hubPage .hubContact ::-moz-placeholder {
+      color: #888; }
+    .fullBlack .hubPage .hubContact :-ms-input-placeholder {
+      color: #888; }
+    .fullBlack .hubPage .hubContact .assessmentLink {
+      padding: 75px 0 0 0; }
+      .fullBlack .hubPage .hubContact .assessmentLink a {
+        font-size: 2em;
+        color: #00b6ff;
+        font-weight: normal; }
+  .fullBlack .hubPage .hubAdress {
+    padding: 75px 0px; }
+    .fullBlack .hubPage .hubAdress .map-icon {
+      background-image: url("../images/hubBKO.png");
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+      width: 120px;
+      height: 180px;
+      float: left;
+      margin-right: 20px;
+      position: relative; }
+      @media (max-width: 500px) {
+        .fullBlack .hubPage .hubAdress .map-icon {
+          width: 90px;
+          height: 135px; } }
+    .fullBlack .hubPage .hubAdress .map-addr p {
+      margin-top: 0; }
+    .fullBlack .hubPage .hubAdress h1 {
+      padding: 0 20px;
+      margin-bottom: 45px;
+      text-align: center;
+      color: #202024; }
+    .fullBlack .hubPage .hubAdress .col-contact .contact {
+      max-width: 350px;
+      margin-left: auto;
+      margin-right: auto; }
+    .fullBlack .hubPage .hubAdress > ul {
+      margin-top: 45px; }
+      .fullBlack .hubPage .hubAdress > ul > li {
+        box-sizing: border-box;
+        padding-left: 155px;
+        min-height: 220px; }
+        .fullBlack .hubPage .hubAdress > ul > li li {
+          font-size: 1.2em; }
+        .fullBlack .hubPage .hubAdress > ul > li.bko {
+          background: url("../images/hubBKO.png") no-repeat left 25px; }
+        .fullBlack .hubPage .hubAdress > ul > li.oua {
+          background: url("../images/hubOUA.png") no-repeat left 25px; }
+  .fullBlack .hubPage .hubAdress .map-icon a[href], .fullBlack .hubPage .hubFeature a[href] {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
+  .fullBlack .micro-story {
+    /* LANGUAGE TOGGLE */
+    /* IFRAME ROW */
+    /* TESTIMONIAL WIDGET */
+    /* TESTIMONIAL WIDGET */ }
+    .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
+      background: rgba(0, 0, 0, 0.2); }
+    .fullBlack .micro-story h3 {
+      color: inherit;
+      margin: 0;
+      font-weight: bold; }
+    .fullBlack .micro-story .iframe-row {
+      position: relative; }
+      .fullBlack .micro-story .iframe-row p, .fullBlack .micro-story .iframe-row iframe {
+        margin: 0;
+        line-height: 0; }
+      .fullBlack .micro-story .iframe-row .caption {
+        bottom: 0;
+        position: absolute;
+        background: rgba(0, 0, 0, 0.6);
+        color: #fff;
+        padding: 30px;
+        width: 100%;
+        box-sizing: border-box; }
+        @media (max-width: 768px) {
+          .fullBlack .micro-story .iframe-row .caption {
+            padding: 15px; } }
+    .fullBlack .micro-story .testimonial-widget {
+      max-width: 900px;
+      padding: 10px;
+      z-index: 0;
+      position: relative; }
+      .fullBlack .micro-story .testimonial-widget .testimonial-widget-image, .fullBlack .micro-story .testimonial-widget .testimonial-text, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+        z-index: 2;
+        position: relative;
+        margin: 40px auto; }
+      .fullBlack .micro-story .testimonial-widget .testimonial-widget-image {
+        max-height: 200px;
+        overflow: hidden; }
+      .fullBlack .micro-story .testimonial-widget .testimonial-title {
+        margin-bottom: 0;
+        padding-bottom: 40px; }
+      .fullBlack .micro-story .testimonial-widget::before, .fullBlack .micro-story .testimonial-widget::after {
+        position: absolute;
+        top: 100px;
+        left: 0%;
+        width: 200px;
+        height: 200px;
+        content: " ";
+        background-image: url("../images/quote_mark_start.png");
+        background-position: center;
+        background-size: cover;
+        z-index: 1; }
+      .fullBlack .micro-story .testimonial-widget::after {
+        bottom: -10px;
+        right: 0%;
+        top: auto;
+        left: auto;
+        background-image: url("../images/quote_mark_end.png"); }
+      @media (max-width: 768px) {
+        .fullBlack .micro-story .testimonial-widget::before, .fullBlack .micro-story .testimonial-widget::after {
+          width: 150px;
+          height: 150px; }
+        .fullBlack .micro-story .testimonial-widget::before {
+          top: 150px; } }
 
 /*# sourceMappingURL=main.css.map */
