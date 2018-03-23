@@ -590,3 +590,9 @@
 		_e('</div></section>');
 	}
 	
+	function akvo_slug_show_all_parents( $args ) {
+		$args['post_status'] = array( 'publish', 'pending', 'draft', 'private' );
+		return $args;
+	}
+	add_filter( 'page_attributes_dropdown_pages_args', 'akvo_slug_show_all_parents' );
+	add_filter( 'quick_edit_dropdown_pages_args', 'akvo_slug_show_all_parents' );
