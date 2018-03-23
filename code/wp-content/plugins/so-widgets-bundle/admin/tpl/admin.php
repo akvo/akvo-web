@@ -2,9 +2,9 @@
 	<div class="page-banner">
 
 		<span class="icon">
-			<img src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon-back.png" class="icon-back" width="50" height="43">
-			<img src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon-gear.png" class="icon-gear" width="26" height="26">
-			<img src="<?php echo plugin_dir_url(__FILE__) ?>../images/icon-front.png" class="icon-front" width="50" height="43">
+			<img src="<?php echo siteorigin_widgets_url( 'admin/images/icon-back.png' )?>" class="icon-back" width="50" height="43">
+			<img src="<?php echo siteorigin_widgets_url( 'admin/images/icon-gear.png' ) ?>" class="icon-gear" width="26" height="26">
+			<img src="<?php echo siteorigin_widgets_url( 'admin/images/icon-front.png' ) ?>" class="icon-front" width="50" height="43">
 		</span>
 		<h1><?php _e('SiteOrigin Widgets Bundle', 'so-widgets-bundle') ?></h1>
 
@@ -22,19 +22,23 @@
 
 	<div id="widgets-list">
 
-		<?php foreach( $widgets as $file => $widget ): ?>
+		<?php
+		foreach( $widgets as $file => $widget ): 
+			$file = wp_normalize_path( $file );
+			?>
 			<div class="so-widget-wrap">
 				<div class="so-widget so-widget-is-<?php echo $widget['Active'] ? 'active' : 'inactive' ?>" data-id="<?php echo esc_attr( $widget['ID'] ) ?>">
 
 					<?php
 					$banner = '';
-					if( file_exists( plugin_dir_path( $widget['File'] ) . 'assets/banner.svg' ) ) {
-						$banner = plugin_dir_url( $widget['File'] ) . 'assets/banner.svg';
+					$widget_dir = dirname( $file );
+					if( file_exists( $widget_dir . '/assets/banner.svg' ) ) {
+						$banner = str_replace( wp_normalize_path( WP_CONTENT_DIR ), content_url(), $widget_dir ) . '/assets/banner.svg';
 					}
 					$banner = apply_filters('siteorigin_widgets_widget_banner', $banner, $widget);
 					?>
 					<div class="so-widget-banner" data-seed="<?php echo esc_attr( substr( md5($widget['ID']), 0, 6 ) ) ?>">
-						<?php if( !empty($banner) ) : ?>
+						<?php if( !empty( $banner ) ) : ?>
 							<img src="<?php echo esc_url($banner) ?>" />
 						<?php endif; ?>
 					</div>
@@ -54,7 +58,7 @@
 								By
 								<strong>
 								<?php
-									if( !empty($widget['AuthorURI']) ) echo '<a href="' . esc_url( $widget['AuthorURI'] ) . '" target="_blank">';
+									if( !empty($widget['AuthorURI']) ) echo '<a href="' . esc_url( $widget['AuthorURI'] ) . '" target="_blank" rel="noopener noreferrer">';
 									echo esc_html( $widget['Author'] );
 									if( !empty($widget['AuthorURI']) ) echo '</a>';
 								?>
@@ -71,8 +75,8 @@
 						/** @var SiteOrigin_Widget $widget_object */
 						$widget_object = !empty( $widget_objects[ $file ] ) ? $widget_objects[ $file ] : false;
 						if( !empty( $widget_object ) && $widget_object->has_form( 'settings' ) ) {
-							$rel_path = str_replace( WP_PLUGIN_DIR, '', $file );
-
+							$rel_path = str_replace( wp_normalize_path( WP_CONTENT_DIR ), '', $file );
+							
 							$form_url = add_query_arg( array(
 									'id' => $rel_path,
 									'action' => 'so_widgets_setting_form',
@@ -98,14 +102,14 @@
 
 	<div class="developers-link">
 		<?php _e('Developers - create your own widgets for the Widgets Bundle.', 'so-widgets-bundle') ?>
-		<a href="https://siteorigin.com/docs/widgets-bundle/" target="_blank"><?php _e('Read More', 'so-widgets-bundle') ?></a>.
+		<a href="https://siteorigin.com/docs/widgets-bundle/" target="_blank" rel="noopener noreferrer"><?php _e('Read More', 'so-widgets-bundle') ?></a>.
 	</div>
 
 	<div id="sow-settings-dialog">
 		<div class="so-overlay"></div>
 
 		<div class="so-title-bar">
-			<h3 class="so-title">Widget Settings</h3>
+			<h3 class="so-title"><?php _e( 'Widget Settings', 'so-widgets-bundle' ) ?></h3>
 			<a class="so-close">
 				<span class="so-dialog-icon"></span>
 			</a>

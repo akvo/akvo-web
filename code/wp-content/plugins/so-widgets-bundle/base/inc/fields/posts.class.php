@@ -122,7 +122,7 @@ class SiteOrigin_Widget_Field_Posts extends SiteOrigin_Widget_Field_Container_Ba
 			'additional' => array(
 				'type'        => 'text',
 				'label'       => __( 'Additional', 'so-widgets-bundle' ),
-				'description' => __( 'Additional query arguments. See <a href="http://codex.wordpress.org/Function_Reference/query_posts" target="_blank">query_posts</a>.', 'so-widgets-bundle' )
+				'description' => __( 'Additional query arguments. See <a href="http://codex.wordpress.org/Function_Reference/query_posts" target="_blank" rel="noopener noreferrer">query_posts</a>.', 'so-widgets-bundle' ),
 			),
 		);
 	}
@@ -138,6 +138,11 @@ class SiteOrigin_Widget_Field_Posts extends SiteOrigin_Widget_Field_Container_Ba
 
 	protected function render_field( $value, $instance ) {
 		$value = wp_parse_args( $value );
+		
+		if( !empty( $value['post_type'] ) ) {
+			$value['post_type'] = strpos( $value['post_type'], ',' ) !== false ? explode( ',', $value['post_type'] ) : $value['post_type'];
+		}
+		
 		if ( $this->collapsible ) {
 			?><div class="siteorigin-widget-section <?php if ( $this->state == 'closed' ) {
 				echo 'siteorigin-widget-section-hide';
@@ -162,10 +167,17 @@ class SiteOrigin_Widget_Field_Posts extends SiteOrigin_Widget_Field_Container_Ba
 	}
 
 	protected function sanitize_field_input( $value, $instance ) {
+		// Special handling for the 'additional' args field.
+		if ( ! empty( $value['additional'] ) ) {
+			$value['additional'] = urlencode( $value['additional'] );
+		}
 		$value = parent::sanitize_field_input( $value, $instance );
 		$result = '';
 		foreach ( $value as $key => $item ) {
 			if ( ! empty( $item ) ) {
+				if ( is_array( $item ) ) {
+					$item = implode( ',', $item );
+				}
 				$result .= ( empty( $result ) ? '' : '&' ) . $key . '=' . $item;
 			}
 		}

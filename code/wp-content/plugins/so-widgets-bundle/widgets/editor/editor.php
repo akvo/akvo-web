@@ -33,12 +33,13 @@ class SiteOrigin_Widget_Editor_Widget extends SiteOrigin_Widget {
 			),
 			'text' => array(
 				'type' => 'tinymce',
-				'rows' => 20
+				'rows' => 20,
+				'wpautop' => false, // Let the editor handle it's own processing.
 			),
 			'autop' => array(
 				'type' => 'checkbox',
 				'default' => $global_settings['autop_default'],
-				'label' => __('Automatically add paragraphs', 'so-widgets-bundle'),
+				'label' => __( 'Automatically add paragraphs', 'so-widgets-bundle' ),
 			),
 		);
 	}
@@ -48,7 +49,7 @@ class SiteOrigin_Widget_Editor_Widget extends SiteOrigin_Widget {
 			'autop_default' => array(
 				'type'    => 'checkbox',
 				'default' => true,
-				'label'   => __( 'Enable the <em>Automatically add paragraphs</em> setting by default.', 'so-widgets-bundle' ),
+				'label'   => __( 'Enable the "Automatically add paragraphs" setting by default.', 'so-widgets-bundle' ),
 			),
 		);
 	}
@@ -66,18 +67,18 @@ class SiteOrigin_Widget_Editor_Widget extends SiteOrigin_Widget {
 			$instance,
 			array(  'text' => '' )
 		);
-
-		$instance['text'] = $this->unwpautop( $instance['text'] );
-
-		if (function_exists('wp_make_content_images_responsive')) {
-			$instance['text'] = wp_make_content_images_responsive( $instance['text'] );
-		}
-
+		
 		if (
 			// Only run these parts if we're rendering for the frontend
 			empty( $GLOBALS[ 'SITEORIGIN_PANELS_CACHE_RENDER' ] ) &&
 			empty( $GLOBALS[ 'SITEORIGIN_PANELS_POST_CONTENT_RENDER' ] )
 		) {
+			$instance['text'] = $this->unwpautop( $instance['text'] );
+			
+			if (function_exists('wp_make_content_images_responsive')) {
+				$instance['text'] = wp_make_content_images_responsive( $instance['text'] );
+			}
+			
 			// Manual support for Jetpack Markdown module.
 			if ( class_exists( 'WPCom_Markdown' ) &&
 			     Jetpack::is_module_active( 'markdown' ) &&
@@ -94,12 +95,14 @@ class SiteOrigin_Widget_Editor_Widget extends SiteOrigin_Widget {
 			}
 
 			$instance['text'] = apply_filters( 'widget_text', $instance['text'] );
+			
+			if( $instance['autop'] ) {
+					$instance['text'] = wpautop( $instance['text'] );
+			}
+			
 			$instance['text'] = do_shortcode( shortcode_unautop( $instance['text'] ) );
 		}
 
-		if( $instance['autop'] ) {
-			$instance['text'] = wpautop( $instance['text'] );
-		}
 
 		return array(
 			'text' => $instance['text'],

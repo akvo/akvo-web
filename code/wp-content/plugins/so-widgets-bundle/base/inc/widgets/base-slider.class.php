@@ -172,18 +172,18 @@ abstract class SiteOrigin_Widget_Base_Slider extends SiteOrigin_Widget {
 				?>
 				<ol class="sow-slider-pagination">
 					<?php foreach($frames as $i => $frame) : ?>
-						<li><a href="#" data-goto="<?php echo $i ?>"><?php echo $i+1 ?></a></li>
+						<li><a href="#" data-goto="<?php echo $i ?>" aria-label="<?php printf( __( 'display slide %s', 'so-widgets-bundle' ), $i+1 ) ?>"><?php echo $i+1 ?></a></li>
 					<?php endforeach; ?>
 				</ol>
 
 				<div class="sow-slide-nav sow-slide-nav-next">
-					<a href="#" data-goto="next" data-action="next">
+					<a href="#" data-goto="next" aria-label="<?php _e( 'next slide', 'so-widgets-bundle' ) ?>" data-action="next">
 						<em class="sow-sld-icon-<?php echo sanitize_html_class( $controls['nav_style'] ) ?>-right"></em>
 					</a>
 				</div>
 
 				<div class="sow-slide-nav sow-slide-nav-prev">
-					<a href="#" data-goto="previous" data-action="prev">
+					<a href="#" data-goto="previous" aria-label="<?php _e( 'previous slide', 'so-widgets-bundle' ) ?>" data-action="prev">
 						<em class="sow-sld-icon-<?php echo sanitize_html_class( $controls['nav_style'] ) ?>-left"></em>
 					</a>
 				</div>
@@ -304,24 +304,33 @@ abstract class SiteOrigin_Widget_Base_Slider extends SiteOrigin_Widget {
 	 * @param array $classes
 	 */
 	function video_code( $videos, $classes = array() ){
-		if(empty($videos)) return;
-		$video_element = '<video class="' . esc_attr( implode(',', $classes) ) . '" autoplay loop muted>';
+		if( empty( $videos ) ) return;
+		$video_element = '<video class="' . esc_attr( implode( ',', $classes ) ) . '" autoplay loop muted playsinline>';
 
-		foreach($videos as $video) {
+		foreach( $videos as $video ) {
 			if( empty( $video['file'] ) && empty ( $video['url'] ) ) continue;
-
-			if( empty( $video['url'] ) ) {
-				$video_file = wp_get_attachment_url($video['file']);
-				$video_element .= '<source src="' . sow_esc_url( $video_file ) . '" type="' . esc_attr( $video['format'] ) . '">';
-			}
-			else {
-				$args = '';
+			// If video is an external file, try and display it using oEmbed
+			if( !empty( $video['url'] ) ) {
+				$args = array();
 				if ( ! empty( $video['height'] ) ) {
 					$args['height'] = $video['height'];
 				}
+				$embedded_video = wp_oembed_get( $video['url'], $args );
 
-				echo wp_oembed_get( $video['url'], $args );
+				// Check if we can oEmbed the video or not
+				if( !$embedded_video ) {
+					$video_file = sow_esc_url( $video['url'] );
+				}else{
+					echo $embedded_video;
+					continue;
+				}
 			}
+
+			// If $video_file isn't set video is a local file
+			if( !isset( $video_file ) ) {
+				$video_file = wp_get_attachment_url( $video['file'] );
+			}
+			$video_element .= '<source src="' . sow_esc_url( $video_file ) . '" type="' . esc_attr( $video['format'] ) . '">';
 		}
 		if ( strpos( $video_element, 'source' ) !== false ) {
 			$video_element .= '</video>';
