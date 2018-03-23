@@ -1,0 +1,106 @@
+/*-----------------------------------
+            Widget area
+------------------------------------*/
+#sidebar-responsive {
+    display: none;
+}
+
+@include responsive(small-max-screens) {
+    #sidebar-responsive {
+        @include box-sizing(border-box);
+        display: block;
+        margin-bottom: 15px;
+        padding: 0em 12px;
+    }
+    #sidebar-responsive .widget {
+        display: block;
+        margin-bottom: 15px;
+    }
+    #sidebar-responsive .widget h3 {
+        border-bottom: 1px solid #ddd;
+        color: #898989;
+        font-size: 1.5em;
+        line-height: 1.4em;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+    }
+    #sidebar-responsive ul li {
+        display: block;
+    }
+    #sidebar-responsive ul li a {
+        @include border-radius(4px);
+        @include transition(none);
+        display: block;
+        font-size: 1.6em;
+        font-weight: bold;
+        padding: 10px 20px;
+        transition: none;
+    }
+    #sidebar-responsive ul li a:hover {
+        background: #565656;
+        color: #fff;
+        text-decoration: none;
+    }
+}
+
+
+#sidebar .widget {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#sidebar .widget.twitBuck {
+    padding: 0em 0em 0em 2%;
+}
+
+#sidebar .widget h3 {
+    font-size: 1.4em;
+    padding: 1.5% 1% 1.5% 4%;
+    width: 95%;
+}
+
+#sidebar .widget ul {
+    display: block;
+}
+
+#sidebar .widget ul li {
+    margin: 0em auto 1px auto;
+    width: 96%;
+}
+
+#sidebar .widget ul#recentcomments {
+    display: block;
+    margin: 0em auto;
+    padding: 5px 1%;
+    width: 96%;
+}
+
+#sidebar .widget ul li.recentcomments {
+    display: block;
+    margin: 0em auto 30px auto;
+    width: 90%;
+}
+
+#sidebar .widget ul li.recentcomments:first-child {
+    margin: 10px auto 30px auto;
+}
+
+#sidebar .widget ul li ul {
+    font-size: 0.9em;
+}
+
+#sidebar .widget ul li a {
+    @include border-radius(0.1em);
+    @include transition(color 0.2s linear);
+    @include transition(background 0.2s linear);
+    display: block;
+    font-weight: normal;
+    padding: 3px 3%;
+    width: 94%;
+}
+
+#sidebar .widget ul li a:hover {
+    background: rgb(222, 137, 41);
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}

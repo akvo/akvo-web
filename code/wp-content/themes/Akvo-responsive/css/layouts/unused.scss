@@ -1,0 +1,351 @@
+/***********************************
+                        Price table
+********************************************/
+.pricingList {
+    margin: 3em auto;
+}
+
+.pricingList h5 {
+    background: rgb(32, 32, 36);
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+    padding: 0.5em;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pricingList img {
+    display: table;
+    margin: 1em auto;
+}
+
+.pricingList p {
+    display: block;
+    margin: 1em auto;
+    padding: 25px;
+}
+
+@include responsive(small-max-screens) {
+    .pricingList img {
+        float: left;
+        margin: 0.5em 1em;
+        max-width: 30%;
+    }
+    .pricingList p {
+        display: block;
+        margin: 1em auto;
+    }
+}
+
+
+.pricingList.fourColumns li {
+    border-radius: 0.25em;
+    float: left;
+    margin: 0em;
+    min-height: 200px;
+    padding: 0.2em 0em 0.25em;
+    position: relative;
+    width: 25%;
+}
+
+.pricingList.fourColumns li:nth-child(2n) {
+    background: none repeat scroll 0em 0em rgb(238, 238, 238);
+}
+
+@include responsive(small-max-screens) {
+    .pricingList.fourColumns > li {
+        float: none;
+        margin: 30px auto;
+        padding: 2%;
+        width: 96%;
+    }
+    .pricingList.fourColumns li:nth-child(2n) {
+        background: none;
+    }
+}
+
+
+div[id^="inline-"] {
+    display: none;
+}
+
+
+/*-----------------------------------
+                Work with us
+------------------------------------*/
+
+.twoPagerContainer {
+    width: 500px;
+}
+
+.rsrProdPag .twoPagerContainer {
+    max-width: 100%;
+}
+
+
+/*-----------------------------------
+                FLOW help page
+------------------------------------*/
+
+#content.flowHelpSupport {
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.flow-help-mailchimp-signup {
+    background: rgba($akvoPurple, 0.1);
+    @include border-radius(5px);
+    padding: 10px 15px 20px;
+    label {
+        font-size: inherit;
+    }
+    input {
+        display: block;
+        margin: 1em 0;
+        &.email {
+            margin: 0.75em 0 0.25em 0;
+            padding: 0.25em;
+            font-size: 1.25em;
+        }
+    }
+}
+
+
+/*-----------------------------------
+                Newsletters page
+------------------------------------*/
+
+.newsletter-container {
+    h2 {
+        margin: 0 auto 0.6em auto;
+    }
+    p {
+        text-align: justify;
+    }
+    .newsletter-profile {
+        margin: 4em auto;
+        &.fullWidthParag {
+            &:last-child {
+                hr {
+                    display: none;
+                }
+            }
+        }
+    }
+    .link-button {
+        margin-top: 1.25em;
+        text-align: center;
+    }
+    .newsletter-profile.fullWidthParag {
+        &:last-child {
+            hr {
+                display: none;
+            }
+        }
+    }
+}
+
+/*-----------------------------------
+                RSR What's New page
+------------------------------------*/
+
+.rsrProdPagWhatsNew {
+    &.rsrProdPag {
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+    h2, h3 {
+        max-width: 90%;
+        margin: 0 auto;
+    }
+    section#rsrWhatsNewHero {
+        @include responsive(medium-max-screens) {
+            display: none;
+        }
+    }
+    section.textOfImage {
+        background: whitesmoke;
+        /* Hide the section when hero image viewable */
+        @media only screen and (min-width: $width-medium) {
+            display: none;
+        }
+        div.container {
+            max-width: 90%;
+            margin: 0 auto;
+            display: table;
+        }
+        .row {
+            display: table-row;
+        }
+        .cell {
+            display: table-cell;
+        }
+        @include responsive(small-max-screens) {
+            .cell {
+                padding-bottom: 0.75em;
+            }
+            .row {
+                &:last-child {
+                    .cell {
+                        &:last-child {
+                            padding-bottom: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        .pointTitle {
+            padding-top: 0.5em;
+            padding-right: 2em;
+            font-weight: bold;
+        }
+    }
+    .textOfImage,
+    .contributing {
+        h2 {
+            margin-top: 1.75em;
+        }
+        @include responsive(small-max-screens) {
+            h2 {
+                margin-top: 0.75em;
+            }
+        }
+    }
+    section.contributing {
+        background: whitesmoke;
+        padding-bottom: 1em;
+    }
+    section.sideBySide {
+        padding-top: 2em;
+        .container {
+            width: 40%;
+            padding: 2em 5%;
+            &.iati {
+                float: left;
+            }
+            &.backEnd {
+                float: right;
+                background: whitesmoke;
+            }
+            img {
+                max-width: 100%;
+            }
+            @media only screen and (min-width: $width-small) {
+                .fullWidthParag {
+                    width: 100%;
+                }
+            }
+        }
+        @include responsive(small-max-screens) {
+            .container {
+                width: 100%;
+                padding: 2em 0;
+                margin: 0 auto;
+                &.iati,
+                &.backEnd {
+                    float: none;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
+    section.improvedNavigation {
+        background: whitesmoke;
+        padding-bottom: 0;
+        position: relative;
+        @include responsive(small-max-screens) {
+            padding-bottom: 1.5em;
+        }
+
+        .improvedNavigationWrapper {
+            position: relative;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .backgroundImage {
+            width: 100%;
+            max-width: 100%;
+            @media only screen and (min-width: $width-medium) and (max-width: $width-large) {
+                width: 90%;
+                max-width: 90%;
+                margin-left: 10%;
+                margin-right: 0;
+            }
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
+                width: 75%;
+                max-width: 75%;
+                margin-left: 25%;
+                margin-right: 0;
+            }
+        }
+        .improvedNavigationCaption {
+            position: absolute;
+            left: 5%;
+            top: 15%;
+            max-width: 64%;
+            @media only screen and (min-width: $width-small) and (max-width: $width-medium) {
+                max-width: 60%;
+            }
+            h3 {
+                text-align: left;
+                margin-left: 0;
+            }
+            @include responsive(small-max-screens) {
+                max-width: 100%;
+                h3 {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+            }
+
+            p.fullWidthParag {
+                @media only screen and (min-width: $width-small) {
+                    margin-left: 0;
+                    text-align: left;
+                }
+            }
+            @include responsive(small-max-screens) {
+                position: static;
+                h3 {
+                    text-align: center;
+                    padding: 1.2em 0 0.75em 0;
+                }
+            }
+        }
+    }
+    @include responsive(small-max-screens) {
+        p.fullWidthParag {
+            text-align: justify;
+        }
+    }
+}
+
+.rsrProdPag {
+    section.callToAction {
+        padding-top: 4em;
+        padding-bottom: 2em;
+        .fullWidthParag {
+            @media only screen and (min-width: $width-small) {
+                text-align: center;
+            }
+        }
+        hr.delicate {
+            margin: 30px auto;
+            &:last-child {
+                display: none;
+            }
+        }
+        h2 {
+            margin-bottom: 1em;
+        }
+    }
+    em {
+        margin-right: 0 !important;
+    }
+}

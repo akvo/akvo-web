@@ -1,0 +1,308 @@
+/*-----------------------------------
+                Team Page
+------------------------------------*/
+.teamPage {
+    margin: 0em auto;
+}
+
+.teamPage > p {
+    margin: 0.25em auto 1.75em auto;
+    text-align: center;
+    width: 85%;
+}
+
+@include responsive(small-max-screens) {
+    .teamPage > p {
+        margin: 0.25em auto;
+        width: 98%;
+    }
+}
+
+
+ul.staff {
+    display: block;
+    margin: 0em auto;
+    padding: 0.25em 0.5%;
+    position: relative;
+    width: 99%;
+}
+
+@include responsive(small-max-screens) {
+    ul.staff {
+        margin: 1em auto 2em auto;
+    }
+}
+
+
+ul.staff:target {
+    background: rgb(242, 242, 242);
+}
+
+ul.staff li {
+    display: inline;
+    float: left;
+    margin: 0em 0.8% 0px 0em;
+    min-height: 218px;
+    position: relative;
+    width: 16%;
+}
+
+@include responsive(small-max-screens) {
+    ul.staff li {
+        font-size: 1.2em;
+        margin: 0em 2% 0px 1%;
+        width: 48%;
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    ul.staff li:nth-child(2n) {
+        margin: 0em 1% 0px 0em;
+    }
+}
+
+
+ul.staff li:hover {
+    background: rgb(250, 250, 250);
+    cursor: pointer;
+}
+
+ul.staff li small {
+    -moz-transition: opacity 0.2s ease-in;
+    -o-transition: opacity 0.2s ease-in;
+    -webkit-transition: opacity 0.2s ease-in;
+    transition: opacity 0.2s ease-in;
+    color: rgb(250, 162, 27);
+    font-size: 0.8em;
+    opacity: 0;
+    line-height: 1.2em;
+    margin-top: 6px;
+}
+
+ul.staff li:hover small {
+    opacity: 1;
+}
+
+@include responsive(small-max-screens) {
+    ul.staff li:hover small {
+        font-size: 1em;
+    }
+}
+
+
+ul.staff li div.staffName {
+    margin: 3px 0em;
+}
+
+ul.staff li p.staffTitle {
+    color: rgb(124, 124, 124);
+    font-size: 0.9em;
+    line-height: 1.2em;
+    margin: 0em;
+    padding: 0em;
+}
+
+ul.staff li div.imgWrapper {
+    background: rgb(224, 224, 224);
+    display: block;
+    margin: 0em auto;
+    padding: 3px 2%;
+    position: relative;
+    width: 96%;
+}
+
+.new_staffs .staffBiog,
+.staffAsset .staffBiog,
+.new_partners .staffBiog,
+.foundation_member .staffBiog {
+    display: none;
+}
+
+.akvoTeam {
+    display: none;
+}
+
+.singleStaffPage .akvoTeam {
+    display: block;
+}
+
+ul.staff li.partnership:hover div.imgWrapper {
+    background: rgb(250, 162, 27);
+}
+
+ul.staff li.communication:hover div.imgWrapper {
+    background: rgb(219, 135, 201);
+}
+
+ul.staff li.engineering:hover div.imgWrapper {
+    background: rgb(133, 171, 143);
+}
+
+ul.staff li div.imgWrapper img {
+    @include transition(opacity 0.2s ease-in);
+    margin: 0em auto;
+    opacity: 1;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.directors {
+    position: relative;
+}
+
+#netherLand .directorsAbs {
+    left: 67.2%;
+    position: absolute;
+    top: 0em;
+}
+
+#usa .directorsAbs,
+#kenya .directorsAbs {
+    left: 50.4%;
+    position: absolute;
+    top: 0em;
+}
+
+ul.staff li div.imgWrapper img:hover {
+    opacity: 0.9;
+}
+
+ul.staff li:nth-child(6n) {
+    margin-right: 0em;
+}
+
+.teamPage h2,
+.partnerPage h2 {
+    margin: 0em auto 1.5em auto;
+    text-align: center;
+}
+
+#managementGroup,#partnershipGroup,#communicationGroup,#engineeringGroup {
+    color: rgb(100, 100, 100);
+    display: block;
+    font-size: 0.9em;
+    margin: 0.5em 0em 1em;
+    padding: 0.5em 0em;
+    position: relative;
+}
+
+#managementGroup legend {
+    @include border-radius(0.25em);
+    background: rgb(245, 245, 245);
+    color: rgb(192, 192, 196);
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0em 0em 0em 0.65em;
+    padding: 0.25em 0.5em;
+    position: relative;
+}
+
+#managementGroup legend img {
+    vertical-align: text-bottom;
+}
+
+#managementGroup b {
+    color: #a81f2d;
+}
+
+#overlay {
+    bottom: 0em;
+    display: none;
+    left: 0em;
+    margin-left: auto;
+    margin-right: auto;
+    position: fixed;
+    right: 0em;
+    top: 0em;
+    width: 100%;
+    z-index: 1000001;
+}
+
+#blanket {
+    background-color: #000;
+    bottom: 0em;
+    display: block;
+    left: 0em;
+    opacity: 0.8;
+    position: absolute;
+    top: 0em;
+    width: 100%;
+}
+
+.dialog {
+    @include border-radius(0em 0em 5px 5px);
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(138, 138, 138);
+    display: none;
+    margin: 5% auto 15% auto;
+    max-height: 75%;
+    overflow-y: scroll;
+    padding: 2em 2em 3em;
+    position: relative;
+    width: 50%;
+	
+	.staffTitle {
+		color: rgb(250, 162, 27);
+		font-size: 1.1em;
+		margin: 2px 0em 10px;
+	}
+	
+	@include responsive(small-max-screens) {
+		@include border-radius(0em);
+        background: rgb(255, 255, 255);
+        border: none;
+        display: none;
+        height: 100%;
+        margin: 0em auto;
+        max-height: 100%;
+        overflow-y: scroll;
+        padding: 2em 5% 3em 5%;
+        position: relative;
+        width: 90%;
+	}
+}
+
+#staffDescr {
+    margin-top: 10px;
+	
+	p { display: block; }
+	
+	@include responsive(small-max-screens) {
+		h1 { font-size: 2em; }
+		p { width: 95%;}
+	}
+	
+}
+
+.buttons {
+    margin: 10px auto 5px auto;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+	
+	.cancel {
+		background: url("../images/closePopup.png") left center no-repeat;
+		cursor: pointer;
+		padding: 6px 5px 8px 40px;
+	}
+	
+	.cancel:hover {
+		cursor: pointer;
+		opacity: 0.8;
+	}
+	
+}
+
+
+.extLoad div.imgWrapper {
+    border: 1px solid rgb(242, 242, 242);
+    float: left;
+	margin: 10px 35px 5px 0em;
+	
+	img {
+		margin: 0em auto;
+		vertical-align: middle;
+		width: 100%;
+	}
+}

@@ -1,0 +1,330 @@
+/*-----------------------------------
+    Homepage 2015   
+------------------------------------*/
+.tagLine {
+    h1 {
+        text-align: center;
+        font-size: 1.75em;
+    }
+}
+
+.topIcons {
+    .topIcon {
+        width: 12%;
+        margin: 0 6%;
+        display: inline-block;
+        vertical-align: top;
+        @media only screen and (max-width: $width-small) {
+            width: 30%;
+            margin: 0 9% 2em 9%;
+        }
+    }
+    .readMoreContainer {
+        width: 25%;
+        margin: 0;
+        position: relative;
+        display: inline-block;
+        @media only screen and (max-width: $width-small) {
+            width: 30%;
+            margin: 0 9%;
+        }
+        a {
+            display: block;
+            vertical-align: top;
+            width: 70%;
+            padding: 0.5em 0;
+            font-size: 1em;
+            color: white;
+            background-color: $akvoPurple;
+            text-align: center;
+            @include border-radius(0.4em);
+            text-transform: uppercase;
+            margin: 3em auto;
+            &:hover {
+                background-color: rgb(24, 22, 96);
+            }
+            &:active {
+                background-color: rgb(4, 2, 76);
+            }
+            @media only screen and (max-width: $width-large) {
+                margin-top: 2.5em;
+            }
+            @media only screen and (max-width: $width-medium) {
+                margin-top: 2em;
+            }
+            @media only screen and (max-width: $width-small) {
+                margin-top: 4.5em;
+            }
+            @media only screen and (max-width: 650px) {
+                font-size: 90%;
+            }
+            @media only screen and (max-width: 550px) {
+                font-size: 80%;
+            }
+            @media only screen and (max-width: 450px) {
+                margin-top: 3.5em;
+            }
+            @media only screen and (max-width: 400px) {
+                margin-top: 2em;
+            }
+        }
+    }
+}
+
+.featuredItems {
+    margin-top: 1.5em;
+    @media only screen and (max-width: $width-med) {
+        margin-top: 2em;
+    }
+    .orange img {
+        border-bottom: 12px solid $orange2015;
+    }
+    .green img {
+        border-bottom: 12px solid $green2015;
+    }
+    .yellow img {
+        border-bottom: 12px solid $yellow2015;
+    }
+    .pink img {
+        border-bottom: 12px solid $pink2015;
+    }
+    .lightblue img {
+        border-bottom: 12px solid $lightblue2015;
+    }
+    .darkblue img {
+        border-bottom: 12px solid $darkblue2015;
+    }
+    .none img {
+        border-bottom: 12px solid rgba(0, 0, 0, 0);
+    }
+    .row {
+        margin-bottom: 1.5em;
+        padding: 0;
+        @media only screen and (max-width: $width-med) {
+            margin-top: 2em;
+        }
+        .item {
+            display: inline-block;
+            margin: 0;
+            &:first-child {
+                margin-right: 2.5%;
+                @media only screen and (max-width: $width-med) {
+                    margin-right: 4%;
+                }
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    .longItem {
+        width: 58.5%;
+        @media only screen and (max-width: $width-med) {
+            width: 57.6%;
+        }
+    }
+    .shortItem {
+        width: 39%;
+        @media only screen and (max-width: $width-med) {
+            width: 38.4%;
+        }
+    }
+    @media only screen and (max-width: $width-small) {
+        .row {
+            margin: 0;
+            .item, .longItem, .shortItem {
+                display: block;
+                margin: 0;
+                width: 100%;
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+        }
+    }
+    a {
+        &:hover {
+            @include transition(opacity 200ms ease-in-out);
+            opacity: 0.8;
+        }
+        &:active {
+            opacity: 0.6;
+        }
+    }
+}
+
+.homepage-2015, .productPage-2015 {
+    .wrapper {
+        width: 90%;
+    }
+}
+
+.homepage-2015 {
+    .topIcons {
+        margin-top: 1em;
+        margin-bottom: 1em;
+    }
+    #actionHeroBox {
+        border: none;
+        width: 90%;
+        .bx-wrapper, .bx-viewport {
+            overflow: hidden;
+        }
+        .bxslider {
+            li {
+                border-bottom: 12px solid rgba(0, 0, 0, 0);
+                &.orange {
+                    border-bottom: 12px solid $orange2015;
+                    #actionHeroInfo {
+                        background: rgba(222, 137, 41, 0.6);
+                    }
+                }
+                &.green {
+                    border-bottom: 12px solid $green2015;
+                    #actionHeroInfo {
+                        background: rgba(116, 182, 49, 0.6);
+                    }
+                }
+                &.yellow {
+                    border-bottom: 12px solid $yellow2015;
+                    #actionHeroInfo {
+                        background: rgba(255, 210, 0, 0.6);
+                    }
+                }
+                &.pink {
+                    border-bottom: 12px solid $pink2015;
+                    #actionHeroInfo {
+                        background: rgba(219, 135, 201, 0.6);
+                    }
+                }
+                &.lightblue {
+                    border-bottom: 12px solid $lightblue2015;
+                    #actionHeroInfo {
+                        background: rgba(114, 205, 255, 0.6);
+                    }
+                }
+                &.darkblue {
+                    border-bottom: 12px solid $darkblue2015;
+                    #actionHeroInfo {
+                        background: rgba(44, 42, 116, 0.6);
+                    }
+                }
+                &.orange, &.green, &.yellow, &.pink, &.lightblue, &.darkblue, &.none {
+                    #actionHeroInfo {
+                        color: white;
+                        h1, h2 {
+                            color: $darkblue2015;
+                        }
+                        a {
+                            color: white;
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                            &:active {
+                                opacity: 0.6;
+                            }
+                        }
+                    }
+                }
+                @media only screen and (max-width: $width-small) {
+                    #actionHeroInfo {
+                        display: block;
+                        width: 100%;
+                        padding-left: 0em !important;
+                        padding-right: 0em !important;
+                        padding-top: 0.1em !important;
+                        padding-bottom: 3.5em !important;
+                        margin: 0;
+                        margin-bottom: -0.5em;
+                        @include border-radius(0em);
+                    }
+                }
+            }
+        }
+        @media only screen and (max-width: $width-small) {
+            .bx-wrapper {
+                .bx-pager {
+                    &.bx-default-pager {
+                        bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+    .smallItems {
+        >div {
+            display: inline-block;
+            width: 23.5%;
+            margin-right: 1.8%;
+            vertical-align: top;
+            &:last-child {
+                margin-right: 0;
+            }
+            @media only screen and (max-width: $width-medium) {
+                width: 22.75%;
+                margin-right: 2.8%;
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+            @media only screen and (max-width: $width-small) {
+                width: 47.5%;
+                margin-top: 1em;
+                margin-bottom: 1em;
+                &:nth-child(odd) {
+                    margin-right: 2.8%;
+                }
+                &:nth-child(even) {
+                    margin-right: 0%;
+                }
+            }
+            a {
+                display: block;
+                position: relative;
+                width: 100%;
+                margin: 0 auto;
+                >div {
+                    height: 150px;
+                    background-size: cover;
+                    background-position: center;
+                    @media only screen and (max-width: $width-medium) {
+                        height: 125px;
+                    }
+                    @media only screen and (max-width: $width-small) {
+                        height: 175px;
+                    }
+                    @media only screen and (max-width: 500px) {
+                        height: 100px;
+                    }
+                }
+                h3, span {
+                    display: block;
+                    max-width: 95%;
+                    margin: 0 auto;
+                }
+                h3 {
+                    text-transform: uppercase;
+                    font-size: 1.1em;
+                    padding: 0.1em 0;
+                    color: $darkblue2015;
+                    @media only screen and (max-width: $width-medium) {
+                        font-size: 1em;
+                    }
+                }
+                span {
+                    color: black;
+                    font-size: 1em;
+                    @media only screen and (max-width: $width-medium) {
+                        font-size: 0.9em;
+                    }
+                }
+            }
+            &:hover {
+                @include transition(opacity 200ms ease-in-out);
+                opacity: 0.8;
+            }
+            &:active {
+                opacity: 0.6;
+            }
+        }
+    }
+}

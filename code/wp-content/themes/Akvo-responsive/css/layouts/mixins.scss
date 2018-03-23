@@ -1,0 +1,10 @@
+@mixin btnOutline($btnColor, $hoverColor) {
+    border: 1px solid $btnColor;
+    color: $btnColor;
+    padding: 15px 25px;
+    font-weight: normal;
+    &:hover {
+        border: 1px solid $hoverColor;
+        color: $hoverColor;
+    }
+}

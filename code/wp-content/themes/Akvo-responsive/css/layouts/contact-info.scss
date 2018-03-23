@@ -1,0 +1,103 @@
+/*-----------------------------------
+            Contact Info Page
+------------------------------------*/
+.contactInfo section {
+    margin: 2em auto 0em auto;
+}
+
+.contactInfo section:last-child {
+    margin: 2em auto 2em auto;
+}
+
+.hubmap {
+    position: relative;
+    padding-bottom: 49%;
+    background: #ffd300 url(../images/map.gif) center no-repeat;
+    background-size: 91%;
+    .marker {
+        position: absolute;
+        width: 4%;
+        max-width: 46px;
+        height: 12%;
+        max-height: 94px;
+        background: url(../images/marker.png) no-repeat;
+        background-size: 100%;
+        text-align: center;
+        font-family: Impact, Charcoal, sans-serif;
+        font-weight: normal;
+        font-size: 20px;
+        padding-top: 1%;
+        box-sizing: border-box;
+        @include responsive(small-max-screens) {
+            display: none;
+        }
+
+        &.flipped {
+            background: url(../images/marker-flipped.png) no-repeat;
+            background-size: 100%;
+            padding-top: 2.75%;
+            margin-top: 5.8%;
+        }
+        @include responsive(mediums-max-screens) {
+            font-size: 90%;
+        }
+    }
+    .marker.LON {
+        background-image: url(../images/marker-left.png);
+        width: 5.8%;
+        max-width: 70px;
+        height: 7.8%;
+        max-height: 46px;
+        padding-right: 1.8%;
+        padding-top: 0.9%;
+    }
+}
+
+@-webkit-keyframes highlight {
+    0% {
+        background: #fff3cc;
+    }
+    100% {
+        background: none;
+    }
+}
+
+
+.hubs {
+    li {
+        margin: 70px auto 0;
+        max-width: 800px;
+        clear: left;
+        overflow: hidden;
+        @include responsive(small-max-screens) {
+            h4 {
+                margin-top: 0;
+            }
+            img {
+                display: none;
+            }
+        }
+
+        @include responsive(small-screens) {
+            .text {
+                margin-left: 280px;
+            }
+            h3, h4 {
+                margin: 0;
+            }
+            h4 {
+                margin-top: 2px;
+                margin-bottom: 20px;
+            }
+            img {
+                float: left;
+                //                margin-bottom: 70px;
+           
+            }
+        }
+    }
+}
+
+.hubs li:target {
+    -webkit-animation: highlight 2s;
+}

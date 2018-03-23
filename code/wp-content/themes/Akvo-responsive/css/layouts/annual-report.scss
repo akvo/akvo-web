@@ -1,0 +1,281 @@
+/*-----------------------------------
+                Annual Report Page
+------------------------------------*/
+.aReport {
+    margin: 2em auto;
+	
+	h2 {
+		margin: 0.5em auto 1em auto;
+	}
+}
+
+.annual-reports img {
+    box-shadow: 1px 1px 3px rgba(32, 32, 36, 0.1), -1px -1px 3px rgba(32, 32, 36, 0.1);
+}
+
+/*-----------------------------------
+             Annual Report 2014 page       
+------------------------------------*/
+
+.annual-report {
+    #content {
+        padding: 0;
+        width: 100%;
+    }
+    section {
+        padding-top: 2em;
+    }
+    h1, h2, h3, p, table, .text {
+        width: 90%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .heading {
+        padding-bottom: 1em;
+        > * {
+            text-align: center;
+        }
+        h1 {
+            margin-top: 0.5em;
+            font-size: 2.3em;
+        }
+        .logo {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    .introText {
+        padding-bottom: 2em;
+        h2 {
+            font-size: 1.75em;
+            margin-bottom: 1em;
+        }
+        p {
+            margin-bottom: 2.5em;
+            text-align: center;
+            @include responsive(mediums-max-screens) {
+                text-align: justify;
+            }
+        }
+    }
+    .videoStatement {
+        padding-bottom: 3em;
+        background-color: whitesmoke;
+        .videoContainer {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding-left: 1em;
+            padding-right: 1em;
+            .vimeoBlockedMessage {
+                display: none;
+                margin-top: 1em;
+                text-align: center;
+                font-size: 1.25em;
+                p {
+                    text-align: center;
+                }
+            }
+            iframe {
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 2em;
+                padding-bottom: 2em;
+            }
+        }
+    }
+    .overview {
+        background-color: rgb(0, 0, 0);
+        padding-bottom: 1.5em;
+        color: white;
+        .arNugget {
+            display: inline-block;
+            width: 40%;
+            margin-top: 2.5em;
+            padding-left: 4.5%;
+            padding-right: 4.5%;
+            vertical-align: top;
+            @include responsive(small-max-screens) {
+                display: block;
+                width: 80%;
+                p {
+                    text-align: left;
+                }
+            }
+
+            h3 {
+                color: $akvoLink;
+                font-size: 2em;
+                @include responsive(small-max-screens) {
+                    text-align: center;
+                }
+            }
+        }
+        .hub {
+            margin-left: auto;
+            margin-right: auto;
+            img {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                max-height: 250px;
+            }
+            &:nth-child(even) {
+                @include responsive(mediums-screens) {
+                    float: right;
+                }
+            }
+            &:nth-child(odd) {
+                @include responsive(mediums-screens) {
+                    float: left;
+                }
+            }
+        }
+    }
+    .overview1 {
+        padding-bottom: 1.5em;
+        h2 {
+            color: white;
+            padding-top: 1.25em;
+            padding-bottom: 0.5em;
+        }
+        .wrapper {
+            > p {
+                text-align: center;
+            }
+        }
+    }
+    .overview2 {
+        margin-top: -1em;
+    }
+    .staffHero {
+        padding: 2em 0;
+        clear: both;
+        background-color: rgb(0, 0, 0);
+        @include responsive(small-max-screens) {
+            display: none;
+        }
+
+        img {
+            display: block;
+            width: 90%;
+            margin: 0 auto;
+        }
+    }
+    .stories {
+        padding-right: 1em;
+        padding-left: 1em;
+        h2 {
+            padding-top: 1em;
+            padding-bottom: 0.5em;
+        }
+        .bx-wrapper {
+            width: 1198px;
+            max-width: 75%;
+            margin: 0 auto;
+            @media screen and (width: 768px) and (height: 1024px) and (-webkit-device-pixel-ratio: 1) {
+                max-height: 90%;
+                width: auto;
+                max-width: 95%;
+            }
+            .bxslider {
+                li {
+                    img {
+                        width: 100%;
+                    }
+                }
+            }
+            @include responsive(small-max-screens) {
+                .bx-pager {
+                    bottom: 10px;
+                }
+                .bx-controls-direction {
+                    a {
+                        top: 50%;
+                    }
+                }
+            }
+        }
+    }
+    .financials {
+        background: whitesmoke;
+        margin-top: 2em;
+        padding-bottom: 2.25em;
+        h2 {
+            padding-top: 1em;
+        }
+        .wrapper > p {
+            text-align: center;
+        }
+        .tableContainer {
+            display: inline-block;
+            width: 40%;
+            padding-left: 4.5%;
+            padding-right: 4.5%;
+            margin-top: 4em;
+            vertical-align: top;
+            @media only screen and (max-width: 850px) {
+                display: block;
+                width: 80%;
+                max-width: 500px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            td, th {
+                vertical-align: bottom;
+            }
+            th {
+                text-align: left;
+                padding-bottom: 1.25em;
+            }
+            td {
+                padding-bottom: 0.2em;
+            }
+            .num {
+                text-align: right;
+                padding-left: 1em;
+            }
+            .padBelow {
+                td {
+                    padding-bottom: 1.25em;
+                }
+            }
+            .total {
+                > td {
+                    border-top: 1px solid black;
+                    padding-top: 0.5em;
+                }
+            }
+            .balance {
+                color: rgb(0, 200, 0);
+                font-weight: bold;
+            }
+        }
+    }
+    .reflections {
+        h2 {
+            padding-top: 1.25em;
+            padding-bottom: 0.5em;
+        }
+        > p {
+            text-align: center;
+        }
+        ul {
+            padding-top: 2.5em;
+            padding-bottom: 1.5em;
+            li {
+                @include responsive(small-max-screens) {
+                    width: 70%;
+                    max-width: 400px;
+                    margin: 2em auto;
+                    padding: 0;
+                    float: none;
+                    &:first-child {
+                        margin-top: 0.5em;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,132 @@
+/*************************************************************
+                    Looking for more
+*************************************************************/
+#moreStuffHome {
+    padding: 3.5em 0em;
+    position: relative;
+	
+	div h3 {
+		font-size: 1.4em;
+		margin: 0em auto 1em;
+		width: 98%;
+	}
+	div h3:before {
+		border-bottom: 1px solid rgb(255, 255, 255);
+		content: "";
+		display: block;
+		margin: 0.2em auto 0em auto;
+		width: 96%;
+	}
+	
+	@include responsive(small-max-screens) {
+		margin: 2em auto 0;
+		padding: 0;
+		
+		div > div > div {
+			margin: 0.5em auto 0.25% auto;
+			min-height: 200px;
+			padding: 3%;
+			position: relative;
+			width: 94%;
+		}
+		div h3 {
+			margin-bottom: 0;
+		}
+		.fourColumns.wrapper {
+			font-size: 0;
+			
+			> div {
+				vertical-align: top;
+				font-size: 16px;
+				display: inline-block;
+				float: none;
+				margin: 0 0 2em 0;
+				padding: 0;
+				width: 50%;
+			}
+			
+		}
+		
+	}
+	
+	div h3 a {
+		color: $akvoPurple;
+		display: block;
+		font-size: 130%;
+		margin: 0em auto;
+		min-height: 32px;
+		overflow: hidden;
+		text-align: center;
+		text-overflow: ellipsis;
+		white-space: nowrap;
+	}
+	figcaption a {
+		background: none;
+	}	
+	div.read-more {
+		background: transparent;
+		margin: 0em auto;
+		min-height: 30px;
+		padding: 0.25%;
+		position: relative;
+		text-align: center;
+		width: 99%;
+	}
+	div.blogIcon {}
+	div.blogIcon h2 {
+		font-size: 1em;
+		margin: 0em 0em 0.05em 1%;
+		text-align: left;
+		width: 98%;
+	}
+	
+	figure > div {
+		background: rgb(236, 236, 236);
+		@include border-radius(0.35em);
+		//    border: 1px solid rgb(212, 212, 212);
+		margin: 0em 5%;
+		max-height: 150px;
+		min-height: 150px;
+		overflow: hidden;
+		padding: 0;
+		position: relative;
+		width: 90%;
+		
+		a {
+			height: 100%;
+			width: 100%;
+			position: absolute;
+			background-size: cover;
+			background-position: center;
+		}
+		
+	}
+	.videoIcon figure > div {
+		background: rgb(32, 32, 36);
+	}
+	
+	figure > figcaption {
+		font-size: 110%;
+		margin: 10px auto 5px;
+		text-align: center;
+		width: 85%;
+		
+		a {
+			font-family: $titleFont;
+			font-size: 1.1em;
+		}
+		
+	}
+	figure img {
+		display: block;
+		margin: 0em auto;
+		width: 105%;
+	}
+	div.blogIcon p {
+		line-height: 1.2em;
+		margin-bottom: 2px;
+	}
+	div.blogIcon time {
+		margin: 0em 0em 0em 1%;
+	}
+}

@@ -1,0 +1,110 @@
+/*************************************************************
+                    FAQ
+*************************************************************/
+.faqMenu {
+    margin: 0em 0em 10px;
+}
+
+a.faqMenuHead,
+.qa-faq-title {
+    background: url("../images/menuCollapseShow.png") left top no-repeat;
+    color: $akvoBlack;
+    font-size: 1.1em;
+    padding: 5px 0em 5px 35px;
+}
+
+@include responsive(small-max-screens) {
+    a.faqMenuHead {
+        background-color: rgb(232, 232, 232);
+        background-image: none;
+        color: $akvoLink;
+        display: block;
+        font-size: 120%;
+        padding: 20px 5%;
+        width: 90%;
+    }
+}
+
+
+a.faqMenuHead.openED {
+    background: url("../images/menuCollapseShow.png") left bottom no-repeat;
+    color: $akvoBlack;
+}
+
+ul.faqMenuList {
+    margin: 5px 0em 5px 30px;
+}
+
+ul.faqMenuList > li,
+.qa-faq-answer {
+    background: rgb(248, 248, 248);
+    margin: 0em 0em 2px 0px;
+    padding: 25px 0em 25px 10px;
+}
+
+@include responsive(small-max-screens) {
+    ul.faqMenuList {
+        margin: 5px 0em;
+    }
+    a.faqMenuHead.openED {
+        background-image: none;
+        color: rgb(222, 137, 41);
+    }
+    ul.faqMenuList li {
+        background: rgb(248, 248, 248);
+        margin: 0em 0em 2px 0px;
+        padding: 20px 5%;
+        width: 90%;
+    }
+}
+
+
+ul.faqMenuList li:first-child {
+    margin: 5px 0em 2px 0px;
+}
+
+ul.faqMenuList li:hover {
+    background: rgb(248, 248, 248);
+}
+
+ul.faqMenuList li a {
+    display: block;
+}
+
+ul.faqMenuList h3,
+.qa-faq-answer h3 {
+    margin-top: 1em;
+}
+
+.qa-faq {
+    margin-bottom: 0;
+}
+
+.qa-faq-answer {
+    padding: 15px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 30px;
+}
+
+.qa-faq ol,
+.qa-faq ul {
+    margin-left: 20px;
+    list-style: initial;
+}
+
+.qa-faq ol {
+    list-style: decimal;
+}
+
+.answers h4 {
+    font-weight: bold;
+}
+
+.answers p {
+    margin-bottom: 3em;
+}
+
+.partnerRules h2 {
+    text-align: left !important;
+}

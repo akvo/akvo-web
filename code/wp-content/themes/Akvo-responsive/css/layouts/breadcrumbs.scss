@@ -1,0 +1,26 @@
+/*---------------------------------------------
+                breadCrumb
+--------------------------------------------- */
+body.home div.breadCrumb {
+    display: none;
+}
+
+div.breadCrumb {
+    background: rgb(240, 240, 240);
+    display: relative;
+    margin: 50px auto 0em auto;
+    padding: 10px 0em 15px 1%;
+    position: relative;
+    width: 99%;
+	
+	@include responsive(small-max-screens) {
+		margin: 0em auto;
+		width: 98%;
+		padding: 10px 0em 15px 2%;
+	}
+	
+}
+
+div.breadCrumbs {
+    position: relative;
+}

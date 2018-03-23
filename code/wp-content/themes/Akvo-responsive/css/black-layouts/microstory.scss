@@ -1,6 +1,36 @@
 /* MICROSTORY */
 .micro-story{
+	
+	%textWrapper{
+		max-width: 1000px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 30px;
+		width: 100%;
+		box-sizing: border-box;
 		
+		@media( max-width: 768px ){
+			padding: 15px;
+		}
+	}
+	
+	
+	.siteorigin-widget-tinymce{ 
+		@extend %textWrapper; 
+		
+		p{ @extend %smallParagraph;}
+	}
+	
+	/* AKVO COVER WIDGET */
+	.so-widget-akvo-cover .cover-overlay{
+		padding: 0;
+		
+		.cover-overlay-text{ @extend %textWrapper; }
+		
+	}
+	
+	
+	
 	/* LANGUAGE TOGGLE */
 	.lang-list a[href].active, .lang-list a[href]:hover{ background: rgba(#000, 0.2); }
 		
@@ -10,25 +40,23 @@
 		font-weight: bold;
 		@extend %paragraph;
 	}
-		
-	p{ @extend %smallParagraph;}
-		
+	
+	
+	
 	/* IFRAME ROW */
 	.iframe-row{
 		position: relative;
 		p, iframe{ margin: 0; line-height: 0;}
+		
+		/* CAPTION IN THE IFRAME */
 		.caption{ 
 			bottom: 0; 
 			position: absolute;
 			background: rgba(#000, 0.6);
 			color: #fff;
-			padding: 30px;
 			width: 100%;
-			box-sizing: border-box;
-				
-			@media( max-width: 768px ){
-				padding: 15px;
-			}
+			padding: 0;
+			
 		}
 	}
 		
@@ -56,6 +84,7 @@
 			@extend %smallParagraph;
 		}
 			
+		/* QUOTE IMAGES */	
 		&::before, &::after{
 			position: absolute;
 			top: 100px;
@@ -76,6 +105,7 @@
 			left: auto;
 			background-image: url('../images/quote_mark_end.png');
 		}
+		
 			
 		@media( max-width: 768px ){
 			&::before, &::after{
@@ -86,7 +116,8 @@
 				top: 150px;
 			}
 		}
+		/* QUOTE IMAGES */	
 			
 	}
-	/* TESTIMONIAL WIDGET */
+	/* END OF TESTIMONIAL WIDGET */
 }

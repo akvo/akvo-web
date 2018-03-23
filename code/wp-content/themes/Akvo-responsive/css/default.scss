@@ -1,0 +1,183 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    border: 0em;
+    font-size: 100%;
+    margin: 0em;
+    outline: none;
+    padding: 0em;
+    vertical-align: baseline;
+}
+
+html {
+    height: 101%;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+header {
+    width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0em;
+}
+
+img {
+    border: 0em;
+    height: auto;
+    max-width: 100%;
+}
+
+a {
+    color: #5d9de5;
+    text-decoration: none;
+    @include transition(color 0.2s linear);
+}
+
+a:hover {
+    color: #3f7cc0;
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+                        Default Typography.
+  --------------------------------------------------------------*/
+
+/* Default font settings.
+   The font-size percentage is of 16px. (0.875 * 16px = 14px) */
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    background: transparent;
+    font-size: 100%;
+    margin-top: 0em !important;
+    overflow-y: scroll;
+    text-size-adjust: 100%;
+}
+
+body {
+    color: rgb(32, 32, 36);
+    font-family: $bodyFont;
+    font-size: 1em;
+    line-height: 1.4em;
+    text-rendering: optimizeLegibility;
+}
+
+body.network {
+    background: url("../images/debut_light.png") repeat;
+}
+
+@include responsive(small-max-screens) {
+    body {
+        font-size: 1em;
+    }
+}

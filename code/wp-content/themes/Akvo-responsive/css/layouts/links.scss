@@ -1,0 +1,198 @@
+/* links ---------------------------------------------------------------*/
+
+a:link, a:visited {
+    @include transition(color 0.2s linear);
+    color: rgba(55, 146, 179, 1);
+    font-weight: normal;
+    outline: none;
+    text-decoration: none;
+}
+
+a:hover {
+    color: rgb(222, 137, 41);
+}
+
+a.seeMore, footer a:link, footer a:visited {
+    color: rgba(55, 146, 179, 1);
+}
+
+#siteMap a:hover {
+    color: rgb(222, 137, 41);
+}
+
+.seeMore {
+    margin: 1em auto;
+}
+
+.tooltipContainer {
+    position: absolute;
+    top: 0;
+    right: 0;
+	
+    .tooltipTrigger {
+        right: 5px;
+    }
+	
+    .tooltips {
+        position: absolute;
+        background: rgba(32, 32, 36, 1);
+        width: 350px;
+        top: 25px;
+        right: 5px;
+        @include border-radius(2px);
+        padding: 5px 10px;
+        border: 1px solid rgba(white, 0.2);
+        display: none;
+        p {
+            color: white;
+        }
+    }
+}
+
+/* nav toggle--------------------------------------------- */
+nav {
+    li {
+        @include transition(background-color 0.4s linear);
+        a {
+            @include transition(background-color 0.4s linear);
+        }
+    }
+}
+
+.seeMore {
+    margin-top: 2em;
+}
+
+p > .moreLink {
+    margin: 0.25em 0em 0em;
+}
+
+.moreLink.darkBg {
+    background: url("../images/moreLink.png") right top no-repeat;
+    color: rgb(255, 255, 255);
+    display: table;
+    font-size: 0.9em;
+    font-weight: normal;
+    height: 22px;
+    padding: 3px 28px 3px 0em;
+    text-transform: uppercase;
+}
+
+.moreLink.darkBg:hover {
+    background: url("../images/moreLink.png") right bottom no-repeat;
+    color: rgb(0, 123, 182);
+}
+
+::-moz-selection {
+    background: rgb(222, 137, 41);
+    color: #fff;
+    text-shadow: none;
+}
+
+::selection {
+    background: rgb(222, 137, 41);
+    color: #fff;
+    text-shadow: none;
+}
+
+a:link {
+    -webkit-tap-highlight-color: #fcd700;
+}
+
+ins {
+    background-color: #930;
+    color: #000;
+    text-decoration: none;
+}
+
+mark {
+    background-color: #930;
+    color: #000;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.fadedText {
+    color: rgb(153, 153, 153);
+}
+
+.selectInfo {
+    color: rgb(58, 58, 58);
+}
+
+.visible {
+    visibility: hidden;
+}
+
+.nonVisible {
+    visibility: visible;
+}
+
+small {
+    display: block;
+    font-size: 0.8em;
+}
+
+.topDescr {
+    background: rgb(245, 245, 245);
+    padding: 0.5em 0.75em;
+}
+
+.emphasizeMe {
+    color: $akvoPurple;
+    font-size: 1em;
+    margin: 0.25em auto 35px auto;
+}
+
+div.centerED > p, .centerED {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.uncenterED {
+    display: block;
+    text-align: left;
+}
+
+.address {
+    background: rgb(240, 240, 240);
+    margin-bottom: 1px !important;
+    min-height: 120px;
+}
+
+.address:first-child {
+    background: rgb(240, 240, 240) url("../images/addressBg.png") center right no-repeat;
+}
+
+.contactName {}
+
+.topLine { font-weight: bold; }
+
+.bgDeco {
+    @include border-radius(0.25em);
+    background: rgb(248, 248, 248);
+    min-height: 150px;
+    /*color:    rgb(123,123,123);*/
+    color: rgb(222, 137, 41);
+    min-height: 210px;
+    text-shadow: 1px 1px 0em rgb(255, 255, 255);
+	
+	@include responsive(small-max-screens) { min-height: 0em; }
+	@media screen and (min-width: 768px) and (max-width: 1024px) { min-height: 345px; }
+	@media screen and (min-width: 1024px) and (max-width: 1156px) { min-height: 240px; }
+	@media screen and (min-width: 1156px) { min-height: 240px; }
+}
+
+
+.bgDecoB {
+    @include border-radius(0.25em);
+    background: rgb(248, 248, 248);
+    min-height: 210px;
+    text-shadow: 1px 1px 0em rgb(255, 255, 255);
+}
+
+.marginVertical {
+    margin-top: 2em !important;
+}
