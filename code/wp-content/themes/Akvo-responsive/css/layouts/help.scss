@@ -1,0 +1,121 @@
+/*--------------------------------------------------------------------
+                            Help section
+--------------------------------------------------------------------*/
+.akvo-policies-and-terms ul {
+    margin: 0em 0em 0em 10px;
+}
+
+.akvo-terms-of-use p,
+.akvo-privacy-policy p {
+    margin: 10px 0em;
+}
+
+.akvo-policies-and-terms h3,
+.akvo-policies-and-terms h4 {
+    margin: 2em 0em 0.25em;
+}
+
+@include responsive(small-max-screens) {
+    .helpSupport nav ul li, .helpSupport nav ul li:first-child {
+        margin-bottom: 20px !important;
+    }
+}
+
+
+.helpSupport nav ul li.bgDeco {
+    min-height: 320px;
+}
+
+.helpSupport nav ul li p {
+    color: $akvoPurple;
+}
+
+.helpSupport nav ul li a {
+    display: block;
+    height: 70px;
+    transition: all 0.2s ease-in;
+    &.rsrHelp {
+        background: url("../images/akvo-rsr_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: 50% auto;
+        text-indent: -9999px;
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
+    }
+    &.flowHelp {
+        background: url("../images/akvo-flow_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: 56% auto;
+        text-indent: -9999px;
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
+    }
+    &.akvopediaHelp {
+        background: url("../images/akvo-pedia_RGB_logo.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: 65% auto;
+        text-indent: -9999px;
+        @include responsive(small-max-screens) {
+            margin: 20px 0 0 0;
+        }
+    }
+    &.moreHelp {
+        color: $flowOrange;
+        display: block;
+        width: 120px;
+        height: 120px;
+        margin: 20px auto;
+        opacity: 0.5;
+        position: relative;
+        text-align: center;
+        text-indent: -9999px;
+        &.rsrH {
+            background: url("../images/help_RSR_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+        &.flowH {
+            background: url("../images/help_FLOW_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+        &.pediaH {
+            background: url("../images/help_pedia_icn.png") center center no-repeat;
+            background-size: 80% 80%;
+        }
+    }
+}
+
+h1 {
+    &.rsrHelp {
+        background: url("../images/akvo-rsr_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: auto 56px;
+        text-indent: -9999px;
+    }
+    &.flowHelp {
+        background: url("../images/akvo-flow_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: auto 56px;
+        text-indent: -9999px;
+    }
+    &.akvopediaHelp {
+        background: url("../images/akvo-pedia_RGB_logo_help.png") no-repeat scroll center top rgba(0, 0, 0, 0);
+        background-size: auto 56px;
+        text-indent: -9999px;
+    }
+}
+
+.helpSupport nav ul li:hover a {
+    &.rsrHelp {
+        background-size: 52% auto;
+    }
+    &.flowHelp {
+        background-size: 58% auto;
+    }
+    &.akvopediaHelp {
+        background-size: 67% auto;
+    }
+    &.moreHelp {
+        opacity: 1;
+    }
+}
+
+.helpSupport h2,.rsrHelpSupport h2, .flowHelpSupport h2, .akvopediaHelpSupport h2 {
+    text-align: left !important;
+}

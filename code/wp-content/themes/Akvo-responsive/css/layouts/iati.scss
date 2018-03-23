@@ -1,0 +1,15 @@
+/*-----------------------------------
+    Akvo-iati page   
+------------------------------------*/
+
+.akvo-iati {
+    .productPage {
+        @include responsive(small-max-screens) {
+            section {
+                &.figure {
+                    display: block;
+                }
+            }
+        }
+    }
+}

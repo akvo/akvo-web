@@ -1,0 +1,31 @@
+.media-and-press {
+    .list-inline li {
+        margin-left: 2px;
+        margin-right: 2px;
+    }
+    .col-logo {
+        text-align: center;
+        padding-top: 30px !important;
+        padding-bottom: 30px !important;
+        margin-bottom: 20px !important;
+        border: none !important;
+    }
+    .col-logo.is-colored a[href] {
+        color: #2C2A74;
+    }
+    @media only screen and (max-width: 992px) {
+        .col-logo.is-empty {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+    }
+    @media only screen and (min-width: 769px) {
+        .col-logo {
+            min-height: 70px;
+        }
+        .twoColumns .col-logo {
+            width: 49% !important;
+        }
+    }
+}

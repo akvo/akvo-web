@@ -1,0 +1,60 @@
+/*-----------------------------------
+    Foundation page     
+------------------------------------*/
+
+.foundation {
+    .textColumn {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        p {
+            text-align: center;
+        }
+    }
+    .directorContainer {
+        max-width: 90%;
+        width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .directors {
+        .subDirectors {
+            width: 45%;
+            display: inline-block;
+            vertical-align: top;
+            &:nth-child(odd) {
+                margin-right: 4.5%;
+            }
+            &:nth-child(even) {
+                margin-left: 4.5%;
+            }
+            li {
+                width: 48%;
+                margin: 0 1%;
+                min-height: 190px;
+                float: none;
+                display: inline-block;
+                vertical-align: top;
+                p {
+                    text-align: left;
+                }
+            }
+            h4 {
+                margin-bottom: 1em;
+                margin-left: 1%;
+            }
+            @media only screen and (max-width: $width-med) {
+                width: 100%;
+                display: block;
+                margin-right: 0;
+                margin-left: 0;
+                &:nth-child(odd) {
+                    margin-right: 0;
+                }
+                &:nth-child(even) {
+                    margin-left: 0;
+                }
+            }
+        }
+    }
+}

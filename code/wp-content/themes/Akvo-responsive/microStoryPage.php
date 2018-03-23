@@ -19,20 +19,3 @@
 
 <br style="clear:both;">
 <?php get_footer(); ?>
-
-<style>
-	.quote-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce, .cover-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce, .iframe-row .so-panel.widget_sow-editor .siteorigin-widget-tinymce{
-		max-width: 920px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	
-	/* TEXT ROW */
-	.text-row .so-panel.widget_sow-editor{
-		padding: 30px;
-		max-width: 1100px;
-		margin-left: auto;
-		margin-right: auto;
-	}
-	.text-row .so-panel.widget_sow-editor p{}
-</style>

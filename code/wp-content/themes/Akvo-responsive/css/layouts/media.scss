@@ -1,0 +1,49 @@
+/*----------------------------------------------------------------------------------------------------------------------------------------
+                                                                         Media section
+----------------------------------------------------------------------------------------------------------------------------------------*/
+.media h2 {
+    margin: 1.5em 0em 0.5em;
+}
+
+.media h4 {
+    border-bottom: thin solid rgb(222, 137, 41);
+    color: rgb(222, 137, 41);
+    margin: 2.5em 0em 0.5em;
+    padding: 0em 0em 0.5em;
+    width: 100%;
+}
+
+.media ul.twoColumns li {
+    padding: 3em 0em;
+}
+
+#tvLogo {
+    margin-bottom: 5em;
+}
+
+.media section > h1 {
+    margin-bottom: 1em;
+    text-align: center;
+}
+
+.media section > h1:before {
+    content: "";
+    display: block;
+    width: 50%;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPHJhZGlhbEdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgY3g9IjUwJSIgY3k9IjUwJSIgcj0iNzUlIj4KICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9IiNkYmRiZGIiIHN0b3Atb3BhY2l0eT0iMSIvPgogICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjZmZmZmZmIiBzdG9wLW9wYWNpdHk9IjAiLz4KICA8L3JhZGlhbEdyYWRpZW50PgogIDxyZWN0IHg9Ii01MCIgeT0iLTUwIiB3aWR0aD0iMTAxIiBoZWlnaHQ9IjEwMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+");
+    /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(219, 219, 219, 1)), color-stop(100%, rgba(255, 255, 255, 0)));
+    /* Chrome,Safari4+ */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(219, 219, 219, 1) 0em, rgba(255, 255, 255, 0) 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-radial-gradient(center, ellipse cover, rgba(219, 219, 219, 1) 0em, rgba(255, 255, 255, 0) 100%);
+    /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover, rgba(219, 219, 219, 1) 0em, rgba(255, 255, 255, 0) 100%);
+    /* IE10+ */
+    background: radial-gradient(ellipse at center, rgba(219, 219, 219, 1) 0em, rgba(255, 255, 255, 0) 100%);
+    /* W3C */
+    border: 0em none;
+    height: 1px;
+    margin: 50px auto;
+}

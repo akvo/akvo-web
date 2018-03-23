@@ -1,0 +1,506 @@
+/* .header--------------------------------------------- */
+
+header#top{
+	background: $akvoBlack;
+    margin: 0em 0em 50px;
+    padding: 0em;
+    position: fixed;
+    top: 0em;
+    width: 100%;
+    z-index: 99999;
+	
+	
+	h1 {
+		height: 35px;
+		left: 5px;
+		position: absolute;
+		top: 8px;
+		width: 169px;
+		
+		a {
+			background: url("../images/akvoLogoTop.png") no-repeat center top;
+			display: block;
+			height: 35px;
+			text-indent: -9999px;
+			width: 169px;
+		}
+		
+	}
+	
+	h1:hover a {
+		background: url("../images/akvoLogoTop.png") no-repeat center bottom;
+	}
+	
+	@include responsive(small-max-screens) {
+		
+		margin: 0em;
+        position: relative;
+		
+		h1 {
+			display: block;
+			height: 52px;
+			left: 0px;
+			margin: 0px 0px 10px 10px;
+			position: relative;
+			width: 250px;
+			
+			a {
+				background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
+				background-size: 211px 50px;
+				height: 50px;
+				opacity: 1;
+				width: 211px;
+			}
+			
+		}
+		h1:hover a {
+			background: url("../images/akvoLogoTop-phone.png") no-repeat center top;
+			opacity: 1;
+		}
+		div.wrapper {
+			padding-bottom: 5px;
+		}
+	}
+	
+}
+
+
+div.headerWrap {
+    margin: 0em auto;
+    max-width: 1208px;
+    position: relative;
+    width: 80%;
+}
+
+#openSource {
+    display: block;
+    height: 100px;
+    position: absolute;
+    right: 0em;
+    top: 0em;
+    width: 100px;
+	
+	h2 {
+		background: url("../images/openSource.png") no-repeat center -1px;
+		height: 100px;
+		text-indent: -9999px;
+		width: 100px;
+	}
+	
+	@include responsive(small-max-screens) {
+		display: none;
+	}
+	
+}
+
+.logInHeader {
+    font-size: 0.8em;
+    position: absolute;
+    right: 100px;
+    top: 14px;
+	
+	a {
+		color: rgb(222, 137, 41);
+		font-size: 1.1em;
+	}
+	
+	a:hover {
+		color: rgb(255, 255, 255);
+	}
+	
+	@include responsive(small-max-screens) {
+		position: absolute;
+		right: 15px;
+		top: 20px;
+		
+		a {
+			@include border-radius(0.25em);
+			background: rgba(255, 255, 255, 0.2);
+			font-size: 130%;
+			padding: 0.25em 0.5em;
+		}
+		
+	}
+	
+}
+/* ---------------------------------------------
+            Top navigation styles
+--------------------------------------------- */
+#navbar {
+    display: none;
+}
+
+nav {
+    display: block;
+}
+
+nav#n {
+    margin: 0em 0em 0em 180px;
+}
+
+#n ul {
+    display: block;
+	
+	li {
+		background: url("../images/navSeparator.png") no-repeat scroll right center transparent;
+		display: inline-block;
+		font-size: 1.2em;
+		margin-right: -3px;
+		position: relative;
+		
+		a {
+			-moz-transition: color 0.4s linear;
+			-o-transition: color 0.4s linear;
+			-webkit-transition: color 0.4s linear;
+			color: rgba(255, 255, 255, 0.8);
+			display: block;
+			font-family: $bodyFont;
+			font-size: 0.9em;
+			line-height: 50px;
+			padding: 0px 12px;
+			transition: color 0.4s linear;
+		}
+		
+		a:hover {
+			color: rgb(222, 137, 41);
+			text-decoration: none;
+		}
+		
+	}
+	
+	
+	
+}
+
+
+
+nav#n ul li.current_page_item > a,
+nav#n ul li.current_page_parent > a,
+header.top li.current_page_item > a {
+    background: url("../images/currentMenuMarker.png") center 30px no-repeat;
+    color: rgb(222, 137, 41);
+    margin-top: 1px;
+    z-index: 9998;
+}
+
+header li.menu-item > a {
+    color: white;
+}
+
+.current-menu-parent > a, .current-menu-item > a {
+    color: #de8929 !important;
+}
+
+nav#n ul li.current_page_item ul.sub-menu a,
+nav#n ul li.current_page_parent ul.sub-menu a,
+header.top li.current_page_item ul.sub-menu a {
+    background: none;
+    color: rgb(255, 255, 255);
+}
+
+nav#n ul li.current_page_item ul.children li.page_item a {
+    color: rgb(255, 255, 255);
+}
+
+nav#n ul li.current_page_item ul.children li.page_item a:hover {
+    color: rgb(222, 137, 41);
+}
+
+nav#n ul li.current_page_parent a {
+    background: url("../images/currentMenuMarker.png") center 30px no-repeat;
+    margin-top: 1px;
+    z-index: 9998;
+}
+
+#n ul li ul.sub-menu {
+    @include border-radius(0em 0em 0.25em 0.25em);
+    @include box-shadow(0em 0em 5px rgba(32, 32, 36, 0.8));
+    background: rgba(32, 32, 36, 0.8);
+    display: none;
+    margin: 0em;
+    position: absolute;
+    top: 50px;
+    width: auto;
+    z-index: 9999;
+    zoom: 1;
+	
+	
+}
+
+#n ul li ul.sub-menu li {
+    background: none;
+    display: inline-block;
+    margin: 0em;
+    padding: 0em;
+    position: relative;
+    z-index: 9999;
+    width: 100%;
+}
+
+#n ul li ul.sub-menu li:hover {}
+
+nav#n ul li:last-child {
+    background: none;
+}
+
+#n ul li ul.sub-menu li a {
+    @include transition(background-color 0.4s linear);
+    background: none;
+    color: rgba(255, 255, 255, 0.8);
+    /* display: block;*/
+    font-family: $bodyFont;
+    font-size: 0.7em;
+    font-weight: normal;
+    line-height: inherit;
+    padding: 7px 10px;
+    white-space: nowrap;
+}
+
+#n ul li ul.sub-menu li a:hover {
+    background: rgb(2, 2, 6);
+    color: rgb(222, 137, 41);
+    text-decoration: none;
+}
+
+#n ul li ul li:first-child a {}
+
+#n ul li ul li:last-child a {}
+
+#n ul li:hover > ul {
+    display: block;
+}
+
+#n ul li:hover > a {
+    text-decoration: none;
+}
+
+/* second level of menu */
+#n ul li ul li ul.sub-menu {
+    left: 100%;
+    top: 0;
+    font-size: 0.8em;
+    border-radius: 0 0.25em 0.25em 0.25em;
+}
+
+@media only screen and (min-width: 0) and (max-width: 768px) {
+    nav#n {
+        margin: 0em;
+    }
+    nav#n ul li.current_page_item a,
+    nav#n ul li.current_page_parent a,
+    header.top li.current_page_item a {
+        background: none;
+    }
+    nav#n ul li.current_page_item ul.sub-menu a,
+    nav#n ul li.current_page_parent ul.sub-menu a,
+    header.top li.current_page_item ul.sub-menu a {
+        color: #fff;
+    }
+    nav#n ul li.current_page_item ul.children li.page_item a {
+        color: #fff;
+    }
+    nav#n ul li.current_page_item ul.children li.page_item a:hover {
+        color: #de8929;
+    }
+    nav#n ul li.current_page_parent a {
+        background: none;
+        margin-top: 1px;
+        z-index: 9998;
+    }
+    #navbar {
+        @include border-radius(0.25em);
+        background: linear, to bottom, #242424 0em, #2a2a2a 100%;
+        display: block;
+        margin: 0px auto;
+        padding: 0px 0em;
+        width: 96%;
+        z-index: 99999;
+    }
+    #navbar a {
+        display: block;
+        font-size: 1.3em;
+        font-weight: normal;
+        line-height: 44px;
+        padding: 0em 0px;
+        text-align: center;
+    }
+    #navbar a:hover {
+        color: #bbd2eb;
+        text-decoration: none;
+    }
+    #n ul li ul.sub-menu {
+        background: #202024;
+        margin: 0em;
+        position: relative;
+        top: inherit;
+        zoom: 1;
+    }
+    #n ul li ul.sub-menu li {
+        background: none;
+        display: inline;
+        margin: 0em;
+        padding: 0em;
+        position: relative;
+        z-index: 9999;
+    }
+    #n ul li ul.sub-menu li a {
+        -moz-transition: background-color 0.4s linear;
+        -webkit-transition: background-color 0.4s linear;
+        background: none;
+        color: rgba(255, 255, 255, 0.8);
+        display: block;
+        font-family: $bodyFont;
+        font-size: 1em;
+        font-weight: normal;
+        line-height: inherit;
+        padding: 10px 0em 10px 25px;
+        transition: background-color 0.4s linear;
+    }
+    #n ul li ul.sub-menu li a:hover {
+        color: #de8929;
+        text-decoration: none;
+    }
+    #n ul li ul li:first-child a {
+        padding: auto;
+    }
+    #n ul li ul li:last-child a {
+        padding: auto;
+    }
+    #n ul li:hover > ul {
+        display: block;
+    }
+    #n ul li:hover > a {
+        text-decoration: none;
+    }
+    #n ul {
+        background: #242424;
+        border: 0em;
+        display: none;
+        height: auto;
+        margin: 0em auto;
+        overflow: hidden;
+        padding: 5px 0em;
+        width: 96%;
+    }
+    #n ul li {
+        font-size: 1.3em;
+    }
+    #n ul li ul {
+        background: #242424;
+        border: 0em;
+        display: block;
+        position: static;
+    }
+    #n ul li ul li {
+        font-size: 1.1em;
+        margin-left: 22px;
+        width: auto;
+    }
+    #n ul li {
+        background: #242424;
+        border: 0em;
+        width: 100%;
+    }
+    #n ul li a,
+    #n ul li ul li a {
+        -moz-border-radius: 4px;
+        -o-border-radius: 4px;
+        -webkit-border-radius: 4px;
+        border-radius: 4px;
+        display: block;
+        font-size: 1.2em;
+        font-weight: bold;
+        line-height: 1.3em;
+        margin: 0em;
+        padding: 5px 2%;
+        text-shadow: none;
+    }
+    #n ul li ul li a {
+        background: #242424;
+        border: 0em;
+        font-size: 1em;
+    }
+    #n ul li a:hover,
+    #n ul li ul li a:hover {
+        background: #303030;
+        color: #fff;
+        text-decoration: none;
+    }
+    #n ul li ul li ul.sub-menu {
+        left: 20px;
+    }
+}
+
+/*-----------------------------------
+    Top Header Search input
+------------------------------------*/
+input[type="search"] {
+    -moz-transition: width 0.2s linear;
+    -o-transition: width 0.2s linear;
+    -webkit-transition: width 0.2s linear;
+    border-radius: 4px;
+    bottom: 9px;
+    color: rgb(82, 82, 86);
+    font-size: 0.8em;
+    padding: 0.5em;
+    position: absolute;
+    right: 140px;
+    transition: width 0.2s linear;
+    vertical-align: middle;
+    width: 10%;
+    
+}
+
+@include responsive(small-max-screens) {
+    input[type="search"] {
+        display: block;
+        font-size: 1.5em;
+        margin: 15px auto;
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 85%;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 860px) {
+    input[type="search"] {
+        display: block;
+        font-size: 1.2em;
+        margin: 15px auto;
+        padding: 0.2em;
+        position: relative;
+        right: auto;
+        top: auto;
+        width: 85%;
+    }
+    .home #content {
+        margin-top: 145px;
+    }
+}
+
+header#top input[type="search"]:focus {
+    width: 14%;
+}
+
+@include responsive(small-max-screens) {
+    header#top input[type="search"]:focus {
+        width: 90%;
+    }
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 860px) {
+    header#top input[type="search"]:focus {
+        width: 85%;
+    }
+}
+
+header#top label.screen-reader-text {
+    display: none;
+}
+
+header#top input[type="submit"] {
+    display: none;
+}

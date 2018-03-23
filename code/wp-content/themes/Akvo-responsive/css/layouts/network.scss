@@ -1,0 +1,496 @@
+/*--------------------------------------------------------------------
+                            Network Page
+--------------------------------------------------------------------*/
+#akvoDashboard {
+    background: $akvoBlack;
+    margin: 50px auto 0em;
+    overflow: auto;
+    padding: 0em;
+    position: relative;
+    width: 100%;
+}
+
+#akvoDashboard h2 {
+    color: rgb(255, 255, 255);
+    margin: 0.5em auto 0.75em;
+    text-align: center;
+}
+
+#akvoDashboard ul {
+    margin: 0em auto 0.5em auto;
+}
+
+#akvoDashboard ul li.dashSingle {
+    @include border-radius(0.25em);
+    @include box-sizing(border-box);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    display: inline;
+    float: left;
+    margin: 0em 0.5% 0.5em 0em;
+    min-height: 300px;
+    position: relative;
+    width: 49.5%;
+}
+
+@include responsive(small-max-screens) {
+    #akvoDashboard ul li.dashSingle {
+        width: 100%;
+    }
+}
+
+
+#akvoDashboard ul li.dashSingle:nth-child(2n) {
+    margin: 0em 0em 0.5em 0.5%;
+}
+
+.dashSingle h2 {
+    display: block;
+    text-indent: -99999px;
+}
+
+.dashSingle .moreLink {
+    position: absolute;
+    right: 0em;
+    top: 0em;
+}
+
+.dashSingle#rsrDash h2 {
+    background: url("../images/rsrWhiteDash.png") no-repeat center center;
+}
+
+.dashSingle#flowDash h2 {
+    background: url("../images/flowWhiteDash.png") no-repeat center center;
+}
+
+.dashSingle#opendaidDash h2 {
+    background: url("../images/openAidWhiteDash.png") no-repeat center center;
+}
+
+.dashSingle#akvopediaDash h2 {
+    background: url("../images/wikiWhiteDash.png") no-repeat center center;
+}
+
+.dashData li {
+    @include box-sizing(border-box);
+    display: inline;
+    float: left;
+    min-height: 75px;
+    overflow: hidden;
+    width: 47.5%;
+}
+
+@include responsive(small-max-screens) {
+    .dashData li {
+        min-height: 100px;
+    }
+}
+
+
+.dashData li.killFloatMerge {
+    clear: both;
+    display: block;
+    float: none;
+    text-align: center;
+    width: 96.5%;
+}
+
+.dashData li img {
+    display: table;
+    margin: 0em auto;
+}
+
+.dashData li p {
+    display: table;
+    font-size: 0.8em;
+    margin: 0em auto;
+    @include noWrapTxt;
+}
+
+.dashData li h4 {
+    color: inherit;
+    font-size: 0.8em;
+    margin-bottom: inherit;
+    margin: 0.5em 0em 1em 0.5em;
+    text-transform: uppercase;
+    @include noWrapTxt;
+}
+
+.dashData li span {
+    font-family: $titleFont;
+    font-size: 2.5em;
+    margin: 0.1em 0em 0em 0.25em;
+    text-shadow: 0em 0em 3px rgb(0, 0, 0);
+    text-transform: uppercase;
+    @include noWrapTxt;
+}
+
+.dashData li span.unit {
+    font-family: $scriptFont;
+    font-size: 0.8em;
+    font-style: italic;
+    text-transform: lowercase;
+    @include noWrapTxt;
+}
+
+.dashData li:nth-child(2n+1) {
+    margin: 0em 0.75% 0.35em 1.75%;
+}
+
+.dashData li:nth-child(2n) {
+    margin: 0em 1.75% 0.35em 0.75%;
+}
+
+.dashData.rsrData li {
+    background: rgba(87, 193, 232, 0.05);
+    color: rgb(87, 193, 232);
+}
+
+.dashData.flowData li {
+    background: rgba(226, 124, 0, 0.05);
+    color: rgb(226, 124, 0);
+}
+
+.dashData.openAidData li {
+    background: rgba(255, 206, 0, 0.05);
+    color: rgb(255, 206, 0);
+}
+
+.dashData.wikiData li {
+    background: rgba(191, 131, 185, 0.05);
+    color: rgb(191, 131, 185);
+    span {
+        color: rgb(191, 131, 185);
+        a {
+            color: rgb(191, 131, 185);
+        }
+    }
+}
+
+#rsrProjectUpdates {
+    background: rgb(242, 242, 242);
+    overflow: auto;
+    padding: 2em 0em;
+    position: relative;
+}
+
+#rsrProjectUpdates > h2 {
+    text-align: center;
+}
+
+#rsrProjectUpdates > a.moreLink {
+    margin: 0em auto 2em;
+}
+
+.rsrUpdate {
+    @include border-radius(0.5em);
+    background: rgba(192, 192, 196, 0.15);
+    display: block;
+    margin: 0em auto 5px;
+    min-height: 175px;
+    padding: 0em 0.5%;
+    position: relative;
+    text-align: left;
+    transition: all 0.4s ease-in;
+    width: 98%;
+    &:hover {
+        background: rgba(192, 192, 196, 0.3);
+        pointer: cursor;
+    }
+    @media screen and (min-width: 960px) {
+        @include border-radius(0.15em);
+        display: inline-block;
+        float: left;
+        margin: 0em 0.5% 10px 0em;
+        min-height: 315px;
+        padding: 0em 0.5%;
+        width: 31.8%;
+        &:last-child {
+            margin: 0em;
+        }
+    }
+}
+
+.rsrUpdate ul li.upMore {
+    float: right;
+    height: 120px;
+    margin-top: -10px;
+    width: 120px;
+    @media screen and (min-width: 960px) {
+        display: block;
+        float: inherit;
+        height: inherit;
+        margin-bottom: 5px;
+        width: 100%;
+    }
+}
+
+.rsrUpdate {
+    ul li.upMore a {
+        background-size: 72%;
+        background: url("../images/readMoreBig.svg") center center no-repeat;
+        display: block;
+        height: 112px;
+        margin: 14px auto 0;
+        opacity: 0.6;
+        position: relative;
+        transition: all 0.4s ease-in;
+        width: 112px;
+        @media screen and (min-width: 960px) {
+            background: none;
+            display: inline-block;
+            width: 100%;
+            margin: 14px auto 0;
+            height: 30px;
+        }
+    }
+    &:hover ul li.upMore a {
+        opacity: 1;
+    }
+    ul li.upMore span {
+        display: block;
+        font-size: 0.8em;
+        text-align: center;
+        transition: color 0.4s ease-in;
+        @media screen and (max-width: 960px) {
+            text-align: center;
+        }
+    }
+    &:hover ul li.upMore span {
+        color: rgba(226, 124, 0, 0.8);
+    }
+}
+
+.rsrUpdate {
+    ul {
+        margin-top: 10px;
+        padding: 0em;
+        width: 100%;
+        @media screen and (min-width: 960px) {
+            margin-top: 15px;
+        }
+        li {
+            float: left;
+            margin: 0em;
+            padding: 0em;
+        }
+        li.upImag {
+            margin-left: 0.5em;
+            width: calc(150px - 0.5em);
+            @media screen and (min-width: 960px) {
+                width: 50%;
+            }
+        }
+        li.upInfo {
+            display: table-cell;
+            width: 30%;
+            @media screen and (min-width: 960px) {
+                width: calc(50% - 0.5em);
+            }
+        }
+        li.upTxt {
+            max-height: 100px;
+            overflow: hidden;
+            position: relative;
+            width: calc(100% - 30% - 150px - 120px - 0.5em);
+            @media screen and (min-width: 960px) {
+                display: block;
+                margin: 0.2em auto;
+                min-height: 100px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+.rsrUpdate h2 {
+    display: inline;
+    font-size: 1.2em;
+    text-align: left;
+    a {
+        @include noWrapTxt;
+        display: block;
+        padding: 1em 0em 0.25em 0.5em;
+        width: calc(100%- 0.5em);
+    }
+}
+
+@media screen and (max-width: 498px) {
+    .rsrUpdate ul li.upTxt {
+        display: none;
+    }
+    .rsrUpdate ul li.upInfo {
+        width: calc(100% - 120px - 150px);
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .rsrUpdate ul li.upTxt {
+        display: none;
+    }
+    .rsrUpdate ul li.upImag {
+        display: none;
+    }
+    .rsrUpdate ul li.upInfo {
+        width: calc(100% - 120px);
+    }
+}
+
+.rsrUpdate ul li.upInfo .authorTime {
+    margin-left: 1.75em;
+    @include noWrapTxt;
+    @media screen and (min-width: 960px) {
+        margin-left: 0.25em;
+    }
+}
+
+.authorTime em {
+    display: inline;
+    float: left;
+    margin: 0em 0em 0em 0.25em;
+    padding: 0em;
+    @media screen and (min-width: 960px) {
+        display: none;
+    }
+}
+
+.authorTime time {
+    color: rgb(116, 116, 116);
+    display: inline;
+    float: left;
+    margin: 0em;
+    padding: 0em;
+    @media screen and (min-width: 960px) {
+        display: block;
+        margin: 0em 0em 0em 0.25em;
+        width: calc(100% - 0.25em);
+    }
+}
+
+.authorTime span.userName {
+    @include noWrapTxt;
+    color: $flowOrange;
+    display: inline;
+    float: left;
+    margin: 0em 0em 0em 0.25em;
+    padding: 0em;
+    @media screen and (min-width: 960px) {
+        display: inline;
+        margin: 0em 0em 3px 0.25em;
+    }
+}
+
+.orgAndPlace .org {
+    @include noWrapTxt;
+    background: #3492b9;
+    @include border-radius(0.25em 1em 1em 0.25em);
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0.75em 0em 0.75em 1.75em;
+    padding: 0.15em 1em 0.35em;
+    a {
+        color: rgb(255, 255, 255);
+        &:hover {
+            color: $flowOrange;
+        }
+    }
+    @media screen and (min-width: 960px) {
+        display: inline-block;
+        margin: 0em 0em 0em 0.5em;
+    }
+}
+
+.orgAndPlace .place {
+    @include noWrapTxt;
+    background: url("../images/pinPoint.png") left center no-repeat;
+    color: rgb(116, 116, 116);
+    display: block;
+    margin-left: 1.75em;
+    padding: 0.25em 0em 0.25em 14px;
+    width: 100%;
+    @media screen and (min-width: 960px) {
+        display: block;
+        margin: 0em 0em 0em 0.35em;
+        width: 80%;
+    }
+}
+
+@include responsive(small-max-screens) {
+    .authorTime span.userName {
+        margin: 0em;
+    }
+    .orgAndPlace .org {
+        margin: 0.25em 0em 0em 1.75em;
+    }
+}
+
+
+#rsrNetworkMap {
+    background: rgb(255, 248, 245);
+    overflow: auto;
+    padding: 2em 0em;
+    position: relative;
+}
+
+.rsrUpdate > span {
+    @include border-radius(0em 0em 0.5em);
+    background: rgba(87, 193, 232, 0.6);
+    color: rgb(255, 255, 255);
+    display: none;
+    font-size: 0.9em;
+    left: 0px;
+    padding: 0.15em 0.25em;
+    top: 0px;
+}
+
+.rsrUpdate ul li.upTxt p {
+    color: $akvoBlack;
+    margin: 0em;
+    padding: 0em 2%;
+    position: relative;
+    text-shadow: none;
+    @include transition(all 0.4s ease-in);
+    width: 96%;
+    &:hover ul li.upTxt p {
+        color: $akvoBlack;
+    }
+    @media screen and (min-width: 960px) {
+        color: $akvoBlack;
+        font-size: 0.9em;
+        padding: 0.5em 2% 0em 2%;
+        text-shadow: none;
+    }
+}
+
+.rsrUpdate .imgWrap {
+    background: rgb(196, 196, 196);
+    border: 2px solid rgb(232, 232, 232);
+    display: inline-block;
+    height: 100px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+@include responsive(small-max-screens) {
+    .rsrUpdate .imgWrap {
+        padding: 0em;
+    }
+}
+
+
+.rsrUpdate .imgWrap img {
+    margin: 0em auto;
+    max-with: 100%;
+    position: relative;
+}
+
+#rsrNetworkMap > h2 {
+    text-align: center;
+}
+
+#rsrNetworkMap .wrapper img {
+    max-width: none;
+}
+
+#rsrNetworkMap iframe {}

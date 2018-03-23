@@ -1,0 +1,543 @@
+/*-----------------------------------
+                BLOG
+------------------------------------*/
+.widget {
+    figure {
+        img {}
+        div {
+            background: rgb(236, 236, 236);
+            @include border-radius(0.35em);
+            margin: 0em 5%;
+            max-height: 150px;
+            min-height: 150px;
+            overflow: hidden;
+            padding: 0;
+            position: relative;
+            width: 90%;
+            a {
+                font-family: $titleFont;
+                height: 100%;
+                width: 100%;
+                position: absolute;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        figcaption {
+            font-size: 110%;
+            margin: 10px auto 5px;
+            width: 85%;
+            a {
+                font-family: $titleFont;
+            }
+        }
+    }
+}
+
+.fluid-width-video-wrapper {
+    margin-bottom: 50px !important;
+}
+
+.entry {
+    margin: 5px 0em 0em;
+    padding: 5px 1% 0em 1%;
+    width: 98%;
+}
+
+.entry img {
+    display: block;
+    height: auto;
+    margin: 10px auto;
+    width: 100%;
+}
+
+.entry img.lowRes {
+    width: inherit;
+}
+
+.entry em {
+    display: block;
+    font-size: 1.2em;
+    margin: 0.1em 0em 0em;
+}
+
+.entry ul,
+.entry ol,
+.answers ul,
+.answers ol,
+.policies ul,
+.policies ol,
+.jobsEntry ul,
+.jobsEntry ol {
+    list-style: disc outside none;
+    margin: 1em 0em 1em 1em;
+    padding: 0.25em 0em 0.25em 2em;
+}
+
+.entry li,
+.akvo-faq .answers li,
+.policies li,
+.jobsEntry li {
+    margin: 0.5em 0em 0.5em 0.25em;
+}
+
+.entry p {
+    margin: 0em 0em 20px;
+    width: 100%;
+}
+
+article.post {
+    border-bottom: thin solid rgb(232, 232, 232);
+    padding: 0em 0em 20px;
+}
+
+article.post h2 {
+    margin: 45px 0em 5px 5px;
+    text-align: left;
+}
+
+article.post:first-child h2 {
+    margin: 0px 0em 5px 5px;
+}
+
+@include responsive(small-max-screens) {
+    article.post:first-child h2 {
+        margin: 20px 0em 5px;
+    }
+}
+
+
+article.post h2 a {
+    color: $akvoPurple;
+    margin: 0em auto;
+    padding: 5px 0em;
+}
+
+article.post h2 a:hover {
+    color: rgb(222, 137, 41);
+}
+
+.post {
+    display: block;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    padding-top: 10px;
+}
+
+.post header {
+    display: block;
+    margin-bottom: 25px;
+}
+
+.post header h2 {
+    margin-bottom: 4px !important;
+}
+
+@include responsive(small-max-screens) {
+    .post header h2 {
+        font-size: 2.75em;
+    }
+}
+
+
+.post h2 {
+    color: #434343;
+    display: block;
+    font-size: 2.2em;
+    line-height: 1.4em;
+    margin-bottom: 15px;
+}
+
+.post h3 {}
+
+.post h4 {
+    border-left: 3px solid #56b972;
+    color: #56b972;
+    display: block;
+    font-size: 1.4em;
+    font-weight: bold;
+    letter-spacing: 0.15em;
+    line-height: 1.5em;
+    margin-bottom: 3px;
+    padding-left: 25px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+#content article,
+.widget-area aside,
+form#commentform {
+    margin-bottom: 20px;
+}
+
+.meta,
+.postmetadata {
+    color: rgb(36, 48, 50);
+}
+
+div.postmetadata {
+    margin: 0px 0em 0em;
+    padding: 5px 0em 8px 0.5em;
+    width: 100%;
+}
+
+div.postmetadata em {
+    font-size: 1em;
+    margin-right: 1em;
+}
+
+div.postmetadata a {
+    font-size: 0.9em;
+}
+
+div.meta {
+    border-bottom: thin solid rgb(245, 245, 245);
+    font-size: 0.8em;
+    margin: 5px 0em 10px 5px;
+    padding: 5px 0em;
+}
+
+@include responsive(small-max-screens) {
+    div.meta {
+        font-size: 1.1em;
+        line-height: 1.6em;
+    }
+}
+
+
+div.meta time {
+    background: url("../images/post-time-icon.png") left top no-repeat;
+    overflow: hidden;
+    padding: 2px 0 2px 18px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+div.meta a {
+    margin: 0em 0em 0em 5px;
+}
+
+blockquote {
+    @include border-radius(0.3em);
+    @include box-sizing(border-box);
+    background: #fbf0de;
+    color: rgb(153, 153, 153);
+    display: block;
+    font-style: italic;
+    margin: 18px auto;
+    padding: 9px 15px;
+}
+
+blockquote p {
+    color: #797064;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: normal;
+    margin-bottom: 3px;
+}
+
+.entry blockquote p {
+    margin-bottom: 3px;
+}
+
+.post .more-link {
+    display: table;
+    font-size: 0.9em;
+    font-weight: normal;
+    margin: 1em auto 0em auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.postbrdr {
+    border-bottom: 3px solid #ccc;
+}
+
+.archiveshead {
+    border-bottom: 1px solid rgb(242, 242, 242);
+    padding: 0.25em 1%;
+    width: 98%;
+}
+
+.archiveshead h2 {
+    color: rgb(222, 137, 41);
+    text-align: left;
+}
+
+#navbelow {
+    display: block;
+    margin-bottom: 15px;
+    margin-top: -10px;
+    padding: 2em 0em;
+    width: 100%;
+}
+
+.nav-prev {
+    display: block;
+    float: left;
+}
+
+.nav-next {
+    display: block;
+    float: right;
+}
+
+.nav-prev a,
+.nav-next a {
+    @include border-radius(0.2em);
+    background: rgb(167, 199, 220);
+    color: rgb(255, 255, 255);
+    display: block;
+    padding: 4px 7px;
+}
+
+.nav-prev a:hover,
+.nav-next a:hover {
+    background: rgb(63, 76, 107);
+    color: rgb(255, 255, 255);
+}
+
+/*-----------------------------------
+                Comments
+------------------------------------*/
+#respond {
+    background: rgb(242, 242, 242);
+    padding: 1.5%;
+    position: relative;
+}
+
+#respond h3 {
+    font-size: 1.2em;
+    margin: 0em 0em 10px;
+    text-shadow: 0em -1px 0em rgb(185, 185, 185), 0em 2px 0em rgb(255, 255, 255);
+}
+
+#respond p {
+    font-size: 0.8em;
+    line-height: inherit;
+    margin-bottom: 0em;
+}
+
+#respond p input[type="submit"] {
+    margin: 10px 0em 0em;
+}
+
+#respond textarea {
+    padding: 7px 5px 7px 3px;
+}
+
+#respond p a[title^="Log"] {
+    margin: 0em 0em 0em 20px;
+}
+
+#comments {
+    display: block;
+    margin-top: 35px;
+}
+
+#comments h3 {
+    margin-bottom: 15px;
+}
+
+#comments em {
+    display: block;
+}
+
+p#allowed_tags {
+    background: rgb(255, 255, 255);
+    font-style: italic;
+    margin: 1.5em 0em 0.5em;
+    padding: 1.25%;
+    width: 97%;
+}
+
+@include responsive(small-max-screens) {
+    p#allowed_tags {
+        display: none;
+    }
+}
+
+
+p#allowed_tags code {
+    display: block;
+    font-style: normal;
+}
+
+/* for the threaded reply comment form styles */
+#cancel-comment-reply {
+    display: block;
+    font-weight: bold;
+    position: absolute;
+    right: 0.5em;
+    top: 0.5em;
+}
+
+#cancel-comment-reply-link {
+    @include border-radius(0.25em);
+    display: block;
+    font-size: 0.8em;
+    padding: 0px 4px;
+}
+
+#cancel-comment-reply-link:hover {
+    background: #5d9de5;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+}
+
+.commentlist {
+    list-style: none;
+}
+
+.commentlist .comment {
+    display: block;
+    margin: 50px auto 80px auto;
+    position: relative;
+}
+
+.commentlist .comment .comment-author {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    position: relative;
+}
+
+.commentlist .comment .comment-author .avatar {
+    background: #fafafa;
+    border: 1px solid #ccc;
+    display: inline-block;
+    margin-right: 15px;
+    padding: 5px;
+}
+
+.commentlist .comment .comment-author .fn {
+    color: #535353;
+    font-style: normal;
+    font-weight: bold;
+    position: absolute;
+    top: 2px;
+}
+
+.commentlist .comment .comment-author .says {
+    display: none;
+}
+
+.commentlist .comment .comment-meta {
+    font-size: 0.8em;
+    margin-left: 60px;
+    position: absolute;
+    top: 20px;
+}
+
+.commentlist .comment p {
+    display: block;
+    padding: 0.8em;
+}
+
+.commentlist .comment .comment-body .reply {
+    border-bottom: 1px solid rgb(232, 232, 232);
+    font-size: 0.9em;
+    margin: 1.5em 0em 0em;
+}
+
+.commentlist .comment .comment-body .reply a.comment-reply-link {
+    background: rgb(0, 136, 204);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    padding: 0.25em 1em;
+    @include border-radius(0.25em 0.25em 0em 0em);
+    text-shadow: 0em -1px 0em rgba(0, 0, 0, 0.25);
+}
+
+.commentlist .comment .comment-body .reply a.comment-reply-link:hover {
+    color: rgb(132, 132, 136);
+    display: inline-block;
+    padding: 0.25em 1em;
+}
+
+.comment-awaiting-moderation {
+    color: #444;
+    display: block;
+    font-size: 1.2em;
+    margin-bottom: -5px;
+    margin-top: 4px;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.commentlist .comment ul.children {
+    margin-left: 40px;
+    padding-top: 15px;
+}
+
+#commentform {
+    display: block;
+    margin-bottom: 0em;
+    margin-top: 6px;
+    width: 100%;
+}
+
+#commentform label {
+    font-size: 0.9em;
+}
+
+#commentform label small {
+    color: #7dafe6;
+    display: inline;
+    font-style: italic;
+    font-weight: normal;
+    size: 0.9em;
+}
+
+#commentfields #commentfields {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#commentfields #commentfields .ibox {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+#commentfields .basicinput {
+    border: 1px solid #dbdbdb;
+    color: #487cb7;
+    display: block;
+    font-size: 1.5em;
+    outline: none;
+    padding: 7px 6px;
+    width: 90%;
+}
+
+#commentfields textarea {
+    border: 1px solid #dbdbdb;
+    color: #487cb7;
+    display: block;
+    height: 125px;
+    outline: none;
+    padding: 5px 4px;
+    width: 97%;
+}
+
+#commentform #comment {
+    color: #565656;
+    display: block;
+    font-family: Arial, Tahoma, sans-serif;
+    line-height: 1.5em;
+    margin-bottom: 8px;
+    padding: 4px 7px;
+}
+
+#commentform #submit,
+.button {}
+
+#commentform #submit:hover,
+.button:hover {
+    background-color: #4197ee;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #4197ee), color-stop(1, #79bbff));
+}
+
+#commentform #submit:active,
+.button:active {
+    position: relative;
+    top: 1px;
+}

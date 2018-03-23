@@ -1,0 +1,458 @@
+
+/*---------------------------------------------------------------------------------------
+                                            Home Page
+---------------------------------------------------------------------------------------*/
+body.home h1.akvoDescr {
+    font-size: 2em;
+    font-weight: normal;
+    letter-spacing: 0em;
+    line-height: 1em;
+    margin: 0.75em auto 0.75em;
+    text-align: center;
+    text-shadow: none;
+    text-transform: none;
+}
+
+@include responsive(small-max-screens) {
+    body.home h1.akvoDescr {
+        margin: 30px auto;
+        width: 90%;
+    }
+}
+
+
+#actionHeroBox {
+    //    background: rgb(32, 32, 36);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-top: 1px solid rgb(221, 221, 221);
+    position: relative;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    #actionHeroBox {
+        background: #f2f2f2;
+        max-height: inherit;
+    }
+}
+
+
+#actionHeroBox img {
+    display: inline-block;
+    margin: 0em auto !important;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+    /* max-height:     500px;
+                */
+}
+
+@include responsive(small-max-screens) {
+    #actionHeroBox img {
+        margin-top: 0em !important;
+    }
+}
+
+
+#actionHeroBox {
+    #image, .videoSlide {
+        padding-bottom: 46%;
+        background-position: center center;
+        background-size: cover;
+        @include responsive(small-screens) {
+            padding-bottom: 38%;
+        }
+
+        @include responsive(huge-screens) {
+            padding-bottom: 0;
+            height: 532px;
+        }
+    }
+    .videoSlide.image {
+        /* Hide the video div if display type is "image" */
+        display: none;
+    }
+    #image.video {
+        /* Hide the image slide if display type is "video"... */
+        display: none;
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: block;
+        }
+    }
+    .videoSlide.video {
+        @include responsive(small-max-screens) {
+            /* ...unless we're on mobile */
+            display: none;
+        }
+    }
+    .videoSlide {
+        position: relative;
+        overflow: hidden;
+        video, .videoOverlay {
+            position: absolute;
+            width: 100%;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            object-fit: cover;
+        }
+        .videoOverlay {
+            top: 0;
+            background-position: bottom;
+            background-size: cover;
+            overflow: hidden;
+            z-index: 1;
+        }
+    }
+}
+
+#actionHeroBox{ 
+	h1 {
+        display: block;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.5em;
+        font-weight: 700;
+        position: relative;
+        margin: 10px 10px 0em 0em;
+    }
+    h2 {
+        display: block;
+        font-size: 1.2em;
+        margin: 0em 10px 5px 0em;
+    }
+	h2, h1, #actionHeroInfo > a, #actionHeroInfo {
+		text-align: right;
+	}
+	#actionHeroInfo {
+		@include border-radius(0.5em);
+		background: rgba(255, 255, 245, 0.6);
+		bottom: 70px;
+		display: inline-block;
+		max-width: 35%;
+		min-width: 0;
+		overflow: auto;
+		padding: 0em 2% !important;
+		position: absolute;
+		right: 5%;
+		z-index: 2;
+	}
+	
+	p {
+		color: rgb(40, 40, 40);
+		display: none;
+		
+		span {
+			color: rgb(40, 40, 40);
+		}
+		
+		span.akvorsr {
+			color: rgb(66, 76, 43);
+		}
+		
+		span.akvoflow {
+			color: rgb(222, 137, 41);
+		}
+		span.akvoopenaid {
+			color: rgb(227, 27, 35);
+		}
+	}
+	
+	@include responsive(small-max-screens) {
+		hgroup {
+			width: 100%;
+		}
+		#actionHeroInfo {
+			@include border-radius(0.5em);
+			@include box-shadow(none);
+			background: none;
+			bottom: inherit;
+			left: inherit;
+			max-width: 100%;
+			min-height: 5em;
+			overflow: inherit;
+			padding: 1% 3% 5%;
+			position: relative;
+			right: 0em;
+			text-align: center;
+			width: 94%;
+			
+			&.top_left {
+				bottom: auto;
+				right: auto;
+				left: 5%;
+				top: 70px;
+			}
+			&.top_right {
+				bottom: auto;
+				top: 70px;
+			}
+			&.bottom_left {
+				right: auto;
+				left: 5%;
+			}
+		}
+		h1 {
+			font-size: 1.8em;
+			text-align: center;
+		}
+		h2 {
+			font-size: 1.4em;
+			text-align: center;
+		}
+		
+		h2, h1, #actionHeroInfo > a, #actionHeroInfo {
+			text-align: center;
+		}
+		
+	}
+	
+}
+
+.borderTop,.borderBottom {
+    display: none;
+    height: 40px;
+    position: absolute;
+    width: 100%;
+    z-index: 9999;
+}
+
+.borderTop {
+    background: url("../images/actionHeroTopBorder.png") left top repeat-x;
+    top: 0em;
+}
+
+.borderBottom {
+    background: url("../images/actionHeroBottomBorder.png") left bottom repeat-x;
+    bottom: 0em;
+}
+
+#actionHeroBox p, #actionHeroBox h1, #actionHeroBox h2, #actionHeroBox a {}
+
+
+.actionHeroBtn {
+	margin: 0em;
+	display: block;
+	padding-bottom: 0.4em;
+	
+	@include responsive(small-max-screens) {
+    
+        @include border-radius(0.5em);
+        @include box-shadow(none);
+        background: rgb(32, 32, 36);
+        border: 0em none;
+        color: rgb(255, 255, 255) !important;
+        display: table;
+        font-size: 1.6em;
+        height: auto;
+        margin: 1em auto;
+        padding: 10px 30px;
+        position: relative;
+        right: 0px;
+        top: 0px;
+        width: auto;
+    
+	}
+}
+
+	
+
+
+#productWindow {
+    background-color: rgb(245, 245, 245);
+    border-bottom: 1px solid rgb(221, 221, 221);
+    border-top: 1px solid rgb(255, 255, 255);
+    padding: 3em 0em 0em;
+    position: relative;
+    width: 100%;
+	
+	@include responsive(small-max-screens) {
+		background-color: rgb(245, 245, 245);
+        padding: 0em;
+        text-align: center;
+    }
+	
+}
+
+	
+
+
+.products #productWindow {
+    background-color: rgb(255, 255, 255);
+    border-bottom: none;
+    border-top: none;
+    margin: 3em auto;
+    padding: 0em;
+}
+
+#productWindow div.fourColumns div {
+    text-align: center;
+    @include border-radius(0.25em);
+}
+
+@include responsive(small-max-screens) {
+    #productWindow div.fourColumns div {
+        background: rgba(255, 255, 255, 0.5);
+        border-top: none;
+        text-align: center;
+    }
+}
+
+
+.products #productWindow div.fourColumns div {
+    background: rgb(255, 255, 255);
+}
+
+#productWindow div h1,
+#productWindow div h2 {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    text-align: left;
+}
+
+#productWindow div p {
+    margin: 12px auto;
+}
+
+@include responsive(small-max-screens) {
+    #productWindow div p {
+        font-size: 1.2em;
+        margin: 12px 0em;
+    }
+}
+
+
+#productWindow div a {
+    bottom: -0.75em;
+    font-size: 0.9em;
+    margin: 15px auto 0em;
+    position: relative;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+@include responsive(small-max-screens) {
+    #productWindow div a {
+        bottom: inherit;
+        font-size: 1em;
+        left: inherit;
+        margin: 5px auto;
+    }
+}
+
+
+#productWindow div.fourColumns div a.moreLink {
+    bottom: 5px;
+    display: none;
+    left: 25%;
+    overflow: hidden;
+    position: absolute;
+    text-align: center;
+    text: ellipsis uppercase;
+    white-space: nowrap;
+}
+
+#productWindow div h1 {
+    display: block;
+    margin: 20px auto 0em auto;
+    text-indent: -99999px;
+}
+
+@include responsive(small-max-screens) {
+    #productWindow div h1 {
+        display: block;
+        height: 45px;
+        margin: 10px 0em;
+        padding: 10px 0em;
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    #productWindow div h1:after {
+        content: "";
+        display: block;
+        margin: 2px auto 5px auto;
+        width: 90%;
+    }
+}
+
+
+#productWindow a.tagLine:after {
+    content: "";
+    display: block;
+    margin: 50px auto 15px;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    #productWindow a.tagLine:after {
+        border-bottom: none;
+        border-top: none;
+        color: rgb(212, 212, 212);
+        content: "with";
+        display: block;
+        margin: 10px auto 5px auto;
+        text-transform: lowercase;
+        width: 100%;
+    }
+}
+
+
+#productWindow div h2 {
+    display: none;
+    font-size: 1.2em;
+}
+
+@include responsive(small-max-screens) {
+    #productWindow div h2 {
+        padding: 0em 0em 0em 2.5%;
+    }
+}
+
+
+#productWindow div img {
+    display: inherit;
+    margin: 0em auto;
+    max-width: 75%;
+}
+
+#rsrBucket h1,
+#rsrBucket h2 {
+    color: rgb(87, 193, 232);
+}
+
+#flowBucket h1,
+#flowBucket h2 {
+    color: rgb(226, 124, 0);
+}
+
+#openaidBucket h1,
+#openaidBucket h2 {
+    color: rgb(255, 206, 0);
+}
+
+#akvopedia h1,
+#akvopedia h2 {
+    color: rgb(191, 131, 185);
+}
+
+#rsrBucket h1 {
+    background: url("../images/rsr-logo-40px.png") center top no-repeat;
+    background-size: 85%;
+}
+
+#flowBucket h1 {
+    background: url("../images/flow-logo-40px.png") center top no-repeat;
+    background-size: 85%;
+}
+
+#openaidBucket h1 {
+    background: url("../images/akvo-iati-logo-40px.png") center top no-repeat;
+    background-size: 85%;
+}
+
+#akvopedia h1 {
+    background: url("../images/akvopedia-logo-40px.png") center top no-repeat;
+    background-size: 85%;
+}

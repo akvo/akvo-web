@@ -1,0 +1,366 @@
+/************************************************************************
+                                STRUCTURE
+************************************************************************/
+#content {
+    position: relative;
+    width: 100%;
+}
+
+.home #content {
+    margin: 75px auto 0em;
+}
+
+@include responsive(small-max-screens) {
+    #content {
+        padding: 0 1%;
+        width: 98%;
+    }
+    .home #content {
+        margin: 0px auto 0em;
+    }
+}
+
+
+#main {
+    @include box-sizing(border-box);
+    display: block;
+    float: left;
+    margin: 25px 2% 0em 0em;
+    width: 73%;
+}
+
+@include responsive(small-max-screens) {
+    #main {
+        display: block;
+        float: none;
+        margin: 0em;
+        overflow: hidden;
+        padding: 0em 2%;
+        width: auto;
+    }
+}
+
+
+.defaultWrap {
+    padding: 0.25em;
+}
+
+#sidebar {
+    display: block;
+    float: right;
+    height: 100%;
+    margin: 25px 0em 0em 0.5%;
+    padding: 0.25em 0.5% 5px 0em;
+    width: 24%;
+}
+
+@include responsive(small-max-screens) {
+    #sidebar {
+        display: none;
+        float: none;
+    }
+}
+
+
+#mainbody {
+    display: block;
+    width: 100%;
+    z-index: auto;
+}
+
+.wrapper {
+    margin: 0em auto;
+    max-width: 1198px;
+    position: relative;
+}
+
+.wrapperHead {
+    margin: 0em auto;
+    max-width: 1208px;
+    position: relative;
+}
+
+/* Two columns */
+
+.twoColumns {
+    margin: 1px auto 0em auto;
+    position: relative;
+    display: block;
+}
+
+.twoColumns > div,
+.twoColumns > li,
+.twoColumns > p {
+    float: left;
+    margin: 0em 0.5%;
+    padding: 2%;
+    position: relative;
+    width: 44%;
+}
+
+@include responsive(small-max-screens) {
+    .twoColumns > div,
+    .twoColumns > li,
+    .twoColumns > p {
+        float: none;
+        margin: 0em auto;
+        padding: 1%;
+        width: 98%;
+    }
+}
+
+
+.twoColumns > div:first-child,
+.twoColumns > li:first-child, .twoColumns > p:first-child {
+    margin: 0em 0em 0em 1%;
+}
+
+.twoColumns > div:last-child,
+.twoColumns > li:last-child, .twoColumns > p:last-child {
+    margin: 0em 1% 0em 0em;
+}
+
+@include responsive(small-max-screens) {
+    .twoColumns > div:first-child, .twoColumns > li:first-child, .twoColumns > p:first-child {
+        margin: inherit;
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    .twoColumns > div:last-child, .twoColumns > li:last-child, .twoColumns > p:last-child {
+        margin: inherit;
+    }
+}
+
+
+.twoColumnsSidebar {
+    margin: 1px auto 0em auto;
+    position: relative;
+}
+
+.twoColumnsSidebar > div {
+    margin: 0em 0.5%;
+    padding: 2%;
+    position: relative;
+}
+
+.twoColumnsSidebar > div:first-child {
+    float: left;
+    margin: 0em 0em 0em 1%;
+    width: 15%;
+}
+
+.twoColumnsSidebar > div:last-child {
+    float: right;
+    margin: 0em 1% 0em 0em;
+    width: 75%;
+}
+
+/* Three columns */
+
+.threeColumns {
+    margin: 1px auto 0em auto;
+    position: relative;
+}
+
+.threeColumns > div,
+.threeColumns > li,
+.threeColumns > p,
+.threeColumns > a {
+    float: left;
+    margin: 0em 0.5%;
+    padding: 2%;
+    position: relative;
+    width: 28.333333333333333%;
+}
+
+@include responsive(small-max-screens) {
+    .threeColumns > li {
+        @include box-sizing(border-box);
+        padding: 0px 10px;
+        width: 100%;
+    }
+}
+
+
+@include responsive(mediums-max-screens) {
+    .threeColumns > div {
+        background: rgba(255, 255, 255, 0.5);
+        border-top: thin solid #f0f0f0;
+        float: none;
+        margin: 30px auto;
+        padding: 1%;
+        text-align: center;
+        width: 98%;
+    }
+}
+
+
+.threeColumns > div:nth-child(3n+1),
+.threeColumns > li:nth-child(3n+1),
+.threeColumns > p:nth-child(3n+1) {
+    margin: 0em 0em 0em 1%;
+}
+
+.threeColumns > div:nth-child(3n),
+.threeColumns > li:nth-child(3n),
+.threeColumns > p:nth-child(3n) {
+    margin: 0em 1% 0em 0em;
+}
+
+.threeColumnsImg > a {
+    float: left;
+    margin: 0em 0.5%;
+    padding: 0em;
+    position: relative;
+    width: 31.333%;
+}
+
+@include responsive(small-max-screens) {
+    .threeColumns > div:first-child,
+    .threeColumns > div:last-child {
+        margin: inherit;
+    }
+    .threeColumns > div:nth-child(3n+1),
+    .threeColumns > li:nth-child(3n+1),
+    .threeColumns > p:nth-child(3n+1),
+    .threeColumns > div:nth-child(3n),
+    .threeColumns > li:nth-child(3n),
+    .threeColumns > p:nth-child(3n) {
+        margin: 0em;
+    }
+}
+
+
+/* Four columns */
+
+.fourColumns {
+    margin: 0em auto;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    .fourColumns.wrapper {
+        padding: 0em;
+    }
+}
+
+
+.fourColumns > div,
+.fourColumns > li {
+    @include border-radius(0.25em);
+    float: left;
+    margin: 0em 0.15%;
+    min-height: 200px;
+    padding: 0.2em 0.25% 0.25em 0.25%;
+    position: relative;
+    width: 24.20%;
+}
+
+@include responsive(small-max-screens) {
+    .fourColumns div,
+    .fourColumns > li {
+        float: left;
+        margin-left: 0.5%;
+        margin: 30px auto;
+        padding: 1%;
+        width: 47.75%;
+    }
+    .fourColumns > li:nth-child(2n+1),
+    .fourColumns > div:nth-child(2n+1) {
+        margin-left: 0em;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .fourColumns div,
+    .fourColumns > li {
+        margin: 30px auto;
+        padding: 1%;
+        width: 98%;
+    }
+}
+
+/* Five columns */
+
+.fiveColumns {
+    margin: 0em auto;
+    width: 100%;
+}
+
+@include responsive(small-max-screens) {
+    .fiveColumns.wrapper {
+        padding: 0em;
+    }
+}
+
+
+.fiveColumns > div,
+.fiveColumns > li {
+    @include border-radius(0.25em);
+    float: left;
+    margin: 0em 0.15%;
+    min-height: 200px;
+    padding: 0.2em 0.25% 0.25em 0.25%;
+    position: relative;
+    width: 19.20%;
+}
+
+@include responsive(wide-max-screens) {
+    @include responsive(small-screens) {
+        .fiveColumns > div,
+        .fiveColumns > li {
+            float: left;
+            margin-left: 0;
+            margin: 30px auto;
+            padding: 1%;
+            width: 31%;
+        }
+        .fiveColumns > li:nth-child(4) {
+            margin-left: 15.5%;
+        }
+    }
+}
+
+
+@include responsive(small-max-screens) {
+    .fiveColumns div,
+    .fiveColumns > li {
+        float: left;
+        margin-left: 0;
+        margin: 30px auto;
+        padding: 1%;
+        width: 47.75%;
+    }
+    .fiveColumns > li:nth-child(5),
+    .fiveColumns > div:nth-child(5) {
+        margin-left: 23.875%;
+    }
+}
+
+
+@media screen and (max-width: 360px) {
+    .fiveColumns div,
+    .fiveColumns > li {
+        margin: 30px auto;
+        padding: 1%;
+        width: 98%;
+    }
+}
+
+.sixColumns {
+    margin: 0em auto;
+    width: 100%;
+}
+
+.sixColumns > div,
+.sixColumns > li {
+    float: left;
+    margin: 0em 0.15%;
+    min-height: 200px;
+    padding: 0.2em 0.25% 0.25em 0.25%;
+    position: relative;
+    width: 15.8%;
+}

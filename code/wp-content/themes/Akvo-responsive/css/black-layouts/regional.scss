@@ -78,8 +78,12 @@
 				text-align: center;
 				margin: 0;
 			}
+			
+			/* BY DEFAULT HIDE DESCRIPTION */
 			p { display: none; }
             figcaption { display: inline-block;}
+			
+			/* ON HOVER HIDE TITLE AND SHOW DESCRIPTION */
             &:hover {
                 cursor: pointer;
                 p { display: inline-block;}
@@ -153,7 +157,8 @@
 			position: relative;
 			
 			@media (max-width: 500px) {  
-				width: 90px; height: 135px; 
+				width: 90px; 
+				height: 135px; 
 			}
 		}
         .map-addr p {
