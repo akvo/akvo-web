@@ -1,8 +1,7 @@
 <!-- FUNNEL INTRO -->
-<section id="assess01" class="funelContainer" style="background-image:url('<?php the_field('intro_bg');?>');">
-	<!--div class="iconsBg"></div-->
+<section id="assess01" class="funelContainer">
 	<div class="funnelContent"><?php the_field('intro_content');?></div>
-	<div class="funnelStart">
+	<div class="funnelStart" style="background-image:url('<?php the_field('intro_bg');?>');">
 		<a href="#funnel-1" data-behaviour="fnl-nxt-btn" style="background-image:url('<?php the_field('intro_icon');?>');">Start</a>
 	</div>
 </section>

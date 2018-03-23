@@ -1,0 +1,42 @@
+/* HOMEPAGE */
+.homePage {
+	
+	.topMsg {
+		background: #2c2a74 url("../images/Transparent_black_large.png") repeat;
+            
+		.hubIntro{ @extend %homeIntro; }
+	}
+		
+	/* HOMEPAGE - SITEORIGIN PAGE BUILDER */
+	#intro{
+		position: relative;
+		height: 100vh;
+			
+		@extend %homeIntro;
+			
+		.siteorigin-widget-tinymce{
+			position: absolute;
+			width: 90%;
+			max-width: 800px;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+				
+			p{
+				font-family: helvetica;
+				font-weight: bold;
+				color: white;
+			}
+		}
+	}
+	/* HOMEPAGE - SITEORIGIN PAGE BUILDER */
+		
+	/* VIDEO BLOCK */
+	.vidBlock {
+		position: relative;
+		width: 100%;
+		padding: 70px 0 70px 0;
+		height: calc(100vh - 140px);
+		background: #ffd200 url("../images/Transparent white large.png") repeat;
+	}
+}
