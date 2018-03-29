@@ -6525,6 +6525,8 @@ a.helpIcon:hover {
 
 /* NEW BLACK TEMPLATE */
 .fullBlack {
+  /* SEARCH FIELD */
+  /* SEARCH FIELD */
   /* LIST OF HUBS */
   /* LANGUGAE TOGGLE */
   /* HOMEPAGE */
@@ -6717,13 +6719,28 @@ a.helpIcon:hover {
       background-size: contain; }
   .fullBlack input[type="search"] {
     right: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    background-image: url("../images/search-icon-white.png");
+    width: 15px;
+    height: 15px;
+    padding: 5px;
     border: none;
-    color: white; }
-  .fullBlack input[type="search"]::placeholder {
-    color: #ccc;
-    opacity: 1;
-    /* Firefox */ }
+    color: transparent;
+    background-position: center;
+    box-shadow: none;
+    cursor: pointer;
+    /* ON CLICK OR WHEN FOCUSSED */
+    /* FOR SMALL SCREEN SIZES */ }
+    .fullBlack input[type="search"]:focus {
+      background-color: rgba(255, 255, 255, 0.4);
+      background-image: none;
+      padding: 5px 10px; }
+    @media only screen and (max-width: 768px) {
+      .fullBlack input[type="search"] {
+        right: 0;
+        /* ON CLICK OR WHEN FOCUSSED */ }
+        .fullBlack input[type="search"]:focus {
+          padding: 10px; } }
   .fullBlack header#top {
     transition: all 0.2s ease-in;
     z-index: 199999; }
