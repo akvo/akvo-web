@@ -22,7 +22,8 @@
 			'class'		=> 'hubFeature',
 			'fn'		=> 'projects',
 			'wrapper'	=> true,
-			'bg_image'	=> 'feature_image'
+			'bg_image'	=> 'feature_image',
+			'next_link'	=> '#hubTrustBlock',
 		),
 		'clients'	=> array(
 			'id'		=> 'hubTrustBlock',
@@ -63,5 +64,18 @@
 		background-image:url('<?php the_sub_field('contact_image_hover');?>');
 	}
 	<?php endwhile;?>
+	
+	.fullBlack .hubPage .hubFeature{
+		padding: 75px 20px;
+	}
+	
+	.fullBlack .hubPage .hubFeature a[href].nxtSection{
+		top: auto;
+		width: 50px;
+		height: 50px;
+		left: calc(50% - 25px);
+		bottom: -50px;
+	}
+	
 </style>
 <?php get_footer();?>

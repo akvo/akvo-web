@@ -96,7 +96,7 @@
 				@media (max-width: 500px){ min-height: 120px; }
 				span {
 					color: #69c3ee;
-					animation: fadeEffect 9s linear infinite 0s;
+					animation: fadeEffect 12s linear infinite 0s;
 					opacity: 0;
 					display: inline;
 					position: absolute;
@@ -104,6 +104,7 @@
 					@media (max-width: 500px){ white-space: normal; }
 					&:nth-child(2) { animation-delay: 3s; }
 					&:nth-child(3) { animation-delay: 6s; }
+					&:nth-child(4) { animation-delay: 9s; }
 				}
 			}
 		}

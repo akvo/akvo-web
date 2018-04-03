@@ -6688,7 +6688,7 @@ a.helpIcon:hover {
           min-height: 120px; } }
       .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
         color: #69c3ee;
-        animation: fadeEffect 9s linear infinite 0s;
+        animation: fadeEffect 12s linear infinite 0s;
         opacity: 0;
         display: inline;
         position: absolute;
@@ -6700,6 +6700,8 @@ a.helpIcon:hover {
           animation-delay: 3s; }
         .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(3) {
           animation-delay: 6s; }
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(4), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(4) {
+          animation-delay: 9s; }
     .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2), .fullBlack .homePage #intro p:nth-of-type(2) {
       color: #69c3ee;
       animation: bounceInRight 1s;
@@ -6725,7 +6727,7 @@ a.helpIcon:hover {
     height: 15px;
     padding: 5px;
     border: none;
-    color: transparent;
+    color: white;
     background-position: center;
     box-shadow: none;
     cursor: pointer;
@@ -7293,7 +7295,11 @@ a.helpIcon:hover {
         .fullBlack .micro-story .siteorigin-widget-tinymce, .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
           padding: 15px; } }
     .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay {
-      padding: 0; }
+      padding: 0;
+      /* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */ }
+      @media (max-width: 768px) {
+        .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay {
+          position: relative; } }
     .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
       background: rgba(0, 0, 0, 0.2); }
     .fullBlack .micro-story h3 {

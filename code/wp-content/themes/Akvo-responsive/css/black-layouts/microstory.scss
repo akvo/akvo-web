@@ -27,6 +27,11 @@
 		
 		.cover-overlay-text{ @extend %textWrapper; }
 		
+		/* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */
+		@media( max-width: 768px ){
+			position: relative;
+		}
+		
 	}
 	
 	

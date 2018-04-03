@@ -11,6 +11,7 @@
 		}
 		
 		function projects( $el ){
+			the_field( $el.'_title' );
 			if( have_rows( $el ) ){
 				_e('<ul class="list-inline text-center">');
 			
