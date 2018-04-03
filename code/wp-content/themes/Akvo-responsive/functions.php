@@ -536,7 +536,7 @@
 		return ob_get_clean();
 	});
 	
-	function the_hubs_list(){
+	function the_hubs_list( $heading = "Looking for one of our other offices?" ){
 		
 		$hubs = array(
 			array(
@@ -578,7 +578,7 @@
 		);
 		echo '<hr class="delicate">';
 		_e('<section class="allHubBlock floats-in"><div class="wrapper">');
-		_e("<h1>Looking for one of our other offices?</h1>");
+		_e("<h1>".$heading."</h1>");
 		_e('<ul class="list-scroll">');
 		foreach( $hubs as $hub ){
 			_e('<li class="'.$hub['class'].'">');
