@@ -11,7 +11,15 @@
 		}
 		
 		function projects( $el ){
-			the_field( $el.'_title' );
+		
+			/* PROJECTS TITLE */
+			$projects_title = get_field( $el.'_title' );
+			
+			if( $projects_title ){
+				_e('<div class="projects-title-wrapper">'.$projects_title.'</div>');
+			}
+			/* END OF PROJECTS TITLE */
+		
 			if( have_rows( $el ) ){
 				_e('<ul class="list-inline text-center">');
 			
