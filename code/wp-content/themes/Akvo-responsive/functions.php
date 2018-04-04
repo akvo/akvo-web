@@ -543,37 +543,43 @@
 				'class'		=> 'EU',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Europe.png',
 				'text'		=> 'Netherlands, Amsterdam',
-				'helloMsg'	=> 'Welkom'
+				'helloMsg'	=> 'Welkom',
+				'link'		=> 'https://akvo.org/europe/'
 			),
 			array(
 				'class'		=> 'WA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_WestAfrica.png',
 				'text'		=> 'Mali, Bamako',
-				'helloMsg'	=> 'Bienvenue'
+				'helloMsg'	=> 'Bienvenue',
+				'link'		=> 'https://akvo.org/west-africa/'
 			),
 			array(
 				'class'		=> 'EA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_EastAfrica.png',
 				'text'		=> 'Kenya, Nairobi',
-				'helloMsg'	=> 'Karibu'
+				'helloMsg'	=> 'Karibu',
+				'link'		=> 'https://akvo.org/east-africa/'
 			),
 			array(
 				'class'		=> 'SA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SouthAsia.png',
 				'text'		=> 'India, Delhi',
-				'helloMsg'	=> 'Welcome'
+				'helloMsg'	=> 'Welcome',
+				'link'		=> 'https://akvo.org/south-asia/'
 			),
 			array(
 				'class'		=> 'IN',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SEAsia_SEAP.png',
 				'text'		=> 'Indonesia, Bali',
-				'helloMsg'	=> 'Selamat datang'
+				'helloMsg'	=> 'Selamat datang',
+				'link'		=> 'https://akvo.org/south-east-asia-pacific/'
 			),
 			array(
 				'class'		=> 'US',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Americas.png',
 				'text'		=> 'USA, Washington',
-				'helloMsg'	=> 'Welcome'
+				'helloMsg'	=> 'Welcome',
+				'link'		=> 'https://akvo.org/americas/'
 			),
 		);
 		echo '<hr class="delicate">';
@@ -582,7 +588,7 @@
 		_e('<ul class="list-scroll">');
 		foreach( $hubs as $hub ){
 			_e('<li class="'.$hub['class'].'">');
-			_e('<a href="#" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
+			_e('<a href="'.$hub['link'].'" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
 			_e('<div class="helloMsg"><h2>'.$hub['helloMsg'].'</h2></div>');
 			_e('</li>');
 		}
