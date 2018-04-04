@@ -34,6 +34,8 @@
 		@extend %bgCover;
 		@extend %wrapper;
 		
+		padding-bottom: 20px;
+		
 		.funnelContent{
 			@extend %wrapper;
 			position: relative;
@@ -103,12 +105,20 @@
 					
 					background: transparent;
 					display: inline-block;
+					
+					@extend %smallParagraph;
+					
+					/*
 					font-size: 2.5em;
-					
+					line-height: 1em;
+					*/
 					border-width: 3px;
+					width: 200px;
 					
+					/*
 					@media( max-width: 768px ){ font-size: 2.0em; }
 					@media( max-width: 500px ){ font-size: 1.7em; }
+					*/
 					
 					&:hover {
 						background: #ffd200;
@@ -116,6 +126,9 @@
 					}
 				}
 			}
+			
+			&.inlined li a.bouton{ width: auto; }
+			
 		}
 		
 		/* FIRST INTRO SLIDE */

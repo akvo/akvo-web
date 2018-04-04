@@ -6579,14 +6579,14 @@ a.helpIcon:hover {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto; }
-  .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+  .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
     font-size: 1.5em; }
     @media (max-width: 1500px) {
-      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.3em;
         line-height: 1.3em; } }
     @media (max-width: 768px) {
-      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.2em; } }
   .fullBlack .homePage .topMsg .hubIntro, .fullBlack .homePage #intro {
     /* OUTLINE BUTTON */
@@ -7021,6 +7021,7 @@ a.helpIcon:hover {
           background-image: none !important; } }
     .fullBlack #assessFunel .funelContainer {
       text-align: center;
+      padding-bottom: 20px;
       /* FIRST INTRO SLIDE */
       /* FIRST INTRO SLIDE */
       /* FIRST FUNNEL FORM */
@@ -7084,20 +7085,24 @@ a.helpIcon:hover {
             border-radius: 5px;
             background: transparent;
             display: inline-block;
+            /*
             font-size: 2.5em;
-            border-width: 3px; }
+            line-height: 1em;
+            */
+            border-width: 3px;
+            width: 200px;
+            /*
+            @media( max-width: 768px ){ font-size: 2.0em; }
+            @media( max-width: 500px ){ font-size: 1.7em; }
+            */ }
             .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
               border: 1px solid #2c2a74;
               color: #2c2a74; }
-            @media (max-width: 768px) {
-              .fullBlack #assessFunel .funelContainer ul li a.bouton {
-                font-size: 2.0em; } }
-            @media (max-width: 500px) {
-              .fullBlack #assessFunel .funelContainer ul li a.bouton {
-                font-size: 1.7em; } }
             .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
               background: #ffd200;
               border-width: 3px; }
+        .fullBlack #assessFunel .funelContainer ul.inlined li a.bouton {
+          width: auto; }
       .fullBlack #assessFunel .funelContainer#assess01 .funnelContent {
         max-width: none; }
       .fullBlack #assessFunel .funelContainer#assess01 .funnelStart {
