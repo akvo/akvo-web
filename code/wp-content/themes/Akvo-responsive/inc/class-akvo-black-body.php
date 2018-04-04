@@ -3,7 +3,7 @@
 	class akvoBlackBody{
 		
 		function get_templates(){
-			return array('regionalPage.php', 'homepage-2018.php', 'homepage-2019.php', 'microStoryPage.php');
+			return array('regionalPage.php', 'homepage-2018.php', 'homepage-2019.php', 'fullBlackLayout.php', 'microStoryPage.php');
 		}
 		
 		function funnel_section(){
