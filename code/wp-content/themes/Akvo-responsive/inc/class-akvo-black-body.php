@@ -71,7 +71,7 @@
 			while(have_rows('contacts')){ 
 				the_row();
 				_e('<div class="'.$col_class.' col-contact"><div class="contact">');
-				_e('<div class="map-icon"><a href="'.get_sub_field( $el.'_link' ).'"></a></div>');
+				_e('<div class="map-icon"><a target="_blank" href="'.get_sub_field( $el.'_link' ).'"></a></div>');
 				_e('<div class="map-addr">'.get_sub_field( $el.'_address' ).'</div>');
 				_e('<div style="clear:both"></div>');
 				_e('</div></div>');

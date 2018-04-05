@@ -33,7 +33,7 @@
 		<h1><?php _e( $question );?></h1>
 		
 		<?php $more_info = get_sub_field('more_info'); if( $more_info ):?>
-		<a href="#" class="infoHover">More info</a>				
+		<span class="infoHover">More info</span>				
 		<p class="moreInfo"><?php _e( $more_info );?></p>
 		<?php endif; ?>
 		

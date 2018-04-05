@@ -72,6 +72,8 @@
 			@extend %paragraph; 
 		}
 		.infoHover {
+			cursor: pointer;
+			color: #3792b3;
 			margin-bottom: 40px;
 			width: 100%;
 			padding: 15px;
@@ -79,8 +81,9 @@
 				opacity: 0;
 				transition: opacity 0.2s ease-in;
 			}
-			&:hover {
+			&:hover, &:focus{
 				margin-bottom: 40px;
+				color: #de8929;
 				& + .moreInfo { opacity: 1; }
 			}
 		}

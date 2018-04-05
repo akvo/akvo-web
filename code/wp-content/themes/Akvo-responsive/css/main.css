@@ -7053,15 +7053,18 @@ a.helpIcon:hover {
       .fullBlack #assessFunel .funelContainer .inlined * {
         display: inline; }
       .fullBlack #assessFunel .funelContainer .infoHover {
+        cursor: pointer;
+        color: #3792b3;
         margin-bottom: 40px;
         width: 100%;
         padding: 15px; }
         .fullBlack #assessFunel .funelContainer .infoHover + .moreInfo {
           opacity: 0;
           transition: opacity 0.2s ease-in; }
-        .fullBlack #assessFunel .funelContainer .infoHover:hover {
-          margin-bottom: 40px; }
-          .fullBlack #assessFunel .funelContainer .infoHover:hover + .moreInfo {
+        .fullBlack #assessFunel .funelContainer .infoHover:hover, .fullBlack #assessFunel .funelContainer .infoHover:focus {
+          margin-bottom: 40px;
+          color: #de8929; }
+          .fullBlack #assessFunel .funelContainer .infoHover:hover + .moreInfo, .fullBlack #assessFunel .funelContainer .infoHover:focus + .moreInfo {
             opacity: 1; }
       .fullBlack #assessFunel .funelContainer .moreInfo {
         text-align: center;
