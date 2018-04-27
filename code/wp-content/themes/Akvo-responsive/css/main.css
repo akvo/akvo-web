@@ -6544,6 +6544,9 @@ a.helpIcon:hover {
   /* FOR HOMEPAGE AND REGIONAL PAGE INTRO SECTIONS */
   /* LIST OF HUBS */
   /* LANGUGAE TOGGLE */
+  /* WRAPPING THE TEXT IN A FIXED CONTAINER - WORKS FOR TINYMCE EDITOR & AKVO-COVER */
+  /* TINYMCE WIDGET */
+  /* AKVO COVER WIDGET */
   /* HOMEPAGE */
   /* FUNNEL */
   /* FUNNEL */
@@ -6579,14 +6582,14 @@ a.helpIcon:hover {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto; }
-  .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+  .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
     font-size: 1.5em; }
     @media (max-width: 1500px) {
-      .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.3em;
         line-height: 1.3em; } }
     @media (max-width: 768px) {
-      .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.2em; } }
   .fullBlack .homePage .topMsg .hubIntro, .fullBlack .homePage #intro {
     /* OUTLINE BUTTON */
@@ -6931,6 +6934,25 @@ a.helpIcon:hover {
   .fullBlack .wrapper {
     padding-left: 20px;
     padding-right: 20px; }
+  .fullBlack .siteorigin-widget-tinymce, .fullBlack .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    /* LESS PADDING FOR SMALL SCREEN SIZES */ }
+    @media (max-width: 768px) {
+      .fullBlack .siteorigin-widget-tinymce, .fullBlack .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
+        padding: 15px; } }
+  .fullBlack .so-widget-akvo-cover img {
+    width: 100%; }
+  .fullBlack .so-widget-akvo-cover .cover-overlay {
+    padding: 0;
+    /* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */ }
+    @media (max-width: 768px) {
+      .fullBlack .so-widget-akvo-cover .cover-overlay {
+        position: relative; } }
   @media (max-width: 768px) {
     .fullBlack {
       /* FOR FULL WIDTH AND NO PADDING */
@@ -7333,27 +7355,10 @@ a.helpIcon:hover {
     top: 0;
     left: 0; }
   .fullBlack .micro-story {
-    /* AKVO COVER WIDGET */
     /* LANGUAGE TOGGLE */
     /* IFRAME ROW */
     /* TESTIMONIAL WIDGET */
     /* END OF TESTIMONIAL WIDGET */ }
-    .fullBlack .micro-story .siteorigin-widget-tinymce, .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 30px;
-      width: 100%;
-      box-sizing: border-box; }
-      @media (max-width: 768px) {
-        .fullBlack .micro-story .siteorigin-widget-tinymce, .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
-          padding: 15px; } }
-    .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay {
-      padding: 0;
-      /* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */ }
-      @media (max-width: 768px) {
-        .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay {
-          position: relative; } }
     .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
       background: rgba(0, 0, 0, 0.2); }
     .fullBlack .micro-story h3 {

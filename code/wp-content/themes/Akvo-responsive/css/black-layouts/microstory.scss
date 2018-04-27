@@ -1,38 +1,11 @@
 /* MICROSTORY */
 .micro-story{
 	
-	%textWrapper{
-		max-width: 1000px;
-		margin-left: auto;
-		margin-right: auto;
-		padding: 30px;
-		width: 100%;
-		box-sizing: border-box;
-		
-		@media( max-width: 768px ){
-			padding: 15px;
-		}
-	}
 	
 	
-	.siteorigin-widget-tinymce{ 
-		@extend %textWrapper; 
-		
-		p{ @extend %smallParagraph;}
-	}
 	
-	/* AKVO COVER WIDGET */
-	.so-widget-akvo-cover .cover-overlay{
-		padding: 0;
-		
-		.cover-overlay-text{ @extend %textWrapper; }
-		
-		/* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */
-		@media( max-width: 768px ){
-			position: relative;
-		}
-		
-	}
+	
+	
 	
 	
 	
