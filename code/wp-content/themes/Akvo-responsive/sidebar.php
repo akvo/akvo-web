@@ -33,9 +33,11 @@
   <div class="widget faceBook">
     <div class="fb-like-box" data-href="https://www.facebook.com/1Akvo" data-width="292" data-show-faces="true" data-header="true" data-stream="false" data-show-border="false"></div>
   </div>
-  <div class="widget twitBuck"> <a class="twitter-timeline"  href="https://twitter.com/search?q=+%40akvo+OR+%23akvo+OR+%23akvoflow"  data-widget-id="373127164918378496">Tweets about " @akvo OR #akvo OR #akvoflow"</a> 
-    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script> 
+    <div class="widget twitBuck" style="margin-top: 20px;"> 
+    
+    <a class="twitter-timeline" data-height="500" href="https://twitter.com/akvo?ref_src=twsrc%5Etfw">Tweets by akvo</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
+  
    <div class="widget">
     <h3 class="title">Meta</h3>
     <ul>
