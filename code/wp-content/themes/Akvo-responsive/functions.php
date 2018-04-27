@@ -538,6 +538,14 @@
 	
 	function the_hubs_list( $heading = "Looking for one of our other offices?" ){
 		
+		/* CHECK IF HEADLINE EXISTS IN POST META */
+		global $post;
+		$headline_text = get_post_meta( $post->ID, 'hubs_headline', true );
+		if( $headline_text && count( $headline_text ) ){
+			$heading = $headline_text;	
+		}
+		/* CHECK IF HEADLINE EXISTS IN POST META */
+		
 		$hubs = array(
 			array(
 				'class'		=> 'EU',
