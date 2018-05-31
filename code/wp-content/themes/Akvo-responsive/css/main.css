@@ -7419,4 +7419,9 @@ a.helpIcon:hover {
         .fullBlack .micro-story .testimonial-widget::before {
           top: 150px; } }
 
+#main.main-center-align {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
+
 /*# sourceMappingURL=main.css.map */

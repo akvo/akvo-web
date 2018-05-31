@@ -2,7 +2,7 @@
 
 <div id="content" class="wrapper floats-in">
 	<?php //get_sidebar(); ?>
-	<div id="main">
+	<div id="main" class='main-center-align'>
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 		<article <?php post_class('floats-in') ?> id="post-<?php the_ID(); ?>">
 			<h2><a href="<?php the_permalink() ?>"><?php the_title(); ?></a></h2>

@@ -2,7 +2,7 @@
 	<div id="content" class="wrapper">
 		<?php //get_sidebar(); ?>
 			
-		<div id="main">
+		<div id="main" class='main-center-align'>
 			<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 			<article id="post-<?php the_ID(); ?>" class="post" role="article">
 				<header class="posthead">
