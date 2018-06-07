@@ -1,7 +1,10 @@
 <?php
-  /*
-    Template Name: All Staff
-  */
+	/*
+		Template Name: All Staff
+	*/
+  
+	global $akvo;
+	
 	get_header(); 
 ?>
 <div id="content" role="main" class="floats-in teamPage withSubMenu">
@@ -26,21 +29,21 @@
   	<section class="wrapper">
   		<div id="partnershipGroup">
       		<h2 class="pStaffHead">Partnerships</h2>
-      		<?php akvo_staff_list('partnerships');?>
+      		<?php $akvo->staff_list('partnerships');?>
       	</div>
     	<hr class="delicate" />
     	<div id="communicationGroup">
       		<h2 class="cStaffHead">Marketing and Communications</h2>
-      		<?php akvo_staff_list('communication-pr');?>
+      		<?php $akvo->staff_list('communication-pr');?>
       	</div>
     	<hr class="delicate" />
       	<div id="engineeringGroup">
         	<h2 class="eStaffHead">Engineering &amp; design</h2>
-        	<?php akvo_staff_list('design-engineering');?>
+        	<?php $akvo->staff_list('design-engineering');?>
       	</div>
       	<div id="contractorsGroup">
         	<h2 class="eStaffHead">Extended team</h2>
-      		<?php akvo_staff_list('contractors', false);?>
+      		<?php $akvo->staff_list('contractors', false);?>
     	</div>
     	
     	<div id="overlay">

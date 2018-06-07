@@ -1,8 +1,12 @@
 <?php
-  /*
-    Template Name: All Partners
-  */
-get_header(); ?>
+	/*
+		Template Name: All Partners
+	*/
+	
+	global $akvo;
+	
+	get_header(); 
+?>
 <div id="content" role="main" class="floats-in partnerPage withSubMenu">
 	<h1 class="backLined">Our partners</h1>
 	<?php if ( have_posts() ) while ( have_posts() ) : the_post(); ?>
@@ -25,32 +29,32 @@ get_header(); ?>
 	<section class="wrapper">
 		<div id="govGroup">
 			<h2 class="pStaffHead">Governments</h2>
-			<?php akvo_partner_list('governments');?>
+			<?php $akvo->partner_list('governments');?>
 		</div>
 		<hr class="delicate" />
 		<div id="compsGroup">
 			<h2 class="cStaffHead">Companies</h2>
-			<?php akvo_partner_list('companies');?>
+			<?php $akvo->partner_list('companies');?>
 		</div>
 		<hr class="delicate" />
 		<div id="founGroup">
 			<h2 class="eStaffHead">Foundations</h2>
-			<?php akvo_partner_list('foundations');?>
+			<?php $akvo->partner_list('foundations');?>
 		</div>
 		<hr class="delicate" />
 		<div id="intGovGroup">
 			<h2 class="eStaffHead">Inter-governmental</h2>
-			<?php akvo_partner_list('inter-governmental');?>
+			<?php $akvo->partner_list('inter-governmental');?>
 		</div>
 		<hr class="delicate" />
 		<div id="ngoGroup">
 			<h2 class="eStaffHead">NGOs</h2>
-			<?php akvo_partner_list('ngos');?>
+			<?php $akvo->partner_list('ngos');?>
 		</div>
 		<hr class="delicate" />
 		<div id="knowledgeGroup">
 			<h2 class="eStaffHead">Knowledge institutes</h2>
-			<?php akvo_partner_list('knowledge-institutes');?>
+			<?php $akvo->partner_list('knowledge-institutes');?>
 		</div>
 		<hr class="delicate" />
 		<div id="overlay">
