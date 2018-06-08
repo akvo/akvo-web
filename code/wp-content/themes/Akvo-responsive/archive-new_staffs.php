@@ -2,11 +2,8 @@
 	/*
 		Template Name: All Staff
 	*/
-  
-	global $akvo;
-	
-	get_header(); 
 ?>
+<?php get_header(); ?>
 <div id="content" role="main" class="floats-in teamPage withSubMenu">
 	<?php if ( have_posts() ): while ( have_posts() ) : the_post(); the_content(); endwhile; endif; ?>
 </div>
@@ -25,5 +22,4 @@
 	</div>
 	<div class="buttons"><a class="cancel">close</a></div>
 </div>
-<?php wp_reset_query(); ?>
 <?php get_footer(); ?>
