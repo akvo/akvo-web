@@ -6026,6 +6026,40 @@ img.aligncenter {
   .tabsProduct.caddisflyProduct [data-behaviour~=akvo-tabs] li:last-child {
     border-color: #DE8929; }
 
+.tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child {
+  border-color: #74b631; }
+
+.tabsProduct.flowProduct [data-behaviour~=akvo-tabs] li:last-child {
+  border-color: rgba(222, 137, 41, 0.8); }
+  .tabsProduct.flowProduct [data-behaviour~=akvo-tabs] li:last-child a {
+    color: rgba(222, 137, 41, 0.8); }
+
+.tabsProduct.lumenProduct input[type="submit"] {
+  background: #74b631;
+  padding: 0.5em 1em !important;
+  font-size: 1.5em !important;
+  font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: initial; }
+
+.tabsProduct.lumenProduct #pricing_intro {
+  margin-top: 0em; }
+
+.tabsProduct.lumenProduct #field_6_8 label.gfield_label {
+  font-size: 14px;
+  font-weight: normal; }
+
+.tabsProduct.lumenProduct .testimonials p {
+  max-width: 500px; }
+
+.tabsProduct.lumenProduct .testimonials.page-section img.aligncenter {
+  margin-bottom: 1em; }
+
+.tabsProduct.lumenProduct .gform_wrapper .gform_footer {
+  text-align: center; }
+
+.akvo-tabs .akvo-tab.active a[href], .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child.active a {
+  color: #fff; }
+
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
@@ -6523,6 +6557,23 @@ a.helpIcon:hover {
   .media-and-press .twoColumns .col-logo {
     width: 49% !important; } }
 
+/* GRAVITY FORM */
+.gform_wrapper li.gsection.form-title {
+  margin-top: 1.5em;
+  margin-bottom: 0em; }
+
+.gform_wrapper li.gsection.form-title h2 {
+  font-size: 2em; }
+
+.gform_wrapper ul li.gfield.form-checkbox {
+  margin-top: 0; }
+
+body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
+  margin-top: 0; }
+
+.gform_wrapper li.gfield.field_description_below + li.gsection.form-title {
+  margin-top: 2.5em !important; }
+
 /* NEW BLACK TEMPLATE */
 .fullBlack {
   /* BIG PARAGRAPH */
@@ -6534,6 +6585,8 @@ a.helpIcon:hover {
   /* INTRODUCTION SECTION ON THE HOMEPAGE */
   /* NEXT SECTION ICON */
   /* NEXT SECTION ICON */
+  /* SITEORIGIN WIDGET TITLE */
+  /* SITEORIGIN WIDGET TITLE */
   /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
   /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
   /* SEARCH FIELD */
@@ -6551,32 +6604,32 @@ a.helpIcon:hover {
   /* FUNNEL */
   /* FUNNEL */
   /* MICROSTORY */ }
-  .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+  .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
     font-size: 4em; }
     @media (max-width: 2000px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3.5em; } }
     @media (max-width: 1900px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3.25em; } }
     @media (max-width: 1700px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3em; } }
     @media (max-width: 1600px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.75em; } }
     @media (max-width: 1500px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.50em; } }
     @media (max-width: 768px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.20em; } }
     @media (max-width: 500px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 1.8em;
         line-height: 1.2em; } }
     @media (max-width: 430px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 1.6em; } }
   .fullBlack #assessFunel .funelContainer, .fullBlack #assessFunel .funelContainer .funnelContent {
     max-width: 900px;
@@ -6749,6 +6802,21 @@ a.helpIcon:hover {
     .fullBlack .nxtSection.blueFill {
       background: url("../images/arrowDownBlue.png") no-repeat center center;
       background-size: contain; }
+  .fullBlack h3 {
+    color: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold; }
+  .fullBlack .widget-title {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 0;
+    box-sizing: border-box; }
+    @media (max-width: 768px) {
+      .fullBlack .widget-title {
+        padding: 15px;
+        padding-bottom: 0; } }
   .fullBlack .so-widget-next-anchor-widget {
     position: relative; }
   .fullBlack .so-widget-next-anchor-widget .next-anchor-widget {
@@ -7354,6 +7422,12 @@ a.helpIcon:hover {
     height: 100%;
     top: 0;
     left: 0; }
+  .fullBlack .hubPage .hubContact label.gfield_label, .fullBlack .hubPage .gform_wrapper ul.gfield_checkbox li label, .fullBlack .hubPage .gform_wrapper ul.gfield_radio li label {
+    display: inline-block !important; }
+  .fullBlack .hubPage .hubFeature figure p {
+    box-sizing: border-box; }
+  .fullBlack .hubPage .map-addr h4 {
+    margin: 0; }
   .fullBlack .micro-story {
     /* LANGUAGE TOGGLE */
     /* IFRAME ROW */
@@ -7361,10 +7435,6 @@ a.helpIcon:hover {
     /* END OF TESTIMONIAL WIDGET */ }
     .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
       background: rgba(0, 0, 0, 0.2); }
-    .fullBlack .micro-story h3 {
-      color: inherit;
-      margin: 0;
-      font-weight: bold; }
     .fullBlack .micro-story .iframe-row {
       position: relative;
       /* CAPTION IN THE IFRAME */ }

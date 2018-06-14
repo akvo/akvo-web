@@ -1,25 +1,9 @@
 /* MICROSTORY */
 .micro-story{
 	
-	
-	
-	
-	
-	
-	
-	
-	
 	/* LANGUAGE TOGGLE */
 	.lang-list a[href].active, .lang-list a[href]:hover{ background: rgba(#000, 0.2); }
 		
-	h3{
-		color: inherit;
-		margin: 0;
-		font-weight: bold;
-		@extend %paragraph;
-	}
-	
-	
 	
 	/* IFRAME ROW */
 	.iframe-row{

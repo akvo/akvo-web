@@ -158,6 +158,31 @@
 }
 /* NEXT SECTION ICON */
 
+h3{
+	color			: inherit;
+	margin-top		: 0;
+	margin-bottom	: 0;
+	font-weight		: bold;
+	@extend %paragraph;
+}
+
+/* SITEORIGIN WIDGET TITLE */
+.widget-title{
+	max-width		: 1000px;
+	margin			: 0 auto;
+	padding			: 30px;
+	padding-bottom	: 0;
+	box-sizing		: border-box;
+	
+	@media( max-width: 768px ){
+		padding: 15px;
+		padding-bottom: 0;
+	}
+}
+/* SITEORIGIN WIDGET TITLE */
+
+	
+
 /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
 .so-widget-next-anchor-widget{ position: relative;}
 .so-widget-next-anchor-widget .next-anchor-widget{

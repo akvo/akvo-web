@@ -1,0 +1,21 @@
+/* GRAVITY FORM */
+.gform_wrapper li.gsection.form-title{
+	margin-top: 1.5em;
+	margin-bottom: 0em;
+}
+
+.gform_wrapper li.gsection.form-title h2{
+	font-size: 2em;
+}
+
+.gform_wrapper ul li.gfield.form-checkbox{
+	margin-top: 0;
+}
+
+body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox{
+	margin-top: 0;
+}
+
+.gform_wrapper li.gfield.field_description_below+li.gsection.form-title{
+	margin-top: 2.5em !important;
+}
