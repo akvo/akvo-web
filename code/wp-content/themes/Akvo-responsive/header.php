@@ -9,23 +9,7 @@
 <!-- the "no-js" class is for Modernizr. -->
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>
-			<?php
-				global $page, $paged;
-				wp_title( '|', true, 'right' );
-				//bloginfo( 'name' );
-				$site_description = get_bloginfo( 'description', 'display' );
-				if ( $site_description && ( is_home() || is_front_page() ) )
-					echo " | $site_description";
-				if ( $paged >= 2 || $page >= 2 )
-					echo ' | ' . sprintf( __( 'Page %s' ), max( $paged, $page ) );
-			?>
-		</title>
-		<meta charset="<?php bloginfo('charset');?>">
-		<meta name="description" content="Akvo.org: See it Happen" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<meta name="author" content="Akvo Foundation">
 		<meta name="HandheldFriendly" content="True">
 		<meta name="google-site-verification" content="h6M7-buFJgu3jUVcALgFkBDxi0UtePXQhVUcZBYO5Lk" />
 		<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/favicon.ico">
