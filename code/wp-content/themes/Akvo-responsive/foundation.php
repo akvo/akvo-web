@@ -1,7 +1,10 @@
 <?php
-/*
-	Template Name: foundationPage
-*/
+	/*
+		Template Name: foundationPage
+	*/
+	
+	global $akvo;
+	
 ?>
 <?php get_header(); ?>
 
@@ -28,7 +31,7 @@
 			<?php while( has_sub_field('group') ): ?>
 			<div class="subDirectors">
 				<h4><?php the_sub_field('title'); ?></h4>
-				<?php akvo_foundation_list( get_sub_field('class') );?>
+				<?php $akvo->foundation_list( get_sub_field('class') );?>
 			</div>
 			<?php endwhile; ?>
 		</div>

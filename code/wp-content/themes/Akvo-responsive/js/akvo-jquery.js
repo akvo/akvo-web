@@ -244,6 +244,14 @@ $.fn.funnel_next = function(){
 			
 			var next_section = $(btn.attr('href'));
 			
+			/*
+			if(history.pushState) {
+		 		history.pushState(null, null, '#' + next_section.attr('id'));
+			}
+			*/
+			
+			
+			
 			// HIDE ALL FUNNEL SECTIONS
 			$('section.funelContainer').addClass('hidden');
 			
@@ -278,4 +286,11 @@ $("document").ready(function() {
 	$("[data-behaviour~=next]").next();
         
 	$('[data-behaviour~=fnl-nxt-btn]').funnel_next();
+	
+	/*
+	window.addEventListener("popstate", function() {
+		alert( location.hash );
+	});
+	*/
+	
 });

@@ -2210,3 +2210,46 @@ img.aligncenter{
 	}
 	/* END OF LAST TAB */
 }
+
+.tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child{ border-color: #74b631; }
+
+.tabsProduct.flowProduct [data-behaviour~=akvo-tabs] li:last-child{ 
+	border-color: rgba(222, 137, 41, 0.8); 
+	
+	a{
+		color: rgba(222, 137, 41, 0.8);
+	}
+}
+
+.tabsProduct.lumenProduct input[type="submit"]{
+	background: #74b631;
+	padding: 0.5em 1em !important;
+	font-size: 1.5em !important;
+	font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	text-transform: initial;
+}
+
+.tabsProduct.lumenProduct #pricing_intro{
+	margin-top: 0em;
+}
+
+.tabsProduct.lumenProduct #field_6_8 label.gfield_label{
+	font-size: 14px;
+	font-weight: normal;
+}
+
+.tabsProduct.lumenProduct .testimonials p{
+max-width: 500px;
+}
+
+.tabsProduct.lumenProduct .testimonials.page-section img.aligncenter{
+	margin-bottom: 1em;
+}
+
+.tabsProduct.lumenProduct .gform_wrapper .gform_footer{
+	text-align: center;
+}
+
+.akvo-tabs .akvo-tab.active a[href], .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child.active a{
+	color: #fff;
+}

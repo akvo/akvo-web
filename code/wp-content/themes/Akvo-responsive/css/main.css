@@ -6026,6 +6026,40 @@ img.aligncenter {
   .tabsProduct.caddisflyProduct [data-behaviour~=akvo-tabs] li:last-child {
     border-color: #DE8929; }
 
+.tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child {
+  border-color: #74b631; }
+
+.tabsProduct.flowProduct [data-behaviour~=akvo-tabs] li:last-child {
+  border-color: rgba(222, 137, 41, 0.8); }
+  .tabsProduct.flowProduct [data-behaviour~=akvo-tabs] li:last-child a {
+    color: rgba(222, 137, 41, 0.8); }
+
+.tabsProduct.lumenProduct input[type="submit"] {
+  background: #74b631;
+  padding: 0.5em 1em !important;
+  font-size: 1.5em !important;
+  font-family: "Questrial", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: initial; }
+
+.tabsProduct.lumenProduct #pricing_intro {
+  margin-top: 0em; }
+
+.tabsProduct.lumenProduct #field_6_8 label.gfield_label {
+  font-size: 14px;
+  font-weight: normal; }
+
+.tabsProduct.lumenProduct .testimonials p {
+  max-width: 500px; }
+
+.tabsProduct.lumenProduct .testimonials.page-section img.aligncenter {
+  margin-bottom: 1em; }
+
+.tabsProduct.lumenProduct .gform_wrapper .gform_footer {
+  text-align: center; }
+
+.akvo-tabs .akvo-tab.active a[href], .tabsProduct.lumenProduct [data-behaviour~=akvo-tabs] li:last-child.active a {
+  color: #fff; }
+
 /*----------------------------------------------------------------------
                                 Footer
 -----------------------------------------------------------------------*/
@@ -6523,56 +6557,101 @@ a.helpIcon:hover {
   .media-and-press .twoColumns .col-logo {
     width: 49% !important; } }
 
+/* GRAVITY FORM */
+.gform_wrapper li.gsection.form-title {
+  margin-top: 1.5em;
+  margin-bottom: 0em; }
+
+.gform_wrapper li.gsection.form-title h2 {
+  font-size: 2em; }
+
+.gform_wrapper ul li.gfield.form-checkbox {
+  margin-top: 0; }
+
+body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
+  margin-top: 0; }
+
+.gform_wrapper li.gfield.field_description_below + li.gsection.form-title {
+  margin-top: 2.5em !important; }
+
 /* NEW BLACK TEMPLATE */
 .fullBlack {
+  /* BIG PARAGRAPH */
+  /* BIG PARAGRAPH */
+  /* WRAPPER */
+  /* WRAPPER */
+  /* SMALL PARAGRAPH */
+  /* SMALL PARAGRAPH */
+  /* INTRODUCTION SECTION ON THE HOMEPAGE */
+  /* NEXT SECTION ICON */
+  /* NEXT SECTION ICON */
+  /* SITEORIGIN WIDGET TITLE */
+  /* SITEORIGIN WIDGET TITLE */
+  /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
+  /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
+  /* SEARCH FIELD */
+  /* SEARCH FIELD */
+  /* NAVIGATION STYLES */
+  /* NAVIGATION STYLES */
+  /* FOR HOMEPAGE AND REGIONAL PAGE INTRO SECTIONS */
+  /* FOR HOMEPAGE AND REGIONAL PAGE INTRO SECTIONS */
   /* LIST OF HUBS */
   /* LANGUGAE TOGGLE */
+  /* WRAPPING THE TEXT IN A FIXED CONTAINER - WORKS FOR TINYMCE EDITOR & AKVO-COVER */
+  /* TINYMCE WIDGET */
+  /* AKVO COVER WIDGET */
   /* HOMEPAGE */
   /* FUNNEL */
   /* FUNNEL */
   /* MICROSTORY */ }
-  .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+  .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
     font-size: 4em; }
     @media (max-width: 2000px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3.5em; } }
     @media (max-width: 1900px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3.25em; } }
     @media (max-width: 1700px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 3em; } }
     @media (max-width: 1600px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.75em; } }
     @media (max-width: 1500px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.50em; } }
     @media (max-width: 768px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 2.20em; } }
     @media (max-width: 500px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 1.8em;
         line-height: 1.2em; } }
     @media (max-width: 430px) {
-      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1, .fullBlack .micro-story h3 {
+      .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
         font-size: 1.6em; } }
   .fullBlack #assessFunel .funelContainer, .fullBlack #assessFunel .funelContainer .funnelContent {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto; }
-  .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+  .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
     font-size: 1.5em; }
     @media (max-width: 1500px) {
-      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.3em;
         line-height: 1.3em; } }
     @media (max-width: 768px) {
-      .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .siteorigin-widget-tinymce p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
+      .fullBlack .siteorigin-widget-tinymce p, .fullBlack #assessFunel .funelContainer ul li a.bouton, .fullBlack #assessFunel .funelContainer#assess01 .funnelContent, .fullBlack .hubPage .hubMarketing p, .fullBlack .hubPage .hubAdress .map-addr p, .fullBlack .micro-story .testimonial-widget .testimonial-title {
         font-size: 1.2em; } }
   .fullBlack .homePage .topMsg .hubIntro, .fullBlack .homePage #intro {
-    /*FadeIn Animation*/ }
+    /* OUTLINE BUTTON */
+    /* OUTLINE BUTTON */
+    /* ANIMATION */
+    /* ANIMATION */
+    /*FadeIn Animation*/
+    /* PARAGRAPH */
+    /* PARAGRAPH */ }
     .fullBlack .homePage .topMsg .hubIntro .btnOutline, .fullBlack .homePage #intro .btnOutline {
       border: 1px solid white;
       color: white;
@@ -6670,38 +6749,44 @@ a.helpIcon:hover {
     opacity: 0; }
   100% {
     opacity: 0; } }
-    .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
-      display: inline;
-      text-indent: 15px; }
-      @media (max-width: 768px) {
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
-          display: block;
-          text-indent: 0;
-          position: relative;
-          width: 100%;
-          min-height: 60px;
-          overflow: hidden; } }
-      @media (max-width: 500px) {
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
-          min-height: 120px; } }
-      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
-        color: #69c3ee;
-        animation: fadeEffect 9s linear infinite 0s;
-        opacity: 0;
+    .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p {
+      /* SPAN ELEMENTS THAT ARE ANIMATED */
+      	/* Remove this animation - not needed
+      
+      	&:nth-of-type(2) {
+      		color: #69c3ee;
+      		animation: bounceInRight 1s;
+      		animation-fill-mode: forwards;
+      	}
+      	/* SPAN ELEMENTS THAT ARE ANIMATED */ }
+      .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
         display: inline;
-        position: absolute;
-        white-space: nowrap; }
+        text-indent: 15px; }
+        @media (max-width: 768px) {
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
+            display: block;
+            text-indent: 0;
+            position: relative;
+            width: 100%;
+            min-height: 60px;
+            overflow: hidden; } }
         @media (max-width: 500px) {
-          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
-            white-space: normal; } }
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(2) {
-          animation-delay: 3s; }
-        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(3) {
-          animation-delay: 6s; }
-    .fullBlack .homePage .topMsg .hubIntro p:nth-of-type(2), .fullBlack .homePage #intro p:nth-of-type(2) {
-      color: #69c3ee;
-      animation: bounceInRight 1s;
-      animation-fill-mode: forwards; }
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn, .fullBlack .homePage #intro p:first-of-type .fadeIn {
+            min-height: 120px; } }
+        .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
+          color: #69c3ee;
+          animation: fadeEffect 9s linear infinite 0s;
+          opacity: 0;
+          display: inline;
+          position: absolute;
+          white-space: nowrap; }
+          @media (max-width: 500px) {
+            .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span, .fullBlack .homePage #intro p:first-of-type .fadeIn span {
+              white-space: normal; } }
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(2), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(2) {
+            animation-delay: 3s; }
+          .fullBlack .homePage .topMsg .hubIntro p:first-of-type .fadeIn span:nth-child(3), .fullBlack .homePage #intro p:first-of-type .fadeIn span:nth-child(3) {
+            animation-delay: 6s; }
   .fullBlack .nxtSection {
     display: block;
     width: 50px;
@@ -6711,19 +6796,60 @@ a.helpIcon:hover {
     position: absolute;
     bottom: 25px;
     left: calc(50% - 25px);
-    z-index: 99999; }
+    z-index: 99999;
+    /* BLUE ICON */
+    /* BLUE ICON */ }
     .fullBlack .nxtSection.blueFill {
       background: url("../images/arrowDownBlue.png") no-repeat center center;
       background-size: contain; }
+  .fullBlack h3 {
+    color: inherit;
+    margin-top: 0;
+    margin-bottom: 0;
+    font-weight: bold; }
+  .fullBlack .widget-title {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 0;
+    box-sizing: border-box; }
+    @media (max-width: 768px) {
+      .fullBlack .widget-title {
+        padding: 15px;
+        padding-bottom: 0; } }
+  .fullBlack .so-widget-next-anchor-widget {
+    position: relative; }
+  .fullBlack .so-widget-next-anchor-widget .next-anchor-widget {
+    text-align: center;
+    position: absolute;
+    box-sizing: border-box;
+    width: 100%;
+    bottom: 25px;
+    z-index: 2; }
   .fullBlack input[type="search"] {
     right: 10px;
-    background: rgba(255, 255, 255, 0.2);
+    background-color: transparent;
+    background-image: url("../images/search-icon-white.png");
+    width: 15px;
+    height: 15px;
+    padding: 5px;
     border: none;
-    color: white; }
-  .fullBlack input[type="search"]::placeholder {
-    color: #ccc;
-    opacity: 1;
-    /* Firefox */ }
+    color: white;
+    background-position: center;
+    box-shadow: none;
+    cursor: pointer;
+    /* ON CLICK OR WHEN FOCUSSED */
+    /* FOR SMALL SCREEN SIZES */ }
+    .fullBlack input[type="search"]:focus {
+      background-color: rgba(255, 255, 255, 0.4);
+      background-image: none;
+      padding: 5px 10px; }
+    @media only screen and (max-width: 768px) {
+      .fullBlack input[type="search"] {
+        right: 0;
+        /* ON CLICK OR WHEN FOCUSSED */ }
+        .fullBlack input[type="search"]:focus {
+          padding: 10px; } }
   .fullBlack header#top {
     transition: all 0.2s ease-in;
     z-index: 199999; }
@@ -6876,12 +7002,34 @@ a.helpIcon:hover {
   .fullBlack .wrapper {
     padding-left: 20px;
     padding-right: 20px; }
+  .fullBlack .siteorigin-widget-tinymce, .fullBlack .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 30px;
+    width: 100%;
+    box-sizing: border-box;
+    /* LESS PADDING FOR SMALL SCREEN SIZES */ }
+    @media (max-width: 768px) {
+      .fullBlack .siteorigin-widget-tinymce, .fullBlack .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
+        padding: 15px; } }
+  .fullBlack .so-widget-akvo-cover img {
+    width: 100%; }
+  .fullBlack .so-widget-akvo-cover .cover-overlay {
+    padding: 0;
+    /* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */ }
+    @media (max-width: 768px) {
+      .fullBlack .so-widget-akvo-cover .cover-overlay {
+        position: relative; } }
   @media (max-width: 768px) {
-    .fullBlack #content {
-      padding: 0;
-      width: 100%; }
-    .fullBlack h1 {
-      font-size: 2.2em; } }
+    .fullBlack {
+      /* FOR FULL WIDTH AND NO PADDING */
+      /* DECREASE THE FONT SIZE FOR HEADER 1 */ }
+      .fullBlack #content {
+        padding: 0;
+        width: 100%; }
+      .fullBlack h1 {
+        font-size: 2.2em; } }
   @media (min-width: 769px) {
     .fullBlack {
       /* LIST OF HUBS */
@@ -6902,7 +7050,9 @@ a.helpIcon:hover {
       background: #2c2a74 url("../images/Transparent_black_large.png") repeat; }
     .fullBlack .homePage #intro {
       position: relative;
-      height: 100vh; }
+      height: 100vh;
+      /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
+      /* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */ }
       .fullBlack .homePage #intro .siteorigin-widget-tinymce {
         position: absolute;
         width: 90%;
@@ -6914,6 +7064,11 @@ a.helpIcon:hover {
           font-family: helvetica;
           font-weight: bold;
           color: white; }
+      .fullBlack .homePage #intro .so-widget-next-anchor-widget {
+        position: absolute;
+        width: 100%;
+        bottom: 0;
+        box-sizing: border-box; }
     .fullBlack .homePage .vidBlock {
       position: relative;
       width: 100%;
@@ -6956,6 +7111,7 @@ a.helpIcon:hover {
           background-image: none !important; } }
     .fullBlack #assessFunel .funelContainer {
       text-align: center;
+      padding-bottom: 20px;
       /* FIRST INTRO SLIDE */
       /* FIRST INTRO SLIDE */
       /* FIRST FUNNEL FORM */
@@ -6987,15 +7143,18 @@ a.helpIcon:hover {
       .fullBlack #assessFunel .funelContainer .inlined * {
         display: inline; }
       .fullBlack #assessFunel .funelContainer .infoHover {
+        cursor: pointer;
+        color: #3792b3;
         margin-bottom: 40px;
         width: 100%;
         padding: 15px; }
         .fullBlack #assessFunel .funelContainer .infoHover + .moreInfo {
           opacity: 0;
           transition: opacity 0.2s ease-in; }
-        .fullBlack #assessFunel .funelContainer .infoHover:hover {
-          margin-bottom: 40px; }
-          .fullBlack #assessFunel .funelContainer .infoHover:hover + .moreInfo {
+        .fullBlack #assessFunel .funelContainer .infoHover:hover, .fullBlack #assessFunel .funelContainer .infoHover:focus {
+          margin-bottom: 40px;
+          color: #de8929; }
+          .fullBlack #assessFunel .funelContainer .infoHover:hover + .moreInfo, .fullBlack #assessFunel .funelContainer .infoHover:focus + .moreInfo {
             opacity: 1; }
       .fullBlack #assessFunel .funelContainer .moreInfo {
         text-align: center;
@@ -7019,20 +7178,24 @@ a.helpIcon:hover {
             border-radius: 5px;
             background: transparent;
             display: inline-block;
+            /*
             font-size: 2.5em;
-            border-width: 3px; }
+            line-height: 1em;
+            */
+            border-width: 3px;
+            width: 200px;
+            /*
+            @media( max-width: 768px ){ font-size: 2.0em; }
+            @media( max-width: 500px ){ font-size: 1.7em; }
+            */ }
             .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
               border: 1px solid #2c2a74;
               color: #2c2a74; }
-            @media (max-width: 768px) {
-              .fullBlack #assessFunel .funelContainer ul li a.bouton {
-                font-size: 2.0em; } }
-            @media (max-width: 500px) {
-              .fullBlack #assessFunel .funelContainer ul li a.bouton {
-                font-size: 1.7em; } }
             .fullBlack #assessFunel .funelContainer ul li a.bouton:hover {
               background: #ffd200;
               border-width: 3px; }
+        .fullBlack #assessFunel .funelContainer ul.inlined li a.bouton {
+          width: auto; }
       .fullBlack #assessFunel .funelContainer#assess01 .funnelContent {
         max-width: none; }
       .fullBlack #assessFunel .funelContainer#assess01 .funnelStart {
@@ -7259,30 +7422,19 @@ a.helpIcon:hover {
     height: 100%;
     top: 0;
     left: 0; }
+  .fullBlack .hubPage .hubContact label.gfield_label, .fullBlack .hubPage .gform_wrapper ul.gfield_checkbox li label, .fullBlack .hubPage .gform_wrapper ul.gfield_radio li label {
+    display: inline-block !important; }
+  .fullBlack .hubPage .hubFeature figure p {
+    box-sizing: border-box; }
+  .fullBlack .hubPage .map-addr h4 {
+    margin: 0; }
   .fullBlack .micro-story {
-    /* AKVO COVER WIDGET */
     /* LANGUAGE TOGGLE */
     /* IFRAME ROW */
     /* TESTIMONIAL WIDGET */
     /* END OF TESTIMONIAL WIDGET */ }
-    .fullBlack .micro-story .siteorigin-widget-tinymce, .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
-      max-width: 1000px;
-      margin-left: auto;
-      margin-right: auto;
-      padding: 30px;
-      width: 100%;
-      box-sizing: border-box; }
-      @media (max-width: 768px) {
-        .fullBlack .micro-story .siteorigin-widget-tinymce, .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay .cover-overlay-text {
-          padding: 15px; } }
-    .fullBlack .micro-story .so-widget-akvo-cover .cover-overlay {
-      padding: 0; }
     .fullBlack .micro-story .lang-list a[href].active, .fullBlack .micro-story .lang-list a[href]:hover {
       background: rgba(0, 0, 0, 0.2); }
-    .fullBlack .micro-story h3 {
-      color: inherit;
-      margin: 0;
-      font-weight: bold; }
     .fullBlack .micro-story .iframe-row {
       position: relative;
       /* CAPTION IN THE IFRAME */ }
@@ -7336,5 +7488,10 @@ a.helpIcon:hover {
           height: 150px; }
         .fullBlack .micro-story .testimonial-widget::before {
           top: 150px; } }
+
+#main.main-center-align {
+  float: none;
+  margin-left: auto;
+  margin-right: auto; }
 
 /*# sourceMappingURL=main.css.map */

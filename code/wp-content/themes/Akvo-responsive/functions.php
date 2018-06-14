@@ -8,39 +8,15 @@
 	$includes_path = get_template_directory() . '/inc/';
 	require_once($includes_path . 'acf-functions.php');
 	//require_once($includes_path . 'custom-post-types.php');  /* CASE STUDIES - THAT ARE NO LONGER USED */
+	require_once($includes_path . 'class-akvo.php');  
 	require_once($includes_path . 'class-akvo-post-type.php');  
 	require_once($includes_path . 'class-akvo-tabs.php');
 	require_once($includes_path . 'class-akvo-black-body.php');
 	require_once($includes_path . 'widgets.php');
+	
+	require_once($includes_path . 'shortcodes.php');
+	
 
-	
-	/* ENQUEUE STYLES AND SCRIPTS */
-	add_action('wp_enqueue_scripts', function(){
-		
-		wp_deregister_script('jquery');
-		wp_enqueue_script('jquery', get_template_directory_uri() . '/js/jquery.min.js', array(), null);
-		
-		wp_deregister_script('jquery-ui');
-		wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), null, true);
-		
-		wp_enqueue_script('akvo-common', get_template_directory_uri() . '/js/common-js.js', array('jquery'), null, true );
-		wp_enqueue_script('akvo-jquery', get_template_directory_uri() . '/js/akvo-jquery.js', array('jquery'), '1.0.2', true );
-		wp_enqueue_script('jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), null, true );
-		wp_enqueue_script('akvo-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true );
-		wp_enqueue_script('jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
-		wp_enqueue_script('akvo-tabs', get_template_directory_uri() . '/js/tabs.js', array('jquery-bxslider'), "1.0.0", true );
-		wp_enqueue_script('fontawesome', 'https://use.fontawesome.com/641b62259f.js', array('akvo-tabs'), null, true );	
-		
-		if ( is_singular() ) wp_enqueue_script('comment-reply');
-		
-		//enqueue style in the head section
-		wp_enqueue_style('akvo-style', get_template_directory_uri().'/css/main.css', false, '2.2.9' );
-		wp_enqueue_style('akvo-fonts', '//fonts.googleapis.com/css?family=Source+Code+Pro:400,900,700,600,300,200,500|Quando|Questrial|Inconsolata|Muli:400,300italic,400italic,300|Raleway:400,900,800,700,600,500,100,200,300|Lobster|Lobster+Two:400,400italic,700,700italic|Lato:400,100,300,700,900,100italic,300italic,400italic,900italic,700italic', false, null );
-		wp_enqueue_style('jquery-bxslider', get_template_directory_uri().'/css/jquery.bxslider.css', false, '1.0.0' );
-		
-		wp_deregister_script('wp-embed');
-	});
-	
 	
 	
 	function akvo_json($url){
@@ -218,11 +194,11 @@
 			//ADD PAGES NAME AS A BODY CLASS
 			$page = $wp_query->query_vars["pagename"] . ' Page';
 			
-			/* CHECK FOR NEW TEMPLATE */
-			if( is_akvo_full_black_body() ){
-				$page .= " fullBlack";
-			}
-			
+		}
+		
+		/* CHECK FOR NEW TEMPLATE */
+		if( is_akvo_full_black_body() ){
+			$page .= " fullBlack";
 		}
 		
 		if ($page) {
@@ -234,10 +210,7 @@
 		
 	}
 
-	//LIMITS NUMBER OF WORDS WHEN USING THE EXCERPT FUNCTION
-	add_filter( 'excerpt_length', function( $length ){
-		return 20;
-	}, 999 );
+	
 
 	
 	
@@ -271,8 +244,7 @@
 	
 	
 	
-	// REMOVE THE ADMIN BAR FROM THE FRONT END
-	add_filter('show_admin_bar', '__return_false');
+	
 
 	// Events listing thumbnail to sidebar widget
 	add_action( 'tribe_events_list_widget_before_the_event_title', function(){
@@ -453,66 +425,10 @@
 	add_action( 'wp_ajax_akvo_latest_rsr', 'akvo_latest_rsr' );
 	add_action( 'wp_ajax_nopriv_akvo_latest_rsr', 'akvo_latest_rsr' );
 	
-	
-	
-	function akvo_post_type_list( $post_type, $tax, $tax_slug, $template = 'staff', $new = true ){
-		$args = array(
-			'post_type' => $post_type,
-			'showposts' => '100',
-			'tax_query' => array(
-        		array(
-					'taxonomy' => $tax,
-					'field' => 'slug', //can be set to ID
-					'terms' => $tax_slug //if field is ID you can reference by cat/term number
-        		)
-			)
-		);
-		_e('<ul class="staff floats-in">');
-		$the_query = new WP_Query( $args );
-		if( $the_query->have_posts() ):
-			while( $the_query->have_posts() ) : $the_query->the_post();
-				get_template_part('templates/'.$template);
-			endwhile;
-		endif;	
-		if($new){
-			get_template_part('templates/new_'.$template);	
-		}
-		_e('</ul>');
-		wp_reset_query();
-	}
-	
-	function akvo_staff_list($staff_type, $new_staff_flag = true){
-		akvo_post_type_list( 'new_staffs', 'new_staffs_team', $staff_type, 'staff', $new_staff_flag );
-	}
-	
-	function akvo_partner_list($partner_type){
-		akvo_post_type_list( 'new_partners', 'new_partners_category', $partner_type, 'partner', false);
-	}
-	function akvo_foundation_list( $partner_type ){
-		akvo_post_type_list( 'foundation_member', 'new_foundation_team', $partner_type, 'foundation', false);
-	}
-	
-	/* remove unnecessary code */
-	// Disable REST API link tag
-	remove_action('wp_head', 'rest_output_link_wp_head', 10);
-
-	// Disable oEmbed Discovery Links
-	remove_action('wp_head', 'wp_oembed_add_discovery_links', 10);
-
-	// Disable REST API link in HTTP headers
-	remove_action('template_redirect', 'rest_output_link_header', 11, 0);
-	
-	// Diable wp emoji
-	remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
-	remove_action( 'wp_print_styles', 'print_emoji_styles' );
-	
-	
 	add_shortcode('funnel', function( $atts ){
 		ob_start();
 		
 		$atts = shortcode_atts( array('id' => 0), $atts, 'funnel' );
-		
-		
 		
 		$query = new WP_Query( array(
 			'posts_per_page'	=> 1,
@@ -524,9 +440,7 @@
 			
 			while( $query->have_posts() ){
 				$query->the_post();
-				
 				include("inc/funnel.php");
-				
 			}
 			
 			wp_reset_postdata();
@@ -536,53 +450,67 @@
 		return ob_get_clean();
 	});
 	
-	function the_hubs_list(){
+	function the_hubs_list( $heading = "Looking for one of our other offices?" ){
+		
+		/* CHECK IF HEADLINE EXISTS IN POST META */
+		global $post;
+		$headline_text = get_post_meta( $post->ID, 'hubs_headline', true );
+		if( $headline_text && count( $headline_text ) ){
+			$heading = $headline_text;	
+		}
+		/* CHECK IF HEADLINE EXISTS IN POST META */
 		
 		$hubs = array(
 			array(
 				'class'		=> 'EU',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Europe.png',
 				'text'		=> 'Netherlands, Amsterdam',
-				'helloMsg'	=> 'Welkom'
+				'helloMsg'	=> 'Welkom',
+				'link'		=> 'https://akvo.org/europe/'
 			),
 			array(
 				'class'		=> 'WA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_WestAfrica.png',
 				'text'		=> 'Mali, Bamako',
-				'helloMsg'	=> 'Bienvenue'
+				'helloMsg'	=> 'Bienvenue',
+				'link'		=> 'https://akvo.org/west-africa/'
 			),
 			array(
 				'class'		=> 'EA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_EastAfrica.png',
 				'text'		=> 'Kenya, Nairobi',
-				'helloMsg'	=> 'Karibu'
+				'helloMsg'	=> 'Karibu',
+				'link'		=> 'https://akvo.org/east-africa/'
 			),
 			array(
 				'class'		=> 'SA',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SouthAsia.png',
 				'text'		=> 'India, Delhi',
-				'helloMsg'	=> 'Welcome'
+				'helloMsg'	=> 'Namaste',
+				'link'		=> 'https://akvo.org/south-asia/'
 			),
 			array(
 				'class'		=> 'IN',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_SEAsia_SEAP.png',
 				'text'		=> 'Indonesia, Bali',
-				'helloMsg'	=> 'Selamat datang'
+				'helloMsg'	=> 'Selamat datang',
+				'link'		=> 'https://akvo.org/south-east-asia-pacific/'
 			),
 			array(
 				'class'		=> 'US',
 				'bg_image'	=> get_bloginfo('template_url').'/images/location-hexagons_Americas.png',
 				'text'		=> 'USA, Washington',
-				'helloMsg'	=> 'Welcome'
+				'helloMsg'	=> 'Bienvenido',
+				'link'		=> 'https://akvo.org/americas/'
 			),
 		);
 		echo '<hr class="delicate">';
 		_e('<section class="allHubBlock floats-in"><div class="wrapper">');
-		_e("<h1>Looking for one of our other offices?</h1>");
+		_e("<h1>".$heading."</h1>");
 		_e('<ul class="list-scroll">');
 		foreach( $hubs as $hub ){
 			_e('<li class="'.$hub['class'].'">');
-			_e('<a href="#" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
+			_e('<a href="'.$hub['link'].'" style="background-image:url(\''.$hub['bg_image'].'\');">'.$hub['text'].'</a>');
 			_e('<div class="helloMsg"><h2>'.$hub['helloMsg'].'</h2></div>');
 			_e('</li>');
 		}
@@ -590,9 +518,5 @@
 		_e('</div></section>');
 	}
 	
-	function akvo_slug_show_all_parents( $args ) {
-		$args['post_status'] = array( 'publish', 'pending', 'draft', 'private' );
-		return $args;
-	}
-	add_filter( 'page_attributes_dropdown_pages_args', 'akvo_slug_show_all_parents' );
-	add_filter( 'quick_edit_dropdown_pages_args', 'akvo_slug_show_all_parents' );
+	
+	

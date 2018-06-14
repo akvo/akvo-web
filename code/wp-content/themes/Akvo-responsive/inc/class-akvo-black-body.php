@@ -3,7 +3,7 @@
 	class akvoBlackBody{
 		
 		function get_templates(){
-			return array('regionalPage.php', 'homepage-2018.php', 'homepage-2019.php', 'microStoryPage.php');
+			return array('regionalPage.php', 'homepage-2018.php', 'homepage-2019.php', 'fullBlackLayout.php', 'microStoryPage.php');
 		}
 		
 		function funnel_section(){
@@ -11,6 +11,15 @@
 		}
 		
 		function projects( $el ){
+		
+			/* PROJECTS TITLE */
+			$projects_title = get_field( $el.'_title' );
+			
+			if( $projects_title ){
+				_e('<div class="projects-title-wrapper">'.$projects_title.'</div>');
+			}
+			/* END OF PROJECTS TITLE */
+		
 			if( have_rows( $el ) ){
 				_e('<ul class="list-inline text-center">');
 			
@@ -62,7 +71,7 @@
 			while(have_rows('contacts')){ 
 				the_row();
 				_e('<div class="'.$col_class.' col-contact"><div class="contact">');
-				_e('<div class="map-icon"><a href="'.get_sub_field( $el.'_link' ).'"></a></div>');
+				_e('<div class="map-icon"><a target="_blank" href="'.get_sub_field( $el.'_link' ).'"></a></div>');
 				_e('<div class="map-addr">'.get_sub_field( $el.'_address' ).'</div>');
 				_e('<div style="clear:both"></div>');
 				_e('</div></div>');

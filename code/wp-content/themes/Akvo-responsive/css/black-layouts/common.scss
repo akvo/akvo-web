@@ -1,3 +1,4 @@
+/* BIG PARAGRAPH */
 %paragraph{
 	font-size: 4em;
 	@media (max-width: 2000px) { font-size: 3.5em; }
@@ -9,20 +10,28 @@
 	@media (max-width: 500px) { font-size: 1.8em; line-height: 1.2em; }
 	@media (max-width: 430px) { font-size: 1.6em; }
 }
+/* BIG PARAGRAPH */
+
+/* WRAPPER */
 %wrapper{
 	max-width: 900px;
 	margin-left: auto;
 	margin-right: auto;
 }
-	
+/* WRAPPER */
+
+/* SMALL PARAGRAPH */
 %smallParagraph{
 	font-size: 1.5em;
 	@media (max-width: 1500px) { font-size: 1.3em; line-height: 1.3em; }
 	@media( max-width: 768px ){ font-size: 1.2em;}
 }
-	
+/* SMALL PARAGRAPH */
+
+/* INTRODUCTION SECTION ON THE HOMEPAGE */
 %homeIntro {
-				
+	
+	/* OUTLINE BUTTON */	
 	.btnOutline {
 		@include btnOutline(white, #69c3ee);
 		display: table;
@@ -30,6 +39,9 @@
 		font-size: 0.7em;
 		padding: 0 25px;
 	}
+	/* OUTLINE BUTTON */	
+	
+	/* ANIMATION */
 	@keyframes showup {
 		0% { opacity: 0;}
 		20% { opacity: 1;}
@@ -57,6 +69,8 @@
 		90% { transform: translate3d(5px, 0, 0); }
 		to { transform: none;}
 	}
+	/* ANIMATION */
+	
 	.bounceInLeft { animation-name: bounceInLeft;}
 	@keyframes bounceInRight {
 		from, 60%, 75%, 90%, to {animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);}
@@ -78,8 +92,12 @@
 		80% { opacity: 0; }
 		100% { opacity: 0; }
 	}
+	
+	/* PARAGRAPH */
 	p {
 		@extend %paragraph;
+		
+		/* SPAN ELEMENTS THAT ARE ANIMATED */
 		&:first-of-type {
 			.fadeIn {
 				display: inline;
@@ -107,13 +125,19 @@
 				}
 			}
 		}
+		/* Remove this animation - not needed
+	
 		&:nth-of-type(2) {
 			color: #69c3ee;
 			animation: bounceInRight 1s;
 			animation-fill-mode: forwards;
 		}
+		/* SPAN ELEMENTS THAT ARE ANIMATED */
 	}
+	/* PARAGRAPH */
 }
+
+/* NEXT SECTION ICON */
 .nxtSection {
 	display: block;
 	width: 50px;
@@ -124,21 +148,88 @@
 	bottom: 25px;
 	left: calc(50% - 25px);
 	z-index: 99999;
+	
+	/* BLUE ICON */
 	&.blueFill {
 		background: url("../images/arrowDownBlue.png") no-repeat center center;
 		background-size: contain;
 	}
+	/* BLUE ICON */
 }
-input[type="search"] {
+/* NEXT SECTION ICON */
+
+h3{
+	color			: inherit;
+	margin-top		: 0;
+	margin-bottom	: 0;
+	font-weight		: bold;
+	@extend %paragraph;
+}
+
+/* SITEORIGIN WIDGET TITLE */
+.widget-title{
+	max-width		: 1000px;
+	margin			: 0 auto;
+	padding			: 30px;
+	padding-bottom	: 0;
+	box-sizing		: border-box;
+	
+	@media( max-width: 768px ){
+		padding: 15px;
+		padding-bottom: 0;
+	}
+}
+/* SITEORIGIN WIDGET TITLE */
+
+	
+
+/* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
+.so-widget-next-anchor-widget{ position: relative;}
+.so-widget-next-anchor-widget .next-anchor-widget{
+	text-align: center;
+	position: absolute;
+	box-sizing: border-box;
+	width: 100%;
+	bottom: 25px;
+	z-index:2;
+}
+/* EXTENDING STYLES FOR SITEORIGIN WIDGET - NEXT SECTION ICON */
+
+
+
+/* SEARCH FIELD */
+input[type="search"]{
 	right: 10px;
-	background: rgba(white, 0.2);
+	background-color: transparent;
+	background-image: url('../images/search-icon-white.png');
+	width: 15px;
+	height: 15px;
+	padding: 5px;
 	border: none;
 	color: white;
+	background-position: center;
+	box-shadow: none;
+	cursor:pointer;
+	
+	/* ON CLICK OR WHEN FOCUSSED */
+	&:focus{
+		background-color: rgba(white, 0.4);
+		background-image: none;
+		padding: 5px 10px;
+	}
+	
+	/* FOR SMALL SCREEN SIZES */
+	@media only screen and (max-width: 768px){
+		right: 0;
+		
+		/* ON CLICK OR WHEN FOCUSSED */
+		&:focus{ padding: 10px; }
+		
+	}
 }
-input[type="search"]::placeholder{
-	color: #ccc;
-	opacity: 1; /* Firefox */
-}
+/* SEARCH FIELD */
+
+/* NAVIGATION STYLES */
 header#top {
 		
 	transition: all 0.2s ease-in;
@@ -188,7 +279,9 @@ header#top {
 	max-width: 100%;
 	position: relative;
 }
+/* NAVIGATION STYLES */
 
+/* FOR HOMEPAGE AND REGIONAL PAGE INTRO SECTIONS */
 .topMsg{
 	position: relative;
 	width: 100%;
@@ -213,6 +306,7 @@ header#top {
 			
 	}
 }
+/* FOR HOMEPAGE AND REGIONAL PAGE INTRO SECTIONS */
 
 /* LIST OF HUBS */
 .allHubBlock {
@@ -352,11 +446,53 @@ header#top {
 	padding-right: 20px;
 }
 
+/* WRAPPING THE TEXT IN A FIXED CONTAINER - WORKS FOR TINYMCE EDITOR & AKVO-COVER */
+%textWrapper{
+	max-width: 1000px;
+	margin-left: auto;	
+	margin-right: auto;
+	padding: 30px;
+	width: 100%;
+	box-sizing: border-box;
+	
+	/* LESS PADDING FOR SMALL SCREEN SIZES */
+	@media( max-width: 768px ){
+		padding: 15px;
+	}
+}
+
+/* TINYMCE WIDGET */
+.siteorigin-widget-tinymce{ 
+	@extend %textWrapper; 
+		
+	p{ @extend %smallParagraph;}
+}
+
+/* AKVO COVER WIDGET */
+.so-widget-akvo-cover{
+	
+	img{ width: 100%; }
+	
+	.cover-overlay{
+		padding: 0;
+		
+		.cover-overlay-text{ @extend %textWrapper; }
+		
+		/* FOR SMALL SCREEN SIZE - STACK CHILD ELEMENTS */
+		@media( max-width: 768px ){
+			position: relative;
+		}
+		
+	}
+}
 
 
 @media (max-width: 768px) {
-		
+	
+	/* FOR FULL WIDTH AND NO PADDING */
 	#content{ padding: 0; width: 100%; }
+	
+	/* DECREASE THE FONT SIZE FOR HEADER 1 */
 	h1 { font-size: 2.2em; }
 		
 }

@@ -201,4 +201,15 @@
 		top: 0;
 		left:0;
 	}
+	
+	
+	.hubContact label.gfield_label, .gform_wrapper ul.gfield_checkbox li label, .gform_wrapper ul.gfield_radio li label{
+		display: inline-block !important;
+	}
+	.hubFeature figure p{
+		box-sizing: border-box;
+	}
+
+	.map-addr h4{ margin: 0; }
+	
 }
