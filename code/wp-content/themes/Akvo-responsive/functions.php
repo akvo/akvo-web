@@ -16,7 +16,10 @@
 	
 	require_once($includes_path . 'shortcodes.php');
 	
-
+	add_action('siteorigin_widgets_widget_folders', function( $folders ){
+		$folders[] = get_template_directory() . '/so-widgets/';
+		return $folders;
+	});
 	
 	
 	function akvo_json($url){
