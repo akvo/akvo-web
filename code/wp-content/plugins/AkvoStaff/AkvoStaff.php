@@ -9,6 +9,9 @@ Author URI: http://akvo.org/
 */
 
 
+
+
+/*
 add_action( 'init', 'create_new_staff' );
 
 function create_new_staff() {
@@ -32,7 +35,7 @@ function create_new_staff() {
  
             'public' => true,
             'menu_position' => 15,
-            'supports' => array( 'title', 'editor', 'author','thumbnail', 'revisions'),
+            'supports' => array( 'title', 'thumbnail', 'revisions'),
             'taxonomies' => array( '' ),
             'menu_icon' => plugins_url( 'images/akvoStaff_icn.png', __FILE__ ),
             'has_archive' => true
@@ -41,36 +44,33 @@ function create_new_staff() {
 }
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 240, 135, true );
-add_action( 'admin_init', 'my_admin' );
+add_action( 'admin_init', function(){
+	add_meta_box( 'new_staff_meta_box', 'New Staff Details', 'display_new_staff_meta_box', 'new_staffs', 'normal', 'high');
+} );
 
-function my_admin() {
-    add_meta_box( 'new_staff_meta_box',
-        'New Staff Details',
-        'display_new_staff_meta_box',
-        'new_staffs', 'normal', 'high'
-    );
-}
+
 
 function display_new_staff_meta_box( $new_staff ) {
+	
+	$fields = array(
+		'staff_name' 		=> 'Full Name', 
+		'staff_title'		=> 'Job Title', 
+		'staff_twitter'		=> 'Twitter Link',
+		'staff_linkedin'	=> 'LinkedIn Link'
+	);
+	
     // Retrieve current name of the staff and title based on staff ID
-    $staff_name = esc_html( get_post_meta( $new_staff->ID, 'staff_name', true ) );
     $staff_title = esc_html( get_post_meta( $new_staff->ID, 'staff_title', true ) );
     $staff_descr = esc_html( get_post_meta( $new_staff->ID, 'staff_descr', true ) );
     ?>
     <table>
-        <tr>
-            <td style="width: 100%">Full Name</td>
-            <td><input type="text" size="80" name="new_staff_name" value="<?php echo $staff_name; ?>" /></td>
+		<?php foreach( $fields as $slug => $field ): $value = esc_html( get_post_meta( $new_staff->ID, $slug, true ) );?>
+		<tr>
+            <td style="width: 100%"><?php _e( $field );?></td>
+            <td><input type="text" size="80" name="<?php _e( $slug );?>" value="<?php _e( $value ); ?>" /></td>
         </tr>
-        <tr>
-            <td style="width: 100%">Job title</td>
-            <td><input type="text" size="80" name="new_staff_title" value="<?php echo $staff_title; ?>" /></td>
-        </tr>
-        <tr>
-            <td style="width: 100%">Biography</td>
-            <td><textarea type="text" size="80" name="new_staff_descr" value="<?php echo $staff_descr; ?>"></textarea></td>
-        </tr>
-    </table>
+		<?php endforeach;?>
+	</table>
     <?php
 }
 
@@ -158,4 +158,5 @@ function create_my_taxonomies() {
         )
     );
 }
+*/
 ?>

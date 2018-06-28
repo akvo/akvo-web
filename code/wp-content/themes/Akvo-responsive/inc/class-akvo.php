@@ -41,7 +41,7 @@
 			wp_enqueue_script('jquery-ui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), null, true);
 			
 			wp_enqueue_script('akvo-common', get_template_directory_uri() . '/js/common-js.js', array('jquery'), null, true );
-			wp_enqueue_script('akvo-jquery', get_template_directory_uri() . '/js/akvo-jquery.js', array('jquery'), '1.0.3', true );
+			wp_enqueue_script('akvo-jquery', get_template_directory_uri() . '/js/akvo-jquery.js', array('jquery'), '1.0.4', true );
 			wp_enqueue_script('jquery-fitvids', get_template_directory_uri() . '/js/jquery.fitvids.js', array('jquery'), null, true );
 			wp_enqueue_script('akvo-script', get_template_directory_uri() . '/js/script.js', array('jquery'), null, true );
 			wp_enqueue_script('jquery-bxslider', get_template_directory_uri() . '/js/jquery.bxslider.min.js', array('jquery'), null, true );
@@ -57,6 +57,8 @@
 			
 			wp_deregister_script('wp-embed');
 		}
+		
+		
 		
 		function custom_post_type_list( $post_type, $tax, $tax_slug, $template = 'staff', $new = true ){
 			$args = array(
