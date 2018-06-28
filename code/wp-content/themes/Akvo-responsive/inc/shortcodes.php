@@ -1,5 +1,26 @@
 <?php
 	
+	add_shortcode( 'akvo_new_staff', function( $atts ){
+		
+		/* CREATE ATTS ARRAY FROM DEFAULT AND USER PARAMETERS IN THE SHORTCODE */
+		$atts = shortcode_atts( array( 
+				'title' 			=> '', 
+				'post_type'			=> '', 
+				'primary_filter' 	=> '', 
+				'secondary_filter'	=> '',
+				'showposts'			=> 100	
+			), 
+			$atts, 
+			'akvo_new_staff' 
+		);
+		
+		ob_start();
+		
+		include('templates/new_staff_list.php');
+		
+		return ob_get_clean();
+		
+	} );
 	
 	add_shortcode( 'akvo_staff', function( $atts ){
 		

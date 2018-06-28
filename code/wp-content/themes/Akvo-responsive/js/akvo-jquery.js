@@ -50,10 +50,20 @@ $("document").ready(function() {
 
         $(".anchorNav li a").click(function(event) {
             event.preventDefault();
-            $('html,body').animate({
-                scrollTop: $(this.hash).offset().top
-            }, 500);
-        });
+			
+			var offset = $( this.hash ).offset();
+			
+			if( offset === undefined ){
+				
+			}
+			else{
+				$('html,body').animate({
+					scrollTop: offset.top
+				}, 500);
+				
+			}
+			
+		});
     });
 
     //  Team Page click effects NEW VERSION
@@ -244,14 +254,6 @@ $.fn.funnel_next = function(){
 			
 			var next_section = $(btn.attr('href'));
 			
-			/*
-			if(history.pushState) {
-		 		history.pushState(null, null, '#' + next_section.attr('id'));
-			}
-			*/
-			
-			
-			
 			// HIDE ALL FUNNEL SECTIONS
 			$('section.funelContainer').addClass('hidden');
 			
@@ -276,6 +278,80 @@ $.fn.funnel_next = function(){
 	});
 }
 
+$.fn.double_filters = function(){
+	return this.each(function(){
+		
+		var $el 		= $( this ),
+			$target 	= $( $el.data('target') );
+		
+		/* ACTIVE MENU ITEM */
+		$el.active_menu_item = function( ev ){
+			ev.preventDefault();																			/* PREVENT DEFAULT EVENT */
+			var $menu_target = $( ev.target );																/* GET MENU ITEM */
+			$el.find('[data-filter~=' + $menu_target.data('filter') + '].active').removeClass('active');	/* REMOVE PREVIOUS ACTIVE MENU ITEMS */
+			$menu_target.addClass('active');																/* ACTIVATE MENU ITEM */			
+			$el.filter_items();																				/* FILTER ITEMS */
+			
+		};
+		/* ACTIVE MENU ITEM */
+		
+		/* FILTER SELECTOR TEXT */
+		$el.filter_selector = function( filter_type ){
+			$active_filter = $el.find('[data-filter~=' + filter_type + '].active');
+			
+			var tax 		= $active_filter.data('tax'),
+				id 			= $active_filter.data('id'),
+				selector 	= '';
+			
+			
+			if( tax != undefined && id != undefined ){
+				selector = "[data-" + tax + "~=" + id + "]";
+			}
+			
+			return selector;
+		}
+		/* FILTER SELECTOR TEXT */
+		
+		/* FILTER ITEMS */
+		$el.filter_items = function(){
+			
+			var $primary_filter 	= '',
+				$secondary_filter 	= '';
+			
+			/* BUILD PRIMARY FILTER */
+			if( $el.find('[data-filter~=primary].active').length ){ $primary_filter = $el.filter_selector('primary'); }
+			
+			/* BUILD SECONDARY FILTER */
+			if( $el.find('[data-filter~=secondary].active').length ){ $secondary_filter = $el.filter_selector('secondary'); }
+			
+			$target.find('[data-item]').hide();											/* HIDE ALL ELEMENTS */
+			
+			/*
+			console.log( $primary_filter );
+			console.log( $secondary_filter );
+			*/
+			
+			$target.find('[data-item]' + $primary_filter + $secondary_filter ).show();	/* SHOW ONLY FILTERED ITEMS */
+			
+		};
+		/* FILTER ITEMS */
+		
+		/* HANDLE CLICK EVENTS */
+		$el.find('[data-filter~=primary]').click( function( ev ){
+			$el.find('[data-filter~=secondary].active').removeClass('active');	/* RESET SECONDARY FILTER */
+			$el.active_menu_item( ev );											/* ACTIVE MENU ITEM - PRIMARY */
+		});
+		$el.find('[data-filter~=secondary]').click( function( ev ){
+			$el.active_menu_item( ev );											/* ACTIVE MENU ITEM - SECONDARY */
+		});
+		/* HANDLE CLICK EVENTS */
+		
+		
+		
+	});
+}
+
+
 $("document").ready(function() {
 	
 	/* NEW TRANSPARENT MENU */
@@ -287,10 +363,8 @@ $("document").ready(function() {
         
 	$('[data-behaviour~=fnl-nxt-btn]').funnel_next();
 	
-	/*
-	window.addEventListener("popstate", function() {
-		alert( location.hash );
-	});
-	*/
+	/* TEAM AND PARTNERS PAGE */
+	$('[data-behaviour~=double-filters]').double_filters();
+	
 	
 });
