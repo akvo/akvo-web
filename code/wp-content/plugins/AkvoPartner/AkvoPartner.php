@@ -9,36 +9,8 @@ Author URI: http://akvo.org/
 */
 
 
-add_action( 'init', 'create_new_partner' );
 
-function create_new_partner() {
-    register_post_type( 'new_partners',
-        array(
-            'labels' => array(
-                'name' => 'Akvo partner',
-                'singular_name' => 'New partner',
-                'add_new' => 'Add a new partner',
-                'add_new_item' => 'Add new partner',
-                'edit' => 'Edit',
-                'edit_item' => 'Edit partner',
-                'new_item' => 'New partner',
-                'view' => 'View',
-                'view_item' => 'View partner',
-                'search_items' => 'Search partner',
-                'not_found' => 'No partner found',
-                'not_found_in_trash' => 'No partner found in Trash',
-                'parent' => 'Parent partner'
-            ),
- 
-            'public' => true,
-            'menu_position' => 14,
-            'supports' => array( 'title', 'editor','author', 'thumbnail', 'revisions'),
-            'taxonomies' => array( '' ),
-            'menu_icon' => plugins_url( 'images/akvoPartner_icn.png', __FILE__ ),
-            'has_archive' => true
-        )
-    );
-}
+/*
 add_theme_support( 'post-thumbnails' );
 set_post_thumbnail_size( 240, 135, true );
 add_action( 'admin_init', 'partner_admin' );
@@ -93,7 +65,7 @@ function add_new_partner_fields( $new_partner_id, $new_partner ) {
     }
 }
 
-
+/*
 add_filter( 'template_include', 'include_partnertemplate_function', 1 );
 
 function include_partnertemplate_function( $template_path ) {
@@ -141,4 +113,5 @@ function create_partner_taxonomies() {
         )
     );
 }
+*/
 ?>
