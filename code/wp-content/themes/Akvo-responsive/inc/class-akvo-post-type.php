@@ -3,6 +3,8 @@
 	class AKVO_POST_TYPE{
 		
 		var $meta_fields;
+		var $taxonomies;
+		var $post_types;
 		
 		function __construct(){
 			add_action( 'init', array( $this, 'create') );
@@ -31,93 +33,108 @@
 			/* SAVE POST - FOR SAVING META FIELDS */
 			add_action( 'save_post', array( $this, 'save_meta_fields' ), 10, 2 );
 			
+			/* POST TYPES */
+			$this->post_types = array(
+				/* FUNNEL ELEMENTS */
+				'funnel'	=> array(						
+					'name'			=> 'Funnels',
+					'singular_name'	=> 'Funnel',
+					'menu_icon' 	=> 'dashicons-format-aside',
+					'has_archive' 	=> false,
+					'supports'		=> array( 'title', 'author' )
+				),
+				/* STAFF */
+				'new_staffs'	=> array(
+					'name' 			=> 'Akvo staff',
+					'singular_name' => 'Akvo staff',
+					'supports' 		=> array( 'title', 'thumbnail', 'revisions'),
+					'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoStaff_icn.png',
+					'has_archive' 	=> true	
+				),
+				/* PARTNERS */
+				'new_partners'	=> array(
+					'name' 			=> 'Akvo Partner',
+					'singular_name' => 'Akvo Partner',
+					'supports' 		=> array( 'title', 'thumbnail', 'revisions'),
+					'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoPartner_icn.png',
+					'has_archive' 	=> true	
+				)
+			);
+			
+			/* TAXONOMIES */
+			$this->taxonomies = array(
+				'new_staffs_team'	=> array(
+					'post_type'	=> 'new_staffs',
+					'labels'	=> array(
+						'name' 			=> 'Akvo staff team',
+						'add_new_item' 	=> 'Add new Akvo team',
+						'new_item_name' => "New Akvo team"
+					)
+				),
+				'staff_hub'		=> array(
+					'post_type'	=> array( 'new_staffs', 'new_partners' ),
+					'labels'	=> array(
+						'name' 			=> 'Staff hub',
+						'add_new_item' 	=> 'Add new staff hub',
+						'new_item_name' => "New staff hub"
+					)
+				),
+				'new_partners_category'	=> array(
+					'post_type'	=> 'new_partners',
+					'labels'	=> array(
+						'name' 			=> 'Akvo partner category',
+						'add_new_item' 	=> 'Add new Akvo category',
+						'new_item_name' => "New Akvo category"
+					)
+				),
+			);
+			
+			
+			
 		}
 		
 		function create(){
 			
-			/* FUNNEL ELEMENTS */
-			register_post_type( 'funnel',
-				array(
-					'labels' => array(
-						'name' => __( 'Funnels' ),
-						'singular_name' => __( 'Funnel' )
-					),
-				'public' => true,
-				'exclude_from_search' => true,
-				'show_in_nav_menus' => false,
-				'has_archive' => false,
-				'menu_position' => 20,
-				'menu_icon' => 'dashicons-format-aside',
-				'supports' => array(
-						'title',
-						'author', 
-					),
-				)
-			);
-			/* FUNNEL ELEMENTS */
+			/* registering post types */
+			foreach( $this->post_types as $slug => $post_type ){
+				register_post_type( $slug,
+					array(
+						'labels' => array(
+							'name' 			=> $post_type['name'],
+							'singular_name' => $post_type['singular_name'],
+							'add_new'	 	=> 'Add New Item',
+							'add_new_item' 	=> 'Add New Item',
+							'edit' 			=> 'Edit',
+							'edit_item' 	=> 'Edit',
+							'new_item' 		=> 'New',
+							'view' 			=> 'View',
+							'view_item' 	=> 'View',
+						),
+						'public' 		=> true,
+						'supports' 		=> $post_type['supports'],
+						'menu_icon' 	=> $post_type['menu_icon'],
+						'has_archive' 	=> $post_type['has_archive']
+					)
+				);
+			}
 			
-			/* STAFF */
-			register_post_type( 'new_staffs',
-				array(
-					'labels' => array(
-						'name' => 'Akvo staff',
-						'singular_name' => 'New staff',
-						'add_new' => 'Add a new staff',
-						'add_new_item' => 'Add new staff',
-						'edit' => 'Edit',
-						'edit_item' => 'Edit staff',
-						'new_item' => 'New staff',
-						'view' => 'View',
-						'view_item' => 'View staff',
-						'search_items' => 'Search staff',
-						'not_found' => 'No staff found',
-						'not_found_in_trash' => 'No staff found in Trash',
-						'parent' => 'Parent staff'
-					),
-		 
-					'public' => true,
-					'menu_position' => 15,
-					'supports' => array( 'title', 'thumbnail', 'revisions'),
-					'taxonomies' => array( '' ),
-					'menu_icon' => get_bloginfo('template_url').'/images/akvoStaff_icn.png',
-					'has_archive' => true
-				)
-			);
-			register_taxonomy(
-				'new_staffs_team',
-				'new_staffs',
-				array(
-					'labels' => array(
-						'name' => 'Akvo staff team',
-						'add_new_item' => 'Add new Akvo team',
-						'new_item_name' => "New Akvo team"
-					),
-					'show_ui' => true,
-					'show_tagcloud' => false,
-					'hierarchical' => true,
-					'query_var' => true,
-					'rewrite' => array('slug' => 'new_staffs_team' )
-				)
-			);
+			/* registering taxonomies */
+			foreach( $this->taxonomies as $slug => $tax ){
+				register_taxonomy(
+					$slug,
+					$tax['post_type'],
+					array(
+						'labels' 		=> $tax['labels'],
+						'show_ui' 		=> true,
+						'show_tagcloud' => false,
+						'hierarchical' 	=> true,
+						'query_var' 	=> true,
+						'rewrite' 		=> array('slug' => $slug )
+					)
+				);
+			}
 			
-			register_taxonomy(
-				'staff_hub',
-				'new_staffs',
-				array(
-					'labels' => array(
-						'name' => 'Staff hub',
-						'add_new_item' => 'Add new staff hub',
-						'new_item_name' => "New staff hub"
-					),
-					'show_ui' => true,
-					'show_tagcloud' => false,
-					'hierarchical' => true,
-					'query_var' => true,
-					'rewrite' => array('slug' => 'staff_hub' )
-				)
-			);
 			
-			/* STAFF */
 			
 		}
 		

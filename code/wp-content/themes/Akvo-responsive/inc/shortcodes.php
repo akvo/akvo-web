@@ -1,6 +1,6 @@
 <?php
 	
-	add_shortcode( 'akvo_new_staff', function( $atts ){
+	add_shortcode( 'akvo_nested_filters', function( $atts ){
 		
 		/* CREATE ATTS ARRAY FROM DEFAULT AND USER PARAMETERS IN THE SHORTCODE */
 		$atts = shortcode_atts( array( 
@@ -11,12 +11,12 @@
 				'showposts'			=> 100	
 			), 
 			$atts, 
-			'akvo_new_staff' 
+			'akvo_nested_filters' 
 		);
 		
 		ob_start();
 		
-		include('templates/new_staff_list.php');
+		include('templates/nested_filters.php');
 		
 		return ob_get_clean();
 		

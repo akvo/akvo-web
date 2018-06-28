@@ -33,12 +33,71 @@ class Akvo_Nested_Filters extends SiteOrigin_Widget {
 
 			//The $form_options array, which describes the form fields used to configure SiteOrigin widgets. We'll explain these in more detail later.
 			array(
-				
+				'title' => array(
+					'type' 			=> 'text',
+					'label' 		=> __( 'Title', 'siteorigin-widgets' ),
+					'default' 		=> '',
+				),
+				'post_type' => array(
+					'type' 			=> 'select',
+					'label' 		=> __( 'Choose Post Type', 'siteorigin-widgets' ),
+					'default' 		=> 'new_staffs',
+					'options' 		=> $this->get_post_types(),
+					'description'	=> 'Choose from Wordpress Custom Post Types'
+				),
+				'showposts' => array(
+					'type' 			=> 'number',
+					'label' 		=> __( 'Total number of Items', 'siteorigin-widgets' ),
+					'default' 		=> '100',
+					'description'	=> 'Items per request to be shown'
+				),
+				'primary_filter' => array(
+					'type' 			=> 'select',
+					'label' 		=> __( 'Primary Filter', 'siteorigin-widgets' ),
+					'default' 		=> 'new_staffs',
+					'options' 		=> $this->get_taxonomies(),
+					'description'	=> 'Choose Primary Filter from Wordpress Custom Taxonomies'
+				),
+				'secondary_filter' => array(
+					'type' 			=> 'select',
+					'label' 		=> __( 'Secondary Filter', 'siteorigin-widgets' ),
+					'default' 		=> 'new_staffs',
+					'options' 		=> $this->get_taxonomies(),
+					'description'	=> 'Choose Secondary Filter from Wordpress Custom Taxonomies'
+				),
 			),
 
 			//The $base_folder path string.
 			get_template_directory()."/so-widgets/akvo-nested-filters"
 		);
+	}
+	
+	function get_post_types(){
+		
+		global $akvo_post_type;
+		
+		$post_types = array();
+		
+		foreach( $akvo_post_type->post_types as $slug => $post_type ){
+			$post_types[ $slug ] = $post_type['name'];
+		}
+		
+		return $post_types;
+		
+	}
+	
+	function get_taxonomies(){
+		
+		global $akvo_post_type;
+		
+		$taxonomies = array();
+	
+		foreach( $akvo_post_type->taxonomies as $slug => $tax ){
+			$taxonomies[ $slug ] = $tax['labels']['name'];
+		}
+		
+		return $taxonomies;
+		
 	}
 	
 	function get_template_name($instance) {

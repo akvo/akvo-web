@@ -1,6 +1,7 @@
 <?php
 	
-	echo do_shortcode('[akvo_new_staff title="Our Team" post_type="new_staffs" primary_filter="staff_hub" secondary_filter="new_staffs_team"]');
+	echo do_shortcode('[akvo_nested_filters title="'.$instance['title'].'" showposts="'.$instance['showposts'].'" post_type="'.$instance['post_type'].'" primary_filter="'.$instance['primary_filter'].'" secondary_filter="'.$instance['secondary_filter'].'"]');
+	
 	
 	
 ?>
