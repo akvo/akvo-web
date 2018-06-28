@@ -17,12 +17,14 @@
 			
 			/* META BOXES */
 			add_action( 'admin_init', function(){
+				
+				/* META BOX FOR STAFF */
 				add_meta_box( 'new_staff_meta_box', 'New Staff Details', array( $this, 'meta_box' ), 'new_staffs', 'normal', 'high');
 			} );
 
 			$this->meta_fields = array(
 				'new_staffs'	=> array(
-					'staff_name' 		=> 'Full Name', 
+					//'staff_name' 		=> 'Full Name', 
 					'staff_title'		=> 'Job Title', 
 					'staff_twitter'		=> 'Twitter Link',
 					'staff_linkedin'	=> 'LinkedIn Link',
@@ -66,9 +68,9 @@
 				'new_staffs_team'	=> array(
 					'post_type'	=> 'new_staffs',
 					'labels'	=> array(
-						'name' 			=> 'Akvo staff team',
-						'add_new_item' 	=> 'Add new Akvo team',
-						'new_item_name' => "New Akvo team"
+						'name' 			=> 'Staff team',
+						'add_new_item' 	=> 'New Akvo team',
+						'new_item_name' => 'New Akvo team'
 					)
 				),
 				'staff_hub'		=> array(
@@ -76,7 +78,7 @@
 					'labels'	=> array(
 						'name' 			=> 'Staff hub',
 						'add_new_item' 	=> 'Add new staff hub',
-						'new_item_name' => "New staff hub"
+						'new_item_name' => 'New staff hub'
 					)
 				),
 				'new_partners_category'	=> array(
@@ -88,9 +90,6 @@
 					)
 				),
 			);
-			
-			
-			
 		}
 		
 		function create(){
@@ -138,36 +137,32 @@
 			
 		}
 		
-		
+		/* META BOXES */
 		function meta_box( $post ) {
-			
 			$fields = $this->meta_fields[ $post->post_type ];
-			
-			
-			?>
-			<table>
-				<?php foreach( $fields as $slug => $field ): $value = esc_html( get_post_meta( $post->ID, $slug, true ) );?>
-				<tr>
-					<td style="width: 100%"><?php _e( $field );?></td>
-					<td><input type="text" size="80" name="<?php _e( $slug );?>" value="<?php _e( $value ); ?>" /></td>
-				</tr>
-				<?php endforeach;?>
-			</table>
-			<?php
+			_e('<table>');
+			foreach( $fields as $slug => $field ): $value = esc_html( get_post_meta( $post->ID, $slug, true ) );?>
+			<tr>
+				<td style="width: 100%"><?php _e( $field );?></td>
+				<td><input type="text" size="80" name="<?php _e( $slug );?>" value="<?php _e( $value ); ?>" /></td>
+			</tr>
+		<?php endforeach;
+			_e('</table>');
 		}
+		
+		/* SAVE META BOXES */
 		function save_meta_fields( $post_id, $post ){
 			
-			// Check post type for new Staffs
-			if ( isset( $this->meta_fields[ $post->post_type ] ) ) {
+			if ( isset( $this->meta_fields[ $post->post_type ] ) ) {					/* CHECK FIELDS FOR POST TYPE */
 				
 				$fields = $this->meta_fields[ $post->post_type ];
 				
-				foreach( $fields as $slug => $field ){
-					// Store data in post meta table if present in post data
+				foreach( $fields as $slug => $field ){									/* ITERATE THROUGH THE FIELDS */
+					
 					if ( isset( $_POST[ $slug ] ) && $_POST[ $slug ] != '' ) {
-						update_post_meta( $post_id, $slug, $_POST[ $slug ] );
+						update_post_meta( $post_id, $slug, $_POST[ $slug ] );			/* Store data in post meta table if present in post data */
 					}
-				}
+				}	
 			}
 			
 		}

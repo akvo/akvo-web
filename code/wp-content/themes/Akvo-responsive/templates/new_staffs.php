@@ -1,7 +1,7 @@
 <?php
 		
 	$staff_fields = array(
-		'staff_name'		=> '',
+		//'staff_name'		=> '',
 		'staff_title'		=> '',
 		'staff_twitter'		=> '',
 		'staff_linkedin'	=> '',
@@ -21,7 +21,7 @@
 		<?php the_post_thumbnail(); ?>
 	</div>
 	<!-- Display Title and Name -->
-	<div class="staffName"><?php _e( $staff_fields['staff_name'] ); ?></div>
+	<div class="staffName"><?php the_title(); ?></div>
 	<p class="staffTitle"><?php _e( $staff_fields['staff_title'] ); ?></p>
 	<!-- Display LINKS -->
 	<p>
