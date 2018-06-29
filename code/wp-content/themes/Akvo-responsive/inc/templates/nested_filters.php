@@ -133,6 +133,7 @@
 					
 				endwhile;
 			endif;	
+			wp_reset_query();
 			_e('</ul>');
 		?>
 		</div>
