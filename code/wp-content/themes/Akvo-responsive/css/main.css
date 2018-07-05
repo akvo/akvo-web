@@ -6603,7 +6603,9 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
   /* HOMEPAGE */
   /* FUNNEL */
   /* FUNNEL */
-  /* MICROSTORY */ }
+  /* MICROSTORY */
+  /* FILTERS FOR TEAM AND PARTNERS PAGE */
+  /* MAP MARKERS - CONTACT INFO PAGE */ }
   .fullBlack .homePage .topMsg .hubIntro p, .fullBlack .homePage #intro p, .fullBlack h3, .fullBlack .topMsg .hubIntro p, .fullBlack .topMsg .hubIntro ul.list-inline.text-center, .fullBlack #assessFunel .funelContainer h1 {
     font-size: 4em; }
     @media (max-width: 2000px) {
@@ -7596,6 +7598,18 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         width: 97%; }
       .fullBlack .nested-filters ul.staff.new_partners li:nth-child(2n+1) {
         clear: none; } }
+  .fullBlack .map-markers {
+    position: relative;
+    padding-bottom: 49%;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 91%; }
+    .fullBlack .map-markers a[href] {
+      position: absolute; }
+      @media screen and (max-width: 768px) {
+        .fullBlack .map-markers a[href] {
+          display: none; } }
 
 #main.main-center-align {
   float: none;
