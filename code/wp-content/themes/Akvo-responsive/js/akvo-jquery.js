@@ -281,8 +281,12 @@ $.fn.funnel_next = function(){
 $.fn.double_filters = function(){
 	return this.each(function(){
 		
-		var $el 		= $( this ),
-			$target 	= $( $el.data('target') );
+		var $el 			= $( this ),
+			$target 		= $( $el.data('target') ),
+			secondary_tax 	= $el.find('[data-filter~=secondary]').first().data('tax'),
+			html 			= $target.html();
+		
+		
 		
 		/* ACTIVE MENU ITEM */
 		$el.active_menu_item = function( ev ){
@@ -324,14 +328,58 @@ $.fn.double_filters = function(){
 			/* BUILD SECONDARY FILTER */
 			if( $el.find('[data-filter~=secondary].active').length ){ $secondary_filter = $el.filter_selector('secondary'); }
 			
-			$target.find('[data-item]').hide();											/* HIDE ALL ELEMENTS */
+			$target.html( html );						/* reset html elements */
 			
-			/*
-			console.log( $primary_filter );
-			console.log( $secondary_filter );
+			
+			/* console.log( $primary_filter ); console.log( $secondary_filter ); */
+			
+			
+			if( $primary_filter || $secondary_filter ){
+				
+				/* REMOVE THE IRRELEVANT POSTS - ONLY WHEN EITHER THE FILTERS WERE NOT SELECTED */
+				$target.find('[data-item]:not(' + $primary_filter + $secondary_filter + ")" ).remove();
+			}
+			
+			/* 
+			*	HIDE ALL THE SECONDARY FILTERS THAT ARE NOT AVAILABLE IN THE 
+			* 	PRIMARY FILTERS SELECTION - ONLY TO BE ACTIVE WHEN THE PRIMARY FILTER
+			*	IS SELECTED AND THE SECONDARY FILTER HAS NOT BEEN ENABLED.  
 			*/
 			
-			$target.find('[data-item]' + $primary_filter + $secondary_filter ).show();	/* SHOW ONLY FILTERED ITEMS */
+			if( ! $secondary_filter ){
+			
+				var secondary_tax_in_posts = [];
+				
+				$el.find('[data-filter~=secondary]').show();			/* SHOW THE ENTIRE SECONDARY FILTERS LIST */
+				
+				$target.find('[data-item]').each( function(){			/* ITERATE THROUGH POSTS THAT ARE SHOWN */
+					
+					var $item = $( this );
+					
+					var item_tax = $item.data( secondary_tax );
+					
+					if( $.inArray( item_tax, secondary_tax_in_posts ) === -1 ){
+						secondary_tax_in_posts.push( item_tax  );		/* STORE UNIQUE SECONDARY FILTERS THAT ARE AVAILABLE IN THE POSTS */
+					}
+					
+				});
+				
+				$el.find('[data-filter~=secondary]').each( function(){	/* ITERATE THROUGH EACH SECONDARY FILTERS AND HIDE THE IRRELEVANT ONES */
+					
+					var $secondary_el 	= $( this );
+					
+					if( $.inArray( $secondary_el.data( 'id' ), secondary_tax_in_posts ) === -1 ){
+						$secondary_el.hide();
+					}
+					
+					
+					
+				});
+				
+				
+				//console.log( secondary_tax_in_posts );
+			
+			}
 			
 		};
 		/* FILTER ITEMS */
