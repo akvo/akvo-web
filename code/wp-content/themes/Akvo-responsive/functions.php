@@ -12,7 +12,6 @@
 	require_once($includes_path . 'class-akvo-post-type.php');  
 	require_once($includes_path . 'class-akvo-tabs.php');
 	require_once($includes_path . 'class-akvo-black-body.php');
-	require_once($includes_path . 'widgets.php');
 	
 	require_once($includes_path . 'shortcodes.php');
 	
