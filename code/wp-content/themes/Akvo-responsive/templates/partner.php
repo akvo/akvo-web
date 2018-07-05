@@ -1,4 +1,4 @@
-<li id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<li id="post-<?php the_ID(); ?>">
 	<!-- Display featured image in right-aligned floating div -->
 	<div class="imgWrapper"><?php the_post_thumbnail('thumbnail'); ?></div>
 	<!-- Display Title and Name -->
