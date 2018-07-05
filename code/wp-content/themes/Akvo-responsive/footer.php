@@ -34,22 +34,20 @@
 </div>
 <!-- end mainbody -->
 <!-- Piwik -->
-<script type="text/javascript">
-  var _paq = _paq || [];
-  _paq.push(["setDocumentTitle", document.domain + "/" + document.title]);
-  _paq.push(["setCookieDomain", "*.<?=PIWIK_DOMAIN?>"]);
-  _paq.push(["setDomains", ["*.<?=PIWIK_DOMAIN?>"]]);
-  _paq.push(["setDocumentTitle",  '404/URL = ' +  encodeURIComponent(document.location.pathname+document.location.search) + '/From = ' + encodeURIComponent(document.referrer)]);
-  _paq.push(["trackPageView"]);
-  _paq.push(["enableLinkTracking"]);
-
-  (function() {
-    var u = 'https://analytics.akvo.org/';   //(("https:" == document.location.protocol) ? "https" : "http") + "://analytics.akvo.org/";
-    _paq.push(["setTrackerUrl", u+"piwik.php"]);
-    _paq.push(["setSiteId", "<?=PIWIK_ID?>"]);
-    var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
-    g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
-  })();
+<script type="text/javascript"> 
+	var _paq = _paq || []; 
+	_paq.push(["setDocumentTitle", document.domain + "/" + document.title]); 
+	_paq.push(["setDomains", ["*.akvo.org","*.akvo.org/blog","*.www.akvo.org","*.www.akvo.org/blog","*.akvo.org","*.akvo.org/blog","*.www.akvo.org","*.www.akvo.org/blog"]]); 
+	_paq.push(['trackPageView']); 
+	_paq.push(['enableLinkTracking']); 
+	(function() { 
+		var u=((document.location.protocol === "https:") ? "https://akvo.piwikpro.com/" : "https://analytics.akvo.org/"); 
+		_paq.push(['setTrackerUrl', u+'piwik.php']); 
+		_paq.push(['setSiteId', 1]); 
+		var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0]; 
+		g.type='text/javascript'; 
+		g.async=true; g.defer=true; g.src=u+'piwik.js'; s.parentNode.insertBefore(g,s); 
+	})(); 
 </script>
 <!-- End Piwik Code -->
 <?php wp_footer(); ?>
