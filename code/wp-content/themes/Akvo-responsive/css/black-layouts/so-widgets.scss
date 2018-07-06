@@ -45,16 +45,16 @@
 		width:100%!important;
 		
 		li{
-			width: 29%;
-			padding: 2%;
-			margin:0!important;
+			width	: 29%;
+			padding	: 2%;
+			margin	: 0;
 			
 			div.imgWrapper{
-				background:#fff!important;
-				padding:0px!important;
-				width:100%!important;
-				max-height: 217px;
-				overflow: hidden;
+				background	: #fff;
+				padding		: 0px;
+				width		: 100%;
+				max-height	: 217px;
+				overflow	: hidden;
 				
 				img, img:hover{
 					opacity: 1;
@@ -71,12 +71,10 @@
 			width:100%!important;
 			
 			li {
-				width: 21%;
-				padding: 2%;
-				margin:0!important;
-				min-height:auto!important;
-				
-				div.imgWrapper {background:#fff!important;padding:0px!important;width:100%!important;max-height: 217px;overflow: hidden;}
+				width		: 21%;
+				padding		: 2%;
+				margin		: 0;
+				min-height	: auto;
 				
 				.staffName{text-align:center!important;}
 				
@@ -92,6 +90,42 @@
 				
 				&:nth-child(4n+1){clear:left;}
 			}
+			
+		}
+		
+		&.microstory{
+			
+			a[href]{ color:inherit; }
+			
+			.imgWrapper{
+				position: relative;
+				background-size: cover;
+				background-position: center center;
+				height: 250px;
+				
+				.excerpt{
+					display: none;
+					box-sizing: border-box;
+					padding: 10px;
+					background: rgba(0, 0, 0, 0.7);
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+					color: white;
+					text-align: center;
+					margin: 0;
+					width: 100%;
+					
+					p{ text-align: center; margin: 0;}
+				}
+				
+				&:hover .excerpt{
+					display:block;
+				}
+			}
+			
+			
 			
 		}
 		
@@ -113,6 +147,13 @@
 				li:nth-child(4n+1){clear:none;}
 				li:nth-child(3n+1){clear:left;}
 			}
+			
+			&.microstory{
+				li div.imgWrapper {max-height:350px;}
+				li:nth-child(3n+1){clear:none;}
+				li:nth-child(2n+1){clear:left;}
+
+			}
 		}
 	}
 	@media screen and ( max-width: 768px ){
@@ -132,7 +173,15 @@
 				li {width:46%;}
 				li:nth-child(2n+1){clear:left;}
 			}
+			
+			&.microstory li{
+				width:96%;
+				div.imgWrapper {max-height:350px;}
+			}
+
 		}
+		
+		
 		
 	}
 	
