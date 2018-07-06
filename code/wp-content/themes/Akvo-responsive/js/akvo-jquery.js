@@ -414,5 +414,13 @@ $("document").ready(function() {
 	/* TEAM AND PARTNERS PAGE */
 	$('[data-behaviour~=double-filters]').double_filters();
 	
+	$('[data-behaviour~=unveil]').unveil( 0, function(){
+		
+		var el = $(this);
+		
+		console.log( el.attr('src') );
+		
+	});
+
 	
 });

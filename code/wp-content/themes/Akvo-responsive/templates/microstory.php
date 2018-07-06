@@ -12,7 +12,7 @@
 ?>
 <a href='<?php the_permalink();?>'>
 <!-- Display featured image in right-aligned floating div -->
-<div class="imgWrapper" style="background-image: url('<?php echo $url;?>');">
+<div class="imgWrapper" data-behaviour='unveil' data-src='<?php echo $url;?>'>
 	<div class='excerpt'><?php the_excerpt();?></div>
 </div>
 <!-- Display Title and Name -->
