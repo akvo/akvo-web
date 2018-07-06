@@ -47,8 +47,8 @@
 				),
 				/* STAFF */
 				'new_staffs'	=> array(
-					'name' 			=> 'Akvo staff',
-					'singular_name' => 'Akvo staff',
+					'name' 			=> 'Akvo Staff',
+					'singular_name' => 'Akvo Staff',
 					'supports' 		=> array( 'title', 'thumbnail', 'revisions'),
 					'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoStaff_icn.png',
 					'has_archive' 	=> true	
@@ -60,6 +60,14 @@
 					'supports' 		=> array( 'title', 'thumbnail', 'revisions'),
 					'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoPartner_icn.png',
 					'has_archive' 	=> true	
+				),
+				/* MICROSTORY */
+				'microstory'	=> array(
+					'name' 			=> 'Akvo Microstories',
+					'singular_name' => 'Akvo Microstory',
+					'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+					//'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoPartner_icn.png',
+					'has_archive' 	=> true	
 				)
 			);
 			
@@ -68,25 +76,25 @@
 				'new_staffs_team'	=> array(
 					'post_type'	=> 'new_staffs',
 					'labels'	=> array(
-						'name' 			=> 'Staff team',
+						'name' 			=> 'Staff Team',
 						'add_new_item' 	=> 'New Akvo team',
 						'new_item_name' => 'New Akvo team'
 					)
 				),
 				'staff_hub'		=> array(
-					'post_type'	=> array( 'new_staffs', 'new_partners' ),
+					'post_type'	=> array( 'new_staffs', 'new_partners', 'microstory' ),
 					'labels'	=> array(
-						'name' 			=> 'Staff hub',
-						'add_new_item' 	=> 'Add new staff hub',
-						'new_item_name' => 'New staff hub'
+						'name' 			=> 'Staff Hub',
+						'add_new_item' 	=> 'Add New Hub',
+						'new_item_name' => 'New Hub'
 					)
 				),
 				'new_partners_category'	=> array(
 					'post_type'	=> 'new_partners',
 					'labels'	=> array(
-						'name' 			=> 'Akvo partner category',
-						'add_new_item' 	=> 'Add new Akvo category',
-						'new_item_name' => "New Akvo category"
+						'name' 			=> 'Akvo Partner Category',
+						'add_new_item' 	=> 'New Akvo Category',
+						'new_item_name' => "New Akvo Category"
 					)
 				),
 			);

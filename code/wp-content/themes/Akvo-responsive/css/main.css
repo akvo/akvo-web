@@ -7523,11 +7523,11 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
       .fullBlack .nested-filters ul.staff li {
         width: 29%;
         padding: 2%;
-        margin: 0 !important; }
+        margin: 0; }
         .fullBlack .nested-filters ul.staff li div.imgWrapper {
-          background: #fff !important;
-          padding: 0px !important;
-          width: 100% !important;
+          background: #fff;
+          padding: 0px;
+          width: 100%;
           max-height: 217px;
           overflow: hidden; }
           .fullBlack .nested-filters ul.staff li div.imgWrapper img, .fullBlack .nested-filters ul.staff li div.imgWrapper img:hover {
@@ -7541,14 +7541,8 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         .fullBlack .nested-filters ul.staff.new_partners li {
           width: 21%;
           padding: 2%;
-          margin: 0 !important;
-          min-height: auto !important; }
-          .fullBlack .nested-filters ul.staff.new_partners li div.imgWrapper {
-            background: #fff !important;
-            padding: 0px !important;
-            width: 100% !important;
-            max-height: 217px;
-            overflow: hidden; }
+          margin: 0;
+          min-height: auto; }
           .fullBlack .nested-filters ul.staff.new_partners li .staffName {
             text-align: center !important; }
           .fullBlack .nested-filters ul.staff.new_partners li img {
@@ -7561,6 +7555,31 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
             filter: none !important; }
           .fullBlack .nested-filters ul.staff.new_partners li:nth-child(4n+1) {
             clear: left; }
+      .fullBlack .nested-filters ul.staff.microstory a[href] {
+        color: inherit; }
+      .fullBlack .nested-filters ul.staff.microstory .imgWrapper {
+        position: relative;
+        background-size: cover;
+        background-position: center center;
+        height: 250px; }
+        .fullBlack .nested-filters ul.staff.microstory .imgWrapper .excerpt {
+          display: none;
+          box-sizing: border-box;
+          padding: 10px;
+          background: rgba(0, 0, 0, 0.7);
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          color: white;
+          text-align: center;
+          margin: 0;
+          width: 100%; }
+          .fullBlack .nested-filters ul.staff.microstory .imgWrapper .excerpt p {
+            text-align: center;
+            margin: 0; }
+        .fullBlack .nested-filters ul.staff.microstory .imgWrapper:hover .excerpt {
+          display: block; }
     @media screen and (max-width: 1024px) and (min-width: 768px) {
       .fullBlack .nested-filters ul.staff li div.imgWrapper {
         max-height: 350px; }
@@ -7575,6 +7594,12 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
       .fullBlack .nested-filters ul.staff.new_partners li:nth-child(4n+1) {
         clear: none; }
       .fullBlack .nested-filters ul.staff.new_partners li:nth-child(3n+1) {
+        clear: left; }
+      .fullBlack .nested-filters ul.staff.microstory li div.imgWrapper {
+        max-height: 350px; }
+      .fullBlack .nested-filters ul.staff.microstory li:nth-child(3n+1) {
+        clear: none; }
+      .fullBlack .nested-filters ul.staff.microstory li:nth-child(2n+1) {
         clear: left; } }
     @media screen and (max-width: 768px) {
       .fullBlack .nested-filters nav.anchorNav ul li, .fullBlack .nested-filters nav.anchorNav2 ul li {
@@ -7592,7 +7617,11 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
       .fullBlack .nested-filters ul.staff.new_partners li {
         width: 46%; }
       .fullBlack .nested-filters ul.staff.new_partners li:nth-child(2n+1) {
-        clear: left; } }
+        clear: left; }
+      .fullBlack .nested-filters ul.staff.microstory li {
+        width: 96%; }
+        .fullBlack .nested-filters ul.staff.microstory li div.imgWrapper {
+          max-height: 350px; } }
     @media screen and (max-width: 400px) {
       .fullBlack .nested-filters ul.staff.new_partners li {
         width: 97%; }
