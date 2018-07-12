@@ -20,15 +20,20 @@
 				
 				/* META BOX FOR STAFF */
 				add_meta_box( 'new_staff_meta_box', 'New Staff Details', array( $this, 'meta_box' ), 'new_staffs', 'normal', 'high');
+				
+				/* META BOX FOR PARTNERS */
+				add_meta_box( 'new_partner_meta_box', 'Partner Details', array( $this, 'meta_box' ), 'new_partners', 'normal', 'high');
 			} );
 
 			$this->meta_fields = array(
 				'new_staffs'	=> array(
-					//'staff_name' 		=> 'Full Name', 
 					'staff_title'		=> 'Job Title', 
 					'staff_twitter'		=> 'Twitter Link',
 					'staff_linkedin'	=> 'LinkedIn Link',
 					'staff_blog'		=> 'Blog Link'
+				),
+				'new_partners'	=> array(
+					'partners_link'		=> 'Link to a microstory or a partners page'
 				)
 			);
 			
