@@ -331,6 +331,11 @@ $.fn.double_filters = function(){
 			$target.html( html );						/* reset html elements */
 			
 			
+			/* unveil the images instantly */
+			$target.find('[data-behaviour~=unveil]').unveil( 0 );
+			$target.find('[data-behaviour~=unveil]').trigger("unveil");
+			/* unveil the images instantly */
+			
 			/* console.log( $primary_filter ); console.log( $secondary_filter ); */
 			
 			
@@ -415,11 +420,11 @@ $("document").ready(function() {
 	$('[data-behaviour~=double-filters]').double_filters();
 	
 	$('[data-behaviour~=unveil]').unveil( 0, function(){
-		
+		/*
 		var el = $(this);
 		
 		console.log( el.attr('src') );
-		
+		*/
 	});
 
 	

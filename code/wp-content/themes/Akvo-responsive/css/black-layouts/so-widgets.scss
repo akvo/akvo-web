@@ -9,6 +9,11 @@
 	/* FILTER CONTAINERS */
 	nav.anchorNav, nav.anchorNav2{ padding:15px 0px; background:none!important; box-sizing: border-box;}
 	
+	nav.anchorNav ul li{
+		padding: 0;
+		
+		a[href]{ padding: 0.25em 0.75em; }
+	}
 	
 	/* PRIMARY FILTER */
 	ul li.location{
