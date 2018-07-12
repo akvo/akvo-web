@@ -14,8 +14,9 @@
 			
 			if( count( $filters ) ){
 				$terms = $this->get_the_terms( $filters, get_the_ID() );
-				foreach( $terms as $slug => $id ){
-					$data_str .= " data-".$slug."='".$id."'";			/* ACCUMULATING DATA STRING FROM TERMS */
+				
+				foreach( $terms as $slug => $ids ){
+					$data_str .= " data-".$slug."='".implode( ' ', $ids )."'";			/* ACCUMULATING DATA STRING FROM TERMS */
 				}
 			}
 					

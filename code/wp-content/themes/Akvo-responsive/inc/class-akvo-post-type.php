@@ -181,7 +181,7 @@
 				
 				foreach( $fields as $slug => $field ){									/* ITERATE THROUGH THE FIELDS */
 					
-					if ( isset( $_POST[ $slug ] ) && $_POST[ $slug ] != '' ) {
+					if ( isset( $_POST[ $slug ] ) ) {
 						update_post_meta( $post_id, $slug, $_POST[ $slug ] );			/* Store data in post meta table if present in post data */
 					}
 				}	

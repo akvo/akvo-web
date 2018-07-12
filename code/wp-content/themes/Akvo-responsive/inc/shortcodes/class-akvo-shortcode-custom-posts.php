@@ -33,7 +33,12 @@
 					$post_terms = get_the_terms( $post_id, $tax );
 					if( is_array( $post_terms ) ){
 						foreach( $post_terms as $post_term ){
-							$terms[ $tax ] = $post_term->term_id;
+							
+							if( !isset( $terms[ $tax ] ) ){
+								$terms[ $tax ] = array();
+							}	
+							array_push( $terms[ $tax ], $post_term->term_id );	
+							
 						}
 					}
 				}
