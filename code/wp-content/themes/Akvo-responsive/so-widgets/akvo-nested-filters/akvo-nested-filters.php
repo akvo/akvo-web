@@ -65,6 +65,12 @@ class Akvo_Nested_Filters extends SiteOrigin_Widget {
 					'options' 		=> $this->get_taxonomies(),
 					'description'	=> 'Choose Secondary Filter from Wordpress Custom Taxonomies'
 				),
+				'cache' => array(
+					'type' 			=> 'number',
+					'label' 		=> __( 'Cache expiry time', 'siteorigin-widgets' ),
+					'default' 		=> '0',
+					'description'	=> 'Number of hours for which the cache will remain valid'
+				),
 			),
 
 			//The $base_folder path string.

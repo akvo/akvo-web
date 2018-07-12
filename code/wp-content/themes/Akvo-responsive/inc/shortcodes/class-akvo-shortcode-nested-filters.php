@@ -21,7 +21,7 @@
 				'primary_filter' 	=> '', 
 				'secondary_filter'	=> '',
 				'showposts'			=> 100,
-				//'cache'				=> '4'
+				'cache'				=> '0'
 			);
 		}
 		
@@ -65,4 +65,5 @@
 		
 	}
 	
-	new AKVO_SHORTCODE_NESTED_FILTERS;
+	global $akvo_shortcode_nested_filters;
+	$akvo_shortcode_nested_filters = new AKVO_SHORTCODE_NESTED_FILTERS;
