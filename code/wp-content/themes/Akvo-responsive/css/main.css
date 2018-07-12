@@ -7501,6 +7501,10 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
       padding: 15px 0px;
       background: none !important;
       box-sizing: border-box; }
+    .fullBlack .nested-filters nav.anchorNav ul li {
+      padding: 0; }
+      .fullBlack .nested-filters nav.anchorNav ul li a[href] {
+        padding: 0.25em 0.75em; }
     .fullBlack .nested-filters ul li.location a {
       color: #202024 !important;
       border-radius: 0px !important; }

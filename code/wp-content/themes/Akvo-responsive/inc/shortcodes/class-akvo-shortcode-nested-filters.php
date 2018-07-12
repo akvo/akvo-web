@@ -10,13 +10,18 @@
 			
 		}
 		
+		function unique_atts(){
+			return array('post_type', 'showposts', 'primary_filter', 'secondary_filter');
+		}
+		
 		function get_default_atts(){
 			return array( 
 				'title' 			=> '', 
 				'post_type'			=> '', 
 				'primary_filter' 	=> '', 
 				'secondary_filter'	=> '',
-				'showposts'			=> 100	
+				'showposts'			=> 100,
+				//'cache'				=> '4'
 			);
 		}
 		

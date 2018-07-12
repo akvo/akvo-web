@@ -18,7 +18,16 @@
 
 	<!-- Display featured image in right-aligned floating div -->
 	<div class="imgWrapper">
-		<?php the_post_thumbnail(); ?>
+	<?php
+		
+		$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' );
+		if( is_array( $thumbnail ) ){
+			_e( "<img data-behaviour='unveil' src='".get_bloginfo('template_url')."/images/chruch.png' data-src='".$thumbnail[0]."' width='".$thumbnail[1]."' height='".$thumbnail[2]."' />" );
+		}
+		
+	?>
+		
+	<?php //the_post_thumbnail(); ?>
 	</div>
 	<!-- Display Title and Name -->
 	<div class="staffName"><?php the_title(); ?></div>

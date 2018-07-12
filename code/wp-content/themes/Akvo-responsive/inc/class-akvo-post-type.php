@@ -97,6 +97,14 @@
 						'new_item_name' => "New Akvo Category"
 					)
 				),
+				'akvo_sector' 	=> array(
+					'post_type'	=> 'microstory',
+					'labels'	=> array(
+						'name' 			=> 'Akvo Sector',
+						'add_new_item' 	=> 'New Akvo Sector',
+						'new_item_name' => "New Akvo Sector"
+					)
+				),
 			);
 		}
 		
@@ -120,7 +128,13 @@
 						'public' 		=> true,
 						'supports' 		=> $post_type['supports'],
 						'menu_icon' 	=> $post_type['menu_icon'],
-						'has_archive' 	=> $post_type['has_archive']
+						'has_archive' 	=> $post_type['has_archive'],
+						'rewrite' => array(
+							'slug'		=> $slug,
+							'with_front'=> false,
+							'feed'		=> true,
+							'pages'		=> true
+						)
 					)
 				);
 			}
@@ -167,7 +181,7 @@
 				
 				foreach( $fields as $slug => $field ){									/* ITERATE THROUGH THE FIELDS */
 					
-					if ( isset( $_POST[ $slug ] ) && $_POST[ $slug ] != '' ) {
+					if ( isset( $_POST[ $slug ] ) ) {
 						update_post_meta( $post_id, $slug, $_POST[ $slug ] );			/* Store data in post meta table if present in post data */
 					}
 				}	

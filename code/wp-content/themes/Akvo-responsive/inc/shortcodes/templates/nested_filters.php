@@ -1,7 +1,7 @@
 <div class='nested-filters'>
 	<h1 class="backLined"><?php _e( $atts['title'] );?></h1>  
 	<nav class="anchorNav wrapper" data-behaviour='double-filters' data-target='#archive-results'>
-		<?php $this->print_terms_list( $atts['primary_filter'], 'location', 'primary', 'Global' );?>
+		<?php $this->print_terms_list( $atts['primary_filter'], 'location', 'primary', 'All' );?>
 		<br/>
 		<?php $this->print_terms_list( $atts['secondary_filter'], 'group', 'secondary' );?>
 	</nav>
