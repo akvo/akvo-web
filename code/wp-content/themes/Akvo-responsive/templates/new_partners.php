@@ -1,25 +1,20 @@
 <?php
 	
-	/*
-	$staff_fields = array(
-		'staff_name'		=> '',
-		'staff_title'		=> '',
-		'staff_twitter'		=> '',
-		'staff_linkedin'	=> '',
-		'staff_blog'		=> ''
+	
+	$partner_fields = array(
+		'partners_link'		=> '',
 	);
 		
-	foreach( $staff_fields as $slug => $field ){
-		$staff_fields[ $slug ] = esc_html( get_post_meta( get_the_ID(), $slug, true ) );
+	foreach( $partner_fields as $slug => $field ){
+		$partner_fields[ $slug ] = esc_html( get_post_meta( get_the_ID(), $slug, true ) );
 	}
 	
-	*/
 	
 ?>
 <!-- Display featured image in right-aligned floating div -->
 <div class="imgWrapper">
 	<?php the_post_thumbnail(); ?>
 </div>
-<!-- Display Title and Name -->
-<div class="staffName"><?php the_title(); ?></div>
+<a style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" href='<?php _e( $partner_fields['partners_link'] );?>'></a>
+
 	

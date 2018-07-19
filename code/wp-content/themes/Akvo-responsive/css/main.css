@@ -7543,7 +7543,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         padding: 0px !important;
         width: 100% !important; }
         .fullBlack .nested-filters ul.staff.new_partners li {
-          width: 21%;
+          width: 16%;
           padding: 2%;
           margin: 0;
           min-height: auto; }
@@ -7553,11 +7553,13 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
             -webkit-filter: grayscale(100%);
             /* Safari 6.0 - 9.0 */
             filter: grayscale(100%); }
+          .fullBlack .nested-filters ul.staff.new_partners li:hover {
+            background: none; }
           .fullBlack .nested-filters ul.staff.new_partners li:hover img {
             -webkit-filter: none !important;
             /* Safari 6.0 - 9.0 */
             filter: none !important; }
-          .fullBlack .nested-filters ul.staff.new_partners li:nth-child(4n+1) {
+          .fullBlack .nested-filters ul.staff.new_partners li:nth-child(5n+1) {
             clear: left; }
       .fullBlack .nested-filters ul.staff.microstory a[href] {
         color: inherit; }
@@ -7595,7 +7597,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         clear: left; }
       .fullBlack .nested-filters ul.staff.new_partners li {
         width: 29%; }
-      .fullBlack .nested-filters ul.staff.new_partners li:nth-child(4n+1) {
+      .fullBlack .nested-filters ul.staff.new_partners li:nth-child(5n+1) {
         clear: none; }
       .fullBlack .nested-filters ul.staff.new_partners li:nth-child(3n+1) {
         clear: left; }
