@@ -17,6 +17,7 @@
 		<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-180x180.png">
 		<link rel="apple-touch-icon" sizes="120x120" href="<?php echo get_template_directory_uri(); ?>/apple-touch-icon-120x120.png">
 		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
+		<title><?php wp_title(''); ?></title>
 		<?php wp_head(); ?>
 		<!--[if lt IE 9]>
 		  <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
