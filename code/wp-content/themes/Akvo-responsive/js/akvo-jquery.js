@@ -361,17 +361,30 @@ $.fn.double_filters = function(){
 					
 					var $item = $( this );
 					
-					var item_tax = $item.data( secondary_tax );
+					var item_tax_str = $item.data( secondary_tax ).toString(); 
 					
-					if( $.inArray( item_tax, secondary_tax_in_posts ) === -1 ){
-						secondary_tax_in_posts.push( item_tax  );		/* STORE UNIQUE SECONDARY FILTERS THAT ARE AVAILABLE IN THE POSTS */
+					if( item_tax_str ){
+						
+						//console.log( item_tax_str );
+						
+						var item_tax_arr = item_tax_str.split(' ');
+						
+						$.each( item_tax_arr, function( i, item_tax ){
+							if( $.inArray( parseInt( item_tax ), secondary_tax_in_posts ) === -1 ){
+								secondary_tax_in_posts.push( parseInt( item_tax )  );		/* STORE UNIQUE SECONDARY FILTERS THAT ARE AVAILABLE IN THE POSTS */
+							}
+						});
 					}
 					
 				});
 				
+				//console.log( secondary_tax_in_posts );
+				
 				$el.find('[data-filter~=secondary]').each( function(){	/* ITERATE THROUGH EACH SECONDARY FILTERS AND HIDE THE IRRELEVANT ONES */
 					
 					var $secondary_el 	= $( this );
+					
+					//console.log( $secondary_el.data( 'id' ) );
 					
 					if( $.inArray( $secondary_el.data( 'id' ), secondary_tax_in_posts ) === -1 ){
 						$secondary_el.hide();
