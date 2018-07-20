@@ -47,7 +47,7 @@
 	</div>
 </section>		
 <?php $i++; endwhile;?>	
-<section id="funnel-form" class="funelContainer hidden" style="background-image:url('<?php the_field('form_bg');?>');">
+<section id="funnel-form" data-field="<?php the_sub_field('form_field');?>" class="funelContainer hidden" style="background-image:url('<?php the_field('form_bg');?>');">
 	<div class="funnelContent">
 		<?php the_field('form_content');?>
 	</div>

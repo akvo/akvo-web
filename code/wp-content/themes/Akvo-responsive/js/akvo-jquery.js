@@ -265,7 +265,11 @@ $.fn.funnel_next = function(){
 				
 				var ans = btn.html();
 				
-				var textarea = $('#funnel-form .funnel-msg textarea');
+				var field = $('#funnel-form').attr('data-field');
+				
+				//console.log( field );
+				
+				var textarea = $( '#funnel-form' ).find( field );    //$('#funnel-form .funnel-msg textarea');
 				
 				var text = textarea.val() + question + " " + ans + "\r\n";
 				
