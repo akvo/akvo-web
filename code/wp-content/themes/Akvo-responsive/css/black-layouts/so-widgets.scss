@@ -106,12 +106,23 @@
 			
 			a[href]{ color:inherit; }
 			
+			.staffName{
+				font-size: 0.95em;
+			}
+			
+			.featured{
+				background: #3792b3!important;
+				
+				.staffName{ color: #fff; }
+			}
+			
 			.imgWrapper{
 				position: relative;
 				background-size: cover;
 				background-position: center center;
 				height: 250px;
 				
+				/*
 				.excerpt{
 					display: none;
 					box-sizing: border-box;
@@ -132,9 +143,54 @@
 				&:hover .excerpt{
 					display:block;
 				}
+				*/
+			}
+			
+			.hovercontent {opacity:0;padding:0px;display:block;top:22px;position:absolute;width:77%;}
+			.featured .hovercontent {color:#fff!important;}
+			
+			@-webkit-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+			@-moz-keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+			@keyframes fadeOut { from { opacity:1; } to { opacity:0; } }
+
+			@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+			@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+
+			
+			li:hover .imgWrapper {
+				opacity:0;  /* make things invisible upon start */
+				-webkit-animation:fadeOut ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+				-moz-animation:fadeOut ease-in 1;
+				animation:fadeOut ease-in 1;
+
+				-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+				-moz-animation-fill-mode:forwards;
+				animation-fill-mode:forwards;
+
+				-webkit-animation-duration:1s;
+				-moz-animation-duration:1s;
+				animation-duration:1s;
+			}
+			
+			li:hover .hovercontent {
+				opacity:0;  /* make things invisible upon start */
+				-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+				-moz-animation:fadeIn ease-in 1;
+				animation:fadeIn ease-in 1;
+
+				-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+				-moz-animation-fill-mode:forwards;
+				animation-fill-mode:forwards;
+
+				-webkit-animation-duration:1s;
+				-moz-animation-duration:1s;
+				animation-duration:1s;
 			}
 			
 			
+			
+			.hovercontent p, .hovercontent strong, .hovercontent a {font-style: italic!important;}
 			
 		}
 		

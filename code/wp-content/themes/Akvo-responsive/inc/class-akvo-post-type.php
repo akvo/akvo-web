@@ -34,8 +34,27 @@
 					'fields'	=> array(
 						'hubs_headline'		=> 'Hubs Headline'
 					)
-				)
+				),
+				'microstory'	=> array(
+					'title'		=> 'Settings',
+					'fields'	=> array(
+						'featured'	=> 'Featured'
+					)
+				),
 			);
+			
+			add_filter( 'custom_posts_microstory_class', function( $class ){
+				
+				global $post;
+				
+				$featured = get_post_meta( $post->ID, 'featured', true );
+				
+				if( $featured && $featured == '1' ){
+					$class = 'featured';
+				}
+				
+				return $class;
+			} );
 			
 			/* SAVE POST - FOR SAVING META FIELDS */
 			add_action( 'save_post', array( $this, 'save_meta_fields' ), 10, 2 );
