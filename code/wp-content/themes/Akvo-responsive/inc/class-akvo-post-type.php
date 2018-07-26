@@ -2,38 +2,38 @@
 	
 	class AKVO_POST_TYPE{
 		
-		var $meta_fields;
+		var $meta_boxes;
 		var $taxonomies;
 		var $post_types;
 		
 		function __construct(){
-			add_action( 'init', array( $this, 'create') );
 			
-			/* SET POST THUMBNAIL SIZES */
-			add_theme_support( 'post-thumbnails' );
-			set_post_thumbnail_size( 240, 135, true );
-			/* SET POST THUMBNAIL SIZES */
+			add_action( 'init', array( $this, 'create') );			// REGISTERING POST TYPES AND TAXONOMIES
 			
+			add_theme_support( 'post-thumbnails' );					// ADD THEME SUPPORT FOR THUMBNAILS
+			set_post_thumbnail_size( 240, 135, true );				// SET POST THUMBNAIL SIZES 
 			
-			/* META BOXES */
-			add_action( 'admin_init', function(){
-				
-				/* META BOX FOR STAFF */
-				add_meta_box( 'new_staff_meta_box', 'New Staff Details', array( $this, 'meta_box' ), 'new_staffs', 'normal', 'high');
-				
-				/* META BOX FOR PARTNERS */
-				add_meta_box( 'new_partner_meta_box', 'Partner Details', array( $this, 'meta_box' ), 'new_partners', 'normal', 'high');
-			} );
-
-			$this->meta_fields = array(
+			$this->meta_boxes = array(
 				'new_staffs'	=> array(
-					'staff_title'		=> 'Job Title', 
-					'staff_twitter'		=> 'Twitter Link',
-					'staff_linkedin'	=> 'LinkedIn Link',
-					'staff_blog'		=> 'Blog Link'
+					'title'		=> 'New Staff Details',
+					'fields'	=> array(
+						'staff_title'		=> 'Job Title', 
+						'staff_twitter'		=> 'Twitter Link',
+						'staff_linkedin'	=> 'LinkedIn Link',
+						'staff_blog'		=> 'Blog Link'
+					)
 				),
 				'new_partners'	=> array(
-					'partners_link'		=> 'Link to a microstory or a partners page'
+					'title'		=> 'Partner Details',
+					'fields'	=> array(
+						'partners_link'		=> 'Link to a microstory or a partners page'
+					)
+				),
+				'page'			=> array(
+					'title'		=> 'Page Settings',
+					'fields'	=> array(
+						'hubs_headline'		=> 'Hubs Headline'
+					)
 				)
 			);
 			
@@ -160,13 +160,25 @@
 				);
 			}
 			
+			/* META BOXES */
+			add_action( 'admin_init', function(){
+				
+				foreach( $this->meta_boxes as $post_type => $metabox ){
+					$this->add_meta_box( $post_type, $metabox[ 'title' ] );
+				}
+			} );
 			
 			
 		}
 		
+		/* ADD META BOX */
+		function add_meta_box( $post_type, $title ){
+			add_meta_box( $post_type.'_meta_box', $title, array( $this, 'meta_box' ), $post_type, 'normal', 'high');
+		}
+		
 		/* META BOXES */
 		function meta_box( $post ) {
-			$fields = $this->meta_fields[ $post->post_type ];
+			$fields = $this->meta_boxes[ $post->post_type ]['fields'];
 			_e('<table>');
 			foreach( $fields as $slug => $field ): $value = esc_html( get_post_meta( $post->ID, $slug, true ) );?>
 			<tr>
@@ -180,9 +192,9 @@
 		/* SAVE META BOXES */
 		function save_meta_fields( $post_id, $post ){
 			
-			if ( isset( $this->meta_fields[ $post->post_type ] ) ) {					/* CHECK FIELDS FOR POST TYPE */
+			if ( isset( $this->meta_boxes[ $post->post_type ] ) && isset( $this->meta_boxes[ $post->post_type ]['fields'] ) ) {	/* CHECK FIELDS FOR POST TYPE */
 				
-				$fields = $this->meta_fields[ $post->post_type ];
+				$fields = $this->meta_boxes[ $post->post_type ]['fields'];
 				
 				foreach( $fields as $slug => $field ){									/* ITERATE THROUGH THE FIELDS */
 					

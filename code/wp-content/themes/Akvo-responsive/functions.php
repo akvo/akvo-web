@@ -460,6 +460,7 @@
 		if( $headline_text && count( $headline_text ) ){
 			$heading = $headline_text;	
 		}
+		if( $heading == 'none' ) return '';
 		/* CHECK IF HEADLINE EXISTS IN POST META */
 		
 		$hubs = array(

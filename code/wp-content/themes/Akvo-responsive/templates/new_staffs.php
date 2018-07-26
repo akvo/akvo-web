@@ -41,6 +41,6 @@
 		<a href="<?php _e( $staff_fields['staff_linkedin'] ); ?>" target="_blank"><i class="fa fa-linkedin" style="font-size:20px;padding:10px;"></i></a>
 		<?php endif;?>
 		<?php if( $staff_fields['staff_blog'] ):?>
-		<a href="<?php _e( $staff_fields['staff_blog'] ); ?>" style="float:right;margin-top:8px;padding-right:10px;">Read my Blogs</a>
+		<a href="<?php _e( $staff_fields['staff_blog'] ); ?>" style="float:right;margin-top:8px;padding-right:10px;">Read my blogs</a>
 		<?php endif;?>
 	</p>
