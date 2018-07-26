@@ -7537,7 +7537,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
           .fullBlack .nested-filters ul.staff li div.imgWrapper img, .fullBlack .nested-filters ul.staff li div.imgWrapper img:hover {
             opacity: 1;
             cursor: auto; }
-      .fullBlack .nested-filters ul.staff.new_staffs li:nth-child(3n+1) {
+      .fullBlack .nested-filters ul.staff.new_staffs li:nth-child(3n+1), .fullBlack .nested-filters ul.staff.foundation_member li:nth-child(3n+1) {
         clear: left; }
       .fullBlack .nested-filters ul.staff.new_partners {
         padding: 0px !important;
@@ -7563,29 +7563,108 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
             clear: left; }
       .fullBlack .nested-filters ul.staff.microstory a[href] {
         color: inherit; }
+      .fullBlack .nested-filters ul.staff.microstory .staffName {
+        font-size: 0.95em; }
+      .fullBlack .nested-filters ul.staff.microstory .featured {
+        background: #3792b3 !important; }
+        .fullBlack .nested-filters ul.staff.microstory .featured .staffName {
+          color: #fff; }
       .fullBlack .nested-filters ul.staff.microstory .imgWrapper {
         position: relative;
         background-size: cover;
         background-position: center center;
-        height: 250px; }
-        .fullBlack .nested-filters ul.staff.microstory .imgWrapper .excerpt {
-          display: none;
-          box-sizing: border-box;
-          padding: 10px;
-          background: rgba(0, 0, 0, 0.7);
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          color: white;
-          text-align: center;
-          margin: 0;
-          width: 100%; }
-          .fullBlack .nested-filters ul.staff.microstory .imgWrapper .excerpt p {
-            text-align: center;
-            margin: 0; }
-        .fullBlack .nested-filters ul.staff.microstory .imgWrapper:hover .excerpt {
-          display: block; }
+        height: 250px;
+        /*
+        .excerpt{
+        	display: none;
+        	box-sizing: border-box;
+        	padding: 10px;
+        	background: rgba(0, 0, 0, 0.7);
+        	position: absolute;
+        	top: 50%;
+        	left: 50%;
+        	transform: translate(-50%, -50%);
+        	color: white;
+        	text-align: center;
+        	margin: 0;
+        	width: 100%;
+        	
+        	p{ text-align: center; margin: 0;}
+        }
+        
+        &:hover .excerpt{
+        	display:block;
+        }
+        */ }
+      .fullBlack .nested-filters ul.staff.microstory .hovercontent {
+        opacity: 0;
+        padding: 0px;
+        display: block;
+        top: 22px;
+        position: absolute;
+        width: 77%; }
+      .fullBlack .nested-filters ul.staff.microstory .featured .hovercontent {
+        color: #fff !important; }
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@-moz-keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@keyframes fadeOut {
+  from {
+    opacity: 1; }
+  to {
+    opacity: 0; } }
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@-moz-keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+@keyframes fadeIn {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+      .fullBlack .nested-filters ul.staff.microstory li:hover .imgWrapper {
+        opacity: 0;
+        /* make things invisible upon start */
+        -webkit-animation: fadeOut ease-in 1;
+        /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation: fadeOut ease-in 1;
+        animation: fadeOut ease-in 1;
+        -webkit-animation-fill-mode: forwards;
+        /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s; }
+      .fullBlack .nested-filters ul.staff.microstory li:hover .hovercontent {
+        opacity: 0;
+        /* make things invisible upon start */
+        -webkit-animation: fadeIn ease-in 1;
+        /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+        -moz-animation: fadeIn ease-in 1;
+        animation: fadeIn ease-in 1;
+        -webkit-animation-fill-mode: forwards;
+        /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+        -moz-animation-fill-mode: forwards;
+        animation-fill-mode: forwards;
+        -webkit-animation-duration: 1s;
+        -moz-animation-duration: 1s;
+        animation-duration: 1s; }
+      .fullBlack .nested-filters ul.staff.microstory .hovercontent p, .fullBlack .nested-filters ul.staff.microstory .hovercontent strong, .fullBlack .nested-filters ul.staff.microstory .hovercontent a {
+        font-style: italic !important; }
     @media screen and (max-width: 1024px) and (min-width: 768px) {
       .fullBlack .nested-filters ul.staff li div.imgWrapper {
         max-height: 350px; }
@@ -7618,7 +7697,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         display: none; }
       .fullBlack .nested-filters ul.staff li div.imgWrapper {
         max-height: 350px; }
-      .fullBlack .nested-filters ul.staff.new_staffs li {
+      .fullBlack .nested-filters ul.staff.new_staffs li, .fullBlack .nested-filters ul.staff.foundation_member li {
         width: 96%; }
       .fullBlack .nested-filters ul.staff.new_partners li {
         width: 46%; }

@@ -19,8 +19,11 @@
 					$data_str .= " data-".$slug."='".implode( ' ', $ids )."'";			/* ACCUMULATING DATA STRING FROM TERMS */
 				}
 			}
+			
+			$post_class	= '';
+			$post_class = apply_filters( 'custom_posts_'.$atts['post_type'].'_class', $post_class );
 					
-			_e( '<li id="post-'.get_the_ID().'" '.$data_str.'>' );
+			_e( '<li class="'.$post_class.'" id="post-'.get_the_ID().'" '.$data_str.'>' );
 			get_template_part( 'templates/'.$atts['post_type'] );
 			_e('</li>');
 					

@@ -11,12 +11,10 @@
 	
 ?>
 <a href='<?php the_permalink();?>'>
-<!-- Display featured image in right-aligned floating div -->
-<div class="imgWrapper" data-behaviour='unveil' data-src='<?php echo $url;?>'>
-	<div class='excerpt'><?php the_excerpt();?></div>
-</div>
-<!-- Display Title and Name -->
-<div class="staffName"><?php the_title(); ?></div>
+	<!-- Display featured image in right-aligned floating div -->
+	<div class="imgWrapper" data-behaviour='unveil' data-src='<?php echo $url;?>'></div>
+	<div class="hovercontent"><?php the_excerpt();?></div>
+	<!-- Display Title and Name -->
+	<div class="staffName"><?php the_title(); ?></div>
 </a>
-	
 	

@@ -34,8 +34,36 @@
 					'fields'	=> array(
 						'hubs_headline'		=> 'Hubs Headline'
 					)
-				)
+				),
+				'microstory'	=> array(
+					'title'		=> 'Settings',
+					'fields'	=> array(
+						'featured'	=> 'Featured'
+					)
+				),
+				'foundation_member'	=> array(
+					'title'		=> 'Settings',
+					'fields'	=> array(
+						'member_title'	=> 'Job Title',
+						'staff_twitter'		=> 'Twitter Link',
+						'staff_linkedin'	=> 'LinkedIn Link',
+						'staff_blog'		=> 'Blog Link'
+					)
+				),
 			);
+			
+			add_filter( 'custom_posts_microstory_class', function( $class ){
+				
+				global $post;
+				
+				$featured = get_post_meta( $post->ID, 'featured', true );
+				
+				if( $featured && $featured == '1' ){
+					$class = 'featured';
+				}
+				
+				return $class;
+			} );
 			
 			/* SAVE POST - FOR SAVING META FIELDS */
 			add_action( 'save_post', array( $this, 'save_meta_fields' ), 10, 2 );
@@ -70,8 +98,16 @@
 				'microstory'	=> array(
 					'name' 			=> 'Akvo Microstories',
 					'singular_name' => 'Akvo Microstory',
-					'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions'),
+					'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 					//'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoPartner_icn.png',
+					'has_archive' 	=> true	
+				),
+				/* FOUNDATION MEMBERS */
+				'foundation_member'	=> array(
+					'name' 			=> 'Akvo Foundation Members',
+					'singular_name' => 'Akvo Foundation Member',
+					'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
+					'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoStaff_icn.png',
 					'has_archive' 	=> true	
 				)
 			);
@@ -87,7 +123,7 @@
 					)
 				),
 				'staff_hub'		=> array(
-					'post_type'	=> array( 'new_staffs', 'new_partners', 'microstory' ),
+					'post_type'	=> array( 'new_staffs', 'new_partners', 'microstory', 'foundation_member' ),
 					'labels'	=> array(
 						'name' 			=> 'Staff Hub',
 						'add_new_item' 	=> 'Add New Hub',
@@ -103,7 +139,7 @@
 					)
 				),
 				'akvo_sector' 	=> array(
-					'post_type'	=> 'microstory',
+					'post_type'	=> array( 'microstory', 'foundation_member' ),
 					'labels'	=> array(
 						'name' 			=> 'Akvo Sector',
 						'add_new_item' 	=> 'New Akvo Sector',
