@@ -23,6 +23,9 @@
 				
 				/* META BOX FOR PARTNERS */
 				add_meta_box( 'new_partner_meta_box', 'Partner Details', array( $this, 'meta_box' ), 'new_partners', 'normal', 'high');
+				
+				/* META BOX FOR PAGES */
+				add_meta_box( 'page_meta_box', 'Page Settings', array( $this, 'meta_box' ), 'page', 'normal', 'high');
 			} );
 
 			$this->meta_fields = array(
@@ -34,6 +37,9 @@
 				),
 				'new_partners'	=> array(
 					'partners_link'		=> 'Link to a microstory or a partners page'
+				),
+				'page'	=> array(
+					'hubs_headline'		=> 'Hubs Headline'
 				)
 			);
 			
