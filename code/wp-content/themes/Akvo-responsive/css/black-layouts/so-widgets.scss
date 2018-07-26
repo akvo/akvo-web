@@ -69,7 +69,7 @@
 			}
 		}
 		
-		&.new_staffs li:nth-child(3n+1){clear:left;}
+		&.new_staffs li:nth-child(3n+1), &.foundation_member li:nth-child(3n+1){clear:left;}
 		
 		&.new_partners{
 			padding:0px!important;
@@ -232,7 +232,7 @@
 		ul.staff{ 
 			li div.imgWrapper {max-height:350px;}
 			
-			&.new_staffs li{width:96%;} 
+			&.new_staffs li, &.foundation_member li{width:96%;} 
 			
 			&.new_partners{
 				li {width:46%;}

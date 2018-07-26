@@ -7537,7 +7537,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
           .fullBlack .nested-filters ul.staff li div.imgWrapper img, .fullBlack .nested-filters ul.staff li div.imgWrapper img:hover {
             opacity: 1;
             cursor: auto; }
-      .fullBlack .nested-filters ul.staff.new_staffs li:nth-child(3n+1) {
+      .fullBlack .nested-filters ul.staff.new_staffs li:nth-child(3n+1), .fullBlack .nested-filters ul.staff.foundation_member li:nth-child(3n+1) {
         clear: left; }
       .fullBlack .nested-filters ul.staff.new_partners {
         padding: 0px !important;
@@ -7697,7 +7697,7 @@ body .gform_wrapper ul li.gfield.form-checkbox div.ginput_container_checkbox {
         display: none; }
       .fullBlack .nested-filters ul.staff li div.imgWrapper {
         max-height: 350px; }
-      .fullBlack .nested-filters ul.staff.new_staffs li {
+      .fullBlack .nested-filters ul.staff.new_staffs li, .fullBlack .nested-filters ul.staff.foundation_member li {
         width: 96%; }
       .fullBlack .nested-filters ul.staff.new_partners li {
         width: 46%; }
