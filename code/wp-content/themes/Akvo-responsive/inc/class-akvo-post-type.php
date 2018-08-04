@@ -13,6 +13,42 @@
 			add_theme_support( 'post-thumbnails' );					// ADD THEME SUPPORT FOR THUMBNAILS
 			set_post_thumbnail_size( 240, 135, true );				// SET POST THUMBNAIL SIZES 
 			
+			add_filter('post_type_link', function( $permalink, $post_id, $leavename ){
+				
+				$post = get_post( $post_id );
+				
+				if( $post->post_type == 'microstory' ){
+					
+					$rewritecode = array(
+						$leavename? '' : '%postname%',
+						'%post_id%',
+						'%category%',
+						$leavename? '' : '%pagename%',
+					);
+					
+					$category = "akvo-hub";
+					$hubs = get_the_terms( $post, 'staff_hub' );
+					if( is_array( $hubs ) ){
+						$category = $hubs[0]->slug;
+					}
+					
+					$rewritereplace = array(
+						$post->post_name,
+						$post->ID,
+						$category,
+						$post->post_name,
+					);
+					
+					$permalink = str_replace($rewritecode, $rewritereplace, $permalink);
+					
+					//print_r( $permalink );
+					
+					//$permalink = 'hello1';
+				}
+				
+				return $permalink;
+			}, 10, 3);   
+			
 			$this->meta_boxes = array(
 				'new_staffs'	=> array(
 					'title'		=> 'New Staff Details',
@@ -100,6 +136,7 @@
 					'singular_name' => 'Akvo Microstory',
 					'supports' 		=> array( 'title', 'editor', 'excerpt', 'thumbnail', 'revisions' ),
 					//'menu_icon' 	=> get_bloginfo('template_url').'/images/akvoPartner_icn.png',
+					'rewrite'		=> false,
 					'has_archive' 	=> true	
 				),
 				/* FOUNDATION MEMBERS */
@@ -123,7 +160,7 @@
 					)
 				),
 				'staff_hub'		=> array(
-					'post_type'	=> array( 'new_staffs', 'new_partners', 'microstory', 'foundation_member' ),
+					'post_type'	=> array( 'new_staffs', 'new_partners', 'microstory' ),
 					'labels'	=> array(
 						'name' 			=> 'Staff Hub',
 						'add_new_item' 	=> 'Add New Hub',
@@ -139,17 +176,31 @@
 					)
 				),
 				'akvo_sector' 	=> array(
-					'post_type'	=> array( 'microstory', 'foundation_member' ),
+					'post_type'	=> array( 'microstory' ),
 					'labels'	=> array(
 						'name' 			=> 'Akvo Sector',
 						'add_new_item' 	=> 'New Akvo Sector',
 						'new_item_name' => "New Akvo Sector"
 					)
 				),
+				'new_foundation_team' 	=> array(
+					'post_type'	=> array( 'foundation_member' ),
+					'labels'	=> array(
+						'name' 			=> 'Akvo Foundation Group',
+						'add_new_item' 	=> 'New Akvo Foundation Group',
+						'new_item_name' => "New Akvo Foundation Group"
+					)
+				),
 			);
 		}
 		
 		function create(){
+			
+			/* rewrite urls for microstory links */
+			global $wp_rewrite;
+			$microstory_structure = '/microstories/%category%/%microstory%/';
+			$wp_rewrite->add_rewrite_tag( "%microstory%", '([^/]+)', "microstory=" );
+			$wp_rewrite->add_permastruct( 'microstory', $microstory_structure, false );
 			
 			/* registering post types */
 			foreach( $this->post_types as $slug => $post_type ){
@@ -170,12 +221,7 @@
 						'supports' 		=> $post_type['supports'],
 						'menu_icon' 	=> $post_type['menu_icon'],
 						'has_archive' 	=> $post_type['has_archive'],
-						'rewrite' => array(
-							'slug'		=> $slug,
-							'with_front'=> false,
-							'feed'		=> true,
-							'pages'		=> true
-						)
+						'rewrite' 		=> isset( $post_type['rewrite'] ) ? $post_type['rewrite'] : array( 'slug' => $slug, 'with_front'=> false, 'feed' => true, 'pages' => true )
 					)
 				);
 			}
