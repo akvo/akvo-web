@@ -13,6 +13,7 @@
 			add_theme_support( 'post-thumbnails' );					// ADD THEME SUPPORT FOR THUMBNAILS
 			set_post_thumbnail_size( 240, 135, true );				// SET POST THUMBNAIL SIZES 
 			
+			/* change permalinks */
 			add_filter('post_type_link', function( $permalink, $post_id, $leavename ){
 				
 				$post = get_post( $post_id );
@@ -191,6 +192,14 @@
 						'new_item_name' => "New Akvo Foundation Group"
 					)
 				),
+				'foundation_type' 	=> array(
+					'post_type'	=> array( 'foundation_member' ),
+					'labels'	=> array(
+						'name' 			=> 'Akvo Foundation Type',
+						'add_new_item' 	=> 'New Akvo Foundation Type',
+						'new_item_name' => "New Akvo Foundation Type"
+					)
+				),
 			);
 		}
 		
@@ -198,7 +207,7 @@
 			
 			/* rewrite urls for microstory links */
 			global $wp_rewrite;
-			$microstory_structure = '/microstories/%category%/%microstory%/';
+			$microstory_structure = '/stories/%category%/%microstory%/';
 			$wp_rewrite->add_rewrite_tag( "%microstory%", '([^/]+)', "microstory=" );
 			$wp_rewrite->add_permastruct( 'microstory', $microstory_structure, false );
 			
