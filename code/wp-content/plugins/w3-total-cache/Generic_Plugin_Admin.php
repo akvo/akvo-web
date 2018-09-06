@@ -67,7 +67,7 @@ class Generic_Plugin_Admin {
 		if ( is_network_admin() ) {
 			add_action( 'network_admin_menu', array(
 					$this,
-					'admin_menu'
+					'network_admin_menu'
 				) );
 			add_filter( 'network_admin_plugin_action_links_' . W3TC_FILE, array(
 					$this,
@@ -329,14 +329,23 @@ class Generic_Plugin_Admin {
         <?php
 	}
 
+
+	function network_admin_menu() {
+		$this->_admin_menu( 'manage_network_options' );
+	}
+
+	function admin_menu() {
+		$this->_admin_menu( 'manage_options' );
+	}
+
 	/**
 	 * Admin menu
 	 *
 	 * @return void
 	 */
-	function admin_menu() {
+	private function _admin_menu( $base_capability ) {
 		$base_capability = apply_filters( 'w3tc_capability_menu',
-			'manage_options' );
+			$base_capability );
 
 		if ( current_user_can( $base_capability ) ) {
 			$menus = Dispatcher::component( 'Root_AdminMenu' );
@@ -363,7 +372,10 @@ class Generic_Plugin_Admin {
 			}
 
 			global $pagenow;
-			if ( $pagenow == 'plugins.php' || $this->is_w3tc_page ) {
+			if ( $pagenow == 'plugins.php' || $this->is_w3tc_page ||
+				isset( $_REQUEST['w3tc_note'] ) ||
+				isset( $_REQUEST['w3tc_error'] ) ||
+				isset( $_REQUEST['w3tc_message'] ) ) {
 				/**
 				 * Only admin can see W3TC notices and errors
 				 */
@@ -464,8 +476,8 @@ class Generic_Plugin_Admin {
 		$n = 0;
 
 		foreach ( $sections as $section => $data ) {
-			$content = '<div class="w3tchelp_content w3tchelp_section_' .
-				md5( $section ) . '"></div>';
+			$content = '<div class="w3tchelp_content" data-section="' .
+				$section . '"></div>';
 
 			$screen->add_help_tab( array(
 					'id' => 'w3tc_faq_' . $n,
@@ -477,24 +489,17 @@ class Generic_Plugin_Admin {
 	}
 
 	public function w3tc_ajax_faq() {
-		$sections = Generic_Faq::sections();
-		$faq = Generic_Faq::parse();
+		$section = $_REQUEST['section'];
 
+		$entries = Generic_Faq::parse( $section );
 		$response = array();
 
-		foreach ( $sections as $section => $data ) {
-			$entries = $faq[$section];
-			$columns = array_chunk( $entries, ceil( count( $entries ) / 3 ) );
+		ob_start();
+		include W3TC_DIR . '/Generic_Plugin_Admin_View_Faq.php';
+		$content = ob_get_contents();
+		ob_end_clean();
 
-			ob_start();
-			include W3TC_INC_OPTIONS_DIR . '/common/help.php';
-			$content = ob_get_contents();
-			ob_end_clean();
-
-			$response[md5( $section )] = $content;
-		}
-
-		echo json_encode( $response );
+		echo json_encode( array( 'content' => $content ) );
 	}
 
 
@@ -649,7 +654,7 @@ class Generic_Plugin_Admin {
 			'flush_minify' => __( 'Minify cache successfully emptied.', 'w3-total-cache' ),
 			'flush_browser_cache' => __( 'Media Query string has been successfully updated.', 'w3-total-cache' ),
 			'flush_varnish' => __( 'Varnish servers successfully purged.', 'w3-total-cache' ),
-			'flush_cdn' => __( 'CDN was successfully purged.', 'w3-total-cache' ),
+			'flush_cdn' => __( '<acronym title="Content Delivery Network">CDN</acronym> was successfully purged.', 'w3-total-cache' ),
 			'support_request' => __( 'The support request has been successfully sent.', 'w3-total-cache' ),
 			'config_import' => __( 'Settings successfully imported.', 'w3-total-cache' ),
 			'config_reset' => __( 'Settings successfully restored.', 'w3-total-cache' ),
@@ -771,24 +776,22 @@ class Generic_Plugin_Admin {
 			}
 		}
 
-		if ( Util_Admin::is_w3tc_admin_page() ) {
-			$errors = apply_filters( 'w3tc_errors', $errors );
-			$notes = apply_filters( 'w3tc_notes', $notes );
+		$errors = apply_filters( 'w3tc_errors', $errors );
+		$notes = apply_filters( 'w3tc_notes', $notes );
 
-			/**
-			 * Show messages
-			 */
-			foreach ( $notes as $key => $note ) {
-				echo sprintf(
-					'<div class="updated w3tc_note" id="%s"><p>%s</p></div>',
-					$key,
-					$note );
-			}
+		/**
+		 * Show messages
+		 */
+		foreach ( $notes as $key => $note ) {
+			echo sprintf(
+				'<div class="updated w3tc_note" id="%s"><p>%s</p></div>',
+				$key,
+				$note );
+		}
 
-			foreach ( $errors as $key => $error ) {
-				echo sprintf( '<div class="error w3tc_error" id="%s"><p>%s</p></div>',
-					$key, $error );
-			}
+		foreach ( $errors as $key => $error ) {
+			echo sprintf( '<div class="error w3tc_error" id="%s"><p>%s</p></div>',
+				$key, $error );
 		}
 	}
 }

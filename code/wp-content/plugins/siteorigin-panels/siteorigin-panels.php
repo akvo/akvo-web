@@ -3,7 +3,7 @@
 Plugin Name: Page Builder by SiteOrigin
 Plugin URI: https://siteorigin.com/page-builder/
 Description: A drag and drop, responsive page builder that simplifies building your website.
-Version: 2.6.3
+Version: 2.8.2
 Author: SiteOrigin
 Author URI: https://siteorigin.com
 License: GPL3
@@ -11,12 +11,12 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: http://siteorigin.com/page-builder/#donate
 */
 
-define( 'SITEORIGIN_PANELS_VERSION', '2.6.3' );
+define( 'SITEORIGIN_PANELS_VERSION', '2.8.2' );
 if ( ! defined( 'SITEORIGIN_PANELS_JS_SUFFIX' ) ) {
 	define( 'SITEORIGIN_PANELS_JS_SUFFIX', '.min' );
 }
 define( 'SITEORIGIN_PANELS_CSS_SUFFIX', '.min' );
-define( 'SITEORIGIN_PANELS_VERSION_SUFFIX', '-263' );
+define( 'SITEORIGIN_PANELS_VERSION_SUFFIX', '-282' );
 
 require_once plugin_dir_path( __FILE__ ) . 'inc/functions.php';
 
@@ -43,10 +43,6 @@ class SiteOrigin_Panels {
 			SiteOrigin_Panels_Settings::single();
 			SiteOrigin_Panels_Revisions::single();
 			SiteOrigin_Panels_Admin::single();
-
-			if( ! class_exists( 'SiteOrigin_Learn_Dialog' ) ) {
-				include plugin_dir_path( __FILE__ ) . 'learn/learn.php';
-			}
 		}
 
 		// Include the live editor file if we're in live editor mode.
@@ -65,10 +61,15 @@ class SiteOrigin_Panels {
 		
 		// We need to generate fresh post content
 		add_filter( 'the_content', array( $this, 'generate_post_content' ) );
+		add_filter( 'woocommerce_format_content', array( $this, 'generate_woocommerce_content' ) );
 		add_filter( 'wp_enqueue_scripts', array( $this, 'generate_post_css' ) );
 		
 		// Content cache has been removed. SiteOrigin_Panels_Cache_Renderer just deletes any existing caches.
 		SiteOrigin_Panels_Cache_Renderer::single();
+		
+		if ( function_exists( 'register_block_type' ) ) {
+			SiteOrigin_Panels_Compat_Gutenberg_Block::single();
+		}
 		
 		
 		define( 'SITEORIGIN_PANELS_BASE_FILE', __FILE__ );
@@ -135,6 +136,10 @@ class SiteOrigin_Panels {
 			$filename = str_replace( '_', '-', $filename );
 			$filename = strtolower( preg_replace( '/([a-z])([A-Z])/', '$1-$2', $filename ) );
 			$filename = plugin_dir_path( __FILE__ ) . 'inc/widgets/' . $filename . '.php';
+		}
+		else if ( strpos( $class, 'SiteOrigin_Panels_Compat_' ) === 0 ) {
+			$filename = str_replace( array( 'SiteOrigin_Panels_Compat_', '_' ), array( '', '-' ), $class );
+			$filename = plugin_dir_path( __FILE__ ) . 'compat/' . strtolower( $filename ) . '.php';
 		}
 		else if ( strpos( $class, 'SiteOrigin_Panels_' ) === 0 ) {
 			$filename = str_replace( array( 'SiteOrigin_Panels_', '_' ), array( '', '-' ), $class );
@@ -254,6 +259,23 @@ class SiteOrigin_Panels {
 
 		return $panels_data;
 	}
+	
+	/**
+	 * Generate post content for WooCommerce shop page if it's using a PB layout.
+	 *
+	 * @param $content
+	 *
+	 * @return string
+	 *
+	 * @filter woocommerce_format_content
+	 */
+	public function generate_woocommerce_content( $content ) {
+		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+			return $this->generate_post_content( $content );
+		}
+		
+		return $content;
+	}
 
 	/**
 	 * Generate post content for the current post.
@@ -275,6 +297,11 @@ class SiteOrigin_Panels {
 		}
 		
 		$post_id = get_the_ID();
+		
+		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+			$post_id = wc_get_page_id( 'shop' );
+		}
+		
 		// If we're viewing a preview make sure we load and render the autosave post's meta.
 		if ( $preview ) {
 			$preview_post = wp_get_post_autosave( $post_id, get_current_user_id() );
@@ -320,9 +347,15 @@ class SiteOrigin_Panels {
 	 * Generate CSS for the current post
 	 */
 	public function generate_post_css() {
-		if( is_singular() && get_post_meta( get_the_ID(), 'panels_data', true ) ) {
+		$post_id = get_the_ID();
+		
+		if ( class_exists( 'WooCommerce' ) && is_shop() ) {
+			$post_id = wc_get_page_id( 'shop' );
+		}
+		
+		if( is_singular() && get_post_meta( $post_id, 'panels_data', true ) ) {
 			$renderer = SiteOrigin_Panels::renderer();
-			$renderer->add_inline_css( get_the_ID(), $renderer->generate_css( get_the_ID() ) );
+			$renderer->add_inline_css( $post_id, $renderer->generate_css( $post_id ) );
 		}
 	}
 
@@ -482,11 +515,6 @@ class SiteOrigin_Panels {
 			do_action( 'siteorigin_panels_version_changed' );
 			update_option( 'siteorigin_panels_active_version', SITEORIGIN_PANELS_VERSION );
 		}
-	}
-
-	static function display_learn_button() {
-		return siteorigin_panels_setting( 'display-learn' ) &&
-			   apply_filters( 'siteorigin_panels_learn', true );
 	}
 
 	/**

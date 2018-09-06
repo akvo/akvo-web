@@ -258,7 +258,7 @@ if ( ! class_exists( 'Tribe__Events__Templates' ) ) {
 		public static function needs_compatibility_fix ( $theme = null ) {
 			// Defaults to current active theme
 			if ( $theme === null ) {
-				$theme = wp_get_theme()->Template;
+				$theme = get_stylesheet();
 			}
 
 			$theme_compatibility_list = apply_filters( 'tribe_themes_compatibility_fixes', self::$themes_with_compatibility_fixes );
@@ -357,6 +357,11 @@ if ( ! class_exists( 'Tribe__Events__Templates' ) ) {
 		 */
 		public static function modify_global_post_title( $title = '' ) {
 			global $post;
+
+			// When in the loop, no need to override titles.
+			if ( in_the_loop() ) {
+				return $title;
+			}
 
 			// Set the title to an empty string (but record the original)
 			self::$original_post_title = $post->post_title;
@@ -708,7 +713,8 @@ if ( ! class_exists( 'Tribe__Events__Templates' ) ) {
 		 * Query is complete: stop the loop from repeating.
 		 */
 		private static function endQuery() {
-			global $wp_query;
+
+			$wp_query = tribe_get_global_query_object();
 
 			$wp_query->current_post = -1;
 			$wp_query->post_count   = 0;
@@ -766,7 +772,7 @@ if ( ! class_exists( 'Tribe__Events__Templates' ) ) {
 				return;
 			}
 
-			global $wp_query;
+			$wp_query = tribe_get_global_query_object();
 
 			if ( $wp_query->is_main_query() && tribe_is_event_query() && tribe_get_option( 'tribeEventsTemplate', 'default' ) != '' ) {
 
@@ -789,7 +795,7 @@ if ( ! class_exists( 'Tribe__Events__Templates' ) ) {
 		 * Restore the original query after spoofing it.
 		 */
 		public static function restoreQuery() {
-			global $wp_query;
+			$wp_query = tribe_get_global_query_object();
 
 			// If the query hasn't been spoofed we need take no action
 			if ( ! isset( $wp_query->spoofed ) || ! $wp_query->spoofed ) {

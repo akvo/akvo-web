@@ -1,6 +1,4 @@
 <?php
-defined( 'WPINC' ) || die; // Do not load directly.
-
 /**
  * Array utilities
  */
@@ -60,10 +58,10 @@ class Tribe__Utils__Array {
 	 *
 	 * Example: get( $a, [ 0, 1, 2 ] ) returns the value of $a[0][1][2] or the default.
 	 *
-	 * @param  array $variable  Array or object to search within.
-	 * @param  array $indexes   Specify each nested index in order.
-	 *                          Example: array( 'lvl1', 'lvl2' );
-	 * @param  mixed $default   Default value if the search finds nothing.
+	 * @param  array        $variable Array or object to search within.
+	 * @param  array|string $indexes  Specify each nested index in order.
+	 *                                Example: array( 'lvl1', 'lvl2' );
+	 * @param  mixed        $default  Default value if the search finds nothing.
 	 *
 	 * @return mixed The value of the specified index or the default if not found.
 	 */
@@ -89,6 +87,32 @@ class Tribe__Utils__Array {
 	}
 
 	/**
+	 * Find a value inside a list of array or objects, including one nested a few levels deep.
+	 *
+	 * @since 4.7.7
+	 *
+	 * Example: get( [$a, $b, $c], [ 0, 1, 2 ] ) returns the value of $a[0][1][2] found in $a, $b or $c
+	 * or the default.
+	 *
+	 * @param  array        $variables Array of arrays or objects to search within.
+	 * @param  array|string $indexes   Specify each nested index in order.
+	 *                                 Example: array( 'lvl1', 'lvl2' );
+	 * @param  mixed        $default   Default value if the search finds nothing.
+	 *
+	 * @return mixed The value of the specified index or the default if not found.
+	 */
+	public static function get_in_any( array $variables, $indexes, $default = null ) {
+		foreach ( $variables as $variable ) {
+			$found = self::get( $variable, $indexes, '__not_found__' );
+			if ( '__not_found__' !== $found ) {
+				return $found;
+			}
+		}
+
+		return $default;
+	}
+
+	/**
 	 * Behaves exactly like the native strpos(), but accepts an array of needles.
 	 *
 	 * @see strpos()
@@ -111,5 +135,133 @@ class Tribe__Utils__Array {
 		}
 
 		return false;
+	}
+
+	/**
+	 * Converts a list to an array filtering out empty string elements.
+	 *
+	 * @param     mixed   $value A string representing a list of values separated by the specified separator
+	 *                           or an array. If the list is a string (e.g. a CSV list) then it will urldecoded
+	 *                           before processing.
+	 * @param string $sep The char(s) separating the list elements; will be ignored if the list is an array.
+	 *
+	 * @return array An array of list elements.
+	 */
+	public static function list_to_array( $value, $sep = ',' ) {
+		// since we might receive URL encoded strings for CSV lists let's URL decode them first
+		$value = is_array( $value ) ? $value : urldecode( $value );
+
+		$sep = is_string( $sep ) ? $sep : ',';
+
+		if ( $value === null || $value === '' ) {
+			return array();
+		}
+
+		if ( ! is_array( $value ) ) {
+			$value = preg_split( '/\\s*' . preg_quote( $sep ) . '\\s*/', $value );
+		}
+
+		$filtered = array();
+		foreach ( $value as $v ) {
+			if ( '' === $v ) {
+				continue;
+			}
+			$filtered[] = is_numeric( $v ) ? $v + 0 : $v;
+		}
+
+		return $filtered;
+	}
+
+	/**
+	 * Returns a list separated by the specified separator.
+	 *
+	 * @since 4.6
+	 *
+	 * @param mixed  $list
+	 * @param string $sep
+	 *
+	 * @return string The list separated by the specified separator or the original list if the list is empty.
+	 */
+	public static function to_list( $list, $sep = ',' ) {
+		if ( empty( $list ) ) {
+			return $list;
+		}
+
+		if ( is_array( $list ) ) {
+			return implode( $sep, $list );
+		}
+
+		return $list;
+	}
+
+	/**
+	 * Sanitize a multidimensional array.
+	 *
+	 * @since   4.7.18
+	 *
+	 * @param array $data The array to sanitize.
+	 *
+	 * @return array The sanitized array
+	 *
+	 * @link https://gist.github.com/esthezia/5804445
+	 */
+	public static function escape_multidimensional_array( $data = array() ) {
+
+		if ( ! is_array( $data ) || ! count( $data ) ) {
+			return array();
+		}
+
+		foreach ( $data as $key => $value ) {
+			if ( ! is_array( $value ) && ! is_object( $value ) ) {
+				$data[ $key ] = esc_attr( trim( $value ) );
+			}
+			if ( is_array( $value ) ) {
+				$data[ $key ] = self::escape_multidimensional_array( $value );
+			}
+		}
+
+		return $data;
+	}
+
+	/**
+	 * Returns an array of values obtained by using the keys on the map; keys
+	 * that do not have a match in map are discarded.
+	 *
+	 * To discriminate from not found results and legitimately `false`
+	 * values from the map the `$found` parameter will be set by reference.
+	 *
+	 * @since 4.7.19
+	 *
+	 * @param      string|array $keys  One or more keys that should be used to get
+	 *                                 the new values
+	 * @param array             $map   An associative array relating the keys to the new
+	 *                                 values.
+	 * @param bool              $found When using a single key this argument will be
+	 *                                 set to indicate whether the mapping was successful
+	 *                                 or not.
+	 *
+	 * @return array|mixed|false An array of mapped values, a single mapped value when passing
+	 *                           one key only or `false` if one key was passed but the key could
+	 *                           not be mapped.
+	 */
+	public static function map_or_discard( $keys, array $map, &$found = true ) {
+		$hash   = md5( time() );
+		$mapped = array();
+
+		foreach ( (array) $keys as $key ) {
+			$meta_key = Tribe__Utils__Array::get( $map, $key, $hash );
+			if ( $hash === $meta_key ) {
+				continue;
+			}
+			$mapped[] = $meta_key;
+		}
+
+		$found = (bool) count( $mapped );
+
+		if ( is_array( $keys ) ) {
+			return $mapped;
+		}
+
+		return $found ? $mapped[0] : false;
 	}
 }

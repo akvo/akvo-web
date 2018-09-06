@@ -128,8 +128,8 @@ class CacheFlush {
 	/**
 	 * Purges/Flushes post page
 	 */
-	function flush_post( $post_id ) {
-		return $this->_executor->flush_post( $post_id );
+	function flush_post( $post_id, $extras = null ) {
+		return $this->_executor->flush_post( $post_id, $extras );
 	}
 
 	/**
@@ -160,14 +160,25 @@ class CacheFlush {
 	}
 
 	/**
+	 * Purges/Flushes cache group
+	 */
+	function flush_group( $group, $extras = null ) {
+		static $flushed_groups = array();
+		if ( !isset( $flushed_groups[$group] ) ) {
+			$flushed_groups[$group] = '*';
+			$this->_executor->flush_group( $group, $extras );
+		}
+	}
+
+	/**
 	 * Purges/Flushes url
 	 */
-	function flush_url( $url ) {
+	function flush_url( $url, $extras = null ) {
 		static $flushed_urls = array();
 
 		if ( !in_array( $url, $flushed_urls ) ) {
 			$flushed_urls[] = $url;
-			return $this->_executor->flush_url( $url );
+			return $this->_executor->flush_url( $url, $extras );
 		}
 		return true;
 	}

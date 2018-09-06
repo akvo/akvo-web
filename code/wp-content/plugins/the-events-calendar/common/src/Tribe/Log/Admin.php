@@ -3,7 +3,7 @@ class Tribe__Log__Admin {
 	public function __construct() {
 		add_action( 'wp_ajax_tribe_logging_controls', array( $this, 'listen' ) );
 		add_action( 'init', array( $this, 'serve_log_downloads' ) );
-		add_action( 'init', array( $this, 'register_script' ) );
+		add_action( 'plugins_loaded', array( $this, 'register_script' ) );
 	}
 
 	/**
@@ -18,8 +18,6 @@ class Tribe__Log__Admin {
 		$log_levels   = $this->get_logging_levels();
 		$log_entries  = $this->get_log_entries();
 		$download_url = $this->get_log_url();
-
-		$this->setup_script();
 
 		ob_start();
 		include trailingslashit( Tribe__Main::instance()->plugin_path ) . 'src/admin-views/event-log.php';
@@ -101,23 +99,22 @@ class Tribe__Log__Admin {
 	 * Register our script early.
 	 */
 	public function register_script() {
-		wp_register_script(
+		tribe_asset(
+			Tribe__Main::instance(),
 			'tribe-common-logging-controls',
-			tribe_resource_url( 'admin-log-controls.js', false, null, Tribe__Main::instance() ),
+			'admin-log-controls.js',
 			array( 'jquery' ),
-			Tribe__Main::VERSION,
-			true
+			'admin_enqueue_scripts',
+			array(
+				'conditionals' => array( Tribe__Admin__Help_Page::instance(), 'is_current_page' ),
+				'localize' => (object) array(
+					'name' => 'tribe_logger_data',
+					'data' => array(
+						'check' => wp_create_nonce( 'logging-controls' ),
+					),
+				),
+			)
 		);
-	}
-
-	/**
-	 * Adds a script to handle the event log settings.
-	 */
-	protected function setup_script() {
-		wp_enqueue_script( 'tribe-common-logging-controls' );
-		wp_localize_script( 'tribe-common-logging-controls', 'tribe_logger_data', array(
-			'check' => wp_create_nonce( 'logging-controls' )
-		) );
 	}
 
 	/**
@@ -144,7 +141,7 @@ class Tribe__Log__Admin {
 	 *
 	 * @return array
 	 */
-	protected function get_log_engines(){
+	protected function get_log_engines() {
 		$available_engines = $this->log_manager()->get_logging_engines();
 
 		if ( empty( $available_engines ) ) {
@@ -206,7 +203,7 @@ class Tribe__Log__Admin {
 	protected function get_log_url( $log = null ) {
 		$query = array(
 			'tribe-common-log' => 'download',
-			'check' => wp_create_nonce( 'download_log' )
+			'check' => wp_create_nonce( 'download_log' ),
 		);
 
 		$log_download_url = add_query_arg( $query, get_admin_url( null, 'edit.php' ) );
@@ -258,7 +255,7 @@ class Tribe__Log__Admin {
 	 * @return Tribe__Log
 	 */
 	protected function log_manager() {
-		return Tribe__Main::instance()->log();
+		return tribe( 'logger' );
 	}
 
 	/**
@@ -268,6 +265,6 @@ class Tribe__Log__Admin {
 	 * @return Tribe__Log__Logger|null
 	 */
 	protected function current_logger() {
-		return Tribe__Main::instance()->log()->get_current_logger();
+		return tribe( 'logger' )->get_current_logger();
 	}
 }

@@ -16,7 +16,7 @@ class Generic_AdminActions_Flush {
 	 * @return void
 	 */
 	function w3tc_flush_all() {
-		w3tc_flush_all();
+		w3tc_flush_all( array( 'ui_action' => 'flush_button' ) );
 		$this->_redirect_after_flush( 'flush_all' );
 	}
 
@@ -390,7 +390,7 @@ class Generic_AdminActions_Flush {
 				), true );
 		} else {
 			Util_Admin::redirect_with_custom_messages2( array(
-					'errors' => array( 'Failed to flush: ' .
+					'errors' => array( 'Failed to purge: ' .
 						implode( ', ', $errors ) )
 				), true );
 		}

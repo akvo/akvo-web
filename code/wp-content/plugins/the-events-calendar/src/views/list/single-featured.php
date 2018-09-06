@@ -5,8 +5,7 @@
  *
  * Override this template in your own theme by creating a file at [your-theme]/tribe-events/list/single-featured.php
  *
- * @package TribeEventsCalendar
- * @version  4.4
+ * @version 4.6.19
  *
  */
 if ( ! defined( 'ABSPATH' ) ) {
@@ -26,20 +25,13 @@ $organizer = tribe_get_organizer();
 echo tribe_event_featured_image( null, 'large' );
 ?>
 
-<!-- Event Cost -->
-<?php if ( tribe_get_cost() ) : ?>
-	<div class="tribe-events-event-cost">
-		<span><?php echo tribe_get_cost( null, true ); ?></span>
-	</div>
-<?php endif; ?>
-
 <!-- Event Title -->
 <?php do_action( 'tribe_events_before_the_event_title' ) ?>
-<h2 class="tribe-events-list-event-title">
+<h3 class="tribe-events-list-event-title">
 	<a class="tribe-event-url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
 		<?php the_title() ?>
 	</a>
-</h2>
+</h3>
 <?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
 <!-- Event Meta -->
@@ -57,7 +49,7 @@ echo tribe_event_featured_image( null, 'large' );
 			<div class="tribe-events-venue-details">
 				<?php echo implode( ', ', $venue_details ); ?>
 				<?php
-				if ( tribe_get_map_link() ) {
+				if ( tribe_show_google_map_link() ) {
 					echo tribe_get_map_link_html();
 				}
 				?>
@@ -67,6 +59,17 @@ echo tribe_event_featured_image( null, 'large' );
 	</div>
 </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
+
+<!-- Event Cost -->
+<?php if ( tribe_get_cost() ) : ?>
+	<div class="tribe-events-event-cost featured-event">
+		<span class="ticket-cost"><?php echo esc_html( tribe_get_cost( null, true ) ); ?></span>
+		<?php
+		/** This action is documented in the-events-calendar/src/views/list/single-event.php */
+		do_action( 'tribe_events_inside_cost' )
+		?>
+	</div>
+<?php endif; ?>
 
 <!-- Event Content -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>
