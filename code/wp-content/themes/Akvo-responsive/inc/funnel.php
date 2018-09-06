@@ -26,6 +26,9 @@
 			$styles = "background-image: url('".$bg_image."')";
 		}
 		
+		$field_name = get_sub_field( 'field_name' );
+		$field_value = get_sub_field( 'field_value' );
+		
 ?>
 <section id="funnel-<?php _e( $i );?>" class="funelContainer hidden" style="<?php _e( $styles );?>">
 	<div class="funnelContent">
@@ -41,7 +44,7 @@
 		
 		<ul class="<?php if( $buttons_count <=2 ){_e('inlined');}?>">
 			<?php while( have_rows('buttons') ) : the_row();?>
-			<li><a href="<?php _e( $next_link );?>" data-behaviour="fnl-nxt-btn" data-q="<?php _e( $question );?>" class="bouton"><?php the_sub_field('title')?></a></li>
+			<li><a href="<?php _e( $next_link );?>" data-field-name="<?php _e( $field_name );?>" data-field-value="<?php _e( $field_value );?>" data-behaviour="fnl-nxt-btn" data-q="<?php _e( $question );?>" class="bouton"><?php the_sub_field('title')?></a></li>
 			<?php endwhile;?>
 		</ul>
 	</div>
