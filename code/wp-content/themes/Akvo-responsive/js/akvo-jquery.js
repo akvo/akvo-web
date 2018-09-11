@@ -421,6 +421,33 @@ $.fn.double_filters = function(){
 	});
 }
 
+$.fn.dropdown_downloads = function(){
+	return this.each(function(){
+		
+		var $el 			= $( this ),
+			$dropdown		= $el.find('select'),
+			$download_btn	= $el.find('a[href]');
+		
+		$dropdown.change( function(){
+			
+			var download_link = $(this).val();
+			
+			$download_btn.attr( 'href', download_link );
+			
+		});
+		
+		$download_btn.click( function( ev ){ /* IF THE DOWNLOAD IS CLICKED, CHECK IF THE DOWNLOAD LINK HAS BEEN ADDED */
+			
+			var download_link = $download_btn.attr( 'href' );
+			
+			if( download_link == '#' ){
+				ev.preventDefault();
+			}
+			
+		});
+		
+	});
+}
 
 $("document").ready(function() {
 	
@@ -444,5 +471,6 @@ $("document").ready(function() {
 		*/
 	});
 
+	$('[data-behaviour~=downloads-dropdown]').dropdown_downloads();
 	
 });

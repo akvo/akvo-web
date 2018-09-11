@@ -167,6 +167,8 @@
 	/* CHECK IF THE CURRENT PAGE IS USING THE NEW TEMPLATE */
 	function is_akvo_full_black_body(){
 		
+		if( is_singular( 'microstory' ) ) return true;
+		
 		$akvo_page = new akvoBlackBody;
 		$new_templates = $akvo_page->get_templates();
 		
