@@ -20,6 +20,7 @@
 				'post_type'			=> '', 
 				'primary_filter' 	=> '', 
 				'secondary_filter'	=> '',
+				'label_all'			=> 'All',
 				'showposts'			=> 100,
 				'cache'				=> '0'
 			);

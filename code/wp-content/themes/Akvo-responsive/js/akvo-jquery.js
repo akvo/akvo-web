@@ -447,7 +447,8 @@ $.fn.double_filters = function(){
 		});
 		/* HANDLE CLICK EVENTS */
 		
-		
+		// BY DEFAULT SELECT THE FIRST PRIMARY FILTER THAT IS AVAILABLE
+		$el.find('[data-filter~=primary]').first().click();
 		
 	});
 }
