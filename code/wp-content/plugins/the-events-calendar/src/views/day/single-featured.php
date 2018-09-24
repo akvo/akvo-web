@@ -5,8 +5,7 @@
  *
  * Override this template in your own theme by creating a file at [your-theme]/tribe-events/day/single-featured.php
  *
- * @version 4.4
- * @package TribeEventsCalendar
+ * @version 4.6.19
  *
  */
 
@@ -23,20 +22,13 @@ $has_venue_address = ( ! empty( $venue_details['address'] ) ) ? ' location' : ''
 echo tribe_event_featured_image( null, 'large' );
 ?>
 
-<!-- Event Cost -->
-<?php if ( tribe_get_cost() ) : ?>
-	<div class="tribe-events-event-cost">
-		<span><?php echo tribe_get_cost( null, true ); ?></span>
-	</div>
-<?php endif; ?>
-
 <!-- Event Title -->
 <?php do_action( 'tribe_events_before_the_event_title' ) ?>
-<h2 class="tribe-events-list-event-title summary">
+<h3 class="tribe-events-list-event-title summary">
 	<a class="url" href="<?php echo esc_url( tribe_get_event_link() ); ?>" title="<?php the_title_attribute() ?>" rel="bookmark">
 		<?php the_title() ?>
 	</a>
-</h2>
+</h3>
 <?php do_action( 'tribe_events_after_the_event_title' ) ?>
 
 <!-- Event Meta -->
@@ -51,12 +43,31 @@ echo tribe_event_featured_image( null, 'large' );
 	<?php if ( $venue_details ) : ?>
 		<!-- Venue Display Info -->
 		<div class="tribe-events-venue-details">
-			<?php echo implode( ', ', $venue_details ); ?>
+		<?php
+			$address_delimiter = empty( $venue_address ) ? ' ' : ', ';
+
+			// These details are already escaped in various ways earlier in the code.
+			echo implode( $address_delimiter, $venue_details );
+
+			if ( tribe_show_google_map_link() ) {
+				echo tribe_get_map_link_html();
+			}
+		?>
 		</div> <!-- .tribe-events-venue-details -->
 	<?php endif; ?>
 
 </div><!-- .tribe-events-event-meta -->
 <?php do_action( 'tribe_events_after_the_meta' ) ?>
+
+<?php if ( tribe_get_cost() ) : ?>
+	<div class="tribe-events-event-cost">
+		<span class="ticket-cost"><?php echo tribe_get_cost( null, true ); ?></span>
+		<?php
+		/** This action is documented in the-events-calendar/src/views/list/single-event.php */
+		do_action( 'tribe_events_inside_cost' )
+		?>
+	</div>
+<?php endif; ?>
 
 <!-- Event Content -->
 <?php do_action( 'tribe_events_before_the_content' ) ?>

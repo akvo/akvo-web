@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Merged by Davide Giunchi, from plugin "Stop User Enumeration" url "http://locally.uk/wordpress-plugins/stop-user-enumeration/" by "Locally Digital Ltd"
+ * Merged by Davide Giunchi, from plugin "Stop User Enumeration"
  */
 
 if (!is_admin() && isset($_SERVER['REQUEST_URI'])) {

@@ -3,8 +3,8 @@ Contributors: mywebtonet
 Plugin URI: http://www.mywebtonet.com/files/wordpressplugins
 Tags: benchmark, php, mysql, performance, testing, speed, dynotest, query tester
 Requires at least: 3.2.0
-Tested up to: 4.7
-Stable tag: 1.2.0
+Tested up to: 4.9
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -117,6 +117,8 @@ Now with PHP 7.0(RC5) figures.
 = 1.2.0 =
 Tested with PHP 7.1. For network testing we have changed so we no longer use file_get_contents but curl instead, this makes the plugin more compatible with almost all webserver configurations.
 
+= 1.2.1 =
+Minor update to the network test.
 
 == Upgrade Notice ==
 
@@ -186,3 +188,6 @@ Now with PHP 7.0(RC5) figures.
 
 = 1.2.0 =
 Tested with PHP 7.1. For network testing we have changed so we no longer use file_get_contents but curl instead, this makes the plugin more compatible with almost all webserver configurations.
+
+= 1.2.1 =
+Minor update to the network test

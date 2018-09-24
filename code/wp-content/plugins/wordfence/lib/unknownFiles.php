@@ -1,9 +1,10 @@
+<?php if (!defined('WORDFENCE_VERSION')) { exit; } ?>
 <?php if(! wfUtils::isAdmin()){ exit(); } ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr" lang="en-US">
 <head>
 <title>Files found that don't belong to WordPress Core or known Themes and Plugins</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<link rel='stylesheet' id='wordfence-main-style-css'  href='<?php echo wfUtils::getBaseURL(); ?>/css/diff.css?ver=<?php echo WORDFENCE_VERSION; ?>' type='text/css' media='all' />
+<link rel='stylesheet' id='wordfence-main-style-css'  href='<?php echo wfUtils::getBaseURL() . wfUtils::versionedAsset('css/diff.css'); ?>?ver=<?php echo WORDFENCE_VERSION; ?>' type='text/css' media='all' />
 <body>
 <h1>Wordfence: Files found that don't belong to WordPress Core or known Themes and Plugins.</h1>
 <?php 
@@ -139,7 +140,7 @@ if($fileList){
 </tr>
 <?php
 	for($i = 0; $i < sizeof($files); $i++){
-		echo '<tr><td>' . wfUtils::formatBytes($files[$i][2]) . '</td><td>' . wfUtils::makeTimeAgo(time() - $files[$i][3]) . ' ago.</td><td>' . $files[$i][5] . '</td><td>' . $files[$i][6] . '</td><td>' . $files[$i][7] . '</td><td><a href="' . $files[$i][4] . '" target="_blank">' . $files[$i][1] . '</a></td></tr>';
+		echo '<tr><td>' . wfUtils::formatBytes($files[$i][2]) . '</td><td>' . wfUtils::makeTimeAgo(time() - $files[$i][3]) . ' ago.</td><td>' . $files[$i][5] . '</td><td>' . $files[$i][6] . '</td><td>' . $files[$i][7] . '</td><td><a href="' . $files[$i][4] . '" target="_blank" rel="noopener noreferrer">' . $files[$i][1] . '</a></td></tr>';
 	}
 	echo "</table>";
 } else {

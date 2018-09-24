@@ -21,7 +21,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 <?php do_action( 'tribe_events_venue_before_metabox', $post ); ?>
 <?php if ( $post->post_type != Tribe__Events__Main::VENUE_POST_TYPE ): ?>
-	<tr class="venue">
+	<tr class="venue tribe-linked-type-venue-name">
 		<td class='tribe-table-field-label'><?php printf( esc_html__( '%s Name:', 'the-events-calendar' ), tribe_get_venue_label_singular() ); ?></td>
 		<td>
 			<input
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</td>
 	</tr>
 <?php endif; ?>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-address">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'Address:', 'the-events-calendar' ); ?></td>
 	<td>
 		<input
@@ -46,7 +46,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		/>
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-city">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'City:', 'the-events-calendar' ); ?></td>
 	<td>
 		<input
@@ -58,7 +58,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		/>
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-country">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'Country:', 'the-events-calendar' ); ?></td>
 	<td>
 		<?php
@@ -92,13 +92,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 		</select>
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-state-province">
 	<?php
-	if ( ! isset( $_VenueStateProvince ) || $_VenueStateProvince == '' ) {
-		$_VenueStateProvince = - 1;
+	if ( 'auto-draft' === get_post_status() && empty( $_VenueStateProvince ) ) {
+		$currentState    = tribe_get_default_value( 'state' );
+		$currentProvince = tribe_get_default_value( 'province' );
+	} else {
+		$currentProvince = $_VenueProvince;
+		$currentState    = $_VenueState;
 	}
-	$currentState = ( $_VenueStateProvince == - 1 ) ? tribe_get_default_value( 'state' ) : $_VenueStateProvince;
-	$currentProvince = empty( $_VenueProvince ) ? tribe_get_default_value( 'province' ) : $_VenueProvince;
 	?>
 	<td class='tribe-table-field-label'><?php esc_html_e( 'State or Province:', 'the-events-calendar' ); ?></td>
 	<td>
@@ -120,17 +122,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<option value=""><?php esc_html_e( 'Select a State:', 'the-events-calendar' ); ?></option>
 			<?php
 			foreach ( Tribe__View_Helpers::loadStates() as $abbr => $fullname ) {
-				$state = -1 !== $_VenueStateProvince ? $_VenueStateProvince : $currentState;
 				// support matching by state abbreviation OR fullname.
 				// NOTE: converts to abbreviation on save
-				echo '<option value="' . esc_attr( $abbr ) . '"' . selected( ( $state === $abbr || $state === $fullname ), true, false ) . '>' . esc_html( $fullname ) . '</option>';
+				$selected = selected( ( $currentState === $abbr || $currentState === $fullname ), true, false );
+				echo '<option value="' . esc_attr( $abbr ) . '" ' . $selected . '>' . esc_html( $fullname ) . '</option>';
 			}
 			?>
 		</select>
 
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-zip">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'Postal Code:', 'the-events-calendar' ); ?></td>
 	<td>
 		<input
@@ -143,7 +145,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		/>
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-phone">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'Phone:', 'the-events-calendar' ); ?></td>
 	<td>
 		<input
@@ -156,7 +158,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		/>
 	</td>
 </tr>
-<tr class="venue">
+<tr class="venue tribe-linked-type-venue-website">
 	<td class='tribe-table-field-label'><?php esc_html_e( 'Website:', 'the-events-calendar' ); ?></td>
 	<td>
 		<input
@@ -250,7 +252,7 @@ if ( $post->post_type != Tribe__Events__Main::VENUE_POST_TYPE ) {
 ?>
 <?php do_action( 'tribe_events_after_venue_metabox', $post ); ?>
 
-<script type="text/javascript">
+<script>
 	jQuery('[name=venue\\[Venue\\]]').blur(function () {
 		jQuery.post('<?php echo esc_url_raw( admin_url( 'admin-ajax.php' ) ); ?>',
 			{

@@ -1,10 +1,11 @@
+<?php if (!defined('WORDFENCE_VERSION')) { exit; } ?>
 <div class="wf-row">
 	<div class="wf-col-xs-12">
 		<div class="wf-dashboard-item active">
 			<div class="wf-dashboard-item-inner">
 				<div class="wf-dashboard-item-content">
 					<div class="wf-dashboard-item-title">
-						<strong>Total Attacks Blocked - Wordfence Network</strong>
+						<strong><?php _e('Total Attacks Blocked:', 'wordfence'); ?> </strong><?php _e('Wordfence Network', 'wordfence'); ?>
 					</div>
 					<div class="wf-dashboard-item-action"><div class="wf-dashboard-item-action-disclosure"></div></div>
 				</div>
@@ -13,14 +14,14 @@
 				<ul class="wf-dashboard-item-list">
 					<li>
 						<?php if ($d->networkBlock24h === null): ?>
-							<div class="wf-dashboard-item-list-text"><p><em>Blocked attack counts not available yet.</em></p></div>
+							<div class="wf-dashboard-item-list-text"><p><em><?php _e('Blocked attack counts not available yet.', 'wordfence'); ?></em></p></div>
 						<?php else: ?>
 							<div class="wf-dashboard-graph-wrapper">
 								<div class="wf-dashboard-toggle-btns">
 									<ul class="wf-pagination wf-pagination-sm">
-										<li class="wf-active"><a href="#" class="wf-dashboard-graph-attacks" data-grouping="24h">24 Hours</a></li>
+										<li class="wf-active"><a href="#" class="wf-dashboard-graph-attacks" data-grouping="24h"><?php _e('24 Hours', 'wordfence'); ?></a></li>
 										<!-- <li><a href="#" class="wf-dashboard-graph-attacks" data-grouping="7d">7 Days</a></li> -->
-										<li><a href="#" class="wf-dashboard-graph-attacks" data-grouping="30d">30 Days</a></li>
+										<li><a href="#" class="wf-dashboard-graph-attacks" data-grouping="30d"><?php _e('30 Days', 'wordfence'); ?></a></li>
 									</ul>
 								</div>
 								<div class="wf-dashboard-network-blocks"><canvas id="wf-dashboard-network-blocks-24h"></canvas></div>
@@ -62,23 +63,9 @@ STYLING;
 												$labels = array();
 												$values = array();
 												
-												$utc = new DateTimeZone('UTC');
 												foreach ($blocks as $b) {
 													$values[] = $b['c'];
-													
-													$dtStr = gmdate("c", $b['t']); //Have to do it this way because of PHP 5.2
-													$dt = new DateTime($dtStr, $utc);
-													$tz = get_option('timezone_string');
-													if (!empty($tz)) {
-														$dt->setTimezone(new DateTimeZone($tz));
-													}
-													else {
-														$gmt = get_option('gmt_offset');
-														if (!empty($gmt)) {
-															$dt->setTimezone(new DateTimeZone('Etc/GMT' . ($gmt < 0 ? '+' : '-') . abs($gmt))); //The Etc/GMT timezones have the +- signs flipped
-														}
-													}
-													$labels[] = "'" . $dt->format('g a') . "'";
+													$labels[] = "'" . wfUtils::formatLocalTime('g a', $b['t']) . "'";
 												}
 												?>
 												labels: [<?php echo implode(',', $labels); ?>],
@@ -120,23 +107,9 @@ STYLING;
 												$labels = array();
 												$values = array();
 												
-												$utc = new DateTimeZone('UTC');
 												foreach ($blocks as $b) {
 													$values[] = $b['c'];
-													
-													$dtStr = gmdate("c", $b['t']); //Have to do it this way because of PHP 5.2
-													$dt = new DateTime($dtStr, $utc);
-													$tz = get_option('timezone_string');
-													if (!empty($tz)) {
-														$dt->setTimezone(new DateTimeZone($tz));
-													}
-													else {
-														$gmt = get_option('gmt_offset');
-														if (!empty($gmt)) {
-															$dt->setTimezone(new DateTimeZone('Etc/GMT' . ($gmt < 0 ? '+' : '-') . abs($gmt))); //The Etc/GMT timezones have the +- signs flipped
-														}
-													}
-													$labels[] = "'" . $dt->format('M j') . "'";
+													$labels[] = "'" . wfUtils::formatLocalTime('M j', $b['t']) . "'";
 												}
 												?>
 												labels: [<?php echo implode(',', $labels); ?>],
@@ -178,23 +151,9 @@ STYLING;
 												$labels = array();
 												$values = array();
 												
-												$utc = new DateTimeZone('UTC');
 												foreach ($blocks as $b) {
 													$values[] = $b['c'];
-													
-													$dtStr = gmdate("c", $b['t']); //Have to do it this way because of PHP 5.2
-													$dt = new DateTime($dtStr, $utc);
-													$tz = get_option('timezone_string');
-													if (!empty($tz)) {
-														$dt->setTimezone(new DateTimeZone($tz));
-													}
-													else {
-														$gmt = get_option('gmt_offset');
-														if (!empty($gmt)) {
-															$dt->setTimezone(new DateTimeZone('Etc/GMT' . ($gmt < 0 ? '+' : '-') . abs($gmt))); //The Etc/GMT timezones have the +- signs flipped
-														}
-													}
-													$labels[] = "'" . $dt->format('M j') . "'";
+													$labels[] = "'" . wfUtils::formatLocalTime('M j', $b['t']) . "'";
 												}
 												?>
 												labels: [<?php echo implode(',', $labels); ?>],
@@ -244,7 +203,7 @@ STYLING;
 						<?php endif; ?>
 					</li>
 				</ul>
-				<p class="wf-dashboard-last-updated">Last Updated: <?php echo esc_html(wfUtils::makeTimeAgo(time() - $d->lastGenerated)); ?> ago</p>
+				<p class="wf-dashboard-last-updated"><?php printf(__('Last Updated: %s ago', 'wordfence'), esc_html(wfUtils::makeTimeAgo(time() - $d->lastGenerated))); ?></p>
 			</div>
 		</div>
 	</div>

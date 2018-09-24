@@ -36,7 +36,6 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 		parent::__construct();
 
 		// Configure this tab ajax calls
-		add_action( 'wp_ajax_tribe_aggregator_dropdown_origins', array( $this, 'ajax_origins' ) );
 		add_action( 'wp_ajax_tribe_aggregator_save_credentials', array( $this, 'ajax_save_credentials' ) );
 		add_action( 'wp_ajax_tribe_aggregator_create_import', array( $this, 'ajax_create_import' ) );
 		add_action( 'wp_ajax_tribe_aggregator_fetch_import', array( $this, 'ajax_fetch_import' ) );
@@ -100,6 +99,7 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 		// mark the record creation as a preview record
 		$meta['preview'] = true;
+
 
 		if ( ! empty( $post_data['import_id'] ) ) {
 			$this->handle_import_finalize( $post_data );
@@ -181,7 +181,7 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 		$record = Tribe__Events__Aggregator__Records::instance()->get_by_import_id( $data['import_id'] );
 
-		if ( is_wp_error( $record ) ) {
+		if ( tribe_is_error( $record ) ) {
 			$this->messages['error'][] = $record->get_error_message();
 			return $this->messages;
 		}
@@ -219,9 +219,11 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 		$record->update_meta( 'interactive', true );
 
 		if ( 'csv' === $data['origin'] ) {
+            // here generate a global_id for the data
 			$result = $record->process_posts( $data );
 		} else {
-			$result = $record->process_posts();
+			// let the record fetch the data and start immediately if possible
+			$result = $record->process_posts( array(), true );
 		}
 
 		$result->record = $record;
@@ -237,11 +239,30 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 		}
 	}
 
+	/**
+	 * Parses the queue for errors and informations.
+	 *
+	 * @param Tribe__Events__Aggregator__Record__Queue_Interface|WP_Error|Tribe__Events__Aggregator__Record__Activity $queue
+	 *
+	 * @return array
+	 */
 	public function get_result_messages( $queue ) {
 		$messages = array();
 
 		if ( is_wp_error( $queue ) ) {
 			$messages[ 'error' ][] = $queue->get_error_message();
+
+			tribe_notice( 'tribe-aggregator-import-failed', array( $this, 'render_notice_import_failed' ), 'type=error' );
+
+			return $messages;
+		}
+
+		if (
+			$queue instanceof Tribe__Events__Aggregator__Record__Queue_Interface
+			&& $queue->has_errors()
+		) {
+			/** @var Tribe__Events__Aggregator__Record__Queue_Interface $queue */
+			$messages['error'][] = $queue->get_error_message();
 
 			tribe_notice( 'tribe-aggregator-import-failed', array( $this, 'render_notice_import_failed' ), 'type=error' );
 
@@ -385,14 +406,17 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 										 _x( ' at ', 'separator between date and time', 'the-events-calendar' ) .
 										 date( get_option( 'time_format' ), $scheduled_time );
 
-				$messages['success'][] = '<br/>' .
-										 sprintf( // add in timing
-											 __( 'The next import is scheduled for %1$s.', 'the-events-calendar' ),
-											 esc_html( $scheduled_time_string )
-										 ) .
-										 ' <a href="' . admin_url( 'edit.php?page=aggregator&post_type=tribe_events&tab=scheduled' ) . '">' .
-										 __( 'View your scheduled imports.', 'the-events-calendar' ) .
-										 '</a>';
+                if ( 'on_demand' !== $queue->record->frequency->id ) {
+
+                    $messages['success'][] = '<br/>' .
+                                             sprintf( // add in timing
+                                                 __( 'The next import is scheduled for %1$s.', 'the-events-calendar' ),
+                                                 esc_html( $scheduled_time_string )
+                                             ) .
+                                             ' <a href="' . admin_url( 'edit.php?page=aggregator&post_type=tribe_events&tab=scheduled' ) . '">' .
+                                             __( 'View your scheduled imports.', 'the-events-calendar' ) .
+                                             '</a>';
+                }
 			}
 		}
 
@@ -448,10 +472,10 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 		if ( is_wp_error( $result ) ) {
 			/** @var Tribe__Events__Aggregator__Service $service */
-			$service = tribe( 'events-aggregator.service' );
-			$result  = (object) array(
+			$service      = tribe( 'events-aggregator.service' );
+			$result       = (object) array(
 				'message_code' => $result->get_error_code(),
-				'message'      => $service->get_service_message( $result->get_error_code() ),
+				'message'      => $service->get_service_message( $result->get_error_code(), $result->get_error_data() ),
 			);
 			wp_send_json_error( $result );
 		}
@@ -464,7 +488,7 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 		$record = Tribe__Events__Aggregator__Records::instance()->get_by_import_id( $import_id );
 
-		if ( is_wp_error( $record ) ) {
+		if ( tribe_is_error( $record ) ) {
 			wp_send_json_error( $record );
 		}
 
@@ -484,8 +508,19 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 			if ( ! empty( $record->post->post_parent ) ) {
 				$parent_record = Tribe__Events__Aggregator__Records::instance()->get_by_post_id( $record->post->post_parent );
-				$parent_record->update_meta( 'source_name', $result->data->source_name );
+
+				if ( tribe_is_error( $parent_record ) ) {
+					$parent_record->update_meta( 'source_name', $result->data->source_name );
+				}
 			}
+		}
+
+		// if there is a warning in the data let's localize it
+		if ( ! empty( $result->warning_code ) ) {
+			/** @var Tribe__Events__Aggregator__Service $service */
+			$service         = tribe( 'events-aggregator.service' );
+			$default_warning = ! empty( $result->warning ) ? $result->warning : null;
+			$result->warning = $service->get_service_message( $result->warning_code, array(), $default_warning );
 		}
 
 		wp_send_json_success( $result );
@@ -535,6 +570,34 @@ class Tribe__Events__Aggregator__Tabs__New extends Tribe__Events__Aggregator__Ta
 
 		return ob_get_clean();
 	}
+
+	/**
+	 * Renders the "Eventbrite Tickets" upsell
+	 *
+	 * @since 4.6.19
+	 *
+	 * @return string
+	 */
+	public function maybe_display_eventbrite_upsell() {
+		if ( defined( 'TRIBE_HIDE_UPSELL' ) ) {
+			return;
+		}
+
+		if ( ! tribe( 'events-aggregator.main' )->is_service_active() ) {
+			return;
+		}
+
+		if ( class_exists( 'Tribe__Events__Tickets__Eventbrite__Main' ) ) {
+			return;
+		}
+
+		ob_start();
+
+		include_once Tribe__Events__Main::instance()->pluginPath . 'src/admin-views/aggregator/banners/eventbrite-upsell.php';
+
+		return ob_get_clean();
+	}
+
 
 	/**
 	 * Renders the "Expired Aggregator License" notice

@@ -34,7 +34,7 @@ $licensing_visible = ( ( !Util_Environment::is_wpmu() || is_network_admin() ) &&
 				array( 'id' => 'browser_cache', 'text' => __( 'Browser Cache', 'w3-total-cache' ) ),
 				array( 'id' => 'cdn', 'text' => __( '<abbr title="Content Delivery Network">CDN</abbr>', 'w3-total-cache' ) ),
 				array( 'id' => 'reverse_proxy', 'text' => __( 'Reverse Proxy', 'w3-total-cache' ) ) ) );
-		if ( Util_Environment::is_w3tc_enterprise() )
+		if ( Util_Environment::is_w3tc_pro() )
 			$anchors[] = array( 'id' => 'amazon_sns', 'text' => __( 'Amazon <abbr title="Simple Notification Service">SNS</abbr>', 'w3-total-cache' ) );
 		$anchors[] = array( 'id' => 'monitoring', 'text' => __( 'Monitoring', 'w3-total-cache' ) );
 		if ( $licensing_visible )
@@ -123,7 +123,8 @@ $licensing_visible = ( ( !Util_Environment::is_wpmu() || is_network_admin() ) &&
                     <a href="#general"><?php _e( 'General', 'w3-total-cache' ); ?></a> |
                     <a href="#css_js"><?php _e( '<acronym title="Cascading Style Sheet">CSS</acronym> &amp; <acronym title="JavaScript">JS</acronym>', 'w3-total-cache' ); ?></a> |
                     <a href="#html_xml"><?php _e( '<acronym title="Hypertext Markup Language">HTML</acronym> &amp; <acronym title="eXtensible Markup Language">XML</acronym>', 'w3-total-cache' ); ?></a> |
-                    <a href="#media"><?php _e( 'Media', 'w3-total-cache' ); ?></a>
+                    <a href="#media"><?php _e( 'Media', 'w3-total-cache' ); ?></a> |
+                    <a href="#security"><?php _e( 'Security Headers', 'w3-total-cache' ); ?></a>
                 </p>
     <?php
 		break;

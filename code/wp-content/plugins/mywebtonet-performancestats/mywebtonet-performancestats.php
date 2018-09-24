@@ -1,14 +1,14 @@
 <?php
 /*
  * @package mywebtonet performance statistics
- * @version 1.2.0
+ * @version 1.2.1
 */
 /*
 Plugin Name: PHP/MySQL CPU performance statistics
 Plugin URI: http://wordpress.org/plugins/mywebtonet-performancestats/
 Description: A benchmark plugin that dynotests CPU performance on your web and MySQL server and does a network bandwidth test.
 Author: Mywebtonet.com / Webhosting.dk
-Version: 1.2.0
+Version: 1.2.1
 Author URI: http://www.webhosting.dk 
 */
 
@@ -723,16 +723,22 @@ function test_Network() {
 	/*
 	* get hostnames in DNS cache
 	*/
-//        $dummy = url_get_contents('http://static.webhosting.dk/1mbfile');
-        $dummy = url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
+	
+	$testurl = "https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js";
 	
 	$time_start = microtime(true);
-	$data = url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
-        $data .= url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
-        $data .= url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
-        $data .= url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
-        $data .= url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
-        $data .= url_get_contents('http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.js');
+        $dummy = wp_remote_get($testurl);
+        // Check for error
+	if ( is_wp_error( $dummy ) ) {
+		return;
+	}
+	$data = wp_remote_retrieve_body( $dummy );
+        $dummy = wp_remote_get($testurl); $data .= wp_remote_retrieve_body( $dummy );
+        $dummy = wp_remote_get($testurl); $data .= wp_remote_retrieve_body( $dummy );
+        $dummy = wp_remote_get($testurl); $data .= wp_remote_retrieve_body( $dummy );
+        $dummy = wp_remote_get($testurl); $data .= wp_remote_retrieve_body( $dummy );
+        $dummy = wp_remote_get($testurl); $data .= wp_remote_retrieve_body( $dummy );
+
 	$time_end = microtime(true) - $time_start;
 	$lenfile = strlen($data);
 	$mbps = sprintf('%.2f', (($lenfile * 8) / 1024 / 1024) / $time_end);
@@ -740,7 +746,8 @@ function test_Network() {
 	* again, up against our servers in Europe
 	*/
 //	$whtime_start = microtime(true);
-//	$whdata = url_get_contents('http://static.webhosting.dk/1mbfile');
+//	$dummy = wp_remote_get('http://static.webhosting.dk/1mbfile');
+//	$whdata = wp_remote_retrieve_body( $dummy );
 //    	$whtime_end = microtime(true) - $whtime_start;
 //	$whlenfile = strlen($whdata);
 //	$whmbps = sprintf('%.2f', (($whlenfile * 8) / 1024 / 1024) / $whtime_end);
@@ -754,17 +761,6 @@ function test_Network() {
 	return $xresult;
 }
 
-function url_get_contents ($Url) {
-    if (!function_exists('curl_init')){ 
-        die('CURL is not installed!');
-    }
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $Url);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $output = curl_exec($ch);
-    curl_close($ch);
-    return $output;
-}
 
 function test_Loops($count = 10000000) {
 	$time_start = microtime(true);

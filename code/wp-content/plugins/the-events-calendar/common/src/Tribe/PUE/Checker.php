@@ -443,7 +443,9 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 			$domain = self::$domain;
 
 			if ( empty( $domain ) ) {
-				$domain = $_SERVER['SERVER_NAME'];
+				if ( isset( $_SERVER['SERVER_NAME'] ) ) {
+				    $domain = $_SERVER['SERVER_NAME'];
+				}
 
 				if ( is_multisite() ) {
 					// For multisite, return the network-level siteurl
@@ -620,9 +622,9 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 							$validity_msg.html(data.message);
 
 							switch ( data.status ) {
-								case 1: $validity_msg.addClass( 'valid-key' ); break;
+								case 1: $validity_msg.addClass( 'valid-key' ).removeClass( 'invalid-key' ); break;
 								case 2: $validity_msg.addClass( 'valid-key service-msg' ); break;
-								default: $validity_msg.addClass( 'invalid-key' ); break;
+								default: $validity_msg.addClass( 'invalid-key' ).removeClass( 'valid-key' ); break;
 							}
 						});
 					}
@@ -680,9 +682,9 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 						AND `deleted` = '0'
 				";
 
-				$stats['multisite']         = 1;
-				$stats['network_activated'] = (int) $this->is_plugin_active_for_network();
-				$stats['active_sites']      = (int) $wpdb->get_var( $sql_count );
+				$stats['network']['multisite']         = 1;
+				$stats['network']['network_activated'] = (int) $this->is_plugin_active_for_network();
+				$stats['network']['active_sites']      = (int) $wpdb->get_var( $sql_count );
 			}
 
 			self::$stats = $stats;
@@ -913,7 +915,7 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 				$response['message'] = $this->get_api_message( $plugin_info );
 				$response['api_invalid'] = true;
 			} else {
-				$key_type = 'site';
+				$key_type = 'local';
 
 				if ( $network ) {
 					$key_type = 'network';
@@ -1069,23 +1071,63 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 			}
 
 			$state = $this->get_state();
+			$messages = array();
+			$plugin_updates = get_plugin_updates();
+			$update_available = isset( $plugin_updates[ $this->plugin_file ] );
 
-			if ( empty( $state->update->license_error ) ) {
+			// Check to see if there is an licensing error or update message we should show
+			if ( ! empty( $state->update->license_error ) ) {
+				$messages[] = $state->update->license_error;
+			} elseif ( $update_available && current_user_can( 'update_plugins' ) ) {
+				// A plugin update is available
+				$update_now = sprintf(
+					esc_html__( 'Update now to version %s.', 'tribe-common' ),
+					$state->update->version
+				);
+
+				$update_now_link = sprintf(
+					' <a href="%1$s" class="update-link">%2$s</a>',
+					wp_nonce_url( self_admin_url( 'update.php?action=upgrade-plugin&plugin=' ) . $this->plugin_file, 'upgrade-plugin_' . $this->plugin_file ),
+					$update_now
+				);
+
+				$update_message = sprintf(
+					esc_html__( 'There is a new version of %1$s available. %2$s', 'tribe-common' ),
+					$this->plugin_name,
+					$update_now_link
+				);
+
+				$messages[] = sprintf(
+					'<p>%s</p>',
+					$update_message
+				);
+			}
+
+			if ( empty( $messages ) ) {
 				return;
 			}
 
+			$message_row_html = '';
+
+			foreach ( $messages as $message ) {
+				$message_row_html .= sprintf(
+					'<div class="update-message notice inline notice-warning notice-alt">%s</div>',
+					$message
+				);
+			}
+
+			$message_row_html = sprintf(
+				'<tr class="plugin-update-tr active"><td colspan="3" class="plugin-update">%s</td></tr>',
+				$message_row_html
+			);
+
 			$this->plugin_notice = array(
-				'slug' => $this->get_slug(),
-				'message_row_html' => "
-					<tr class='plugin-update-tr active'> <td colspan='3' class='plugin-update'>
-						<div class='update-message notice inline notice-warning notice-alt'>
-							{$state->update->license_error}
-						</div>
-					</td> </tr>
-				",
+				'slug'             => $this->plugin_file,
+				'message_row_html' => $message_row_html,
 			);
 
 			add_filter( 'tribe_plugin_notices', array( $this, 'add_notice_to_plugin_notices' ) );
+
 		}
 
 		public function add_notice_to_plugin_notices( $notices ) {
@@ -1420,7 +1462,7 @@ if ( ! class_exists( 'Tribe__PUE__Checker' ) ) {
 				$network_option = (boolean) $validated_field->field['network_option'];
 			}
 
-			$key_type = 'site';
+			$key_type = 'local';
 
 			if ( $network_option ) {
 				$key_type = 'network';

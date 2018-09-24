@@ -1,6 +1,7 @@
 <?php
 
-
+    if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+    
     class CptoFunctions
         {
             
@@ -43,8 +44,9 @@
                                             'show_reorder_interfaces'   =>  array(),
                                             'autosort'                  =>  1,
                                             'adminsort'                 =>  1,
+                                            'use_query_ASC_DESC'        =>  '',
                                             'archive_drag_drop'         =>  1,
-                                            'capability'                =>  'install_plugins',
+                                            'capability'                =>  'manage_options',
                                             'navigation_sort_apply'     =>  1,
                                             
                                         );
@@ -85,15 +87,7 @@
                                     <div class="p_s_item s_t">
                                         <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://www.nsp-code.com" data-text="Define custom order for your post types through an easy to use javascript AJAX drag and drop interface. No theme code updates are necessarily, this plugin will take care of query update." data-count="none">Tweet</a><script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>
                                     </div>
-                                    
-                                    <div class="p_s_item s_gp">
-                                        <!-- Place this tag in your head or just before your close body tag -->
-                                        <script type="text/javascript" src="https://apis.google.com/js/plusone.js"></script>
-
-                                        <!-- Place this tag where you want the +1 button to render -->
-                                        <div class="g-plusone" data-size="small" data-annotation="none" data-href="http://nsp-code.com/"></div>
-                                    </div>
-                                    
+                  
                                     <div class="clear"></div>
                                 </div>
                      

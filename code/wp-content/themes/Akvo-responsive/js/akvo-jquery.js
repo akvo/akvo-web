@@ -248,11 +248,40 @@ $.fn.funnel_next = function(){
 	return this.each(function(){
 		
 		var btn = $(this);
-	
+		
+		
+		
 		btn.click( function(ev){
 			ev.preventDefault();
 			
-			var next_section = $(btn.attr('href'));
+			var field_name 		= btn.attr( 'data-field-name' ),		// HUBSPOT FORM NAME
+				field_value 	= btn.attr( 'data-field-value' ),		// HUBSPOT FORM VALUE
+				next_section	= $( btn.attr('href') ),				// NEXT SECTION IN THE SLIDE
+				ans 			= btn.html(),
+				question 		= btn.attr('data-q');					// QUESTION
+			
+			if( field_name && ans ){
+				
+				var form_field = $( '#funnel-form' ).find( '[name=' + field_name + ']' );
+				
+				// CHECKBOX
+				if( form_field.is( 'input' ) && form_field.attr('type') == 'checkbox' ){
+					
+					if( field_value ){
+						form_field = $( '#funnel-form' ).find( '[name=' + field_name + '][value="' + field_value + '"]' );
+					}
+					
+					// CHECK IF YES IS SELECTED
+					if( ans.toLowerCase() == 'yes' ){ form_field.click(); }
+					
+				}
+				else if( form_field.is( 'select' ) ){
+					
+					// SELECT 
+					$( form_field ).val( ans );
+				}
+				
+			}
 			
 			// HIDE ALL FUNNEL SECTIONS
 			$('section.funelContainer').addClass('hidden');
@@ -260,7 +289,8 @@ $.fn.funnel_next = function(){
 			// SHOW THE NEXT SECTION ONLY
 			next_section.removeClass('hidden');
 			
-			var question = btn.attr('data-q');
+			/*
+			//var question = btn.attr('data-q');
 			if( question ){
 				
 				var ans = btn.html();
@@ -276,6 +306,7 @@ $.fn.funnel_next = function(){
 				textarea.val( text );
 				
 			}
+			*/
 			
 		});
 		
@@ -416,7 +447,8 @@ $.fn.double_filters = function(){
 		});
 		/* HANDLE CLICK EVENTS */
 		
-		
+		// BY DEFAULT SELECT THE FIRST PRIMARY FILTER THAT IS AVAILABLE
+		$el.find('[data-filter~=primary]').first().click();
 		
 	});
 }

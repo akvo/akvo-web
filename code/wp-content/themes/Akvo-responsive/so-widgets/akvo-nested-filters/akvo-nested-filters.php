@@ -51,6 +51,12 @@ class Akvo_Nested_Filters extends SiteOrigin_Widget {
 					'default' 		=> '100',
 					'description'	=> 'Items per request to be shown'
 				),
+				'label_all' => array(
+					'type' 			=> 'text',
+					'label' 		=> __( 'Label to show all', 'siteorigin-widgets' ),
+					'default' 		=> 'All',
+					'description'	=> 'If left empty, the all filter will be hidden'
+				),
 				'primary_filter' => array(
 					'type' 			=> 'select',
 					'label' 		=> __( 'Primary Filter', 'siteorigin-widgets' ),

@@ -66,7 +66,7 @@ table.cookielawinfo-winter tfoot td, table.cookielawinfo-winter tfoot th, table.
 /** 27/05/2013: responsive table by Mark Wiltshire */
 @media(max-width:800px) {
         /* cookielawinfo responsive tables when smaller */
-        table.cookielawinfo-winter, table.cookielawinfo-winter thead,
+/*        table.cookielawinfo-winter, table.cookielawinfo-winter thead,
         table.cookielawinfo-winter tbody, table.cookielawinfo-winter th,
         table.cookielawinfo-winter td, table.cookielawinfo-winter tr,
         th.cookielawinfo-column-1, td.cookielawinfo-column-1,
@@ -75,7 +75,7 @@ table.cookielawinfo-winter tfoot td, table.cookielawinfo-winter tfoot th, table.
         th.cookielawinfo-column-4, td.cookielawinfo-column-4,
         tr.cookielawinfo-row{
                 display:block;
-        }
+        }*/
 
         /* Hide table headers (but not display: none;, for accessibility) */
         table.cookielawinfo-winter thead tr {
@@ -114,4 +114,16 @@ table.cookielawinfo-winter tfoot td, table.cookielawinfo-winter tfoot th, table.
         table.cookielawinfo-winter td:nth-of-type(2):before { content: "TYPE"; }
         table.cookielawinfo-winter td:nth-of-type(3):before { content: "DURATION"; }
         table.cookielawinfo-winter td:nth-of-type(4):before { content: "DESCRIPTION"; }
+}
+
+.cookielawinfo-row-cat-title{
+    border-bottom: 1px solid #eee;
+    text-align: center;
+}
+.cookielawinfo-row-cat-title-head{
+    text-align: center;
+}
+.cookielawinfo-row-cat-table{
+    width: 99%;
+    margin-left: 5px;
 }

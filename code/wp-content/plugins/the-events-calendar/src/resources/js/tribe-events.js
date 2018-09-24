@@ -26,10 +26,10 @@ var tribe_ev = window.tribe_ev || {};
  * @desc Setup safe enhanced console logging. See the link to get the available methods, then prefix with this short circuit: 'tribe_debug && '. tribe_debug is aliased in all tribe js doc readys as 'dbug'.
  * @link http://benalman.com/code/projects/javascript-debug/docs/files/ba-debug-js.html
  * @example <caption>EG: Place this at the very bottom of the doc ready for tribe-events.js. ALWAYS short circuit with 'tribe_debug && ' or 'dbug &&' if aliased as such.</caption> *
- *        tribe_debug && debug.info('tribe-events.js successfully loaded');
+ *        tribe_debug && tec_debug.info('tribe-events.js successfully loaded');
  */
 
-var tribe_debug = true;
+var tribe_debug = tribe_js_config.debug;
 
 /*!
  * this debug code is stripped out by closure compiler so it is not present in the .min versions.
@@ -49,7 +49,7 @@ var tribe_debug = true;
  * http://paulirish.com/
  */
 
-window.debug = (function() {
+window.tec_debug = (function() {
 	var window = this,
 		aps = Array.prototype.slice,
 		con = window.console,
@@ -260,28 +260,33 @@ var tribeDateFormat = function() {
 }();
 
 tribeDateFormat.masks = {
-	"default"        : "ddd mmm dd yyyy HH:MM:ss",
-	"tribeQuery"     : "yyyy-mm-dd",
+	"default":         "ddd mmm dd yyyy HH:MM:ss",
+	"tribeQuery":      "yyyy-mm-dd",
 	"tribeMonthQuery": "yyyy-mm",
-	"0"              : 'yyyy-mm-dd',
-	"1"              : 'm/d/yyyy',
-	"2"              : 'mm/dd/yyyy',
-	"3"              : 'd/m/yyyy',
-	"4"              : 'dd/mm/yyyy',
-	"5"              : 'm-d-yyyy',
-	"6"              : 'mm-dd-yyyy',
-	"7"              : 'd-m-yyyy',
-	"8"              : 'dd-mm-yyyy',
-	"m0"             : 'yyyy-mm',
-	"m1"             : 'm/yyyy',
-	"m2"             : 'mm/yyyy',
-	"m3"             : 'm/yyyy',
-	"m4"             : 'mm/yyyy',
-	"m5"             : 'm-yyyy',
-	"m6"             : 'mm-yyyy',
-	"m7"             : 'm-yyyy',
-	"m8"             : 'mm-yyyy'
-
+	"0":               'yyyy-mm-dd',
+	"1":               'm/d/yyyy',
+	"2":               'mm/dd/yyyy',
+	"3":               'd/m/yyyy',
+	"4":               'dd/mm/yyyy',
+	"5":               'm-d-yyyy',
+	"6":               'mm-dd-yyyy',
+	"7":               'd-m-yyyy',
+	"8":               'dd-mm-yyyy',
+	"9":               'yyyy.mm.dd',
+	"10":              'mm.dd.yyyy',
+	"11":              'dd.mm.yyyy',
+	"m0":              'yyyy-mm',
+	"m1":              'm/yyyy',
+	"m2":              'mm/yyyy',
+	"m3":              'm/yyyy',
+	"m4":              'mm/yyyy',
+	"m5":              'm-yyyy',
+	"m6":              'mm-yyyy',
+	"m7":              'm-yyyy',
+	"m8":              'mm-yyyy',
+	"m9":              'yyyy.mm',
+	"m10":             'mm.yyyy',
+	"m11":             'mm.yyyy'
 };
 
 tribeDateFormat.i18n = {
@@ -482,7 +487,7 @@ Date.prototype.format = function( mask, utc ) {
 	 */
 	$.fn.tribe_spin = function() {
 		var $loadingImg = $( '.tribe-events-ajax-loading:first' ).clone().addClass( 'tribe-events-active-spinner' );
-		$loadingImg.prependTo( '#tribe-events-content' );
+		$loadingImg.prependTo( document.getElementById( 'tribe-events-content' ) );
 		$( this ).addClass( 'tribe-events-loading' ).css( 'opacity', .25 )
 	};
 
@@ -600,9 +605,9 @@ Date.prototype.format = function( mask, utc ) {
 		 * @example var base_url = tribe_ev.fn.get_base_url();
 		 */
 		get_base_url          : function() {
-			var base_url = '',
-				$event_header = $( '#tribe-events-header' ),
-				$canonical = $( 'link[rel="canonical"]' );
+			var base_url      = '';
+			var $event_header = $( document.getElementById( 'tribe-events-header' ) );
+			var $canonical    = $( 'link[rel="canonical"]' );
 
 			if ( $canonical.length ) {
 				// use the canonical URL if it is available (it should be)
@@ -622,8 +627,8 @@ Date.prototype.format = function( mask, utc ) {
 		 * @desc tribe_ev.fn.update_base_url can be used on any events view to update base_url for that view
 		 */
 		update_base_url: function( url ) {
-			var $event_header = $( '#tribe-events-header' ),
-				$canonical = $( 'link[rel="canonical"]' );
+			var $event_header = $( document.getElementById( 'tribe-events-header' ) );
+			var $canonical    = $( 'link[rel="canonical"]' );
 
 			if ( $canonical.length ) {
 				// use the canonical URL if it is available (it should be)
@@ -641,7 +646,7 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		get_category          : function() {
 			if ( tribe_ev.fn.is_category() ) {
-				return $( '#tribe-events' ).data( 'category' );
+				return $( document.getElementById( 'tribe-events' ) ).data( 'category' );
 			}
 			else {
 				return '';
@@ -655,11 +660,11 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		get_day               : function() {
 			var dp_day = '';
-			if ( $( '#tribe-bar-date' ).length ) {
-				dp_day = $( '#tribe-bar-date-day' ).val();
+			if ( $( document.getElementById( 'tribe-bar-date' ) ).length ) {
+				dp_day = $( document.getElementById( 'tribe-bar-date-day' ) ).val();
 			}
 			// @ifdef DEBUG
-			dbug && debug.info( 'TEC Debug: tribe_ev.fn.get_day returned this date: "' + dp_day + '".' );
+			dbug && tec_debug.info( 'TEC Debug: tribe_ev.fn.get_day returned this date: "' + dp_day + '".' );
 			// @endif
 			return dp_day;
 		},
@@ -726,7 +731,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * @example if (tribe_ev.fn.is_category()){ true } else { false }
 		 */
 		is_category           : function() {
-			var $tribe_events = $( '#tribe-events' );
+			var $tribe_events = $( document.getElementById( 'tribe-events' ) );
 			return ($tribe_events.length && $tribe_events.tribe_has_attr( 'data-category' ) && $tribe_events.data( 'category' ) !== '') ? true : false;
 		},
 
@@ -736,7 +741,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * @return {boolean}
 		 */
 		is_featured: function() {
-			return $( '#tribe-events' ).data( 'featured' ) == '1';
+			return $( document.getElementById( 'tribe-events' ) ).data( 'featured' ) == '1';
 		},
 
 		/**
@@ -761,6 +766,9 @@ Date.prototype.format = function( mask, utc ) {
 		maybe_default_view_change   : function() {
 			// if we don't these we can't do anything
 			if (
+				// if we already redirected do not do it again to enable user to change views
+				tribe_ev.data.redirected_view ||
+
 				// There is no default View set
 				! tribe_ev.data.default_view ||
 
@@ -774,10 +782,7 @@ Date.prototype.format = function( mask, utc ) {
 				! tribe_ev.state.view ||
 
 				// We are on the default mobile view
-				tribe_ev.data.default_mobile_view == tribe_ev.state.view ||
-
-				// We are with an defined view
-				tribe_ev.data.cur_url == tribe_ev.data.base_url
+				tribe_ev.data.default_mobile_view == tribe_ev.state.view
 			) {
 				return false;
 			}
@@ -789,9 +794,10 @@ Date.prototype.format = function( mask, utc ) {
 				return false;
 			}
 
-			var $views = $( '.tribe-bar-views-option' ),
-				view_class_filter = '.tribe-bar-views-option-' + tribe_ev.data.default_mobile_view,
-				$default_view_link = $views.filter( view_class_filter );
+			var $views             = $( '.tribe-bar-views-option' );
+			var view_class_filter  = '.tribe-bar-views-option-' + tribe_ev.data.default_mobile_view;
+			var $default_view_link = $views.filter( view_class_filter );
+			$( view_class_filter ).data( 'redirected', true );
 
 			// Actually do the Changing View
 			$default_view_link.trigger( 'click' );
@@ -810,7 +816,7 @@ Date.prototype.format = function( mask, utc ) {
 				(map[key] = map[key] || []).push( value );
 			} );
 			// @ifdef DEBUG
-			dbug && debug.info( 'TEC Debug: tribe_ev.fn.parse_string returned this map:', map );
+			dbug && tec_debug.info( 'TEC Debug: tribe_ev.fn.parse_string returned this map:', map );
 			// @endif
 			return map;
 		},
@@ -848,7 +854,7 @@ Date.prototype.format = function( mask, utc ) {
 			var params = $( form ).serialize();
 			tribe_ev.fn.disable_inputs( form, type );
 			// @ifdef DEBUG
-			dbug && params && debug.info( 'TEC Debug: tribe_ev.fn.serialize returned these params: "' + params );
+			dbug && params && tec_debug.info( 'TEC Debug: tribe_ev.fn.serialize returned these params: "' + params );
 			// @endif
 			return params;
 		},
@@ -868,7 +874,7 @@ Date.prototype.format = function( mask, utc ) {
 		 */
 		set_form              : function( params ) {
 			var $body = $( 'body' ),
-				$tribe_bar = $( '#tribe-bar-form' );
+				$tribe_bar = $( document.getElementById( 'tribe-bar-form' ) );
 
 			$body.addClass( 'tribe-reset-on' );
 
@@ -913,7 +919,7 @@ Date.prototype.format = function( mask, utc ) {
 
 			$body.removeClass( 'tribe-reset-on' );
 			// @ifdef DEBUG
-			dbug && debug.info( 'TEC Debug: tribe_ev.fn.set_form fired these params: "' + params );
+			dbug && tec_debug.info( 'TEC Debug: tribe_ev.fn.set_form fired these params: "' + params );
 			// @endif
 		},
 		/**
@@ -933,7 +939,7 @@ Date.prototype.format = function( mask, utc ) {
 					callback();
 				}, timer );
 				// @ifdef DEBUG
-				dbug && debug.info( 'TEC Debug: tribe_ev.fn.setup_ajax_timer fired with a timeout of "' + timer + '" ms' );
+				dbug && tec_debug.info( 'TEC Debug: tribe_ev.fn.setup_ajax_timer fired with a timeout of "' + timer + '" ms' );
 				// @endif
 			}
 		},
@@ -960,24 +966,24 @@ Date.prototype.format = function( mask, utc ) {
 		 *        tribe_ev.fn.tooltips();
 		 */
 		tooltips                 : function() {
-			var $container = $( '#tribe-events' ),
-				$body = $( 'body' ),
-				is_shortcode = $container.hasClass( 'tribe-events-shortcode' ),
-				is_month_view = $container.hasClass( 'view-month' ) || $body.hasClass( 'events-gridview' ),
-				is_week_view = $container.hasClass( 'view-week' ) || $body.hasClass( 'tribe-events-week' ),
-				is_photo_view = $container.hasClass( 'view-photo' ) || $body.hasClass( 'tribe-events-photo' ),
-				is_day_view = $container.hasClass( 'view-day' ) || $body.hasClass( 'tribe-events-day' ),
-				is_list_view = $container.hasClass( 'view-list' ) || $body.hasClass( 'events-list' ),
-				is_map_view = $container.hasClass( 'view-map' ) || $body.hasClass( 'tribe-events-map' ),
-				is_single = $body.hasClass( 'single-tribe_events' );
+			var $container    = $( document.getElementById( 'tribe-events' ) );
+			var $body         = $( 'body' );
+			var is_shortcode  = $container.hasClass( 'tribe-events-shortcode' );
+			var is_month_view = $container.hasClass( 'view-month' ) || $body.hasClass( 'events-gridview' );
+			var is_week_view  = $container.hasClass( 'view-week' ) || $body.hasClass( 'tribe-events-week' );
+			var is_photo_view = $container.hasClass( 'view-photo' ) || $body.hasClass( 'tribe-events-photo' );
+			var is_day_view   = $container.hasClass( 'view-day' ) || $body.hasClass( 'tribe-events-day' );
+			var is_list_view  = $container.hasClass( 'view-list' ) || $body.hasClass( 'events-list' );
+			var is_map_view   = $container.hasClass( 'view-map' ) || $body.hasClass( 'tribe-events-map' );
+			var is_single     = $body.hasClass( 'single-tribe_events' );
 
 			$container.on( 'mouseenter', 'div[id*="tribe-events-event-"], div.event-is-recurring', function() {
-				var bottomPad = 0,
-					$this = $( this ),
-					$tip;
+				var bottomPad = 0;
+				var $this     = $( this );
+				var $tip;
 
 				if ( is_month_view ) { // Cal View Tooltips
-					bottomPad = $this.find( 'a' ).outerHeight() + 18;
+					bottomPad = $this.find( 'a' ).outerHeight() + 16;
 				} else if ( is_single || is_day_view || is_list_view ) { // Single/List View Recurring Tooltips
 					bottomPad = $this.outerHeight() + 12;
 				} else if ( is_photo_view ) { // Photo View
@@ -1009,14 +1015,30 @@ Date.prototype.format = function( mask, utc ) {
 							$tip = $this.find( '.tribe-events-tooltip' );
 						}
 
-						$tip.css( 'bottom', bottomPad ).show();
+						// Look for the distance between top of tooltip and top of visible viewport.
+						var dist_to_top = $this.offset().top - ( $( window ).scrollTop() + 50 ); // The +50 is some padding for a more aesthetically-pleasing view.
+						var tip_height  = $tip.outerHeight();
+
+						// If true, tooltip is near top of viewport, so tweak some values to keep the tooltip fully in-view.
+						if ( dist_to_top < tip_height ) {
+							bottomPad = -tip_height;
+							$tip.addClass( 'tribe-events-tooltip-flipdown' );
+						}
+
+						$tip.css( 'bottom', bottomPad ).stop( true, false ).show();
 					} else {
-						$this.find( '.tribe-events-tooltip' ).css( 'bottom', bottomPad ).show();
+						$this.find( '.tribe-events-tooltip' ).css( 'bottom', bottomPad ).stop( true, false ).show();
 					}
 				}
 
 			} ).on( 'mouseleave', 'div[id*="tribe-events-event-"], div[id*="tribe-events-daynum-"]:has(a), div.event-is-recurring', function() {
-				$( this ).find( '.tribe-events-tooltip' ).stop( true, false ).fadeOut( 200 );
+
+				var $tip = $( this ).find( '.tribe-events-tooltip' );
+
+				$tip.stop( true, false ).fadeOut( 500, function() {
+					$tip.removeClass( 'tribe-events-tooltip-flipdown' );
+				} );
+
 			} );
 		},
 		/**
@@ -1044,18 +1066,18 @@ Date.prototype.format = function( mask, utc ) {
 				$bar_date.bootstrapDatepicker( "setDate", date );
 				tribe_ev.state.updating_picker = false;
 				// @ifdef DEBUG
-				dbug && debug.info( 'TEC Debug: tribe_ev.fn.update_picker sent "' + date + '" to the boostrapDatepicker' );
+				dbug && tec_debug.info( 'TEC Debug: tribe_ev.fn.update_picker sent "' + date + '" to the boostrapDatepicker' );
 				// @endif
 			}
 			else if ( $bar_date.length ) {
 				$bar_date.val( date );
 				// @ifdef DEBUG
-				dbug && debug.warn( 'TEC Debug: tribe_ev.fn.update_picker sent "' + date + '" to ' + $bar_date );
+				dbug && tec_debug.warn( 'TEC Debug: tribe_ev.fn.update_picker sent "' + date + '" to ' + $bar_date );
 				// @endif
 			}
 			else {
 				// @ifdef DEBUG
-				dbug && debug.warn( 'TEC Debug: tribe_ev.fn.update_picker couldnt send "' + date + '" to any object.' );
+				dbug && tec_debug.warn( 'TEC Debug: tribe_ev.fn.update_picker couldnt send "' + date + '" to any object.' );
 				// @endif
 			}
 		},
@@ -1121,7 +1143,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * }
 		 */
 		live_ajax     : function() {
-			var $tribe_events = $( '#tribe-events' );
+			var $tribe_events = $( document.getElementById( 'tribe-events' ) );
 			return ($tribe_events.length && $tribe_events.tribe_has_attr( 'data-live_ajax' ) && $tribe_events.data( 'live_ajax' ) == '1') ? true : false;
 		},
 		/**
@@ -1133,7 +1155,7 @@ Date.prototype.format = function( mask, utc ) {
 		 * )
 		 */
 		map_view      : function() {
-			return ( typeof GeoLoc !== 'undefined' && GeoLoc.map_view ) ? true : false;
+			return typeof GeoLoc !== 'undefined' && GeoLoc.map_view;
 		},
 		/**
 		 * @function tribe_ev.tests.no_bar
@@ -1202,15 +1224,42 @@ Date.prototype.format = function( mask, utc ) {
 		base_url            : '',
 		cur_url             : tribe_ev.fn.url_path( document.URL ),
 		cur_date            : tribe_ev.fn.current_date(),
-		datepicker_formats  : {
-			'main' : ['yyyy-mm-dd', 'm/d/yyyy', 'mm/dd/yyyy', 'd/m/yyyy', 'dd/mm/yyyy', 'm-d-yyyy', 'mm-dd-yyyy', 'd-m-yyyy', 'dd-mm-yyyy'],
-			'month': ['yyyy-mm', 'm/yyyy', 'mm/yyyy', 'm/yyyy', 'mm/yyyy', 'm-yyyy', 'mm-yyyy', 'm-yyyy', 'mm-yyyy']
+		datepicker_formats: {
+			'main': [
+				'yyyy-mm-dd',
+				'm/d/yyyy',
+				'mm/dd/yyyy',
+				'd/m/yyyy',
+				'dd/mm/yyyy',
+				'm-d-yyyy',
+				'mm-dd-yyyy',
+				'd-m-yyyy',
+				'dd-mm-yyyy',
+				'yyyy.mm.dd',
+				'mm.dd.yyyy',
+				'dd.mm.yyyy'
+			],
+			'month': [
+				'yyyy-mm',
+				'm/yyyy',
+				'mm/yyyy',
+				'm/yyyy',
+				'mm/yyyy',
+				'm-yyyy',
+				'mm-yyyy',
+				'm-yyyy',
+				'mm-yyyy',
+				'yyyy.mm',
+				'mm.yyyy',
+				'mm.yyyy'
+			]
 		},
 		datepicker_opts     : {},
 		default_permalinks  : (!config.permalink_settings.length),
 		initial_url         : tribe_ev.fn.url_path( document.URL ),
 		mobile_break        : 768,
 		default_mobile_view : null,
+		redirected_view     : null,
 		default_view        : null,
 		params              : tribe_ev.fn.get_params(),
 		v_height            : 0,
@@ -1273,21 +1322,21 @@ Date.prototype.format = function( mask, utc ) {
 	$( document ).ready( function() {
 
 		// @ifdef DEBUG
-		dbug && debug.info( 'TEC Debug: Tribe Events JS init, Init Timer started from tribe-events.js.' );
+		dbug && tec_debug.info( 'TEC Debug: Tribe Events JS init, Init Timer started from tribe-events.js.' );
 		// @endif
 
 		tf.update_viewport_variables();
 
-		var $body = $( 'body' ),
-			$tribe_events = $( '#tribe-events' ),
-			$tribe_content = $( '#tribe-events-content' ),
-			$tribe_events_header = $( '#tribe-events-header' ),
-			resize_timer;
-
+		var $body                = $( 'body' );
+		var $tribe_events        = $( document.getElementById( 'tribe-events' ) );
+		var $tribe_content       = $( document.getElementById( 'tribe-events-content' ) );
+		var $tribe_events_header = $( document.getElementById( 'tribe-events-header' ) );
+		var resize_timer;
 
 		$tribe_events.removeClass( 'tribe-no-js' );
-		ts.category = tf.get_category();
-		td.base_url = tf.get_base_url();
+
+		ts.category   = tf.get_category();
+		td.base_url   = tf.get_base_url();
 		ts.page_title = document.title;
 
 		var tribe_display = tf.get_url_param( 'tribe_event_display' );
@@ -1299,12 +1348,12 @@ Date.prototype.format = function( mask, utc ) {
 			ts.view = $tribe_events_header.data( 'view' );
 		}
 
-		if ( $tribe_events.tribe_has_attr( 'data-datepicker_format' ) && $tribe_events.attr( 'data-datepicker_format' ).length === 1 ) {
+		if ( $tribe_events.tribe_has_attr( 'data-datepicker_format' ) && $tribe_events.attr( 'data-datepicker_format' ).length >= 1 ) {
 			ts.datepicker_format = $tribe_events.attr( 'data-datepicker_format' );
 		}
 
 		// @ifdef DEBUG
-		ts.view && dbug && debug.time( 'Tribe JS Init Timer' );
+		ts.view && dbug && tec_debug.time( 'Tribe JS Init Timer' );
 		// @endif
 
 		$( te ).on( 'tribe_ev_collectParams', function() {
@@ -1329,7 +1378,7 @@ Date.prototype.format = function( mask, utc ) {
 				return;
 			}
 
-			var $header = $( '#tribe-events-header' );
+			var $header = $( document.getElementById( 'tribe-events-header' ) );
 			var $canonical = $( 'link[rel="canonical"]' );
 			var url = null;
 
@@ -1367,6 +1416,15 @@ Date.prototype.format = function( mask, utc ) {
 					}
 				}
 			}
+
+			if ( 'month' === ts.view && ! $( '#tribe-events-bar' ).length ) {
+				if ( ! td.default_permalinks ) {
+					ts.url_params = 'tribe-bar-date=' + tribeDateFormat( ts.mdate, "tribeMonthQuery" );
+				} else {
+					tribe_ev.state.url_params += 'tribe-bar-date=' + tribeDateFormat( ts.mdate, "tribeMonthQuery" );
+				}
+			}
+
 		} );
 
 		/**
@@ -1412,6 +1470,7 @@ Date.prototype.format = function( mask, utc ) {
 				// Remember, when using jQuery.data and dash separated variables they become CamelCase separated
 				td.default_mobile_view = $mobile_view_holder.data( 'defaultMobileView' );
 				td.default_view = $mobile_view_holder.data( 'defaultView' );
+				td.redirected_view = $mobile_view_holder.data( 'redirectedView' );
 			}
 		}
 
@@ -1453,18 +1512,26 @@ Date.prototype.format = function( mask, utc ) {
 		 * @function tribe_ical_url
 		 * @desc tribe_ical_url This function adds required params to the ical url. Runs on doc ready, and hooks into 'ajax-success.tribe' also.
 		 */
-
 		function tribe_ical_url() {
-			var url = document.URL,
-				separator = '?';
+			var should_overwrite = true;
 
-			if ( url.indexOf( '?' ) > 0 ) {
-				separator = '&';
+			// If the "force filtered iCal link" option is set, we should not overwrite.
+			if ( 'undefined' !== typeof tribe_js_config.force_filtered_ical_link ) {
+				should_overwrite = ! tribe_js_config.force_filtered_ical_link;
 			}
 
-			var new_link = url + separator + 'ical=1' + '&' + 'tribe_display=' + ts.view;
+			if ( should_overwrite ) {
+				var url       = document.URL;
+				var separator = '?';
 
-			$( 'a.tribe-events-ical' ).attr( 'href', new_link );
+				if ( url.indexOf( '?' ) > 0 ) {
+					separator = '&';
+				}
+
+				var new_link = url + separator + 'ical=1' + '&' + 'tribe_display=' + ts.view;
+
+				$( 'a.tribe-events-ical' ).attr( 'href', new_link );
+			}
 		}
 
 		$( te ).on( 'tribe_ev_ajaxSuccess', function() {
@@ -1483,13 +1550,13 @@ Date.prototype.format = function( mask, utc ) {
 
 		// @ifdef DEBUG
 		if ( dbug ) {
-			debug.groupCollapsed( 'TEC Debug: Browser and events settings information:' );
-			debug.log( 'User agent reported as: "' + navigator.userAgent );
-			debug.log( 'Live ajax returned its state as: "' + tt.live_ajax() );
-			ts.view && debug.log( 'Tribe js detected the view to be: "' + ts.view );
-			debug.log( 'Supports pushstate: "' + tt.pushstate );
-			debug.groupEnd();
-			debug.info( 'TEC Debug: tribe-events.js successfully loaded' );
+			tec_debug.groupCollapsed( 'TEC Debug: Browser and events settings information:' );
+			tec_debug.log( 'User agent reported as: "' + navigator.userAgent );
+			tec_debug.log( 'Live ajax returned its state as: "' + tt.live_ajax() );
+			ts.view && tec_debug.log( 'Tribe js detected the view to be: "' + ts.view );
+			tec_debug.log( 'Supports pushstate: "' + tt.pushstate );
+			tec_debug.groupEnd();
+			tec_debug.info( 'TEC Debug: tribe-events.js successfully loaded' );
 		}
 		// @endif
 	} );
